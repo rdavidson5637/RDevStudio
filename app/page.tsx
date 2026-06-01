@@ -8,7 +8,7 @@ import { createPageMetadata } from "@/lib/metadata";
 export const metadata = createPageMetadata({
   title: "Home",
   description:
-    "RDev Studio builds modern, affordable websites for local businesses in Northern Ireland. Restaurants, tradespeople, and salons — live in 7 days from £650.",
+    "RDev Studio builds modern, affordable websites for local businesses in Northern Ireland. Restaurants, tradespeople, and salons — live in 7 days from £500.",
   path: "/",
 });
 

@@ -34,7 +34,7 @@ export function Hero() {
 
           <dl className="mt-14 grid grid-cols-2 gap-6 border-t border-slate-200/80 pt-10 sm:grid-cols-4">
             {[
-              { label: "Starting from", value: "£650" },
+              { label: "Starting from", value: "£500" },
               { label: "Typical delivery", value: "7 days" },
               { label: "Pages included", value: "5" },
               { label: "Based in", value: "NI" },

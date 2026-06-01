@@ -23,7 +23,7 @@ export function ServicePreview() {
                 Get Online
               </p>
               <p className="mt-2 text-5xl font-bold">
-                £650
+                £500
                 <span className="text-lg font-normal text-slate-muted">
                   {" "}
                   one-off
