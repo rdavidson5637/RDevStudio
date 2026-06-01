@@ -1,7 +1,7 @@
 export const SITE_NAME = "RDev Studio";
 export const SITE_URL = "https://rdevstudio.co.uk";
-export const EMAIL = "hello@rdevstudio.co.uk";
-export const CONTACT_EMAIL = "ryan@rdevstudio.co.uk";
+export const EMAIL = "ryan@rdevstudio.com";
+export const CONTACT_EMAIL = "ryan@rdevstudio.com";
 export const WHATSAPP_NUMBER = "+447378420418";
 
 export const NAV_LINKS = [
@@ -77,6 +77,12 @@ export const FAQ_ITEMS = [
   },
 ] as const;
 
+/**
+ * Portfolio projects. To add previews:
+ * - Screenshot: public/images/work/{id}.png (or .jpg / .webp)
+ * - Animated loop (recommended): public/images/work/{id}-preview.mp4
+ *   Short MP4 loops look sharper and load faster than GIFs.
+ */
 export const PROJECTS = [
   {
     id: "shelterlink",
@@ -101,6 +107,9 @@ export const PROJECTS = [
     buttonLabel: "View Site",
     href: "https://carrick-plumbing-co.vercel.app/",
     demo: true,
+    image: "/images/work/carrick-plumbing.png",
+    imageAlt: "Carrick Plumbing Co website homepage for a local plumbing business",
+    // previewVideo: "/images/work/carrick-plumbing-preview.mp4",
   },
   {
     id: "anchor-restaurant",
@@ -112,6 +121,9 @@ export const PROJECTS = [
     buttonLabel: "View Site",
     href: "https://the-anchor-restaurant.vercel.app/",
     demo: true,
+    image: "/images/work/anchor-restaurant.png",
+    imageAlt: "The Anchor Restaurant website with menu and booking enquiry",
+    // previewVideo: "/images/work/anchor-restaurant-preview.mp4",
   },
   {
     id: "harbour-hair",
@@ -123,5 +135,8 @@ export const PROJECTS = [
     buttonLabel: "View Site",
     href: "https://harbour-hair-studio11.vercel.app/",
     demo: true,
+    image: "/images/work/harbour-hair.png",
+    imageAlt: "Harbour Hair Studio salon website with services and gallery",
+    // previewVideo: "/images/work/harbour-hair-preview.mp4",
   },
 ] as const;
