@@ -1,7 +1,7 @@
 export const SITE_NAME = "RDev Studio";
 export const SITE_URL = "https://rdevstudio.co.uk";
-export const EMAIL = "ryan@rdevstudio.com";
-export const CONTACT_EMAIL = "ryan@rdevstudio.com";
+export const EMAIL = "ryan@rdevstudio.co.uk";
+export const CONTACT_EMAIL = "ryan@rdevstudio.co.uk";
 export const WHATSAPP_NUMBER = "+447378420418";
 
 export const NAV_LINKS = [
