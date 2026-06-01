@@ -1,36 +1,91 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# RDev Studio
+
+Professional portfolio website for [RDev Studio](https://rdevstudio.co.uk) — a local web design agency based in Carrickfergus, Northern Ireland.
+
+## Tech Stack
+
+- **Next.js 14** (App Router)
+- **TypeScript**
+- **Tailwind CSS**
+- Deployed on **Vercel**
+
+## Pages
+
+| Route       | Description                          |
+| ----------- | ------------------------------------ |
+| `/`         | Home — hero, pricing preview, process |
+| `/services` | Pricing, support plan, FAQ           |
+| `/work`     | Portfolio projects                   |
+| `/contact`  | Contact form and details             |
+| `/about`    | Coming soon stub                     |
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Node.js 18.17 or later
+- npm
+
+### Install dependencies
+
+```bash
+npm install
+```
+
+### Run locally
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Production build
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+npm start
+```
 
-## Learn More
+## Deploy to Vercel
 
-To learn more about Next.js, take a look at the following resources:
+1. Push this repository to GitHub.
+2. Go to [vercel.com](https://vercel.com) and import the repository.
+3. Vercel auto-detects Next.js — no extra configuration needed.
+4. Add your custom domain (`rdevstudio.co.uk`) in Project Settings → Domains.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Project Structure
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```
+app/
+  layout.tsx          # Root layout, fonts, header/footer
+  page.tsx            # Home
+  services/page.tsx
+  work/page.tsx
+  contact/page.tsx
+  about/page.tsx
+components/
+  layout/             # Header, Footer, Logo, WhatsApp
+  home/               # Hero, SocialProof, ServicePreview, HowItWorks
+  services/           # PricingCard, SupportSection, FAQ
+  work/               # ProjectCard, WorkCTA
+  contact/            # ContactForm, ContactDetails
+  ui/                 # Shared UI (PageHeader)
+lib/
+  constants.ts        # Site copy, nav, projects, FAQ
+  metadata.ts         # SEO metadata helpers
+public/
+  favicon.svg
+```
 
-## Deploy on Vercel
+## Customisation
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **WhatsApp number**: Update `WHATSAPP_NUMBER` in `lib/constants.ts`
+- **Contact emails**: Update `EMAIL` and `CONTACT_EMAIL` in `lib/constants.ts`
+- **Project links**: Update `href` values in `PROJECTS` in `lib/constants.ts`
+- **Colours**: Edit `navy` and `accent` in `tailwind.config.ts`
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Contact
+
+- General: hello@rdevstudio.co.uk
+- Enquiries: ryan@rdevstudio.co.uk
