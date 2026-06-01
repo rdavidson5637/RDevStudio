@@ -2,6 +2,7 @@ import { Hero } from "@/components/home/Hero";
 import { SocialProofBar } from "@/components/home/SocialProofBar";
 import { ServicePreview } from "@/components/home/ServicePreview";
 import { HowItWorks } from "@/components/home/HowItWorks";
+import { HomeCTA } from "@/components/home/HomeCTA";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata = createPageMetadata({
@@ -18,6 +19,7 @@ export default function HomePage() {
       <SocialProofBar />
       <ServicePreview />
       <HowItWorks />
+      <HomeCTA />
     </>
   );
 }
