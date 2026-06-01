@@ -12,7 +12,7 @@ export const NAV_LINKS = [
 ] as const;
 
 export const SOCIAL_PROOF_ITEMS = [
-  "5-page sites from £650",
+  "5-page sites from £500",
   "Live in 7 days",
   "Free hosting setup",
   "Local to Carrickfergus",

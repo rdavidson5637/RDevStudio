@@ -7,7 +7,7 @@ import { createPageMetadata } from "@/lib/metadata";
 export const metadata = createPageMetadata({
   title: "Services",
   description:
-    "Simple, transparent pricing for local business websites. £650 for a 5-page site with hosting setup. Optional £30/month support in Northern Ireland.",
+    "Simple, transparent pricing for local business websites. £500 for a 5-page site with hosting setup. Optional £30/month support in Northern Ireland.",
   path: "/services",
 });
 

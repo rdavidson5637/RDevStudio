@@ -8,7 +8,7 @@ export function PricingCard() {
         <p className="text-sm font-medium uppercase tracking-wider text-slate-muted">
           Get Online
         </p>
-        <p className="mt-2 text-6xl font-bold">£650</p>
+        <p className="mt-2 text-6xl font-bold">£500</p>
         <p className="mt-2 text-slate-muted">One-off payment · No hidden fees</p>
       </div>
       <div className="p-8 sm:p-10">
