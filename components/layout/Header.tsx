@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { NAV_LINKS } from "@/lib/constants";
 import { Logo } from "./Logo";
 import { MobileMenu } from "./MobileMenu";
@@ -10,56 +10,58 @@ import { MobileMenu } from "./MobileMenu";
 export function Header() {
   const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
-  const isActive = (href: string) => {
-    if (href === "/") return pathname === "/";
-    return pathname.startsWith(href);
-  };
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 16);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  const isActive = (href: string) => pathname.startsWith(href);
 
   const closeMobile = () => setMobileOpen(false);
 
   return (
     <>
-      <header className="sticky top-0 z-[100] border-b border-slate-200/80 bg-white/95 backdrop-blur-md">
-        <div className="container-narrow flex h-16 items-center justify-between px-4 sm:px-6 lg:px-8">
+      <header
+        className={`fixed top-0 z-[100] w-full transition-all duration-normal ease-out ${
+          scrolled
+            ? "border-b border-border bg-base/85 shadow-sm shadow-black/10 backdrop-blur-md"
+            : "border-b border-transparent bg-transparent"
+        }`}
+      >
+        <div className="container-wide flex h-14 items-center justify-between gap-4 sm:h-16">
           <Logo />
 
           <nav
-            className="hidden items-center gap-8 md:flex"
+            className="hidden items-center gap-6 md:flex md:gap-8 lg:gap-10"
             aria-label="Main navigation"
           >
             {NAV_LINKS.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className={`relative text-sm font-medium transition-colors duration-200 hover:text-accent ${
-                  isActive(link.href) ? "text-accent" : "text-slate-text"
+                className={`font-display text-xs font-semibold uppercase tracking-widest transition-colors duration-normal ease-out hover:text-accent active:text-accent ${
+                  isActive(link.href) ? "text-accent" : "text-secondary"
                 }`}
               >
                 {link.label}
-                {isActive(link.href) && (
-                  <span className="absolute -bottom-1 left-0 right-0 h-0.5 rounded-full bg-accent" />
-                )}
               </Link>
             ))}
           </nav>
 
-          <div className="hidden md:block">
-            <Link href="/contact" className="btn-primary text-sm">
-              Get a Free Quote
-            </Link>
-          </div>
-
           <button
             type="button"
-            className="flex h-11 w-11 items-center justify-center rounded-lg text-navy transition-colors hover:bg-slate-100 md:hidden"
+            className="flex h-11 w-11 shrink-0 items-center justify-center text-primary transition-colors hover:text-accent md:hidden"
             onClick={() => setMobileOpen(true)}
             aria-expanded={mobileOpen}
             aria-controls="mobile-menu"
             aria-label="Open menu"
           >
             <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 6h16M4 12h16M4 18h16" />
             </svg>
           </button>
         </div>

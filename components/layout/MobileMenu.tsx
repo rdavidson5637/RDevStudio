@@ -37,30 +37,30 @@ export function MobileMenu({ open, onClose, isActive }: MobileMenuProps) {
   if (!open || typeof document === "undefined") return null;
 
   return createPortal(
-    <div className="md:hidden" role="dialog" aria-modal="true" aria-label="Navigation menu">
+    <div className="md:hidden" role="dialog" aria-modal="true" aria-label="Navigation menu" id="mobile-menu">
       <button
         type="button"
-        className="fixed inset-0 z-[200] bg-navy/60 backdrop-blur-sm"
+        className="fixed inset-0 z-[200] bg-base/80 backdrop-blur-sm"
         onClick={onClose}
         aria-label="Close menu"
       />
 
       <nav
-        className="fixed inset-y-0 right-0 z-[201] flex w-[min(100%,20rem)] flex-col bg-white shadow-2xl animate-slide-in-right"
+        className="fixed inset-y-0 right-0 z-[201] flex w-[min(100%,20rem)] flex-col border-l border-border bg-raised shadow-2xl animate-slide-in-right"
         aria-label="Mobile navigation"
       >
-        <div className="flex items-center justify-between border-b border-slate-100 px-5 py-4">
-          <span className="text-sm font-semibold uppercase tracking-wider text-slate-muted">
+        <div className="flex items-center justify-between border-b border-border px-5 py-4">
+          <span className="font-display text-xs font-semibold uppercase tracking-widest text-tertiary">
             Menu
           </span>
           <button
             type="button"
             onClick={onClose}
-            className="flex h-11 w-11 items-center justify-center rounded-lg text-navy transition-colors hover:bg-slate-100"
+            className="flex h-11 w-11 items-center justify-center text-primary transition-colors hover:text-accent"
             aria-label="Close menu"
           >
             <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M6 18L18 6M6 6l12 12" />
             </svg>
           </button>
         </div>
@@ -71,25 +71,15 @@ export function MobileMenu({ open, onClose, isActive }: MobileMenuProps) {
               key={link.href}
               href={link.href}
               onClick={onClose}
-              className={`rounded-xl px-4 py-4 text-lg font-medium transition-colors ${
+              className={`rounded-none px-4 py-4 font-display text-lg font-bold transition-colors duration-normal ease-out ${
                 isActive(link.href)
-                  ? "bg-accent text-white shadow-sm"
-                  : "text-navy hover:bg-slate-50 active:bg-slate-100"
+                  ? "text-accent"
+                  : "text-primary hover:bg-overlay hover:text-accent"
               }`}
             >
               {link.label}
             </Link>
           ))}
-        </div>
-
-        <div className="border-t border-slate-100 p-4">
-          <Link
-            href="/contact"
-            onClick={onClose}
-            className="btn-primary w-full py-4 text-center text-base"
-          >
-            Get a Free Quote
-          </Link>
         </div>
       </nav>
     </div>,

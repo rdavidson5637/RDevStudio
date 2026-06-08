@@ -13,7 +13,7 @@ export const metadata = createPageMetadata({
 
 export default function WorkPage() {
   return (
-    <div className="section-padding">
+    <div className="section-padding pt-28">
       <div className="container-narrow">
         <PageHeader title="Recent Projects" />
         <div className="grid gap-8 sm:grid-cols-2">

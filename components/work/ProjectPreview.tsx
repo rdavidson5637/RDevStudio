@@ -3,13 +3,14 @@
 import Image from "next/image";
 import { useState } from "react";
 
+import type { ProjectCategory } from "@/lib/constants";
+
 type ProjectPreviewProps = {
   title: string;
   image?: string;
   imageAlt?: string;
-  /** Short looping MP4 — smaller and sharper than GIF. Place in public/images/work/ */
   previewVideo?: string;
-  demo?: boolean;
+  category?: ProjectCategory;
 };
 
 export function ProjectPreview({
@@ -17,7 +18,7 @@ export function ProjectPreview({
   image,
   imageAlt,
   previewVideo,
-  demo,
+  category,
 }: ProjectPreviewProps) {
   const [imageError, setImageError] = useState(false);
   const [videoError, setVideoError] = useState(false);
@@ -25,13 +26,12 @@ export function ProjectPreview({
   const showImage = Boolean(image && imageAlt && !imageError && !showVideo);
 
   return (
-    <div className="relative aspect-[16/10] overflow-hidden bg-gradient-to-br from-slate-800 to-navy">
-      {/* Browser-style frame */}
-      <div className="absolute inset-x-0 top-0 z-20 flex items-center gap-1.5 border-b border-white/10 bg-navy/90 px-3 py-2">
-        <span className="h-2.5 w-2.5 rounded-full bg-red-400/90" aria-hidden="true" />
-        <span className="h-2.5 w-2.5 rounded-full bg-amber-400/90" aria-hidden="true" />
-        <span className="h-2.5 w-2.5 rounded-full bg-emerald-400/90" aria-hidden="true" />
-        <span className="ml-2 truncate text-[10px] text-white/50 sm:text-xs">
+    <div className="relative aspect-[16/10] overflow-hidden bg-overlay">
+      <div className="absolute inset-x-0 top-0 z-20 flex items-center gap-1.5 border-b border-border bg-base/90 px-3 py-2">
+        <span className="h-2 w-2 rounded-full bg-red-400/80" aria-hidden="true" />
+        <span className="h-2 w-2 rounded-full bg-amber-400/80" aria-hidden="true" />
+        <span className="h-2 w-2 rounded-full bg-emerald-400/80" aria-hidden="true" />
+        <span className="ml-2 truncate font-display text-[10px] text-tertiary sm:text-xs">
           {title.toLowerCase().replace(/\s+/g, "")}.co.uk
         </span>
       </div>
@@ -55,20 +55,20 @@ export function ProjectPreview({
             src={image}
             alt={imageAlt}
             fill
-            className="object-cover object-top transition-transform duration-500 group-hover:scale-[1.02]"
+            className="object-cover object-top transition-transform duration-slow group-hover:scale-[1.02]"
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 576px"
             onError={() => setImageError(true)}
           />
         ) : (
-          <div className="flex h-full items-center justify-center bg-gradient-to-br from-navy via-slate-800 to-accent/30">
-            <div className="text-center px-6">
+          <div className="flex h-full items-center justify-center bg-overlay">
+            <div className="px-6 text-center">
               <span
-                className="text-5xl font-bold text-white/15 sm:text-6xl"
+                className="font-display text-5xl font-extrabold text-primary/10 sm:text-6xl"
                 aria-hidden="true"
               >
                 {title.charAt(0)}
               </span>
-              <p className="mt-3 text-xs text-white/40 sm:text-sm">
+              <p className="mt-3 text-xs text-tertiary sm:text-sm">
                 Add preview to public/images/work/
               </p>
             </div>
@@ -77,9 +77,15 @@ export function ProjectPreview({
         )}
       </div>
 
-      {demo && (
-        <span className="absolute bottom-3 right-3 z-20 rounded-full bg-white/95 px-3 py-1 text-xs font-semibold text-navy shadow-sm">
-          Demo
+      {category && (
+        <span
+          className={`absolute bottom-3 right-3 z-20 px-3 py-1 font-display text-[10px] font-semibold uppercase tracking-wider ${
+            category === "Client Work"
+              ? "border border-accent bg-accent-subtle text-accent"
+              : "border border-border bg-base/90 text-tertiary"
+          }`}
+        >
+          {category}
         </span>
       )}
     </div>

@@ -2,58 +2,15 @@
 
 import { useState } from "react";
 import { useForm, ValidationError } from "@formspree/react";
-
-const FORMSPREE_FORM_ID = "mgoqjqve";
-
-const inputClassName =
-  "w-full rounded-lg border border-slate-200 px-4 py-3 text-navy transition-colors focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/20";
-
-const labelClassName = "mb-1.5 block text-sm font-medium text-navy";
-
-function SuccessMessage({ onReset }: { onReset: () => void }) {
-  return (
-    <div
-      className="animate-fade-in rounded-2xl border border-green-200 bg-green-50 p-8 text-center"
-      role="status"
-      aria-live="polite"
-    >
-      <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-green-100">
-        <svg
-          className="h-7 w-7 text-green-600"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-          aria-hidden="true"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M5 13l4 4L19 7"
-          />
-        </svg>
-      </div>
-      <h2 className="text-xl font-bold text-navy">Message sent!</h2>
-      <p className="mt-2 text-slate-text">
-        Thanks for getting in touch. We&apos;ll get back to you within 24
-        hours.
-      </p>
-      <button
-        type="button"
-        onClick={onReset}
-        className="mt-6 text-sm font-medium text-accent transition-colors hover:text-blue-600"
-      >
-        Send another message
-      </button>
-    </div>
-  );
-}
+import { FormSuccess } from "@/components/contact/FormSuccess";
+import { inputClassName, labelClassName } from "@/components/contact/form-styles";
+import { FORMSPREE_FORM_ID } from "@/lib/constants";
 
 function ContactFormFields({ onReset }: { onReset: () => void }) {
   const [state, handleSubmit] = useForm(FORMSPREE_FORM_ID);
 
   if (state.succeeded) {
-    return <SuccessMessage onReset={onReset} />;
+    return <FormSuccess onReset={onReset} />;
   }
 
   return (
@@ -104,7 +61,7 @@ function ContactFormFields({ onReset }: { onReset: () => void }) {
           prefix="Email"
           field="email"
           errors={state.errors}
-          className="mt-1.5 text-sm text-red-600"
+          className="mt-1.5 text-sm text-red-400"
         />
       </div>
 
@@ -138,19 +95,19 @@ function ContactFormFields({ onReset }: { onReset: () => void }) {
           prefix="Message"
           field="message"
           errors={state.errors}
-          className="mt-1.5 text-sm text-red-600"
+          className="mt-1.5 text-sm text-red-400"
         />
       </div>
 
       <ValidationError
         errors={state.errors}
-        className="rounded-lg bg-red-50 px-4 py-3 text-sm text-red-600"
+        className="border border-red-500/30 bg-red-500/10 px-4 py-3 text-sm text-red-400"
       />
 
       <button
         type="submit"
         disabled={state.submitting}
-        className="btn-primary w-full disabled:cursor-not-allowed disabled:opacity-70"
+        className="btn-primary disabled:cursor-not-allowed disabled:opacity-70"
       >
         {state.submitting ? "Sending..." : "Send Message"}
       </button>

@@ -1,7 +1,7 @@
 import { WHATSAPP_NUMBER } from "@/lib/constants";
 
 export function WhatsAppButton() {
-  const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER.replace(/\+/g, "")}?text=${encodeURIComponent("Hi, I'd like to enquire about a website for my business.")}`;
+  const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER.replace(/\+/g, "")}?text=${encodeURIComponent("Hi, I'd like to talk about a project.")}`;
 
   return (
     <a

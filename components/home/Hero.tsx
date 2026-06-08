@@ -1,53 +1,67 @@
 import Link from "next/link";
 
+const REVEAL_DELAYS = [
+  "hero-reveal-delay-1",
+  "hero-reveal-delay-2",
+  "hero-reveal-delay-3",
+  "hero-reveal-delay-4",
+  "hero-reveal-delay-5",
+] as const;
+
 export function Hero() {
   return (
-    <section className="relative overflow-hidden gradient-mesh">
-      <div className="absolute inset-0 grid-pattern opacity-60" />
-      <div className="absolute -right-32 -top-32 h-96 w-96 rounded-full bg-accent/10 blur-3xl" />
-      <div className="absolute -bottom-32 -left-32 h-96 w-96 rounded-full bg-navy/5 blur-3xl" />
+    <section className="relative flex min-h-[100svh] min-h-[100dvh] items-center overflow-hidden bg-base">
+      <div
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_20%_30%,rgb(202_255_0/0.07)_0%,transparent_55%)]"
+        aria-hidden="true"
+      />
+      <div
+        className="pointer-events-none absolute -right-16 top-1/4 font-display text-[clamp(8rem,24vw,22rem)] font-extrabold leading-none text-primary/[0.02] sm:-right-24"
+        aria-hidden="true"
+      >
+        R
+      </div>
 
-      <div className="container-narrow relative section-padding pb-16 lg:pb-20">
-        <div className="mx-auto max-w-4xl text-center">
-          <p className="mb-6 inline-flex items-center gap-2 rounded-full border border-accent/20 bg-white/80 px-4 py-2 text-sm font-medium text-accent shadow-sm backdrop-blur-sm">
-            <span className="h-2 w-2 rounded-full bg-emerald-500" aria-hidden="true" />
-            Carrickfergus · Northern Ireland
+      <div className="container-wide relative w-full pb-16 pt-24 sm:pb-20 sm:pt-28 lg:pb-24">
+        <div className="max-w-5xl">
+          <p className={`label-caps hero-reveal ${REVEAL_DELAYS[0]}`}>
+            RDev Studio
           </p>
-          <h1 className="text-4xl font-bold tracking-tight text-navy sm:text-5xl lg:text-6xl lg:leading-[1.1]">
-            Modern Websites for{" "}
-            <span className="bg-gradient-to-r from-accent to-blue-600 bg-clip-text text-transparent">
-              Local Businesses
+
+          <h1 className="mt-5 text-balance sm:mt-8">
+            <span
+              className={`block font-display text-hero font-extrabold tracking-tight text-primary hero-reveal ${REVEAL_DELAYS[1]}`}
+            >
+              We build brands
+            </span>
+            <span
+              className={`block font-display text-hero font-extrabold tracking-tight text-primary hero-reveal ${REVEAL_DELAYS[2]}`}
+            >
+              that{" "}
+              <span className="text-accent">work</span> online.
             </span>
           </h1>
-          <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-slate-text sm:text-xl">
-            We build fast, affordable websites for restaurants, tradespeople,
-            and salons across Northern Ireland. Live in 7 days or less.
+
+          <p
+            className={`mt-6 max-w-xl text-base leading-relaxed text-secondary sm:mt-8 sm:text-lg hero-reveal ${REVEAL_DELAYS[3]}`}
+          >
+            Website design, social media, and content for small businesses —
+            based in Carrickfergus, working with clients anywhere.
           </p>
-          <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <Link href="/work" className="btn-primary w-full sm:w-auto">
-              See Our Work
-            </Link>
-            <Link href="/contact" className="btn-secondary w-full sm:w-auto">
-              Get a Free Quote
+
+          <div className={`mt-8 sm:mt-10 hero-reveal ${REVEAL_DELAYS[4]}`}>
+            <Link href="#work" className="btn-secondary">
+              See our work
             </Link>
           </div>
-
-          <dl className="mt-14 grid grid-cols-2 gap-6 border-t border-slate-200/80 pt-10 sm:grid-cols-4">
-            {[
-              { label: "Starting from", value: "£500" },
-              { label: "Typical delivery", value: "7 days" },
-              { label: "Pages included", value: "5" },
-              { label: "Based in", value: "NI" },
-            ].map((stat) => (
-              <div key={stat.label}>
-                <dt className="text-xs font-medium uppercase tracking-wider text-slate-muted">
-                  {stat.label}
-                </dt>
-                <dd className="mt-1 text-2xl font-bold text-navy">{stat.value}</dd>
-              </div>
-            ))}
-          </dl>
         </div>
+      </div>
+
+      <div
+        className={`absolute bottom-8 left-1/2 hidden -translate-x-1/2 hero-reveal ${REVEAL_DELAYS[4]} lg:block`}
+        aria-hidden="true"
+      >
+        <span className="block h-8 w-px bg-border-strong" />
       </div>
     </section>
   );

@@ -1,29 +1,28 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Bricolage_Grotesque, Newsreader } from "next/font/google";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { WhatsAppButton } from "@/components/layout/WhatsAppButton";
-import { SITE_NAME, SITE_URL } from "@/lib/constants";
+import { rootMetadata } from "@/lib/metadata";
 import "./globals.css";
 
-const inter = Inter({
+const bricolage = Bricolage_Grotesque({
   subsets: ["latin"],
-  variable: "--font-inter",
+  variable: "--font-bricolage",
   display: "swap",
+  weight: ["400", "500", "600", "700", "800"],
 });
 
-export const metadata: Metadata = {
-  title: {
-    default: `${SITE_NAME} | Modern Websites for Local Businesses`,
-    template: `%s | ${SITE_NAME}`,
-  },
-  description:
-    "RDev Studio builds fast, affordable websites for small and medium businesses in Northern Ireland. Based in Carrickfergus. Live in 7 days.",
-  metadataBase: new URL(SITE_URL),
-  icons: {
-    icon: "/favicon.svg",
-  },
-};
+const newsreader = Newsreader({
+  subsets: ["latin"],
+  variable: "--font-newsreader",
+  display: "swap",
+  weight: ["400", "500", "600", "700"],
+  style: ["normal", "italic"],
+  adjustFontFallback: false,
+});
+
+export const metadata: Metadata = rootMetadata;
 
 export default function RootLayout({
   children,
@@ -31,10 +30,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en-GB" className={inter.variable}>
-      <body className="font-sans">
+    <html lang="en-GB" className={`${bricolage.variable} ${newsreader.variable}`}>
+      <body className="font-body">
         <Header />
-        <main className="min-h-[calc(100vh-16rem)]">{children}</main>
+        <main>{children}</main>
         <Footer />
         <WhatsAppButton />
       </body>

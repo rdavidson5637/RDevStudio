@@ -13,7 +13,7 @@ export const metadata = createPageMetadata({
 
 export default function ServicesPage() {
   return (
-    <div className="section-padding">
+    <div className="section-padding pt-28">
       <div className="container-narrow">
         <PageHeader
           title="Simple, Transparent Pricing"

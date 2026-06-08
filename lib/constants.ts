@@ -1,14 +1,84 @@
 export const SITE_NAME = "RDev Studio";
 export const SITE_URL = "https://rdevstudio.co.uk";
+export const SITE_TITLE =
+  "RDev Studio — Web Design & Social Media for Small Businesses";
+export const SITE_DESCRIPTION =
+  "RDev Studio builds websites, manages social media, and creates content for small businesses. Based in Carrickfergus, Northern Ireland.";
 export const EMAIL = "ryan@rdevstudio.co.uk";
 export const CONTACT_EMAIL = "ryan@rdevstudio.co.uk";
 export const WHATSAPP_NUMBER = "+447378420418";
+export const FORMSPREE_FORM_ID = "mgoqjqve";
+
+export const CONTACT_SERVICE_OPTIONS = [
+  "Website",
+  "Social Media",
+  "Content Creation",
+  "Not sure yet",
+] as const;
+
+export const SITE_TAGLINE =
+  "Websites, social media & content for small businesses.";
 
 export const NAV_LINKS = [
-  { href: "/", label: "Home" },
-  { href: "/services", label: "Services" },
   { href: "/work", label: "Work" },
+  { href: "/services", label: "Services" },
+  { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
+] as const;
+
+export const SOCIAL_LINKS = [
+  { href: "#", label: "Instagram", icon: "instagram" as const },
+  { href: "#", label: "LinkedIn", icon: "linkedin" as const },
+] as const;
+
+export const SERVICES = [
+  {
+    number: "01",
+    title: "Website Design & Build",
+    description:
+      "Custom sites built fast with modern tools — sharp, responsive, and ready to launch.",
+  },
+  {
+    number: "02",
+    title: "Social Media Management",
+    description:
+      "Strategy, scheduling, content, and growth — your channels handled properly.",
+  },
+  {
+    number: "03",
+    title: "Content Creation",
+    description:
+      "Posts, copy, graphics, and branded visuals that sound and look like you.",
+  },
+] as const;
+
+export const STUDIO_STATEMENT =
+  "We build brands that feel intentional — websites, social, and content for businesses across Northern Ireland and beyond.";
+
+export const ABOUT_BLURB =
+  "RDev Studio is a one-person creative studio based in Carrickfergus, Northern Ireland. I build websites, manage social media, and create content for small businesses who want to look brilliant online — without agency prices.";
+
+export const HOW_WE_WORK = [
+  {
+    title: "Discover",
+    description:
+      "I learn about your business, audience, and goals — what you do, who you serve, and what you need to stand out.",
+  },
+  {
+    title: "Create",
+    description:
+      "I design, write, and build with your brand at the centre. Every detail considered, nothing generic.",
+  },
+  {
+    title: "Launch",
+    description:
+      "You go live with everything set up and ready to work. Hosting, domains, and handover handled properly.",
+  },
+  {
+    title: "Support",
+    description:
+      "Ongoing help when you need it — updates, content, and advice without the agency runaround.",
+  },
 ] as const;
 
 export const SOCIAL_PROOF_ITEMS = [
@@ -83,15 +153,18 @@ export const FAQ_ITEMS = [
  * - Animated loop (recommended): public/images/work/{id}-preview.mp4
  *   Short MP4 loops look sharper and load faster than GIFs.
  */
+export type ProjectCategory = "Client Work" | "Demo";
+
 export const PROJECTS = [
   {
     id: "shelterlink",
     title: "ShelterLink",
+    category: "Client Work" as const,
     type: "Volunteer Management Web App",
     description:
-      "Custom web application built for Assisi Animal Sanctuary in Belfast. Features volunteer scheduling, role management, shift tracking and a full admin dashboard.",
+      "Volunteer management web app built for Assisi Animal Sanctuary, Belfast — scheduling, roles, shifts, and admin dashboard.",
     tags: ["Node.js", "Express", "MySQL", "JavaScript"],
-    buttonLabel: "View Project",
+    buttonLabel: "View project",
     href: "https://github.com/rdavidson5637/ShelterLink",
     image: "/images/work/shelterlink.png",
     imageAlt:
@@ -100,13 +173,13 @@ export const PROJECTS = [
   {
     id: "carrick-plumbing",
     title: "Carrick Plumbing Co",
+    category: "Demo" as const,
     type: "Local Trades Website",
     description:
-      "5-page website for a local plumbing business. Includes service pages, contact form, Google Maps integration and mobile-first design.",
+      "Demo site for a local plumbing business — service pages, contact form, and mobile-first design.",
     tags: ["Next.js", "Tailwind", "Vercel"],
-    buttonLabel: "View Site",
+    buttonLabel: "View site",
     href: "https://carrick-plumbing-co.vercel.app/",
-    demo: true,
     image: "/images/work/carrick-plumbing.png",
     imageAlt: "Carrick Plumbing Co website homepage for a local plumbing business",
     // previewVideo: "/images/work/carrick-plumbing-preview.mp4",
@@ -114,13 +187,13 @@ export const PROJECTS = [
   {
     id: "anchor-restaurant",
     title: "The Anchor Restaurant",
+    category: "Demo" as const,
     type: "Restaurant Website",
     description:
-      "Modern restaurant website with menu display, online enquiry form, opening hours and Google Maps embed.",
+      "Demo restaurant site with menu display, enquiry form, opening hours, and maps integration.",
     tags: ["Next.js", "Tailwind", "Vercel"],
-    buttonLabel: "View Site",
+    buttonLabel: "View site",
     href: "https://the-anchor-restaurant.vercel.app/",
-    demo: true,
     image: "/images/work/anchor-restaurant.png",
     imageAlt: "The Anchor Restaurant website with menu and booking enquiry",
     // previewVideo: "/images/work/anchor-restaurant-preview.mp4",
@@ -128,13 +201,13 @@ export const PROJECTS = [
   {
     id: "harbour-hair",
     title: "Harbour Hair Studio",
+    category: "Demo" as const,
     type: "Salon Website",
     description:
-      "Clean, elegant website for a local hair salon. Includes services list, pricing, gallery placeholder and booking enquiry form.",
+      "Demo salon site with services, pricing, gallery, and booking enquiry form.",
     tags: ["Next.js", "Tailwind", "Vercel"],
-    buttonLabel: "View Site",
+    buttonLabel: "View site",
     href: "https://harbour-hair-studio11.vercel.app/",
-    demo: true,
     image: "/images/work/harbour-hair.png",
     imageAlt: "Harbour Hair Studio salon website with services and gallery",
     // previewVideo: "/images/work/harbour-hair-preview.mp4",

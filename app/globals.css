@@ -1,51 +1,150 @@
+@import "./tokens.css";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 4.5rem;
+  overflow-x: hidden;
 }
 
 body {
-  @apply bg-white text-navy antialiased;
+  background-color: var(--color-bg-base);
+  color: var(--color-text-primary);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: var(--leading-relaxed);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+::selection {
+  background-color: var(--color-selection-bg);
+  color: var(--color-text-primary);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+@layer base {
+  select option {
+    background-color: var(--color-bg-raised);
+    color: var(--color-text-primary);
+  }
 }
 
 @layer components {
   .btn-primary {
-    @apply inline-flex items-center justify-center rounded-xl bg-accent px-6 py-3.5 text-sm font-semibold text-white shadow-md shadow-accent/20 transition-all duration-200 hover:bg-blue-600 hover:shadow-lg hover:shadow-accent/25 hover:-translate-y-0.5 active:translate-y-0 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2;
+    @apply inline-flex w-full items-center justify-center rounded-none border border-accent bg-accent px-6 py-3.5 font-display text-sm font-semibold uppercase tracking-widest text-on-accent transition-all duration-normal ease-out hover:border-accent hover:bg-transparent hover:text-accent active:scale-[0.98] focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-base disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto;
   }
 
   .btn-secondary {
-    @apply inline-flex items-center justify-center rounded-xl border-2 border-navy/15 bg-white px-6 py-3.5 text-sm font-semibold text-navy transition-all duration-200 hover:border-navy hover:bg-navy hover:text-white hover:-translate-y-0.5 active:translate-y-0 focus:outline-none focus:ring-2 focus:ring-navy focus:ring-offset-2;
+    @apply inline-flex w-full items-center justify-center rounded-none border border-border-strong bg-transparent px-6 py-3.5 font-display text-sm font-semibold uppercase tracking-widest text-primary transition-all duration-normal ease-out hover:border-accent hover:bg-accent hover:text-on-accent active:scale-[0.98] focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-base sm:w-auto;
   }
 
   .btn-outline-accent {
-    @apply inline-flex items-center justify-center rounded-xl border-2 border-accent/30 bg-white px-6 py-3.5 text-sm font-semibold text-accent transition-all duration-200 hover:border-accent hover:bg-accent hover:text-white hover:-translate-y-0.5 active:translate-y-0 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2;
+    @apply inline-flex w-full items-center justify-center rounded-none border border-border-accent bg-transparent px-6 py-3.5 font-display text-sm font-semibold uppercase tracking-widest text-accent transition-all duration-normal ease-out hover:border-accent hover:bg-accent hover:text-on-accent active:scale-[0.98] focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-base sm:w-auto;
   }
 
   .section-padding {
-    @apply px-4 py-20 sm:px-6 lg:px-8 lg:py-28;
+    @apply px-4 py-18 sm:px-6 sm:py-22 lg:px-8 lg:py-28;
+  }
+
+  .section-heading-gap {
+    @apply mb-10 sm:mb-12 lg:mb-14;
   }
 
   .container-narrow {
-    @apply mx-auto max-w-6xl;
+    @apply mx-auto max-w-narrow;
+  }
+
+  .container-wide {
+    @apply mx-auto w-full max-w-wide;
   }
 
   .card-hover {
-    @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover;
+    @apply transition-all duration-slow ease-out hover:-translate-y-0.5;
   }
 
-  .gradient-mesh {
-    background-image:
-      radial-gradient(at 0% 0%, rgb(59 130 246 / 0.12) 0, transparent 50%),
-      radial-gradient(at 100% 0%, rgb(15 23 42 / 0.06) 0, transparent 50%),
-      radial-gradient(at 50% 100%, rgb(59 130 246 / 0.08) 0, transparent 50%);
+  .editorial-rule {
+    @apply h-px w-full bg-border;
   }
 
-  .grid-pattern {
-    background-image:
-      linear-gradient(rgb(15 23 42 / 0.03) 1px, transparent 1px),
-      linear-gradient(90deg, rgb(15 23 42 / 0.03) 1px, transparent 1px);
-    background-size: 48px 48px;
+  .label-caps {
+    @apply font-display text-xs font-semibold uppercase tracking-widest text-accent;
+  }
+
+  .heading-display {
+    @apply font-display font-bold tracking-tight text-primary;
+  }
+
+  .section-heading {
+    @apply heading-display text-2xl sm:text-4xl lg:text-5xl;
+  }
+
+  .link-editorial {
+    @apply font-display text-xs font-semibold uppercase tracking-widest text-secondary transition-colors duration-normal ease-out hover:text-accent;
+  }
+
+  .interactive-surface {
+    @apply border border-border bg-raised transition-all duration-normal ease-out hover:border-accent/40;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .hero-reveal {
+    opacity: 0;
+    transform: translateY(1.25rem);
+    animation: hero-reveal 0.9s var(--ease-out) forwards;
+  }
+
+  .hero-reveal-delay-1 {
+    animation-delay: 0.05s;
+  }
+
+  .hero-reveal-delay-2 {
+    animation-delay: 0.15s;
+  }
+
+  .hero-reveal-delay-3 {
+    animation-delay: 0.3s;
+  }
+
+  .hero-reveal-delay-4 {
+    animation-delay: 0.45s;
+  }
+
+  .hero-reveal-delay-5 {
+    animation-delay: 0.6s;
+  }
+}
+
+@keyframes hero-reveal {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .hero-reveal {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
+
+  .card-hover {
+    transform: none;
   }
 }

@@ -12,7 +12,7 @@ export const metadata = createPageMetadata({
 
 export default function ContactPage() {
   return (
-    <div className="section-padding">
+    <div className="section-padding pt-28">
       <div className="container-narrow">
         <PageHeader
           title="Let's Talk"

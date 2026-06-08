@@ -1,15 +1,17 @@
 import Link from "next/link";
+import type { ProjectCategory } from "@/lib/constants";
+import { ProjectTag } from "@/components/home/ProjectTag";
 import { ProjectPreview } from "./ProjectPreview";
 
 type Project = {
   id: string;
   title: string;
+  category: ProjectCategory;
   type: string;
   description: string;
   tags: readonly string[];
   buttonLabel: string;
   href: string;
-  demo?: boolean;
   image?: string;
   imageAlt?: string;
   previewVideo?: string;
@@ -21,29 +23,30 @@ type ProjectCardProps = {
 
 export function ProjectCard({ project }: ProjectCardProps) {
   return (
-    <article className="group card-hover flex flex-col overflow-hidden rounded-2xl border border-slate-200/80 bg-white shadow-card">
+    <article className="group card-hover flex flex-col overflow-hidden border border-border bg-raised">
       <ProjectPreview
         title={project.title}
         image={project.image}
         imageAlt={project.imageAlt}
         previewVideo={project.previewVideo}
-        demo={project.demo}
+        category={project.category}
       />
       <div className="flex flex-1 flex-col p-6 sm:p-8">
-        <p className="text-sm font-semibold uppercase tracking-wide text-accent">
+        <ProjectTag category={project.category} />
+        <p className="mt-3 text-[10px] font-display font-semibold uppercase tracking-widest text-tertiary">
           {project.type}
         </p>
-        <h2 className="mt-2 text-xl font-bold text-navy sm:text-2xl">
+        <h2 className="heading-display mt-2 text-xl sm:text-2xl">
           {project.title}
         </h2>
-        <p className="mt-3 flex-1 leading-relaxed text-slate-text">
+        <p className="mt-3 flex-1 leading-relaxed text-secondary">
           {project.description}
         </p>
         <ul className="mt-5 flex flex-wrap gap-2" aria-label="Technologies used">
           {project.tags.map((tag) => (
             <li
               key={tag}
-              className="rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-xs font-medium text-navy"
+              className="border border-border px-3 py-1 text-xs font-medium text-tertiary"
             >
               {tag}
             </li>

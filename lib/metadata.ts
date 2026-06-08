@@ -1,36 +1,68 @@
 import type { Metadata } from "next";
-import { SITE_NAME, SITE_URL } from "./constants";
+import { SITE_DESCRIPTION, SITE_NAME, SITE_TITLE, SITE_URL } from "./constants";
 
 type PageMeta = {
   title: string;
-  description: string;
+  description?: string;
   path: string;
 };
 
 export function createPageMetadata({
   title,
-  description,
+  description = SITE_DESCRIPTION,
   path,
 }: PageMeta): Metadata {
-  const fullTitle =
-    title === "Home"
-      ? `${SITE_NAME} | Modern Websites for Local Businesses`
-      : `${title} | ${SITE_NAME}`;
+  const isHome = path === "/";
+  const pageTitle = isHome ? SITE_TITLE : `${title} | ${SITE_NAME}`;
+  const url = `${SITE_URL}${path === "/" ? "" : path}`;
 
   return {
-    title: fullTitle,
+    title: isHome ? { absolute: SITE_TITLE } : title,
     description,
-    metadataBase: new URL(SITE_URL),
     alternates: {
       canonical: path,
     },
     openGraph: {
-      title: fullTitle,
+      title: pageTitle,
       description,
-      url: `${SITE_URL}${path === "/" ? "" : path}`,
+      url,
       siteName: SITE_NAME,
       locale: "en_GB",
       type: "website",
     },
+    twitter: {
+      card: "summary",
+      title: pageTitle,
+      description,
+    },
   };
 }
+
+export const rootMetadata: Metadata = {
+  title: {
+    default: SITE_TITLE,
+    template: `%s | ${SITE_NAME}`,
+  },
+  description: SITE_DESCRIPTION,
+  metadataBase: new URL(SITE_URL),
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
+    url: SITE_URL,
+    siteName: SITE_NAME,
+    locale: "en_GB",
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
+  },
+  icons: {
+    icon: "/favicon.svg",
+    shortcut: "/favicon.svg",
+  },
+};

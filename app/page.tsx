@@ -1,14 +1,13 @@
 import { Hero } from "@/components/home/Hero";
-import { SocialProofBar } from "@/components/home/SocialProofBar";
-import { ServicePreview } from "@/components/home/ServicePreview";
-import { HowItWorks } from "@/components/home/HowItWorks";
-import { HomeCTA } from "@/components/home/HomeCTA";
+import { SelectedWork } from "@/components/home/SelectedWork";
+import { ServicesTrio } from "@/components/home/ServicesTrio";
+import { HowWeWork } from "@/components/home/HowWeWork";
+import { AboutClose } from "@/components/home/AboutClose";
+import { HomeContact } from "@/components/home/HomeContact";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata = createPageMetadata({
   title: "Home",
-  description:
-    "RDev Studio builds modern, affordable websites for local businesses in Northern Ireland. Restaurants, tradespeople, and salons — live in 7 days from £500.",
   path: "/",
 });
 
@@ -16,10 +15,11 @@ export default function HomePage() {
   return (
     <>
       <Hero />
-      <SocialProofBar />
-      <ServicePreview />
-      <HowItWorks />
-      <HomeCTA />
+      <SelectedWork />
+      <ServicesTrio />
+      <HowWeWork />
+      <AboutClose />
+      <HomeContact />
     </>
   );
 }
