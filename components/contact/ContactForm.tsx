@@ -3,7 +3,11 @@
 import { useState } from "react";
 import { useForm, ValidationError } from "@formspree/react";
 import { FormSuccess } from "@/components/contact/FormSuccess";
-import { inputClassName, labelClassName } from "@/components/contact/form-styles";
+import {
+  inputClassName,
+  labelClassName,
+  submitButtonClassName,
+} from "@/components/contact/form-styles";
 import { FORMSPREE_FORM_ID } from "@/lib/constants";
 
 function ContactFormFields({ onReset }: { onReset: () => void }) {
@@ -107,9 +111,9 @@ function ContactFormFields({ onReset }: { onReset: () => void }) {
       <button
         type="submit"
         disabled={state.submitting}
-        className="btn-primary disabled:cursor-not-allowed disabled:opacity-70"
+        className={submitButtonClassName}
       >
-        {state.submitting ? "Sending..." : "Send Message"}
+        {state.submitting ? "Sending..." : "Send message"}
       </button>
     </form>
   );

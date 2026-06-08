@@ -13,6 +13,7 @@ type ProjectPreviewProps = {
   category?: ProjectCategory;
   /** Clean screenshot — no browser chrome */
   simple?: boolean;
+  className?: string;
 };
 
 export function ProjectPreview({
@@ -22,6 +23,7 @@ export function ProjectPreview({
   previewVideo,
   category,
   simple = false,
+  className = "",
 }: ProjectPreviewProps) {
   const [imageError, setImageError] = useState(false);
   const [videoError, setVideoError] = useState(false);
@@ -29,7 +31,9 @@ export function ProjectPreview({
   const showImage = Boolean(image && imageAlt && !imageError && !showVideo);
 
   return (
-    <div className="relative aspect-[16/10] overflow-hidden bg-base">
+    <div
+      className={`relative aspect-[16/10] overflow-hidden bg-base ${className}`}
+    >
       {showVideo ? (
         <video
           autoPlay
@@ -77,13 +81,7 @@ export function ProjectPreview({
       )}
 
       {category && !simple && (
-        <span
-          className={`absolute bottom-3 right-3 z-10 px-2.5 py-1 text-xs font-medium ${
-            category === "Client Work"
-              ? "bg-accent text-on-accent"
-              : "bg-base/90 text-primary"
-          }`}
-        >
+        <span className="absolute bottom-3 right-3 z-10 rounded-full border border-white/20 bg-base/80 px-2 py-0.5 text-xs font-medium text-white/70 backdrop-blur-sm">
           {category}
         </span>
       )}

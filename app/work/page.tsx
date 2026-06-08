@@ -19,9 +19,14 @@ export default function WorkPage() {
           title="My work"
           subtitle="Websites, apps, and demo projects built for local businesses across Northern Ireland."
         />
-        <div className="grid gap-8 sm:grid-cols-2">
-          {PROJECTS.map((project) => (
-            <ProjectCard key={project.id} project={project} />
+        <div className="flex flex-col gap-8">
+          {PROJECTS.map((project, index) => (
+            <ProjectCard
+              key={project.id}
+              project={project}
+              alternating
+              reverse={index % 2 === 1}
+            />
           ))}
         </div>
         <WorkCTA />

@@ -1,5 +1,11 @@
 @import "./tokens.css";
 
+:root {
+  --accent: #F59E0B;
+  --accent-hover: #D97706;
+  --accent-light: #FEF3C7;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -79,6 +85,15 @@ body {
     @apply text-xs font-semibold uppercase tracking-wider text-secondary;
   }
 
+  .section-label {
+    @apply mb-2 inline-flex items-center text-xs uppercase tracking-widest text-accent;
+  }
+
+  .section-label::before {
+    content: "";
+    @apply mr-2 block h-3 w-0.5 shrink-0 bg-accent;
+  }
+
   .heading-display {
     @apply font-display font-bold tracking-tight text-primary;
   }
@@ -99,17 +114,24 @@ body {
     text-wrap: balance;
   }
 
-  .hero-reveal {
-    opacity: 0;
-    transform: translateY(1rem);
-    animation: hero-reveal 0.8s var(--ease-out) forwards;
+  .hero-heading {
+    animation: fadeUp 0.6s ease forwards;
   }
 
-  .hero-reveal-delay-1 { animation-delay: 0.05s; }
-  .hero-reveal-delay-2 { animation-delay: 0.12s; }
-  .hero-reveal-delay-3 { animation-delay: 0.22s; }
-  .hero-reveal-delay-4 { animation-delay: 0.32s; }
-  .hero-reveal-delay-5 { animation-delay: 0.42s; }
+  .hero-sub {
+    opacity: 0;
+    animation: fadeUp 0.6s ease 0.1s forwards;
+  }
+
+  .hero-trust {
+    opacity: 0;
+    animation: fadeUp 0.6s ease 0.2s forwards;
+  }
+
+  .hero-ctas {
+    opacity: 0;
+    animation: fadeUp 0.6s ease 0.3s forwards;
+  }
 
   .hero-bg-type {
     position: absolute;
@@ -129,17 +151,6 @@ body {
     transform: translate(18%, -52%);
   }
 
-  .hero-accent-line {
-    display: block;
-    height: 1px;
-    width: 3.5rem;
-    background-color: var(--color-accent);
-    transform-origin: left center;
-    transform: scaleX(0);
-    animation: hero-line-draw 0.8s var(--ease-out) forwards;
-    animation-delay: 0.2s;
-  }
-
   .whatsapp-fab {
     opacity: 0;
     transform: translateY(1rem);
@@ -147,16 +158,14 @@ body {
   }
 }
 
-@keyframes hero-reveal {
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
   to {
     opacity: 1;
     transform: translateY(0);
-  }
-}
-
-@keyframes hero-line-draw {
-  to {
-    transform: scaleX(1);
   }
 }
 
@@ -169,8 +178,10 @@ body {
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .hero-reveal { opacity: 1; transform: none; animation: none; }
-  .hero-accent-line { transform: scaleX(1); animation: none; }
+  .hero-heading,
+  .hero-sub,
+  .hero-trust,
+  .hero-ctas { opacity: 1; transform: none; animation: none; }
   .whatsapp-fab { opacity: 1; transform: none; animation: none; }
   .card-hover { transform: none; }
 }

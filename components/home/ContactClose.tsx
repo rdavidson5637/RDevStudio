@@ -7,8 +7,8 @@ export function ContactClose() {
       <div className="container-wide">
         <div className="grid gap-12 lg:grid-cols-2 lg:items-end">
           <div>
-            <p className="label-caps">Get in touch</p>
-            <h2 className="heading-display mt-3 text-4xl sm:text-5xl lg:text-6xl">
+            <p className="section-label">Get in touch</p>
+            <h2 className="heading-display text-4xl sm:text-5xl lg:text-6xl">
               Have a project
               <br />
               in mind?

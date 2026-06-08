@@ -35,7 +35,7 @@
   --color-selection-bg: #3b82f640;
 
   /* ── Typography: families ────────────────────────────────── */
-  --font-display: var(--font-bricolage), system-ui, sans-serif;
+  /* --font-display is injected by next/font on <html> */
   --font-body: var(--font-newsreader), Georgia, "Times New Roman", serif;
 
   /* ── Typography: scale ───────────────────────────────────── */

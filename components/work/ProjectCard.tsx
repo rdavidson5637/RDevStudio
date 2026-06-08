@@ -10,6 +10,7 @@ export type Project = {
   type: string;
   summary: string;
   description: string;
+  outcome: string;
   highlights: readonly string[];
   tags: readonly string[];
   buttonLabel: string;
@@ -22,9 +23,16 @@ export type Project = {
 type ProjectCardProps = {
   project: Project;
   compact?: boolean;
+  alternating?: boolean;
+  reverse?: boolean;
 };
 
-export function ProjectCard({ project, compact = false }: ProjectCardProps) {
+export function ProjectCard({
+  project,
+  compact = false,
+  alternating = false,
+  reverse = false,
+}: ProjectCardProps) {
   const LinkIcon = (
     <svg
       className="h-3.5 w-3.5"
@@ -64,16 +72,41 @@ export function ProjectCard({ project, compact = false }: ProjectCardProps) {
     );
 
   return (
-    <article className="group flex flex-col overflow-hidden rounded-md border border-border-strong bg-raised transition-[transform,border-color] duration-[250ms] ease-out hover:-translate-y-1 hover:border-white/40">
-      <ProjectPreview
-        title={project.title}
-        image={project.image}
-        imageAlt={project.imageAlt}
-        previewVideo={project.previewVideo}
-        simple
-      />
+    <article
+      className={`group overflow-hidden rounded-md border border-border-strong bg-raised transition-[transform,border-color] duration-[250ms] ease-out hover:-translate-y-1 hover:border-white/40 ${
+        alternating
+          ? reverse
+            ? "flex flex-col md:flex-row-reverse"
+            : "flex flex-col md:flex-row"
+          : "flex flex-col"
+      }`}
+    >
+      <div
+        className={
+          alternating
+            ? "relative md:w-[60%] md:shrink-0"
+            : "relative w-full"
+        }
+      >
+        <ProjectPreview
+          title={project.title}
+          image={project.image}
+          imageAlt={project.imageAlt}
+          previewVideo={project.previewVideo}
+          simple
+          className={
+            alternating
+              ? "aspect-[16/10] md:aspect-auto md:h-full md:min-h-[280px]"
+              : ""
+          }
+        />
+      </div>
 
-      <div className={`flex flex-1 flex-col ${compact ? "p-5 sm:p-6" : "p-6 sm:p-7"}`}>
+      <div
+        className={`flex flex-1 flex-col ${
+          alternating ? "md:w-[40%] md:justify-center" : ""
+        } ${compact ? "p-5 sm:p-6" : "p-6 sm:p-7"}`}
+      >
         <div className="flex flex-wrap items-center gap-2">
           <ProjectTag category={project.category} />
           <span className="text-sm text-secondary">{project.type}</span>
@@ -88,6 +121,8 @@ export function ProjectCard({ project, compact = false }: ProjectCardProps) {
         <p className="mt-3 flex-1 text-base leading-relaxed text-primary/90">
           {project.description}
         </p>
+
+        <p className="mt-2 text-sm font-medium text-accent">{project.outcome}</p>
 
         {!compact && (
           <ul className="mt-4 flex flex-wrap gap-2" aria-label="Key features">

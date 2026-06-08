@@ -18,10 +18,10 @@ const config: Config = {
         secondary: "var(--color-text-secondary)",
         tertiary: "var(--color-text-tertiary)",
         accent: {
-          DEFAULT: "rgb(var(--color-accent-rgb) / <alpha-value>)",
-          hover: "var(--color-accent-hover)",
-          muted: "var(--color-accent-muted)",
-          subtle: "var(--color-accent-subtle)",
+          DEFAULT: "#F59E0B",
+          hover: "#D97706",
+          light: "#FEF3C7",
+          dark: "#92400E",
         },
         border: {
           DEFAULT: "var(--color-border)",
@@ -40,7 +40,7 @@ const config: Config = {
         },
       },
       fontFamily: {
-        display: ["var(--font-bricolage)", "system-ui", "sans-serif"],
+        display: ['"DM Serif Display"', "Georgia", "serif"],
         sans: ["var(--font-newsreader)", "Georgia", "serif"],
         body: ["var(--font-newsreader)", "Georgia", "serif"],
       },

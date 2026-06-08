@@ -40,20 +40,26 @@ export const SERVICES = [
   {
     number: "01",
     title: "Website Design & Build",
+    price: "from £650",
+    priceNote: "one-off",
     description:
-      "Custom sites built fast with modern tools — sharp, responsive, and ready to launch.",
+      "Your business online in 7 days. Looks professional, works on every device, and doesn't cost agency prices.",
   },
   {
     number: "02",
     title: "Social Media Management",
+    price: "from £150/mo",
+    priceNote: "",
     description:
-      "Strategy, scheduling, content, and growth — your channels handled properly.",
+      "Your channels handled properly — strategy, scheduling, and content so you can focus on running your business.",
   },
   {
     number: "03",
     title: "Content Creation",
+    price: "from £200/project",
+    priceNote: "",
     description:
-      "Posts, copy, graphics, and branded visuals that sound and look like you.",
+      "Posts, graphics, and copy that sound and look like you. Ready to use across your site and socials.",
   },
 ] as const;
 
@@ -150,7 +156,12 @@ export const FAQ_ITEMS = [
  * - Animated loop (recommended): public/images/work/{id}-preview.mp4
  *   Short MP4 loops look sharper and load faster than GIFs.
  */
-export type ProjectCategory = "Client Work" | "Demo";
+export type ProjectCategory =
+  | "Client Work"
+  | "Trades"
+  | "Restaurant"
+  | "Salon"
+  | "Food & Drink";
 
 export const PROJECTS = [
   {
@@ -168,11 +179,12 @@ export const PROJECTS = [
     image: "/images/work/shelterlink.png",
     imageAlt:
       "ShelterLink landing page — volunteer management platform for Assisi Animal Sanctuary",
+    outcome: "Replacing manual spreadsheets — saves staff hours every week",
   },
   {
     id: "carrick-plumbing",
     title: "Carrick Plumbing Co",
-    category: "Demo" as const,
+    category: "Trades" as const,
     type: "Trades Website",
     summary: "Local plumbing business, NI",
     description:
@@ -183,12 +195,13 @@ export const PROJECTS = [
     href: "https://carrick-plumbing-co.vercel.app/",
     image: "/images/work/carrick-plumbing.png",
     imageAlt: "Carrick Plumbing Co homepage — local plumbing services in Northern Ireland",
+    outcome: "Full 5-page trades site, built and deployed in under a week",
     // previewVideo: "/images/work/carrick-plumbing-preview.mp4",
   },
   {
     id: "anchor-restaurant",
     title: "The Anchor Restaurant",
-    category: "Demo" as const,
+    category: "Restaurant" as const,
     type: "Restaurant Website",
     summary: "Coastal restaurant concept",
     description:
@@ -199,12 +212,13 @@ export const PROJECTS = [
     href: "https://the-anchor-restaurant.vercel.app/",
     image: "/images/work/anchor-restaurant.png",
     imageAlt: "The Anchor Restaurant website with menu and booking enquiry",
+    outcome: "Booking enquiries and menu display — all on mobile",
     // previewVideo: "/images/work/anchor-restaurant-preview.mp4",
   },
   {
     id: "harbour-hair",
     title: "Harbour Hair Studio",
-    category: "Demo" as const,
+    category: "Salon" as const,
     type: "Salon Website",
     summary: "Local hair salon, NI",
     description:
@@ -215,12 +229,13 @@ export const PROJECTS = [
     href: "https://harbour-hair-studio11.vercel.app/",
     image: "/images/work/harbour-hair.png",
     imageAlt: "Harbour Hair Studio website with services list and gallery",
+    outcome: "Services, pricing and gallery — ready for new clients to find",
     // previewVideo: "/images/work/harbour-hair-preview.mp4",
   },
   {
     id: "rvs-coldbrew",
     title: "RVS Cold Brew",
-    category: "Demo" as const,
+    category: "Food & Drink" as const,
     type: "Coffee Brand Website",
     summary: "Specialty cold brew brand",
     description:
@@ -229,6 +244,7 @@ export const PROJECTS = [
     tags: ["Next.js", "Tailwind", "Vercel"],
     buttonLabel: "View live site",
     href: "https://rvscoldbrew.vercel.app",
+    outcome: "Brand-first site for a specialty cold brew launch",
     // image: "/images/work/rvs-coldbrew.png",
     // imageAlt: "RVS Cold Brew website homepage showcasing specialty cold brew products",
   },

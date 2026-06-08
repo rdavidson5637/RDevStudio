@@ -5,6 +5,35 @@ import { SectionHeader } from "@/components/ui/SectionHeader";
 const FEATURED_SERVICE = SERVICES[0];
 const SECONDARY_SERVICES = SERVICES.slice(1);
 
+function ServicePrice({
+  price,
+  priceNote,
+}: {
+  price: string;
+  priceNote: string;
+}) {
+  return (
+    <p className="mt-3 sm:mt-4">
+      <span className="text-2xl font-bold text-accent">{price}</span>
+      {priceNote ? (
+        <span className="ml-1 text-sm text-white/40">{priceNote}</span>
+      ) : null}
+    </p>
+  );
+}
+
+function ServiceCta() {
+  return (
+    <Link
+      href="/contact"
+      className="link-editorial mt-5 inline-flex items-center gap-2 sm:mt-6"
+    >
+      Get in touch
+      <span aria-hidden="true">→</span>
+    </Link>
+  );
+}
+
 export function ServicesTrio() {
   return (
     <section id="services" className="section-padding bg-base">
@@ -16,10 +45,14 @@ export function ServicesTrio() {
         />
 
         <div className="flex flex-col gap-5">
-          <article className="group interactive-surface relative flex flex-col p-6 sm:p-8 lg:flex-row lg:items-end lg:justify-between lg:gap-12 lg:p-12">
+          <article className="group relative flex flex-col rounded-md border border-accent/30 bg-accent/5 p-6 sm:p-8 lg:flex-row lg:items-end lg:justify-between lg:gap-12 lg:p-12">
             <div className="max-w-2xl">
+              <span className="inline-block rounded-full bg-accent px-2 py-0.5 text-xs font-semibold text-black">
+                Most popular
+              </span>
+
               <span
-                className="font-display text-[4rem] font-bold leading-none text-primary/10 sm:text-[5.5rem] lg:text-[7rem]"
+                className="mt-4 block font-display text-[4rem] font-bold leading-none text-primary/10 sm:text-[5.5rem] lg:text-[7rem]"
                 aria-hidden="true"
               >
                 {FEATURED_SERVICE.number}
@@ -29,19 +62,17 @@ export function ServicesTrio() {
                 {FEATURED_SERVICE.title}
               </h3>
 
-              <p className="mt-3 font-display text-xl font-semibold text-accent sm:mt-4 sm:text-2xl">
-                from £650
-              </p>
+              <ServicePrice
+                price={FEATURED_SERVICE.price}
+                priceNote={FEATURED_SERVICE.priceNote}
+              />
 
               <p className="mt-3 text-base leading-relaxed text-secondary sm:mt-4 sm:text-lg">
-                Custom websites built in 7 days — sharp, responsive, and ready
-                to launch
+                {FEATURED_SERVICE.description}
               </p>
             </div>
 
-            <Link href="/contact" className="btn-primary mt-8 shrink-0 lg:mt-0">
-              Get started
-            </Link>
+            <ServiceCta />
           </article>
 
           <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
@@ -61,22 +92,16 @@ export function ServicesTrio() {
                   {service.title}
                 </h3>
 
+                <ServicePrice
+                  price={service.price}
+                  priceNote={service.priceNote}
+                />
+
                 <p className="mt-2 flex-1 text-sm leading-relaxed text-secondary">
                   {service.description}
                 </p>
 
-                <Link
-                  href="#contact"
-                  className="link-editorial mt-5 inline-flex items-center gap-2 sm:mt-6"
-                >
-                  Get in touch
-                  <span
-                    className="inline-block transition-transform duration-normal ease-out group-hover:translate-x-1"
-                    aria-hidden="true"
-                  >
-                    →
-                  </span>
-                </Link>
+                <ServiceCta />
               </article>
             ))}
           </div>

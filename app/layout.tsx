@@ -1,16 +1,15 @@
 import type { Metadata } from "next";
-import { Bricolage_Grotesque, Newsreader } from "next/font/google";
+import { DM_Serif_Display, Newsreader } from "next/font/google";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { WhatsAppButton } from "@/components/layout/WhatsAppButton";
 import { rootMetadata } from "@/lib/metadata";
 import "./globals.css";
 
-const bricolage = Bricolage_Grotesque({
+const dmSerif = DM_Serif_Display({
+  weight: "400",
   subsets: ["latin"],
-  variable: "--font-bricolage",
-  display: "swap",
-  weight: ["400", "500", "600", "700", "800"],
+  variable: "--font-display",
 });
 
 const newsreader = Newsreader({
@@ -30,7 +29,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en-GB" className={`${bricolage.variable} ${newsreader.variable}`}>
+    <html lang="en-GB" className={`${dmSerif.variable} ${newsreader.variable}`}>
       <body className="font-body">
         <Header />
         <main>{children}</main>

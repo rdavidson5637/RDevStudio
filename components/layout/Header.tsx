@@ -47,9 +47,17 @@ export function Header() {
                   isActive(link.href) ? "text-accent" : "text-secondary"
                 }`}
               >
-                {link.label}
+                <span className="relative after:absolute after:bottom-0 after:left-0 after:h-px after:w-0 after:bg-accent after:transition-all after:duration-200 after:content-[''] hover:after:w-full">
+                  {link.label}
+                </span>
               </Link>
             ))}
+            <Link
+              href="/contact"
+              className="ml-6 hidden rounded-md bg-accent px-4 py-2 text-sm font-semibold text-black transition-colors hover:bg-accent-hover md:inline-flex"
+            >
+              Start a project
+            </Link>
           </nav>
 
           <button

@@ -7,6 +7,7 @@ import {
   inputClassName,
   labelClassName,
   selectClassName,
+  submitButtonClassName,
 } from "@/components/contact/form-styles";
 import {
   CONTACT_SERVICE_OPTIONS,
@@ -128,7 +129,7 @@ function HomeContactFormFields({ onReset }: { onReset: () => void }) {
       <button
         type="submit"
         disabled={state.submitting}
-        className="btn-primary disabled:cursor-not-allowed disabled:opacity-70"
+        className={submitButtonClassName}
       >
         {state.submitting ? "Sending..." : "Send message"}
       </button>

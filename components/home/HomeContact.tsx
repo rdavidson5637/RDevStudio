@@ -1,4 +1,4 @@
-import { WhatsAppContactOption } from "@/components/contact/WhatsAppContactOption";
+import { DirectContactOptions } from "@/components/contact/DirectContactOptions";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { HomeContactForm } from "./HomeContactForm";
 
@@ -7,16 +7,15 @@ export function HomeContact() {
     <section id="contact" className="section-padding border-t border-border bg-base">
       <div className="container-wide">
         <div className="mx-auto max-w-xl">
-          <SectionHeader label="Contact" title="Let's talk." />
+          <SectionHeader title="Your new website starts here." />
 
-          <p className="mt-4 text-base leading-relaxed text-secondary sm:mt-6 sm:text-lg">
-            Tell me about your business and what you need. I&apos;ll get back to
-            you within 24 hours.
+          <p className="mt-4 text-base leading-relaxed text-secondary sm:text-lg">
+            Tell me about your business. I&apos;ll reply within 24 hours.
           </p>
 
           <div className="interactive-surface mt-8 bg-overlay p-6 sm:mt-10 sm:p-8">
+            <DirectContactOptions />
             <HomeContactForm />
-            <WhatsAppContactOption className="mt-8" />
           </div>
         </div>
       </div>

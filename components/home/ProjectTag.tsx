@@ -5,16 +5,8 @@ type ProjectTagProps = {
 };
 
 export function ProjectTag({ category }: ProjectTagProps) {
-  const isClient = category === "Client Work";
-
   return (
-    <span
-      className={
-        isClient
-          ? "inline-block bg-accent px-2 py-0.5 text-xs font-medium text-on-accent"
-          : "inline-block border border-border-strong px-2 py-0.5 text-xs font-medium text-secondary"
-      }
-    >
+    <span className="inline-block rounded-full border border-white/20 px-2 py-0.5 text-xs font-medium text-white/70">
       {category}
     </span>
   );
