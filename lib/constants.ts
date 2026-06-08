@@ -21,6 +21,7 @@ export const SITE_TAGLINE =
 
 export const NAV_LINKS = [
   { href: "/work", label: "Work" },
+  { href: "/champions-draft", label: "Champions Draft", highlight: true },
   { href: "/bored", label: "I'm Bored" },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
@@ -44,11 +45,11 @@ export const PORTFOLIO_AREAS = [
     cta: "Browse work",
   },
   {
-    title: "Games & experiments",
+    title: "Champions Draft",
     description:
-      "Small things I build for fun — daily word games, UI experiments, and whatever catches my interest.",
-    href: "/bored",
-    cta: "Play a game",
+      "My latest game — spin iconic squads, draft your XI, and compete in league, Champions League, and World Cup modes.",
+    href: "/champions-draft",
+    cta: "Play free",
   },
   {
     title: "About me",

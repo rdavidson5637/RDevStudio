@@ -26,3 +26,7 @@ export function getBoredGame(slug: string) {
 export function getBoredGameHref(game: BoredGame) {
   return "href" in game && game.href ? game.href : `/bored/${game.slug}`;
 }
+
+export function getOtherBoredGames() {
+  return BORED_GAMES.filter((game) => game.slug !== "champions-draft");
+}

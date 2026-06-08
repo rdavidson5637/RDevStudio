@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
+import { CHAMPIONS_DRAFT } from "@/lib/champions-draft-feature";
 import { NAV_LINKS } from "@/lib/constants";
 import { Logo } from "./Logo";
 import { MobileMenu } from "./MobileMenu";
@@ -43,8 +44,14 @@ export function Header() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`text-sm font-medium transition-colors duration-normal ease-out hover:text-primary ${
-                  isActive(link.href) ? "text-accent" : "text-secondary"
+                className={`text-sm transition-colors duration-normal ease-out hover:text-primary ${
+                  "highlight" in link && link.highlight
+                    ? `font-semibold ${
+                        isActive(link.href) ? "text-emerald-400" : "text-emerald-400/90"
+                      }`
+                    : `font-medium ${
+                        isActive(link.href) ? "text-accent" : "text-secondary"
+                      }`
                 }`}
               >
                 <span className="relative after:absolute after:bottom-0 after:left-0 after:h-px after:w-0 after:bg-accent after:transition-all after:duration-200 after:content-[''] hover:after:w-full">
@@ -53,8 +60,14 @@ export function Header() {
               </Link>
             ))}
             <Link
+              href={CHAMPIONS_DRAFT.href}
+              className="ml-2 hidden rounded-lg bg-emerald-500 px-4 py-2 text-sm font-semibold text-black transition-colors hover:bg-emerald-400 lg:inline-flex"
+            >
+              Play
+            </Link>
+            <Link
               href="/contact"
-              className="ml-6 hidden rounded-lg border border-white/20 px-4 py-2 text-sm font-medium text-primary transition-colors hover:border-accent hover:text-accent md:inline-flex"
+              className="hidden rounded-lg border border-white/20 px-4 py-2 text-sm font-medium text-primary transition-colors hover:border-accent hover:text-accent lg:inline-flex"
             >
               Contact
             </Link>

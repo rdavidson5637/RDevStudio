@@ -1,9 +1,12 @@
 import Link from "next/link";
+import { ChampionsDraftSpotlight } from "@/components/bored/ChampionsDraftSpotlight";
 import { GameCard } from "@/components/bored/GameCard";
-import { BORED_GAMES } from "@/lib/bored-games";
+import { getOtherBoredGames } from "@/lib/bored-games";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 
 export function PortfolioPlay() {
+  const otherGames = getOtherBoredGames();
+
   return (
     <section className="section-padding border-t border-border bg-base">
       <div className="container-wide px-4 sm:px-6 lg:px-8">
@@ -11,7 +14,7 @@ export function PortfolioPlay() {
           <SectionHeader
             className="max-w-2xl"
             label="Play"
-            title="I'm Bored"
+            title="Games & experiments"
           />
           <Link
             href="/bored"
@@ -21,16 +24,22 @@ export function PortfolioPlay() {
           </Link>
         </div>
 
-        <p className="lead-text -mt-6 mb-10 max-w-2xl sm:-mt-4">
-          Quick games and experiments — no accounts, no pressure, just something
-          to poke at when you have five minutes.
-        </p>
-
-        <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
-          {BORED_GAMES.map((game) => (
-            <GameCard key={game.slug} game={game} />
-          ))}
+        <div className="mb-10">
+          <ChampionsDraftSpotlight />
         </div>
+
+        {otherGames.length > 0 && (
+          <>
+            <p className="mb-5 text-sm font-medium uppercase tracking-widest text-secondary">
+              More to play
+            </p>
+            <div className="grid grid-cols-1 gap-5 md:max-w-xl">
+              {otherGames.map((game) => (
+                <GameCard key={game.slug} game={game} />
+              ))}
+            </div>
+          </>
+        )}
       </div>
     </section>
   );

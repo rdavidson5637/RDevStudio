@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useEffect } from "react";
 import { createPortal } from "react-dom";
+import { CHAMPIONS_DRAFT } from "@/lib/champions-draft-feature";
 import { NAV_LINKS } from "@/lib/constants";
 
 type MobileMenuProps = {
@@ -66,15 +67,26 @@ export function MobileMenu({ open, onClose, isActive }: MobileMenuProps) {
         </div>
 
         <div className="flex flex-1 flex-col gap-1 overflow-y-auto px-3 py-4">
+          <Link
+            href={CHAMPIONS_DRAFT.href}
+            onClick={onClose}
+            className="mx-3 mb-3 rounded-lg bg-emerald-500 px-4 py-4 text-center font-display text-lg font-bold text-black transition-colors hover:bg-emerald-400"
+          >
+            Play Champions Draft
+          </Link>
           {NAV_LINKS.map((link) => (
             <Link
               key={link.href}
               href={link.href}
               onClick={onClose}
               className={`rounded-none px-4 py-4 font-display text-lg font-bold transition-colors duration-normal ease-out ${
-                isActive(link.href)
-                  ? "text-accent"
-                  : "text-primary hover:bg-overlay hover:text-accent"
+                "highlight" in link && link.highlight
+                  ? isActive(link.href)
+                    ? "text-emerald-400"
+                    : "text-emerald-400/90 hover:bg-overlay"
+                  : isActive(link.href)
+                    ? "text-accent"
+                    : "text-primary hover:bg-overlay hover:text-accent"
               }`}
             >
               {link.label}

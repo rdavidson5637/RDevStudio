@@ -1,10 +1,15 @@
 import Link from "next/link";
+import { CHAMPIONS_DRAFT } from "@/lib/champions-draft-feature";
 
 export function Hero() {
   return (
     <section className="relative overflow-hidden bg-base pb-20 pt-28 md:pb-28 md:pt-36">
       <div
         className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_20%_0%,rgb(245_158_11/0.08)_0%,transparent_50%)]"
+        aria-hidden="true"
+      />
+      <div
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_80%_20%,rgb(16_185_129/0.06)_0%,transparent_45%)]"
         aria-hidden="true"
       />
 
@@ -21,11 +26,24 @@ export function Hero() {
           </h1>
 
           <p className="hero-sub lead-text mb-10 max-w-xl">
-            A personal portfolio of websites, apps, side projects, and the
-            occasional game — made in Carrickfergus, Northern Ireland.
+            A personal portfolio of websites, apps, and side projects — plus{" "}
+            <Link
+              href={CHAMPIONS_DRAFT.href}
+              className="font-medium text-emerald-400 underline decoration-emerald-400/30 underline-offset-4 transition-colors hover:text-emerald-300"
+            >
+              Champions Draft
+            </Link>
+            , my new football squad builder game. Made in Carrickfergus,
+            Northern Ireland.
           </p>
 
           <div className="hero-ctas flex flex-wrap gap-4">
+            <Link
+              href={CHAMPIONS_DRAFT.href}
+              className="inline-flex items-center justify-center rounded-lg bg-emerald-500 px-6 py-3 text-sm font-semibold text-black transition-colors hover:bg-emerald-400"
+            >
+              Play Champions Draft
+            </Link>
             <Link
               href="#work"
               className="inline-flex items-center justify-center rounded-lg bg-accent px-6 py-3 text-sm font-semibold text-black transition-colors hover:bg-accent-hover"
@@ -36,7 +54,7 @@ export function Hero() {
               href="/bored"
               className="inline-flex items-center justify-center rounded-lg border border-white/25 px-6 py-3 text-sm font-medium text-primary transition-colors hover:border-white/50 hover:bg-white/5"
             >
-              I&apos;m Bored
+              More games
             </Link>
           </div>
         </div>
