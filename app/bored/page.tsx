@@ -1,10 +1,11 @@
-import { LongestWord } from "@/components/games/LongestWord";
+import { GameCard } from "@/components/bored/GameCard";
+import { BORED_GAMES } from "@/lib/bored-games";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata = createPageMetadata({
   title: "I'm Bored",
   description:
-    "Quick web games built by RDev Studio. New daily grid every day — find the longest word.",
+    "Quick daily games built by RDev Studio. No accounts, no scores — just something to do when you've got five minutes.",
   path: "/bored",
 });
 
@@ -17,22 +18,26 @@ export default function BoredPage() {
           aria-hidden="true"
         />
         <div className="section-padding relative pb-12 sm:pb-16">
-          <div className="container-wide mx-auto max-w-4xl">
-            <p className="section-label">I&apos;m Bored</p>
+          <div className="container-wide mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+            <p className="section-label mb-4 font-medium">Play</p>
             <h1 className="font-display text-4xl font-bold tracking-tight text-primary sm:text-5xl lg:text-6xl">
-              Games built for when you&apos;ve got five minutes.
+              I&apos;m Bored
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-relaxed text-secondary sm:text-xl">
-              A growing collection of quick daily games. No accounts, no scores,
-              just something to do.
+              A growing collection of quick daily games. No accounts, no
+              scores, just something to do.
             </p>
           </div>
         </div>
       </section>
 
       <section className="section-padding bg-base">
-        <div className="container-wide">
-          <LongestWord />
+        <div className="container-wide px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
+            {BORED_GAMES.map((game) => (
+              <GameCard key={game.slug} game={game} />
+            ))}
+          </div>
         </div>
       </section>
     </>
