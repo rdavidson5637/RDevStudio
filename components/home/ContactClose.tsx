@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { CONTACT_EMAIL, WHATSAPP_URL } from "@/lib/constants";
+import { CONTACT_EMAIL } from "@/lib/constants";
 
 export function ContactClose() {
   return (
@@ -20,19 +20,9 @@ export function ContactClose() {
               Open to freelance work and collaborations. No pitch decks — just
               a conversation.
             </p>
-            <div className="flex flex-col gap-4 sm:flex-row">
-              <Link href="/contact" className="btn-primary">
-                Start a project
-              </Link>
-              <a
-                href={WHATSAPP_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-secondary"
-              >
-                WhatsApp
-              </a>
-            </div>
+            <Link href="/contact" className="btn-primary">
+              Start a project
+            </Link>
             <a
               href={`mailto:${CONTACT_EMAIL}`}
               className="text-sm text-tertiary transition-colors hover:text-accent"

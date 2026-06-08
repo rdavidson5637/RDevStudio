@@ -5,8 +5,6 @@ export const SITE_DESCRIPTION =
   "The portfolio of Ryan Davidson — websites, web apps, side projects, and small games.";
 export const EMAIL = "ryan@rdevstudio.co.uk";
 export const CONTACT_EMAIL = "ryan@rdevstudio.co.uk";
-export const WHATSAPP_NUMBER = "+447378420418";
-export const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER.replace(/\+/g, "")}?text=${encodeURIComponent("Hi, I'd like to talk about a project.")}`;
 export const FORMSPREE_FORM_ID = "mgoqjqve";
 
 export const CONTACT_SERVICE_OPTIONS = [

@@ -159,11 +159,6 @@ body {
     transform: translateY(-50%);
   }
 
-  .whatsapp-fab {
-    opacity: 0;
-    transform: translateY(1rem);
-    animation: whatsapp-fab-enter 0.5s var(--ease-out) 0.4s forwards;
-  }
 }
 
 @keyframes fadeUp {
@@ -177,19 +172,11 @@ body {
   }
 }
 
-@keyframes whatsapp-fab-enter {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .hero-heading,
   .hero-sub,
   .hero-trust,
   .hero-ctas { opacity: 1; transform: none; animation: none; }
-  .whatsapp-fab { opacity: 1; transform: none; animation: none; }
   .card-hover { transform: none; }
 }
