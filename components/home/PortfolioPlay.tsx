@@ -26,7 +26,7 @@ export function PortfolioPlay() {
           to poke at when you have five minutes.
         </p>
 
-        <div className="grid grid-cols-1 gap-5 md:max-w-xl">
+        <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
           {BORED_GAMES.map((game) => (
             <GameCard key={game.slug} game={game} />
           ))}

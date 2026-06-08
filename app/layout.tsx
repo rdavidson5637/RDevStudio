@@ -1,8 +1,5 @@
 import type { Metadata } from "next";
 import { DM_Serif_Display, Inter } from "next/font/google";
-import { Header } from "@/components/layout/Header";
-import { Footer } from "@/components/layout/Footer";
-import { WhatsAppButton } from "@/components/layout/WhatsAppButton";
 import { rootMetadata } from "@/lib/metadata";
 import "./globals.css";
 
@@ -27,12 +24,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en-GB" className={`${dmSerif.variable} ${inter.variable}`}>
-      <body className="font-sans antialiased">
-        <Header />
-        <main>{children}</main>
-        <Footer />
-        <WhatsAppButton />
-      </body>
+      <body className="font-sans antialiased">{children}</body>
     </html>
   );
 }

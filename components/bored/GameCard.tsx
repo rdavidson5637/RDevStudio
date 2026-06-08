@@ -1,5 +1,5 @@
 import Link from "next/link";
-import type { BoredGame } from "@/lib/bored-games";
+import { getBoredGameHref, type BoredGame } from "@/lib/bored-games";
 
 type GameCardProps = {
   game: BoredGame;
@@ -8,7 +8,7 @@ type GameCardProps = {
 export function GameCard({ game }: GameCardProps) {
   return (
     <Link
-      href={`/bored/${game.slug}`}
+      href={getBoredGameHref(game)}
       className="group interactive-surface flex flex-col p-6 transition-colors hover:border-accent/30 sm:p-8"
     >
       <div className="flex items-start justify-between gap-4">

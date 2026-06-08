@@ -1,0 +1,5564 @@
+{
+  "additional_nations": [
+    {
+      "club": "Japan",
+      "season": "2026",
+      "league": "World Cup",
+      "badge": "JPN",
+      "players": [
+        {
+          "id": "jpn26_01",
+          "name": "Zion Suzuki",
+          "position": "GK",
+          "overall": 80,
+          "stats": {
+            "pac": 50,
+            "sho": 11,
+            "pas": 40,
+            "dri": 30,
+            "def": 22,
+            "phy": 78
+          },
+          "nationality": "Japanese"
+        },
+        {
+          "id": "jpn26_02",
+          "name": "Shuichi Gonda",
+          "position": "GK",
+          "overall": 77,
+          "stats": {
+            "pac": 44,
+            "sho": 10,
+            "pas": 36,
+            "dri": 26,
+            "def": 18,
+            "phy": 74
+          },
+          "nationality": "Japanese"
+        },
+        {
+          "id": "jpn26_03",
+          "name": "Ko Itakura",
+          "position": "CB",
+          "overall": 82,
+          "stats": {
+            "pac": 76,
+            "sho": 32,
+            "pas": 60,
+            "dri": 56,
+            "def": 83,
+            "phy": 80
+          },
+          "nationality": "Japanese"
+        },
+        {
+          "id": "jpn26_04",
+          "name": "Takehiro Tomiyasu",
+          "position": "CB",
+          "overall": 82,
+          "stats": {
+            "pac": 80,
+            "sho": 34,
+            "pas": 62,
+            "dri": 60,
+            "def": 82,
+            "phy": 78
+          },
+          "nationality": "Japanese"
+        },
+        {
+          "id": "jpn26_05",
+          "name": "Maya Yoshida",
+          "position": "CB",
+          "overall": 77,
+          "stats": {
+            "pac": 66,
+            "sho": 28,
+            "pas": 56,
+            "dri": 48,
+            "def": 79,
+            "phy": 74
+          },
+          "nationality": "Japanese"
+        },
+        {
+          "id": "jpn26_06",
+          "name": "Miki Yamane",
+          "position": "RB",
+          "overall": 78,
+          "stats": {
+            "pac": 82,
+            "sho": 48,
+            "pas": 64,
+            "dri": 66,
+            "def": 74,
+            "phy": 68
+          },
+          "nationality": "Japanese"
+        },
+        {
+          "id": "jpn26_07",
+          "name": "Yuto Nagatomo",
+          "position": "LB",
+          "overall": 75,
+          "stats": {
+            "pac": 78,
+            "sho": 42,
+            "pas": 60,
+            "dri": 62,
+            "def": 70,
+            "phy": 66
+          },
+          "nationality": "Japanese"
+        },
+        {
+          "id": "jpn26_08",
+          "name": "Wataru Endo",
+          "position": "CDM",
+          "overall": 82,
+          "stats": {
+            "pac": 72,
+            "sho": 58,
+            "pas": 76,
+            "dri": 70,
+            "def": 84,
+            "phy": 78
+          },
+          "nationality": "Japanese"
+        },
+        {
+          "id": "jpn26_09",
+          "name": "Ao Tanaka",
+          "position": "CM",
+          "overall": 79,
+          "stats": {
+            "pac": 74,
+            "sho": 60,
+            "pas": 76,
+            "dri": 72,
+            "def": 70,
+            "phy": 68
+          },
+          "nationality": "Japanese"
+        },
+        {
+          "id": "jpn26_10",
+          "name": "Daichi Kamada",
+          "position": "CAM",
+          "overall": 82,
+          "stats": {
+            "pac": 76,
+            "sho": 78,
+            "pas": 82,
+            "dri": 82,
+            "def": 48,
+            "phy": 68
+          },
+          "nationality": "Japanese"
+        },
+        {
+          "id": "jpn26_11",
+          "name": "Kaoru Mitoma",
+          "position": "LW",
+          "overall": 85,
+          "stats": {
+            "pac": 92,
+            "sho": 78,
+            "pas": 74,
+            "dri": 87,
+            "def": 38,
+            "phy": 68
+          },
+          "nationality": "Japanese"
+        },
+        {
+          "id": "jpn26_12",
+          "name": "Ritsu Doan",
+          "position": "RW",
+          "overall": 81,
+          "stats": {
+            "pac": 84,
+            "sho": 80,
+            "pas": 70,
+            "dri": 82,
+            "def": 38,
+            "phy": 68
+          },
+          "nationality": "Japanese"
+        },
+        {
+          "id": "jpn26_13",
+          "name": "Junya Ito",
+          "position": "RW",
+          "overall": 80,
+          "stats": {
+            "pac": 91,
+            "sho": 74,
+            "pas": 64,
+            "dri": 78,
+            "def": 36,
+            "phy": 64
+          },
+          "nationality": "Japanese"
+        },
+        {
+          "id": "jpn26_14",
+          "name": "Ayase Ueda",
+          "position": "ST",
+          "overall": 79,
+          "stats": {
+            "pac": 80,
+            "sho": 78,
+            "pas": 56,
+            "dri": 68,
+            "def": 28,
+            "phy": 74
+          },
+          "nationality": "Japanese"
+        },
+        {
+          "id": "jpn26_15",
+          "name": "Daizen Maeda",
+          "position": "ST",
+          "overall": 78,
+          "stats": {
+            "pac": 88,
+            "sho": 74,
+            "pas": 58,
+            "dri": 72,
+            "def": 40,
+            "phy": 70
+          },
+          "nationality": "Japanese"
+        },
+        {
+          "id": "jpn26_16",
+          "name": "Kyogo Furuhashi",
+          "position": "ST",
+          "overall": 81,
+          "stats": {
+            "pac": 88,
+            "sho": 80,
+            "pas": 62,
+            "dri": 80,
+            "def": 30,
+            "phy": 66
+          },
+          "nationality": "Japanese"
+        },
+        {
+          "id": "jpn26_17",
+          "name": "Hidemasa Morita",
+          "position": "CM",
+          "overall": 78,
+          "stats": {
+            "pac": 70,
+            "sho": 60,
+            "pas": 78,
+            "dri": 68,
+            "def": 72,
+            "phy": 68
+          },
+          "nationality": "Japanese"
+        },
+        {
+          "id": "jpn26_18",
+          "name": "Takefusa Kubo",
+          "position": "RW",
+          "overall": 84,
+          "stats": {
+            "pac": 84,
+            "sho": 78,
+            "pas": 78,
+            "dri": 88,
+            "def": 36,
+            "phy": 62
+          },
+          "nationality": "Japanese"
+        }
+      ]
+    },
+    {
+      "club": "Mexico",
+      "season": "2026",
+      "league": "World Cup",
+      "badge": "MEX",
+      "players": [
+        {
+          "id": "mex26_01",
+          "name": "Guillermo Ochoa",
+          "position": "GK",
+          "overall": 82,
+          "stats": {
+            "pac": 48,
+            "sho": 10,
+            "pas": 38,
+            "dri": 28,
+            "def": 22,
+            "phy": 74
+          },
+          "nationality": "Mexican"
+        },
+        {
+          "id": "mex26_02",
+          "name": "Luis Malagon",
+          "position": "GK",
+          "overall": 76,
+          "stats": {
+            "pac": 44,
+            "sho": 9,
+            "pas": 36,
+            "dri": 24,
+            "def": 18,
+            "phy": 72
+          },
+          "nationality": "Mexican"
+        },
+        {
+          "id": "mex26_03",
+          "name": "Cesar Montes",
+          "position": "CB",
+          "overall": 80,
+          "stats": {
+            "pac": 74,
+            "sho": 30,
+            "pas": 56,
+            "dri": 52,
+            "def": 82,
+            "phy": 80
+          },
+          "nationality": "Mexican"
+        },
+        {
+          "id": "mex26_04",
+          "name": "Johan Vasquez",
+          "position": "CB",
+          "overall": 78,
+          "stats": {
+            "pac": 72,
+            "sho": 28,
+            "pas": 54,
+            "dri": 50,
+            "def": 80,
+            "phy": 78
+          },
+          "nationality": "Mexican"
+        },
+        {
+          "id": "mex26_05",
+          "name": "Jorge Sanchez",
+          "position": "RB",
+          "overall": 77,
+          "stats": {
+            "pac": 82,
+            "sho": 46,
+            "pas": 60,
+            "dri": 62,
+            "def": 72,
+            "phy": 68
+          },
+          "nationality": "Mexican"
+        },
+        {
+          "id": "mex26_06",
+          "name": "Jesus Gallardo",
+          "position": "LB",
+          "overall": 78,
+          "stats": {
+            "pac": 82,
+            "sho": 44,
+            "pas": 60,
+            "dri": 62,
+            "def": 72,
+            "phy": 68
+          },
+          "nationality": "Mexican"
+        },
+        {
+          "id": "mex26_07",
+          "name": "Edson Alvarez",
+          "position": "CDM",
+          "overall": 83,
+          "stats": {
+            "pac": 76,
+            "sho": 60,
+            "pas": 74,
+            "dri": 70,
+            "def": 84,
+            "phy": 80
+          },
+          "nationality": "Mexican"
+        },
+        {
+          "id": "mex26_08",
+          "name": "Andres Guardado",
+          "position": "CM",
+          "overall": 78,
+          "stats": {
+            "pac": 68,
+            "sho": 60,
+            "pas": 78,
+            "dri": 70,
+            "def": 62,
+            "phy": 64
+          },
+          "nationality": "Mexican"
+        },
+        {
+          "id": "mex26_09",
+          "name": "Hector Herrera",
+          "position": "CM",
+          "overall": 78,
+          "stats": {
+            "pac": 70,
+            "sho": 62,
+            "pas": 76,
+            "dri": 72,
+            "def": 66,
+            "phy": 70
+          },
+          "nationality": "Mexican"
+        },
+        {
+          "id": "mex26_10",
+          "name": "Hirving Lozano",
+          "position": "RW",
+          "overall": 83,
+          "stats": {
+            "pac": 92,
+            "sho": 78,
+            "pas": 68,
+            "dri": 82,
+            "def": 34,
+            "phy": 68
+          },
+          "nationality": "Mexican"
+        },
+        {
+          "id": "mex26_11",
+          "name": "Alexis Vega",
+          "position": "LW",
+          "overall": 78,
+          "stats": {
+            "pac": 82,
+            "sho": 74,
+            "pas": 66,
+            "dri": 78,
+            "def": 32,
+            "phy": 66
+          },
+          "nationality": "Mexican"
+        },
+        {
+          "id": "mex26_12",
+          "name": "Raul Jimenez",
+          "position": "ST",
+          "overall": 82,
+          "stats": {
+            "pac": 74,
+            "sho": 82,
+            "pas": 66,
+            "dri": 72,
+            "def": 32,
+            "phy": 80
+          },
+          "nationality": "Mexican"
+        },
+        {
+          "id": "mex26_13",
+          "name": "Santiago Gimenez",
+          "position": "ST",
+          "overall": 83,
+          "stats": {
+            "pac": 80,
+            "sho": 84,
+            "pas": 60,
+            "dri": 74,
+            "def": 28,
+            "phy": 76
+          },
+          "nationality": "Mexican"
+        },
+        {
+          "id": "mex26_14",
+          "name": "Orbelin Pineda",
+          "position": "CAM",
+          "overall": 78,
+          "stats": {
+            "pac": 76,
+            "sho": 70,
+            "pas": 74,
+            "dri": 78,
+            "def": 40,
+            "phy": 64
+          },
+          "nationality": "Mexican"
+        },
+        {
+          "id": "mex26_15",
+          "name": "Roberto Alvarado",
+          "position": "LW",
+          "overall": 77,
+          "stats": {
+            "pac": 82,
+            "sho": 70,
+            "pas": 66,
+            "dri": 76,
+            "def": 36,
+            "phy": 66
+          },
+          "nationality": "Mexican"
+        },
+        {
+          "id": "mex26_16",
+          "name": "Uriel Antuna",
+          "position": "RW",
+          "overall": 75,
+          "stats": {
+            "pac": 84,
+            "sho": 68,
+            "pas": 62,
+            "dri": 74,
+            "def": 28,
+            "phy": 62
+          },
+          "nationality": "Mexican"
+        },
+        {
+          "id": "mex26_17",
+          "name": "Carlos Antuna",
+          "position": "CB",
+          "overall": 74,
+          "stats": {
+            "pac": 70,
+            "sho": 26,
+            "pas": 50,
+            "dri": 46,
+            "def": 76,
+            "phy": 72
+          },
+          "nationality": "Mexican"
+        },
+        {
+          "id": "mex26_18",
+          "name": "Kevin Alvarez",
+          "position": "RB",
+          "overall": 76,
+          "stats": {
+            "pac": 80,
+            "sho": 44,
+            "pas": 60,
+            "dri": 60,
+            "def": 72,
+            "phy": 68
+          },
+          "nationality": "Mexican"
+        }
+      ]
+    },
+    {
+      "club": "Morocco",
+      "season": "2026",
+      "league": "World Cup",
+      "badge": "MAR",
+      "players": [
+        {
+          "id": "mar26_01",
+          "name": "Yassine Bono",
+          "position": "GK",
+          "overall": 87,
+          "stats": {
+            "pac": 52,
+            "sho": 12,
+            "pas": 44,
+            "dri": 36,
+            "def": 28,
+            "phy": 84
+          },
+          "nationality": "Moroccan"
+        },
+        {
+          "id": "mar26_02",
+          "name": "Munir Mohamedi",
+          "position": "GK",
+          "overall": 76,
+          "stats": {
+            "pac": 42,
+            "sho": 10,
+            "pas": 36,
+            "dri": 26,
+            "def": 18,
+            "phy": 74
+          },
+          "nationality": "Moroccan"
+        },
+        {
+          "id": "mar26_03",
+          "name": "Nayef Aguerd",
+          "position": "CB",
+          "overall": 84,
+          "stats": {
+            "pac": 78,
+            "sho": 34,
+            "pas": 60,
+            "dri": 58,
+            "def": 85,
+            "phy": 80
+          },
+          "nationality": "Moroccan"
+        },
+        {
+          "id": "mar26_04",
+          "name": "Romain Saiss",
+          "position": "CB",
+          "overall": 80,
+          "stats": {
+            "pac": 70,
+            "sho": 30,
+            "pas": 56,
+            "dri": 52,
+            "def": 82,
+            "phy": 80
+          },
+          "nationality": "Moroccan"
+        },
+        {
+          "id": "mar26_05",
+          "name": "Badr Benoun",
+          "position": "CB",
+          "overall": 78,
+          "stats": {
+            "pac": 70,
+            "sho": 28,
+            "pas": 52,
+            "dri": 48,
+            "def": 80,
+            "phy": 78
+          },
+          "nationality": "Moroccan"
+        },
+        {
+          "id": "mar26_06",
+          "name": "Achraf Hakimi",
+          "position": "RB",
+          "overall": 89,
+          "stats": {
+            "pac": 95,
+            "sho": 73,
+            "pas": 77,
+            "dri": 85,
+            "def": 79,
+            "phy": 74
+          },
+          "nationality": "Moroccan"
+        },
+        {
+          "id": "mar26_07",
+          "name": "Noussair Mazraoui",
+          "position": "LB",
+          "overall": 83,
+          "stats": {
+            "pac": 84,
+            "sho": 56,
+            "pas": 70,
+            "dri": 72,
+            "def": 80,
+            "phy": 72
+          },
+          "nationality": "Moroccan"
+        },
+        {
+          "id": "mar26_08",
+          "name": "Sofyan Amrabat",
+          "position": "CDM",
+          "overall": 83,
+          "stats": {
+            "pac": 74,
+            "sho": 56,
+            "pas": 74,
+            "dri": 70,
+            "def": 84,
+            "phy": 80
+          },
+          "nationality": "Moroccan"
+        },
+        {
+          "id": "mar26_09",
+          "name": "Azzedine Ounahi",
+          "position": "CM",
+          "overall": 80,
+          "stats": {
+            "pac": 76,
+            "sho": 62,
+            "pas": 78,
+            "dri": 80,
+            "def": 64,
+            "phy": 70
+          },
+          "nationality": "Moroccan"
+        },
+        {
+          "id": "mar26_10",
+          "name": "Bilal El Khannouss",
+          "position": "CAM",
+          "overall": 79,
+          "stats": {
+            "pac": 76,
+            "sho": 64,
+            "pas": 78,
+            "dri": 80,
+            "def": 48,
+            "phy": 62
+          },
+          "nationality": "Moroccan"
+        },
+        {
+          "id": "mar26_11",
+          "name": "Hakim Ziyech",
+          "position": "RW",
+          "overall": 84,
+          "stats": {
+            "pac": 82,
+            "sho": 80,
+            "pas": 82,
+            "dri": 84,
+            "def": 34,
+            "phy": 64
+          },
+          "nationality": "Moroccan"
+        },
+        {
+          "id": "mar26_12",
+          "name": "Sofiane Boufal",
+          "position": "LW",
+          "overall": 80,
+          "stats": {
+            "pac": 84,
+            "sho": 74,
+            "pas": 70,
+            "dri": 86,
+            "def": 28,
+            "phy": 60
+          },
+          "nationality": "Moroccan"
+        },
+        {
+          "id": "mar26_13",
+          "name": "Youssef En-Nesyri",
+          "position": "ST",
+          "overall": 84,
+          "stats": {
+            "pac": 82,
+            "sho": 84,
+            "pas": 58,
+            "dri": 72,
+            "def": 30,
+            "phy": 80
+          },
+          "nationality": "Moroccan"
+        },
+        {
+          "id": "mar26_14",
+          "name": "Walid Cheddira",
+          "position": "ST",
+          "overall": 77,
+          "stats": {
+            "pac": 78,
+            "sho": 76,
+            "pas": 54,
+            "dri": 66,
+            "def": 26,
+            "phy": 74
+          },
+          "nationality": "Moroccan"
+        },
+        {
+          "id": "mar26_15",
+          "name": "Ibrahim Salah",
+          "position": "LW",
+          "overall": 74,
+          "stats": {
+            "pac": 84,
+            "sho": 66,
+            "pas": 60,
+            "dri": 72,
+            "def": 26,
+            "phy": 64
+          },
+          "nationality": "Moroccan"
+        },
+        {
+          "id": "mar26_16",
+          "name": "Yahia Attiyat Allah",
+          "position": "LB",
+          "overall": 76,
+          "stats": {
+            "pac": 78,
+            "sho": 42,
+            "pas": 60,
+            "dri": 60,
+            "def": 72,
+            "phy": 68
+          },
+          "nationality": "Moroccan"
+        },
+        {
+          "id": "mar26_17",
+          "name": "Samy Mmaee",
+          "position": "CB",
+          "overall": 77,
+          "stats": {
+            "pac": 72,
+            "sho": 26,
+            "pas": 50,
+            "dri": 48,
+            "def": 79,
+            "phy": 78
+          },
+          "nationality": "Moroccan"
+        },
+        {
+          "id": "mar26_18",
+          "name": "Abdessamad Ezzalzouli",
+          "position": "RW",
+          "overall": 78,
+          "stats": {
+            "pac": 88,
+            "sho": 70,
+            "pas": 64,
+            "dri": 78,
+            "def": 28,
+            "phy": 64
+          },
+          "nationality": "Moroccan"
+        }
+      ]
+    },
+    {
+      "club": "Senegal",
+      "season": "2026",
+      "league": "World Cup",
+      "badge": "SEN",
+      "players": [
+        {
+          "id": "sen26_01",
+          "name": "Edouard Mendy",
+          "position": "GK",
+          "overall": 85,
+          "stats": {
+            "pac": 52,
+            "sho": 11,
+            "pas": 44,
+            "dri": 34,
+            "def": 26,
+            "phy": 84
+          },
+          "nationality": "Senegalese"
+        },
+        {
+          "id": "sen26_02",
+          "name": "Alfred Gomis",
+          "position": "GK",
+          "overall": 78,
+          "stats": {
+            "pac": 44,
+            "sho": 10,
+            "pas": 38,
+            "dri": 26,
+            "def": 20,
+            "phy": 76
+          },
+          "nationality": "Senegalese"
+        },
+        {
+          "id": "sen26_03",
+          "name": "Kalidou Koulibaly",
+          "position": "CB",
+          "overall": 86,
+          "stats": {
+            "pac": 80,
+            "sho": 38,
+            "pas": 60,
+            "dri": 60,
+            "def": 88,
+            "phy": 86
+          },
+          "nationality": "Senegalese"
+        },
+        {
+          "id": "sen26_04",
+          "name": "Abdou Diallo",
+          "position": "CB",
+          "overall": 80,
+          "stats": {
+            "pac": 82,
+            "sho": 30,
+            "pas": 58,
+            "dri": 58,
+            "def": 82,
+            "phy": 76
+          },
+          "nationality": "Senegalese"
+        },
+        {
+          "id": "sen26_05",
+          "name": "Pape Abou Cisse",
+          "position": "CB",
+          "overall": 79,
+          "stats": {
+            "pac": 76,
+            "sho": 28,
+            "pas": 52,
+            "dri": 50,
+            "def": 80,
+            "phy": 80
+          },
+          "nationality": "Senegalese"
+        },
+        {
+          "id": "sen26_06",
+          "name": "Youssouf Sabaly",
+          "position": "RB",
+          "overall": 80,
+          "stats": {
+            "pac": 84,
+            "sho": 48,
+            "pas": 62,
+            "dri": 66,
+            "def": 76,
+            "phy": 72
+          },
+          "nationality": "Senegalese"
+        },
+        {
+          "id": "sen26_07",
+          "name": "Ismail Jakobs",
+          "position": "LB",
+          "overall": 78,
+          "stats": {
+            "pac": 84,
+            "sho": 46,
+            "pas": 62,
+            "dri": 66,
+            "def": 72,
+            "phy": 70
+          },
+          "nationality": "Senegalese"
+        },
+        {
+          "id": "sen26_08",
+          "name": "Idrissa Gueye",
+          "position": "CDM",
+          "overall": 82,
+          "stats": {
+            "pac": 74,
+            "sho": 56,
+            "pas": 70,
+            "dri": 68,
+            "def": 84,
+            "phy": 78
+          },
+          "nationality": "Senegalese"
+        },
+        {
+          "id": "sen26_09",
+          "name": "Pape Matar Sarr",
+          "position": "CM",
+          "overall": 80,
+          "stats": {
+            "pac": 78,
+            "sho": 62,
+            "pas": 74,
+            "dri": 76,
+            "def": 68,
+            "phy": 72
+          },
+          "nationality": "Senegalese"
+        },
+        {
+          "id": "sen26_10",
+          "name": "Nampalys Mendy",
+          "position": "CM",
+          "overall": 77,
+          "stats": {
+            "pac": 70,
+            "sho": 52,
+            "pas": 70,
+            "dri": 66,
+            "def": 76,
+            "phy": 72
+          },
+          "nationality": "Senegalese"
+        },
+        {
+          "id": "sen26_11",
+          "name": "Sadio Mane",
+          "position": "LW",
+          "overall": 87,
+          "stats": {
+            "pac": 90,
+            "sho": 84,
+            "pas": 80,
+            "dri": 86,
+            "def": 44,
+            "phy": 76
+          },
+          "nationality": "Senegalese"
+        },
+        {
+          "id": "sen26_12",
+          "name": "Ismaila Sarr",
+          "position": "RW",
+          "overall": 82,
+          "stats": {
+            "pac": 92,
+            "sho": 76,
+            "pas": 64,
+            "dri": 80,
+            "def": 34,
+            "phy": 72
+          },
+          "nationality": "Senegalese"
+        },
+        {
+          "id": "sen26_13",
+          "name": "Boulaye Dia",
+          "position": "ST",
+          "overall": 82,
+          "stats": {
+            "pac": 84,
+            "sho": 80,
+            "pas": 62,
+            "dri": 76,
+            "def": 30,
+            "phy": 72
+          },
+          "nationality": "Senegalese"
+        },
+        {
+          "id": "sen26_14",
+          "name": "Nicolas Jackson",
+          "position": "ST",
+          "overall": 82,
+          "stats": {
+            "pac": 88,
+            "sho": 78,
+            "pas": 60,
+            "dri": 78,
+            "def": 28,
+            "phy": 74
+          },
+          "nationality": "Senegalese"
+        },
+        {
+          "id": "sen26_15",
+          "name": "Krepin Diatta",
+          "position": "LW",
+          "overall": 79,
+          "stats": {
+            "pac": 88,
+            "sho": 72,
+            "pas": 62,
+            "dri": 78,
+            "def": 32,
+            "phy": 68
+          },
+          "nationality": "Senegalese"
+        },
+        {
+          "id": "sen26_16",
+          "name": "Famara Diedhiou",
+          "position": "ST",
+          "overall": 76,
+          "stats": {
+            "pac": 72,
+            "sho": 74,
+            "pas": 50,
+            "dri": 60,
+            "def": 26,
+            "phy": 80
+          },
+          "nationality": "Senegalese"
+        },
+        {
+          "id": "sen26_17",
+          "name": "Cheikhou Kouyate",
+          "position": "CDM",
+          "overall": 77,
+          "stats": {
+            "pac": 72,
+            "sho": 52,
+            "pas": 66,
+            "dri": 62,
+            "def": 74,
+            "phy": 78
+          },
+          "nationality": "Senegalese"
+        },
+        {
+          "id": "sen26_18",
+          "name": "Bamba Dieng",
+          "position": "ST",
+          "overall": 76,
+          "stats": {
+            "pac": 82,
+            "sho": 72,
+            "pas": 54,
+            "dri": 68,
+            "def": 24,
+            "phy": 70
+          },
+          "nationality": "Senegalese"
+        }
+      ]
+    },
+    {
+      "club": "USA",
+      "season": "2026",
+      "league": "World Cup",
+      "badge": "USA",
+      "players": [
+        {
+          "id": "usa26m_01",
+          "name": "Matt Turner",
+          "position": "GK",
+          "overall": 81,
+          "stats": {
+            "pac": 50,
+            "sho": 11,
+            "pas": 40,
+            "dri": 30,
+            "def": 22,
+            "phy": 80
+          },
+          "nationality": "American"
+        },
+        {
+          "id": "usa26m_02",
+          "name": "Patrick Schulte",
+          "position": "GK",
+          "overall": 76,
+          "stats": {
+            "pac": 46,
+            "sho": 9,
+            "pas": 36,
+            "dri": 24,
+            "def": 18,
+            "phy": 76
+          },
+          "nationality": "American"
+        },
+        {
+          "id": "usa26m_03",
+          "name": "Chris Richards",
+          "position": "CB",
+          "overall": 81,
+          "stats": {
+            "pac": 80,
+            "sho": 32,
+            "pas": 58,
+            "dri": 56,
+            "def": 82,
+            "phy": 78
+          },
+          "nationality": "American"
+        },
+        {
+          "id": "usa26m_04",
+          "name": "Walker Zimmerman",
+          "position": "CB",
+          "overall": 80,
+          "stats": {
+            "pac": 72,
+            "sho": 30,
+            "pas": 54,
+            "dri": 50,
+            "def": 82,
+            "phy": 78
+          },
+          "nationality": "American"
+        },
+        {
+          "id": "usa26m_05",
+          "name": "Miles Robinson",
+          "position": "CB",
+          "overall": 79,
+          "stats": {
+            "pac": 80,
+            "sho": 28,
+            "pas": 52,
+            "dri": 50,
+            "def": 80,
+            "phy": 78
+          },
+          "nationality": "American"
+        },
+        {
+          "id": "usa26m_06",
+          "name": "Antonee Robinson",
+          "position": "LB",
+          "overall": 83,
+          "stats": {
+            "pac": 90,
+            "sho": 54,
+            "pas": 70,
+            "dri": 72,
+            "def": 78,
+            "phy": 72
+          },
+          "nationality": "American"
+        },
+        {
+          "id": "usa26m_07",
+          "name": "Sergino Dest",
+          "position": "RB",
+          "overall": 80,
+          "stats": {
+            "pac": 86,
+            "sho": 56,
+            "pas": 68,
+            "dri": 76,
+            "def": 72,
+            "phy": 68
+          },
+          "nationality": "American"
+        },
+        {
+          "id": "usa26m_08",
+          "name": "Tyler Adams",
+          "position": "CDM",
+          "overall": 82,
+          "stats": {
+            "pac": 78,
+            "sho": 58,
+            "pas": 74,
+            "dri": 72,
+            "def": 84,
+            "phy": 76
+          },
+          "nationality": "American"
+        },
+        {
+          "id": "usa26m_09",
+          "name": "Weston McKennie",
+          "position": "CM",
+          "overall": 81,
+          "stats": {
+            "pac": 74,
+            "sho": 70,
+            "pas": 72,
+            "dri": 68,
+            "def": 72,
+            "phy": 80
+          },
+          "nationality": "American"
+        },
+        {
+          "id": "usa26m_10",
+          "name": "Yunus Musah",
+          "position": "CM",
+          "overall": 82,
+          "stats": {
+            "pac": 82,
+            "sho": 66,
+            "pas": 76,
+            "dri": 82,
+            "def": 68,
+            "phy": 72
+          },
+          "nationality": "American"
+        },
+        {
+          "id": "usa26m_11",
+          "name": "Christian Pulisic",
+          "position": "LW",
+          "overall": 86,
+          "stats": {
+            "pac": 87,
+            "sho": 82,
+            "pas": 78,
+            "dri": 88,
+            "def": 40,
+            "phy": 66
+          },
+          "nationality": "American"
+        },
+        {
+          "id": "usa26m_12",
+          "name": "Tim Weah",
+          "position": "RW",
+          "overall": 79,
+          "stats": {
+            "pac": 90,
+            "sho": 72,
+            "pas": 64,
+            "dri": 76,
+            "def": 36,
+            "phy": 68
+          },
+          "nationality": "American"
+        },
+        {
+          "id": "usa26m_13",
+          "name": "Giovanni Reyna",
+          "position": "CAM",
+          "overall": 81,
+          "stats": {
+            "pac": 78,
+            "sho": 76,
+            "pas": 82,
+            "dri": 84,
+            "def": 38,
+            "phy": 62
+          },
+          "nationality": "American"
+        },
+        {
+          "id": "usa26m_14",
+          "name": "Folarin Balogun",
+          "position": "ST",
+          "overall": 82,
+          "stats": {
+            "pac": 82,
+            "sho": 80,
+            "pas": 60,
+            "dri": 74,
+            "def": 28,
+            "phy": 72
+          },
+          "nationality": "American"
+        },
+        {
+          "id": "usa26m_15",
+          "name": "Brenden Aaronson",
+          "position": "CAM",
+          "overall": 78,
+          "stats": {
+            "pac": 78,
+            "sho": 70,
+            "pas": 72,
+            "dri": 74,
+            "def": 54,
+            "phy": 70
+          },
+          "nationality": "American"
+        },
+        {
+          "id": "usa26m_16",
+          "name": "Ricardo Pepi",
+          "position": "ST",
+          "overall": 78,
+          "stats": {
+            "pac": 80,
+            "sho": 76,
+            "pas": 58,
+            "dri": 70,
+            "def": 28,
+            "phy": 74
+          },
+          "nationality": "American"
+        },
+        {
+          "id": "usa26m_17",
+          "name": "Malik Tillman",
+          "position": "LW",
+          "overall": 77,
+          "stats": {
+            "pac": 80,
+            "sho": 72,
+            "pas": 68,
+            "dri": 78,
+            "def": 34,
+            "phy": 68
+          },
+          "nationality": "American"
+        },
+        {
+          "id": "usa26m_18",
+          "name": "Josh Sargent",
+          "position": "ST",
+          "overall": 76,
+          "stats": {
+            "pac": 76,
+            "sho": 74,
+            "pas": 56,
+            "dri": 64,
+            "def": 28,
+            "phy": 74
+          },
+          "nationality": "American"
+        }
+      ]
+    },
+    {
+      "club": "South Korea",
+      "season": "2026",
+      "league": "World Cup",
+      "badge": "KOR",
+      "players": [
+        {
+          "id": "kor26_01",
+          "name": "Kim Seung-gyu",
+          "position": "GK",
+          "overall": 79,
+          "stats": {
+            "pac": 46,
+            "sho": 11,
+            "pas": 38,
+            "dri": 28,
+            "def": 20,
+            "phy": 76
+          },
+          "nationality": "South Korean"
+        },
+        {
+          "id": "kor26_02",
+          "name": "Jo Hyeon-woo",
+          "position": "GK",
+          "overall": 77,
+          "stats": {
+            "pac": 44,
+            "sho": 10,
+            "pas": 36,
+            "dri": 24,
+            "def": 18,
+            "phy": 74
+          },
+          "nationality": "South Korean"
+        },
+        {
+          "id": "kor26_03",
+          "name": "Kim Min-jae",
+          "position": "CB",
+          "overall": 88,
+          "stats": {
+            "pac": 84,
+            "sho": 40,
+            "pas": 62,
+            "dri": 62,
+            "def": 90,
+            "phy": 88
+          },
+          "nationality": "South Korean"
+        },
+        {
+          "id": "kor26_04",
+          "name": "Kim Young-gwon",
+          "position": "CB",
+          "overall": 78,
+          "stats": {
+            "pac": 70,
+            "sho": 28,
+            "pas": 52,
+            "dri": 48,
+            "def": 80,
+            "phy": 78
+          },
+          "nationality": "South Korean"
+        },
+        {
+          "id": "kor26_05",
+          "name": "Jung Seung-hyun",
+          "position": "CB",
+          "overall": 76,
+          "stats": {
+            "pac": 68,
+            "sho": 26,
+            "pas": 50,
+            "dri": 46,
+            "def": 78,
+            "phy": 76
+          },
+          "nationality": "South Korean"
+        },
+        {
+          "id": "kor26_06",
+          "name": "Kim Jin-su",
+          "position": "LB",
+          "overall": 76,
+          "stats": {
+            "pac": 78,
+            "sho": 42,
+            "pas": 60,
+            "dri": 60,
+            "def": 72,
+            "phy": 68
+          },
+          "nationality": "South Korean"
+        },
+        {
+          "id": "kor26_07",
+          "name": "Seol Young-woo",
+          "position": "RB",
+          "overall": 75,
+          "stats": {
+            "pac": 78,
+            "sho": 40,
+            "pas": 58,
+            "dri": 58,
+            "def": 70,
+            "phy": 68
+          },
+          "nationality": "South Korean"
+        },
+        {
+          "id": "kor26_08",
+          "name": "Hwang In-beom",
+          "position": "CDM",
+          "overall": 79,
+          "stats": {
+            "pac": 74,
+            "sho": 60,
+            "pas": 74,
+            "dri": 72,
+            "def": 76,
+            "phy": 72
+          },
+          "nationality": "South Korean"
+        },
+        {
+          "id": "kor26_09",
+          "name": "Lee Jae-sung",
+          "position": "CM",
+          "overall": 78,
+          "stats": {
+            "pac": 72,
+            "sho": 62,
+            "pas": 74,
+            "dri": 70,
+            "def": 66,
+            "phy": 68
+          },
+          "nationality": "South Korean"
+        },
+        {
+          "id": "kor26_10",
+          "name": "Son Heung-min",
+          "position": "LW",
+          "overall": 90,
+          "stats": {
+            "pac": 88,
+            "sho": 88,
+            "pas": 82,
+            "dri": 88,
+            "def": 42,
+            "phy": 74
+          },
+          "nationality": "South Korean"
+        },
+        {
+          "id": "kor26_11",
+          "name": "Lee Kang-in",
+          "position": "CAM",
+          "overall": 84,
+          "stats": {
+            "pac": 80,
+            "sho": 78,
+            "pas": 84,
+            "dri": 86,
+            "def": 42,
+            "phy": 64
+          },
+          "nationality": "South Korean"
+        },
+        {
+          "id": "kor26_12",
+          "name": "Hwang Hee-chan",
+          "position": "LW",
+          "overall": 81,
+          "stats": {
+            "pac": 88,
+            "sho": 78,
+            "pas": 68,
+            "dri": 78,
+            "def": 42,
+            "phy": 72
+          },
+          "nationality": "South Korean"
+        },
+        {
+          "id": "kor26_13",
+          "name": "Cho Gue-sung",
+          "position": "ST",
+          "overall": 79,
+          "stats": {
+            "pac": 76,
+            "sho": 80,
+            "pas": 54,
+            "dri": 68,
+            "def": 24,
+            "phy": 78
+          },
+          "nationality": "South Korean"
+        },
+        {
+          "id": "kor26_14",
+          "name": "Lim Chang-woo",
+          "position": "RW",
+          "overall": 74,
+          "stats": {
+            "pac": 82,
+            "sho": 66,
+            "pas": 60,
+            "dri": 72,
+            "def": 32,
+            "phy": 64
+          },
+          "nationality": "South Korean"
+        },
+        {
+          "id": "kor26_15",
+          "name": "Oh Hyeon-gyu",
+          "position": "ST",
+          "overall": 77,
+          "stats": {
+            "pac": 78,
+            "sho": 76,
+            "pas": 52,
+            "dri": 66,
+            "def": 24,
+            "phy": 74
+          },
+          "nationality": "South Korean"
+        },
+        {
+          "id": "kor26_16",
+          "name": "Jung Woo-young",
+          "position": "CDM",
+          "overall": 77,
+          "stats": {
+            "pac": 70,
+            "sho": 52,
+            "pas": 68,
+            "dri": 62,
+            "def": 78,
+            "phy": 72
+          },
+          "nationality": "South Korean"
+        },
+        {
+          "id": "kor26_17",
+          "name": "Kim Bo-kyung",
+          "position": "CM",
+          "overall": 74,
+          "stats": {
+            "pac": 70,
+            "sho": 56,
+            "pas": 70,
+            "dri": 66,
+            "def": 58,
+            "phy": 64
+          },
+          "nationality": "South Korean"
+        },
+        {
+          "id": "kor26_18",
+          "name": "Paik Seung-ho",
+          "position": "CM",
+          "overall": 75,
+          "stats": {
+            "pac": 70,
+            "sho": 58,
+            "pas": 72,
+            "dri": 68,
+            "def": 60,
+            "phy": 66
+          },
+          "nationality": "South Korean"
+        }
+      ]
+    },
+    {
+      "club": "Australia",
+      "season": "2026",
+      "league": "World Cup",
+      "badge": "AUS",
+      "players": [
+        {
+          "id": "aus26_01",
+          "name": "Mat Ryan",
+          "position": "GK",
+          "overall": 81,
+          "stats": {
+            "pac": 50,
+            "sho": 11,
+            "pas": 42,
+            "dri": 30,
+            "def": 22,
+            "phy": 78
+          },
+          "nationality": "Australian"
+        },
+        {
+          "id": "aus26_02",
+          "name": "Danny Vukovic",
+          "position": "GK",
+          "overall": 74,
+          "stats": {
+            "pac": 42,
+            "sho": 9,
+            "pas": 34,
+            "dri": 22,
+            "def": 16,
+            "phy": 72
+          },
+          "nationality": "Australian"
+        },
+        {
+          "id": "aus26_03",
+          "name": "Harry Souttar",
+          "position": "CB",
+          "overall": 82,
+          "stats": {
+            "pac": 72,
+            "sho": 36,
+            "pas": 56,
+            "dri": 52,
+            "def": 84,
+            "phy": 86
+          },
+          "nationality": "Australian"
+        },
+        {
+          "id": "aus26_04",
+          "name": "Milos Degenek",
+          "position": "CB",
+          "overall": 77,
+          "stats": {
+            "pac": 72,
+            "sho": 28,
+            "pas": 52,
+            "dri": 48,
+            "def": 79,
+            "phy": 76
+          },
+          "nationality": "Australian"
+        },
+        {
+          "id": "aus26_05",
+          "name": "Kye Rowles",
+          "position": "CB",
+          "overall": 76,
+          "stats": {
+            "pac": 70,
+            "sho": 26,
+            "pas": 52,
+            "dri": 48,
+            "def": 78,
+            "phy": 74
+          },
+          "nationality": "Australian"
+        },
+        {
+          "id": "aus26_06",
+          "name": "Aziz Behich",
+          "position": "LB",
+          "overall": 76,
+          "stats": {
+            "pac": 80,
+            "sho": 44,
+            "pas": 60,
+            "dri": 62,
+            "def": 70,
+            "phy": 68
+          },
+          "nationality": "Australian"
+        },
+        {
+          "id": "aus26_07",
+          "name": "Nathaniel Atkinson",
+          "position": "RB",
+          "overall": 75,
+          "stats": {
+            "pac": 80,
+            "sho": 42,
+            "pas": 58,
+            "dri": 60,
+            "def": 68,
+            "phy": 66
+          },
+          "nationality": "Australian"
+        },
+        {
+          "id": "aus26_08",
+          "name": "Riley McGree",
+          "position": "CM",
+          "overall": 79,
+          "stats": {
+            "pac": 76,
+            "sho": 68,
+            "pas": 74,
+            "dri": 74,
+            "def": 60,
+            "phy": 70
+          },
+          "nationality": "Australian"
+        },
+        {
+          "id": "aus26_09",
+          "name": "Jackson Irvine",
+          "position": "CM",
+          "overall": 77,
+          "stats": {
+            "pac": 72,
+            "sho": 62,
+            "pas": 70,
+            "dri": 66,
+            "def": 64,
+            "phy": 74
+          },
+          "nationality": "Australian"
+        },
+        {
+          "id": "aus26_10",
+          "name": "Aaron Mooy",
+          "position": "CDM",
+          "overall": 79,
+          "stats": {
+            "pac": 68,
+            "sho": 64,
+            "pas": 78,
+            "dri": 70,
+            "def": 74,
+            "phy": 68
+          },
+          "nationality": "Australian"
+        },
+        {
+          "id": "aus26_11",
+          "name": "Mitchell Duke",
+          "position": "ST",
+          "overall": 76,
+          "stats": {
+            "pac": 74,
+            "sho": 74,
+            "pas": 52,
+            "dri": 62,
+            "def": 28,
+            "phy": 76
+          },
+          "nationality": "Australian"
+        },
+        {
+          "id": "aus26_12",
+          "name": "Martin Boyle",
+          "position": "RW",
+          "overall": 77,
+          "stats": {
+            "pac": 88,
+            "sho": 68,
+            "pas": 60,
+            "dri": 74,
+            "def": 30,
+            "phy": 64
+          },
+          "nationality": "Australian"
+        },
+        {
+          "id": "aus26_13",
+          "name": "Craig Goodwin",
+          "position": "LW",
+          "overall": 75,
+          "stats": {
+            "pac": 82,
+            "sho": 66,
+            "pas": 62,
+            "dri": 70,
+            "def": 32,
+            "phy": 64
+          },
+          "nationality": "Australian"
+        },
+        {
+          "id": "aus26_14",
+          "name": "Awer Mabil",
+          "position": "LW",
+          "overall": 76,
+          "stats": {
+            "pac": 88,
+            "sho": 68,
+            "pas": 58,
+            "dri": 74,
+            "def": 30,
+            "phy": 66
+          },
+          "nationality": "Australian"
+        },
+        {
+          "id": "aus26_15",
+          "name": "Cameron Devlin",
+          "position": "CM",
+          "overall": 74,
+          "stats": {
+            "pac": 72,
+            "sho": 58,
+            "pas": 68,
+            "dri": 66,
+            "def": 62,
+            "phy": 70
+          },
+          "nationality": "Australian"
+        },
+        {
+          "id": "aus26_16",
+          "name": "Marco Tilio",
+          "position": "RW",
+          "overall": 74,
+          "stats": {
+            "pac": 84,
+            "sho": 66,
+            "pas": 60,
+            "dri": 72,
+            "def": 28,
+            "phy": 60
+          },
+          "nationality": "Australian"
+        },
+        {
+          "id": "aus26_17",
+          "name": "Garang Kuol",
+          "position": "ST",
+          "overall": 73,
+          "stats": {
+            "pac": 88,
+            "sho": 66,
+            "pas": 52,
+            "dri": 68,
+            "def": 22,
+            "phy": 64
+          },
+          "nationality": "Australian"
+        },
+        {
+          "id": "aus26_18",
+          "name": "Nestory Irankunda",
+          "position": "RW",
+          "overall": 74,
+          "stats": {
+            "pac": 86,
+            "sho": 68,
+            "pas": 58,
+            "dri": 74,
+            "def": 26,
+            "phy": 62
+          },
+          "nationality": "Australian"
+        }
+      ]
+    },
+    {
+      "club": "Ecuador",
+      "season": "2026",
+      "league": "World Cup",
+      "badge": "ECU",
+      "players": [
+        {
+          "id": "ecu26_01",
+          "name": "Alexander Dominguez",
+          "position": "GK",
+          "overall": 78,
+          "stats": {
+            "pac": 46,
+            "sho": 10,
+            "pas": 38,
+            "dri": 26,
+            "def": 20,
+            "phy": 76
+          },
+          "nationality": "Ecuadorian"
+        },
+        {
+          "id": "ecu26_02",
+          "name": "Hernan Galindez",
+          "position": "GK",
+          "overall": 75,
+          "stats": {
+            "pac": 42,
+            "sho": 9,
+            "pas": 34,
+            "dri": 22,
+            "def": 16,
+            "phy": 72
+          },
+          "nationality": "Ecuadorian"
+        },
+        {
+          "id": "ecu26_03",
+          "name": "Piero Hincapie",
+          "position": "CB",
+          "overall": 83,
+          "stats": {
+            "pac": 82,
+            "sho": 34,
+            "pas": 60,
+            "dri": 60,
+            "def": 84,
+            "phy": 78
+          },
+          "nationality": "Ecuadorian"
+        },
+        {
+          "id": "ecu26_04",
+          "name": "Felix Torres",
+          "position": "CB",
+          "overall": 80,
+          "stats": {
+            "pac": 74,
+            "sho": 30,
+            "pas": 54,
+            "dri": 52,
+            "def": 82,
+            "phy": 80
+          },
+          "nationality": "Ecuadorian"
+        },
+        {
+          "id": "ecu26_05",
+          "name": "William Pacho",
+          "position": "CB",
+          "overall": 80,
+          "stats": {
+            "pac": 80,
+            "sho": 30,
+            "pas": 56,
+            "dri": 54,
+            "def": 82,
+            "phy": 78
+          },
+          "nationality": "Ecuadorian"
+        },
+        {
+          "id": "ecu26_06",
+          "name": "Pervis Estupinan",
+          "position": "LB",
+          "overall": 83,
+          "stats": {
+            "pac": 88,
+            "sho": 56,
+            "pas": 68,
+            "dri": 74,
+            "def": 76,
+            "phy": 72
+          },
+          "nationality": "Ecuadorian"
+        },
+        {
+          "id": "ecu26_07",
+          "name": "Angelo Preciado",
+          "position": "RB",
+          "overall": 77,
+          "stats": {
+            "pac": 82,
+            "sho": 46,
+            "pas": 60,
+            "dri": 62,
+            "def": 72,
+            "phy": 68
+          },
+          "nationality": "Ecuadorian"
+        },
+        {
+          "id": "ecu26_08",
+          "name": "Carlos Gruezo",
+          "position": "CDM",
+          "overall": 77,
+          "stats": {
+            "pac": 68,
+            "sho": 52,
+            "pas": 68,
+            "dri": 62,
+            "def": 78,
+            "phy": 72
+          },
+          "nationality": "Ecuadorian"
+        },
+        {
+          "id": "ecu26_09",
+          "name": "Moises Caicedo",
+          "position": "CDM",
+          "overall": 84,
+          "stats": {
+            "pac": 78,
+            "sho": 62,
+            "pas": 76,
+            "dri": 74,
+            "def": 86,
+            "phy": 78
+          },
+          "nationality": "Ecuadorian"
+        },
+        {
+          "id": "ecu26_10",
+          "name": "Jhegson Mendez",
+          "position": "CM",
+          "overall": 76,
+          "stats": {
+            "pac": 70,
+            "sho": 56,
+            "pas": 70,
+            "dri": 66,
+            "def": 70,
+            "phy": 72
+          },
+          "nationality": "Ecuadorian"
+        },
+        {
+          "id": "ecu26_11",
+          "name": "Gonzalo Plata",
+          "position": "RW",
+          "overall": 79,
+          "stats": {
+            "pac": 88,
+            "sho": 72,
+            "pas": 62,
+            "dri": 78,
+            "def": 30,
+            "phy": 64
+          },
+          "nationality": "Ecuadorian"
+        },
+        {
+          "id": "ecu26_12",
+          "name": "Jeremy Sarmiento",
+          "position": "LW",
+          "overall": 78,
+          "stats": {
+            "pac": 84,
+            "sho": 68,
+            "pas": 66,
+            "dri": 76,
+            "def": 30,
+            "phy": 62
+          },
+          "nationality": "Ecuadorian"
+        },
+        {
+          "id": "ecu26_13",
+          "name": "Enner Valencia",
+          "position": "ST",
+          "overall": 80,
+          "stats": {
+            "pac": 78,
+            "sho": 82,
+            "pas": 60,
+            "dri": 72,
+            "def": 36,
+            "phy": 76
+          },
+          "nationality": "Ecuadorian"
+        },
+        {
+          "id": "ecu26_14",
+          "name": "Leonardo Campana",
+          "position": "ST",
+          "overall": 76,
+          "stats": {
+            "pac": 76,
+            "sho": 74,
+            "pas": 54,
+            "dri": 66,
+            "def": 26,
+            "phy": 74
+          },
+          "nationality": "Ecuadorian"
+        },
+        {
+          "id": "ecu26_15",
+          "name": "Kevin Rodriguez",
+          "position": "RW",
+          "overall": 75,
+          "stats": {
+            "pac": 82,
+            "sho": 66,
+            "pas": 60,
+            "dri": 72,
+            "def": 28,
+            "phy": 62
+          },
+          "nationality": "Ecuadorian"
+        },
+        {
+          "id": "ecu26_16",
+          "name": "Ayrton Preciado",
+          "position": "ST",
+          "overall": 74,
+          "stats": {
+            "pac": 80,
+            "sho": 70,
+            "pas": 52,
+            "dri": 64,
+            "def": 24,
+            "phy": 68
+          },
+          "nationality": "Ecuadorian"
+        },
+        {
+          "id": "ecu26_17",
+          "name": "Juan Cazares",
+          "position": "CAM",
+          "overall": 74,
+          "stats": {
+            "pac": 72,
+            "sho": 64,
+            "pas": 72,
+            "dri": 74,
+            "def": 36,
+            "phy": 60
+          },
+          "nationality": "Ecuadorian"
+        },
+        {
+          "id": "ecu26_18",
+          "name": "Robert Arboleda",
+          "position": "CB",
+          "overall": 76,
+          "stats": {
+            "pac": 70,
+            "sho": 26,
+            "pas": 50,
+            "dri": 46,
+            "def": 78,
+            "phy": 76
+          },
+          "nationality": "Ecuadorian"
+        }
+      ]
+    },
+    {
+      "club": "Colombia",
+      "season": "2026",
+      "league": "World Cup",
+      "badge": "COL",
+      "players": [
+        {
+          "id": "col26_01",
+          "name": "David Ospina",
+          "position": "GK",
+          "overall": 81,
+          "stats": {
+            "pac": 50,
+            "sho": 11,
+            "pas": 42,
+            "dri": 30,
+            "def": 22,
+            "phy": 76
+          },
+          "nationality": "Colombian"
+        },
+        {
+          "id": "col26_02",
+          "name": "Camilo Vargas",
+          "position": "GK",
+          "overall": 76,
+          "stats": {
+            "pac": 44,
+            "sho": 9,
+            "pas": 36,
+            "dri": 24,
+            "def": 18,
+            "phy": 72
+          },
+          "nationality": "Colombian"
+        },
+        {
+          "id": "col26_03",
+          "name": "Davinson Sanchez",
+          "position": "CB",
+          "overall": 83,
+          "stats": {
+            "pac": 82,
+            "sho": 36,
+            "pas": 58,
+            "dri": 58,
+            "def": 85,
+            "phy": 84
+          },
+          "nationality": "Colombian"
+        },
+        {
+          "id": "col26_04",
+          "name": "Yerry Mina",
+          "position": "CB",
+          "overall": 82,
+          "stats": {
+            "pac": 72,
+            "sho": 38,
+            "pas": 54,
+            "dri": 52,
+            "def": 84,
+            "phy": 88
+          },
+          "nationality": "Colombian"
+        },
+        {
+          "id": "col26_05",
+          "name": "Carlos Cuesta",
+          "position": "CB",
+          "overall": 78,
+          "stats": {
+            "pac": 76,
+            "sho": 28,
+            "pas": 52,
+            "dri": 50,
+            "def": 80,
+            "phy": 78
+          },
+          "nationality": "Colombian"
+        },
+        {
+          "id": "col26_06",
+          "name": "Johan Mojica",
+          "position": "LB",
+          "overall": 78,
+          "stats": {
+            "pac": 80,
+            "sho": 46,
+            "pas": 62,
+            "dri": 64,
+            "def": 72,
+            "phy": 70
+          },
+          "nationality": "Colombian"
+        },
+        {
+          "id": "col26_07",
+          "name": "Daniel Munoz",
+          "position": "RB",
+          "overall": 80,
+          "stats": {
+            "pac": 82,
+            "sho": 50,
+            "pas": 64,
+            "dri": 66,
+            "def": 76,
+            "phy": 72
+          },
+          "nationality": "Colombian"
+        },
+        {
+          "id": "col26_08",
+          "name": "Jefferson Lerma",
+          "position": "CDM",
+          "overall": 80,
+          "stats": {
+            "pac": 72,
+            "sho": 58,
+            "pas": 70,
+            "dri": 66,
+            "def": 82,
+            "phy": 80
+          },
+          "nationality": "Colombian"
+        },
+        {
+          "id": "col26_09",
+          "name": "Mateus Uribe",
+          "position": "CM",
+          "overall": 78,
+          "stats": {
+            "pac": 70,
+            "sho": 66,
+            "pas": 72,
+            "dri": 68,
+            "def": 68,
+            "phy": 72
+          },
+          "nationality": "Colombian"
+        },
+        {
+          "id": "col26_10",
+          "name": "James Rodriguez",
+          "position": "CAM",
+          "overall": 84,
+          "stats": {
+            "pac": 68,
+            "sho": 78,
+            "pas": 88,
+            "dri": 82,
+            "def": 44,
+            "phy": 64
+          },
+          "nationality": "Colombian"
+        },
+        {
+          "id": "col26_11",
+          "name": "Luis Diaz",
+          "position": "LW",
+          "overall": 87,
+          "stats": {
+            "pac": 90,
+            "sho": 80,
+            "pas": 76,
+            "dri": 88,
+            "def": 38,
+            "phy": 74
+          },
+          "nationality": "Colombian"
+        },
+        {
+          "id": "col26_12",
+          "name": "Cucho Hernandez",
+          "position": "ST",
+          "overall": 81,
+          "stats": {
+            "pac": 88,
+            "sho": 78,
+            "pas": 60,
+            "dri": 78,
+            "def": 28,
+            "phy": 74
+          },
+          "nationality": "Colombian"
+        },
+        {
+          "id": "col26_13",
+          "name": "Rafael Santos Borre",
+          "position": "ST",
+          "overall": 79,
+          "stats": {
+            "pac": 82,
+            "sho": 78,
+            "pas": 60,
+            "dri": 72,
+            "def": 28,
+            "phy": 72
+          },
+          "nationality": "Colombian"
+        },
+        {
+          "id": "col26_14",
+          "name": "Jhon Duran",
+          "position": "ST",
+          "overall": 80,
+          "stats": {
+            "pac": 82,
+            "sho": 80,
+            "pas": 56,
+            "dri": 72,
+            "def": 24,
+            "phy": 80
+          },
+          "nationality": "Colombian"
+        },
+        {
+          "id": "col26_15",
+          "name": "Jorge Carrascal",
+          "position": "CAM",
+          "overall": 78,
+          "stats": {
+            "pac": 78,
+            "sho": 70,
+            "pas": 76,
+            "dri": 80,
+            "def": 38,
+            "phy": 64
+          },
+          "nationality": "Colombian"
+        },
+        {
+          "id": "col26_16",
+          "name": "Jhon Arias",
+          "position": "RW",
+          "overall": 79,
+          "stats": {
+            "pac": 84,
+            "sho": 72,
+            "pas": 68,
+            "dri": 78,
+            "def": 34,
+            "phy": 68
+          },
+          "nationality": "Colombian"
+        },
+        {
+          "id": "col26_17",
+          "name": "Juan Camilo Hernandez",
+          "position": "LW",
+          "overall": 80,
+          "stats": {
+            "pac": 84,
+            "sho": 76,
+            "pas": 70,
+            "dri": 82,
+            "def": 32,
+            "phy": 66
+          },
+          "nationality": "Colombian"
+        },
+        {
+          "id": "col26_18",
+          "name": "Richard Rios",
+          "position": "CM",
+          "overall": 76,
+          "stats": {
+            "pac": 72,
+            "sho": 58,
+            "pas": 70,
+            "dri": 66,
+            "def": 66,
+            "phy": 72
+          },
+          "nationality": "Colombian"
+        }
+      ]
+    },
+    {
+      "club": "Switzerland",
+      "season": "2026",
+      "league": "World Cup",
+      "badge": "SUI",
+      "players": [
+        {
+          "id": "sui26_01",
+          "name": "Yann Sommer",
+          "position": "GK",
+          "overall": 86,
+          "stats": {
+            "pac": 52,
+            "sho": 12,
+            "pas": 46,
+            "dri": 36,
+            "def": 26,
+            "phy": 78
+          },
+          "nationality": "Swiss"
+        },
+        {
+          "id": "sui26_02",
+          "name": "Gregor Kobel",
+          "position": "GK",
+          "overall": 84,
+          "stats": {
+            "pac": 54,
+            "sho": 11,
+            "pas": 44,
+            "dri": 34,
+            "def": 26,
+            "phy": 80
+          },
+          "nationality": "Swiss"
+        },
+        {
+          "id": "sui26_03",
+          "name": "Manuel Akanji",
+          "position": "CB",
+          "overall": 85,
+          "stats": {
+            "pac": 82,
+            "sho": 36,
+            "pas": 64,
+            "dri": 62,
+            "def": 86,
+            "phy": 82
+          },
+          "nationality": "Swiss"
+        },
+        {
+          "id": "sui26_04",
+          "name": "Fabian Schar",
+          "position": "CB",
+          "overall": 82,
+          "stats": {
+            "pac": 72,
+            "sho": 40,
+            "pas": 66,
+            "dri": 58,
+            "def": 84,
+            "phy": 78
+          },
+          "nationality": "Swiss"
+        },
+        {
+          "id": "sui26_05",
+          "name": "Nico Elvedi",
+          "position": "CB",
+          "overall": 80,
+          "stats": {
+            "pac": 74,
+            "sho": 30,
+            "pas": 58,
+            "dri": 52,
+            "def": 82,
+            "phy": 78
+          },
+          "nationality": "Swiss"
+        },
+        {
+          "id": "sui26_06",
+          "name": "Ricardo Rodriguez",
+          "position": "LB",
+          "overall": 79,
+          "stats": {
+            "pac": 72,
+            "sho": 52,
+            "pas": 68,
+            "dri": 62,
+            "def": 78,
+            "phy": 70
+          },
+          "nationality": "Swiss"
+        },
+        {
+          "id": "sui26_07",
+          "name": "Silvan Widmer",
+          "position": "RB",
+          "overall": 79,
+          "stats": {
+            "pac": 80,
+            "sho": 50,
+            "pas": 66,
+            "dri": 66,
+            "def": 74,
+            "phy": 70
+          },
+          "nationality": "Swiss"
+        },
+        {
+          "id": "sui26_08",
+          "name": "Granit Xhaka",
+          "position": "CM",
+          "overall": 84,
+          "stats": {
+            "pac": 68,
+            "sho": 70,
+            "pas": 86,
+            "dri": 72,
+            "def": 78,
+            "phy": 78
+          },
+          "nationality": "Swiss"
+        },
+        {
+          "id": "sui26_09",
+          "name": "Remo Freuler",
+          "position": "CM",
+          "overall": 80,
+          "stats": {
+            "pac": 72,
+            "sho": 64,
+            "pas": 78,
+            "dri": 72,
+            "def": 72,
+            "phy": 72
+          },
+          "nationality": "Swiss"
+        },
+        {
+          "id": "sui26_10",
+          "name": "Denis Zakaria",
+          "position": "CDM",
+          "overall": 80,
+          "stats": {
+            "pac": 78,
+            "sho": 60,
+            "pas": 72,
+            "dri": 68,
+            "def": 80,
+            "phy": 82
+          },
+          "nationality": "Swiss"
+        },
+        {
+          "id": "sui26_11",
+          "name": "Xherdan Shaqiri",
+          "position": "RW",
+          "overall": 82,
+          "stats": {
+            "pac": 82,
+            "sho": 80,
+            "pas": 76,
+            "dri": 84,
+            "def": 32,
+            "phy": 68
+          },
+          "nationality": "Swiss"
+        },
+        {
+          "id": "sui26_12",
+          "name": "Ruben Vargas",
+          "position": "LW",
+          "overall": 79,
+          "stats": {
+            "pac": 82,
+            "sho": 72,
+            "pas": 70,
+            "dri": 76,
+            "def": 36,
+            "phy": 66
+          },
+          "nationality": "Swiss"
+        },
+        {
+          "id": "sui26_13",
+          "name": "Breel Embolo",
+          "position": "ST",
+          "overall": 81,
+          "stats": {
+            "pac": 82,
+            "sho": 78,
+            "pas": 60,
+            "dri": 74,
+            "def": 32,
+            "phy": 80
+          },
+          "nationality": "Swiss"
+        },
+        {
+          "id": "sui26_14",
+          "name": "Haris Seferovic",
+          "position": "ST",
+          "overall": 78,
+          "stats": {
+            "pac": 78,
+            "sho": 76,
+            "pas": 54,
+            "dri": 66,
+            "def": 26,
+            "phy": 76
+          },
+          "nationality": "Swiss"
+        },
+        {
+          "id": "sui26_15",
+          "name": "Noah Okafor",
+          "position": "ST",
+          "overall": 80,
+          "stats": {
+            "pac": 86,
+            "sho": 76,
+            "pas": 62,
+            "dri": 76,
+            "def": 28,
+            "phy": 72
+          },
+          "nationality": "Swiss"
+        },
+        {
+          "id": "sui26_16",
+          "name": "Dan Ndoye",
+          "position": "RW",
+          "overall": 78,
+          "stats": {
+            "pac": 88,
+            "sho": 70,
+            "pas": 64,
+            "dri": 74,
+            "def": 30,
+            "phy": 68
+          },
+          "nationality": "Swiss"
+        },
+        {
+          "id": "sui26_17",
+          "name": "Michel Aebischer",
+          "position": "CM",
+          "overall": 77,
+          "stats": {
+            "pac": 72,
+            "sho": 60,
+            "pas": 74,
+            "dri": 68,
+            "def": 66,
+            "phy": 68
+          },
+          "nationality": "Swiss"
+        },
+        {
+          "id": "sui26_18",
+          "name": "Ardon Jashari",
+          "position": "CDM",
+          "overall": 76,
+          "stats": {
+            "pac": 72,
+            "sho": 54,
+            "pas": 72,
+            "dri": 68,
+            "def": 76,
+            "phy": 70
+          },
+          "nationality": "Swiss"
+        }
+      ]
+    },
+    {
+      "club": "Denmark",
+      "season": "2026",
+      "league": "World Cup",
+      "badge": "DEN",
+      "players": [
+        {
+          "id": "den26_01",
+          "name": "Kasper Schmeichel",
+          "position": "GK",
+          "overall": 83,
+          "stats": {
+            "pac": 50,
+            "sho": 11,
+            "pas": 42,
+            "dri": 30,
+            "def": 24,
+            "phy": 78
+          },
+          "nationality": "Danish"
+        },
+        {
+          "id": "den26_02",
+          "name": "Frederik Ronnow",
+          "position": "GK",
+          "overall": 78,
+          "stats": {
+            "pac": 46,
+            "sho": 10,
+            "pas": 38,
+            "dri": 26,
+            "def": 20,
+            "phy": 74
+          },
+          "nationality": "Danish"
+        },
+        {
+          "id": "den26_03",
+          "name": "Simon Kjaer",
+          "position": "CB",
+          "overall": 84,
+          "stats": {
+            "pac": 70,
+            "sho": 36,
+            "pas": 62,
+            "dri": 56,
+            "def": 86,
+            "phy": 82
+          },
+          "nationality": "Danish"
+        },
+        {
+          "id": "den26_04",
+          "name": "Andreas Christensen",
+          "position": "CB",
+          "overall": 85,
+          "stats": {
+            "pac": 74,
+            "sho": 36,
+            "pas": 68,
+            "dri": 60,
+            "def": 86,
+            "phy": 78
+          },
+          "nationality": "Danish"
+        },
+        {
+          "id": "den26_05",
+          "name": "Joachim Andersen",
+          "position": "CB",
+          "overall": 83,
+          "stats": {
+            "pac": 72,
+            "sho": 34,
+            "pas": 62,
+            "dri": 56,
+            "def": 85,
+            "phy": 82
+          },
+          "nationality": "Danish"
+        },
+        {
+          "id": "den26_06",
+          "name": "Joakim Maehle",
+          "position": "LB",
+          "overall": 80,
+          "stats": {
+            "pac": 84,
+            "sho": 52,
+            "pas": 68,
+            "dri": 68,
+            "def": 74,
+            "phy": 70
+          },
+          "nationality": "Danish"
+        },
+        {
+          "id": "den26_07",
+          "name": "Alexander Bah",
+          "position": "RB",
+          "overall": 78,
+          "stats": {
+            "pac": 82,
+            "sho": 46,
+            "pas": 62,
+            "dri": 64,
+            "def": 72,
+            "phy": 70
+          },
+          "nationality": "Danish"
+        },
+        {
+          "id": "den26_08",
+          "name": "Pierre-Emile Hojbjerg",
+          "position": "CDM",
+          "overall": 83,
+          "stats": {
+            "pac": 70,
+            "sho": 66,
+            "pas": 80,
+            "dri": 72,
+            "def": 82,
+            "phy": 78
+          },
+          "nationality": "Danish"
+        },
+        {
+          "id": "den26_09",
+          "name": "Mathias Jensen",
+          "position": "CM",
+          "overall": 78,
+          "stats": {
+            "pac": 72,
+            "sho": 60,
+            "pas": 76,
+            "dri": 70,
+            "def": 64,
+            "phy": 68
+          },
+          "nationality": "Danish"
+        },
+        {
+          "id": "den26_10",
+          "name": "Christian Eriksen",
+          "position": "CAM",
+          "overall": 84,
+          "stats": {
+            "pac": 66,
+            "sho": 76,
+            "pas": 90,
+            "dri": 78,
+            "def": 50,
+            "phy": 64
+          },
+          "nationality": "Danish"
+        },
+        {
+          "id": "den26_11",
+          "name": "Mikkel Damsgaard",
+          "position": "LW",
+          "overall": 80,
+          "stats": {
+            "pac": 82,
+            "sho": 72,
+            "pas": 76,
+            "dri": 80,
+            "def": 34,
+            "phy": 66
+          },
+          "nationality": "Danish"
+        },
+        {
+          "id": "den26_12",
+          "name": "Rasmus Hojlund",
+          "position": "ST",
+          "overall": 84,
+          "stats": {
+            "pac": 86,
+            "sho": 82,
+            "pas": 58,
+            "dri": 78,
+            "def": 28,
+            "phy": 78
+          },
+          "nationality": "Danish"
+        },
+        {
+          "id": "den26_13",
+          "name": "Andreas Skov Olsen",
+          "position": "RW",
+          "overall": 79,
+          "stats": {
+            "pac": 82,
+            "sho": 74,
+            "pas": 68,
+            "dri": 78,
+            "def": 32,
+            "phy": 64
+          },
+          "nationality": "Danish"
+        },
+        {
+          "id": "den26_14",
+          "name": "Kasper Dolberg",
+          "position": "ST",
+          "overall": 78,
+          "stats": {
+            "pac": 76,
+            "sho": 78,
+            "pas": 56,
+            "dri": 68,
+            "def": 24,
+            "phy": 74
+          },
+          "nationality": "Danish"
+        },
+        {
+          "id": "den26_15",
+          "name": "Marcus Ingvartsen",
+          "position": "ST",
+          "overall": 74,
+          "stats": {
+            "pac": 74,
+            "sho": 72,
+            "pas": 52,
+            "dri": 62,
+            "def": 24,
+            "phy": 72
+          },
+          "nationality": "Danish"
+        },
+        {
+          "id": "den26_16",
+          "name": "Jesper Lindstrom",
+          "position": "CAM",
+          "overall": 79,
+          "stats": {
+            "pac": 78,
+            "sho": 72,
+            "pas": 76,
+            "dri": 78,
+            "def": 38,
+            "phy": 66
+          },
+          "nationality": "Danish"
+        },
+        {
+          "id": "den26_17",
+          "name": "Jacob Bruun Larsen",
+          "position": "LW",
+          "overall": 75,
+          "stats": {
+            "pac": 80,
+            "sho": 68,
+            "pas": 66,
+            "dri": 74,
+            "def": 30,
+            "phy": 62
+          },
+          "nationality": "Danish"
+        },
+        {
+          "id": "den26_18",
+          "name": "Mads Christensen",
+          "position": "CB",
+          "overall": 75,
+          "stats": {
+            "pac": 70,
+            "sho": 26,
+            "pas": 52,
+            "dri": 48,
+            "def": 77,
+            "phy": 74
+          },
+          "nationality": "Danish"
+        }
+      ]
+    },
+    {
+      "club": "Poland",
+      "season": "2026",
+      "league": "World Cup",
+      "badge": "POL",
+      "players": [
+        {
+          "id": "pol26_01",
+          "name": "Wojciech Szczesny",
+          "position": "GK",
+          "overall": 85,
+          "stats": {
+            "pac": 52,
+            "sho": 12,
+            "pas": 44,
+            "dri": 34,
+            "def": 26,
+            "phy": 80
+          },
+          "nationality": "Polish"
+        },
+        {
+          "id": "pol26_02",
+          "name": "Lukasz Skorupski",
+          "position": "GK",
+          "overall": 79,
+          "stats": {
+            "pac": 46,
+            "sho": 10,
+            "pas": 38,
+            "dri": 26,
+            "def": 20,
+            "phy": 74
+          },
+          "nationality": "Polish"
+        },
+        {
+          "id": "pol26_03",
+          "name": "Kamil Glik",
+          "position": "CB",
+          "overall": 80,
+          "stats": {
+            "pac": 66,
+            "sho": 32,
+            "pas": 54,
+            "dri": 50,
+            "def": 82,
+            "phy": 82
+          },
+          "nationality": "Polish"
+        },
+        {
+          "id": "pol26_04",
+          "name": "Jan Bednarek",
+          "position": "CB",
+          "overall": 81,
+          "stats": {
+            "pac": 74,
+            "sho": 30,
+            "pas": 56,
+            "dri": 52,
+            "def": 83,
+            "phy": 80
+          },
+          "nationality": "Polish"
+        },
+        {
+          "id": "pol26_05",
+          "name": "Jakub Kiwior",
+          "position": "CB",
+          "overall": 80,
+          "stats": {
+            "pac": 76,
+            "sho": 28,
+            "pas": 58,
+            "dri": 54,
+            "def": 82,
+            "phy": 76
+          },
+          "nationality": "Polish"
+        },
+        {
+          "id": "pol26_06",
+          "name": "Bartosz Bereszynski",
+          "position": "RB",
+          "overall": 77,
+          "stats": {
+            "pac": 80,
+            "sho": 44,
+            "pas": 62,
+            "dri": 62,
+            "def": 72,
+            "phy": 68
+          },
+          "nationality": "Polish"
+        },
+        {
+          "id": "pol26_07",
+          "name": "Tymoteusz Puchacz",
+          "position": "LB",
+          "overall": 75,
+          "stats": {
+            "pac": 78,
+            "sho": 42,
+            "pas": 58,
+            "dri": 58,
+            "def": 68,
+            "phy": 68
+          },
+          "nationality": "Polish"
+        },
+        {
+          "id": "pol26_08",
+          "name": "Grzegorz Krychowiak",
+          "position": "CDM",
+          "overall": 80,
+          "stats": {
+            "pac": 70,
+            "sho": 58,
+            "pas": 72,
+            "dri": 66,
+            "def": 82,
+            "phy": 76
+          },
+          "nationality": "Polish"
+        },
+        {
+          "id": "pol26_09",
+          "name": "Mateusz Klich",
+          "position": "CM",
+          "overall": 78,
+          "stats": {
+            "pac": 72,
+            "sho": 64,
+            "pas": 76,
+            "dri": 70,
+            "def": 62,
+            "phy": 68
+          },
+          "nationality": "Polish"
+        },
+        {
+          "id": "pol26_10",
+          "name": "Piotr Zielinski",
+          "position": "CAM",
+          "overall": 84,
+          "stats": {
+            "pac": 72,
+            "sho": 78,
+            "pas": 86,
+            "dri": 82,
+            "def": 52,
+            "phy": 64
+          },
+          "nationality": "Polish"
+        },
+        {
+          "id": "pol26_11",
+          "name": "Przemyslaw Frankowski",
+          "position": "RW",
+          "overall": 78,
+          "stats": {
+            "pac": 86,
+            "sho": 68,
+            "pas": 66,
+            "dri": 74,
+            "def": 36,
+            "phy": 62
+          },
+          "nationality": "Polish"
+        },
+        {
+          "id": "pol26_12",
+          "name": "Jakub Piotrowski",
+          "position": "CM",
+          "overall": 76,
+          "stats": {
+            "pac": 70,
+            "sho": 60,
+            "pas": 72,
+            "dri": 66,
+            "def": 64,
+            "phy": 68
+          },
+          "nationality": "Polish"
+        },
+        {
+          "id": "pol26_13",
+          "name": "Robert Lewandowski",
+          "position": "ST",
+          "overall": 90,
+          "stats": {
+            "pac": 78,
+            "sho": 92,
+            "pas": 78,
+            "dri": 86,
+            "def": 38,
+            "phy": 84
+          },
+          "nationality": "Polish"
+        },
+        {
+          "id": "pol26_14",
+          "name": "Arkadiusz Milik",
+          "position": "ST",
+          "overall": 81,
+          "stats": {
+            "pac": 76,
+            "sho": 82,
+            "pas": 60,
+            "dri": 72,
+            "def": 28,
+            "phy": 76
+          },
+          "nationality": "Polish"
+        },
+        {
+          "id": "pol26_15",
+          "name": "Karol Swiderski",
+          "position": "ST",
+          "overall": 76,
+          "stats": {
+            "pac": 82,
+            "sho": 74,
+            "pas": 54,
+            "dri": 66,
+            "def": 24,
+            "phy": 70
+          },
+          "nationality": "Polish"
+        },
+        {
+          "id": "pol26_16",
+          "name": "Nicola Zalewski",
+          "position": "LW",
+          "overall": 78,
+          "stats": {
+            "pac": 82,
+            "sho": 68,
+            "pas": 68,
+            "dri": 76,
+            "def": 40,
+            "phy": 64
+          },
+          "nationality": "Polish"
+        },
+        {
+          "id": "pol26_17",
+          "name": "Sebastian Szymanski",
+          "position": "CAM",
+          "overall": 79,
+          "stats": {
+            "pac": 74,
+            "sho": 72,
+            "pas": 78,
+            "dri": 76,
+            "def": 44,
+            "phy": 66
+          },
+          "nationality": "Polish"
+        },
+        {
+          "id": "pol26_18",
+          "name": "Marek Piotrowski",
+          "position": "LB",
+          "overall": 74,
+          "stats": {
+            "pac": 76,
+            "sho": 40,
+            "pas": 58,
+            "dri": 56,
+            "def": 68,
+            "phy": 66
+          },
+          "nationality": "Polish"
+        }
+      ]
+    },
+    {
+      "club": "Turkey",
+      "season": "2026",
+      "league": "World Cup",
+      "badge": "TUR",
+      "players": [
+        {
+          "id": "tur26_01",
+          "name": "Ugurcan Cakir",
+          "position": "GK",
+          "overall": 81,
+          "stats": {
+            "pac": 50,
+            "sho": 11,
+            "pas": 42,
+            "dri": 30,
+            "def": 22,
+            "phy": 78
+          },
+          "nationality": "Turkish"
+        },
+        {
+          "id": "tur26_02",
+          "name": "Altay Bayindir",
+          "position": "GK",
+          "overall": 79,
+          "stats": {
+            "pac": 48,
+            "sho": 10,
+            "pas": 40,
+            "dri": 28,
+            "def": 20,
+            "phy": 76
+          },
+          "nationality": "Turkish"
+        },
+        {
+          "id": "tur26_03",
+          "name": "Merih Demiral",
+          "position": "CB",
+          "overall": 84,
+          "stats": {
+            "pac": 80,
+            "sho": 38,
+            "pas": 58,
+            "dri": 58,
+            "def": 86,
+            "phy": 84
+          },
+          "nationality": "Turkish"
+        },
+        {
+          "id": "tur26_04",
+          "name": "Caglar Soyuncu",
+          "position": "CB",
+          "overall": 82,
+          "stats": {
+            "pac": 76,
+            "sho": 32,
+            "pas": 56,
+            "dri": 54,
+            "def": 84,
+            "phy": 80
+          },
+          "nationality": "Turkish"
+        },
+        {
+          "id": "tur26_05",
+          "name": "Samet Akaydin",
+          "position": "CB",
+          "overall": 78,
+          "stats": {
+            "pac": 72,
+            "sho": 28,
+            "pas": 52,
+            "dri": 48,
+            "def": 80,
+            "phy": 78
+          },
+          "nationality": "Turkish"
+        },
+        {
+          "id": "tur26_06",
+          "name": "Ferdi Kadioglu",
+          "position": "LB",
+          "overall": 82,
+          "stats": {
+            "pac": 84,
+            "sho": 56,
+            "pas": 68,
+            "dri": 72,
+            "def": 76,
+            "phy": 70
+          },
+          "nationality": "Turkish"
+        },
+        {
+          "id": "tur26_07",
+          "name": "Zeki Celik",
+          "position": "RB",
+          "overall": 79,
+          "stats": {
+            "pac": 84,
+            "sho": 50,
+            "pas": 62,
+            "dri": 64,
+            "def": 74,
+            "phy": 72
+          },
+          "nationality": "Turkish"
+        },
+        {
+          "id": "tur26_08",
+          "name": "Salih Ozcan",
+          "position": "CDM",
+          "overall": 78,
+          "stats": {
+            "pac": 72,
+            "sho": 56,
+            "pas": 70,
+            "dri": 66,
+            "def": 78,
+            "phy": 74
+          },
+          "nationality": "Turkish"
+        },
+        {
+          "id": "tur26_09",
+          "name": "Hakan Calhanoglu",
+          "position": "CM",
+          "overall": 85,
+          "stats": {
+            "pac": 70,
+            "sho": 78,
+            "pas": 88,
+            "dri": 80,
+            "def": 66,
+            "phy": 68
+          },
+          "nationality": "Turkish"
+        },
+        {
+          "id": "tur26_10",
+          "name": "Okay Yokuslu",
+          "position": "CDM",
+          "overall": 78,
+          "stats": {
+            "pac": 68,
+            "sho": 54,
+            "pas": 70,
+            "dri": 62,
+            "def": 80,
+            "phy": 76
+          },
+          "nationality": "Turkish"
+        },
+        {
+          "id": "tur26_11",
+          "name": "Kerem Akturkoglu",
+          "position": "LW",
+          "overall": 82,
+          "stats": {
+            "pac": 90,
+            "sho": 74,
+            "pas": 68,
+            "dri": 82,
+            "def": 30,
+            "phy": 68
+          },
+          "nationality": "Turkish"
+        },
+        {
+          "id": "tur26_12",
+          "name": "Arda Guler",
+          "position": "CAM",
+          "overall": 83,
+          "stats": {
+            "pac": 76,
+            "sho": 78,
+            "pas": 82,
+            "dri": 86,
+            "def": 36,
+            "phy": 60
+          },
+          "nationality": "Turkish"
+        },
+        {
+          "id": "tur26_13",
+          "name": "Cengiz Under",
+          "position": "RW",
+          "overall": 80,
+          "stats": {
+            "pac": 88,
+            "sho": 74,
+            "pas": 66,
+            "dri": 80,
+            "def": 28,
+            "phy": 64
+          },
+          "nationality": "Turkish"
+        },
+        {
+          "id": "tur26_14",
+          "name": "Cenk Tosun",
+          "position": "ST",
+          "overall": 78,
+          "stats": {
+            "pac": 72,
+            "sho": 78,
+            "pas": 54,
+            "dri": 64,
+            "def": 24,
+            "phy": 78
+          },
+          "nationality": "Turkish"
+        },
+        {
+          "id": "tur26_15",
+          "name": "Baris Alper Yilmaz",
+          "position": "LW",
+          "overall": 78,
+          "stats": {
+            "pac": 86,
+            "sho": 72,
+            "pas": 64,
+            "dri": 76,
+            "def": 28,
+            "phy": 64
+          },
+          "nationality": "Turkish"
+        },
+        {
+          "id": "tur26_16",
+          "name": "Irfan Can Kahveci",
+          "position": "CM",
+          "overall": 77,
+          "stats": {
+            "pac": 72,
+            "sho": 70,
+            "pas": 74,
+            "dri": 72,
+            "def": 52,
+            "phy": 66
+          },
+          "nationality": "Turkish"
+        },
+        {
+          "id": "tur26_17",
+          "name": "Serdar Dursun",
+          "position": "ST",
+          "overall": 76,
+          "stats": {
+            "pac": 72,
+            "sho": 76,
+            "pas": 52,
+            "dri": 62,
+            "def": 22,
+            "phy": 76
+          },
+          "nationality": "Turkish"
+        },
+        {
+          "id": "tur26_18",
+          "name": "Orkun Kokcu",
+          "position": "CAM",
+          "overall": 80,
+          "stats": {
+            "pac": 72,
+            "sho": 72,
+            "pas": 82,
+            "dri": 78,
+            "def": 46,
+            "phy": 64
+          },
+          "nationality": "Turkish"
+        }
+      ]
+    },
+    {
+      "club": "Austria",
+      "season": "2026",
+      "league": "World Cup",
+      "badge": "AUT",
+      "players": [
+        {
+          "id": "aut26_01",
+          "name": "Patrick Pentz",
+          "position": "GK",
+          "overall": 78,
+          "stats": {
+            "pac": 48,
+            "sho": 10,
+            "pas": 38,
+            "dri": 26,
+            "def": 20,
+            "phy": 76
+          },
+          "nationality": "Austrian"
+        },
+        {
+          "id": "aut26_02",
+          "name": "Alexander Schlager",
+          "position": "GK",
+          "overall": 76,
+          "stats": {
+            "pac": 44,
+            "sho": 9,
+            "pas": 36,
+            "dri": 24,
+            "def": 18,
+            "phy": 74
+          },
+          "nationality": "Austrian"
+        },
+        {
+          "id": "aut26_03",
+          "name": "David Alaba",
+          "position": "CB",
+          "overall": 86,
+          "stats": {
+            "pac": 78,
+            "sho": 62,
+            "pas": 76,
+            "dri": 78,
+            "def": 86,
+            "phy": 76
+          },
+          "nationality": "Austrian"
+        },
+        {
+          "id": "aut26_04",
+          "name": "Phillipp Mwene",
+          "position": "CB",
+          "overall": 77,
+          "stats": {
+            "pac": 74,
+            "sho": 28,
+            "pas": 52,
+            "dri": 52,
+            "def": 78,
+            "phy": 74
+          },
+          "nationality": "Austrian"
+        },
+        {
+          "id": "aut26_05",
+          "name": "Kevin Danso",
+          "position": "CB",
+          "overall": 81,
+          "stats": {
+            "pac": 80,
+            "sho": 30,
+            "pas": 54,
+            "dri": 54,
+            "def": 82,
+            "phy": 82
+          },
+          "nationality": "Austrian"
+        },
+        {
+          "id": "aut26_06",
+          "name": "Maximilian Wober",
+          "position": "LB",
+          "overall": 79,
+          "stats": {
+            "pac": 78,
+            "sho": 44,
+            "pas": 62,
+            "dri": 60,
+            "def": 78,
+            "phy": 74
+          },
+          "nationality": "Austrian"
+        },
+        {
+          "id": "aut26_07",
+          "name": "Stefan Posch",
+          "position": "RB",
+          "overall": 78,
+          "stats": {
+            "pac": 80,
+            "sho": 46,
+            "pas": 62,
+            "dri": 60,
+            "def": 74,
+            "phy": 72
+          },
+          "nationality": "Austrian"
+        },
+        {
+          "id": "aut26_08",
+          "name": "Konrad Laimer",
+          "position": "CM",
+          "overall": 82,
+          "stats": {
+            "pac": 82,
+            "sho": 64,
+            "pas": 74,
+            "dri": 72,
+            "def": 74,
+            "phy": 80
+          },
+          "nationality": "Austrian"
+        },
+        {
+          "id": "aut26_09",
+          "name": "Nicolas Seiwald",
+          "position": "CDM",
+          "overall": 80,
+          "stats": {
+            "pac": 74,
+            "sho": 56,
+            "pas": 72,
+            "dri": 68,
+            "def": 80,
+            "phy": 76
+          },
+          "nationality": "Austrian"
+        },
+        {
+          "id": "aut26_10",
+          "name": "Marcel Sabitzer",
+          "position": "CM",
+          "overall": 82,
+          "stats": {
+            "pac": 74,
+            "sho": 74,
+            "pas": 78,
+            "dri": 76,
+            "def": 66,
+            "phy": 72
+          },
+          "nationality": "Austrian"
+        },
+        {
+          "id": "aut26_11",
+          "name": "Florian Grillitsch",
+          "position": "CDM",
+          "overall": 78,
+          "stats": {
+            "pac": 68,
+            "sho": 58,
+            "pas": 74,
+            "dri": 66,
+            "def": 78,
+            "phy": 72
+          },
+          "nationality": "Austrian"
+        },
+        {
+          "id": "aut26_12",
+          "name": "Christoph Baumgartner",
+          "position": "CAM",
+          "overall": 80,
+          "stats": {
+            "pac": 76,
+            "sho": 72,
+            "pas": 78,
+            "dri": 76,
+            "def": 46,
+            "phy": 66
+          },
+          "nationality": "Austrian"
+        },
+        {
+          "id": "aut26_13",
+          "name": "Marko Arnautovic",
+          "position": "ST",
+          "overall": 82,
+          "stats": {
+            "pac": 74,
+            "sho": 80,
+            "pas": 64,
+            "dri": 74,
+            "def": 30,
+            "phy": 80
+          },
+          "nationality": "Austrian"
+        },
+        {
+          "id": "aut26_14",
+          "name": "Michael Gregoritsch",
+          "position": "ST",
+          "overall": 78,
+          "stats": {
+            "pac": 72,
+            "sho": 76,
+            "pas": 58,
+            "dri": 66,
+            "def": 24,
+            "phy": 78
+          },
+          "nationality": "Austrian"
+        },
+        {
+          "id": "aut26_15",
+          "name": "Patrick Wimmer",
+          "position": "LW",
+          "overall": 77,
+          "stats": {
+            "pac": 82,
+            "sho": 68,
+            "pas": 64,
+            "dri": 74,
+            "def": 32,
+            "phy": 64
+          },
+          "nationality": "Austrian"
+        },
+        {
+          "id": "aut26_16",
+          "name": "Karim Adeyemi",
+          "position": "LW",
+          "overall": 82,
+          "stats": {
+            "pac": 92,
+            "sho": 76,
+            "pas": 66,
+            "dri": 80,
+            "def": 30,
+            "phy": 68
+          },
+          "nationality": "Austrian"
+        },
+        {
+          "id": "aut26_17",
+          "name": "Andreas Weimann",
+          "position": "ST",
+          "overall": 76,
+          "stats": {
+            "pac": 78,
+            "sho": 72,
+            "pas": 56,
+            "dri": 66,
+            "def": 26,
+            "phy": 68
+          },
+          "nationality": "Austrian"
+        },
+        {
+          "id": "aut26_18",
+          "name": "Philipp Lienhart",
+          "position": "CB",
+          "overall": 76,
+          "stats": {
+            "pac": 70,
+            "sho": 26,
+            "pas": 50,
+            "dri": 46,
+            "def": 78,
+            "phy": 74
+          },
+          "nationality": "Austrian"
+        }
+      ]
+    },
+    {
+      "club": "Hungary",
+      "season": "2026",
+      "league": "World Cup",
+      "badge": "HUN",
+      "players": [
+        {
+          "id": "hun26_01",
+          "name": "Peter Gulacsi",
+          "position": "GK",
+          "overall": 82,
+          "stats": {
+            "pac": 50,
+            "sho": 11,
+            "pas": 42,
+            "dri": 30,
+            "def": 22,
+            "phy": 78
+          },
+          "nationality": "Hungarian"
+        },
+        {
+          "id": "hun26_02",
+          "name": "Denes Dibusz",
+          "position": "GK",
+          "overall": 77,
+          "stats": {
+            "pac": 44,
+            "sho": 10,
+            "pas": 36,
+            "dri": 24,
+            "def": 18,
+            "phy": 74
+          },
+          "nationality": "Hungarian"
+        },
+        {
+          "id": "hun26_03",
+          "name": "Willi Orban",
+          "position": "CB",
+          "overall": 82,
+          "stats": {
+            "pac": 72,
+            "sho": 36,
+            "pas": 58,
+            "dri": 56,
+            "def": 84,
+            "phy": 80
+          },
+          "nationality": "Hungarian"
+        },
+        {
+          "id": "hun26_04",
+          "name": "Attila Szalai",
+          "position": "CB",
+          "overall": 80,
+          "stats": {
+            "pac": 74,
+            "sho": 32,
+            "pas": 54,
+            "dri": 52,
+            "def": 82,
+            "phy": 80
+          },
+          "nationality": "Hungarian"
+        },
+        {
+          "id": "hun26_05",
+          "name": "Adam Lang",
+          "position": "CB",
+          "overall": 76,
+          "stats": {
+            "pac": 68,
+            "sho": 26,
+            "pas": 50,
+            "dri": 46,
+            "def": 78,
+            "phy": 76
+          },
+          "nationality": "Hungarian"
+        },
+        {
+          "id": "hun26_06",
+          "name": "Endre Botka",
+          "position": "RB",
+          "overall": 74,
+          "stats": {
+            "pac": 78,
+            "sho": 40,
+            "pas": 58,
+            "dri": 58,
+            "def": 68,
+            "phy": 66
+          },
+          "nationality": "Hungarian"
+        },
+        {
+          "id": "hun26_07",
+          "name": "Milos Kerkez",
+          "position": "LB",
+          "overall": 79,
+          "stats": {
+            "pac": 82,
+            "sho": 48,
+            "pas": 62,
+            "dri": 64,
+            "def": 74,
+            "phy": 70
+          },
+          "nationality": "Hungarian"
+        },
+        {
+          "id": "hun26_08",
+          "name": "Adam Nagy",
+          "position": "CDM",
+          "overall": 76,
+          "stats": {
+            "pac": 68,
+            "sho": 52,
+            "pas": 70,
+            "dri": 62,
+            "def": 76,
+            "phy": 70
+          },
+          "nationality": "Hungarian"
+        },
+        {
+          "id": "hun26_09",
+          "name": "Callum Styles",
+          "position": "CM",
+          "overall": 75,
+          "stats": {
+            "pac": 72,
+            "sho": 56,
+            "pas": 66,
+            "dri": 64,
+            "def": 66,
+            "phy": 70
+          },
+          "nationality": "Hungarian"
+        },
+        {
+          "id": "hun26_10",
+          "name": "Dominik Szoboszlai",
+          "position": "CAM",
+          "overall": 85,
+          "stats": {
+            "pac": 80,
+            "sho": 80,
+            "pas": 84,
+            "dri": 84,
+            "def": 52,
+            "phy": 72
+          },
+          "nationality": "Hungarian"
+        },
+        {
+          "id": "hun26_11",
+          "name": "Loic Nego",
+          "position": "RB",
+          "overall": 74,
+          "stats": {
+            "pac": 80,
+            "sho": 42,
+            "pas": 58,
+            "dri": 60,
+            "def": 68,
+            "phy": 66
+          },
+          "nationality": "Hungarian"
+        },
+        {
+          "id": "hun26_12",
+          "name": "Roland Sallai",
+          "position": "RW",
+          "overall": 79,
+          "stats": {
+            "pac": 82,
+            "sho": 72,
+            "pas": 66,
+            "dri": 76,
+            "def": 34,
+            "phy": 66
+          },
+          "nationality": "Hungarian"
+        },
+        {
+          "id": "hun26_13",
+          "name": "Barnabas Varga",
+          "position": "ST",
+          "overall": 79,
+          "stats": {
+            "pac": 76,
+            "sho": 78,
+            "pas": 58,
+            "dri": 70,
+            "def": 28,
+            "phy": 78
+          },
+          "nationality": "Hungarian"
+        },
+        {
+          "id": "hun26_14",
+          "name": "Martin Adam",
+          "position": "ST",
+          "overall": 75,
+          "stats": {
+            "pac": 68,
+            "sho": 74,
+            "pas": 50,
+            "dri": 60,
+            "def": 22,
+            "phy": 80
+          },
+          "nationality": "Hungarian"
+        },
+        {
+          "id": "hun26_15",
+          "name": "Zsolt Nagy",
+          "position": "LW",
+          "overall": 73,
+          "stats": {
+            "pac": 80,
+            "sho": 64,
+            "pas": 60,
+            "dri": 68,
+            "def": 28,
+            "phy": 62
+          },
+          "nationality": "Hungarian"
+        },
+        {
+          "id": "hun26_16",
+          "name": "Kevin Csoboth",
+          "position": "RW",
+          "overall": 74,
+          "stats": {
+            "pac": 84,
+            "sho": 66,
+            "pas": 58,
+            "dri": 70,
+            "def": 26,
+            "phy": 62
+          },
+          "nationality": "Hungarian"
+        },
+        {
+          "id": "hun26_17",
+          "name": "Andras Schafer",
+          "position": "CM",
+          "overall": 77,
+          "stats": {
+            "pac": 72,
+            "sho": 60,
+            "pas": 70,
+            "dri": 66,
+            "def": 70,
+            "phy": 72
+          },
+          "nationality": "Hungarian"
+        },
+        {
+          "id": "hun26_18",
+          "name": "Peter Gulyas",
+          "position": "CM",
+          "overall": 74,
+          "stats": {
+            "pac": 68,
+            "sho": 56,
+            "pas": 68,
+            "dri": 62,
+            "def": 58,
+            "phy": 66
+          },
+          "nationality": "Hungarian"
+        }
+      ]
+    },
+    {
+      "club": "Wales",
+      "season": "2026",
+      "league": "World Cup",
+      "badge": "WAL",
+      "players": [
+        {
+          "id": "wal26_01",
+          "name": "Danny Ward",
+          "position": "GK",
+          "overall": 79,
+          "stats": {
+            "pac": 48,
+            "sho": 10,
+            "pas": 38,
+            "dri": 26,
+            "def": 20,
+            "phy": 76
+          },
+          "nationality": "Welsh"
+        },
+        {
+          "id": "wal26_02",
+          "name": "Wayne Hennessey",
+          "position": "GK",
+          "overall": 77,
+          "stats": {
+            "pac": 44,
+            "sho": 9,
+            "pas": 36,
+            "dri": 24,
+            "def": 18,
+            "phy": 74
+          },
+          "nationality": "Welsh"
+        },
+        {
+          "id": "wal26_03",
+          "name": "Ben Davies",
+          "position": "CB",
+          "overall": 80,
+          "stats": {
+            "pac": 70,
+            "sho": 30,
+            "pas": 62,
+            "dri": 56,
+            "def": 82,
+            "phy": 74
+          },
+          "nationality": "Welsh"
+        },
+        {
+          "id": "wal26_04",
+          "name": "Chris Mepham",
+          "position": "CB",
+          "overall": 77,
+          "stats": {
+            "pac": 72,
+            "sho": 26,
+            "pas": 52,
+            "dri": 48,
+            "def": 79,
+            "phy": 76
+          },
+          "nationality": "Welsh"
+        },
+        {
+          "id": "wal26_05",
+          "name": "Rhys Norrington-Davies",
+          "position": "CB",
+          "overall": 74,
+          "stats": {
+            "pac": 70,
+            "sho": 24,
+            "pas": 50,
+            "dri": 46,
+            "def": 76,
+            "phy": 72
+          },
+          "nationality": "Welsh"
+        },
+        {
+          "id": "wal26_06",
+          "name": "Neco Williams",
+          "position": "RB",
+          "overall": 78,
+          "stats": {
+            "pac": 84,
+            "sho": 46,
+            "pas": 62,
+            "dri": 64,
+            "def": 70,
+            "phy": 68
+          },
+          "nationality": "Welsh"
+        },
+        {
+          "id": "wal26_07",
+          "name": "Connor Roberts",
+          "position": "RB",
+          "overall": 76,
+          "stats": {
+            "pac": 80,
+            "sho": 44,
+            "pas": 60,
+            "dri": 60,
+            "def": 68,
+            "phy": 66
+          },
+          "nationality": "Welsh"
+        },
+        {
+          "id": "wal26_08",
+          "name": "Ethan Ampadu",
+          "position": "CDM",
+          "overall": 79,
+          "stats": {
+            "pac": 72,
+            "sho": 54,
+            "pas": 72,
+            "dri": 68,
+            "def": 80,
+            "phy": 70
+          },
+          "nationality": "Welsh"
+        },
+        {
+          "id": "wal26_09",
+          "name": "Joe Allen",
+          "position": "CM",
+          "overall": 76,
+          "stats": {
+            "pac": 64,
+            "sho": 56,
+            "pas": 76,
+            "dri": 70,
+            "def": 68,
+            "phy": 62
+          },
+          "nationality": "Welsh"
+        },
+        {
+          "id": "wal26_10",
+          "name": "Aaron Ramsey",
+          "position": "CAM",
+          "overall": 79,
+          "stats": {
+            "pac": 68,
+            "sho": 72,
+            "pas": 80,
+            "dri": 74,
+            "def": 64,
+            "phy": 66
+          },
+          "nationality": "Welsh"
+        },
+        {
+          "id": "wal26_11",
+          "name": "Gareth Bale",
+          "position": "RW",
+          "overall": 84,
+          "stats": {
+            "pac": 84,
+            "sho": 82,
+            "pas": 72,
+            "dri": 80,
+            "def": 36,
+            "phy": 72
+          },
+          "nationality": "Welsh"
+        },
+        {
+          "id": "wal26_12",
+          "name": "Daniel James",
+          "position": "LW",
+          "overall": 79,
+          "stats": {
+            "pac": 93,
+            "sho": 70,
+            "pas": 62,
+            "dri": 76,
+            "def": 36,
+            "phy": 64
+          },
+          "nationality": "Welsh"
+        },
+        {
+          "id": "wal26_13",
+          "name": "Brennan Johnson",
+          "position": "RW",
+          "overall": 81,
+          "stats": {
+            "pac": 88,
+            "sho": 74,
+            "pas": 68,
+            "dri": 78,
+            "def": 34,
+            "phy": 68
+          },
+          "nationality": "Welsh"
+        },
+        {
+          "id": "wal26_14",
+          "name": "Kieffer Moore",
+          "position": "ST",
+          "overall": 78,
+          "stats": {
+            "pac": 66,
+            "sho": 76,
+            "pas": 54,
+            "dri": 58,
+            "def": 28,
+            "phy": 86
+          },
+          "nationality": "Welsh"
+        },
+        {
+          "id": "wal26_15",
+          "name": "Mark Harris",
+          "position": "ST",
+          "overall": 72,
+          "stats": {
+            "pac": 70,
+            "sho": 68,
+            "pas": 48,
+            "dri": 56,
+            "def": 22,
+            "phy": 72
+          },
+          "nationality": "Welsh"
+        },
+        {
+          "id": "wal26_16",
+          "name": "Harry Wilson",
+          "position": "CAM",
+          "overall": 77,
+          "stats": {
+            "pac": 72,
+            "sho": 72,
+            "pas": 72,
+            "dri": 72,
+            "def": 38,
+            "phy": 62
+          },
+          "nationality": "Welsh"
+        },
+        {
+          "id": "wal26_17",
+          "name": "Dylan Levitt",
+          "position": "CM",
+          "overall": 74,
+          "stats": {
+            "pac": 68,
+            "sho": 54,
+            "pas": 70,
+            "dri": 62,
+            "def": 60,
+            "phy": 62
+          },
+          "nationality": "Welsh"
+        },
+        {
+          "id": "wal26_18",
+          "name": "Tom Lockyer",
+          "position": "CB",
+          "overall": 75,
+          "stats": {
+            "pac": 68,
+            "sho": 24,
+            "pas": 50,
+            "dri": 46,
+            "def": 77,
+            "phy": 74
+          },
+          "nationality": "Welsh"
+        }
+      ]
+    },
+    {
+      "club": "Scotland",
+      "season": "2026",
+      "league": "World Cup",
+      "badge": "SCO",
+      "players": [
+        {
+          "id": "sco26_01",
+          "name": "Angus Gunn",
+          "position": "GK",
+          "overall": 78,
+          "stats": {
+            "pac": 48,
+            "sho": 10,
+            "pas": 38,
+            "dri": 26,
+            "def": 20,
+            "phy": 76
+          },
+          "nationality": "Scottish"
+        },
+        {
+          "id": "sco26_02",
+          "name": "Craig Gordon",
+          "position": "GK",
+          "overall": 77,
+          "stats": {
+            "pac": 44,
+            "sho": 9,
+            "pas": 36,
+            "dri": 24,
+            "def": 20,
+            "phy": 72
+          },
+          "nationality": "Scottish"
+        },
+        {
+          "id": "sco26_03",
+          "name": "Grant Hanley",
+          "position": "CB",
+          "overall": 78,
+          "stats": {
+            "pac": 66,
+            "sho": 28,
+            "pas": 52,
+            "dri": 48,
+            "def": 80,
+            "phy": 80
+          },
+          "nationality": "Scottish"
+        },
+        {
+          "id": "sco26_04",
+          "name": "Liam Cooper",
+          "position": "CB",
+          "overall": 77,
+          "stats": {
+            "pac": 64,
+            "sho": 26,
+            "pas": 50,
+            "dri": 46,
+            "def": 79,
+            "phy": 78
+          },
+          "nationality": "Scottish"
+        },
+        {
+          "id": "sco26_05",
+          "name": "Jack Hendry",
+          "position": "CB",
+          "overall": 77,
+          "stats": {
+            "pac": 70,
+            "sho": 26,
+            "pas": 52,
+            "dri": 48,
+            "def": 78,
+            "phy": 76
+          },
+          "nationality": "Scottish"
+        },
+        {
+          "id": "sco26_06",
+          "name": "Andy Robertson",
+          "position": "LB",
+          "overall": 87,
+          "stats": {
+            "pac": 86,
+            "sho": 56,
+            "pas": 82,
+            "dri": 78,
+            "def": 82,
+            "phy": 74
+          },
+          "nationality": "Scottish"
+        },
+        {
+          "id": "sco26_07",
+          "name": "Aaron Hickey",
+          "position": "RB",
+          "overall": 79,
+          "stats": {
+            "pac": 80,
+            "sho": 52,
+            "pas": 64,
+            "dri": 66,
+            "def": 74,
+            "phy": 70
+          },
+          "nationality": "Scottish"
+        },
+        {
+          "id": "sco26_08",
+          "name": "John McGinn",
+          "position": "CM",
+          "overall": 82,
+          "stats": {
+            "pac": 72,
+            "sho": 72,
+            "pas": 74,
+            "dri": 70,
+            "def": 66,
+            "phy": 76
+          },
+          "nationality": "Scottish"
+        },
+        {
+          "id": "sco26_09",
+          "name": "Callum McGregor",
+          "position": "CM",
+          "overall": 80,
+          "stats": {
+            "pac": 70,
+            "sho": 64,
+            "pas": 78,
+            "dri": 72,
+            "def": 72,
+            "phy": 68
+          },
+          "nationality": "Scottish"
+        },
+        {
+          "id": "sco26_10",
+          "name": "Ryan Christie",
+          "position": "CAM",
+          "overall": 78,
+          "stats": {
+            "pac": 72,
+            "sho": 70,
+            "pas": 76,
+            "dri": 72,
+            "def": 50,
+            "phy": 64
+          },
+          "nationality": "Scottish"
+        },
+        {
+          "id": "sco26_11",
+          "name": "Ryan Jack",
+          "position": "CDM",
+          "overall": 76,
+          "stats": {
+            "pac": 68,
+            "sho": 54,
+            "pas": 68,
+            "dri": 62,
+            "def": 76,
+            "phy": 72
+          },
+          "nationality": "Scottish"
+        },
+        {
+          "id": "sco26_12",
+          "name": "Scott McTominay",
+          "position": "CM",
+          "overall": 82,
+          "stats": {
+            "pac": 72,
+            "sho": 70,
+            "pas": 72,
+            "dri": 68,
+            "def": 72,
+            "phy": 82
+          },
+          "nationality": "Scottish"
+        },
+        {
+          "id": "sco26_13",
+          "name": "Stuart Armstrong",
+          "position": "CM",
+          "overall": 77,
+          "stats": {
+            "pac": 74,
+            "sho": 64,
+            "pas": 70,
+            "dri": 68,
+            "def": 56,
+            "phy": 68
+          },
+          "nationality": "Scottish"
+        },
+        {
+          "id": "sco26_14",
+          "name": "Che Adams",
+          "position": "ST",
+          "overall": 78,
+          "stats": {
+            "pac": 82,
+            "sho": 76,
+            "pas": 56,
+            "dri": 68,
+            "def": 28,
+            "phy": 72
+          },
+          "nationality": "Scottish"
+        },
+        {
+          "id": "sco26_15",
+          "name": "Lyndon Dykes",
+          "position": "ST",
+          "overall": 75,
+          "stats": {
+            "pac": 74,
+            "sho": 72,
+            "pas": 50,
+            "dri": 58,
+            "def": 26,
+            "phy": 76
+          },
+          "nationality": "Scottish"
+        },
+        {
+          "id": "sco26_16",
+          "name": "Billy Gilmour",
+          "position": "CDM",
+          "overall": 78,
+          "stats": {
+            "pac": 68,
+            "sho": 54,
+            "pas": 76,
+            "dri": 72,
+            "def": 70,
+            "phy": 62
+          },
+          "nationality": "Scottish"
+        },
+        {
+          "id": "sco26_17",
+          "name": "Ryan Fraser",
+          "position": "LW",
+          "overall": 76,
+          "stats": {
+            "pac": 80,
+            "sho": 68,
+            "pas": 66,
+            "dri": 74,
+            "def": 28,
+            "phy": 60
+          },
+          "nationality": "Scottish"
+        },
+        {
+          "id": "sco26_18",
+          "name": "Lawrence Shankland",
+          "position": "ST",
+          "overall": 76,
+          "stats": {
+            "pac": 72,
+            "sho": 76,
+            "pas": 52,
+            "dri": 64,
+            "def": 22,
+            "phy": 72
+          },
+          "nationality": "Scottish"
+        }
+      ]
+    },
+    {
+      "club": "Ireland",
+      "season": "2026",
+      "league": "World Cup",
+      "badge": "IRL",
+      "players": [
+        {
+          "id": "irl26_01",
+          "name": "Gavin Bazunu",
+          "position": "GK",
+          "overall": 79,
+          "stats": {
+            "pac": 50,
+            "sho": 10,
+            "pas": 42,
+            "dri": 30,
+            "def": 20,
+            "phy": 74
+          },
+          "nationality": "Irish"
+        },
+        {
+          "id": "irl26_02",
+          "name": "Caoimhin Kelleher",
+          "position": "GK",
+          "overall": 78,
+          "stats": {
+            "pac": 48,
+            "sho": 10,
+            "pas": 40,
+            "dri": 28,
+            "def": 20,
+            "phy": 72
+          },
+          "nationality": "Irish"
+        },
+        {
+          "id": "irl26_03",
+          "name": "Shane Duffy",
+          "position": "CB",
+          "overall": 78,
+          "stats": {
+            "pac": 62,
+            "sho": 32,
+            "pas": 48,
+            "dri": 46,
+            "def": 80,
+            "phy": 82
+          },
+          "nationality": "Irish"
+        },
+        {
+          "id": "irl26_04",
+          "name": "Nathan Collins",
+          "position": "CB",
+          "overall": 79,
+          "stats": {
+            "pac": 74,
+            "sho": 30,
+            "pas": 54,
+            "dri": 52,
+            "def": 80,
+            "phy": 80
+          },
+          "nationality": "Irish"
+        },
+        {
+          "id": "irl26_05",
+          "name": "Dara O'Shea",
+          "position": "CB",
+          "overall": 77,
+          "stats": {
+            "pac": 72,
+            "sho": 26,
+            "pas": 52,
+            "dri": 48,
+            "def": 78,
+            "phy": 76
+          },
+          "nationality": "Irish"
+        },
+        {
+          "id": "irl26_06",
+          "name": "Matt Doherty",
+          "position": "RB",
+          "overall": 78,
+          "stats": {
+            "pac": 80,
+            "sho": 50,
+            "pas": 64,
+            "dri": 64,
+            "def": 72,
+            "phy": 70
+          },
+          "nationality": "Irish"
+        },
+        {
+          "id": "irl26_07",
+          "name": "Enda Stevens",
+          "position": "LB",
+          "overall": 75,
+          "stats": {
+            "pac": 76,
+            "sho": 42,
+            "pas": 58,
+            "dri": 58,
+            "def": 70,
+            "phy": 68
+          },
+          "nationality": "Irish"
+        },
+        {
+          "id": "irl26_08",
+          "name": "Josh Cullen",
+          "position": "CDM",
+          "overall": 76,
+          "stats": {
+            "pac": 68,
+            "sho": 50,
+            "pas": 68,
+            "dri": 60,
+            "def": 76,
+            "phy": 70
+          },
+          "nationality": "Irish"
+        },
+        {
+          "id": "irl26_09",
+          "name": "Jeff Hendrick",
+          "position": "CM",
+          "overall": 75,
+          "stats": {
+            "pac": 72,
+            "sho": 60,
+            "pas": 68,
+            "dri": 64,
+            "def": 60,
+            "phy": 70
+          },
+          "nationality": "Irish"
+        },
+        {
+          "id": "irl26_10",
+          "name": "Jayson Molumby",
+          "position": "CM",
+          "overall": 75,
+          "stats": {
+            "pac": 70,
+            "sho": 56,
+            "pas": 68,
+            "dri": 62,
+            "def": 66,
+            "phy": 72
+          },
+          "nationality": "Irish"
+        },
+        {
+          "id": "irl26_11",
+          "name": "Robbie Brady",
+          "position": "LW",
+          "overall": 76,
+          "stats": {
+            "pac": 76,
+            "sho": 66,
+            "pas": 72,
+            "dri": 70,
+            "def": 42,
+            "phy": 62
+          },
+          "nationality": "Irish"
+        },
+        {
+          "id": "irl26_12",
+          "name": "Callum Robinson",
+          "position": "RW",
+          "overall": 76,
+          "stats": {
+            "pac": 80,
+            "sho": 68,
+            "pas": 60,
+            "dri": 70,
+            "def": 34,
+            "phy": 66
+          },
+          "nationality": "Irish"
+        },
+        {
+          "id": "irl26_13",
+          "name": "Troy Parrott",
+          "position": "ST",
+          "overall": 76,
+          "stats": {
+            "pac": 76,
+            "sho": 74,
+            "pas": 54,
+            "dri": 66,
+            "def": 24,
+            "phy": 68
+          },
+          "nationality": "Irish"
+        },
+        {
+          "id": "irl26_14",
+          "name": "Chiedozie Ogbene",
+          "position": "RW",
+          "overall": 76,
+          "stats": {
+            "pac": 90,
+            "sho": 66,
+            "pas": 56,
+            "dri": 68,
+            "def": 32,
+            "phy": 66
+          },
+          "nationality": "Irish"
+        },
+        {
+          "id": "irl26_15",
+          "name": "Adam Idah",
+          "position": "ST",
+          "overall": 77,
+          "stats": {
+            "pac": 78,
+            "sho": 74,
+            "pas": 52,
+            "dri": 64,
+            "def": 24,
+            "phy": 78
+          },
+          "nationality": "Irish"
+        },
+        {
+          "id": "irl26_16",
+          "name": "Michael Obafemi",
+          "position": "ST",
+          "overall": 75,
+          "stats": {
+            "pac": 82,
+            "sho": 70,
+            "pas": 52,
+            "dri": 66,
+            "def": 22,
+            "phy": 68
+          },
+          "nationality": "Irish"
+        },
+        {
+          "id": "irl26_17",
+          "name": "Alan Browne",
+          "position": "CM",
+          "overall": 74,
+          "stats": {
+            "pac": 70,
+            "sho": 58,
+            "pas": 66,
+            "dri": 62,
+            "def": 58,
+            "phy": 68
+          },
+          "nationality": "Irish"
+        },
+        {
+          "id": "irl26_18",
+          "name": "Seamus Coleman",
+          "position": "RB",
+          "overall": 74,
+          "stats": {
+            "pac": 74,
+            "sho": 44,
+            "pas": 58,
+            "dri": 58,
+            "def": 70,
+            "phy": 66
+          },
+          "nationality": "Irish"
+        }
+      ]
+    },
+    {
+      "club": "Serbia",
+      "season": "2026",
+      "league": "World Cup",
+      "badge": "SRB",
+      "players": [
+        {
+          "id": "srb26_01",
+          "name": "Vanja Milinkovic-Savic",
+          "position": "GK",
+          "overall": 82,
+          "stats": {
+            "pac": 52,
+            "sho": 11,
+            "pas": 42,
+            "dri": 30,
+            "def": 22,
+            "phy": 82
+          },
+          "nationality": "Serbian"
+        },
+        {
+          "id": "srb26_02",
+          "name": "Predrag Rajkovic",
+          "position": "GK",
+          "overall": 80,
+          "stats": {
+            "pac": 48,
+            "sho": 10,
+            "pas": 40,
+            "dri": 28,
+            "def": 20,
+            "phy": 78
+          },
+          "nationality": "Serbian"
+        },
+        {
+          "id": "srb26_03",
+          "name": "Nikola Milenkovic",
+          "position": "CB",
+          "overall": 83,
+          "stats": {
+            "pac": 74,
+            "sho": 34,
+            "pas": 58,
+            "dri": 54,
+            "def": 85,
+            "phy": 84
+          },
+          "nationality": "Serbian"
+        },
+        {
+          "id": "srb26_04",
+          "name": "Stefan Mitrovic",
+          "position": "CB",
+          "overall": 79,
+          "stats": {
+            "pac": 68,
+            "sho": 28,
+            "pas": 52,
+            "dri": 48,
+            "def": 81,
+            "phy": 80
+          },
+          "nationality": "Serbian"
+        },
+        {
+          "id": "srb26_05",
+          "name": "Strahinja Pavlovic",
+          "position": "CB",
+          "overall": 82,
+          "stats": {
+            "pac": 78,
+            "sho": 32,
+            "pas": 56,
+            "dri": 54,
+            "def": 84,
+            "phy": 82
+          },
+          "nationality": "Serbian"
+        },
+        {
+          "id": "srb26_06",
+          "name": "Milos Veljkovic",
+          "position": "LB",
+          "overall": 77,
+          "stats": {
+            "pac": 74,
+            "sho": 30,
+            "pas": 54,
+            "dri": 50,
+            "def": 78,
+            "phy": 74
+          },
+          "nationality": "Serbian"
+        },
+        {
+          "id": "srb26_07",
+          "name": "Srdan Babic",
+          "position": "RB",
+          "overall": 74,
+          "stats": {
+            "pac": 76,
+            "sho": 38,
+            "pas": 56,
+            "dri": 56,
+            "def": 70,
+            "phy": 66
+          },
+          "nationality": "Serbian"
+        },
+        {
+          "id": "srb26_08",
+          "name": "Nemanja Gudelj",
+          "position": "CDM",
+          "overall": 79,
+          "stats": {
+            "pac": 68,
+            "sho": 56,
+            "pas": 72,
+            "dri": 64,
+            "def": 80,
+            "phy": 76
+          },
+          "nationality": "Serbian"
+        },
+        {
+          "id": "srb26_09",
+          "name": "Sasa Lukic",
+          "position": "CM",
+          "overall": 78,
+          "stats": {
+            "pac": 72,
+            "sho": 62,
+            "pas": 72,
+            "dri": 68,
+            "def": 64,
+            "phy": 70
+          },
+          "nationality": "Serbian"
+        },
+        {
+          "id": "srb26_10",
+          "name": "Sergej Milinkovic-Savic",
+          "position": "CM",
+          "overall": 86,
+          "stats": {
+            "pac": 74,
+            "sho": 76,
+            "pas": 82,
+            "dri": 80,
+            "def": 68,
+            "phy": 84
+          },
+          "nationality": "Serbian"
+        },
+        {
+          "id": "srb26_11",
+          "name": "Dusan Tadic",
+          "position": "CAM",
+          "overall": 83,
+          "stats": {
+            "pac": 72,
+            "sho": 76,
+            "pas": 86,
+            "dri": 82,
+            "def": 44,
+            "phy": 64
+          },
+          "nationality": "Serbian"
+        },
+        {
+          "id": "srb26_12",
+          "name": "Filip Kostic",
+          "position": "LW",
+          "overall": 83,
+          "stats": {
+            "pac": 84,
+            "sho": 72,
+            "pas": 76,
+            "dri": 78,
+            "def": 44,
+            "phy": 72
+          },
+          "nationality": "Serbian"
+        },
+        {
+          "id": "srb26_13",
+          "name": "Dusan Vlahovic",
+          "position": "ST",
+          "overall": 87,
+          "stats": {
+            "pac": 82,
+            "sho": 88,
+            "pas": 62,
+            "dri": 78,
+            "def": 30,
+            "phy": 84
+          },
+          "nationality": "Serbian"
+        },
+        {
+          "id": "srb26_14",
+          "name": "Aleksandar Mitrovic",
+          "position": "ST",
+          "overall": 85,
+          "stats": {
+            "pac": 72,
+            "sho": 88,
+            "pas": 56,
+            "dri": 68,
+            "def": 28,
+            "phy": 88
+          },
+          "nationality": "Serbian"
+        },
+        {
+          "id": "srb26_15",
+          "name": "Nemanja Radonjic",
+          "position": "LW",
+          "overall": 77,
+          "stats": {
+            "pac": 86,
+            "sho": 68,
+            "pas": 60,
+            "dri": 74,
+            "def": 28,
+            "phy": 66
+          },
+          "nationality": "Serbian"
+        },
+        {
+          "id": "srb26_16",
+          "name": "Andrija Zivkovic",
+          "position": "RW",
+          "overall": 76,
+          "stats": {
+            "pac": 82,
+            "sho": 68,
+            "pas": 64,
+            "dri": 74,
+            "def": 28,
+            "phy": 62
+          },
+          "nationality": "Serbian"
+        },
+        {
+          "id": "srb26_17",
+          "name": "Ivan Ilic",
+          "position": "CM",
+          "overall": 77,
+          "stats": {
+            "pac": 70,
+            "sho": 60,
+            "pas": 74,
+            "dri": 70,
+            "def": 62,
+            "phy": 68
+          },
+          "nationality": "Serbian"
+        },
+        {
+          "id": "srb26_18",
+          "name": "Strahinja Erakovic",
+          "position": "CB",
+          "overall": 75,
+          "stats": {
+            "pac": 72,
+            "sho": 26,
+            "pas": 50,
+            "dri": 46,
+            "def": 77,
+            "phy": 74
+          },
+          "nationality": "Serbian"
+        }
+      ]
+    },
+    {
+      "club": "Czech Republic",
+      "season": "2026",
+      "league": "World Cup",
+      "badge": "CZE",
+      "players": [
+        {
+          "id": "cze26_01",
+          "name": "Jiri Pavlenka",
+          "position": "GK",
+          "overall": 80,
+          "stats": {
+            "pac": 48,
+            "sho": 10,
+            "pas": 40,
+            "dri": 28,
+            "def": 20,
+            "phy": 76
+          },
+          "nationality": "Czech"
+        },
+        {
+          "id": "cze26_02",
+          "name": "Tomas Vaclik",
+          "position": "GK",
+          "overall": 78,
+          "stats": {
+            "pac": 44,
+            "sho": 9,
+            "pas": 36,
+            "dri": 24,
+            "def": 18,
+            "phy": 72
+          },
+          "nationality": "Czech"
+        },
+        {
+          "id": "cze26_03",
+          "name": "Tomas Holes",
+          "position": "CB",
+          "overall": 78,
+          "stats": {
+            "pac": 70,
+            "sho": 28,
+            "pas": 54,
+            "dri": 50,
+            "def": 80,
+            "phy": 76
+          },
+          "nationality": "Czech"
+        },
+        {
+          "id": "cze26_04",
+          "name": "Ondrej Celustka",
+          "position": "CB",
+          "overall": 76,
+          "stats": {
+            "pac": 68,
+            "sho": 26,
+            "pas": 50,
+            "dri": 46,
+            "def": 78,
+            "phy": 76
+          },
+          "nationality": "Czech"
+        },
+        {
+          "id": "cze26_05",
+          "name": "David Zima",
+          "position": "CB",
+          "overall": 77,
+          "stats": {
+            "pac": 72,
+            "sho": 26,
+            "pas": 52,
+            "dri": 48,
+            "def": 78,
+            "phy": 76
+          },
+          "nationality": "Czech"
+        },
+        {
+          "id": "cze26_06",
+          "name": "Jan Boril",
+          "position": "LB",
+          "overall": 75,
+          "stats": {
+            "pac": 74,
+            "sho": 40,
+            "pas": 60,
+            "dri": 58,
+            "def": 68,
+            "phy": 66
+          },
+          "nationality": "Czech"
+        },
+        {
+          "id": "cze26_07",
+          "name": "Vladimir Coufal",
+          "position": "RB",
+          "overall": 78,
+          "stats": {
+            "pac": 78,
+            "sho": 46,
+            "pas": 62,
+            "dri": 60,
+            "def": 72,
+            "phy": 68
+          },
+          "nationality": "Czech"
+        },
+        {
+          "id": "cze26_08",
+          "name": "Tomas Soucek",
+          "position": "CM",
+          "overall": 82,
+          "stats": {
+            "pac": 70,
+            "sho": 72,
+            "pas": 72,
+            "dri": 66,
+            "def": 70,
+            "phy": 84
+          },
+          "nationality": "Czech"
+        },
+        {
+          "id": "cze26_09",
+          "name": "Alex Kral",
+          "position": "CDM",
+          "overall": 78,
+          "stats": {
+            "pac": 70,
+            "sho": 54,
+            "pas": 68,
+            "dri": 62,
+            "def": 78,
+            "phy": 72
+          },
+          "nationality": "Czech"
+        },
+        {
+          "id": "cze26_10",
+          "name": "Lukas Provod",
+          "position": "CM",
+          "overall": 76,
+          "stats": {
+            "pac": 72,
+            "sho": 60,
+            "pas": 70,
+            "dri": 68,
+            "def": 58,
+            "phy": 68
+          },
+          "nationality": "Czech"
+        },
+        {
+          "id": "cze26_11",
+          "name": "Antonin Barak",
+          "position": "CAM",
+          "overall": 79,
+          "stats": {
+            "pac": 72,
+            "sho": 72,
+            "pas": 76,
+            "dri": 74,
+            "def": 50,
+            "phy": 68
+          },
+          "nationality": "Czech"
+        },
+        {
+          "id": "cze26_12",
+          "name": "Patrik Schick",
+          "position": "ST",
+          "overall": 84,
+          "stats": {
+            "pac": 78,
+            "sho": 86,
+            "pas": 60,
+            "dri": 76,
+            "def": 24,
+            "phy": 78
+          },
+          "nationality": "Czech"
+        },
+        {
+          "id": "cze26_13",
+          "name": "Adam Hlozek",
+          "position": "RW",
+          "overall": 80,
+          "stats": {
+            "pac": 82,
+            "sho": 76,
+            "pas": 66,
+            "dri": 78,
+            "def": 30,
+            "phy": 68
+          },
+          "nationality": "Czech"
+        },
+        {
+          "id": "cze26_14",
+          "name": "Ondrej Lingr",
+          "position": "LW",
+          "overall": 76,
+          "stats": {
+            "pac": 80,
+            "sho": 68,
+            "pas": 62,
+            "dri": 72,
+            "def": 30,
+            "phy": 62
+          },
+          "nationality": "Czech"
+        },
+        {
+          "id": "cze26_15",
+          "name": "Matej Vydra",
+          "position": "ST",
+          "overall": 75,
+          "stats": {
+            "pac": 76,
+            "sho": 72,
+            "pas": 52,
+            "dri": 64,
+            "def": 22,
+            "phy": 70
+          },
+          "nationality": "Czech"
+        },
+        {
+          "id": "cze26_16",
+          "name": "Jan Kuchta",
+          "position": "ST",
+          "overall": 76,
+          "stats": {
+            "pac": 78,
+            "sho": 74,
+            "pas": 54,
+            "dri": 66,
+            "def": 24,
+            "phy": 72
+          },
+          "nationality": "Czech"
+        },
+        {
+          "id": "cze26_17",
+          "name": "Jakub Jankto",
+          "position": "LM",
+          "overall": 75,
+          "stats": {
+            "pac": 78,
+            "sho": 64,
+            "pas": 64,
+            "dri": 70,
+            "def": 42,
+            "phy": 64
+          },
+          "nationality": "Czech"
+        },
+        {
+          "id": "cze26_18",
+          "name": "Lukas Haraslin",
+          "position": "RW",
+          "overall": 74,
+          "stats": {
+            "pac": 82,
+            "sho": 64,
+            "pas": 60,
+            "dri": 70,
+            "def": 28,
+            "phy": 60
+          },
+          "nationality": "Czech"
+        }
+      ]
+    }
+  ]
+}

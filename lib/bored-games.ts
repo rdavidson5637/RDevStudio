@@ -1,5 +1,13 @@
 export const BORED_GAMES = [
   {
+    slug: "champions-draft",
+    title: "Champions Draft",
+    description:
+      "Spin iconic squads, draft your ultimate XI, and compete in league, Champions League, and World Cup modes.",
+    tag: "Football",
+    href: "/champions-draft",
+  },
+  {
     slug: "longest-word",
     title: "Longest Word",
     description:
@@ -13,4 +21,8 @@ export type BoredGameSlug = BoredGame["slug"];
 
 export function getBoredGame(slug: string) {
   return BORED_GAMES.find((game) => game.slug === slug);
+}
+
+export function getBoredGameHref(game: BoredGame) {
+  return "href" in game && game.href ? game.href : `/bored/${game.slug}`;
 }

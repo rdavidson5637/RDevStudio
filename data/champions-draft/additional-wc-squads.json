@@ -1,0 +1,5008 @@
+{
+  "additional_squads": [
+    {
+      "club": "Belgium 2018",
+      "season": "2018",
+      "league": "World Cup",
+      "badge": "BEL",
+      "players": [
+        {
+          "id": "bel18_01",
+          "name": "Thibaut Courtois",
+          "position": "GK",
+          "overall": 90,
+          "stats": {
+            "pac": 52,
+            "sho": 14,
+            "pas": 45,
+            "dri": 38,
+            "def": 28,
+            "phy": 88
+          },
+          "nationality": "Belgian"
+        },
+        {
+          "id": "bel18_02",
+          "name": "Simon Mignolet",
+          "position": "GK",
+          "overall": 80,
+          "stats": {
+            "pac": 45,
+            "sho": 12,
+            "pas": 40,
+            "dri": 30,
+            "def": 22,
+            "phy": 80
+          },
+          "nationality": "Belgian"
+        },
+        {
+          "id": "bel18_03",
+          "name": "Vincent Kompany",
+          "position": "CB",
+          "overall": 88,
+          "stats": {
+            "pac": 72,
+            "sho": 40,
+            "pas": 60,
+            "dri": 62,
+            "def": 89,
+            "phy": 90
+          },
+          "nationality": "Belgian"
+        },
+        {
+          "id": "bel18_04",
+          "name": "Toby Alderweireld",
+          "position": "CB",
+          "overall": 87,
+          "stats": {
+            "pac": 74,
+            "sho": 38,
+            "pas": 72,
+            "dri": 65,
+            "def": 88,
+            "phy": 82
+          },
+          "nationality": "Belgian"
+        },
+        {
+          "id": "bel18_05",
+          "name": "Jan Vertonghen",
+          "position": "CB",
+          "overall": 86,
+          "stats": {
+            "pac": 73,
+            "sho": 36,
+            "pas": 70,
+            "dri": 65,
+            "def": 87,
+            "phy": 82
+          },
+          "nationality": "Belgian"
+        },
+        {
+          "id": "bel18_06",
+          "name": "Thomas Meunier",
+          "position": "RB",
+          "overall": 82,
+          "stats": {
+            "pac": 84,
+            "sho": 60,
+            "pas": 70,
+            "dri": 74,
+            "def": 76,
+            "phy": 78
+          },
+          "nationality": "Belgian"
+        },
+        {
+          "id": "bel18_07",
+          "name": "Yannick Carrasco",
+          "position": "LW",
+          "overall": 83,
+          "stats": {
+            "pac": 90,
+            "sho": 76,
+            "pas": 72,
+            "dri": 85,
+            "def": 38,
+            "phy": 72
+          },
+          "nationality": "Belgian"
+        },
+        {
+          "id": "bel18_08",
+          "name": "Kevin De Bruyne",
+          "position": "CM",
+          "overall": 92,
+          "stats": {
+            "pac": 76,
+            "sho": 82,
+            "pas": 93,
+            "dri": 88,
+            "def": 64,
+            "phy": 78
+          },
+          "nationality": "Belgian"
+        },
+        {
+          "id": "bel18_09",
+          "name": "Axel Witsel",
+          "position": "CDM",
+          "overall": 84,
+          "stats": {
+            "pac": 66,
+            "sho": 62,
+            "pas": 78,
+            "dri": 72,
+            "def": 80,
+            "phy": 84
+          },
+          "nationality": "Belgian"
+        },
+        {
+          "id": "bel18_10",
+          "name": "Eden Hazard",
+          "position": "LW",
+          "overall": 91,
+          "stats": {
+            "pac": 88,
+            "sho": 83,
+            "pas": 82,
+            "dri": 94,
+            "def": 34,
+            "phy": 72
+          },
+          "nationality": "Belgian"
+        },
+        {
+          "id": "bel18_11",
+          "name": "Dries Mertens",
+          "position": "CAM",
+          "overall": 86,
+          "stats": {
+            "pac": 83,
+            "sho": 84,
+            "pas": 80,
+            "dri": 87,
+            "def": 32,
+            "phy": 64
+          },
+          "nationality": "Belgian"
+        },
+        {
+          "id": "bel18_12",
+          "name": "Romelu Lukaku",
+          "position": "ST",
+          "overall": 88,
+          "stats": {
+            "pac": 86,
+            "sho": 88,
+            "pas": 65,
+            "dri": 80,
+            "def": 40,
+            "phy": 90
+          },
+          "nationality": "Belgian"
+        },
+        {
+          "id": "bel18_13",
+          "name": "Marouane Fellaini",
+          "position": "CM",
+          "overall": 80,
+          "stats": {
+            "pac": 62,
+            "sho": 68,
+            "pas": 65,
+            "dri": 64,
+            "def": 68,
+            "phy": 88
+          },
+          "nationality": "Belgian"
+        },
+        {
+          "id": "bel18_14",
+          "name": "Moussa Dembele",
+          "position": "CDM",
+          "overall": 82,
+          "stats": {
+            "pac": 72,
+            "sho": 58,
+            "pas": 75,
+            "dri": 80,
+            "def": 74,
+            "phy": 82
+          },
+          "nationality": "Belgian"
+        },
+        {
+          "id": "bel18_15",
+          "name": "Divock Origi",
+          "position": "ST",
+          "overall": 76,
+          "stats": {
+            "pac": 84,
+            "sho": 75,
+            "pas": 62,
+            "dri": 76,
+            "def": 28,
+            "phy": 72
+          },
+          "nationality": "Belgian"
+        },
+        {
+          "id": "bel18_16",
+          "name": "Nacer Chadli",
+          "position": "LM",
+          "overall": 78,
+          "stats": {
+            "pac": 80,
+            "sho": 72,
+            "pas": 70,
+            "dri": 78,
+            "def": 42,
+            "phy": 70
+          },
+          "nationality": "Belgian"
+        },
+        {
+          "id": "bel18_17",
+          "name": "Christian Kabasele",
+          "position": "CB",
+          "overall": 76,
+          "stats": {
+            "pac": 74,
+            "sho": 30,
+            "pas": 54,
+            "dri": 52,
+            "def": 78,
+            "phy": 80
+          },
+          "nationality": "Belgian"
+        },
+        {
+          "id": "bel18_18",
+          "name": "Dedryck Boyata",
+          "position": "CB",
+          "overall": 75,
+          "stats": {
+            "pac": 72,
+            "sho": 28,
+            "pas": 50,
+            "dri": 50,
+            "def": 77,
+            "phy": 78
+          },
+          "nationality": "Belgian"
+        }
+      ]
+    },
+    {
+      "club": "Belgium 2014",
+      "season": "2014",
+      "league": "World Cup",
+      "badge": "BEL",
+      "players": [
+        {
+          "id": "bel14_01",
+          "name": "Thibaut Courtois",
+          "position": "GK",
+          "overall": 87,
+          "stats": {
+            "pac": 50,
+            "sho": 12,
+            "pas": 42,
+            "dri": 35,
+            "def": 25,
+            "phy": 85
+          },
+          "nationality": "Belgian"
+        },
+        {
+          "id": "bel14_02",
+          "name": "Simon Mignolet",
+          "position": "GK",
+          "overall": 82,
+          "stats": {
+            "pac": 44,
+            "sho": 10,
+            "pas": 38,
+            "dri": 28,
+            "def": 22,
+            "phy": 78
+          },
+          "nationality": "Belgian"
+        },
+        {
+          "id": "bel14_03",
+          "name": "Vincent Kompany",
+          "position": "CB",
+          "overall": 90,
+          "stats": {
+            "pac": 76,
+            "sho": 42,
+            "pas": 62,
+            "dri": 64,
+            "def": 91,
+            "phy": 91
+          },
+          "nationality": "Belgian"
+        },
+        {
+          "id": "bel14_04",
+          "name": "Toby Alderweireld",
+          "position": "CB",
+          "overall": 84,
+          "stats": {
+            "pac": 74,
+            "sho": 36,
+            "pas": 70,
+            "dri": 63,
+            "def": 85,
+            "phy": 80
+          },
+          "nationality": "Belgian"
+        },
+        {
+          "id": "bel14_05",
+          "name": "Jan Vertonghen",
+          "position": "CB",
+          "overall": 84,
+          "stats": {
+            "pac": 74,
+            "sho": 35,
+            "pas": 68,
+            "dri": 63,
+            "def": 85,
+            "phy": 80
+          },
+          "nationality": "Belgian"
+        },
+        {
+          "id": "bel14_06",
+          "name": "Daniel Van Buyten",
+          "position": "CB",
+          "overall": 78,
+          "stats": {
+            "pac": 60,
+            "sho": 34,
+            "pas": 52,
+            "dri": 50,
+            "def": 80,
+            "phy": 82
+          },
+          "nationality": "Belgian"
+        },
+        {
+          "id": "bel14_07",
+          "name": "Kevin De Bruyne",
+          "position": "CM",
+          "overall": 86,
+          "stats": {
+            "pac": 74,
+            "sho": 78,
+            "pas": 88,
+            "dri": 84,
+            "def": 58,
+            "phy": 74
+          },
+          "nationality": "Belgian"
+        },
+        {
+          "id": "bel14_08",
+          "name": "Eden Hazard",
+          "position": "LW",
+          "overall": 88,
+          "stats": {
+            "pac": 87,
+            "sho": 80,
+            "pas": 80,
+            "dri": 92,
+            "def": 30,
+            "phy": 70
+          },
+          "nationality": "Belgian"
+        },
+        {
+          "id": "bel14_09",
+          "name": "Marouane Fellaini",
+          "position": "CM",
+          "overall": 82,
+          "stats": {
+            "pac": 64,
+            "sho": 70,
+            "pas": 66,
+            "dri": 66,
+            "def": 70,
+            "phy": 89
+          },
+          "nationality": "Belgian"
+        },
+        {
+          "id": "bel14_10",
+          "name": "Axel Witsel",
+          "position": "CDM",
+          "overall": 82,
+          "stats": {
+            "pac": 68,
+            "sho": 60,
+            "pas": 76,
+            "dri": 70,
+            "def": 78,
+            "phy": 82
+          },
+          "nationality": "Belgian"
+        },
+        {
+          "id": "bel14_11",
+          "name": "Romelu Lukaku",
+          "position": "ST",
+          "overall": 82,
+          "stats": {
+            "pac": 86,
+            "sho": 82,
+            "pas": 60,
+            "dri": 76,
+            "def": 35,
+            "phy": 86
+          },
+          "nationality": "Belgian"
+        },
+        {
+          "id": "bel14_12",
+          "name": "Christian Benteke",
+          "position": "ST",
+          "overall": 82,
+          "stats": {
+            "pac": 78,
+            "sho": 80,
+            "pas": 56,
+            "dri": 70,
+            "def": 34,
+            "phy": 88
+          },
+          "nationality": "Belgian"
+        },
+        {
+          "id": "bel14_13",
+          "name": "Dries Mertens",
+          "position": "RW",
+          "overall": 82,
+          "stats": {
+            "pac": 82,
+            "sho": 80,
+            "pas": 76,
+            "dri": 84,
+            "def": 30,
+            "phy": 62
+          },
+          "nationality": "Belgian"
+        },
+        {
+          "id": "bel14_14",
+          "name": "Nacer Chadli",
+          "position": "LM",
+          "overall": 78,
+          "stats": {
+            "pac": 80,
+            "sho": 72,
+            "pas": 70,
+            "dri": 78,
+            "def": 42,
+            "phy": 70
+          },
+          "nationality": "Belgian"
+        },
+        {
+          "id": "bel14_15",
+          "name": "Thomas Vermaelen",
+          "position": "LB",
+          "overall": 80,
+          "stats": {
+            "pac": 74,
+            "sho": 34,
+            "pas": 60,
+            "dri": 58,
+            "def": 82,
+            "phy": 78
+          },
+          "nationality": "Belgian"
+        },
+        {
+          "id": "bel14_16",
+          "name": "Anthony Vanden Borre",
+          "position": "RB",
+          "overall": 76,
+          "stats": {
+            "pac": 78,
+            "sho": 52,
+            "pas": 62,
+            "dri": 66,
+            "def": 74,
+            "phy": 72
+          },
+          "nationality": "Belgian"
+        },
+        {
+          "id": "bel14_17",
+          "name": "Mousa Dembele",
+          "position": "CDM",
+          "overall": 81,
+          "stats": {
+            "pac": 72,
+            "sho": 56,
+            "pas": 74,
+            "dri": 80,
+            "def": 72,
+            "phy": 82
+          },
+          "nationality": "Belgian"
+        },
+        {
+          "id": "bel14_18",
+          "name": "Divock Origi",
+          "position": "ST",
+          "overall": 72,
+          "stats": {
+            "pac": 84,
+            "sho": 68,
+            "pas": 58,
+            "dri": 72,
+            "def": 24,
+            "phy": 68
+          },
+          "nationality": "Belgian"
+        }
+      ]
+    },
+    {
+      "club": "Croatia 2018",
+      "season": "2018",
+      "league": "World Cup",
+      "badge": "CRO",
+      "players": [
+        {
+          "id": "cro18_01",
+          "name": "Danijel Subasic",
+          "position": "GK",
+          "overall": 82,
+          "stats": {
+            "pac": 46,
+            "sho": 11,
+            "pas": 38,
+            "dri": 28,
+            "def": 22,
+            "phy": 78
+          },
+          "nationality": "Croatian"
+        },
+        {
+          "id": "cro18_02",
+          "name": "Lovre Kalinic",
+          "position": "GK",
+          "overall": 75,
+          "stats": {
+            "pac": 42,
+            "sho": 10,
+            "pas": 34,
+            "dri": 25,
+            "def": 18,
+            "phy": 75
+          },
+          "nationality": "Croatian"
+        },
+        {
+          "id": "cro18_03",
+          "name": "Dejan Lovren",
+          "position": "CB",
+          "overall": 83,
+          "stats": {
+            "pac": 72,
+            "sho": 34,
+            "pas": 58,
+            "dri": 54,
+            "def": 84,
+            "phy": 82
+          },
+          "nationality": "Croatian"
+        },
+        {
+          "id": "cro18_04",
+          "name": "Domagoj Vida",
+          "position": "CB",
+          "overall": 81,
+          "stats": {
+            "pac": 74,
+            "sho": 30,
+            "pas": 54,
+            "dri": 52,
+            "def": 82,
+            "phy": 80
+          },
+          "nationality": "Croatian"
+        },
+        {
+          "id": "cro18_05",
+          "name": "Tin Jedvaj",
+          "position": "CB",
+          "overall": 75,
+          "stats": {
+            "pac": 76,
+            "sho": 28,
+            "pas": 50,
+            "dri": 50,
+            "def": 76,
+            "phy": 74
+          },
+          "nationality": "Croatian"
+        },
+        {
+          "id": "cro18_06",
+          "name": "Sime Vrsaljko",
+          "position": "RB",
+          "overall": 81,
+          "stats": {
+            "pac": 84,
+            "sho": 52,
+            "pas": 64,
+            "dri": 70,
+            "def": 78,
+            "phy": 76
+          },
+          "nationality": "Croatian"
+        },
+        {
+          "id": "cro18_07",
+          "name": "Milan Strinic",
+          "position": "LB",
+          "overall": 77,
+          "stats": {
+            "pac": 78,
+            "sho": 46,
+            "pas": 60,
+            "dri": 62,
+            "def": 74,
+            "phy": 70
+          },
+          "nationality": "Croatian"
+        },
+        {
+          "id": "cro18_08",
+          "name": "Josip Pivaric",
+          "position": "LB",
+          "overall": 74,
+          "stats": {
+            "pac": 76,
+            "sho": 40,
+            "pas": 58,
+            "dri": 58,
+            "def": 72,
+            "phy": 68
+          },
+          "nationality": "Croatian"
+        },
+        {
+          "id": "cro18_09",
+          "name": "Luka Modric",
+          "position": "CM",
+          "overall": 93,
+          "stats": {
+            "pac": 78,
+            "sho": 79,
+            "pas": 92,
+            "dri": 93,
+            "def": 72,
+            "phy": 66
+          },
+          "nationality": "Croatian"
+        },
+        {
+          "id": "cro18_10",
+          "name": "Ivan Rakitic",
+          "position": "CM",
+          "overall": 87,
+          "stats": {
+            "pac": 70,
+            "sho": 78,
+            "pas": 86,
+            "dri": 82,
+            "def": 74,
+            "phy": 74
+          },
+          "nationality": "Croatian"
+        },
+        {
+          "id": "cro18_11",
+          "name": "Marcelo Brozovic",
+          "position": "CDM",
+          "overall": 85,
+          "stats": {
+            "pac": 72,
+            "sho": 68,
+            "pas": 84,
+            "dri": 78,
+            "def": 80,
+            "phy": 76
+          },
+          "nationality": "Croatian"
+        },
+        {
+          "id": "cro18_12",
+          "name": "Mateo Kovacic",
+          "position": "CM",
+          "overall": 84,
+          "stats": {
+            "pac": 76,
+            "sho": 66,
+            "pas": 84,
+            "dri": 88,
+            "def": 68,
+            "phy": 70
+          },
+          "nationality": "Croatian"
+        },
+        {
+          "id": "cro18_13",
+          "name": "Ivan Perisic",
+          "position": "LW",
+          "overall": 85,
+          "stats": {
+            "pac": 84,
+            "sho": 80,
+            "pas": 76,
+            "dri": 82,
+            "def": 52,
+            "phy": 80
+          },
+          "nationality": "Croatian"
+        },
+        {
+          "id": "cro18_14",
+          "name": "Ante Rebic",
+          "position": "RW",
+          "overall": 79,
+          "stats": {
+            "pac": 86,
+            "sho": 76,
+            "pas": 62,
+            "dri": 78,
+            "def": 40,
+            "phy": 76
+          },
+          "nationality": "Croatian"
+        },
+        {
+          "id": "cro18_15",
+          "name": "Mario Mandzukic",
+          "position": "ST",
+          "overall": 84,
+          "stats": {
+            "pac": 76,
+            "sho": 82,
+            "pas": 64,
+            "dri": 72,
+            "def": 48,
+            "phy": 84
+          },
+          "nationality": "Croatian"
+        },
+        {
+          "id": "cro18_16",
+          "name": "Andrej Kramaric",
+          "position": "ST",
+          "overall": 82,
+          "stats": {
+            "pac": 78,
+            "sho": 82,
+            "pas": 68,
+            "dri": 80,
+            "def": 34,
+            "phy": 72
+          },
+          "nationality": "Croatian"
+        },
+        {
+          "id": "cro18_17",
+          "name": "Nikola Kalinic",
+          "position": "ST",
+          "overall": 79,
+          "stats": {
+            "pac": 72,
+            "sho": 78,
+            "pas": 60,
+            "dri": 68,
+            "def": 28,
+            "phy": 76
+          },
+          "nationality": "Croatian"
+        },
+        {
+          "id": "cro18_18",
+          "name": "Ivan Strinic",
+          "position": "LWB",
+          "overall": 74,
+          "stats": {
+            "pac": 78,
+            "sho": 44,
+            "pas": 60,
+            "dri": 62,
+            "def": 72,
+            "phy": 70
+          },
+          "nationality": "Croatian"
+        }
+      ]
+    },
+    {
+      "club": "Croatia 2022",
+      "season": "2022",
+      "league": "World Cup",
+      "badge": "CRO",
+      "players": [
+        {
+          "id": "cro22_01",
+          "name": "Dominik Livakovic",
+          "position": "GK",
+          "overall": 83,
+          "stats": {
+            "pac": 48,
+            "sho": 12,
+            "pas": 40,
+            "dri": 32,
+            "def": 24,
+            "phy": 80
+          },
+          "nationality": "Croatian"
+        },
+        {
+          "id": "cro22_02",
+          "name": "Ivo Grbic",
+          "position": "GK",
+          "overall": 76,
+          "stats": {
+            "pac": 42,
+            "sho": 10,
+            "pas": 36,
+            "dri": 26,
+            "def": 18,
+            "phy": 74
+          },
+          "nationality": "Croatian"
+        },
+        {
+          "id": "cro22_03",
+          "name": "Josko Gvardiol",
+          "position": "CB",
+          "overall": 87,
+          "stats": {
+            "pac": 82,
+            "sho": 40,
+            "pas": 66,
+            "dri": 68,
+            "def": 86,
+            "phy": 84
+          },
+          "nationality": "Croatian"
+        },
+        {
+          "id": "cro22_04",
+          "name": "Dejan Lovren",
+          "position": "CB",
+          "overall": 80,
+          "stats": {
+            "pac": 68,
+            "sho": 32,
+            "pas": 55,
+            "dri": 50,
+            "def": 82,
+            "phy": 78
+          },
+          "nationality": "Croatian"
+        },
+        {
+          "id": "cro22_05",
+          "name": "Duje Caleta-Car",
+          "position": "CB",
+          "overall": 79,
+          "stats": {
+            "pac": 74,
+            "sho": 30,
+            "pas": 52,
+            "dri": 50,
+            "def": 80,
+            "phy": 80
+          },
+          "nationality": "Croatian"
+        },
+        {
+          "id": "cro22_06",
+          "name": "Borna Sosa",
+          "position": "LB",
+          "overall": 79,
+          "stats": {
+            "pac": 82,
+            "sho": 52,
+            "pas": 68,
+            "dri": 70,
+            "def": 72,
+            "phy": 68
+          },
+          "nationality": "Croatian"
+        },
+        {
+          "id": "cro22_07",
+          "name": "Josip Stanisic",
+          "position": "RB",
+          "overall": 78,
+          "stats": {
+            "pac": 84,
+            "sho": 50,
+            "pas": 64,
+            "dri": 66,
+            "def": 74,
+            "phy": 70
+          },
+          "nationality": "Croatian"
+        },
+        {
+          "id": "cro22_08",
+          "name": "Luka Modric",
+          "position": "CM",
+          "overall": 90,
+          "stats": {
+            "pac": 74,
+            "sho": 76,
+            "pas": 90,
+            "dri": 91,
+            "def": 70,
+            "phy": 62
+          },
+          "nationality": "Croatian"
+        },
+        {
+          "id": "cro22_09",
+          "name": "Mateo Kovacic",
+          "position": "CM",
+          "overall": 85,
+          "stats": {
+            "pac": 76,
+            "sho": 68,
+            "pas": 85,
+            "dri": 89,
+            "def": 70,
+            "phy": 72
+          },
+          "nationality": "Croatian"
+        },
+        {
+          "id": "cro22_10",
+          "name": "Marcelo Brozovic",
+          "position": "CDM",
+          "overall": 85,
+          "stats": {
+            "pac": 70,
+            "sho": 66,
+            "pas": 84,
+            "dri": 76,
+            "def": 82,
+            "phy": 74
+          },
+          "nationality": "Croatian"
+        },
+        {
+          "id": "cro22_11",
+          "name": "Ivan Perisic",
+          "position": "LW",
+          "overall": 84,
+          "stats": {
+            "pac": 82,
+            "sho": 78,
+            "pas": 74,
+            "dri": 80,
+            "def": 50,
+            "phy": 80
+          },
+          "nationality": "Croatian"
+        },
+        {
+          "id": "cro22_12",
+          "name": "Andrej Kramaric",
+          "position": "ST",
+          "overall": 83,
+          "stats": {
+            "pac": 76,
+            "sho": 83,
+            "pas": 68,
+            "dri": 80,
+            "def": 32,
+            "phy": 70
+          },
+          "nationality": "Croatian"
+        },
+        {
+          "id": "cro22_13",
+          "name": "Bruno Petkovic",
+          "position": "ST",
+          "overall": 78,
+          "stats": {
+            "pac": 70,
+            "sho": 76,
+            "pas": 58,
+            "dri": 66,
+            "def": 28,
+            "phy": 78
+          },
+          "nationality": "Croatian"
+        },
+        {
+          "id": "cro22_14",
+          "name": "Nikola Vlasic",
+          "position": "CAM",
+          "overall": 80,
+          "stats": {
+            "pac": 78,
+            "sho": 74,
+            "pas": 78,
+            "dri": 82,
+            "def": 42,
+            "phy": 68
+          },
+          "nationality": "Croatian"
+        },
+        {
+          "id": "cro22_15",
+          "name": "Luka Sucic",
+          "position": "CM",
+          "overall": 76,
+          "stats": {
+            "pac": 74,
+            "sho": 66,
+            "pas": 78,
+            "dri": 78,
+            "def": 50,
+            "phy": 64
+          },
+          "nationality": "Croatian"
+        },
+        {
+          "id": "cro22_16",
+          "name": "Lovro Majer",
+          "position": "CAM",
+          "overall": 79,
+          "stats": {
+            "pac": 76,
+            "sho": 72,
+            "pas": 80,
+            "dri": 82,
+            "def": 44,
+            "phy": 64
+          },
+          "nationality": "Croatian"
+        },
+        {
+          "id": "cro22_17",
+          "name": "Mislav Orsic",
+          "position": "LW",
+          "overall": 79,
+          "stats": {
+            "pac": 86,
+            "sho": 76,
+            "pas": 68,
+            "dri": 82,
+            "def": 38,
+            "phy": 68
+          },
+          "nationality": "Croatian"
+        },
+        {
+          "id": "cro22_18",
+          "name": "Josip Sutalo",
+          "position": "CB",
+          "overall": 78,
+          "stats": {
+            "pac": 78,
+            "sho": 28,
+            "pas": 54,
+            "dri": 52,
+            "def": 78,
+            "phy": 78
+          },
+          "nationality": "Croatian"
+        }
+      ]
+    },
+    {
+      "club": "Uruguay 2010",
+      "season": "2010",
+      "league": "World Cup",
+      "badge": "URU",
+      "players": [
+        {
+          "id": "uru10_01",
+          "name": "Fernando Muslera",
+          "position": "GK",
+          "overall": 82,
+          "stats": {
+            "pac": 46,
+            "sho": 11,
+            "pas": 38,
+            "dri": 28,
+            "def": 22,
+            "phy": 80
+          },
+          "nationality": "Uruguayan"
+        },
+        {
+          "id": "uru10_02",
+          "name": "Juan Castillo",
+          "position": "GK",
+          "overall": 72,
+          "stats": {
+            "pac": 40,
+            "sho": 9,
+            "pas": 32,
+            "dri": 22,
+            "def": 16,
+            "phy": 72
+          },
+          "nationality": "Uruguayan"
+        },
+        {
+          "id": "uru10_03",
+          "name": "Diego Lugano",
+          "position": "CB",
+          "overall": 82,
+          "stats": {
+            "pac": 66,
+            "sho": 34,
+            "pas": 54,
+            "dri": 52,
+            "def": 83,
+            "phy": 84
+          },
+          "nationality": "Uruguayan"
+        },
+        {
+          "id": "uru10_04",
+          "name": "Diego Godin",
+          "position": "CB",
+          "overall": 86,
+          "stats": {
+            "pac": 70,
+            "sho": 36,
+            "pas": 58,
+            "dri": 56,
+            "def": 88,
+            "phy": 86
+          },
+          "nationality": "Uruguayan"
+        },
+        {
+          "id": "uru10_05",
+          "name": "Mauricio Victorino",
+          "position": "CB",
+          "overall": 78,
+          "stats": {
+            "pac": 68,
+            "sho": 30,
+            "pas": 50,
+            "dri": 48,
+            "def": 79,
+            "phy": 80
+          },
+          "nationality": "Uruguayan"
+        },
+        {
+          "id": "uru10_06",
+          "name": "Jorge Fucile",
+          "position": "RB",
+          "overall": 76,
+          "stats": {
+            "pac": 78,
+            "sho": 42,
+            "pas": 58,
+            "dri": 58,
+            "def": 74,
+            "phy": 72
+          },
+          "nationality": "Uruguayan"
+        },
+        {
+          "id": "uru10_07",
+          "name": "Andres Scotti",
+          "position": "CB",
+          "overall": 76,
+          "stats": {
+            "pac": 62,
+            "sho": 28,
+            "pas": 48,
+            "dri": 44,
+            "def": 78,
+            "phy": 78
+          },
+          "nationality": "Uruguayan"
+        },
+        {
+          "id": "uru10_08",
+          "name": "Martin Caceres",
+          "position": "RB",
+          "overall": 78,
+          "stats": {
+            "pac": 80,
+            "sho": 44,
+            "pas": 60,
+            "dri": 60,
+            "def": 76,
+            "phy": 74
+          },
+          "nationality": "Uruguayan"
+        },
+        {
+          "id": "uru10_09",
+          "name": "Alvaro Pereira",
+          "position": "LB",
+          "overall": 77,
+          "stats": {
+            "pac": 78,
+            "sho": 48,
+            "pas": 60,
+            "dri": 62,
+            "def": 72,
+            "phy": 70
+          },
+          "nationality": "Uruguayan"
+        },
+        {
+          "id": "uru10_10",
+          "name": "Egidio Arevalo Rios",
+          "position": "CDM",
+          "overall": 78,
+          "stats": {
+            "pac": 66,
+            "sho": 54,
+            "pas": 70,
+            "dri": 64,
+            "def": 80,
+            "phy": 78
+          },
+          "nationality": "Uruguayan"
+        },
+        {
+          "id": "uru10_11",
+          "name": "Diego Perez",
+          "position": "CM",
+          "overall": 76,
+          "stats": {
+            "pac": 64,
+            "sho": 52,
+            "pas": 72,
+            "dri": 62,
+            "def": 74,
+            "phy": 72
+          },
+          "nationality": "Uruguayan"
+        },
+        {
+          "id": "uru10_12",
+          "name": "Sebastian Eguren",
+          "position": "CM",
+          "overall": 74,
+          "stats": {
+            "pac": 62,
+            "sho": 54,
+            "pas": 70,
+            "dri": 62,
+            "def": 68,
+            "phy": 70
+          },
+          "nationality": "Uruguayan"
+        },
+        {
+          "id": "uru10_13",
+          "name": "Diego Forlan",
+          "position": "CAM",
+          "overall": 88,
+          "stats": {
+            "pac": 76,
+            "sho": 88,
+            "pas": 78,
+            "dri": 82,
+            "def": 30,
+            "phy": 70
+          },
+          "nationality": "Uruguayan"
+        },
+        {
+          "id": "uru10_14",
+          "name": "Luis Suarez",
+          "position": "ST",
+          "overall": 87,
+          "stats": {
+            "pac": 88,
+            "sho": 86,
+            "pas": 78,
+            "dri": 88,
+            "def": 38,
+            "phy": 74
+          },
+          "nationality": "Uruguayan"
+        },
+        {
+          "id": "uru10_15",
+          "name": "Edinson Cavani",
+          "position": "ST",
+          "overall": 86,
+          "stats": {
+            "pac": 86,
+            "sho": 87,
+            "pas": 70,
+            "dri": 82,
+            "def": 42,
+            "phy": 80
+          },
+          "nationality": "Uruguayan"
+        },
+        {
+          "id": "uru10_16",
+          "name": "Sebastian Abreu",
+          "position": "ST",
+          "overall": 76,
+          "stats": {
+            "pac": 70,
+            "sho": 76,
+            "pas": 58,
+            "dri": 68,
+            "def": 24,
+            "phy": 72
+          },
+          "nationality": "Uruguayan"
+        },
+        {
+          "id": "uru10_17",
+          "name": "Alvaro Recoba",
+          "position": "LW",
+          "overall": 78,
+          "stats": {
+            "pac": 78,
+            "sho": 78,
+            "pas": 72,
+            "dri": 80,
+            "def": 28,
+            "phy": 64
+          },
+          "nationality": "Uruguayan"
+        },
+        {
+          "id": "uru10_18",
+          "name": "Cristian Stuani",
+          "position": "RW",
+          "overall": 74,
+          "stats": {
+            "pac": 82,
+            "sho": 72,
+            "pas": 60,
+            "dri": 72,
+            "def": 34,
+            "phy": 70
+          },
+          "nationality": "Uruguayan"
+        }
+      ]
+    },
+    {
+      "club": "Uruguay 2018",
+      "season": "2018",
+      "league": "World Cup",
+      "badge": "URU",
+      "players": [
+        {
+          "id": "uru18_01",
+          "name": "Fernando Muslera",
+          "position": "GK",
+          "overall": 83,
+          "stats": {
+            "pac": 44,
+            "sho": 11,
+            "pas": 38,
+            "dri": 28,
+            "def": 22,
+            "phy": 80
+          },
+          "nationality": "Uruguayan"
+        },
+        {
+          "id": "uru18_02",
+          "name": "Martin Campana",
+          "position": "GK",
+          "overall": 72,
+          "stats": {
+            "pac": 40,
+            "sho": 9,
+            "pas": 32,
+            "dri": 22,
+            "def": 16,
+            "phy": 72
+          },
+          "nationality": "Uruguayan"
+        },
+        {
+          "id": "uru18_03",
+          "name": "Diego Godin",
+          "position": "CB",
+          "overall": 89,
+          "stats": {
+            "pac": 70,
+            "sho": 38,
+            "pas": 60,
+            "dri": 58,
+            "def": 90,
+            "phy": 88
+          },
+          "nationality": "Uruguayan"
+        },
+        {
+          "id": "uru18_04",
+          "name": "Jose Gimenez",
+          "position": "CB",
+          "overall": 83,
+          "stats": {
+            "pac": 78,
+            "sho": 34,
+            "pas": 58,
+            "dri": 58,
+            "def": 84,
+            "phy": 82
+          },
+          "nationality": "Uruguayan"
+        },
+        {
+          "id": "uru18_05",
+          "name": "Sebastian Coates",
+          "position": "CB",
+          "overall": 78,
+          "stats": {
+            "pac": 68,
+            "sho": 30,
+            "pas": 52,
+            "dri": 48,
+            "def": 79,
+            "phy": 80
+          },
+          "nationality": "Uruguayan"
+        },
+        {
+          "id": "uru18_06",
+          "name": "Martin Caceres",
+          "position": "RB",
+          "overall": 78,
+          "stats": {
+            "pac": 78,
+            "sho": 42,
+            "pas": 60,
+            "dri": 60,
+            "def": 76,
+            "phy": 74
+          },
+          "nationality": "Uruguayan"
+        },
+        {
+          "id": "uru18_07",
+          "name": "Diego Laxalt",
+          "position": "LB",
+          "overall": 78,
+          "stats": {
+            "pac": 82,
+            "sho": 50,
+            "pas": 62,
+            "dri": 66,
+            "def": 72,
+            "phy": 72
+          },
+          "nationality": "Uruguayan"
+        },
+        {
+          "id": "uru18_08",
+          "name": "Nahitan Nandez",
+          "position": "CM",
+          "overall": 80,
+          "stats": {
+            "pac": 82,
+            "sho": 64,
+            "pas": 72,
+            "dri": 76,
+            "def": 72,
+            "phy": 80
+          },
+          "nationality": "Uruguayan"
+        },
+        {
+          "id": "uru18_09",
+          "name": "Rodrigo Bentancur",
+          "position": "CM",
+          "overall": 82,
+          "stats": {
+            "pac": 74,
+            "sho": 62,
+            "pas": 80,
+            "dri": 78,
+            "def": 72,
+            "phy": 74
+          },
+          "nationality": "Uruguayan"
+        },
+        {
+          "id": "uru18_10",
+          "name": "Lucas Torreira",
+          "position": "CDM",
+          "overall": 81,
+          "stats": {
+            "pac": 70,
+            "sho": 60,
+            "pas": 76,
+            "dri": 72,
+            "def": 80,
+            "phy": 74
+          },
+          "nationality": "Uruguayan"
+        },
+        {
+          "id": "uru18_11",
+          "name": "Giorgian De Arrascaeta",
+          "position": "CAM",
+          "overall": 82,
+          "stats": {
+            "pac": 78,
+            "sho": 76,
+            "pas": 80,
+            "dri": 84,
+            "def": 36,
+            "phy": 64
+          },
+          "nationality": "Uruguayan"
+        },
+        {
+          "id": "uru18_12",
+          "name": "Luis Suarez",
+          "position": "ST",
+          "overall": 91,
+          "stats": {
+            "pac": 84,
+            "sho": 90,
+            "pas": 80,
+            "dri": 86,
+            "def": 40,
+            "phy": 76
+          },
+          "nationality": "Uruguayan"
+        },
+        {
+          "id": "uru18_13",
+          "name": "Edinson Cavani",
+          "position": "ST",
+          "overall": 89,
+          "stats": {
+            "pac": 84,
+            "sho": 88,
+            "pas": 72,
+            "dri": 82,
+            "def": 44,
+            "phy": 82
+          },
+          "nationality": "Uruguayan"
+        },
+        {
+          "id": "uru18_14",
+          "name": "Cristian Stuani",
+          "position": "ST",
+          "overall": 80,
+          "stats": {
+            "pac": 80,
+            "sho": 80,
+            "pas": 62,
+            "dri": 72,
+            "def": 34,
+            "phy": 72
+          },
+          "nationality": "Uruguayan"
+        },
+        {
+          "id": "uru18_15",
+          "name": "Maxi Gomez",
+          "position": "ST",
+          "overall": 76,
+          "stats": {
+            "pac": 78,
+            "sho": 76,
+            "pas": 54,
+            "dri": 68,
+            "def": 28,
+            "phy": 76
+          },
+          "nationality": "Uruguayan"
+        },
+        {
+          "id": "uru18_16",
+          "name": "Matias Vecino",
+          "position": "CM",
+          "overall": 80,
+          "stats": {
+            "pac": 72,
+            "sho": 66,
+            "pas": 74,
+            "dri": 70,
+            "def": 72,
+            "phy": 80
+          },
+          "nationality": "Uruguayan"
+        },
+        {
+          "id": "uru18_17",
+          "name": "Carlos De Pena",
+          "position": "LW",
+          "overall": 74,
+          "stats": {
+            "pac": 80,
+            "sho": 68,
+            "pas": 68,
+            "dri": 78,
+            "def": 28,
+            "phy": 60
+          },
+          "nationality": "Uruguayan"
+        },
+        {
+          "id": "uru18_18",
+          "name": "Jonathan Rodriguez",
+          "position": "RW",
+          "overall": 74,
+          "stats": {
+            "pac": 82,
+            "sho": 70,
+            "pas": 60,
+            "dri": 74,
+            "def": 32,
+            "phy": 66
+          },
+          "nationality": "Uruguayan"
+        }
+      ]
+    },
+    {
+      "club": "Netherlands 2010",
+      "season": "2010",
+      "league": "World Cup",
+      "badge": "NED",
+      "players": [
+        {
+          "id": "ned10_01",
+          "name": "Maarten Stekelenburg",
+          "position": "GK",
+          "overall": 82,
+          "stats": {
+            "pac": 46,
+            "sho": 11,
+            "pas": 40,
+            "dri": 30,
+            "def": 24,
+            "phy": 80
+          },
+          "nationality": "Dutch"
+        },
+        {
+          "id": "ned10_02",
+          "name": "Michel Vorm",
+          "position": "GK",
+          "overall": 76,
+          "stats": {
+            "pac": 42,
+            "sho": 9,
+            "pas": 36,
+            "dri": 24,
+            "def": 18,
+            "phy": 74
+          },
+          "nationality": "Dutch"
+        },
+        {
+          "id": "ned10_03",
+          "name": "John Heitinga",
+          "position": "CB",
+          "overall": 81,
+          "stats": {
+            "pac": 74,
+            "sho": 32,
+            "pas": 56,
+            "dri": 54,
+            "def": 82,
+            "phy": 78
+          },
+          "nationality": "Dutch"
+        },
+        {
+          "id": "ned10_04",
+          "name": "Joris Mathijsen",
+          "position": "CB",
+          "overall": 79,
+          "stats": {
+            "pac": 68,
+            "sho": 28,
+            "pas": 54,
+            "dri": 50,
+            "def": 80,
+            "phy": 76
+          },
+          "nationality": "Dutch"
+        },
+        {
+          "id": "ned10_05",
+          "name": "Giovanni van Bronckhorst",
+          "position": "LB",
+          "overall": 82,
+          "stats": {
+            "pac": 78,
+            "sho": 54,
+            "pas": 72,
+            "dri": 70,
+            "def": 78,
+            "phy": 72
+          },
+          "nationality": "Dutch"
+        },
+        {
+          "id": "ned10_06",
+          "name": "Gregory van der Wiel",
+          "position": "RB",
+          "overall": 80,
+          "stats": {
+            "pac": 86,
+            "sho": 52,
+            "pas": 66,
+            "dri": 70,
+            "def": 76,
+            "phy": 72
+          },
+          "nationality": "Dutch"
+        },
+        {
+          "id": "ned10_07",
+          "name": "Khalid Boulahrouz",
+          "position": "CB",
+          "overall": 77,
+          "stats": {
+            "pac": 76,
+            "sho": 28,
+            "pas": 50,
+            "dri": 50,
+            "def": 78,
+            "phy": 78
+          },
+          "nationality": "Dutch"
+        },
+        {
+          "id": "ned10_08",
+          "name": "Mark van Bommel",
+          "position": "CDM",
+          "overall": 83,
+          "stats": {
+            "pac": 64,
+            "sho": 64,
+            "pas": 76,
+            "dri": 68,
+            "def": 82,
+            "phy": 82
+          },
+          "nationality": "Dutch"
+        },
+        {
+          "id": "ned10_09",
+          "name": "Nigel de Jong",
+          "position": "CDM",
+          "overall": 80,
+          "stats": {
+            "pac": 72,
+            "sho": 54,
+            "pas": 68,
+            "dri": 62,
+            "def": 82,
+            "phy": 84
+          },
+          "nationality": "Dutch"
+        },
+        {
+          "id": "ned10_10",
+          "name": "Wesley Sneijder",
+          "position": "CAM",
+          "overall": 88,
+          "stats": {
+            "pac": 72,
+            "sho": 84,
+            "pas": 88,
+            "dri": 82,
+            "def": 52,
+            "phy": 72
+          },
+          "nationality": "Dutch"
+        },
+        {
+          "id": "ned10_11",
+          "name": "Arjen Robben",
+          "position": "RW",
+          "overall": 89,
+          "stats": {
+            "pac": 92,
+            "sho": 86,
+            "pas": 78,
+            "dri": 92,
+            "def": 34,
+            "phy": 70
+          },
+          "nationality": "Dutch"
+        },
+        {
+          "id": "ned10_12",
+          "name": "Robin van Persie",
+          "position": "ST",
+          "overall": 88,
+          "stats": {
+            "pac": 82,
+            "sho": 88,
+            "pas": 72,
+            "dri": 80,
+            "def": 36,
+            "phy": 76
+          },
+          "nationality": "Dutch"
+        },
+        {
+          "id": "ned10_13",
+          "name": "Dirk Kuyt",
+          "position": "RW",
+          "overall": 82,
+          "stats": {
+            "pac": 80,
+            "sho": 76,
+            "pas": 68,
+            "dri": 70,
+            "def": 58,
+            "phy": 80
+          },
+          "nationality": "Dutch"
+        },
+        {
+          "id": "ned10_14",
+          "name": "Klaas-Jan Huntelaar",
+          "position": "ST",
+          "overall": 84,
+          "stats": {
+            "pac": 80,
+            "sho": 86,
+            "pas": 62,
+            "dri": 76,
+            "def": 28,
+            "phy": 74
+          },
+          "nationality": "Dutch"
+        },
+        {
+          "id": "ned10_15",
+          "name": "Ibrahim Afellay",
+          "position": "LW",
+          "overall": 78,
+          "stats": {
+            "pac": 82,
+            "sho": 72,
+            "pas": 76,
+            "dri": 82,
+            "def": 32,
+            "phy": 62
+          },
+          "nationality": "Dutch"
+        },
+        {
+          "id": "ned10_16",
+          "name": "Rafael van der Vaart",
+          "position": "CAM",
+          "overall": 84,
+          "stats": {
+            "pac": 72,
+            "sho": 80,
+            "pas": 84,
+            "dri": 80,
+            "def": 44,
+            "phy": 68
+          },
+          "nationality": "Dutch"
+        },
+        {
+          "id": "ned10_17",
+          "name": "Eljero Elia",
+          "position": "LW",
+          "overall": 76,
+          "stats": {
+            "pac": 90,
+            "sho": 68,
+            "pas": 62,
+            "dri": 78,
+            "def": 28,
+            "phy": 68
+          },
+          "nationality": "Dutch"
+        },
+        {
+          "id": "ned10_18",
+          "name": "Stijn Schaars",
+          "position": "CM",
+          "overall": 73,
+          "stats": {
+            "pac": 68,
+            "sho": 52,
+            "pas": 70,
+            "dri": 62,
+            "def": 68,
+            "phy": 70
+          },
+          "nationality": "Dutch"
+        }
+      ]
+    },
+    {
+      "club": "Netherlands 1998",
+      "season": "1998",
+      "league": "World Cup",
+      "badge": "NED",
+      "players": [
+        {
+          "id": "ned98_01",
+          "name": "Edwin van der Sar",
+          "position": "GK",
+          "overall": 86,
+          "stats": {
+            "pac": 50,
+            "sho": 12,
+            "pas": 42,
+            "dri": 34,
+            "def": 26,
+            "phy": 82
+          },
+          "nationality": "Dutch"
+        },
+        {
+          "id": "ned98_02",
+          "name": "Jap-Sang Ed de Goey",
+          "position": "GK",
+          "overall": 78,
+          "stats": {
+            "pac": 44,
+            "sho": 10,
+            "pas": 36,
+            "dri": 26,
+            "def": 20,
+            "phy": 76
+          },
+          "nationality": "Dutch"
+        },
+        {
+          "id": "ned98_03",
+          "name": "Jaap Stam",
+          "position": "CB",
+          "overall": 91,
+          "stats": {
+            "pac": 80,
+            "sho": 36,
+            "pas": 56,
+            "dri": 58,
+            "def": 92,
+            "phy": 90
+          },
+          "nationality": "Dutch"
+        },
+        {
+          "id": "ned98_04",
+          "name": "Frank de Boer",
+          "position": "CB",
+          "overall": 87,
+          "stats": {
+            "pac": 76,
+            "sho": 40,
+            "pas": 72,
+            "dri": 66,
+            "def": 88,
+            "phy": 80
+          },
+          "nationality": "Dutch"
+        },
+        {
+          "id": "ned98_05",
+          "name": "Michael Reiziger",
+          "position": "RB",
+          "overall": 84,
+          "stats": {
+            "pac": 84,
+            "sho": 50,
+            "pas": 68,
+            "dri": 70,
+            "def": 82,
+            "phy": 76
+          },
+          "nationality": "Dutch"
+        },
+        {
+          "id": "ned98_06",
+          "name": "Arthur Numan",
+          "position": "LB",
+          "overall": 82,
+          "stats": {
+            "pac": 80,
+            "sho": 48,
+            "pas": 66,
+            "dri": 66,
+            "def": 80,
+            "phy": 74
+          },
+          "nationality": "Dutch"
+        },
+        {
+          "id": "ned98_07",
+          "name": "Phillip Cocu",
+          "position": "CM",
+          "overall": 84,
+          "stats": {
+            "pac": 74,
+            "sho": 72,
+            "pas": 82,
+            "dri": 76,
+            "def": 72,
+            "phy": 74
+          },
+          "nationality": "Dutch"
+        },
+        {
+          "id": "ned98_08",
+          "name": "Edgar Davids",
+          "position": "CDM",
+          "overall": 86,
+          "stats": {
+            "pac": 80,
+            "sho": 62,
+            "pas": 76,
+            "dri": 78,
+            "def": 84,
+            "phy": 82
+          },
+          "nationality": "Dutch"
+        },
+        {
+          "id": "ned98_09",
+          "name": "Clarence Seedorf",
+          "position": "CM",
+          "overall": 87,
+          "stats": {
+            "pac": 76,
+            "sho": 76,
+            "pas": 84,
+            "dri": 82,
+            "def": 68,
+            "phy": 78
+          },
+          "nationality": "Dutch"
+        },
+        {
+          "id": "ned98_10",
+          "name": "Marc Overmars",
+          "position": "LW",
+          "overall": 86,
+          "stats": {
+            "pac": 92,
+            "sho": 78,
+            "pas": 76,
+            "dri": 86,
+            "def": 40,
+            "phy": 68
+          },
+          "nationality": "Dutch"
+        },
+        {
+          "id": "ned98_11",
+          "name": "Dennis Bergkamp",
+          "position": "CAM",
+          "overall": 92,
+          "stats": {
+            "pac": 80,
+            "sho": 88,
+            "pas": 88,
+            "dri": 90,
+            "def": 38,
+            "phy": 72
+          },
+          "nationality": "Dutch"
+        },
+        {
+          "id": "ned98_12",
+          "name": "Patrick Kluivert",
+          "position": "ST",
+          "overall": 88,
+          "stats": {
+            "pac": 86,
+            "sho": 88,
+            "pas": 66,
+            "dri": 82,
+            "def": 36,
+            "phy": 80
+          },
+          "nationality": "Dutch"
+        },
+        {
+          "id": "ned98_13",
+          "name": "Pierre van Hooijdonk",
+          "position": "ST",
+          "overall": 82,
+          "stats": {
+            "pac": 74,
+            "sho": 82,
+            "pas": 60,
+            "dri": 68,
+            "def": 28,
+            "phy": 80
+          },
+          "nationality": "Dutch"
+        },
+        {
+          "id": "ned98_14",
+          "name": "Ronald de Boer",
+          "position": "RW",
+          "overall": 82,
+          "stats": {
+            "pac": 80,
+            "sho": 74,
+            "pas": 74,
+            "dri": 78,
+            "def": 46,
+            "phy": 70
+          },
+          "nationality": "Dutch"
+        },
+        {
+          "id": "ned98_15",
+          "name": "Boudewijn Zenden",
+          "position": "LW",
+          "overall": 79,
+          "stats": {
+            "pac": 84,
+            "sho": 70,
+            "pas": 72,
+            "dri": 78,
+            "def": 36,
+            "phy": 66
+          },
+          "nationality": "Dutch"
+        },
+        {
+          "id": "ned98_16",
+          "name": "Paul Bosvelt",
+          "position": "CDM",
+          "overall": 77,
+          "stats": {
+            "pac": 66,
+            "sho": 54,
+            "pas": 70,
+            "dri": 62,
+            "def": 76,
+            "phy": 74
+          },
+          "nationality": "Dutch"
+        },
+        {
+          "id": "ned98_17",
+          "name": "Wim Jonk",
+          "position": "CM",
+          "overall": 78,
+          "stats": {
+            "pac": 68,
+            "sho": 60,
+            "pas": 76,
+            "dri": 66,
+            "def": 64,
+            "phy": 68
+          },
+          "nationality": "Dutch"
+        },
+        {
+          "id": "ned98_18",
+          "name": "Jon Dahl Tomasson",
+          "position": "ST",
+          "overall": 74,
+          "stats": {
+            "pac": 78,
+            "sho": 72,
+            "pas": 58,
+            "dri": 68,
+            "def": 26,
+            "phy": 68
+          },
+          "nationality": "Dutch"
+        }
+      ]
+    },
+    {
+      "club": "Portugal 2016",
+      "season": "2016",
+      "league": "Euro Championship",
+      "badge": "POR",
+      "players": [
+        {
+          "id": "por16_01",
+          "name": "Rui Patricio",
+          "position": "GK",
+          "overall": 86,
+          "stats": {
+            "pac": 50,
+            "sho": 12,
+            "pas": 42,
+            "dri": 34,
+            "def": 26,
+            "phy": 82
+          },
+          "nationality": "Portuguese"
+        },
+        {
+          "id": "por16_02",
+          "name": "Anthony Lopes",
+          "position": "GK",
+          "overall": 80,
+          "stats": {
+            "pac": 44,
+            "sho": 10,
+            "pas": 38,
+            "dri": 28,
+            "def": 20,
+            "phy": 76
+          },
+          "nationality": "Portuguese"
+        },
+        {
+          "id": "por16_03",
+          "name": "Pepe",
+          "position": "CB",
+          "overall": 87,
+          "stats": {
+            "pac": 72,
+            "sho": 38,
+            "pas": 60,
+            "dri": 58,
+            "def": 89,
+            "phy": 88
+          },
+          "nationality": "Portuguese"
+        },
+        {
+          "id": "por16_04",
+          "name": "Jose Fonte",
+          "position": "CB",
+          "overall": 82,
+          "stats": {
+            "pac": 66,
+            "sho": 30,
+            "pas": 56,
+            "dri": 50,
+            "def": 83,
+            "phy": 80
+          },
+          "nationality": "Portuguese"
+        },
+        {
+          "id": "por16_05",
+          "name": "Bruno Alves",
+          "position": "CB",
+          "overall": 80,
+          "stats": {
+            "pac": 68,
+            "sho": 28,
+            "pas": 54,
+            "dri": 50,
+            "def": 81,
+            "phy": 78
+          },
+          "nationality": "Portuguese"
+        },
+        {
+          "id": "por16_06",
+          "name": "Raphael Guerreiro",
+          "position": "LB",
+          "overall": 83,
+          "stats": {
+            "pac": 82,
+            "sho": 66,
+            "pas": 76,
+            "dri": 78,
+            "def": 76,
+            "phy": 70
+          },
+          "nationality": "Portuguese"
+        },
+        {
+          "id": "por16_07",
+          "name": "Vieirinha",
+          "position": "RB",
+          "overall": 79,
+          "stats": {
+            "pac": 80,
+            "sho": 56,
+            "pas": 68,
+            "dri": 70,
+            "def": 74,
+            "phy": 68
+          },
+          "nationality": "Portuguese"
+        },
+        {
+          "id": "por16_08",
+          "name": "Danilo Pereira",
+          "position": "CDM",
+          "overall": 81,
+          "stats": {
+            "pac": 70,
+            "sho": 54,
+            "pas": 70,
+            "dri": 66,
+            "def": 82,
+            "phy": 80
+          },
+          "nationality": "Portuguese"
+        },
+        {
+          "id": "por16_09",
+          "name": "Ricardo Carvalho",
+          "position": "CM",
+          "overall": 76,
+          "stats": {
+            "pac": 60,
+            "sho": 48,
+            "pas": 68,
+            "dri": 58,
+            "def": 76,
+            "phy": 72
+          },
+          "nationality": "Portuguese"
+        },
+        {
+          "id": "por16_10",
+          "name": "Joao Moutinho",
+          "position": "CM",
+          "overall": 84,
+          "stats": {
+            "pac": 70,
+            "sho": 68,
+            "pas": 88,
+            "dri": 78,
+            "def": 64,
+            "phy": 66
+          },
+          "nationality": "Portuguese"
+        },
+        {
+          "id": "por16_11",
+          "name": "Adrien Silva",
+          "position": "CM",
+          "overall": 79,
+          "stats": {
+            "pac": 70,
+            "sho": 62,
+            "pas": 78,
+            "dri": 72,
+            "def": 72,
+            "phy": 72
+          },
+          "nationality": "Portuguese"
+        },
+        {
+          "id": "por16_12",
+          "name": "Andre Gomes",
+          "position": "CM",
+          "overall": 80,
+          "stats": {
+            "pac": 72,
+            "sho": 64,
+            "pas": 80,
+            "dri": 76,
+            "def": 68,
+            "phy": 74
+          },
+          "nationality": "Portuguese"
+        },
+        {
+          "id": "por16_13",
+          "name": "Cristiano Ronaldo",
+          "position": "LW",
+          "overall": 94,
+          "stats": {
+            "pac": 90,
+            "sho": 93,
+            "pas": 82,
+            "dri": 93,
+            "def": 34,
+            "phy": 86
+          },
+          "nationality": "Portuguese"
+        },
+        {
+          "id": "por16_14",
+          "name": "Nani",
+          "position": "RW",
+          "overall": 82,
+          "stats": {
+            "pac": 88,
+            "sho": 76,
+            "pas": 72,
+            "dri": 84,
+            "def": 36,
+            "phy": 68
+          },
+          "nationality": "Portuguese"
+        },
+        {
+          "id": "por16_15",
+          "name": "Ricardo Quaresma",
+          "position": "RW",
+          "overall": 80,
+          "stats": {
+            "pac": 86,
+            "sho": 74,
+            "pas": 68,
+            "dri": 84,
+            "def": 28,
+            "phy": 66
+          },
+          "nationality": "Portuguese"
+        },
+        {
+          "id": "por16_16",
+          "name": "Renato Sanches",
+          "position": "CM",
+          "overall": 78,
+          "stats": {
+            "pac": 78,
+            "sho": 64,
+            "pas": 74,
+            "dri": 78,
+            "def": 62,
+            "phy": 80
+          },
+          "nationality": "Portuguese"
+        },
+        {
+          "id": "por16_17",
+          "name": "Eder",
+          "position": "ST",
+          "overall": 74,
+          "stats": {
+            "pac": 80,
+            "sho": 72,
+            "pas": 56,
+            "dri": 68,
+            "def": 28,
+            "phy": 74
+          },
+          "nationality": "Portuguese"
+        },
+        {
+          "id": "por16_18",
+          "name": "Helder Postiga",
+          "position": "ST",
+          "overall": 72,
+          "stats": {
+            "pac": 70,
+            "sho": 70,
+            "pas": 52,
+            "dri": 62,
+            "def": 22,
+            "phy": 70
+          },
+          "nationality": "Portuguese"
+        }
+      ]
+    },
+    {
+      "club": "Portugal 2006",
+      "season": "2006",
+      "league": "World Cup",
+      "badge": "POR",
+      "players": [
+        {
+          "id": "por06_01",
+          "name": "Ricardo",
+          "position": "GK",
+          "overall": 82,
+          "stats": {
+            "pac": 46,
+            "sho": 10,
+            "pas": 38,
+            "dri": 28,
+            "def": 22,
+            "phy": 78
+          },
+          "nationality": "Portuguese"
+        },
+        {
+          "id": "por06_02",
+          "name": "Quim",
+          "position": "GK",
+          "overall": 75,
+          "stats": {
+            "pac": 40,
+            "sho": 9,
+            "pas": 33,
+            "dri": 24,
+            "def": 18,
+            "phy": 73
+          },
+          "nationality": "Portuguese"
+        },
+        {
+          "id": "por06_03",
+          "name": "Ricardo Carvalho",
+          "position": "CB",
+          "overall": 88,
+          "stats": {
+            "pac": 74,
+            "sho": 34,
+            "pas": 62,
+            "dri": 60,
+            "def": 90,
+            "phy": 82
+          },
+          "nationality": "Portuguese"
+        },
+        {
+          "id": "por06_04",
+          "name": "Fernando Meira",
+          "position": "CB",
+          "overall": 79,
+          "stats": {
+            "pac": 68,
+            "sho": 28,
+            "pas": 52,
+            "dri": 48,
+            "def": 80,
+            "phy": 78
+          },
+          "nationality": "Portuguese"
+        },
+        {
+          "id": "por06_05",
+          "name": "Marco Caneira",
+          "position": "CB",
+          "overall": 75,
+          "stats": {
+            "pac": 68,
+            "sho": 26,
+            "pas": 50,
+            "dri": 46,
+            "def": 76,
+            "phy": 76
+          },
+          "nationality": "Portuguese"
+        },
+        {
+          "id": "por06_06",
+          "name": "Nuno Valente",
+          "position": "LB",
+          "overall": 79,
+          "stats": {
+            "pac": 78,
+            "sho": 46,
+            "pas": 64,
+            "dri": 64,
+            "def": 76,
+            "phy": 72
+          },
+          "nationality": "Portuguese"
+        },
+        {
+          "id": "por06_07",
+          "name": "Miguel",
+          "position": "RB",
+          "overall": 78,
+          "stats": {
+            "pac": 80,
+            "sho": 46,
+            "pas": 62,
+            "dri": 62,
+            "def": 74,
+            "phy": 70
+          },
+          "nationality": "Portuguese"
+        },
+        {
+          "id": "por06_08",
+          "name": "Costinha",
+          "position": "CDM",
+          "overall": 78,
+          "stats": {
+            "pac": 64,
+            "sho": 50,
+            "pas": 68,
+            "dri": 60,
+            "def": 80,
+            "phy": 76
+          },
+          "nationality": "Portuguese"
+        },
+        {
+          "id": "por06_09",
+          "name": "Petit",
+          "position": "CDM",
+          "overall": 76,
+          "stats": {
+            "pac": 64,
+            "sho": 48,
+            "pas": 66,
+            "dri": 58,
+            "def": 78,
+            "phy": 74
+          },
+          "nationality": "Portuguese"
+        },
+        {
+          "id": "por06_10",
+          "name": "Luis Figo",
+          "position": "RW",
+          "overall": 90,
+          "stats": {
+            "pac": 82,
+            "sho": 78,
+            "pas": 86,
+            "dri": 88,
+            "def": 42,
+            "phy": 76
+          },
+          "nationality": "Portuguese"
+        },
+        {
+          "id": "por06_11",
+          "name": "Deco",
+          "position": "CAM",
+          "overall": 88,
+          "stats": {
+            "pac": 74,
+            "sho": 76,
+            "pas": 88,
+            "dri": 86,
+            "def": 50,
+            "phy": 68
+          },
+          "nationality": "Portuguese"
+        },
+        {
+          "id": "por06_12",
+          "name": "Maniche",
+          "position": "CM",
+          "overall": 82,
+          "stats": {
+            "pac": 68,
+            "sho": 74,
+            "pas": 78,
+            "dri": 70,
+            "def": 62,
+            "phy": 74
+          },
+          "nationality": "Portuguese"
+        },
+        {
+          "id": "por06_13",
+          "name": "Tiago",
+          "position": "CM",
+          "overall": 80,
+          "stats": {
+            "pac": 70,
+            "sho": 66,
+            "pas": 76,
+            "dri": 68,
+            "def": 70,
+            "phy": 74
+          },
+          "nationality": "Portuguese"
+        },
+        {
+          "id": "por06_14",
+          "name": "Simao Sabrosa",
+          "position": "LW",
+          "overall": 82,
+          "stats": {
+            "pac": 84,
+            "sho": 76,
+            "pas": 74,
+            "dri": 80,
+            "def": 32,
+            "phy": 66
+          },
+          "nationality": "Portuguese"
+        },
+        {
+          "id": "por06_15",
+          "name": "Cristiano Ronaldo",
+          "position": "RW",
+          "overall": 86,
+          "stats": {
+            "pac": 90,
+            "sho": 84,
+            "pas": 74,
+            "dri": 88,
+            "def": 28,
+            "phy": 78
+          },
+          "nationality": "Portuguese"
+        },
+        {
+          "id": "por06_16",
+          "name": "Pauleta",
+          "position": "ST",
+          "overall": 84,
+          "stats": {
+            "pac": 78,
+            "sho": 84,
+            "pas": 62,
+            "dri": 76,
+            "def": 24,
+            "phy": 74
+          },
+          "nationality": "Portuguese"
+        },
+        {
+          "id": "por06_17",
+          "name": "Helder Postiga",
+          "position": "ST",
+          "overall": 77,
+          "stats": {
+            "pac": 74,
+            "sho": 76,
+            "pas": 56,
+            "dri": 66,
+            "def": 22,
+            "phy": 72
+          },
+          "nationality": "Portuguese"
+        },
+        {
+          "id": "por06_18",
+          "name": "Nuno Gomes",
+          "position": "ST",
+          "overall": 80,
+          "stats": {
+            "pac": 78,
+            "sho": 80,
+            "pas": 60,
+            "dri": 72,
+            "def": 22,
+            "phy": 72
+          },
+          "nationality": "Portuguese"
+        }
+      ]
+    },
+    {
+      "club": "Germany 2014",
+      "season": "2014",
+      "league": "World Cup",
+      "badge": "GER",
+      "players": [
+        {
+          "id": "ger14_01",
+          "name": "Manuel Neuer",
+          "position": "GK",
+          "overall": 94,
+          "stats": {
+            "pac": 58,
+            "sho": 15,
+            "pas": 55,
+            "dri": 48,
+            "def": 35,
+            "phy": 90
+          },
+          "nationality": "German"
+        },
+        {
+          "id": "ger14_02",
+          "name": "Ron-Robert Zieler",
+          "position": "GK",
+          "overall": 78,
+          "stats": {
+            "pac": 46,
+            "sho": 10,
+            "pas": 38,
+            "dri": 28,
+            "def": 20,
+            "phy": 74
+          },
+          "nationality": "German"
+        },
+        {
+          "id": "ger14_03",
+          "name": "Jerome Boateng",
+          "position": "CB",
+          "overall": 88,
+          "stats": {
+            "pac": 76,
+            "sho": 34,
+            "pas": 64,
+            "dri": 60,
+            "def": 90,
+            "phy": 84
+          },
+          "nationality": "German"
+        },
+        {
+          "id": "ger14_04",
+          "name": "Mats Hummels",
+          "position": "CB",
+          "overall": 88,
+          "stats": {
+            "pac": 70,
+            "sho": 38,
+            "pas": 70,
+            "dri": 64,
+            "def": 90,
+            "phy": 82
+          },
+          "nationality": "German"
+        },
+        {
+          "id": "ger14_05",
+          "name": "Benedikt Howedes",
+          "position": "LB",
+          "overall": 80,
+          "stats": {
+            "pac": 74,
+            "sho": 32,
+            "pas": 60,
+            "dri": 58,
+            "def": 82,
+            "phy": 80
+          },
+          "nationality": "German"
+        },
+        {
+          "id": "ger14_06",
+          "name": "Philipp Lahm",
+          "position": "RB",
+          "overall": 90,
+          "stats": {
+            "pac": 82,
+            "sho": 54,
+            "pas": 82,
+            "dri": 80,
+            "def": 86,
+            "phy": 76
+          },
+          "nationality": "German"
+        },
+        {
+          "id": "ger14_07",
+          "name": "Erik Durm",
+          "position": "LB",
+          "overall": 74,
+          "stats": {
+            "pac": 80,
+            "sho": 44,
+            "pas": 58,
+            "dri": 60,
+            "def": 70,
+            "phy": 70
+          },
+          "nationality": "German"
+        },
+        {
+          "id": "ger14_08",
+          "name": "Bastian Schweinsteiger",
+          "position": "CDM",
+          "overall": 89,
+          "stats": {
+            "pac": 68,
+            "sho": 70,
+            "pas": 86,
+            "dri": 76,
+            "def": 80,
+            "phy": 80
+          },
+          "nationality": "German"
+        },
+        {
+          "id": "ger14_09",
+          "name": "Sami Khedira",
+          "position": "CM",
+          "overall": 85,
+          "stats": {
+            "pac": 74,
+            "sho": 72,
+            "pas": 78,
+            "dri": 72,
+            "def": 78,
+            "phy": 80
+          },
+          "nationality": "German"
+        },
+        {
+          "id": "ger14_10",
+          "name": "Toni Kroos",
+          "position": "CM",
+          "overall": 90,
+          "stats": {
+            "pac": 68,
+            "sho": 78,
+            "pas": 93,
+            "dri": 80,
+            "def": 72,
+            "phy": 72
+          },
+          "nationality": "German"
+        },
+        {
+          "id": "ger14_11",
+          "name": "Mesut Ozil",
+          "position": "CAM",
+          "overall": 88,
+          "stats": {
+            "pac": 74,
+            "sho": 74,
+            "pas": 91,
+            "dri": 86,
+            "def": 44,
+            "phy": 62
+          },
+          "nationality": "German"
+        },
+        {
+          "id": "ger14_12",
+          "name": "Thomas Muller",
+          "position": "RW",
+          "overall": 88,
+          "stats": {
+            "pac": 80,
+            "sho": 83,
+            "pas": 76,
+            "dri": 78,
+            "def": 52,
+            "phy": 74
+          },
+          "nationality": "German"
+        },
+        {
+          "id": "ger14_13",
+          "name": "Miroslav Klose",
+          "position": "ST",
+          "overall": 86,
+          "stats": {
+            "pac": 72,
+            "sho": 86,
+            "pas": 64,
+            "dri": 72,
+            "def": 38,
+            "phy": 78
+          },
+          "nationality": "German"
+        },
+        {
+          "id": "ger14_14",
+          "name": "Mario Gotze",
+          "position": "ST",
+          "overall": 84,
+          "stats": {
+            "pac": 80,
+            "sho": 78,
+            "pas": 80,
+            "dri": 86,
+            "def": 36,
+            "phy": 66
+          },
+          "nationality": "German"
+        },
+        {
+          "id": "ger14_15",
+          "name": "Andre Schurrle",
+          "position": "ST",
+          "overall": 81,
+          "stats": {
+            "pac": 86,
+            "sho": 78,
+            "pas": 68,
+            "dri": 76,
+            "def": 34,
+            "phy": 74
+          },
+          "nationality": "German"
+        },
+        {
+          "id": "ger14_16",
+          "name": "Marco Reus",
+          "position": "LW",
+          "overall": 86,
+          "stats": {
+            "pac": 88,
+            "sho": 82,
+            "pas": 76,
+            "dri": 86,
+            "def": 38,
+            "phy": 70
+          },
+          "nationality": "German"
+        },
+        {
+          "id": "ger14_17",
+          "name": "Lukas Podolski",
+          "position": "LW",
+          "overall": 82,
+          "stats": {
+            "pac": 82,
+            "sho": 82,
+            "pas": 68,
+            "dri": 74,
+            "def": 30,
+            "phy": 74
+          },
+          "nationality": "German"
+        },
+        {
+          "id": "ger14_18",
+          "name": "Roman Weidenfeller",
+          "position": "GK",
+          "overall": 82,
+          "stats": {
+            "pac": 44,
+            "sho": 10,
+            "pas": 38,
+            "dri": 28,
+            "def": 22,
+            "phy": 78
+          },
+          "nationality": "German"
+        }
+      ]
+    },
+    {
+      "club": "Germany 2002",
+      "season": "2002",
+      "league": "World Cup",
+      "badge": "GER",
+      "players": [
+        {
+          "id": "ger02_01",
+          "name": "Oliver Kahn",
+          "position": "GK",
+          "overall": 93,
+          "stats": {
+            "pac": 52,
+            "sho": 13,
+            "pas": 44,
+            "dri": 36,
+            "def": 30,
+            "phy": 90
+          },
+          "nationality": "German"
+        },
+        {
+          "id": "ger02_02",
+          "name": "Jens Lehmann",
+          "position": "GK",
+          "overall": 83,
+          "stats": {
+            "pac": 46,
+            "sho": 10,
+            "pas": 38,
+            "dri": 28,
+            "def": 22,
+            "phy": 78
+          },
+          "nationality": "German"
+        },
+        {
+          "id": "ger02_03",
+          "name": "Thomas Linke",
+          "position": "CB",
+          "overall": 79,
+          "stats": {
+            "pac": 68,
+            "sho": 28,
+            "pas": 52,
+            "dri": 48,
+            "def": 80,
+            "phy": 78
+          },
+          "nationality": "German"
+        },
+        {
+          "id": "ger02_04",
+          "name": "Carsten Ramelow",
+          "position": "CB",
+          "overall": 80,
+          "stats": {
+            "pac": 72,
+            "sho": 30,
+            "pas": 54,
+            "dri": 50,
+            "def": 82,
+            "phy": 80
+          },
+          "nationality": "German"
+        },
+        {
+          "id": "ger02_05",
+          "name": "Christoph Metzelder",
+          "position": "CB",
+          "overall": 79,
+          "stats": {
+            "pac": 70,
+            "sho": 28,
+            "pas": 52,
+            "dri": 48,
+            "def": 80,
+            "phy": 78
+          },
+          "nationality": "German"
+        },
+        {
+          "id": "ger02_06",
+          "name": "Christian Ziege",
+          "position": "LB",
+          "overall": 80,
+          "stats": {
+            "pac": 78,
+            "sho": 54,
+            "pas": 68,
+            "dri": 66,
+            "def": 76,
+            "phy": 72
+          },
+          "nationality": "German"
+        },
+        {
+          "id": "ger02_07",
+          "name": "Torsten Frings",
+          "position": "CDM",
+          "overall": 82,
+          "stats": {
+            "pac": 72,
+            "sho": 66,
+            "pas": 76,
+            "dri": 68,
+            "def": 80,
+            "phy": 78
+          },
+          "nationality": "German"
+        },
+        {
+          "id": "ger02_08",
+          "name": "Dietmar Hamann",
+          "position": "CDM",
+          "overall": 82,
+          "stats": {
+            "pac": 66,
+            "sho": 58,
+            "pas": 74,
+            "dri": 62,
+            "def": 82,
+            "phy": 76
+          },
+          "nationality": "German"
+        },
+        {
+          "id": "ger02_09",
+          "name": "Michael Ballack",
+          "position": "CM",
+          "overall": 90,
+          "stats": {
+            "pac": 76,
+            "sho": 82,
+            "pas": 82,
+            "dri": 78,
+            "def": 72,
+            "phy": 84
+          },
+          "nationality": "German"
+        },
+        {
+          "id": "ger02_10",
+          "name": "Bernd Schneider",
+          "position": "RW",
+          "overall": 78,
+          "stats": {
+            "pac": 80,
+            "sho": 68,
+            "pas": 72,
+            "dri": 76,
+            "def": 42,
+            "phy": 66
+          },
+          "nationality": "German"
+        },
+        {
+          "id": "ger02_11",
+          "name": "Marco Bode",
+          "position": "LW",
+          "overall": 77,
+          "stats": {
+            "pac": 78,
+            "sho": 68,
+            "pas": 66,
+            "dri": 72,
+            "def": 38,
+            "phy": 68
+          },
+          "nationality": "German"
+        },
+        {
+          "id": "ger02_12",
+          "name": "Gerald Asamoah",
+          "position": "LW",
+          "overall": 76,
+          "stats": {
+            "pac": 82,
+            "sho": 66,
+            "pas": 58,
+            "dri": 70,
+            "def": 36,
+            "phy": 76
+          },
+          "nationality": "German"
+        },
+        {
+          "id": "ger02_13",
+          "name": "Miroslav Klose",
+          "position": "ST",
+          "overall": 82,
+          "stats": {
+            "pac": 76,
+            "sho": 82,
+            "pas": 60,
+            "dri": 70,
+            "def": 32,
+            "phy": 74
+          },
+          "nationality": "German"
+        },
+        {
+          "id": "ger02_14",
+          "name": "Oliver Bierhoff",
+          "position": "ST",
+          "overall": 82,
+          "stats": {
+            "pac": 72,
+            "sho": 82,
+            "pas": 56,
+            "dri": 66,
+            "def": 28,
+            "phy": 82
+          },
+          "nationality": "German"
+        },
+        {
+          "id": "ger02_15",
+          "name": "Oliver Neuville",
+          "position": "ST",
+          "overall": 77,
+          "stats": {
+            "pac": 78,
+            "sho": 76,
+            "pas": 60,
+            "dri": 70,
+            "def": 26,
+            "phy": 70
+          },
+          "nationality": "German"
+        },
+        {
+          "id": "ger02_16",
+          "name": "Jorg Bohme",
+          "position": "CM",
+          "overall": 75,
+          "stats": {
+            "pac": 68,
+            "sho": 60,
+            "pas": 72,
+            "dri": 64,
+            "def": 60,
+            "phy": 68
+          },
+          "nationality": "German"
+        },
+        {
+          "id": "ger02_17",
+          "name": "Sebastian Deisler",
+          "position": "CAM",
+          "overall": 79,
+          "stats": {
+            "pac": 76,
+            "sho": 72,
+            "pas": 78,
+            "dri": 78,
+            "def": 48,
+            "phy": 66
+          },
+          "nationality": "German"
+        },
+        {
+          "id": "ger02_18",
+          "name": "Joerg Jeremies",
+          "position": "CDM",
+          "overall": 76,
+          "stats": {
+            "pac": 68,
+            "sho": 52,
+            "pas": 68,
+            "dri": 60,
+            "def": 78,
+            "phy": 74
+          },
+          "nationality": "German"
+        }
+      ]
+    },
+    {
+      "club": "Senegal 2022",
+      "season": "2022",
+      "league": "World Cup",
+      "badge": "SEN",
+      "players": [
+        {
+          "id": "sen22_01",
+          "name": "Edouard Mendy",
+          "position": "GK",
+          "overall": 87,
+          "stats": {
+            "pac": 54,
+            "sho": 12,
+            "pas": 46,
+            "dri": 36,
+            "def": 28,
+            "phy": 86
+          },
+          "nationality": "Senegalese"
+        },
+        {
+          "id": "sen22_02",
+          "name": "Alfred Gomis",
+          "position": "GK",
+          "overall": 78,
+          "stats": {
+            "pac": 44,
+            "sho": 10,
+            "pas": 38,
+            "dri": 26,
+            "def": 20,
+            "phy": 78
+          },
+          "nationality": "Senegalese"
+        },
+        {
+          "id": "sen22_03",
+          "name": "Kalidou Koulibaly",
+          "position": "CB",
+          "overall": 88,
+          "stats": {
+            "pac": 82,
+            "sho": 40,
+            "pas": 62,
+            "dri": 62,
+            "def": 90,
+            "phy": 88
+          },
+          "nationality": "Senegalese"
+        },
+        {
+          "id": "sen22_04",
+          "name": "Abdou Diallo",
+          "position": "CB",
+          "overall": 80,
+          "stats": {
+            "pac": 82,
+            "sho": 32,
+            "pas": 58,
+            "dri": 58,
+            "def": 82,
+            "phy": 78
+          },
+          "nationality": "Senegalese"
+        },
+        {
+          "id": "sen22_05",
+          "name": "Pape Abou Cisse",
+          "position": "CB",
+          "overall": 78,
+          "stats": {
+            "pac": 76,
+            "sho": 28,
+            "pas": 52,
+            "dri": 50,
+            "def": 80,
+            "phy": 80
+          },
+          "nationality": "Senegalese"
+        },
+        {
+          "id": "sen22_06",
+          "name": "Youssouf Sabaly",
+          "position": "RB",
+          "overall": 79,
+          "stats": {
+            "pac": 84,
+            "sho": 48,
+            "pas": 62,
+            "dri": 66,
+            "def": 76,
+            "phy": 72
+          },
+          "nationality": "Senegalese"
+        },
+        {
+          "id": "sen22_07",
+          "name": "Formose Mendy",
+          "position": "LB",
+          "overall": 76,
+          "stats": {
+            "pac": 80,
+            "sho": 44,
+            "pas": 60,
+            "dri": 62,
+            "def": 72,
+            "phy": 68
+          },
+          "nationality": "Senegalese"
+        },
+        {
+          "id": "sen22_08",
+          "name": "Nampalys Mendy",
+          "position": "CDM",
+          "overall": 78,
+          "stats": {
+            "pac": 70,
+            "sho": 52,
+            "pas": 72,
+            "dri": 68,
+            "def": 78,
+            "phy": 72
+          },
+          "nationality": "Senegalese"
+        },
+        {
+          "id": "sen22_09",
+          "name": "Cheikhou Kouyate",
+          "position": "CM",
+          "overall": 78,
+          "stats": {
+            "pac": 74,
+            "sho": 56,
+            "pas": 68,
+            "dri": 64,
+            "def": 74,
+            "phy": 80
+          },
+          "nationality": "Senegalese"
+        },
+        {
+          "id": "sen22_10",
+          "name": "Idrissa Gueye",
+          "position": "CDM",
+          "overall": 83,
+          "stats": {
+            "pac": 76,
+            "sho": 58,
+            "pas": 72,
+            "dri": 70,
+            "def": 84,
+            "phy": 80
+          },
+          "nationality": "Senegalese"
+        },
+        {
+          "id": "sen22_11",
+          "name": "Sadio Mane",
+          "position": "LW",
+          "overall": 89,
+          "stats": {
+            "pac": 91,
+            "sho": 85,
+            "pas": 80,
+            "dri": 88,
+            "def": 44,
+            "phy": 78
+          },
+          "nationality": "Senegalese"
+        },
+        {
+          "id": "sen22_12",
+          "name": "Boulaye Dia",
+          "position": "ST",
+          "overall": 80,
+          "stats": {
+            "pac": 84,
+            "sho": 78,
+            "pas": 62,
+            "dri": 76,
+            "def": 32,
+            "phy": 72
+          },
+          "nationality": "Senegalese"
+        },
+        {
+          "id": "sen22_13",
+          "name": "Ismaila Sarr",
+          "position": "RW",
+          "overall": 82,
+          "stats": {
+            "pac": 92,
+            "sho": 76,
+            "pas": 66,
+            "dri": 82,
+            "def": 36,
+            "phy": 74
+          },
+          "nationality": "Senegalese"
+        },
+        {
+          "id": "sen22_14",
+          "name": "Lamine Diatta",
+          "position": "RW",
+          "overall": 76,
+          "stats": {
+            "pac": 86,
+            "sho": 70,
+            "pas": 60,
+            "dri": 76,
+            "def": 34,
+            "phy": 68
+          },
+          "nationality": "Senegalese"
+        },
+        {
+          "id": "sen22_15",
+          "name": "Bamba Dieng",
+          "position": "ST",
+          "overall": 76,
+          "stats": {
+            "pac": 82,
+            "sho": 74,
+            "pas": 56,
+            "dri": 70,
+            "def": 26,
+            "phy": 72
+          },
+          "nationality": "Senegalese"
+        },
+        {
+          "id": "sen22_16",
+          "name": "Krepin Diatta",
+          "position": "LW",
+          "overall": 78,
+          "stats": {
+            "pac": 88,
+            "sho": 72,
+            "pas": 62,
+            "dri": 78,
+            "def": 32,
+            "phy": 68
+          },
+          "nationality": "Senegalese"
+        },
+        {
+          "id": "sen22_17",
+          "name": "Pape Gueye",
+          "position": "CM",
+          "overall": 76,
+          "stats": {
+            "pac": 72,
+            "sho": 54,
+            "pas": 70,
+            "dri": 66,
+            "def": 68,
+            "phy": 74
+          },
+          "nationality": "Senegalese"
+        },
+        {
+          "id": "sen22_18",
+          "name": "Nicolas Jackson",
+          "position": "ST",
+          "overall": 77,
+          "stats": {
+            "pac": 86,
+            "sho": 74,
+            "pas": 58,
+            "dri": 76,
+            "def": 28,
+            "phy": 72
+          },
+          "nationality": "Senegalese"
+        }
+      ]
+    },
+    {
+      "club": "Morocco 2022",
+      "season": "2022",
+      "league": "World Cup",
+      "badge": "MAR",
+      "players": [
+        {
+          "id": "mar22_01",
+          "name": "Yassine Bono",
+          "position": "GK",
+          "overall": 87,
+          "stats": {
+            "pac": 52,
+            "sho": 12,
+            "pas": 44,
+            "dri": 36,
+            "def": 28,
+            "phy": 84
+          },
+          "nationality": "Moroccan"
+        },
+        {
+          "id": "mar22_02",
+          "name": "Munir Mohamedi",
+          "position": "GK",
+          "overall": 76,
+          "stats": {
+            "pac": 42,
+            "sho": 10,
+            "pas": 36,
+            "dri": 26,
+            "def": 18,
+            "phy": 74
+          },
+          "nationality": "Moroccan"
+        },
+        {
+          "id": "mar22_03",
+          "name": "Romain Saiss",
+          "position": "CB",
+          "overall": 82,
+          "stats": {
+            "pac": 72,
+            "sho": 34,
+            "pas": 58,
+            "dri": 54,
+            "def": 84,
+            "phy": 82
+          },
+          "nationality": "Moroccan"
+        },
+        {
+          "id": "mar22_04",
+          "name": "Nayef Aguerd",
+          "position": "CB",
+          "overall": 82,
+          "stats": {
+            "pac": 76,
+            "sho": 32,
+            "pas": 58,
+            "dri": 56,
+            "def": 83,
+            "phy": 80
+          },
+          "nationality": "Moroccan"
+        },
+        {
+          "id": "mar22_05",
+          "name": "Jawad El Yamiq",
+          "position": "CB",
+          "overall": 78,
+          "stats": {
+            "pac": 70,
+            "sho": 28,
+            "pas": 52,
+            "dri": 50,
+            "def": 79,
+            "phy": 78
+          },
+          "nationality": "Moroccan"
+        },
+        {
+          "id": "mar22_06",
+          "name": "Achraf Hakimi",
+          "position": "RB",
+          "overall": 88,
+          "stats": {
+            "pac": 94,
+            "sho": 72,
+            "pas": 76,
+            "dri": 84,
+            "def": 78,
+            "phy": 74
+          },
+          "nationality": "Moroccan"
+        },
+        {
+          "id": "mar22_07",
+          "name": "Noussair Mazraoui",
+          "position": "RB",
+          "overall": 82,
+          "stats": {
+            "pac": 84,
+            "sho": 56,
+            "pas": 68,
+            "dri": 72,
+            "def": 78,
+            "phy": 72
+          },
+          "nationality": "Moroccan"
+        },
+        {
+          "id": "mar22_08",
+          "name": "Selim Amallah",
+          "position": "CM",
+          "overall": 76,
+          "stats": {
+            "pac": 72,
+            "sho": 62,
+            "pas": 72,
+            "dri": 68,
+            "def": 62,
+            "phy": 72
+          },
+          "nationality": "Moroccan"
+        },
+        {
+          "id": "mar22_09",
+          "name": "Azzedine Ounahi",
+          "position": "CM",
+          "overall": 78,
+          "stats": {
+            "pac": 74,
+            "sho": 60,
+            "pas": 76,
+            "dri": 78,
+            "def": 62,
+            "phy": 70
+          },
+          "nationality": "Moroccan"
+        },
+        {
+          "id": "mar22_10",
+          "name": "Sofyan Amrabat",
+          "position": "CDM",
+          "overall": 83,
+          "stats": {
+            "pac": 74,
+            "sho": 56,
+            "pas": 74,
+            "dri": 70,
+            "def": 84,
+            "phy": 80
+          },
+          "nationality": "Moroccan"
+        },
+        {
+          "id": "mar22_11",
+          "name": "Hakim Ziyech",
+          "position": "RW",
+          "overall": 84,
+          "stats": {
+            "pac": 82,
+            "sho": 80,
+            "pas": 82,
+            "dri": 84,
+            "def": 36,
+            "phy": 66
+          },
+          "nationality": "Moroccan"
+        },
+        {
+          "id": "mar22_12",
+          "name": "Youssef En-Nesyri",
+          "position": "ST",
+          "overall": 82,
+          "stats": {
+            "pac": 82,
+            "sho": 82,
+            "pas": 58,
+            "dri": 72,
+            "def": 30,
+            "phy": 78
+          },
+          "nationality": "Moroccan"
+        },
+        {
+          "id": "mar22_13",
+          "name": "Sofiane Boufal",
+          "position": "LW",
+          "overall": 80,
+          "stats": {
+            "pac": 84,
+            "sho": 74,
+            "pas": 70,
+            "dri": 86,
+            "def": 30,
+            "phy": 62
+          },
+          "nationality": "Moroccan"
+        },
+        {
+          "id": "mar22_14",
+          "name": "Abdelhamid Sabiri",
+          "position": "CAM",
+          "overall": 76,
+          "stats": {
+            "pac": 74,
+            "sho": 68,
+            "pas": 74,
+            "dri": 74,
+            "def": 44,
+            "phy": 66
+          },
+          "nationality": "Moroccan"
+        },
+        {
+          "id": "mar22_15",
+          "name": "Walid Cheddira",
+          "position": "ST",
+          "overall": 76,
+          "stats": {
+            "pac": 78,
+            "sho": 74,
+            "pas": 54,
+            "dri": 66,
+            "def": 26,
+            "phy": 74
+          },
+          "nationality": "Moroccan"
+        },
+        {
+          "id": "mar22_16",
+          "name": "Yahia Attiyat Allah",
+          "position": "LB",
+          "overall": 76,
+          "stats": {
+            "pac": 78,
+            "sho": 42,
+            "pas": 60,
+            "dri": 60,
+            "def": 72,
+            "phy": 68
+          },
+          "nationality": "Moroccan"
+        },
+        {
+          "id": "mar22_17",
+          "name": "Zakaria Aboukhlal",
+          "position": "RW",
+          "overall": 74,
+          "stats": {
+            "pac": 84,
+            "sho": 68,
+            "pas": 58,
+            "dri": 74,
+            "def": 28,
+            "phy": 64
+          },
+          "nationality": "Moroccan"
+        },
+        {
+          "id": "mar22_18",
+          "name": "Bilal El Khannouss",
+          "position": "CM",
+          "overall": 74,
+          "stats": {
+            "pac": 74,
+            "sho": 60,
+            "pas": 74,
+            "dri": 76,
+            "def": 48,
+            "phy": 62
+          },
+          "nationality": "Moroccan"
+        }
+      ]
+    },
+    {
+      "club": "Japan 2022",
+      "season": "2022",
+      "league": "World Cup",
+      "badge": "JPN",
+      "players": [
+        {
+          "id": "jpn22_01",
+          "name": "Shuichi Gonda",
+          "position": "GK",
+          "overall": 79,
+          "stats": {
+            "pac": 46,
+            "sho": 11,
+            "pas": 38,
+            "dri": 28,
+            "def": 20,
+            "phy": 74
+          },
+          "nationality": "Japanese"
+        },
+        {
+          "id": "jpn22_02",
+          "name": "Zion Suzuki",
+          "position": "GK",
+          "overall": 73,
+          "stats": {
+            "pac": 42,
+            "sho": 9,
+            "pas": 34,
+            "dri": 24,
+            "def": 16,
+            "phy": 70
+          },
+          "nationality": "Japanese"
+        },
+        {
+          "id": "jpn22_03",
+          "name": "Maya Yoshida",
+          "position": "CB",
+          "overall": 78,
+          "stats": {
+            "pac": 68,
+            "sho": 32,
+            "pas": 58,
+            "dri": 52,
+            "def": 80,
+            "phy": 76
+          },
+          "nationality": "Japanese"
+        },
+        {
+          "id": "jpn22_04",
+          "name": "Ko Itakura",
+          "position": "CB",
+          "overall": 79,
+          "stats": {
+            "pac": 74,
+            "sho": 30,
+            "pas": 58,
+            "dri": 54,
+            "def": 80,
+            "phy": 78
+          },
+          "nationality": "Japanese"
+        },
+        {
+          "id": "jpn22_05",
+          "name": "Shogo Taniguchi",
+          "position": "CB",
+          "overall": 76,
+          "stats": {
+            "pac": 70,
+            "sho": 28,
+            "pas": 54,
+            "dri": 50,
+            "def": 78,
+            "phy": 74
+          },
+          "nationality": "Japanese"
+        },
+        {
+          "id": "jpn22_06",
+          "name": "Hiroki Sakai",
+          "position": "RB",
+          "overall": 78,
+          "stats": {
+            "pac": 82,
+            "sho": 46,
+            "pas": 64,
+            "dri": 64,
+            "def": 76,
+            "phy": 72
+          },
+          "nationality": "Japanese"
+        },
+        {
+          "id": "jpn22_07",
+          "name": "Yuto Nagatomo",
+          "position": "LB",
+          "overall": 76,
+          "stats": {
+            "pac": 80,
+            "sho": 44,
+            "pas": 62,
+            "dri": 64,
+            "def": 72,
+            "phy": 68
+          },
+          "nationality": "Japanese"
+        },
+        {
+          "id": "jpn22_08",
+          "name": "Wataru Endo",
+          "position": "CDM",
+          "overall": 80,
+          "stats": {
+            "pac": 70,
+            "sho": 56,
+            "pas": 74,
+            "dri": 68,
+            "def": 82,
+            "phy": 76
+          },
+          "nationality": "Japanese"
+        },
+        {
+          "id": "jpn22_09",
+          "name": "Ao Tanaka",
+          "position": "CM",
+          "overall": 76,
+          "stats": {
+            "pac": 72,
+            "sho": 58,
+            "pas": 74,
+            "dri": 70,
+            "def": 68,
+            "phy": 68
+          },
+          "nationality": "Japanese"
+        },
+        {
+          "id": "jpn22_10",
+          "name": "Hidemasa Morita",
+          "position": "CM",
+          "overall": 77,
+          "stats": {
+            "pac": 70,
+            "sho": 60,
+            "pas": 76,
+            "dri": 68,
+            "def": 70,
+            "phy": 68
+          },
+          "nationality": "Japanese"
+        },
+        {
+          "id": "jpn22_11",
+          "name": "Daichi Kamada",
+          "position": "CAM",
+          "overall": 81,
+          "stats": {
+            "pac": 76,
+            "sho": 76,
+            "pas": 80,
+            "dri": 80,
+            "def": 46,
+            "phy": 68
+          },
+          "nationality": "Japanese"
+        },
+        {
+          "id": "jpn22_12",
+          "name": "Ritsu Doan",
+          "position": "RW",
+          "overall": 80,
+          "stats": {
+            "pac": 84,
+            "sho": 78,
+            "pas": 68,
+            "dri": 80,
+            "def": 38,
+            "phy": 68
+          },
+          "nationality": "Japanese"
+        },
+        {
+          "id": "jpn22_13",
+          "name": "Takuma Asano",
+          "position": "RW",
+          "overall": 77,
+          "stats": {
+            "pac": 92,
+            "sho": 72,
+            "pas": 60,
+            "dri": 74,
+            "def": 34,
+            "phy": 66
+          },
+          "nationality": "Japanese"
+        },
+        {
+          "id": "jpn22_14",
+          "name": "Junya Ito",
+          "position": "RW",
+          "overall": 79,
+          "stats": {
+            "pac": 90,
+            "sho": 74,
+            "pas": 64,
+            "dri": 78,
+            "def": 36,
+            "phy": 64
+          },
+          "nationality": "Japanese"
+        },
+        {
+          "id": "jpn22_15",
+          "name": "Kaoru Mitoma",
+          "position": "LW",
+          "overall": 82,
+          "stats": {
+            "pac": 90,
+            "sho": 76,
+            "pas": 72,
+            "dri": 84,
+            "def": 38,
+            "phy": 68
+          },
+          "nationality": "Japanese"
+        },
+        {
+          "id": "jpn22_16",
+          "name": "Daizen Maeda",
+          "position": "ST",
+          "overall": 77,
+          "stats": {
+            "pac": 88,
+            "sho": 74,
+            "pas": 60,
+            "dri": 72,
+            "def": 40,
+            "phy": 70
+          },
+          "nationality": "Japanese"
+        },
+        {
+          "id": "jpn22_17",
+          "name": "Ayase Ueda",
+          "position": "ST",
+          "overall": 76,
+          "stats": {
+            "pac": 78,
+            "sho": 74,
+            "pas": 54,
+            "dri": 66,
+            "def": 26,
+            "phy": 72
+          },
+          "nationality": "Japanese"
+        },
+        {
+          "id": "jpn22_18",
+          "name": "Kyogo Furuhashi",
+          "position": "ST",
+          "overall": 79,
+          "stats": {
+            "pac": 88,
+            "sho": 78,
+            "pas": 62,
+            "dri": 78,
+            "def": 32,
+            "phy": 64
+          },
+          "nationality": "Japanese"
+        }
+      ]
+    },
+    {
+      "club": "USA 2026",
+      "season": "2026",
+      "league": "World Cup",
+      "badge": "USA",
+      "players": [
+        {
+          "id": "usa26_01",
+          "name": "Matt Turner",
+          "position": "GK",
+          "overall": 80,
+          "stats": {
+            "pac": 50,
+            "sho": 11,
+            "pas": 40,
+            "dri": 30,
+            "def": 22,
+            "phy": 80
+          },
+          "nationality": "American"
+        },
+        {
+          "id": "usa26_02",
+          "name": "Ethan Horvath",
+          "position": "GK",
+          "overall": 75,
+          "stats": {
+            "pac": 44,
+            "sho": 9,
+            "pas": 36,
+            "dri": 24,
+            "def": 18,
+            "phy": 74
+          },
+          "nationality": "American"
+        },
+        {
+          "id": "usa26_03",
+          "name": "Walker Zimmerman",
+          "position": "CB",
+          "overall": 80,
+          "stats": {
+            "pac": 72,
+            "sho": 32,
+            "pas": 56,
+            "dri": 52,
+            "def": 82,
+            "phy": 78
+          },
+          "nationality": "American"
+        },
+        {
+          "id": "usa26_04",
+          "name": "Chris Richards",
+          "position": "CB",
+          "overall": 79,
+          "stats": {
+            "pac": 78,
+            "sho": 30,
+            "pas": 56,
+            "dri": 54,
+            "def": 80,
+            "phy": 76
+          },
+          "nationality": "American"
+        },
+        {
+          "id": "usa26_05",
+          "name": "Miles Robinson",
+          "position": "CB",
+          "overall": 78,
+          "stats": {
+            "pac": 80,
+            "sho": 28,
+            "pas": 54,
+            "dri": 52,
+            "def": 79,
+            "phy": 78
+          },
+          "nationality": "American"
+        },
+        {
+          "id": "usa26_06",
+          "name": "Antonee Robinson",
+          "position": "LB",
+          "overall": 82,
+          "stats": {
+            "pac": 90,
+            "sho": 52,
+            "pas": 68,
+            "dri": 72,
+            "def": 76,
+            "phy": 72
+          },
+          "nationality": "American"
+        },
+        {
+          "id": "usa26_07",
+          "name": "Sergino Dest",
+          "position": "RB",
+          "overall": 80,
+          "stats": {
+            "pac": 86,
+            "sho": 56,
+            "pas": 68,
+            "dri": 76,
+            "def": 72,
+            "phy": 68
+          },
+          "nationality": "American"
+        },
+        {
+          "id": "usa26_08",
+          "name": "Tyler Adams",
+          "position": "CDM",
+          "overall": 81,
+          "stats": {
+            "pac": 78,
+            "sho": 58,
+            "pas": 74,
+            "dri": 72,
+            "def": 82,
+            "phy": 76
+          },
+          "nationality": "American"
+        },
+        {
+          "id": "usa26_09",
+          "name": "Weston McKennie",
+          "position": "CM",
+          "overall": 80,
+          "stats": {
+            "pac": 74,
+            "sho": 68,
+            "pas": 72,
+            "dri": 68,
+            "def": 72,
+            "phy": 80
+          },
+          "nationality": "American"
+        },
+        {
+          "id": "usa26_10",
+          "name": "Yunus Musah",
+          "position": "CM",
+          "overall": 80,
+          "stats": {
+            "pac": 80,
+            "sho": 64,
+            "pas": 74,
+            "dri": 80,
+            "def": 66,
+            "phy": 72
+          },
+          "nationality": "American"
+        },
+        {
+          "id": "usa26_11",
+          "name": "Christian Pulisic",
+          "position": "LW",
+          "overall": 84,
+          "stats": {
+            "pac": 86,
+            "sho": 80,
+            "pas": 76,
+            "dri": 86,
+            "def": 38,
+            "phy": 66
+          },
+          "nationality": "American"
+        },
+        {
+          "id": "usa26_12",
+          "name": "Tim Weah",
+          "position": "RW",
+          "overall": 78,
+          "stats": {
+            "pac": 90,
+            "sho": 72,
+            "pas": 64,
+            "dri": 76,
+            "def": 36,
+            "phy": 68
+          },
+          "nationality": "American"
+        },
+        {
+          "id": "usa26_13",
+          "name": "Giovanni Reyna",
+          "position": "CAM",
+          "overall": 80,
+          "stats": {
+            "pac": 78,
+            "sho": 74,
+            "pas": 80,
+            "dri": 82,
+            "def": 36,
+            "phy": 62
+          },
+          "nationality": "American"
+        },
+        {
+          "id": "usa26_14",
+          "name": "Folarin Balogun",
+          "position": "ST",
+          "overall": 80,
+          "stats": {
+            "pac": 82,
+            "sho": 78,
+            "pas": 60,
+            "dri": 74,
+            "def": 30,
+            "phy": 72
+          },
+          "nationality": "American"
+        },
+        {
+          "id": "usa26_15",
+          "name": "Brenden Aaronson",
+          "position": "CAM",
+          "overall": 77,
+          "stats": {
+            "pac": 78,
+            "sho": 70,
+            "pas": 72,
+            "dri": 74,
+            "def": 52,
+            "phy": 70
+          },
+          "nationality": "American"
+        },
+        {
+          "id": "usa26_16",
+          "name": "Josh Sargent",
+          "position": "ST",
+          "overall": 76,
+          "stats": {
+            "pac": 78,
+            "sho": 74,
+            "pas": 58,
+            "dri": 66,
+            "def": 30,
+            "phy": 74
+          },
+          "nationality": "American"
+        },
+        {
+          "id": "usa26_17",
+          "name": "Konrad de la Fuente",
+          "position": "LW",
+          "overall": 74,
+          "stats": {
+            "pac": 84,
+            "sho": 66,
+            "pas": 62,
+            "dri": 74,
+            "def": 28,
+            "phy": 62
+          },
+          "nationality": "American"
+        },
+        {
+          "id": "usa26_18",
+          "name": "DeJuan Jones",
+          "position": "LB",
+          "overall": 74,
+          "stats": {
+            "pac": 80,
+            "sho": 40,
+            "pas": 58,
+            "dri": 58,
+            "def": 72,
+            "phy": 68
+          },
+          "nationality": "American"
+        }
+      ]
+    },
+    {
+      "club": "Mexico 2018",
+      "season": "2018",
+      "league": "World Cup",
+      "badge": "MEX",
+      "players": [
+        {
+          "id": "mex18_01",
+          "name": "Guillermo Ochoa",
+          "position": "GK",
+          "overall": 84,
+          "stats": {
+            "pac": 50,
+            "sho": 11,
+            "pas": 40,
+            "dri": 30,
+            "def": 24,
+            "phy": 76
+          },
+          "nationality": "Mexican"
+        },
+        {
+          "id": "mex18_02",
+          "name": "Alfredo Talavera",
+          "position": "GK",
+          "overall": 76,
+          "stats": {
+            "pac": 42,
+            "sho": 9,
+            "pas": 34,
+            "dri": 22,
+            "def": 18,
+            "phy": 72
+          },
+          "nationality": "Mexican"
+        },
+        {
+          "id": "mex18_03",
+          "name": "Hugo Ayala",
+          "position": "CB",
+          "overall": 78,
+          "stats": {
+            "pac": 70,
+            "sho": 28,
+            "pas": 52,
+            "dri": 48,
+            "def": 79,
+            "phy": 76
+          },
+          "nationality": "Mexican"
+        },
+        {
+          "id": "mex18_04",
+          "name": "Hector Moreno",
+          "position": "CB",
+          "overall": 80,
+          "stats": {
+            "pac": 72,
+            "sho": 30,
+            "pas": 58,
+            "dri": 52,
+            "def": 82,
+            "phy": 78
+          },
+          "nationality": "Mexican"
+        },
+        {
+          "id": "mex18_05",
+          "name": "Rafael Marquez",
+          "position": "CB",
+          "overall": 80,
+          "stats": {
+            "pac": 66,
+            "sho": 34,
+            "pas": 62,
+            "dri": 56,
+            "def": 82,
+            "phy": 76
+          },
+          "nationality": "Mexican"
+        },
+        {
+          "id": "mex18_06",
+          "name": "Jesus Gallardo",
+          "position": "LB",
+          "overall": 78,
+          "stats": {
+            "pac": 82,
+            "sho": 46,
+            "pas": 62,
+            "dri": 64,
+            "def": 72,
+            "phy": 68
+          },
+          "nationality": "Mexican"
+        },
+        {
+          "id": "mex18_07",
+          "name": "Carlos Salcedo",
+          "position": "RB",
+          "overall": 76,
+          "stats": {
+            "pac": 78,
+            "sho": 40,
+            "pas": 58,
+            "dri": 56,
+            "def": 74,
+            "phy": 74
+          },
+          "nationality": "Mexican"
+        },
+        {
+          "id": "mex18_08",
+          "name": "Andres Guardado",
+          "position": "CM",
+          "overall": 82,
+          "stats": {
+            "pac": 72,
+            "sho": 64,
+            "pas": 80,
+            "dri": 74,
+            "def": 66,
+            "phy": 68
+          },
+          "nationality": "Mexican"
+        },
+        {
+          "id": "mex18_09",
+          "name": "Hector Herrera",
+          "position": "CM",
+          "overall": 81,
+          "stats": {
+            "pac": 72,
+            "sho": 64,
+            "pas": 78,
+            "dri": 74,
+            "def": 68,
+            "phy": 72
+          },
+          "nationality": "Mexican"
+        },
+        {
+          "id": "mex18_10",
+          "name": "Miguel Layun",
+          "position": "RWB",
+          "overall": 78,
+          "stats": {
+            "pac": 82,
+            "sho": 56,
+            "pas": 68,
+            "dri": 68,
+            "def": 72,
+            "phy": 70
+          },
+          "nationality": "Mexican"
+        },
+        {
+          "id": "mex18_11",
+          "name": "Hirving Lozano",
+          "position": "RW",
+          "overall": 83,
+          "stats": {
+            "pac": 92,
+            "sho": 78,
+            "pas": 68,
+            "dri": 82,
+            "def": 36,
+            "phy": 68
+          },
+          "nationality": "Mexican"
+        },
+        {
+          "id": "mex18_12",
+          "name": "Javier Hernandez",
+          "position": "ST",
+          "overall": 82,
+          "stats": {
+            "pac": 80,
+            "sho": 84,
+            "pas": 60,
+            "dri": 76,
+            "def": 30,
+            "phy": 70
+          },
+          "nationality": "Mexican"
+        },
+        {
+          "id": "mex18_13",
+          "name": "Carlos Vela",
+          "position": "LW",
+          "overall": 84,
+          "stats": {
+            "pac": 82,
+            "sho": 82,
+            "pas": 76,
+            "dri": 84,
+            "def": 34,
+            "phy": 64
+          },
+          "nationality": "Mexican"
+        },
+        {
+          "id": "mex18_14",
+          "name": "Jonathan dos Santos",
+          "position": "CDM",
+          "overall": 79,
+          "stats": {
+            "pac": 68,
+            "sho": 58,
+            "pas": 74,
+            "dri": 70,
+            "def": 76,
+            "phy": 70
+          },
+          "nationality": "Mexican"
+        },
+        {
+          "id": "mex18_15",
+          "name": "Jesus Corona",
+          "position": "RW",
+          "overall": 80,
+          "stats": {
+            "pac": 84,
+            "sho": 74,
+            "pas": 70,
+            "dri": 78,
+            "def": 40,
+            "phy": 66
+          },
+          "nationality": "Mexican"
+        },
+        {
+          "id": "mex18_16",
+          "name": "Raul Jimenez",
+          "position": "ST",
+          "overall": 82,
+          "stats": {
+            "pac": 76,
+            "sho": 82,
+            "pas": 66,
+            "dri": 74,
+            "def": 34,
+            "phy": 80
+          },
+          "nationality": "Mexican"
+        },
+        {
+          "id": "mex18_17",
+          "name": "Marco Fabian",
+          "position": "CAM",
+          "overall": 77,
+          "stats": {
+            "pac": 74,
+            "sho": 74,
+            "pas": 72,
+            "dri": 74,
+            "def": 38,
+            "phy": 64
+          },
+          "nationality": "Mexican"
+        },
+        {
+          "id": "mex18_18",
+          "name": "Rodolfo Pizarro",
+          "position": "CAM",
+          "overall": 76,
+          "stats": {
+            "pac": 76,
+            "sho": 68,
+            "pas": 72,
+            "dri": 74,
+            "def": 38,
+            "phy": 64
+          },
+          "nationality": "Mexican"
+        }
+      ]
+    },
+    {
+      "club": "South Korea 2002",
+      "season": "2002",
+      "league": "World Cup",
+      "badge": "KOR",
+      "players": [
+        {
+          "id": "kor02_01",
+          "name": "Lee Woon-jae",
+          "position": "GK",
+          "overall": 80,
+          "stats": {
+            "pac": 44,
+            "sho": 10,
+            "pas": 36,
+            "dri": 26,
+            "def": 20,
+            "phy": 76
+          },
+          "nationality": "South Korean"
+        },
+        {
+          "id": "kor02_02",
+          "name": "Kim Byung-ji",
+          "position": "GK",
+          "overall": 73,
+          "stats": {
+            "pac": 40,
+            "sho": 9,
+            "pas": 32,
+            "dri": 22,
+            "def": 16,
+            "phy": 70
+          },
+          "nationality": "South Korean"
+        },
+        {
+          "id": "kor02_03",
+          "name": "Hong Myung-bo",
+          "position": "CB",
+          "overall": 84,
+          "stats": {
+            "pac": 72,
+            "sho": 38,
+            "pas": 62,
+            "dri": 58,
+            "def": 86,
+            "phy": 80
+          },
+          "nationality": "South Korean"
+        },
+        {
+          "id": "kor02_04",
+          "name": "Choi Jin-cheul",
+          "position": "CB",
+          "overall": 78,
+          "stats": {
+            "pac": 68,
+            "sho": 28,
+            "pas": 52,
+            "dri": 48,
+            "def": 79,
+            "phy": 78
+          },
+          "nationality": "South Korean"
+        },
+        {
+          "id": "kor02_05",
+          "name": "Kim Tae-young",
+          "position": "CB",
+          "overall": 76,
+          "stats": {
+            "pac": 66,
+            "sho": 26,
+            "pas": 50,
+            "dri": 46,
+            "def": 77,
+            "phy": 76
+          },
+          "nationality": "South Korean"
+        },
+        {
+          "id": "kor02_06",
+          "name": "Lee Young-pyo",
+          "position": "LB",
+          "overall": 80,
+          "stats": {
+            "pac": 84,
+            "sho": 44,
+            "pas": 62,
+            "dri": 64,
+            "def": 76,
+            "phy": 72
+          },
+          "nationality": "South Korean"
+        },
+        {
+          "id": "kor02_07",
+          "name": "Song Chong-gug",
+          "position": "RB",
+          "overall": 76,
+          "stats": {
+            "pac": 78,
+            "sho": 40,
+            "pas": 58,
+            "dri": 58,
+            "def": 74,
+            "phy": 72
+          },
+          "nationality": "South Korean"
+        },
+        {
+          "id": "kor02_08",
+          "name": "Kim Nam-il",
+          "position": "CDM",
+          "overall": 76,
+          "stats": {
+            "pac": 68,
+            "sho": 52,
+            "pas": 68,
+            "dri": 60,
+            "def": 78,
+            "phy": 72
+          },
+          "nationality": "South Korean"
+        },
+        {
+          "id": "kor02_09",
+          "name": "Yoo Sang-chul",
+          "position": "CM",
+          "overall": 78,
+          "stats": {
+            "pac": 70,
+            "sho": 62,
+            "pas": 72,
+            "dri": 64,
+            "def": 68,
+            "phy": 74
+          },
+          "nationality": "South Korean"
+        },
+        {
+          "id": "kor02_10",
+          "name": "Park Ji-sung",
+          "position": "CM",
+          "overall": 82,
+          "stats": {
+            "pac": 82,
+            "sho": 66,
+            "pas": 72,
+            "dri": 72,
+            "def": 72,
+            "phy": 80
+          },
+          "nationality": "South Korean"
+        },
+        {
+          "id": "kor02_11",
+          "name": "Lee Eul-yong",
+          "position": "LM",
+          "overall": 76,
+          "stats": {
+            "pac": 80,
+            "sho": 60,
+            "pas": 68,
+            "dri": 70,
+            "def": 48,
+            "phy": 68
+          },
+          "nationality": "South Korean"
+        },
+        {
+          "id": "kor02_12",
+          "name": "Seol Ki-hyeon",
+          "position": "RW",
+          "overall": 78,
+          "stats": {
+            "pac": 82,
+            "sho": 68,
+            "pas": 64,
+            "dri": 72,
+            "def": 38,
+            "phy": 70
+          },
+          "nationality": "South Korean"
+        },
+        {
+          "id": "kor02_13",
+          "name": "Lee Chun-soo",
+          "position": "LW",
+          "overall": 80,
+          "stats": {
+            "pac": 86,
+            "sho": 72,
+            "pas": 68,
+            "dri": 78,
+            "def": 36,
+            "phy": 66
+          },
+          "nationality": "South Korean"
+        },
+        {
+          "id": "kor02_14",
+          "name": "Ahn Jung-hwan",
+          "position": "ST",
+          "overall": 80,
+          "stats": {
+            "pac": 80,
+            "sho": 78,
+            "pas": 62,
+            "dri": 72,
+            "def": 30,
+            "phy": 72
+          },
+          "nationality": "South Korean"
+        },
+        {
+          "id": "kor02_15",
+          "name": "Hwang Sun-hong",
+          "position": "ST",
+          "overall": 78,
+          "stats": {
+            "pac": 76,
+            "sho": 78,
+            "pas": 58,
+            "dri": 66,
+            "def": 26,
+            "phy": 72
+          },
+          "nationality": "South Korean"
+        },
+        {
+          "id": "kor02_16",
+          "name": "Choi Yong-soo",
+          "position": "CAM",
+          "overall": 76,
+          "stats": {
+            "pac": 74,
+            "sho": 68,
+            "pas": 70,
+            "dri": 72,
+            "def": 38,
+            "phy": 62
+          },
+          "nationality": "South Korean"
+        },
+        {
+          "id": "kor02_17",
+          "name": "Bum-kun Cha",
+          "position": "ST",
+          "overall": 82,
+          "stats": {
+            "pac": 78,
+            "sho": 82,
+            "pas": 62,
+            "dri": 74,
+            "def": 26,
+            "phy": 72
+          },
+          "nationality": "South Korean"
+        },
+        {
+          "id": "kor02_18",
+          "name": "Hwang Jung-soo",
+          "position": "CB",
+          "overall": 74,
+          "stats": {
+            "pac": 66,
+            "sho": 24,
+            "pas": 48,
+            "dri": 44,
+            "def": 75,
+            "phy": 74
+          },
+          "nationality": "South Korean"
+        }
+      ]
+    }
+  ]
+}
