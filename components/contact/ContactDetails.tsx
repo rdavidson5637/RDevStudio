@@ -18,9 +18,9 @@ export function ContactDetails() {
         </li>
         <li>
           <p className="font-display text-xs font-semibold uppercase tracking-widest text-secondary">
-            Based in
+            Availability
           </p>
-          <p className="mt-1 text-secondary">Carrickfergus, Northern Ireland</p>
+          <p className="mt-1 text-secondary">Open to freelance — based in Belfast</p>
         </li>
         <li>
           <p className="font-display text-xs font-semibold uppercase tracking-widest text-secondary">

@@ -2,29 +2,40 @@ import Link from "next/link";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { createPageMetadata } from "@/lib/metadata";
 
-const FACTS = [
+const TOOLKIT = [
   {
     label: "Stack",
     value: "Next.js + Tailwind CSS",
+    detail: "Fast, modern, and easy to maintain",
   },
   {
     label: "Hosting",
     value: "Deployed on Vercel",
+    detail: "Quick deploys, great performance",
   },
   {
-    label: "Turnaround",
-    value: "7-day delivery",
+    label: "Day job",
+    value: "Full time in Belfast",
+    detail: "Side projects happen evenings and weekends",
   },
   {
-    label: "Location",
-    value: "Based in Carrickfergus, NI",
+    label: "Availability",
+    value: "Open to freelance",
+    detail: "Websites and web apps — happy to chat",
   },
+] as const;
+
+const INTERESTS = [
+  "Clean, fast-loading websites",
+  "Side projects that actually ship",
+  "Football games when I'm bored",
+  "Building things for businesses I rate — like RVS Cold Brew",
 ] as const;
 
 export const metadata = createPageMetadata({
   title: "About",
   description:
-    "About Ryan Davidson — developer, designer, and the person behind RDev Studio in Carrickfergus, Northern Ireland.",
+    "About Ryan Davidson — developer, designer, and the person behind RDev Studio.",
   path: "/about",
 });
 
@@ -34,7 +45,11 @@ export default function AboutPage() {
       {/* Hero */}
       <section className="relative overflow-hidden border-b border-border bg-base pt-28">
         <div
-          className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_70%_0%,rgb(59_130_246/0.06)_0%,transparent_55%)]"
+          className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_70%_0%,rgb(139_92_246/0.08)_0%,transparent_55%)]"
+          aria-hidden="true"
+        />
+        <div
+          className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_20%_80%,rgb(245_158_11/0.06)_0%,transparent_50%)]"
           aria-hidden="true"
         />
         <div className="section-padding relative">
@@ -44,8 +59,8 @@ export default function AboutPage() {
               Ryan Davidson
             </h1>
             <p className="lead-text mt-6 max-w-2xl text-xl sm:text-2xl">
-              I build websites, apps, and side projects from Carrickfergus —
-              this portfolio is where they all live.
+              I design and build things for the web — this portfolio is where
+              they all live.
             </p>
           </div>
         </div>
@@ -59,36 +74,85 @@ export default function AboutPage() {
 
             <div className="mt-8 space-y-6 text-base leading-relaxed text-secondary sm:mt-10 sm:text-lg">
               <p>
-                I&apos;m Ryan Davidson, based in Carrickfergus, Northern
-                Ireland. I run RDev Studio as a side hustle — lean by design,
-                which means lower costs and faster turnaround for the businesses
-                I work with.
+                I&apos;m Ryan Davidson — a developer and designer who runs RDev
+                Studio as a side project. I work full time in Belfast and build
+                websites, apps, and the odd football game in my spare time.
               </p>
               <p>
-                I build websites, manage social media, and create content for
-                small businesses that want to look credible online without
-                paying agency rates. Whether you need a sharp new site, a
-                consistent social presence, or branded posts and copy, I handle
-                it end to end.
+                My route into software was a bit unconventional. I did my
+                undergrad in forensic science at Liverpool John Moores, then
+                recently finished my master&apos;s in software development at
+                Queen&apos;s University Belfast. ShelterLink — the volunteer
+                management app on this site — started as my dissertation project,
+                and I&apos;m still actively developing it.
               </p>
               <p>
-                I work with modern tools — Next.js, Tailwind CSS, and Vercel —
-                to deliver fast, professional results that load quickly and look
-                great on every device. No bloated builds, no endless timelines.
+                This portfolio also includes demo sites for fictional
+                businesses, a free website I&apos;m building for{" "}
+                <a
+                  href="https://rvscoldbrew.vercel.app"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-medium text-amber-400 underline decoration-amber-400/30 underline-offset-4 transition-colors hover:text-amber-300"
+                >
+                  RVS Cold Brew
+                </a>{" "}
+                (mostly because I love their coffee), and side experiments like{" "}
+                <Link
+                  href="/champions-draft"
+                  className="font-medium text-emerald-400 underline decoration-emerald-400/30 underline-offset-4 transition-colors hover:text-emerald-300"
+                >
+                  Champions Draft
+                </Link>
+                . Not everything here is finished — and that&apos;s kind of the
+                point.
               </p>
               <p>
-                I&apos;m passionate about helping local NI businesses show up
-                properly online. Good design and clear messaging shouldn&apos;t
-                be reserved for companies with big budgets — and that&apos;s
-                exactly what RDev Studio is built for.
+                I work with Next.js, Tailwind CSS, and Vercel to keep builds
+                fast and lightweight. I&apos;m also open to freelance work —
+                websites and web apps for businesses and side projects. If
+                something here caught your eye,{" "}
+                <Link
+                  href="/contact"
+                  className="font-medium text-accent underline decoration-accent/30 underline-offset-4 transition-colors hover:text-primary"
+                >
+                  get in touch
+                </Link>
+                .
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* What I use */}
+      {/* What I care about */}
       <section className="section-padding border-b border-border bg-base">
+        <div className="container-wide">
+          <SectionHeader
+            className="section-heading-gap max-w-2xl"
+            label="Approach"
+            title="What I care about"
+          />
+
+          <ul className="grid gap-4 sm:grid-cols-2">
+            {INTERESTS.map((item) => (
+              <li
+                key={item}
+                className="flex items-start gap-3 rounded-xl border border-border bg-raised/60 px-6 py-5"
+              >
+                <span
+                  className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-accent"
+                  aria-hidden="true"
+                />
+                <span className="text-base text-primary/90">{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      {/* Toolkit */}
+      <section className="section-padding border-b border-border bg-raised">
         <div className="container-wide">
           <SectionHeader
             className="section-heading-gap max-w-2xl"
@@ -97,15 +161,16 @@ export default function AboutPage() {
           />
 
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {FACTS.map((fact) => (
+            {TOOLKIT.map((item) => (
               <article
-                key={fact.label}
+                key={item.label}
                 className="interactive-surface card-hover px-6 py-8"
               >
-                <p className="label-caps text-secondary">{fact.label}</p>
+                <p className="label-caps text-secondary">{item.label}</p>
                 <p className="mt-3 font-display text-lg font-bold leading-snug text-primary sm:text-xl">
-                  {fact.value}
+                  {item.value}
                 </p>
+                <p className="mt-2 text-sm text-tertiary">{item.detail}</p>
               </article>
             ))}
           </div>
@@ -113,19 +178,25 @@ export default function AboutPage() {
       </section>
 
       {/* CTA */}
-      <section className="section-padding bg-raised">
+      <section className="section-padding bg-base">
         <div className="container-narrow">
-          <div className="border border-border bg-base px-8 py-12 text-center sm:px-12 sm:py-16">
+          <div className="border border-border bg-raised px-8 py-12 text-center sm:px-12 sm:py-16">
             <h2 className="heading-display text-2xl sm:text-3xl">
-              Ready to start?
+              Fancy a chat?
             </h2>
             <p className="mx-auto mt-4 max-w-md text-secondary">
-              Tell me about your business and what you need. I&apos;ll get back
-              to you within 24 hours.
+              Open to freelance website and web app work. Working on something,
+              want to collaborate, or just want to say hello? I usually reply
+              within a day.
             </p>
-            <Link href="/contact" className="btn-primary mt-8">
-              Get in touch
-            </Link>
+            <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
+              <Link href="/contact" className="btn-primary">
+                Get in touch
+              </Link>
+              <Link href="/work" className="btn-secondary">
+                Browse my work
+              </Link>
+            </div>
           </div>
         </div>
       </section>

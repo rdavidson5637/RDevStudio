@@ -17,7 +17,7 @@ export default function WorkPage() {
       <div className="container-narrow">
         <PageHeader
           title="Work"
-          subtitle="Websites, apps, and demo projects — client work and things I built to learn, experiment, or show what&apos;s possible."
+          subtitle="A university dissertation app, a free site for RVS Cold Brew, and demo sites for fictional companies — plus whatever I&apos;m building next."
         />
         <div className="flex flex-col gap-8">
           {PROJECTS.map((project, index) => (

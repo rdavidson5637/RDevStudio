@@ -17,8 +17,8 @@ export function ContactClose() {
 
           <div className="flex flex-col gap-6 lg:items-end">
             <p className="max-w-md text-sm leading-relaxed text-secondary lg:text-right">
-              Based in Carrickfergus, working with businesses across Northern
-              Ireland and beyond. No pitch decks — just a conversation.
+              Open to freelance work and collaborations. No pitch decks — just
+              a conversation.
             </p>
             <div className="flex flex-col gap-4 sm:flex-row">
               <Link href="/contact" className="btn-primary">

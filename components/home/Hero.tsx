@@ -33,8 +33,7 @@ export function Hero() {
             >
               Champions Draft
             </Link>
-            , my new football squad builder game. Made in Carrickfergus,
-            Northern Ireland.
+            , my new football squad builder game.
           </p>
 
           <div className="hero-ctas flex flex-wrap gap-4">
