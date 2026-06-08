@@ -1,9 +1,7 @@
 import Link from "next/link";
-import { CONTACT_EMAIL, WHATSAPP_NUMBER } from "@/lib/constants";
+import { CONTACT_EMAIL, WHATSAPP_URL } from "@/lib/constants";
 
 export function ContactClose() {
-  const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER.replace(/\+/g, "")}?text=${encodeURIComponent("Hi, I'd like to talk about a project.")}`;
-
   return (
     <section className="section-padding border-t border-border">
       <div className="container-wide">
@@ -27,7 +25,7 @@ export function ContactClose() {
                 Start a project
               </Link>
               <a
-                href={whatsappUrl}
+                href={WHATSAPP_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-secondary"

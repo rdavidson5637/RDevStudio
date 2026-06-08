@@ -37,7 +37,7 @@ export function ProjectPreview({
           muted
           playsInline
           poster={image}
-          className="h-full w-full object-cover object-top"
+          className="h-full w-full object-cover object-top transition-[filter] duration-[250ms] ease-out group-hover:brightness-105"
           aria-label={imageAlt ?? `${title} website preview`}
           onError={() => setVideoError(true)}
         >
@@ -48,7 +48,7 @@ export function ProjectPreview({
           src={image}
           alt={imageAlt}
           fill
-          className="object-cover object-top transition-transform duration-slow ease-out group-hover:scale-[1.02]"
+          className="object-cover object-top transition-[filter] duration-[250ms] ease-out group-hover:brightness-105"
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 576px"
           onError={() => setImageError(true)}
         />
@@ -64,6 +64,15 @@ export function ProjectPreview({
             <p className="mt-2 text-sm text-secondary">Preview coming soon</p>
           </div>
           <span className="sr-only">Preview placeholder for {title}</span>
+        </div>
+      )}
+
+      {(showVideo || showImage) && (
+        <div
+          className="pointer-events-none absolute inset-0 z-10 flex items-center justify-center bg-black/50 opacity-0 transition-opacity duration-[250ms] ease-out group-hover:opacity-100"
+          aria-hidden="true"
+        >
+          <span className="text-sm font-semibold text-white">View project →</span>
         </div>
       )}
 

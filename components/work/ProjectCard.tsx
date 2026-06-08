@@ -64,7 +64,7 @@ export function ProjectCard({ project, compact = false }: ProjectCardProps) {
     );
 
   return (
-    <article className="group flex flex-col overflow-hidden rounded-md border border-border-strong bg-raised transition-colors hover:border-accent/40">
+    <article className="group flex flex-col overflow-hidden rounded-md border border-border-strong bg-raised transition-[transform,border-color] duration-[250ms] ease-out hover:-translate-y-1 hover:border-white/40">
       <ProjectPreview
         title={project.title}
         image={project.image}

@@ -16,7 +16,11 @@ export function Hero() {
         aria-hidden="true"
       />
 
-      <div className="container-wide relative w-full pb-16 pt-24 sm:pb-20 sm:pt-28 lg:pb-24">
+      <span className="hero-bg-type hidden md:block" aria-hidden="true">
+        RDEV
+      </span>
+
+      <div className="container-wide relative z-10 w-full pb-16 pt-24 sm:pb-20 sm:pt-28 lg:pb-24">
         <div className="max-w-5xl">
           <p className={`label-caps hero-reveal ${REVEAL_DELAYS[0]}`}>
             RDev Studio
@@ -35,17 +39,24 @@ export function Hero() {
             </span>
           </h1>
 
+          <span className="hero-accent-line mt-6 sm:mt-8" aria-hidden="true" />
+
           <p
-            className={`mt-6 max-w-xl text-base leading-relaxed text-secondary sm:mt-8 sm:text-lg hero-reveal ${REVEAL_DELAYS[3]}`}
+            className={`mt-5 max-w-xl text-base leading-relaxed text-secondary sm:mt-6 sm:text-lg hero-reveal ${REVEAL_DELAYS[3]}`}
           >
             Website design, social media, and content for small businesses —
             based in Carrickfergus, working with clients anywhere.
           </p>
 
           <div className={`mt-8 sm:mt-10 hero-reveal ${REVEAL_DELAYS[4]}`}>
-            <Link href="#work" className="btn-secondary">
-              See our work
-            </Link>
+            <p className="text-sm text-secondary">
+              Websites from £650 · £30/month ongoing support
+            </p>
+            <div className="mt-5 sm:mt-6">
+              <Link href="#work" className="btn-secondary">
+                See our work
+              </Link>
+            </div>
           </div>
         </div>
       </div>

@@ -1,6 +1,7 @@
 import { PageHeader } from "@/components/ui/PageHeader";
 import { ContactForm } from "@/components/contact/ContactForm";
 import { ContactDetails } from "@/components/contact/ContactDetails";
+import { WhatsAppContactOption } from "@/components/contact/WhatsAppContactOption";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata = createPageMetadata({
@@ -21,6 +22,7 @@ export default function ContactPage() {
         <div className="grid gap-12 lg:grid-cols-5">
           <div className="lg:col-span-3">
             <ContactForm />
+            <WhatsAppContactOption className="mt-10" />
           </div>
           <div className="lg:col-span-2">
             <ContactDetails />

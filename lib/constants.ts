@@ -7,6 +7,7 @@ export const SITE_DESCRIPTION =
 export const EMAIL = "ryan@rdevstudio.co.uk";
 export const CONTACT_EMAIL = "ryan@rdevstudio.co.uk";
 export const WHATSAPP_NUMBER = "+447378420418";
+export const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER.replace(/\+/g, "")}?text=${encodeURIComponent("Hi, I'd like to talk about a project.")}`;
 export const FORMSPREE_FORM_ID = "mgoqjqve";
 
 export const CONTACT_SERVICE_OPTIONS = [
@@ -27,8 +28,12 @@ export const NAV_LINKS = [
 ] as const;
 
 export const SOCIAL_LINKS = [
-  { href: "#", label: "Instagram", icon: "instagram" as const },
-  { href: "#", label: "LinkedIn", icon: "linkedin" as const },
+  { href: "https://www.instagram.com/rdevstudio_", label: "Instagram", icon: "instagram" as const },
+  {
+    href: "https://www.linkedin.com/in/ryan-davidson-462bb221b",
+    label: "LinkedIn",
+    icon: "linkedin" as const,
+  },
 ] as const;
 
 export const SERVICES = [
@@ -58,31 +63,8 @@ export const STUDIO_STATEMENT =
 export const ABOUT_BLURB =
   "RDev Studio is a one-person creative studio based in Carrickfergus, Northern Ireland. I build websites, manage social media, and create content for small businesses who want to look brilliant online — without agency prices.";
 
-export const HOW_WE_WORK = [
-  {
-    title: "Discover",
-    description:
-      "I learn about your business, audience, and goals — what you do, who you serve, and what you need to stand out.",
-  },
-  {
-    title: "Create",
-    description:
-      "I design, write, and build with your brand at the centre. Every detail considered, nothing generic.",
-  },
-  {
-    title: "Launch",
-    description:
-      "You go live with everything set up and ready to work. Hosting, domains, and handover handled properly.",
-  },
-  {
-    title: "Support",
-    description:
-      "Ongoing help when you need it — updates, content, and advice without the agency runaround.",
-  },
-] as const;
-
 export const SOCIAL_PROOF_ITEMS = [
-  "5-page sites from £500",
+  "5-page sites from £650",
   "Live in 7 days",
   "Free hosting setup",
   "Local to Carrickfergus",
@@ -117,6 +99,21 @@ export const PRICING_FEATURES = [
   "Google Maps embed",
   "1 round of revisions",
   "Vercel hosting setup included",
+] as const;
+
+export const SOCIAL_MEDIA_FEATURES = [
+  "Content calendar",
+  "Post scheduling",
+  "Caption writing",
+  "Basic graphics",
+  "Monthly performance summary",
+] as const;
+
+export const CONTENT_CREATION_FEATURES = [
+  "Social graphics",
+  "Copywriting",
+  "Brand-consistent visuals",
+  "Delivered ready to post",
 ] as const;
 
 export const FAQ_ITEMS = [
@@ -231,7 +228,7 @@ export const PROJECTS = [
     highlights: ["Product pages", "Brand storytelling", "Mobile-first"],
     tags: ["Next.js", "Tailwind", "Vercel"],
     buttonLabel: "View live site",
-    href: "https://rvscoldbrew-1yeugreuh-ryan-davidson-s-projects.vercel.app",
+    href: "https://rvscoldbrew.vercel.app",
     // image: "/images/work/rvs-coldbrew.png",
     // imageAlt: "RVS Cold Brew website homepage showcasing specialty cold brew products",
   },

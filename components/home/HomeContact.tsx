@@ -1,3 +1,4 @@
+import { WhatsAppContactOption } from "@/components/contact/WhatsAppContactOption";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { HomeContactForm } from "./HomeContactForm";
 
@@ -15,6 +16,7 @@ export function HomeContact() {
 
           <div className="interactive-surface mt-8 bg-overlay p-6 sm:mt-10 sm:p-8">
             <HomeContactForm />
+            <WhatsAppContactOption className="mt-8" />
           </div>
         </div>
       </div>
