@@ -8,7 +8,8 @@ const GRID_LAYOUT = [
   "lg:col-span-7 lg:row-span-2",
   "lg:col-span-5",
   "lg:col-span-5",
-  "lg:col-span-7",
+  "lg:col-span-6",
+  "lg:col-span-6",
 ] as const;
 
 export function SelectedWork() {
@@ -35,13 +36,25 @@ export function SelectedWork() {
                 <div
                   className={`relative aspect-[16/10] overflow-hidden bg-base ${isFeatured ? "lg:aspect-auto lg:min-h-[300px] lg:flex-1" : ""}`}
                 >
-                  <Image
-                    src={project.image}
-                    alt={project.imageAlt}
-                    fill
-                    className="object-cover object-top transition-transform duration-slow ease-out group-hover:scale-[1.03]"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  />
+                  {"image" in project && project.image && project.imageAlt ? (
+                    <Image
+                      src={project.image}
+                      alt={project.imageAlt}
+                      fill
+                      className="object-cover object-top transition-transform duration-slow ease-out group-hover:scale-[1.03]"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    />
+                  ) : (
+                    <div className="flex h-full min-h-[200px] items-center justify-center">
+                      <span
+                        className="font-display text-6xl font-extrabold text-primary/10"
+                        aria-hidden="true"
+                      >
+                        {project.title.charAt(0)}
+                      </span>
+                      <span className="sr-only">Preview for {project.title}</span>
+                    </div>
+                  )}
                   <div className="absolute inset-0 bg-gradient-to-t from-overlay via-overlay/20 to-transparent opacity-80 transition-opacity duration-normal group-hover:opacity-90" />
                 </div>
 

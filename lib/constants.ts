@@ -212,4 +212,17 @@ export const PROJECTS = [
     imageAlt: "Harbour Hair Studio salon website with services and gallery",
     // previewVideo: "/images/work/harbour-hair-preview.mp4",
   },
+  {
+    id: "rvs-coldbrew",
+    title: "RVS Cold Brew",
+    category: "Demo" as const,
+    type: "Coffee Brand Website",
+    description:
+      "Demo site for a specialty cold brew brand — product storytelling, bold branding, and mobile-first design.",
+    tags: ["Next.js", "Tailwind", "Vercel"],
+    buttonLabel: "View site",
+    href: "https://rvscoldbrew-1yeugreuh-ryan-davidson-s-projects.vercel.app",
+    // image: "/images/work/rvs-coldbrew.png",
+    // imageAlt: "RVS Cold Brew website homepage showcasing specialty cold brew products and brand",
+  },
 ] as const;

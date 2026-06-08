@@ -10,6 +10,7 @@ Add screenshots and optional video loops for portfolio projects.
 | `carrick-plumbing.png` | Carrick Plumbing Co |
 | `anchor-restaurant.png` | The Anchor Restaurant |
 | `harbour-hair.png` | Harbour Hair Studio |
+| `rvs-coldbrew.png` | RVS Cold Brew |
 
 PNG, JPG, or WebP. Recommended size: **1200×750px** (16:10).
 
@@ -22,6 +23,7 @@ Short **MP4 loops** (5–15 seconds, no audio) look sharper and load faster than
 | `carrick-plumbing-preview.mp4` | Carrick Plumbing Co |
 | `anchor-restaurant-preview.mp4` | The Anchor Restaurant |
 | `harbour-hair-preview.mp4` | Harbour Hair Studio |
+| `rvs-coldbrew-preview.mp4` | RVS Cold Brew |
 
 Then uncomment `previewVideo` for that project in `lib/constants.ts`.
 
