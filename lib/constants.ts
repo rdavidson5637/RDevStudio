@@ -22,6 +22,7 @@ export const SITE_TAGLINE =
 
 export const NAV_LINKS = [
   { href: "/work", label: "Work" },
+  { href: "/bored", label: "Play" },
   { href: "/services", label: "Services" },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
