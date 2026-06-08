@@ -62,7 +62,7 @@ export const rootMetadata: Metadata = {
     description: SITE_DESCRIPTION,
   },
   icons: {
-    icon: "/favicon.svg",
-    shortcut: "/favicon.svg",
+    icon: "/images/logo/rdevstudio-logo.png",
+    apple: "/images/logo/rdevstudio-logo.png",
   },
 };

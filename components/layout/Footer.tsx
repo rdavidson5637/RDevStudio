@@ -7,6 +7,7 @@ import {
   SITE_URL,
   SOCIAL_LINKS,
 } from "@/lib/constants";
+import { Logo } from "./Logo";
 import { SocialIcon } from "./SocialIcon";
 
 export function Footer() {
@@ -19,8 +20,8 @@ export function Footer() {
       <div className="container-wide px-4 pb-8 sm:px-6 lg:px-8">
         <div className="flex flex-col gap-8 lg:flex-row lg:items-start lg:justify-between">
           <div className="min-w-0 max-w-sm">
-            <p className="font-display text-lg font-bold text-primary">{SITE_NAME}</p>
-            <p className="lead-text mt-2 text-sm">{SITE_TAGLINE}</p>
+            <Logo size="sm" />
+            <p className="lead-text mt-3 text-sm">{SITE_TAGLINE}</p>
           </div>
 
           <div className="flex flex-col gap-6">
