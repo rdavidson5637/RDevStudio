@@ -1,4 +1,5 @@
 import type { DraftSlot } from '@/types/champions-draft'
+import { SITE_URL } from '@/lib/constants'
 
 export interface ShareSquadPlayer {
   name: string
@@ -8,7 +9,7 @@ export interface ShareSquadPlayer {
 
 export const SHARE_PLAY_URL =
   process.env.NEXT_PUBLIC_GAME_URL?.trim() ||
-  "https://rdevstudio.co.uk/champions-draft";
+  `${SITE_URL}/champions-draft`;
 
 export const SHARE_CHALLENGE = 'Think you can beat my XI?'
 
