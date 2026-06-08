@@ -102,7 +102,7 @@ export default function AboutPage() {
                 key={fact.label}
                 className="interactive-surface card-hover px-6 py-8"
               >
-                <p className="label-caps text-tertiary">{fact.label}</p>
+                <p className="label-caps text-secondary">{fact.label}</p>
                 <p className="mt-3 font-display text-lg font-bold leading-snug text-primary sm:text-xl">
                   {fact.value}
                 </p>

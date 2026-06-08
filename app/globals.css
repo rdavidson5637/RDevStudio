@@ -115,7 +115,7 @@ body {
   }
 
   .editorial-note {
-    @apply text-sm leading-relaxed text-white/45 italic;
+    @apply text-sm leading-relaxed text-secondary italic;
   }
 
   .text-balance {

@@ -50,7 +50,7 @@ export function MobileMenu({ open, onClose, isActive }: MobileMenuProps) {
         aria-label="Mobile navigation"
       >
         <div className="flex items-center justify-between border-b border-border px-5 py-4">
-          <span className="font-display text-xs font-semibold uppercase tracking-widest text-tertiary">
+          <span className="font-display text-xs font-semibold uppercase tracking-widest text-secondary">
             Menu
           </span>
           <button

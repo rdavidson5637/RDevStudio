@@ -3,7 +3,7 @@ import { CONTACT_EMAIL, WHATSAPP_URL } from "@/lib/constants";
 export function DirectContactOptions() {
   return (
     <div>
-      <p className="mb-3 text-xs uppercase tracking-widest text-white/40">
+      <p className="mb-3 text-xs uppercase tracking-widest text-tertiary">
         Or reach out directly
       </p>
       <div className="mb-8 flex flex-wrap gap-4">

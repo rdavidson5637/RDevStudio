@@ -13,7 +13,7 @@ export function GameCard({ game }: GameCardProps) {
     >
       <div className="flex items-start justify-between gap-4">
         <h2 className="heading-display text-xl sm:text-2xl">{game.title}</h2>
-        <span className="shrink-0 rounded-full border border-white/20 px-2 py-0.5 text-xs font-medium text-white/70">
+        <span className="shrink-0 rounded-full border border-white/30 px-2 py-0.5 text-xs font-medium text-primary/90">
           {game.tag}
         </span>
       </div>

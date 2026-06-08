@@ -62,7 +62,7 @@ export function Footer() {
             </div>
           </div>
 
-          <p className="text-xs text-tertiary lg:text-right">
+          <p className="text-xs text-secondary lg:text-right">
             &copy; {year} {SITE_NAME}
           </p>
         </div>

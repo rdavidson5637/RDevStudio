@@ -242,6 +242,10 @@ export const PROJECTS = [
     tags: ["Next.js", "Tailwind", "Vercel"],
     buttonLabel: "View live site",
     href: "https://rvscoldbrew.vercel.app",
+    image: "/images/work/rvs-coldbrew.png",
+    imageAlt: "RVS Cold Brew logo — circular badge with cream typography on dark teal",
+    previewFit: "contain" as const,
+    previewBg: "#0a1a1f",
     outcome: "Brand-first site for a specialty cold brew launch",
   },
 ] as const;

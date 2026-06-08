@@ -11,6 +11,8 @@ type ProjectPreviewProps = {
   imageAlt?: string;
   previewVideo?: string;
   category?: ProjectCategory;
+  previewFit?: "cover" | "contain";
+  previewBg?: string;
   /** Clean screenshot — no browser chrome */
   simple?: boolean;
   className?: string;
@@ -22,6 +24,8 @@ export function ProjectPreview({
   imageAlt,
   previewVideo,
   category,
+  previewFit = "cover",
+  previewBg,
   simple = false,
   className = "",
 }: ProjectPreviewProps) {
@@ -29,10 +33,12 @@ export function ProjectPreview({
   const [videoError, setVideoError] = useState(false);
   const showVideo = Boolean(previewVideo && !videoError);
   const showImage = Boolean(image && imageAlt && !imageError && !showVideo);
+  const isLogoPreview = previewFit === "contain";
 
   return (
     <div
       className={`relative aspect-[16/10] overflow-hidden bg-base ${className}`}
+      style={previewBg ? { backgroundColor: previewBg } : undefined}
     >
       {showVideo ? (
         <video
@@ -52,7 +58,11 @@ export function ProjectPreview({
           src={image}
           alt={imageAlt}
           fill
-          className="object-cover object-top transition-[filter] duration-[250ms] ease-out group-hover:brightness-105"
+          className={`transition-[filter] duration-[250ms] ease-out group-hover:brightness-105 ${
+            isLogoPreview
+              ? "object-contain p-10 sm:p-14"
+              : "object-cover object-top"
+          }`}
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 576px"
           onError={() => setImageError(true)}
         />
@@ -60,7 +70,7 @@ export function ProjectPreview({
         <div className="flex h-full items-center justify-center bg-raised">
           <div className="px-6 text-center">
             <span
-              className="font-display text-4xl font-bold text-primary/15 sm:text-5xl"
+              className="font-display text-4xl font-bold text-primary/25 sm:text-5xl"
               aria-hidden="true"
             >
               {title.charAt(0)}
@@ -81,7 +91,7 @@ export function ProjectPreview({
       )}
 
       {category && !simple && (
-        <span className="absolute bottom-3 right-3 z-10 rounded-full border border-white/20 bg-base/80 px-2 py-0.5 text-xs font-medium text-white/70 backdrop-blur-sm">
+        <span className="absolute bottom-3 right-3 z-10 rounded-full border border-white/30 bg-base/90 px-2 py-0.5 text-xs font-medium text-primary backdrop-blur-sm">
           {category}
         </span>
       )}

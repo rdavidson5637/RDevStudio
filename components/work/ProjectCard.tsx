@@ -18,6 +18,8 @@ export type Project = {
   image?: string;
   imageAlt?: string;
   previewVideo?: string;
+  previewFit?: "cover" | "contain";
+  previewBg?: string;
 };
 
 type ProjectCardProps = {
@@ -93,6 +95,8 @@ export function ProjectCard({
           image={project.image}
           imageAlt={project.imageAlt}
           previewVideo={project.previewVideo}
+          previewFit={project.previewFit}
+          previewBg={project.previewBg}
           simple
           className={
             alternating
