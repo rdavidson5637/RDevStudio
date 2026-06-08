@@ -5,6 +5,7 @@ import ShareStatPills from './ShareStatPills'
 import {
   formatSquadShareLines,
   getShareUrl,
+  SHARE_CARD_CAPTURE_ID,
   SHARE_CHALLENGE,
   type ShareSquadPlayer,
 } from './shareHelpers'
@@ -122,6 +123,7 @@ export default function CLShareCard(props: Props) {
   return (
     <div className="mb-8 w-full max-w-xs">
       <ShareCardShell
+        captureId={SHARE_CARD_CAPTURE_ID}
         accent={result === 'winner' ? 'amber' : 'red'}
         modeIcon="⭐"
         title="Champions League"
@@ -164,8 +166,10 @@ export default function CLShareCard(props: Props) {
       />
 
       <ShareCardActions
+        captureId={SHARE_CARD_CAPTURE_ID}
         shareText={shareText}
         shareTitle="Champions Draft — Champions League"
+        imageFilename="champions-draft-champions-league.png"
         primaryClassName={
           result === 'winner'
             ? 'bg-amber-400 text-black hover:bg-amber-300'

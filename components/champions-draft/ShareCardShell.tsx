@@ -51,6 +51,7 @@ interface Props {
   squad: ShareSquadPlayer[]
   formation?: string | null
   className?: string
+  captureId?: string
 }
 
 export default function ShareCardShell({
@@ -64,11 +65,13 @@ export default function ShareCardShell({
   squad,
   formation,
   className = '',
+  captureId,
 }: Props) {
   const styles = ACCENT_STYLES[accent]
 
   return (
     <div
+      id={captureId}
       className={`relative overflow-hidden rounded-2xl border p-5 bg-gradient-to-br ${styles.border} ${styles.gradient} ${className}`}
     >
       <div

@@ -13,6 +13,8 @@ export const SHARE_PLAY_URL =
 
 export const SHARE_CHALLENGE = 'Think you can beat my XI?'
 
+export const SHARE_CARD_CAPTURE_ID = 'champions-draft-share-card'
+
 const POSITION_ORDER: Record<string, number> = {
   GK: 0,
   CB: 1,

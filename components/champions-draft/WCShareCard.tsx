@@ -4,6 +4,7 @@ import ShareCardShell from './ShareCardShell'
 import {
   formatSquadShareLines,
   getShareUrl,
+  SHARE_CARD_CAPTURE_ID,
   SHARE_CHALLENGE,
   type ShareSquadPlayer,
 } from './shareHelpers'
@@ -106,6 +107,7 @@ export default function WCShareCard(props: Props) {
   return (
     <div className="mb-8 w-full max-w-xs">
       <ShareCardShell
+        captureId={SHARE_CARD_CAPTURE_ID}
         accent={result === 'winner' ? 'emerald' : 'red'}
         modeIcon="🌍"
         title="World Cup"
@@ -137,8 +139,10 @@ export default function WCShareCard(props: Props) {
       />
 
       <ShareCardActions
+        captureId={SHARE_CARD_CAPTURE_ID}
         shareText={shareText}
         shareTitle="Champions Draft — World Cup"
+        imageFilename="champions-draft-world-cup.png"
         primaryClassName={
           result === 'winner'
             ? 'bg-emerald-400 text-black hover:bg-emerald-300'
