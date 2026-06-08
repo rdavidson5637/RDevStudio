@@ -116,7 +116,7 @@ const config: Config = {
       boxShadow: {
         card: "0 4px 24px -4px rgb(0 0 0 / 0.5)",
         "card-hover": "0 24px 48px -12px rgb(0 0 0 / 0.6)",
-        glow: "0 0 60px -12px rgb(202 255 0 / 0.25)",
+        glow: "0 0 60px -12px rgb(59 130 246 / 0.2)",
       },
       animation: {
         "fade-in": "fadeIn 0.5s ease-out forwards",

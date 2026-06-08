@@ -1,76 +1,70 @@
 /**
  * RDev Studio — Design Tokens
- * Dark-first editorial creative studio system
- *
- * Fonts:
- *   Display  → Bricolage Grotesque (headings, labels, UI chrome)
- *   Body     → Newsreader (paragraphs, descriptions, long-form)
- *
- * Accent: Electric lime #CAFF00
+ * Professional dark theme — navy slate + blue accent
  */
 
 :root {
   /* ── Colour: backgrounds ─────────────────────────────────── */
-  --color-bg-base: #080808;
-  --color-bg-base-rgb: 8 8 8;
-  --color-bg-raised: #111111;
-  --color-bg-overlay: #1a1a1a;
-  --color-bg-inverse: #f0ede6;
+  --color-bg-base: #0f172a;
+  --color-bg-base-rgb: 15 23 42;
+  --color-bg-raised: #1e293b;
+  --color-bg-overlay: #273449;
+  --color-bg-inverse: #f8fafc;
 
   /* ── Colour: text ────────────────────────────────────────── */
-  --color-text-primary: #f0ede6;
-  --color-text-primary-rgb: 240 237 230;
-  --color-text-secondary: #9a9690;
-  --color-text-tertiary: #5e5b57;
-  --color-text-inverse: #080808;
+  --color-text-primary: #f8fafc;
+  --color-text-primary-rgb: 248 250 252;
+  --color-text-secondary: #cbd5e1;
+  --color-text-tertiary: #94a3b8;
+  --color-text-inverse: #ffffff;
 
-  /* ── Colour: accent (electric lime) ──────────────────────── */
-  --color-accent: #caff00;
-  --color-accent-rgb: 202 255 0;
-  --color-accent-hover: #b8e600;
-  --color-accent-muted: #caff0026;
-  --color-accent-subtle: #caff0014;
+  /* ── Colour: accent (professional blue) ──────────────────── */
+  --color-accent: #3b82f6;
+  --color-accent-rgb: 59 130 246;
+  --color-accent-hover: #2563eb;
+  --color-accent-muted: #3b82f626;
+  --color-accent-subtle: #3b82f614;
 
   /* ── Colour: borders & dividers ──────────────────────────── */
-  --color-border: #f0ede614;
-  --color-border-strong: #f0ede628;
-  --color-border-accent: #caff0040;
+  --color-border: #ffffff14;
+  --color-border-strong: #ffffff28;
+  --color-border-accent: #3b82f650;
 
   /* ── Colour: focus & selection ───────────────────────────── */
-  --color-focus-ring: #caff0066;
-  --color-selection-bg: #caff0033;
+  --color-focus-ring: #3b82f680;
+  --color-selection-bg: #3b82f640;
 
   /* ── Typography: families ────────────────────────────────── */
   --font-display: var(--font-bricolage), system-ui, sans-serif;
   --font-body: var(--font-newsreader), Georgia, "Times New Roman", serif;
 
   /* ── Typography: scale ───────────────────────────────────── */
-  --text-xs: 0.75rem; /* 12px */
-  --text-sm: 0.875rem; /* 14px */
-  --text-base: 1rem; /* 16px */
-  --text-lg: 1.125rem; /* 18px */
-  --text-xl: 1.25rem; /* 20px */
-  --text-2xl: 1.5rem; /* 24px */
-  --text-3xl: 2rem; /* 32px */
-  --text-4xl: 2.5rem; /* 40px */
-  --text-5xl: 3.25rem; /* 52px */
-  --text-6xl: 4.25rem; /* 68px */
-  --text-7xl: 5.5rem; /* 88px */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 2rem;
+  --text-4xl: 2.5rem;
+  --text-5xl: 3.25rem;
+  --text-6xl: 4.25rem;
+  --text-7xl: 5.5rem;
   --text-display: clamp(3.25rem, 8vw, 6.5rem);
   --text-hero: clamp(2.125rem, 5vw + 1.25rem, 6.5rem);
 
   /* ── Typography: line-height ─────────────────────────────── */
-  --leading-tight: 1.05;
-  --leading-snug: 1.25;
+  --leading-tight: 1.1;
+  --leading-snug: 1.3;
   --leading-normal: 1.5;
   --leading-relaxed: 1.65;
 
   /* ── Typography: letter-spacing ──────────────────────────── */
   --tracking-tight: -0.02em;
   --tracking-normal: 0;
-  --tracking-wide: 0.04em;
-  --tracking-wider: 0.08em;
-  --tracking-widest: 0.16em;
+  --tracking-wide: 0.02em;
+  --tracking-wider: 0.04em;
+  --tracking-widest: 0.08em;
 
   /* ── Typography: weight ──────────────────────────────────── */
   --weight-regular: 400;
@@ -79,39 +73,39 @@
   --weight-bold: 700;
   --weight-extrabold: 800;
 
-  /* ── Spacing (4px base unit) ─────────────────────────────── */
+  /* ── Spacing ─────────────────────────────────────────────── */
   --space-0: 0;
-  --space-1: 0.25rem; /* 4px */
-  --space-2: 0.5rem; /* 8px */
-  --space-3: 0.75rem; /* 12px */
-  --space-4: 1rem; /* 16px */
-  --space-5: 1.25rem; /* 20px */
-  --space-6: 1.5rem; /* 24px */
-  --space-8: 2rem; /* 32px */
-  --space-10: 2.5rem; /* 40px */
-  --space-12: 3rem; /* 48px */
-  --space-16: 4rem; /* 64px */
-  --space-20: 5rem; /* 80px */
-  --space-24: 6rem; /* 96px */
-  --space-28: 7rem; /* 112px */
-  --space-32: 8rem; /* 128px */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+  --space-28: 7rem;
+  --space-32: 8rem;
 
   /* ── Layout ──────────────────────────────────────────────── */
   --container-narrow: 72rem;
   --container-wide: 90rem;
   --section-padding-y: var(--space-20);
-  --section-padding-y-lg: var(--space-28, 7rem);
+  --section-padding-y-lg: var(--space-28);
 
-  /* ── Border radius (editorial — mostly sharp) ────────────── */
+  /* ── Border radius ───────────────────────────────────────── */
   --radius-none: 0;
-  --radius-sm: 2px;
-  --radius-md: 4px;
-  --radius-lg: 8px;
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 10px;
   --radius-full: 9999px;
 
   /* ── Motion ──────────────────────────────────────────────── */
   --duration-fast: 150ms;
-  --duration-normal: 250ms;
-  --duration-slow: 500ms;
+  --duration-normal: 200ms;
+  --duration-slow: 400ms;
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
 }

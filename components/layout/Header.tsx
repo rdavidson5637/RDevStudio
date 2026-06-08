@@ -43,7 +43,7 @@ export function Header() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`font-display text-xs font-semibold uppercase tracking-widest transition-colors duration-normal ease-out hover:text-accent active:text-accent ${
+                className={`text-sm font-medium transition-colors duration-normal ease-out hover:text-primary ${
                   isActive(link.href) ? "text-accent" : "text-secondary"
                 }`}
               >

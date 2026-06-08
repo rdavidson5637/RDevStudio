@@ -16,10 +16,10 @@ export function ServicesTrio() {
           {SERVICES.map((service) => (
             <article
               key={service.number}
-              className="group interactive-surface relative flex flex-col p-6 sm:p-8 lg:p-10"
+              className="group interactive-surface relative flex flex-col p-6 transition-colors hover:border-accent/30 sm:p-8 lg:p-10"
             >
               <span
-                className="font-display text-[3.5rem] font-extrabold leading-none tracking-tighter text-primary/10 transition-colors duration-normal group-hover:text-accent/50 sm:text-[5rem] lg:text-[6rem]"
+                className="font-display text-[3.5rem] font-bold leading-none text-primary/10 sm:text-[5rem] lg:text-[6rem]"
                 aria-hidden="true"
               >
                 {service.number}
@@ -46,10 +46,6 @@ export function ServicesTrio() {
                 </span>
               </Link>
 
-              <div
-                className="pointer-events-none absolute bottom-0 left-0 h-0.5 w-0 bg-accent transition-all duration-normal ease-out group-hover:w-full"
-                aria-hidden="true"
-              />
             </article>
           ))}
         </div>

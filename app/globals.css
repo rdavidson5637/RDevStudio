@@ -40,15 +40,15 @@ body {
 
 @layer components {
   .btn-primary {
-    @apply inline-flex w-full items-center justify-center rounded-none border border-accent bg-accent px-6 py-3.5 font-display text-sm font-semibold uppercase tracking-widest text-on-accent transition-all duration-normal ease-out hover:border-accent hover:bg-transparent hover:text-accent active:scale-[0.98] focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-base disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto;
+    @apply inline-flex w-full items-center justify-center rounded-md border border-accent bg-accent px-6 py-3 text-sm font-semibold text-on-accent transition-colors duration-normal ease-out hover:border-accent-hover hover:bg-accent-hover active:scale-[0.99] focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-base disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto;
   }
 
   .btn-secondary {
-    @apply inline-flex w-full items-center justify-center rounded-none border border-border-strong bg-transparent px-6 py-3.5 font-display text-sm font-semibold uppercase tracking-widest text-primary transition-all duration-normal ease-out hover:border-accent hover:bg-accent hover:text-on-accent active:scale-[0.98] focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-base sm:w-auto;
+    @apply inline-flex w-full items-center justify-center rounded-md border border-border-strong bg-transparent px-6 py-3 text-sm font-semibold text-primary transition-colors duration-normal ease-out hover:border-accent hover:bg-accent/10 active:scale-[0.99] focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-base sm:w-auto;
   }
 
   .btn-outline-accent {
-    @apply inline-flex w-full items-center justify-center rounded-none border border-border-accent bg-transparent px-6 py-3.5 font-display text-sm font-semibold uppercase tracking-widest text-accent transition-all duration-normal ease-out hover:border-accent hover:bg-accent hover:text-on-accent active:scale-[0.98] focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-base sm:w-auto;
+    @apply inline-flex w-full items-center justify-center rounded-md border border-accent/50 bg-transparent px-6 py-3 text-sm font-semibold text-accent transition-colors duration-normal ease-out hover:border-accent hover:bg-accent hover:text-on-accent active:scale-[0.99] focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-base sm:w-auto;
   }
 
   .section-padding {
@@ -76,7 +76,7 @@ body {
   }
 
   .label-caps {
-    @apply font-display text-xs font-semibold uppercase tracking-widest text-accent;
+    @apply text-xs font-semibold uppercase tracking-wider text-secondary;
   }
 
   .heading-display {
@@ -88,11 +88,11 @@ body {
   }
 
   .link-editorial {
-    @apply font-display text-xs font-semibold uppercase tracking-widest text-secondary transition-colors duration-normal ease-out hover:text-accent;
+    @apply text-sm font-medium text-accent transition-colors duration-normal ease-out hover:text-primary;
   }
 
   .interactive-surface {
-    @apply border border-border bg-raised transition-all duration-normal ease-out hover:border-accent/40;
+    @apply rounded-md border border-border bg-raised transition-colors duration-normal ease-out hover:border-border-strong;
   }
 
   .text-balance {
@@ -101,29 +101,15 @@ body {
 
   .hero-reveal {
     opacity: 0;
-    transform: translateY(1.25rem);
-    animation: hero-reveal 0.9s var(--ease-out) forwards;
+    transform: translateY(1rem);
+    animation: hero-reveal 0.8s var(--ease-out) forwards;
   }
 
-  .hero-reveal-delay-1 {
-    animation-delay: 0.05s;
-  }
-
-  .hero-reveal-delay-2 {
-    animation-delay: 0.15s;
-  }
-
-  .hero-reveal-delay-3 {
-    animation-delay: 0.3s;
-  }
-
-  .hero-reveal-delay-4 {
-    animation-delay: 0.45s;
-  }
-
-  .hero-reveal-delay-5 {
-    animation-delay: 0.6s;
-  }
+  .hero-reveal-delay-1 { animation-delay: 0.05s; }
+  .hero-reveal-delay-2 { animation-delay: 0.12s; }
+  .hero-reveal-delay-3 { animation-delay: 0.22s; }
+  .hero-reveal-delay-4 { animation-delay: 0.32s; }
+  .hero-reveal-delay-5 { animation-delay: 0.42s; }
 }
 
 @keyframes hero-reveal {
@@ -134,17 +120,7 @@ body {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-
-  .hero-reveal {
-    opacity: 1;
-    transform: none;
-    animation: none;
-  }
-
-  .card-hover {
-    transform: none;
-  }
+  html { scroll-behavior: auto; }
+  .hero-reveal { opacity: 1; transform: none; animation: none; }
+  .card-hover { transform: none; }
 }

@@ -12,15 +12,9 @@ export function Hero() {
   return (
     <section className="relative flex min-h-[100svh] min-h-[100dvh] items-center overflow-hidden bg-base">
       <div
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_20%_30%,rgb(202_255_0/0.07)_0%,transparent_55%)]"
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_30%_20%,rgb(59_130_246/0.08)_0%,transparent_50%)]"
         aria-hidden="true"
       />
-      <div
-        className="pointer-events-none absolute -right-16 top-1/4 font-display text-[clamp(8rem,24vw,22rem)] font-extrabold leading-none text-primary/[0.02] sm:-right-24"
-        aria-hidden="true"
-      >
-        R
-      </div>
 
       <div className="container-wide relative w-full pb-16 pt-24 sm:pb-20 sm:pt-28 lg:pb-24">
         <div className="max-w-5xl">
@@ -37,8 +31,7 @@ export function Hero() {
             <span
               className={`block font-display text-hero font-extrabold tracking-tight text-primary hero-reveal ${REVEAL_DELAYS[2]}`}
             >
-              that{" "}
-              <span className="text-accent">work</span> online.
+              that work online.
             </span>
           </h1>
 
