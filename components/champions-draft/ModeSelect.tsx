@@ -1,5 +1,6 @@
 'use client'
 import { useState } from 'react'
+import Link from 'next/link'
 import type { GameState } from '@/types/champions-draft'
 import BrandLogo from './BrandLogo'
 import HowToPlayModal from './HowToPlayModal'
@@ -44,6 +45,12 @@ export default function ModeSelect({ onSelect }: Props) {
 
   return (
     <div className="relative min-h-screen bg-[#0a0a12] flex flex-col items-center justify-center px-4 py-12 overflow-hidden">
+      <Link
+        href="/bored"
+        className="fixed top-4 left-4 z-50 rounded-full border border-white/15 bg-black/50 px-4 py-2 text-xs font-bold uppercase tracking-widest text-white/70 backdrop-blur transition-colors hover:border-white/30 hover:text-white"
+      >
+        ← RDev Studio
+      </Link>
       <div className="absolute top-1/4 -left-32 w-64 h-64 bg-emerald-400/8 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-1/4 -right-32 w-72 h-72 bg-amber-400/6 rounded-full blur-3xl pointer-events-none" />
 
