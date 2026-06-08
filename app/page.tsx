@@ -1,14 +1,16 @@
 import { Hero } from "@/components/home/Hero";
 import { StatsRow } from "@/components/home/StatsRow";
 import { SelectedWork } from "@/components/home/SelectedWork";
-import { ServicesTrio } from "@/components/home/ServicesTrio";
-import { WhyWorkWithUs } from "@/components/home/WhyWorkWithUs";
+import { WhatIMake } from "@/components/home/WhatIMake";
+import { PortfolioPlay } from "@/components/home/PortfolioPlay";
 import { AboutClose } from "@/components/home/AboutClose";
 import { HomeContact } from "@/components/home/HomeContact";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata = createPageMetadata({
-  title: "Home",
+  title: "Portfolio",
+  description:
+    "The portfolio of Ryan Davidson — websites, web apps, side projects, and games from RDev Studio.",
   path: "/",
 });
 
@@ -18,8 +20,8 @@ export default function HomePage() {
       <Hero />
       <StatsRow />
       <SelectedWork />
-      <ServicesTrio />
-      <WhyWorkWithUs />
+      <WhatIMake />
+      <PortfolioPlay />
       <AboutClose />
       <HomeContact />
     </>

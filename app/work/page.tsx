@@ -7,7 +7,7 @@ import { createPageMetadata } from "@/lib/metadata";
 export const metadata = createPageMetadata({
   title: "Work",
   description:
-    "Recent web design projects by RDev Studio — volunteer management apps, trades websites, restaurant sites, and salon websites across Northern Ireland.",
+    "Selected projects by Ryan Davidson — websites, web apps, and demo builds from RDev Studio.",
   path: "/work",
 });
 
@@ -16,8 +16,8 @@ export default function WorkPage() {
     <div className="section-padding pt-28">
       <div className="container-narrow">
         <PageHeader
-          title="My work"
-          subtitle="Websites, apps, and demo projects built for local businesses across Northern Ireland."
+          title="Work"
+          subtitle="Websites, apps, and demo projects — client work and things I built to learn, experiment, or show what&apos;s possible."
         />
         <div className="flex flex-col gap-8">
           {PROJECTS.map((project, index) => (

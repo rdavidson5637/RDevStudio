@@ -107,7 +107,15 @@ body {
   }
 
   .interactive-surface {
-    @apply rounded-md border border-border bg-raised transition-colors duration-normal ease-out hover:border-border-strong;
+    @apply rounded-xl border border-border bg-raised transition-colors duration-normal ease-out hover:border-border-strong;
+  }
+
+  .lead-text {
+    @apply text-base leading-relaxed text-secondary sm:text-lg sm:leading-relaxed;
+  }
+
+  .editorial-note {
+    @apply text-sm leading-relaxed text-white/45 italic;
   }
 
   .text-balance {

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { DM_Serif_Display, Newsreader } from "next/font/google";
+import { DM_Serif_Display, Inter } from "next/font/google";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { WhatsAppButton } from "@/components/layout/WhatsAppButton";
@@ -12,13 +12,10 @@ const dmSerif = DM_Serif_Display({
   variable: "--font-display",
 });
 
-const newsreader = Newsreader({
+const inter = Inter({
   subsets: ["latin"],
-  variable: "--font-newsreader",
+  variable: "--font-sans",
   display: "swap",
-  weight: ["400", "500", "600", "700"],
-  style: ["normal", "italic"],
-  adjustFontFallback: false,
 });
 
 export const metadata: Metadata = rootMetadata;
@@ -29,8 +26,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en-GB" className={`${dmSerif.variable} ${newsreader.variable}`}>
-      <body className="font-body">
+    <html lang="en-GB" className={`${dmSerif.variable} ${inter.variable}`}>
+      <body className="font-sans antialiased">
         <Header />
         <main>{children}</main>
         <Footer />

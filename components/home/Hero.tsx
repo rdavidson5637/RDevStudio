@@ -4,7 +4,7 @@ export function Hero() {
   return (
     <section className="relative overflow-hidden bg-base pb-20 pt-28 md:pb-28 md:pt-36">
       <div
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_30%_20%,rgb(245_158_11/0.06)_0%,transparent_50%)]"
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_20%_0%,rgb(245_158_11/0.08)_0%,transparent_50%)]"
         aria-hidden="true"
       />
 
@@ -13,35 +13,30 @@ export function Hero() {
       </span>
 
       <div className="container-wide relative z-10 w-full px-4 sm:px-6 lg:px-8">
-        <div className="max-w-5xl">
-          <p className="section-label mb-4 font-medium">RDev Studio</p>
+        <div className="max-w-3xl">
+          <p className="section-label mb-4 font-medium">Ryan Davidson</p>
 
-          <h1 className="hero-heading mb-6 text-balance font-display text-6xl leading-none tracking-tight text-primary md:text-8xl">
-            We build brands that work online.
+          <h1 className="hero-heading mb-6 text-balance font-display text-5xl leading-[1.05] tracking-tight text-primary sm:text-6xl md:text-7xl lg:text-8xl">
+            I design and build things for the web.
           </h1>
 
-          <p className="hero-sub mb-3 max-w-xl text-lg text-white/60">
-            NI-based. UK-ready. Built to make your business look brilliant
-            online.
-          </p>
-
-          <p className="hero-trust mb-10 text-sm tracking-wide text-white/35">
-            ★ Websites from £650 &nbsp;·&nbsp; Live in 7 days &nbsp;·&nbsp; No
-            agency fees
+          <p className="hero-sub lead-text mb-10 max-w-xl">
+            A personal portfolio of websites, apps, side projects, and the
+            occasional game — made in Carrickfergus, Northern Ireland.
           </p>
 
           <div className="hero-ctas flex flex-wrap gap-4">
             <Link
-              href="/contact"
-              className="inline-flex items-center justify-center rounded-md bg-accent px-6 py-3 font-semibold text-black transition-colors hover:bg-accent-hover"
+              href="#work"
+              className="inline-flex items-center justify-center rounded-lg bg-accent px-6 py-3 text-sm font-semibold text-black transition-colors hover:bg-accent-hover"
             >
-              Start a project →
+              View my work
             </Link>
             <Link
-              href="#work"
-              className="inline-flex items-center justify-center rounded-md border border-white/30 px-6 py-3 text-white transition-colors hover:border-white/60"
+              href="/bored"
+              className="inline-flex items-center justify-center rounded-lg border border-white/25 px-6 py-3 text-sm font-medium text-primary transition-colors hover:border-white/50 hover:bg-white/5"
             >
-              See our work
+              I&apos;m Bored
             </Link>
           </div>
         </div>

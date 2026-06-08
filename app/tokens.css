@@ -14,8 +14,8 @@
   /* ── Colour: text ────────────────────────────────────────── */
   --color-text-primary: #f8fafc;
   --color-text-primary-rgb: 248 250 252;
-  --color-text-secondary: #cbd5e1;
-  --color-text-tertiary: #94a3b8;
+  --color-text-secondary: #e2e8f0;
+  --color-text-tertiary: #a8b4c4;
   --color-text-inverse: #ffffff;
 
   /* ── Colour: accent (professional blue) ──────────────────── */
@@ -36,7 +36,7 @@
 
   /* ── Typography: families ────────────────────────────────── */
   /* --font-display is injected by next/font on <html> */
-  --font-body: var(--font-newsreader), Georgia, "Times New Roman", serif;
+  --font-body: var(--font-sans), system-ui, sans-serif;
 
   /* ── Typography: scale ───────────────────────────────────── */
   --text-xs: 0.75rem;

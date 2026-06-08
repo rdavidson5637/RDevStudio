@@ -5,15 +5,20 @@ import { HomeContactForm } from "./HomeContactForm";
 export function HomeContact() {
   return (
     <section id="contact" className="section-padding border-t border-border bg-base">
-      <div className="container-wide">
+      <div className="container-wide px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-xl">
-          <SectionHeader title="Your new website starts here." />
+          <SectionHeader label="Contact" title="Say hello" />
 
-          <p className="mt-4 text-base leading-relaxed text-secondary sm:text-lg">
-            Tell me about your business. I&apos;ll reply within 24 hours.
+          <p className="lead-text mt-4">
+            Working on something, want to collaborate, or just fancy a chat?
+            Drop me a message — I usually reply within a day.
+          </p>
+          <p className="editorial-note mt-4">
+            Interested in my services? I take on a small number of website and
+            web projects — happy to talk if something here caught your eye.
           </p>
 
-          <div className="interactive-surface mt-8 bg-overlay p-6 sm:mt-10 sm:p-8">
+          <div className="mt-8 rounded-xl border border-border bg-raised/80 p-6 sm:mt-10 sm:p-8">
             <DirectContactOptions />
             <HomeContactForm />
           </div>

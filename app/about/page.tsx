@@ -24,7 +24,7 @@ const FACTS = [
 export const metadata = createPageMetadata({
   title: "About",
   description:
-    "Meet Ryan Davidson — RDev Studio is a one-person creative studio in Carrickfergus, Northern Ireland. Websites, social media, and content for small businesses.",
+    "About Ryan Davidson — developer, designer, and the person behind RDev Studio in Carrickfergus, Northern Ireland.",
   path: "/about",
 });
 
@@ -39,12 +39,13 @@ export default function AboutPage() {
         />
         <div className="section-padding relative">
           <div className="container-wide max-w-4xl">
-            <p className="section-label">About</p>
-            <h1 className="font-display text-4xl font-extrabold tracking-tight text-primary sm:text-5xl lg:text-6xl">
-              About RDev Studio
+            <p className="section-label mb-4 font-medium">About</p>
+            <h1 className="font-display text-4xl font-bold tracking-tight text-primary sm:text-5xl lg:text-6xl">
+              Ryan Davidson
             </h1>
-            <p className="mt-6 max-w-2xl text-xl font-medium leading-snug text-primary sm:text-2xl lg:text-3xl">
-              One person. No agency overhead. Just good work.
+            <p className="lead-text mt-6 max-w-2xl text-xl sm:text-2xl">
+              I build websites, apps, and side projects from Carrickfergus —
+              this portfolio is where they all live.
             </p>
           </div>
         </div>

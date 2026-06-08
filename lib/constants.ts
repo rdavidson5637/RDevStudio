@@ -1,9 +1,8 @@
 export const SITE_NAME = "RDev Studio";
 export const SITE_URL = "https://rdevstudio.co.uk";
-export const SITE_TITLE =
-  "RDev Studio — Web Design & Social Media for Small Businesses";
+export const SITE_TITLE = "RDev Studio — Portfolio of Ryan Davidson";
 export const SITE_DESCRIPTION =
-  "RDev Studio builds websites, manages social media, and creates content for small businesses. Based in Carrickfergus, Northern Ireland.";
+  "The portfolio of Ryan Davidson — websites, web apps, side projects, and small games. Based in Carrickfergus, Northern Ireland.";
 export const EMAIL = "ryan@rdevstudio.co.uk";
 export const CONTACT_EMAIL = "ryan@rdevstudio.co.uk";
 export const WHATSAPP_NUMBER = "+447378420418";
@@ -11,19 +10,18 @@ export const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER.replace(/\+/g, "")}
 export const FORMSPREE_FORM_ID = "mgoqjqve";
 
 export const CONTACT_SERVICE_OPTIONS = [
-  "Website",
-  "Social Media",
-  "Content Creation",
-  "Not sure yet",
+  "Website or web app",
+  "Collaboration",
+  "Just saying hello",
+  "Something else",
 ] as const;
 
 export const SITE_TAGLINE =
-  "Websites, social media & content for small businesses.";
+  "Websites, projects, and experiments by Ryan Davidson.";
 
 export const NAV_LINKS = [
   { href: "/work", label: "Work" },
   { href: "/bored", label: "I'm Bored" },
-  { href: "/services", label: "Services" },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
 ] as const;
@@ -37,6 +35,43 @@ export const SOCIAL_LINKS = [
   },
 ] as const;
 
+export const PORTFOLIO_AREAS = [
+  {
+    title: "Websites & apps",
+    description:
+      "Client work and demo sites — from volunteer platforms to local business websites across Northern Ireland.",
+    href: "/work",
+    cta: "Browse work",
+  },
+  {
+    title: "Games & experiments",
+    description:
+      "Small things I build for fun — daily word games, UI experiments, and whatever catches my interest.",
+    href: "/bored",
+    cta: "Play a game",
+  },
+  {
+    title: "About me",
+    description:
+      "Who I am, what I use, and how I like to work — one person behind everything here.",
+    href: "/about",
+    cta: "Read more",
+  },
+] as const;
+
+export const STUDIO_STATEMENT =
+  "I like making things that look sharp and work properly — on the web, on mobile, and in the small gaps between projects.";
+
+export const ABOUT_BLURB =
+  "I'm Ryan Davidson, a developer and designer based in Carrickfergus, Northern Ireland. This site is my portfolio — client websites, demo projects, side experiments, and the odd game when I'm bored. I care about clean design, fast builds, and work that actually gets finished.";
+
+export const SOCIAL_PROOF_ITEMS = [
+  "5+ projects live",
+  "Next.js & Tailwind",
+  "Games & experiments",
+  "Based in NI",
+] as const;
+
 export const SERVICES = [
   {
     number: "01",
@@ -44,7 +79,7 @@ export const SERVICES = [
     price: "from £650",
     priceNote: "one-off",
     description:
-      "Your business online in 7 days. Looks professional, works on every device, and doesn't cost agency prices.",
+      "Custom websites — sharp, responsive, and built with modern tools.",
   },
   {
     number: "02",
@@ -52,7 +87,7 @@ export const SERVICES = [
     price: "from £150/mo",
     priceNote: "",
     description:
-      "Your channels handled properly — strategy, scheduling, and content so you can focus on running your business.",
+      "Strategy, scheduling, and content for businesses who want a consistent presence.",
   },
   {
     number: "03",
@@ -60,41 +95,7 @@ export const SERVICES = [
     price: "from £200/project",
     priceNote: "",
     description:
-      "Posts, graphics, and copy that sound and look like you. Ready to use across your site and socials.",
-  },
-] as const;
-
-export const STUDIO_STATEMENT =
-  "We build brands that feel intentional — websites, social, and content for businesses across Northern Ireland and beyond.";
-
-export const ABOUT_BLURB =
-  "RDev Studio is a one-person creative studio based in Carrickfergus, Northern Ireland. I build websites, manage social media, and create content for small businesses who want to look brilliant online — without agency prices.";
-
-export const SOCIAL_PROOF_ITEMS = [
-  "5-page sites from £650",
-  "Live in 7 days",
-  "Free hosting setup",
-  "Local to Carrickfergus",
-] as const;
-
-export const HOW_IT_WORKS = [
-  {
-    step: 1,
-    title: "Quick call",
-    description:
-      "We learn about your business, goals, and what you need from your website.",
-  },
-  {
-    step: 2,
-    title: "We build",
-    description:
-      "Your site is designed and built mobile-first, with your branding and content.",
-  },
-  {
-    step: 3,
-    title: "You go live",
-    description:
-      "We launch on fast hosting, set up your domain, and hand everything over.",
+      "Posts, graphics, and copy that sound and look like your brand.",
   },
 ] as const;
 
@@ -127,27 +128,27 @@ export const FAQ_ITEMS = [
   {
     question: "How long does it take?",
     answer:
-      "Most sites go live within 7 days from our first call. We keep the process simple so you're not waiting weeks for results.",
+      "Most sites go live within a week. I keep the process simple so you're not waiting weeks for results.",
   },
   {
     question: "Do I need to provide content?",
     answer:
-      "Ideally yes — photos, text about your services, and contact details. If you're stuck, we can help write copy and suggest what to include.",
+      "Ideally yes — photos, text, and contact details. If you're stuck, I can help write copy and suggest what to include.",
   },
   {
     question: "Will it work on mobile?",
     answer:
-      "Yes. Every site we build is fully responsive and tested on phones and tablets before launch.",
+      "Yes. Every site I build is fully responsive and tested on phones and tablets before launch.",
   },
   {
     question: "What happens after launch?",
     answer:
-      "Your site stays live on fast hosting. Optional £30/month support covers hosting, security updates, and minor content changes.",
+      "Your site stays live on fast hosting. I'm happy to help with updates when you need them.",
   },
   {
     question: "Can I update it myself?",
     answer:
-      "Yes. We can show you how to make simple text and image changes, or you can use our monthly support plan and we'll handle it for you.",
+      "Yes. I can show you how to make simple changes, or handle updates for you if you prefer.",
   },
 ] as const;
 
@@ -155,7 +156,6 @@ export const FAQ_ITEMS = [
  * Portfolio projects. To add previews:
  * - Screenshot: public/images/work/{id}.png (or .jpg / .webp)
  * - Animated loop (recommended): public/images/work/{id}-preview.mp4
- *   Short MP4 loops look sharper and load faster than GIFs.
  */
 export type ProjectCategory =
   | "Client Work"
@@ -197,7 +197,6 @@ export const PROJECTS = [
     image: "/images/work/carrick-plumbing.png",
     imageAlt: "Carrick Plumbing Co homepage — local plumbing services in Northern Ireland",
     outcome: "Full 5-page trades site, built and deployed in under a week",
-    // previewVideo: "/images/work/carrick-plumbing-preview.mp4",
   },
   {
     id: "anchor-restaurant",
@@ -214,7 +213,6 @@ export const PROJECTS = [
     image: "/images/work/anchor-restaurant.png",
     imageAlt: "The Anchor Restaurant website with menu and booking enquiry",
     outcome: "Booking enquiries and menu display — all on mobile",
-    // previewVideo: "/images/work/anchor-restaurant-preview.mp4",
   },
   {
     id: "harbour-hair",
@@ -231,7 +229,6 @@ export const PROJECTS = [
     image: "/images/work/harbour-hair.png",
     imageAlt: "Harbour Hair Studio website with services list and gallery",
     outcome: "Services, pricing and gallery — ready for new clients to find",
-    // previewVideo: "/images/work/harbour-hair-preview.mp4",
   },
   {
     id: "rvs-coldbrew",
@@ -246,7 +243,5 @@ export const PROJECTS = [
     buttonLabel: "View live site",
     href: "https://rvscoldbrew.vercel.app",
     outcome: "Brand-first site for a specialty cold brew launch",
-    // image: "/images/work/rvs-coldbrew.png",
-    // imageAlt: "RVS Cold Brew website homepage showcasing specialty cold brew products",
   },
 ] as const;

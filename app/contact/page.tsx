@@ -7,7 +7,7 @@ import { createPageMetadata } from "@/lib/metadata";
 export const metadata = createPageMetadata({
   title: "Contact",
   description:
-    "Get in touch with RDev Studio for a free quote on your business website. Based in Carrickfergus, serving businesses across Northern Ireland.",
+    "Get in touch with Ryan Davidson — questions, collaborations, or just saying hello.",
   path: "/contact",
 });
 
@@ -16,9 +16,13 @@ export default function ContactPage() {
     <div className="section-padding pt-28">
       <div className="container-narrow">
         <PageHeader
-          title="Your new website starts here."
-          subtitle="Tell me about your business. I'll reply within 24 hours."
+          title="Say hello"
+          subtitle="Questions, ideas, or collaboration — I reply to most messages within a day."
         />
+        <p className="editorial-note -mt-8 mb-12 max-w-2xl text-center sm:mx-auto">
+          Taking on freelance website and web app work. If something in my
+          portfolio resonated, I&apos;d love to hear what you&apos;re building.
+        </p>
         <div className="grid gap-12 lg:grid-cols-5">
           <div className="lg:col-span-3">
             <DirectContactOptions />

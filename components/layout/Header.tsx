@@ -54,9 +54,9 @@ export function Header() {
             ))}
             <Link
               href="/contact"
-              className="ml-6 hidden rounded-md bg-accent px-4 py-2 text-sm font-semibold text-black transition-colors hover:bg-accent-hover md:inline-flex"
+              className="ml-6 hidden rounded-lg border border-white/20 px-4 py-2 text-sm font-medium text-primary transition-colors hover:border-accent hover:text-accent md:inline-flex"
             >
-              Start a project
+              Contact
             </Link>
           </nav>
 
