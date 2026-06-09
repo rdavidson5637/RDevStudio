@@ -55,15 +55,15 @@ export function ChampionsDraftSpotlight({
 
         <div className="min-w-0 flex-1 text-center sm:text-left">
           <div className="mb-4 flex flex-wrap items-center justify-center gap-2 sm:justify-start">
-            <span className="rounded-full border border-emerald-400/30 bg-emerald-400/10 px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-emerald-300">
+            <span className="rounded-full border border-emerald-400/40 bg-emerald-400/15 px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-emerald-200">
               {CHAMPIONS_DRAFT.badge}
             </span>
-            <span className="rounded-full border border-amber-400/30 bg-amber-400/10 px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-amber-300">
+            <span className="rounded-full border border-amber-400/40 bg-amber-400/15 px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-amber-200">
               New
             </span>
           </div>
 
-          <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-white/40">
+          <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-emerald-200/80">
             Featured game
           </p>
           <h2
@@ -76,14 +76,14 @@ export function ChampionsDraftSpotlight({
             {CHAMPIONS_DRAFT.title}
           </h2>
           <p
-            className={`mt-3 font-medium text-emerald-300/90 ${
+            className={`mt-3 font-medium text-emerald-200 ${
               isHero ? "text-base sm:text-lg" : "text-sm sm:text-base"
             }`}
           >
             {CHAMPIONS_DRAFT.tagline}
           </p>
           <p
-            className={`mt-3 leading-relaxed text-white/55 ${
+            className={`mt-3 leading-relaxed text-[#e8edf4] ${
               isHero ? "max-w-xl text-base sm:text-lg" : "text-sm sm:text-base"
             }`}
           >

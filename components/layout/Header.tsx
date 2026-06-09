@@ -3,8 +3,8 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
+import Logo from "@/components/Logo";
 import { NAV_LINKS } from "@/lib/constants";
-import { Logo } from "./Logo";
 import { MobileMenu } from "./MobileMenu";
 
 export function Header() {
@@ -33,7 +33,13 @@ export function Header() {
         }`}
       >
         <div className="container-wide flex h-14 items-center justify-between gap-4 sm:h-16">
-          <Logo />
+          <Link
+            href="/"
+            className="inline-flex shrink-0 transition-opacity duration-normal ease-out hover:opacity-85"
+            aria-label="RDev Studio — Home"
+          >
+            <Logo dark />
+          </Link>
 
           <nav
             className="hidden items-center gap-6 md:flex md:gap-8 lg:gap-10"

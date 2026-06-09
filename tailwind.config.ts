@@ -41,8 +41,8 @@ const config: Config = {
       },
       fontFamily: {
         display: ['"DM Serif Display"', "Georgia", "serif"],
-        sans: ["var(--font-sans)", "system-ui", "sans-serif"],
-        body: ["var(--font-sans)", "system-ui", "sans-serif"],
+        sans: ["var(--font-inter)", "system-ui", "sans-serif"],
+        body: ["var(--font-inter)", "system-ui", "sans-serif"],
       },
       fontSize: {
         xs: ["var(--text-xs)", { lineHeight: "var(--leading-normal)" }],

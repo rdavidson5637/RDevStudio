@@ -17,10 +17,10 @@ export function GameCard({ game }: GameCardProps) {
           {game.tag}
         </span>
       </div>
-      <p className="mt-3 flex-1 text-sm leading-relaxed text-secondary sm:text-base">
+      <p className="mt-3 flex-1 text-sm leading-relaxed text-primary/90 sm:text-base">
         {game.description}
       </p>
-      <span className="link-editorial mt-6 inline-flex items-center gap-2">
+      <span className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-emerald-400 transition-colors group-hover:text-emerald-300">
         Play now
         <span
           className="inline-block transition-transform duration-normal ease-out group-hover:translate-x-1"

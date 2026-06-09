@@ -30,7 +30,7 @@ export function PortfolioPlay() {
 
         {otherGames.length > 0 && (
           <>
-            <p className="mb-5 text-sm font-medium uppercase tracking-widest text-secondary">
+            <p className="mb-5 text-sm font-medium uppercase tracking-widest text-primary">
               More to play
             </p>
             <div className="grid grid-cols-1 gap-5 md:max-w-xl">

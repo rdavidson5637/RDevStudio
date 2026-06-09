@@ -184,10 +184,15 @@ body {
   .hire-finale-section,
   .hire-meter-glow,
   .rudi-modal-in,
-  .animate-slide-in-right {
+  .animate-slide-in-right,
+  .coming-soon-chevron-bounce {
     animation: none !important;
     transform: none !important;
     opacity: 1 !important;
+  }
+
+  .coming-soon-project-card:hover {
+    transform: none !important;
   }
 }
 
@@ -249,4 +254,19 @@ body {
 .rudi-modal-in {
   opacity: 1;
   animation: rudi-modal-in 350ms ease-out forwards;
+}
+
+@keyframes comingSoonChevronBounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(8px); }
+}
+
+.coming-soon-chevron-bounce {
+  animation: comingSoonChevronBounce 2s ease-in-out infinite;
+}
+
+.coming-soon-project-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(245, 158, 11, 0.35);
+  box-shadow: 0 8px 40px rgba(245, 158, 11, 0.08);
 }
