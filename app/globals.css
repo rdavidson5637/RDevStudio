@@ -107,7 +107,7 @@ body {
   }
 
   .interactive-surface {
-    @apply rounded-xl border border-border bg-raised transition-colors duration-normal ease-out hover:border-border-strong;
+    @apply rounded-xl border border-border-strong bg-overlay transition-colors duration-normal ease-out hover:border-accent/40;
   }
 
   .lead-text {

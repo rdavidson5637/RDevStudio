@@ -15,7 +15,7 @@ export function SelectedWork() {
           />
           <Link
             href="/work"
-            className="shrink-0 text-sm font-medium text-accent transition-colors hover:text-primary"
+            className="shrink-0 text-sm font-semibold text-primary transition-colors hover:text-accent"
           >
             View all →
           </Link>

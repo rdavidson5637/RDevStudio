@@ -144,7 +144,7 @@ export default function AboutPage() {
                   className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-accent"
                   aria-hidden="true"
                 />
-                <span className="text-base text-primary/90">{item}</span>
+                <span className="text-base text-primary">{item}</span>
               </li>
             ))}
           </ul>
@@ -170,7 +170,7 @@ export default function AboutPage() {
                 <p className="mt-3 font-display text-lg font-bold leading-snug text-primary sm:text-xl">
                   {item.value}
                 </p>
-                <p className="mt-2 text-sm text-tertiary">{item.detail}</p>
+                <p className="mt-2 text-sm text-secondary">{item.detail}</p>
               </article>
             ))}
           </div>

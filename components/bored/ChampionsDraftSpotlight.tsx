@@ -14,7 +14,7 @@ export function ChampionsDraftSpotlight({
   return (
     <Link
       href={CHAMPIONS_DRAFT.href}
-      className={`group relative block overflow-hidden rounded-2xl border border-emerald-400/25 bg-gradient-to-br from-[#0d1a14] via-[#0a0a12] to-[#12100a] transition-all duration-normal ease-out hover:border-emerald-400/45 hover:shadow-[0_24px_48px_-12px_rgb(16_185_129/0.15)] ${
+      className={`group relative block overflow-hidden rounded-2xl border border-emerald-400/30 bg-gradient-to-br from-[#0f1f18] via-[#0f172a] to-[#1a1508] transition-all duration-normal ease-out hover:border-emerald-400/50 hover:shadow-[0_24px_48px_-12px_rgb(16_185_129/0.15)] ${
         isHero ? "p-8 sm:p-10 lg:p-12" : "p-6 sm:p-8"
       }`}
     >
@@ -55,19 +55,19 @@ export function ChampionsDraftSpotlight({
 
         <div className="min-w-0 flex-1 text-center sm:text-left">
           <div className="mb-4 flex flex-wrap items-center justify-center gap-2 sm:justify-start">
-            <span className="rounded-full border border-emerald-400/40 bg-emerald-400/15 px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-emerald-200">
+            <span className="rounded-full border border-emerald-400/50 bg-emerald-500/20 px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-white">
               {CHAMPIONS_DRAFT.badge}
             </span>
-            <span className="rounded-full border border-amber-400/40 bg-amber-400/15 px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-amber-200">
+            <span className="rounded-full border border-amber-400/50 bg-amber-500/20 px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-white">
               New
             </span>
           </div>
 
-          <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-emerald-200/80">
+          <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-primary">
             Featured game
           </p>
           <h2
-            className={`mt-2 font-display font-bold tracking-tight text-white ${
+            className={`mt-2 font-display font-bold tracking-tight text-primary ${
               isHero
                 ? "text-3xl sm:text-4xl lg:text-5xl"
                 : "text-2xl sm:text-3xl"
@@ -76,14 +76,14 @@ export function ChampionsDraftSpotlight({
             {CHAMPIONS_DRAFT.title}
           </h2>
           <p
-            className={`mt-3 font-medium text-emerald-200 ${
+            className={`mt-3 font-medium text-secondary ${
               isHero ? "text-base sm:text-lg" : "text-sm sm:text-base"
             }`}
           >
             {CHAMPIONS_DRAFT.tagline}
           </p>
           <p
-            className={`mt-3 leading-relaxed text-[#e8edf4] ${
+            className={`mt-3 leading-relaxed text-secondary ${
               isHero ? "max-w-xl text-base sm:text-lg" : "text-sm sm:text-base"
             }`}
           >

@@ -25,7 +25,7 @@ export function ContactClose() {
             </Link>
             <a
               href={`mailto:${CONTACT_EMAIL}`}
-              className="text-sm text-tertiary transition-colors hover:text-accent"
+              className="text-sm text-secondary transition-colors hover:text-accent"
             >
               {CONTACT_EMAIL}
             </a>

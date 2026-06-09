@@ -13,7 +13,7 @@ export function RugbyDraftSpotlight({
   return (
     <Link
       href={RUGBY_DRAFT.href}
-      className={`group relative block overflow-hidden rounded-2xl border border-sky-400/25 bg-gradient-to-br from-[#0d141a] via-[#0a0a12] to-[#0a1218] transition-all duration-normal ease-out hover:border-sky-400/45 hover:shadow-[0_24px_48px_-12px_rgb(56_189_248/0.15)] ${
+      className={`group relative block overflow-hidden rounded-2xl border border-sky-400/30 bg-gradient-to-br from-[#0f1820] via-[#0f172a] to-[#081018] transition-all duration-normal ease-out hover:border-sky-400/50 hover:shadow-[0_24px_48px_-12px_rgb(56_189_248/0.15)] ${
         isHero ? "p-8 sm:p-10 lg:p-12" : "p-6 sm:p-8"
       }`}
     >
@@ -37,7 +37,7 @@ export function RugbyDraftSpotlight({
           }`}
         >
           <div
-            className={`relative flex items-center justify-center rounded-full border border-sky-400/20 bg-sky-400/10 ${
+            className={`relative flex items-center justify-center rounded-full border border-sky-400/30 bg-sky-500/15 ${
               isHero ? "h-40 w-40 sm:h-48 sm:w-48 lg:h-52 lg:w-52" : "h-28 w-28 sm:h-32 sm:w-32"
             }`}
           >
@@ -55,19 +55,19 @@ export function RugbyDraftSpotlight({
 
         <div className="min-w-0 flex-1 text-center sm:text-left">
           <div className="mb-4 flex flex-wrap items-center justify-center gap-2 sm:justify-start">
-            <span className="rounded-full border border-sky-400/40 bg-sky-400/15 px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-sky-200">
+            <span className="rounded-full border border-sky-400/50 bg-sky-500/20 px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-white">
               {RUGBY_DRAFT.badge}
             </span>
-            <span className="rounded-full border border-emerald-400/40 bg-emerald-400/15 px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-emerald-200">
+            <span className="rounded-full border border-emerald-400/50 bg-emerald-500/20 px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-white">
               New
             </span>
           </div>
 
-          <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-sky-200/80">
+          <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-primary">
             Featured game
           </p>
           <h2
-            className={`mt-2 font-display font-bold tracking-tight text-white ${
+            className={`mt-2 font-display font-bold tracking-tight text-primary ${
               isHero
                 ? "text-3xl sm:text-4xl lg:text-5xl"
                 : "text-2xl sm:text-3xl"
@@ -76,14 +76,14 @@ export function RugbyDraftSpotlight({
             {RUGBY_DRAFT.title}
           </h2>
           <p
-            className={`mt-3 font-medium text-sky-200 ${
+            className={`mt-3 font-medium text-secondary ${
               isHero ? "text-base sm:text-lg" : "text-sm sm:text-base"
             }`}
           >
             {RUGBY_DRAFT.tagline}
           </p>
           <p
-            className={`mt-3 leading-relaxed text-[#e8edf4] ${
+            className={`mt-3 leading-relaxed text-secondary ${
               isHero ? "max-w-xl text-base sm:text-lg" : "text-sm sm:text-base"
             }`}
           >

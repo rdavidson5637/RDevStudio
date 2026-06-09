@@ -18,7 +18,7 @@ export function PortfolioPlay() {
           />
           <Link
             href="/bored"
-            className="shrink-0 text-sm font-medium text-accent transition-colors hover:text-primary"
+            className="shrink-0 text-sm font-semibold text-primary transition-colors hover:text-accent"
           >
             All games →
           </Link>
@@ -30,7 +30,7 @@ export function PortfolioPlay() {
 
         {otherGames.length > 0 && (
           <>
-            <p className="mb-5 text-sm font-medium uppercase tracking-widest text-primary">
+            <p className="mb-5 text-sm font-semibold uppercase tracking-widest text-primary">
               More to play
             </p>
             <div className="grid grid-cols-1 gap-5 md:max-w-xl">

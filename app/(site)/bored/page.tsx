@@ -43,7 +43,7 @@ export default function BoredPage() {
       {otherGames.length > 0 && (
         <section className="section-padding bg-base">
           <div className="container-wide px-4 sm:px-6 lg:px-8">
-            <p className="mb-6 text-sm font-medium uppercase tracking-widest text-primary">
+            <p className="mb-6 text-sm font-semibold uppercase tracking-widest text-primary">
               More to play
             </p>
             <div className="grid grid-cols-1 gap-5 md:max-w-xl">

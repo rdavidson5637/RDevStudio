@@ -6,7 +6,7 @@ type ProjectTagProps = {
 
 export function ProjectTag({ category }: ProjectTagProps) {
   return (
-    <span className="inline-block rounded-full border border-white/30 px-2 py-0.5 text-xs font-medium text-primary/90">
+    <span className="inline-block rounded-full border border-border-strong bg-base px-2 py-0.5 text-xs font-semibold text-primary">
       {category}
     </span>
   );
