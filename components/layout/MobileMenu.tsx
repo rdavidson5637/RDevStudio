@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useEffect } from "react";
 import { createPortal } from "react-dom";
 import { CHAMPIONS_DRAFT } from "@/lib/champions-draft-feature";
+import { RUGBY_DRAFT } from "@/lib/rugby-draft-feature";
 import { NAV_LINKS } from "@/lib/constants";
 
 type MobileMenuProps = {
@@ -68,12 +69,28 @@ export function MobileMenu({ open, onClose, isActive }: MobileMenuProps) {
 
         <div className="flex flex-1 flex-col gap-1 overflow-y-auto px-3 py-4">
           <Link
-            href={CHAMPIONS_DRAFT.href}
+            href="/bored"
             onClick={onClose}
-            className="mx-3 mb-3 rounded-lg bg-emerald-500 px-4 py-4 text-center font-display text-lg font-bold text-black transition-colors hover:bg-emerald-400"
+            className="mx-3 mb-2 rounded-lg bg-emerald-500 px-4 py-4 text-center font-display text-lg font-bold text-black transition-colors hover:bg-emerald-400"
           >
-            Play Champions Draft
+            Play free games
           </Link>
+          <div className="mx-3 mb-3 grid grid-cols-2 gap-2">
+            <Link
+              href={CHAMPIONS_DRAFT.href}
+              onClick={onClose}
+              className="rounded-lg border border-emerald-400/30 bg-emerald-400/10 px-3 py-3 text-center text-sm font-semibold text-emerald-300 transition-colors hover:bg-emerald-400/20"
+            >
+              Champions Draft
+            </Link>
+            <Link
+              href={RUGBY_DRAFT.href}
+              onClick={onClose}
+              className="rounded-lg border border-sky-400/30 bg-sky-400/10 px-3 py-3 text-center text-sm font-semibold text-sky-300 transition-colors hover:bg-sky-400/20"
+            >
+              Rugby Draft
+            </Link>
+          </div>
           {NAV_LINKS.map((link) => (
             <Link
               key={link.href}

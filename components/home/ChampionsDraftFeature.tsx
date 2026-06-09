@@ -1,14 +1,5 @@
-import { ChampionsDraftSpotlight } from "@/components/bored/ChampionsDraftSpotlight";
+import { FeaturedGamesSection } from "./FeaturedGames";
 
 export function ChampionsDraftFeature() {
-  return (
-    <section
-      className="section-padding border-b border-border bg-base"
-      aria-labelledby="champions-draft-feature"
-    >
-      <div className="container-wide px-4 sm:px-6 lg:px-8">
-        <ChampionsDraftSpotlight variant="hero" />
-      </div>
-    </section>
-  );
+  return <FeaturedGamesSection variant="hero" labelledBy="featured-games" />;
 }

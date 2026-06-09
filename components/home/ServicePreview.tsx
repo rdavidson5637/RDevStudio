@@ -8,7 +8,7 @@ export function ServicePreview() {
     <section className="section-padding">
       <div className="container-narrow">
         <div className="mb-10 text-center">
-          <h2 className="text-2xl font-bold text-navy sm:text-3xl">
+          <h2 className="text-2xl font-bold text-primary sm:text-3xl">
             Everything you need to get online
           </h2>
           <p className="mt-3 text-slate-text">

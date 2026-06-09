@@ -1,12 +1,12 @@
-import { ChampionsDraftSpotlight } from "@/components/bored/ChampionsDraftSpotlight";
 import { GameCard } from "@/components/bored/GameCard";
 import { getOtherBoredGames } from "@/lib/bored-games";
+import { FeaturedGames } from "@/components/home/FeaturedGames";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata = createPageMetadata({
   title: "I'm Bored",
   description:
-    "Play Champions Draft — spin squads, draft your XI, and compete in league, Champions League, and World Cup modes. Plus more quick games from RDev Studio.",
+    "Play Champions Draft and Rugby Draft — free squad builder games from RDev Studio. Plus more quick games when you're bored.",
   path: "/bored",
 });
 
@@ -27,8 +27,8 @@ export default function BoredPage() {
               I&apos;m Bored
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-relaxed text-secondary sm:text-xl">
-              Free games built by RDev Studio — no accounts, no downloads. Start
-              with Champions Draft, my football squad builder.
+              Free games built by RDev Studio — no accounts, no downloads. Try
+              Champions Draft or Rugby Draft, or browse more below.
             </p>
           </div>
         </div>
@@ -36,7 +36,7 @@ export default function BoredPage() {
 
       <section className="section-padding border-b border-border bg-base">
         <div className="container-wide px-4 sm:px-6 lg:px-8">
-          <ChampionsDraftSpotlight variant="hero" />
+          <FeaturedGames variant="hero" />
         </div>
       </section>
 

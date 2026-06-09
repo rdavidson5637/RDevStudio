@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { CHAMPIONS_DRAFT } from "@/lib/champions-draft-feature";
+import { RUGBY_DRAFT } from "@/lib/rugby-draft-feature";
 
 export function Hero() {
   return (
@@ -32,16 +33,23 @@ export function Hero() {
               className="font-medium text-emerald-400 underline decoration-emerald-400/30 underline-offset-4 transition-colors hover:text-emerald-300"
             >
               Champions Draft
+            </Link>{" "}
+            and{" "}
+            <Link
+              href={RUGBY_DRAFT.href}
+              className="font-medium text-sky-400 underline decoration-sky-400/30 underline-offset-4 transition-colors hover:text-sky-300"
+            >
+              Rugby Draft
             </Link>
-            , my new football squad builder game.
+            , two free squad builder games.
           </p>
 
           <div className="hero-ctas flex flex-wrap gap-4">
             <Link
-              href={CHAMPIONS_DRAFT.href}
+              href="/bored"
               className="inline-flex items-center justify-center rounded-lg bg-emerald-500 px-6 py-3 text-sm font-semibold text-black transition-colors hover:bg-emerald-400"
             >
-              Play Champions Draft
+              Play free games
             </Link>
             <Link
               href="#work"

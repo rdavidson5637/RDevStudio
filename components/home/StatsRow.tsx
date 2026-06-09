@@ -1,11 +1,10 @@
 import Link from "next/link";
-import { CHAMPIONS_DRAFT } from "@/lib/champions-draft-feature";
 
 const STATS = [
   {
-    value: "Champions Draft",
+    value: "2 games",
     label: "Play free now",
-    href: CHAMPIONS_DRAFT.href,
+    href: "/bored",
     highlight: true,
   },
   { value: "5+", label: "Projects shipped" },

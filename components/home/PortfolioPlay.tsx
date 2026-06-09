@@ -1,7 +1,7 @@
 import Link from "next/link";
-import { ChampionsDraftSpotlight } from "@/components/bored/ChampionsDraftSpotlight";
 import { GameCard } from "@/components/bored/GameCard";
 import { getOtherBoredGames } from "@/lib/bored-games";
+import { FeaturedGames } from "@/components/home/FeaturedGames";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 
 export function PortfolioPlay() {
@@ -25,7 +25,7 @@ export function PortfolioPlay() {
         </div>
 
         <div className="mb-10">
-          <ChampionsDraftSpotlight />
+          <FeaturedGames variant="section" />
         </div>
 
         {otherGames.length > 0 && (

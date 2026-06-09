@@ -45,10 +45,10 @@ export const PORTFOLIO_AREAS = [
     accent: "amber" as const,
   },
   {
-    title: "Champions Draft",
+    title: "Free games",
     description:
-      "My latest game — spin iconic squads, draft your XI, and compete in league, Champions League, and World Cup modes.",
-    href: "/champions-draft",
+      "Champions Draft and Rugby Draft — spin squads, draft your team, and compete in football and rugby tournaments.",
+    href: "/bored",
     cta: "Play free",
     accent: "emerald" as const,
   },

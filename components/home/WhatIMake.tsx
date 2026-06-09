@@ -4,22 +4,28 @@ import { SectionHeader } from "@/components/ui/SectionHeader";
 
 const ACCENT_STYLES = {
   amber: {
-    card: "border-amber-500/20 bg-gradient-to-br from-amber-500/10 via-base/80 to-base/60 hover:border-amber-500/40 hover:from-amber-500/15",
-    label: "text-amber-400",
-    cta: "text-amber-400 group-hover:text-amber-300",
-    glow: "bg-[radial-gradient(ellipse_at_0%_100%,rgb(245_158_11/0.12)_0%,transparent_60%)]",
+    card: "border-amber-500/25 bg-raised hover:border-amber-500/45 hover:bg-[#1e293b]",
+    label: "text-amber-300",
+    title: "text-primary",
+    body: "text-primary/80",
+    cta: "text-amber-300 group-hover:text-amber-200",
+    glow: "bg-[radial-gradient(ellipse_at_0%_100%,rgb(245_158_11/0.14)_0%,transparent_60%)]",
   },
   emerald: {
-    card: "border-emerald-500/20 bg-gradient-to-br from-emerald-500/10 via-base/80 to-base/60 hover:border-emerald-500/40 hover:from-emerald-500/15",
-    label: "text-emerald-400",
-    cta: "text-emerald-400 group-hover:text-emerald-300",
-    glow: "bg-[radial-gradient(ellipse_at_0%_100%,rgb(16_185_129/0.12)_0%,transparent_60%)]",
+    card: "border-emerald-500/25 bg-raised hover:border-emerald-500/45 hover:bg-[#1e293b]",
+    label: "text-emerald-300",
+    title: "text-primary",
+    body: "text-primary/80",
+    cta: "text-emerald-300 group-hover:text-emerald-200",
+    glow: "bg-[radial-gradient(ellipse_at_0%_100%,rgb(16_185_129/0.14)_0%,transparent_60%)]",
   },
   violet: {
-    card: "border-violet-500/20 bg-gradient-to-br from-violet-500/10 via-base/80 to-base/60 hover:border-violet-500/40 hover:from-violet-500/15",
-    label: "text-violet-400",
-    cta: "text-violet-400 group-hover:text-violet-300",
-    glow: "bg-[radial-gradient(ellipse_at_0%_100%,rgb(139_92_246/0.12)_0%,transparent_60%)]",
+    card: "border-violet-500/25 bg-raised hover:border-violet-500/45 hover:bg-[#1e293b]",
+    label: "text-violet-300",
+    title: "text-primary",
+    body: "text-primary/80",
+    cta: "text-violet-300 group-hover:text-violet-200",
+    glow: "bg-[radial-gradient(ellipse_at_0%_100%,rgb(139_92_246/0.14)_0%,transparent_60%)]",
   },
 } as const;
 
@@ -59,11 +65,13 @@ export function WhatIMake() {
                   0{index + 1}
                 </span>
 
-                <h3 className="relative mt-4 font-display text-xl font-bold text-primary sm:text-2xl">
+                <h3
+                  className={`relative mt-4 font-display text-xl font-bold sm:text-2xl ${styles.title}`}
+                >
                   {area.title}
                 </h3>
 
-                <p className="relative lead-text mt-3 flex-1 text-base">
+                <p className={`relative mt-3 flex-1 text-base leading-relaxed ${styles.body}`}>
                   {area.description}
                 </p>
 
