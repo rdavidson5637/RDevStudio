@@ -5,16 +5,11 @@ import { COMING_SOON_ROADMAP } from "@/lib/coming-soon-roadmap";
 function PhaseCircle({ number, active }: { number: number; active?: boolean }) {
   return (
     <div
-      className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full border-2 bg-[#111118] text-sm font-semibold ${
+      className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full border-2 bg-raised text-sm font-semibold ${
         active
-          ? "border-[#F59E0B] text-[#F59E0B]"
-          : "border-[#1F1F2E] text-[#9CA3AF]"
+          ? "border-accent text-accent shadow-[0_0_12px_rgb(245_158_11_/_0.3)]"
+          : "border-border text-tertiary"
       }`}
-      style={
-        active
-          ? { boxShadow: "0 0 12px rgba(245,158,11,0.3)" }
-          : undefined
-      }
     >
       {number}
     </div>
@@ -24,23 +19,18 @@ function PhaseCircle({ number, active }: { number: number; active?: boolean }) {
 function PhaseLabels({ name, sublabel }: { name: string; sublabel: string }) {
   return (
     <div>
-      <p className="text-sm font-medium text-[#D1D5DB]">{name}</p>
-      <p className="text-[0.8rem] text-[#9CA3AF]">{sublabel}</p>
+      <p className="text-sm font-medium text-secondary">{name}</p>
+      <p className="text-sm text-tertiary">{sublabel}</p>
     </div>
   );
 }
 
 export function ComingSoonRoadmap() {
   return (
-    <section id="roadmap" className="px-6 py-20">
-      <div className="mx-auto w-full max-w-[960px]">
-        <p className="text-xs font-medium uppercase tracking-[0.1em] text-[#F59E0B]">
-          The Plan
-        </p>
-        <h2
-          className="mt-3 font-bold text-[#F9FAFB]"
-          style={{ fontSize: "clamp(1.5rem, 3vw, 2.25rem)" }}
-        >
+    <section id="roadmap" className="section-padding">
+      <div className="container-narrow">
+        <p className="section-label">The Plan</p>
+        <h2 className="section-heading mt-3 text-2xl sm:text-3xl lg:text-4xl">
           RDev Studio Roadmap
         </h2>
 
@@ -56,10 +46,10 @@ export function ComingSoonRoadmap() {
                 <div className="flex flex-col items-center text-center">
                   <PhaseCircle number={phase.number} active={phase.active} />
                   <div className="mt-3">
-                    <p className="text-sm font-medium text-[#D1D5DB]">
+                    <p className="text-sm font-medium text-secondary">
                       {phase.name}
                     </p>
-                    <p className="mt-0.5 text-[0.8rem] text-[#9CA3AF]">
+                    <p className="mt-0.5 text-sm text-tertiary">
                       {phase.sublabel}
                     </p>
                   </div>
@@ -68,7 +58,7 @@ export function ComingSoonRoadmap() {
 
               {index < COMING_SOON_ROADMAP.length - 1 && (
                 <div
-                  className="mt-5 min-w-4 flex-1 border-t border-dashed border-[#1F1F2E]"
+                  className="mt-5 min-w-4 flex-1 border-t border-dashed border-border"
                   aria-hidden="true"
                 />
               )}
@@ -92,7 +82,7 @@ export function ComingSoonRoadmap() {
 
               {index < COMING_SOON_ROADMAP.length - 1 && (
                 <div
-                  className="ml-5 h-10 w-px border-l border-dashed border-[#1F1F2E]"
+                  className="ml-5 h-10 w-px border-l border-dashed border-border"
                   aria-hidden="true"
                 />
               )}
