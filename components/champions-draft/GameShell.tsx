@@ -1,6 +1,7 @@
 'use client'
-import { useState, useCallback } from 'react'
+import { useState, useCallback, type ReactNode } from 'react'
 import type { GameState } from '@/types/champions-draft'
+import { GameBugReport } from '@/components/games/GameBugReport'
 import { buildDraftSlots } from '@/lib/champions-draft/utils'
 import ModeSelect from './ModeSelect'
 import LeagueSelect from './LeagueSelect'
@@ -75,21 +76,41 @@ export default function GameShell() {
   }, [])
 
   const { phase } = state
+  const bugContext = [
+    phase,
+    state.mode,
+    state.selectedLeague,
+    state.selectedNation,
+    state.formation,
+  ]
+    .filter(Boolean)
+    .join(' · ')
 
-  if (phase === 'mode-select') return <ModeSelect onSelect={update} />
-  if (phase === 'league-select') return <LeagueSelect onSelect={update} onBack={goBack} />
-  if (phase === 'nation-select') return <NationSelect onSelect={update} onBack={goBack} />
-  if (phase === 'wc-draft-mode-select' && state.selectedNation) {
-    return (
+  const showBugFab = phase !== 'mode-select'
+  const bugReport = showBugFab ? (
+    <GameBugReport game="Champions Draft" context={bugContext} />
+  ) : null
+
+  if (phase === 'mode-select') {
+    return <ModeSelect onSelect={update} />
+  }
+
+  let content: ReactNode
+
+  if (phase === 'league-select') {
+    content = <LeagueSelect onSelect={update} onBack={goBack} />
+  } else if (phase === 'nation-select') {
+    content = <NationSelect onSelect={update} onBack={goBack} />
+  } else if (phase === 'wc-draft-mode-select' && state.selectedNation) {
+    content = (
       <WCDraftModeSelect
         selectedNation={state.selectedNation}
         onSelect={update}
         onBack={goBack}
       />
     )
-  }
-  if (phase === 'formation-select') {
-    return (
+  } else if (phase === 'formation-select') {
+    content = (
       <FormationSelect
         onSelect={update}
         onBack={goBack}
@@ -98,30 +119,30 @@ export default function GameShell() {
         wcDraftMode={state.wcDraftMode}
       />
     )
-  }
-  if (phase === 'drafting' || phase === 'draft-complete') {
-    return <DraftEngine state={state} onUpdate={update} onExit={exitDraft} />
-  }
-
-  if (phase === 'playing' && state.mode === 'league') {
-    return <LeagueSeason state={state} onUpdate={update} onExit={exitDraft} />
-  }
-
-  if (phase === 'playing' && state.mode === 'champions-league') {
-    return (
+  } else if (phase === 'drafting' || phase === 'draft-complete') {
+    content = <DraftEngine state={state} onUpdate={update} onExit={exitDraft} />
+  } else if (phase === 'playing' && state.mode === 'league') {
+    content = <LeagueSeason state={state} onUpdate={update} onExit={exitDraft} />
+  } else if (phase === 'playing' && state.mode === 'champions-league') {
+    content = (
       <ChampionsLeague state={state} onUpdate={update} onExit={exitDraft} />
+    )
+  } else if (phase === 'playing' && state.mode === 'world-cup') {
+    content = <WorldCup state={state} onUpdate={update} onExit={exitDraft} />
+  } else {
+    content = (
+      <div className="min-h-screen bg-[#0a0a12] flex items-center justify-center">
+        <p className="text-white/40 text-sm uppercase tracking-widest">
+          Phase: {phase}
+        </p>
+      </div>
     )
   }
 
-  if (phase === 'playing' && state.mode === 'world-cup') {
-    return <WorldCup state={state} onUpdate={update} onExit={exitDraft} />
-  }
-
   return (
-    <div className="min-h-screen bg-[#0a0a12] flex items-center justify-center">
-      <p className="text-white/40 text-sm uppercase tracking-widest">
-        Phase: {phase}
-      </p>
-    </div>
+    <>
+      {content}
+      {bugReport}
+    </>
   )
 }

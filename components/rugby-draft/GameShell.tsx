@@ -1,6 +1,7 @@
 'use client'
-import { useState, useCallback } from 'react'
+import { useState, useCallback, type ReactNode } from 'react'
 import type { GameState } from '@/types/rugby-draft'
+import { GameBugReport } from '@/components/games/GameBugReport'
 import { buildDraftSlots } from '@/lib/rugby-draft/utils'
 import ModeSelect from './ModeSelect'
 import NationSelect from './NationSelect'
@@ -83,35 +84,47 @@ export default function GameShell() {
   }, [])
 
   const { phase } = state
+  const bugContext = [phase, state.mode, state.selectedNation, state.selectedClub]
+    .filter(Boolean)
+    .join(' · ')
 
-  if (phase === 'mode-select') return <ModeSelect onSelect={update} />
-  if (phase === 'nation-select' && state.mode) {
-    return (
+  const showBugFab = phase !== 'mode-select' && phase !== 'results'
+  const bugReport = showBugFab ? (
+    <GameBugReport game="Rugby Draft" context={bugContext} />
+  ) : null
+
+  let content: ReactNode
+
+  if (phase === 'mode-select' || phase === 'results') {
+    content = <ModeSelect onSelect={update} />
+  } else if (phase === 'nation-select' && state.mode) {
+    content = (
       <NationSelect mode={state.mode} onSelect={update} onBack={goBack} />
     )
+  } else if (phase === 'club-select') {
+    content = <ClubSelect onSelect={update} onBack={goBack} />
+  } else if (phase === 'drafting' || phase === 'draft-complete') {
+    content = <DraftEngine state={state} onUpdate={update} onExit={exitDraft} />
+  } else if (phase === 'playing' && state.mode === 'six-nations') {
+    content = <SixNations state={state} onUpdate={update} onExit={exitDraft} />
+  } else if (phase === 'playing' && state.mode === 'world-cup') {
+    content = <WorldCup state={state} onUpdate={update} onExit={exitDraft} />
+  } else if (phase === 'playing' && state.mode === 'champions-cup') {
+    content = <ChampionsCup state={state} onUpdate={update} onExit={exitDraft} />
+  } else {
+    content = (
+      <div className="min-h-screen bg-[#0a0a12] flex items-center justify-center">
+        <p className="text-white/40 text-sm uppercase tracking-widest">
+          Phase: {phase}
+        </p>
+      </div>
+    )
   }
-  if (phase === 'club-select') {
-    return <ClubSelect onSelect={update} onBack={goBack} />
-  }
-  if (phase === 'drafting' || phase === 'draft-complete') {
-    return <DraftEngine state={state} onUpdate={update} onExit={exitDraft} />
-  }
-  if (phase === 'playing' && state.mode === 'six-nations') {
-    return <SixNations state={state} onUpdate={update} onExit={exitDraft} />
-  }
-  if (phase === 'playing' && state.mode === 'world-cup') {
-    return <WorldCup state={state} onUpdate={update} onExit={exitDraft} />
-  }
-  if (phase === 'playing' && state.mode === 'champions-cup') {
-    return <ChampionsCup state={state} onUpdate={update} onExit={exitDraft} />
-  }
-  if (phase === 'results') return <ModeSelect onSelect={update} />
 
   return (
-    <div className="min-h-screen bg-[#0a0a12] flex items-center justify-center">
-      <p className="text-white/40 text-sm uppercase tracking-widest">
-        Phase: {phase}
-      </p>
-    </div>
+    <>
+      {content}
+      {bugReport}
+    </>
   )
 }

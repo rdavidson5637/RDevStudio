@@ -3,6 +3,7 @@ import { useState } from 'react'
 import Link from 'next/link'
 import type { GameState } from '@/types/champions-draft'
 import BrandLogo from './BrandLogo'
+import { InlineGameBugReport } from '@/components/games/GameBugReport'
 import HowToPlayModal from './HowToPlayModal'
 
 interface Props {
@@ -73,13 +74,16 @@ export default function ModeSelect({ onSelect }: Props) {
         <p className="text-white/45 text-sm md:text-base leading-relaxed">
           Spin iconic squads, draft your ultimate XI, and see how far you can go.
         </p>
-        <button
-          onClick={() => setShowHowToPlay(true)}
-          className="mt-5 inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-white/15 bg-white/[0.04] text-white/60 hover:text-white hover:bg-white/[0.08] hover:border-white/25 text-xs font-bold uppercase tracking-widest transition-all"
-        >
-          <span>📖</span>
-          How to Play
-        </button>
+        <div className="mt-5 flex flex-wrap items-center justify-center gap-3">
+          <button
+            onClick={() => setShowHowToPlay(true)}
+            className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.04] px-5 py-2.5 text-xs font-bold uppercase tracking-widest text-white/60 transition-all hover:border-white/25 hover:bg-white/[0.08] hover:text-white"
+          >
+            <span>📖</span>
+            How to Play
+          </button>
+          <InlineGameBugReport game="Champions Draft" context="mode-select" />
+        </div>
       </div>
 
       <div className="relative grid grid-cols-1 md:grid-cols-3 gap-4 w-full max-w-4xl">
