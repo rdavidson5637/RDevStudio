@@ -177,6 +177,76 @@ body {
   .hero-heading,
   .hero-sub,
   .hero-trust,
-  .hero-ctas { opacity: 1; transform: none; animation: none; }
+  .hero-ctas,
   .card-hover { transform: none; }
+  .hire-reveal,
+  .hire-finale-heading,
+  .hire-finale-section,
+  .hire-meter-glow,
+  .rudi-modal-in,
+  .animate-slide-in-right {
+    animation: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+  }
+}
+
+@keyframes hireReveal {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes hireFinalePulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+}
+
+.hire-reveal {
+  opacity: 1;
+  animation: hireReveal 0.7s ease-out forwards;
+}
+
+.hire-finale-heading {
+  animation: hireFinalePulse 4s ease-in-out infinite;
+}
+
+.hire-chaos-active .hire-finale-section {
+  background:
+    radial-gradient(ellipse at 50% 0%, rgb(245 158 11 / 0.08) 0%, transparent 55%),
+    var(--color-bg-raised);
+}
+
+@keyframes hire-glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(245, 158, 11, 0.2); }
+  50% { box-shadow: 0 0 60px rgba(245, 158, 11, 0.6); }
+}
+
+.hire-meter-glow {
+  animation: hire-glow 2s ease-in-out infinite;
+}
+
+@keyframes rudi-modal-in {
+  from {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.rudi-modal-in {
+  opacity: 1;
+  animation: rudi-modal-in 350ms ease-out forwards;
 }
