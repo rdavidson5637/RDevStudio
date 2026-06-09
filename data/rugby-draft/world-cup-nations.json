@@ -1,0 +1,3436 @@
+{
+  "nations": [
+    {
+      "club": "New Zealand",
+      "season": "2024",
+      "competition": "World Cup",
+      "badge": "NZL",
+      "players": [
+        {
+          "id": "nzl-001",
+          "name": "Ethan de Groot",
+          "position": "LH",
+          "overall": 84,
+          "stats": { "str": 88, "spd": 56, "hnd": 62, "kck": 42, "tck": 75, "stm": 70 },
+          "nationality": "New Zealand",
+          "season": "2024"
+        },
+        {
+          "id": "nzl-002",
+          "name": "Codie Taylor",
+          "position": "HK",
+          "overall": 86,
+          "stats": { "str": 84, "spd": 64, "hnd": 70, "kck": 45, "tck": 78, "stm": 75 },
+          "nationality": "New Zealand",
+          "season": "2024"
+        },
+        {
+          "id": "nzl-003",
+          "name": "Tyrel Lomax",
+          "position": "TH",
+          "overall": 85,
+          "stats": { "str": 91, "spd": 50, "hnd": 58, "kck": 38, "tck": 74, "stm": 68 },
+          "nationality": "New Zealand",
+          "season": "2024"
+        },
+        {
+          "id": "nzl-004",
+          "name": "Patrick Tuipulotu",
+          "position": "LL",
+          "overall": 85,
+          "stats": { "str": 88, "spd": 58, "hnd": 64, "kck": 40, "tck": 76, "stm": 72 },
+          "nationality": "New Zealand",
+          "season": "2024"
+        },
+        {
+          "id": "nzl-005",
+          "name": "Scott Barrett",
+          "position": "RL",
+          "overall": 89,
+          "stats": { "str": 89, "spd": 62, "hnd": 72, "kck": 44, "tck": 82, "stm": 78 },
+          "nationality": "New Zealand",
+          "season": "2024"
+        },
+        {
+          "id": "nzl-006",
+          "name": "Shannon Frizell",
+          "position": "BF",
+          "overall": 84,
+          "stats": { "str": 85, "spd": 66, "hnd": 68, "kck": 40, "tck": 84, "stm": 76 },
+          "nationality": "New Zealand",
+          "season": "2024"
+        },
+        {
+          "id": "nzl-007",
+          "name": "Sam Cane",
+          "position": "OF",
+          "overall": 87,
+          "stats": { "str": 78, "spd": 74, "hnd": 74, "kck": 42, "tck": 89, "stm": 88 },
+          "nationality": "New Zealand",
+          "season": "2024"
+        },
+        {
+          "id": "nzl-008",
+          "name": "Ardie Savea",
+          "position": "N8",
+          "overall": 91,
+          "stats": { "str": 86, "spd": 78, "hnd": 80, "kck": 45, "tck": 88, "stm": 85 },
+          "nationality": "New Zealand",
+          "season": "2024"
+        },
+        {
+          "id": "nzl-009",
+          "name": "TJ Perenara",
+          "position": "SH",
+          "overall": 88,
+          "stats": { "str": 66, "spd": 80, "hnd": 86, "kck": 72, "tck": 72, "stm": 88 },
+          "nationality": "New Zealand",
+          "season": "2024"
+        },
+        {
+          "id": "nzl-010",
+          "name": "Damian McKenzie",
+          "position": "FH",
+          "overall": 88,
+          "stats": { "str": 60, "spd": 84, "hnd": 87, "kck": 86, "tck": 66, "stm": 80 },
+          "nationality": "New Zealand",
+          "season": "2024"
+        },
+        {
+          "id": "nzl-011",
+          "name": "Rieko Ioane",
+          "position": "IC",
+          "overall": 87,
+          "stats": { "str": 74, "spd": 86, "hnd": 80, "kck": 50, "tck": 78, "stm": 80 },
+          "nationality": "New Zealand",
+          "season": "2024"
+        },
+        {
+          "id": "nzl-012",
+          "name": "Jordie Barrett",
+          "position": "OC",
+          "overall": 88,
+          "stats": { "str": 72, "spd": 80, "hnd": 84, "kck": 78, "tck": 76, "stm": 78 },
+          "nationality": "New Zealand",
+          "season": "2024"
+        },
+        {
+          "id": "nzl-013",
+          "name": "Mark Tele'a",
+          "position": "LW",
+          "overall": 86,
+          "stats": { "str": 66, "spd": 90, "hnd": 80, "kck": 52, "tck": 65, "stm": 84 },
+          "nationality": "New Zealand",
+          "season": "2024"
+        },
+        {
+          "id": "nzl-014",
+          "name": "Sevu Reece",
+          "position": "RW",
+          "overall": 86,
+          "stats": { "str": 68, "spd": 92, "hnd": 78, "kck": 48, "tck": 66, "stm": 84 },
+          "nationality": "New Zealand",
+          "season": "2024"
+        },
+        {
+          "id": "nzl-015",
+          "name": "Will Jordan",
+          "position": "FB",
+          "overall": 92,
+          "stats": { "str": 68, "spd": 92, "hnd": 87, "kck": 80, "tck": 72, "stm": 86 },
+          "nationality": "New Zealand",
+          "season": "2024"
+        }
+      ]
+    },
+    {
+      "club": "Ireland",
+      "season": "2024",
+      "competition": "World Cup",
+      "badge": "IRE",
+      "players": [
+        {
+          "id": "ire-001",
+          "name": "Andrew Porter",
+          "position": "LH",
+          "overall": 88,
+          "stats": { "str": 90, "spd": 58, "hnd": 66, "kck": 40, "tck": 78, "stm": 72 },
+          "nationality": "Ireland",
+          "season": "2024"
+        },
+        {
+          "id": "ire-002",
+          "name": "Dan Sheehan",
+          "position": "HK",
+          "overall": 89,
+          "stats": { "str": 85, "spd": 68, "hnd": 74, "kck": 44, "tck": 80, "stm": 78 },
+          "nationality": "Ireland",
+          "season": "2024"
+        },
+        {
+          "id": "ire-003",
+          "name": "Tadhg Furlong",
+          "position": "TH",
+          "overall": 91,
+          "stats": { "str": 93, "spd": 54, "hnd": 68, "kck": 40, "tck": 78, "stm": 72 },
+          "nationality": "Ireland",
+          "season": "2024"
+        },
+        {
+          "id": "ire-004",
+          "name": "Joe McCarthy",
+          "position": "LL",
+          "overall": 85,
+          "stats": { "str": 87, "spd": 60, "hnd": 66, "kck": 38, "tck": 78, "stm": 74 },
+          "nationality": "Ireland",
+          "season": "2024"
+        },
+        {
+          "id": "ire-005",
+          "name": "James Ryan",
+          "position": "RL",
+          "overall": 87,
+          "stats": { "str": 89, "spd": 58, "hnd": 64, "kck": 38, "tck": 82, "stm": 76 },
+          "nationality": "Ireland",
+          "season": "2024"
+        },
+        {
+          "id": "ire-006",
+          "name": "Peter O'Mahony",
+          "position": "BF",
+          "overall": 87,
+          "stats": { "str": 84, "spd": 62, "hnd": 70, "kck": 44, "tck": 87, "stm": 78 },
+          "nationality": "Ireland",
+          "season": "2024"
+        },
+        {
+          "id": "ire-007",
+          "name": "Josh van der Flier",
+          "position": "OF",
+          "overall": 90,
+          "stats": { "str": 80, "spd": 72, "hnd": 76, "kck": 40, "tck": 91, "stm": 90 },
+          "nationality": "Ireland",
+          "season": "2024"
+        },
+        {
+          "id": "ire-008",
+          "name": "Caelan Doris",
+          "position": "N8",
+          "overall": 91,
+          "stats": { "str": 86, "spd": 76, "hnd": 82, "kck": 44, "tck": 87, "stm": 84 },
+          "nationality": "Ireland",
+          "season": "2024"
+        },
+        {
+          "id": "ire-009",
+          "name": "Jamison Gibson-Park",
+          "position": "SH",
+          "overall": 89,
+          "stats": { "str": 64, "spd": 84, "hnd": 88, "kck": 70, "tck": 70, "stm": 88 },
+          "nationality": "Ireland",
+          "season": "2024"
+        },
+        {
+          "id": "ire-010",
+          "name": "Johnny Sexton",
+          "position": "FH",
+          "overall": 88,
+          "stats": { "str": 58, "spd": 66, "hnd": 88, "kck": 91, "tck": 64, "stm": 76 },
+          "nationality": "Ireland",
+          "season": "2024"
+        },
+        {
+          "id": "ire-011",
+          "name": "Robbie Henshaw",
+          "position": "IC",
+          "overall": 86,
+          "stats": { "str": 76, "spd": 76, "hnd": 82, "kck": 48, "tck": 82, "stm": 78 },
+          "nationality": "Ireland",
+          "season": "2024"
+        },
+        {
+          "id": "ire-012",
+          "name": "Garry Ringrose",
+          "position": "OC",
+          "overall": 88,
+          "stats": { "str": 70, "spd": 80, "hnd": 86, "kck": 54, "tck": 80, "stm": 78 },
+          "nationality": "Ireland",
+          "season": "2024"
+        },
+        {
+          "id": "ire-013",
+          "name": "James Lowe",
+          "position": "LW",
+          "overall": 87,
+          "stats": { "str": 72, "spd": 88, "hnd": 82, "kck": 62, "tck": 68, "stm": 82 },
+          "nationality": "Ireland",
+          "season": "2024"
+        },
+        {
+          "id": "ire-014",
+          "name": "Mack Hansen",
+          "position": "RW",
+          "overall": 86,
+          "stats": { "str": 66, "spd": 88, "hnd": 82, "kck": 56, "tck": 65, "stm": 83 },
+          "nationality": "Ireland",
+          "season": "2024"
+        },
+        {
+          "id": "ire-015",
+          "name": "Hugo Keenan",
+          "position": "FB",
+          "overall": 88,
+          "stats": { "str": 66, "spd": 86, "hnd": 84, "kck": 74, "tck": 70, "stm": 84 },
+          "nationality": "Ireland",
+          "season": "2024"
+        }
+      ]
+    },
+    {
+      "club": "South Africa",
+      "season": "2024",
+      "competition": "World Cup",
+      "badge": "RSA",
+      "players": [
+        {
+          "id": "rsa-001",
+          "name": "Ox Nché",
+          "position": "LH",
+          "overall": 86,
+          "stats": { "str": 91, "spd": 54, "hnd": 60, "kck": 38, "tck": 76, "stm": 70 },
+          "nationality": "South Africa",
+          "season": "2024"
+        },
+        {
+          "id": "rsa-002",
+          "name": "Bongi Mbonambi",
+          "position": "HK",
+          "overall": 87,
+          "stats": { "str": 86, "spd": 64, "hnd": 70, "kck": 42, "tck": 78, "stm": 76 },
+          "nationality": "South Africa",
+          "season": "2024"
+        },
+        {
+          "id": "rsa-003",
+          "name": "Frans Malherbe",
+          "position": "TH",
+          "overall": 86,
+          "stats": { "str": 92, "spd": 48, "hnd": 58, "kck": 36, "tck": 74, "stm": 68 },
+          "nationality": "South Africa",
+          "season": "2024"
+        },
+        {
+          "id": "rsa-004",
+          "name": "Eben Etzebeth",
+          "position": "LL",
+          "overall": 91,
+          "stats": { "str": 92, "spd": 62, "hnd": 66, "kck": 38, "tck": 86, "stm": 78 },
+          "nationality": "South Africa",
+          "season": "2024"
+        },
+        {
+          "id": "rsa-005",
+          "name": "Lood de Jager",
+          "position": "RL",
+          "overall": 85,
+          "stats": { "str": 89, "spd": 58, "hnd": 62, "kck": 36, "tck": 80, "stm": 74 },
+          "nationality": "South Africa",
+          "season": "2024"
+        },
+        {
+          "id": "rsa-006",
+          "name": "Siya Kolisi",
+          "position": "BF",
+          "overall": 88,
+          "stats": { "str": 84, "spd": 70, "hnd": 72, "kck": 40, "tck": 88, "stm": 84 },
+          "nationality": "South Africa",
+          "season": "2024"
+        },
+        {
+          "id": "rsa-007",
+          "name": "Pieter-Steph du Toit",
+          "position": "OF",
+          "overall": 91,
+          "stats": { "str": 84, "spd": 74, "hnd": 76, "kck": 40, "tck": 92, "stm": 90 },
+          "nationality": "South Africa",
+          "season": "2024"
+        },
+        {
+          "id": "rsa-008",
+          "name": "Duane Vermeulen",
+          "position": "N8",
+          "overall": 87,
+          "stats": { "str": 88, "spd": 66, "hnd": 74, "kck": 42, "tck": 86, "stm": 78 },
+          "nationality": "South Africa",
+          "season": "2024"
+        },
+        {
+          "id": "rsa-009",
+          "name": "Faf de Klerk",
+          "position": "SH",
+          "overall": 87,
+          "stats": { "str": 62, "spd": 82, "hnd": 86, "kck": 74, "tck": 72, "stm": 86 },
+          "nationality": "South Africa",
+          "season": "2024"
+        },
+        {
+          "id": "rsa-010",
+          "name": "Handré Pollard",
+          "position": "FH",
+          "overall": 88,
+          "stats": { "str": 62, "spd": 68, "hnd": 84, "kck": 92, "tck": 62, "stm": 74 },
+          "nationality": "South Africa",
+          "season": "2024"
+        },
+        {
+          "id": "rsa-011",
+          "name": "Damian de Allende",
+          "position": "IC",
+          "overall": 88,
+          "stats": { "str": 82, "spd": 78, "hnd": 82, "kck": 50, "tck": 84, "stm": 78 },
+          "nationality": "South Africa",
+          "season": "2024"
+        },
+        {
+          "id": "rsa-012",
+          "name": "Jesse Kriel",
+          "position": "OC",
+          "overall": 86,
+          "stats": { "str": 74, "spd": 84, "hnd": 80, "kck": 52, "tck": 78, "stm": 78 },
+          "nationality": "South Africa",
+          "season": "2024"
+        },
+        {
+          "id": "rsa-013",
+          "name": "Cheslin Kolbe",
+          "position": "LW",
+          "overall": 91,
+          "stats": { "str": 62, "spd": 94, "hnd": 86, "kck": 72, "tck": 70, "stm": 84 },
+          "nationality": "South Africa",
+          "season": "2024"
+        },
+        {
+          "id": "rsa-014",
+          "name": "Kurt-Lee Arendse",
+          "position": "RW",
+          "overall": 88,
+          "stats": { "str": 64, "spd": 93, "hnd": 80, "kck": 54, "tck": 66, "stm": 84 },
+          "nationality": "South Africa",
+          "season": "2024"
+        },
+        {
+          "id": "rsa-015",
+          "name": "Willie le Roux",
+          "position": "FB",
+          "overall": 87,
+          "stats": { "str": 64, "spd": 84, "hnd": 84, "kck": 76, "tck": 68, "stm": 80 },
+          "nationality": "South Africa",
+          "season": "2024"
+        }
+      ]
+    },
+    {
+      "club": "France",
+      "season": "2024",
+      "competition": "World Cup",
+      "badge": "FRA",
+      "players": [
+        {
+          "id": "fra-001",
+          "name": "Cyril Baille",
+          "position": "LH",
+          "overall": 89,
+          "stats": { "str": 91, "spd": 58, "hnd": 66, "kck": 38, "tck": 78, "stm": 74 },
+          "nationality": "France",
+          "season": "2024"
+        },
+        {
+          "id": "fra-002",
+          "name": "Julien Marchand",
+          "position": "HK",
+          "overall": 88,
+          "stats": { "str": 84, "spd": 66, "hnd": 72, "kck": 42, "tck": 80, "stm": 78 },
+          "nationality": "France",
+          "season": "2024"
+        },
+        {
+          "id": "fra-003",
+          "name": "Uini Atonio",
+          "position": "TH",
+          "overall": 87,
+          "stats": { "str": 94, "spd": 46, "hnd": 56, "kck": 34, "tck": 72, "stm": 66 },
+          "nationality": "France",
+          "season": "2024"
+        },
+        {
+          "id": "fra-004",
+          "name": "Cameron Woki",
+          "position": "LL",
+          "overall": 84,
+          "stats": { "str": 86, "spd": 64, "hnd": 66, "kck": 36, "tck": 78, "stm": 76 },
+          "nationality": "France",
+          "season": "2024"
+        },
+        {
+          "id": "fra-005",
+          "name": "Thibaud Flament",
+          "position": "RL",
+          "overall": 85,
+          "stats": { "str": 87, "spd": 62, "hnd": 64, "kck": 36, "tck": 80, "stm": 76 },
+          "nationality": "France",
+          "season": "2024"
+        },
+        {
+          "id": "fra-006",
+          "name": "François Cros",
+          "position": "BF",
+          "overall": 85,
+          "stats": { "str": 82, "spd": 68, "hnd": 70, "kck": 38, "tck": 86, "stm": 80 },
+          "nationality": "France",
+          "season": "2024"
+        },
+        {
+          "id": "fra-007",
+          "name": "Charles Ollivon",
+          "position": "OF",
+          "overall": 87,
+          "stats": { "str": 80, "spd": 74, "hnd": 76, "kck": 38, "tck": 88, "stm": 88 },
+          "nationality": "France",
+          "season": "2024"
+        },
+        {
+          "id": "fra-008",
+          "name": "Grégory Alldritt",
+          "position": "N8",
+          "overall": 91,
+          "stats": { "str": 87, "spd": 74, "hnd": 82, "kck": 42, "tck": 86, "stm": 86 },
+          "nationality": "France",
+          "season": "2024"
+        },
+        {
+          "id": "fra-009",
+          "name": "Antoine Dupont",
+          "position": "SH",
+          "overall": 99,
+          "stats": { "str": 74, "spd": 94, "hnd": 96, "kck": 84, "tck": 82, "stm": 94 },
+          "nationality": "France",
+          "season": "2024"
+        },
+        {
+          "id": "fra-010",
+          "name": "Matthieu Jalibert",
+          "position": "FH",
+          "overall": 87,
+          "stats": { "str": 58, "spd": 74, "hnd": 88, "kck": 86, "tck": 60, "stm": 76 },
+          "nationality": "France",
+          "season": "2024"
+        },
+        {
+          "id": "fra-011",
+          "name": "Gaël Fickou",
+          "position": "IC",
+          "overall": 86,
+          "stats": { "str": 72, "spd": 80, "hnd": 84, "kck": 54, "tck": 78, "stm": 78 },
+          "nationality": "France",
+          "season": "2024"
+        },
+        {
+          "id": "fra-012",
+          "name": "Jonathan Danty",
+          "position": "OC",
+          "overall": 85,
+          "stats": { "str": 82, "spd": 78, "hnd": 76, "kck": 46, "tck": 80, "stm": 76 },
+          "nationality": "France",
+          "season": "2024"
+        },
+        {
+          "id": "fra-013",
+          "name": "Damian Penaud",
+          "position": "LW",
+          "overall": 89,
+          "stats": { "str": 68, "spd": 92, "hnd": 84, "kck": 58, "tck": 66, "stm": 84 },
+          "nationality": "France",
+          "season": "2024"
+        },
+        {
+          "id": "fra-014",
+          "name": "Louis Bielle-Biarrey",
+          "position": "RW",
+          "overall": 88,
+          "stats": { "str": 64, "spd": 92, "hnd": 82, "kck": 54, "tck": 64, "stm": 84 },
+          "nationality": "France",
+          "season": "2024"
+        },
+        {
+          "id": "fra-015",
+          "name": "Thomas Ramos",
+          "position": "FB",
+          "overall": 88,
+          "stats": { "str": 64, "spd": 84, "hnd": 84, "kck": 86, "tck": 66, "stm": 82 },
+          "nationality": "France",
+          "season": "2024"
+        }
+      ]
+    },
+    {
+      "club": "England",
+      "season": "2024",
+      "competition": "World Cup",
+      "badge": "ENG",
+      "players": [
+        {
+          "id": "eng-001",
+          "name": "Ellis Genge",
+          "position": "LH",
+          "overall": 86,
+          "stats": { "str": 90, "spd": 60, "hnd": 64, "kck": 38, "tck": 76, "stm": 72 },
+          "nationality": "England",
+          "season": "2024"
+        },
+        {
+          "id": "eng-002",
+          "name": "Jamie George",
+          "position": "HK",
+          "overall": 89,
+          "stats": { "str": 84, "spd": 64, "hnd": 74, "kck": 46, "tck": 80, "stm": 78 },
+          "nationality": "England",
+          "season": "2024"
+        },
+        {
+          "id": "eng-003",
+          "name": "Dan Cole",
+          "position": "TH",
+          "overall": 84,
+          "stats": { "str": 91, "spd": 46, "hnd": 56, "kck": 34, "tck": 72, "stm": 66 },
+          "nationality": "England",
+          "season": "2024"
+        },
+        {
+          "id": "eng-004",
+          "name": "Maro Itoje",
+          "position": "LL",
+          "overall": 91,
+          "stats": { "str": 88, "spd": 64, "hnd": 72, "kck": 38, "tck": 88, "stm": 82 },
+          "nationality": "England",
+          "season": "2024"
+        },
+        {
+          "id": "eng-005",
+          "name": "Ollie Chessum",
+          "position": "RL",
+          "overall": 84,
+          "stats": { "str": 86, "spd": 62, "hnd": 64, "kck": 36, "tck": 78, "stm": 74 },
+          "nationality": "England",
+          "season": "2024"
+        },
+        {
+          "id": "eng-006",
+          "name": "Tom Curry",
+          "position": "BF",
+          "overall": 88,
+          "stats": { "str": 82, "spd": 72, "hnd": 72, "kck": 40, "tck": 90, "stm": 84 },
+          "nationality": "England",
+          "season": "2024"
+        },
+        {
+          "id": "eng-007",
+          "name": "Sam Underhill",
+          "position": "OF",
+          "overall": 86,
+          "stats": { "str": 78, "spd": 74, "hnd": 72, "kck": 38, "tck": 90, "stm": 86 },
+          "nationality": "England",
+          "season": "2024"
+        },
+        {
+          "id": "eng-008",
+          "name": "Billy Vunipola",
+          "position": "N8",
+          "overall": 85,
+          "stats": { "str": 90, "spd": 66, "hnd": 74, "kck": 40, "tck": 80, "stm": 72 },
+          "nationality": "England",
+          "season": "2024"
+        },
+        {
+          "id": "eng-009",
+          "name": "Danny Care",
+          "position": "SH",
+          "overall": 85,
+          "stats": { "str": 60, "spd": 80, "hnd": 84, "kck": 70, "tck": 68, "stm": 84 },
+          "nationality": "England",
+          "season": "2024"
+        },
+        {
+          "id": "eng-010",
+          "name": "George Ford",
+          "position": "FH",
+          "overall": 87,
+          "stats": { "str": 54, "spd": 68, "hnd": 88, "kck": 90, "tck": 58, "stm": 74 },
+          "nationality": "England",
+          "season": "2024"
+        },
+        {
+          "id": "eng-011",
+          "name": "Manu Tuilagi",
+          "position": "IC",
+          "overall": 87,
+          "stats": { "str": 86, "spd": 82, "hnd": 78, "kck": 44, "tck": 84, "stm": 74 },
+          "nationality": "England",
+          "season": "2024"
+        },
+        {
+          "id": "eng-012",
+          "name": "Henry Slade",
+          "position": "OC",
+          "overall": 85,
+          "stats": { "str": 66, "spd": 78, "hnd": 84, "kck": 70, "tck": 72, "stm": 76 },
+          "nationality": "England",
+          "season": "2024"
+        },
+        {
+          "id": "eng-013",
+          "name": "Jonny May",
+          "position": "LW",
+          "overall": 85,
+          "stats": { "str": 64, "spd": 92, "hnd": 76, "kck": 48, "tck": 62, "stm": 82 },
+          "nationality": "England",
+          "season": "2024"
+        },
+        {
+          "id": "eng-014",
+          "name": "Elliot Daly",
+          "position": "RW",
+          "overall": 84,
+          "stats": { "str": 66, "spd": 84, "hnd": 78, "kck": 74, "tck": 64, "stm": 78 },
+          "nationality": "England",
+          "season": "2024"
+        },
+        {
+          "id": "eng-015",
+          "name": "Freddie Steward",
+          "position": "FB",
+          "overall": 86,
+          "stats": { "str": 70, "spd": 82, "hnd": 82, "kck": 74, "tck": 72, "stm": 80 },
+          "nationality": "England",
+          "season": "2024"
+        }
+      ]
+    },
+    {
+      "club": "Australia",
+      "season": "2024",
+      "competition": "World Cup",
+      "badge": "AUS",
+      "players": [
+        {
+          "id": "aus-001",
+          "name": "James Slipper",
+          "position": "LH",
+          "overall": 80,
+          "stats": { "str": 84, "spd": 54, "hnd": 62, "kck": 36, "tck": 72, "stm": 68 },
+          "nationality": "Australia",
+          "season": "2024"
+        },
+        {
+          "id": "aus-002",
+          "name": "David Porecki",
+          "position": "HK",
+          "overall": 79,
+          "stats": { "str": 80, "spd": 62, "hnd": 66, "kck": 40, "tck": 72, "stm": 74 },
+          "nationality": "Australia",
+          "season": "2024"
+        },
+        {
+          "id": "aus-003",
+          "name": "Allan Alaalatoa",
+          "position": "TH",
+          "overall": 81,
+          "stats": { "str": 88, "spd": 48, "hnd": 58, "kck": 34, "tck": 70, "stm": 66 },
+          "nationality": "Australia",
+          "season": "2024"
+        },
+        {
+          "id": "aus-004",
+          "name": "Richie Arnold",
+          "position": "LL",
+          "overall": 78,
+          "stats": { "str": 84, "spd": 56, "hnd": 60, "kck": 34, "tck": 74, "stm": 70 },
+          "nationality": "Australia",
+          "season": "2024"
+        },
+        {
+          "id": "aus-005",
+          "name": "Nick Frost",
+          "position": "RL",
+          "overall": 79,
+          "stats": { "str": 85, "spd": 58, "hnd": 60, "kck": 34, "tck": 74, "stm": 72 },
+          "nationality": "Australia",
+          "season": "2024"
+        },
+        {
+          "id": "aus-006",
+          "name": "Rob Valetini",
+          "position": "BF",
+          "overall": 82,
+          "stats": { "str": 84, "spd": 70, "hnd": 70, "kck": 38, "tck": 82, "stm": 78 },
+          "nationality": "Australia",
+          "season": "2024"
+        },
+        {
+          "id": "aus-007",
+          "name": "Fraser McReight",
+          "position": "OF",
+          "overall": 81,
+          "stats": { "str": 74, "spd": 72, "hnd": 70, "kck": 36, "tck": 84, "stm": 86 },
+          "nationality": "Australia",
+          "season": "2024"
+        },
+        {
+          "id": "aus-008",
+          "name": "Harry Wilson",
+          "position": "N8",
+          "overall": 83,
+          "stats": { "str": 84, "spd": 72, "hnd": 74, "kck": 40, "tck": 80, "stm": 80 },
+          "nationality": "Australia",
+          "season": "2024"
+        },
+        {
+          "id": "aus-009",
+          "name": "Tate McDermott",
+          "position": "SH",
+          "overall": 82,
+          "stats": { "str": 60, "spd": 82, "hnd": 82, "kck": 68, "tck": 66, "stm": 84 },
+          "nationality": "Australia",
+          "season": "2024"
+        },
+        {
+          "id": "aus-010",
+          "name": "Noah Lolesio",
+          "position": "FH",
+          "overall": 80,
+          "stats": { "str": 54, "spd": 68, "hnd": 82, "kck": 84, "tck": 56, "stm": 72 },
+          "nationality": "Australia",
+          "season": "2024"
+        },
+        {
+          "id": "aus-011",
+          "name": "Len Ikitau",
+          "position": "IC",
+          "overall": 82,
+          "stats": { "str": 78, "spd": 80, "hnd": 76, "kck": 46, "tck": 78, "stm": 76 },
+          "nationality": "Australia",
+          "season": "2024"
+        },
+        {
+          "id": "aus-012",
+          "name": "Hunter Paisami",
+          "position": "OC",
+          "overall": 81,
+          "stats": { "str": 80, "spd": 76, "hnd": 74, "kck": 44, "tck": 78, "stm": 74 },
+          "nationality": "Australia",
+          "season": "2024"
+        },
+        {
+          "id": "aus-013",
+          "name": "Marika Koroibete",
+          "position": "LW",
+          "overall": 84,
+          "stats": { "str": 74, "spd": 90, "hnd": 74, "kck": 46, "tck": 70, "stm": 82 },
+          "nationality": "Australia",
+          "season": "2024"
+        },
+        {
+          "id": "aus-014",
+          "name": "Mark Nawaqanitawase",
+          "position": "RW",
+          "overall": 83,
+          "stats": { "str": 68, "spd": 90, "hnd": 76, "kck": 48, "tck": 64, "stm": 82 },
+          "nationality": "Australia",
+          "season": "2024"
+        },
+        {
+          "id": "aus-015",
+          "name": "Andrew Kellaway",
+          "position": "FB",
+          "overall": 81,
+          "stats": { "str": 66, "spd": 84, "hnd": 78, "kck": 68, "tck": 66, "stm": 78 },
+          "nationality": "Australia",
+          "season": "2024"
+        }
+      ]
+    },
+    {
+      "club": "Scotland",
+      "season": "2024",
+      "competition": "World Cup",
+      "badge": "SCO",
+      "players": [
+        {
+          "id": "sco-001",
+          "name": "Pierre Schoeman",
+          "position": "LH",
+          "overall": 80,
+          "stats": { "str": 86, "spd": 56, "hnd": 60, "kck": 34, "tck": 72, "stm": 70 },
+          "nationality": "Scotland",
+          "season": "2024"
+        },
+        {
+          "id": "sco-002",
+          "name": "George Turner",
+          "position": "HK",
+          "overall": 79,
+          "stats": { "str": 80, "spd": 62, "hnd": 66, "kck": 38, "tck": 72, "stm": 74 },
+          "nationality": "Scotland",
+          "season": "2024"
+        },
+        {
+          "id": "sco-003",
+          "name": "Zander Fagerson",
+          "position": "TH",
+          "overall": 82,
+          "stats": { "str": 89, "spd": 50, "hnd": 58, "kck": 34, "tck": 72, "stm": 68 },
+          "nationality": "Scotland",
+          "season": "2024"
+        },
+        {
+          "id": "sco-004",
+          "name": "Jonny Gray",
+          "position": "LL",
+          "overall": 80,
+          "stats": { "str": 86, "spd": 56, "hnd": 60, "kck": 34, "tck": 78, "stm": 74 },
+          "nationality": "Scotland",
+          "season": "2024"
+        },
+        {
+          "id": "sco-005",
+          "name": "Grant Gilchrist",
+          "position": "RL",
+          "overall": 79,
+          "stats": { "str": 84, "spd": 54, "hnd": 60, "kck": 32, "tck": 76, "stm": 72 },
+          "nationality": "Scotland",
+          "season": "2024"
+        },
+        {
+          "id": "sco-006",
+          "name": "Jamie Ritchie",
+          "position": "BF",
+          "overall": 82,
+          "stats": { "str": 80, "spd": 68, "hnd": 68, "kck": 36, "tck": 84, "stm": 80 },
+          "nationality": "Scotland",
+          "season": "2024"
+        },
+        {
+          "id": "sco-007",
+          "name": "Hamish Watson",
+          "position": "OF",
+          "overall": 84,
+          "stats": { "str": 76, "spd": 74, "hnd": 70, "kck": 36, "tck": 88, "stm": 88 },
+          "nationality": "Scotland",
+          "season": "2024"
+        },
+        {
+          "id": "sco-008",
+          "name": "Matt Fagerson",
+          "position": "N8",
+          "overall": 82,
+          "stats": { "str": 84, "spd": 68, "hnd": 70, "kck": 38, "tck": 78, "stm": 76 },
+          "nationality": "Scotland",
+          "season": "2024"
+        },
+        {
+          "id": "sco-009",
+          "name": "Ali Price",
+          "position": "SH",
+          "overall": 81,
+          "stats": { "str": 58, "spd": 80, "hnd": 82, "kck": 66, "tck": 64, "stm": 82 },
+          "nationality": "Scotland",
+          "season": "2024"
+        },
+        {
+          "id": "sco-010",
+          "name": "Finn Russell",
+          "position": "FH",
+          "overall": 88,
+          "stats": { "str": 56, "spd": 72, "hnd": 92, "kck": 86, "tck": 56, "stm": 74 },
+          "nationality": "Scotland",
+          "season": "2024"
+        },
+        {
+          "id": "sco-011",
+          "name": "Sione Tuipulotu",
+          "position": "IC",
+          "overall": 84,
+          "stats": { "str": 78, "spd": 78, "hnd": 82, "kck": 50, "tck": 78, "stm": 76 },
+          "nationality": "Scotland",
+          "season": "2024"
+        },
+        {
+          "id": "sco-012",
+          "name": "Huw Jones",
+          "position": "OC",
+          "overall": 81,
+          "stats": { "str": 68, "spd": 80, "hnd": 78, "kck": 48, "tck": 72, "stm": 74 },
+          "nationality": "Scotland",
+          "season": "2024"
+        },
+        {
+          "id": "sco-013",
+          "name": "Duhan van der Merwe",
+          "position": "LW",
+          "overall": 86,
+          "stats": { "str": 80, "spd": 88, "hnd": 76, "kck": 50, "tck": 70, "stm": 80 },
+          "nationality": "Scotland",
+          "season": "2024"
+        },
+        {
+          "id": "sco-014",
+          "name": "Kyle Steyn",
+          "position": "RW",
+          "overall": 80,
+          "stats": { "str": 68, "spd": 86, "hnd": 74, "kck": 46, "tck": 64, "stm": 80 },
+          "nationality": "Scotland",
+          "season": "2024"
+        },
+        {
+          "id": "sco-015",
+          "name": "Blair Kinghorn",
+          "position": "FB",
+          "overall": 82,
+          "stats": { "str": 66, "spd": 84, "hnd": 80, "kck": 78, "tck": 64, "stm": 78 },
+          "nationality": "Scotland",
+          "season": "2024"
+        }
+      ]
+    },
+    {
+      "club": "Italy",
+      "season": "2024",
+      "competition": "World Cup",
+      "badge": "ITA",
+      "players": [
+        {
+          "id": "ita-001",
+          "name": "Danilo Fischetti",
+          "position": "LH",
+          "overall": 78,
+          "stats": { "str": 84, "spd": 54, "hnd": 58, "kck": 32, "tck": 70, "stm": 68 },
+          "nationality": "Italy",
+          "season": "2024"
+        },
+        {
+          "id": "ita-002",
+          "name": "Giacomo Nicotera",
+          "position": "HK",
+          "overall": 77,
+          "stats": { "str": 78, "spd": 60, "hnd": 64, "kck": 38, "tck": 70, "stm": 72 },
+          "nationality": "Italy",
+          "season": "2024"
+        },
+        {
+          "id": "ita-003",
+          "name": "Pietro Ceccarelli",
+          "position": "TH",
+          "overall": 78,
+          "stats": { "str": 86, "spd": 46, "hnd": 54, "kck": 30, "tck": 68, "stm": 64 },
+          "nationality": "Italy",
+          "season": "2024"
+        },
+        {
+          "id": "ita-004",
+          "name": "Federico Ruzza",
+          "position": "LL",
+          "overall": 78,
+          "stats": { "str": 84, "spd": 54, "hnd": 60, "kck": 32, "tck": 74, "stm": 70 },
+          "nationality": "Italy",
+          "season": "2024"
+        },
+        {
+          "id": "ita-005",
+          "name": "Niccolò Cannone",
+          "position": "RL",
+          "overall": 79,
+          "stats": { "str": 85, "spd": 56, "hnd": 60, "kck": 32, "tck": 76, "stm": 72 },
+          "nationality": "Italy",
+          "season": "2024"
+        },
+        {
+          "id": "ita-006",
+          "name": "Michele Lamaro",
+          "position": "BF",
+          "overall": 83,
+          "stats": { "str": 80, "spd": 68, "hnd": 70, "kck": 36, "tck": 86, "stm": 82 },
+          "nationality": "Italy",
+          "season": "2024"
+        },
+        {
+          "id": "ita-007",
+          "name": "Sebastian Negri",
+          "position": "OF",
+          "overall": 80,
+          "stats": { "str": 78, "spd": 70, "hnd": 68, "kck": 34, "tck": 84, "stm": 84 },
+          "nationality": "Italy",
+          "season": "2024"
+        },
+        {
+          "id": "ita-008",
+          "name": "Lorenzo Cannone",
+          "position": "N8",
+          "overall": 83,
+          "stats": { "str": 84, "spd": 70, "hnd": 72, "kck": 38, "tck": 80, "stm": 78 },
+          "nationality": "Italy",
+          "season": "2024"
+        },
+        {
+          "id": "ita-009",
+          "name": "Stephen Varney",
+          "position": "SH",
+          "overall": 80,
+          "stats": { "str": 58, "spd": 78, "hnd": 82, "kck": 66, "tck": 62, "stm": 82 },
+          "nationality": "Italy",
+          "season": "2024"
+        },
+        {
+          "id": "ita-010",
+          "name": "Paolo Garbisi",
+          "position": "FH",
+          "overall": 83,
+          "stats": { "str": 56, "spd": 68, "hnd": 84, "kck": 86, "tck": 56, "stm": 72 },
+          "nationality": "Italy",
+          "season": "2024"
+        },
+        {
+          "id": "ita-011",
+          "name": "Luca Morisi",
+          "position": "IC",
+          "overall": 78,
+          "stats": { "str": 72, "spd": 74, "hnd": 76, "kck": 44, "tck": 72, "stm": 72 },
+          "nationality": "Italy",
+          "season": "2024"
+        },
+        {
+          "id": "ita-012",
+          "name": "Juan Ignacio Brex",
+          "position": "OC",
+          "overall": 82,
+          "stats": { "str": 74, "spd": 76, "hnd": 80, "kck": 48, "tck": 76, "stm": 74 },
+          "nationality": "Italy",
+          "season": "2024"
+        },
+        {
+          "id": "ita-013",
+          "name": "Monty Ioane",
+          "position": "LW",
+          "overall": 82,
+          "stats": { "str": 68, "spd": 88, "hnd": 76, "kck": 48, "tck": 62, "stm": 80 },
+          "nationality": "Italy",
+          "season": "2024"
+        },
+        {
+          "id": "ita-014",
+          "name": "Edoardo Padovani",
+          "position": "RW",
+          "overall": 80,
+          "stats": { "str": 64, "spd": 86, "hnd": 74, "kck": 58, "tck": 62, "stm": 78 },
+          "nationality": "Italy",
+          "season": "2024"
+        },
+        {
+          "id": "ita-015",
+          "name": "Ange Capuozzo",
+          "position": "FB",
+          "overall": 85,
+          "stats": { "str": 62, "spd": 90, "hnd": 82, "kck": 72, "tck": 66, "stm": 82 },
+          "nationality": "Italy",
+          "season": "2024"
+        }
+      ]
+    },
+    {
+      "club": "Fiji",
+      "season": "2024",
+      "competition": "World Cup",
+      "badge": "FIJ",
+      "players": [
+        {
+          "id": "fij-001",
+          "name": "Eroni Mawi",
+          "position": "LH",
+          "overall": 78,
+          "stats": { "str": 84, "spd": 56, "hnd": 62, "kck": 34, "tck": 72, "stm": 70 },
+          "nationality": "Fiji",
+          "season": "2024"
+        },
+        {
+          "id": "fij-002",
+          "name": "Samuel Matavesi",
+          "position": "HK",
+          "overall": 79,
+          "stats": { "str": 80, "spd": 64, "hnd": 68, "kck": 40, "tck": 72, "stm": 74 },
+          "nationality": "Fiji",
+          "season": "2024"
+        },
+        {
+          "id": "fij-003",
+          "name": "Luke Tagi",
+          "position": "TH",
+          "overall": 77,
+          "stats": { "str": 86, "spd": 48, "hnd": 56, "kck": 32, "tck": 68, "stm": 64 },
+          "nationality": "Fiji",
+          "season": "2024"
+        },
+        {
+          "id": "fij-004",
+          "name": "Isoa Nasilasila",
+          "position": "LL",
+          "overall": 77,
+          "stats": { "str": 84, "spd": 54, "hnd": 58, "kck": 30, "tck": 72, "stm": 68 },
+          "nationality": "Fiji",
+          "season": "2024"
+        },
+        {
+          "id": "fij-005",
+          "name": "Tevita Ratuva",
+          "position": "RL",
+          "overall": 78,
+          "stats": { "str": 86, "spd": 56, "hnd": 58, "kck": 30, "tck": 74, "stm": 70 },
+          "nationality": "Fiji",
+          "season": "2024"
+        },
+        {
+          "id": "fij-006",
+          "name": "Levani Botia",
+          "position": "BF",
+          "overall": 83,
+          "stats": { "str": 84, "spd": 72, "hnd": 70, "kck": 36, "tck": 86, "stm": 80 },
+          "nationality": "Fiji",
+          "season": "2024"
+        },
+        {
+          "id": "fij-007",
+          "name": "Vilive Miramira",
+          "position": "OF",
+          "overall": 79,
+          "stats": { "str": 76, "spd": 74, "hnd": 68, "kck": 34, "tck": 82, "stm": 84 },
+          "nationality": "Fiji",
+          "season": "2024"
+        },
+        {
+          "id": "fij-008",
+          "name": "Viliame Mata",
+          "position": "N8",
+          "overall": 84,
+          "stats": { "str": 86, "spd": 74, "hnd": 74, "kck": 38, "tck": 82, "stm": 80 },
+          "nationality": "Fiji",
+          "season": "2024"
+        },
+        {
+          "id": "fij-009",
+          "name": "Frank Lomani",
+          "position": "SH",
+          "overall": 82,
+          "stats": { "str": 60, "spd": 82, "hnd": 84, "kck": 70, "tck": 64, "stm": 82 },
+          "nationality": "Fiji",
+          "season": "2024"
+        },
+        {
+          "id": "fij-010",
+          "name": "Teti Tela",
+          "position": "FH",
+          "overall": 81,
+          "stats": { "str": 56, "spd": 74, "hnd": 82, "kck": 82, "tck": 56, "stm": 72 },
+          "nationality": "Fiji",
+          "season": "2024"
+        },
+        {
+          "id": "fij-011",
+          "name": "Josua Tuisova",
+          "position": "IC",
+          "overall": 84,
+          "stats": { "str": 88, "spd": 82, "hnd": 76, "kck": 44, "tck": 78, "stm": 76 },
+          "nationality": "Fiji",
+          "season": "2024"
+        },
+        {
+          "id": "fij-012",
+          "name": "Waisea Nayacalevu",
+          "position": "OC",
+          "overall": 84,
+          "stats": { "str": 82, "spd": 84, "hnd": 80, "kck": 48, "tck": 76, "stm": 76 },
+          "nationality": "Fiji",
+          "season": "2024"
+        },
+        {
+          "id": "fij-013",
+          "name": "Jiuta Wainiqolo",
+          "position": "LW",
+          "overall": 85,
+          "stats": { "str": 70, "spd": 92, "hnd": 78, "kck": 50, "tck": 64, "stm": 82 },
+          "nationality": "Fiji",
+          "season": "2024"
+        },
+        {
+          "id": "fij-014",
+          "name": "Vinaya Habosi",
+          "position": "RW",
+          "overall": 84,
+          "stats": { "str": 68, "spd": 90, "hnd": 78, "kck": 48, "tck": 64, "stm": 82 },
+          "nationality": "Fiji",
+          "season": "2024"
+        },
+        {
+          "id": "fij-015",
+          "name": "Selestino Ravutaumada",
+          "position": "FB",
+          "overall": 84,
+          "stats": { "str": 64, "spd": 88, "hnd": 80, "kck": 70, "tck": 66, "stm": 80 },
+          "nationality": "Fiji",
+          "season": "2024"
+        }
+      ]
+    },
+    {
+      "club": "Samoa",
+      "season": "2024",
+      "competition": "World Cup",
+      "badge": "SAM",
+      "players": [
+        {
+          "id": "sam-001",
+          "name": "Jordan Lay",
+          "position": "LH",
+          "overall": 73,
+          "stats": { "str": 80, "spd": 54, "hnd": 58, "kck": 30, "tck": 68, "stm": 66 },
+          "nationality": "Samoa",
+          "season": "2024"
+        },
+        {
+          "id": "sam-002",
+          "name": "Seilala Lam",
+          "position": "HK",
+          "overall": 74,
+          "stats": { "str": 78, "spd": 60, "hnd": 64, "kck": 36, "tck": 68, "stm": 70 },
+          "nationality": "Samoa",
+          "season": "2024"
+        },
+        {
+          "id": "sam-003",
+          "name": "Michael Alaalatoa",
+          "position": "TH",
+          "overall": 75,
+          "stats": { "str": 84, "spd": 46, "hnd": 54, "kck": 28, "tck": 66, "stm": 62 },
+          "nationality": "Samoa",
+          "season": "2024"
+        },
+        {
+          "id": "sam-004",
+          "name": "Theo McFarland",
+          "position": "LL",
+          "overall": 73,
+          "stats": { "str": 82, "spd": 52, "hnd": 56, "kck": 28, "tck": 70, "stm": 66 },
+          "nationality": "Samoa",
+          "season": "2024"
+        },
+        {
+          "id": "sam-005",
+          "name": "Chris Vui",
+          "position": "RL",
+          "overall": 74,
+          "stats": { "str": 83, "spd": 54, "hnd": 56, "kck": 28, "tck": 72, "stm": 68 },
+          "nationality": "Samoa",
+          "season": "2024"
+        },
+        {
+          "id": "sam-006",
+          "name": "Fritz Lee",
+          "position": "BF",
+          "overall": 76,
+          "stats": { "str": 80, "spd": 66, "hnd": 66, "kck": 32, "tck": 80, "stm": 76 },
+          "nationality": "Samoa",
+          "season": "2024"
+        },
+        {
+          "id": "sam-007",
+          "name": "Miracle Fotu",
+          "position": "OF",
+          "overall": 75,
+          "stats": { "str": 74, "spd": 70, "hnd": 66, "kck": 30, "tck": 78, "stm": 80 },
+          "nationality": "Samoa",
+          "season": "2024"
+        },
+        {
+          "id": "sam-008",
+          "name": "Theo Saumatua",
+          "position": "N8",
+          "overall": 75,
+          "stats": { "str": 82, "spd": 66, "hnd": 66, "kck": 34, "tck": 76, "stm": 72 },
+          "nationality": "Samoa",
+          "season": "2024"
+        },
+        {
+          "id": "sam-009",
+          "name": "Folau Fainga'a",
+          "position": "SH",
+          "overall": 76,
+          "stats": { "str": 58, "spd": 78, "hnd": 78, "kck": 64, "tck": 60, "stm": 78 },
+          "nationality": "Samoa",
+          "season": "2024"
+        },
+        {
+          "id": "sam-010",
+          "name": "Christian Leali'ifano",
+          "position": "FH",
+          "overall": 78,
+          "stats": { "str": 54, "spd": 66, "hnd": 80, "kck": 84, "tck": 54, "stm": 68 },
+          "nationality": "Samoa",
+          "season": "2024"
+        },
+        {
+          "id": "sam-011",
+          "name": "Tumua Manu",
+          "position": "IC",
+          "overall": 77,
+          "stats": { "str": 74, "spd": 74, "hnd": 76, "kck": 44, "tck": 72, "stm": 72 },
+          "nationality": "Samoa",
+          "season": "2024"
+        },
+        {
+          "id": "sam-012",
+          "name": "Alapati Leiua",
+          "position": "OC",
+          "overall": 77,
+          "stats": { "str": 76, "spd": 78, "hnd": 74, "kck": 42, "tck": 70, "stm": 72 },
+          "nationality": "Samoa",
+          "season": "2024"
+        },
+        {
+          "id": "sam-013",
+          "name": "Ben Lam",
+          "position": "LW",
+          "overall": 79,
+          "stats": { "str": 68, "spd": 88, "hnd": 74, "kck": 46, "tck": 62, "stm": 78 },
+          "nationality": "Samoa",
+          "season": "2024"
+        },
+        {
+          "id": "sam-014",
+          "name": "Ed Fidow",
+          "position": "RW",
+          "overall": 80,
+          "stats": { "str": 66, "spd": 90, "hnd": 74, "kck": 46, "tck": 62, "stm": 80 },
+          "nationality": "Samoa",
+          "season": "2024"
+        },
+        {
+          "id": "sam-015",
+          "name": "D'Angelo Leuila",
+          "position": "FB",
+          "overall": 78,
+          "stats": { "str": 62, "spd": 84, "hnd": 76, "kck": 68, "tck": 62, "stm": 76 },
+          "nationality": "Samoa",
+          "season": "2024"
+        }
+      ]
+    },
+    {
+      "club": "Tonga",
+      "season": "2024",
+      "competition": "World Cup",
+      "badge": "TON",
+      "players": [
+        {
+          "id": "ton-001",
+          "name": "Soane Tuilagi",
+          "position": "LH",
+          "overall": 72,
+          "stats": { "str": 80, "spd": 52, "hnd": 56, "kck": 28, "tck": 66, "stm": 64 },
+          "nationality": "Tonga",
+          "season": "2024"
+        },
+        {
+          "id": "ton-002",
+          "name": "Elvis Taione",
+          "position": "HK",
+          "overall": 73,
+          "stats": { "str": 78, "spd": 58, "hnd": 62, "kck": 34, "tck": 68, "stm": 68 },
+          "nationality": "Tonga",
+          "season": "2024"
+        },
+        {
+          "id": "ton-003",
+          "name": "Siegfried Fisi'ihoi",
+          "position": "TH",
+          "overall": 74,
+          "stats": { "str": 86, "spd": 46, "hnd": 54, "kck": 28, "tck": 66, "stm": 62 },
+          "nationality": "Tonga",
+          "season": "2024"
+        },
+        {
+          "id": "ton-004",
+          "name": "Leva Fifita",
+          "position": "LL",
+          "overall": 73,
+          "stats": { "str": 82, "spd": 52, "hnd": 56, "kck": 28, "tck": 70, "stm": 66 },
+          "nationality": "Tonga",
+          "season": "2024"
+        },
+        {
+          "id": "ton-005",
+          "name": "Sam Lousi",
+          "position": "RL",
+          "overall": 75,
+          "stats": { "str": 84, "spd": 54, "hnd": 58, "kck": 28, "tck": 72, "stm": 68 },
+          "nationality": "Tonga",
+          "season": "2024"
+        },
+        {
+          "id": "ton-006",
+          "name": "Zane Kapeli",
+          "position": "BF",
+          "overall": 74,
+          "stats": { "str": 80, "spd": 64, "hnd": 64, "kck": 30, "tck": 78, "stm": 74 },
+          "nationality": "Tonga",
+          "season": "2024"
+        },
+        {
+          "id": "ton-007",
+          "name": "Sione Kalamafoni",
+          "position": "OF",
+          "overall": 75,
+          "stats": { "str": 78, "spd": 68, "hnd": 66, "kck": 30, "tck": 80, "stm": 80 },
+          "nationality": "Tonga",
+          "season": "2024"
+        },
+        {
+          "id": "ton-008",
+          "name": "Viliami Taulani",
+          "position": "N8",
+          "overall": 74,
+          "stats": { "str": 82, "spd": 64, "hnd": 64, "kck": 32, "tck": 74, "stm": 70 },
+          "nationality": "Tonga",
+          "season": "2024"
+        },
+        {
+          "id": "ton-009",
+          "name": "Sonatane Takulua",
+          "position": "SH",
+          "overall": 77,
+          "stats": { "str": 58, "spd": 78, "hnd": 80, "kck": 72, "tck": 60, "stm": 78 },
+          "nationality": "Tonga",
+          "season": "2024"
+        },
+        {
+          "id": "ton-010",
+          "name": "Kurt Morath",
+          "position": "FH",
+          "overall": 76,
+          "stats": { "str": 52, "spd": 66, "hnd": 78, "kck": 84, "tck": 52, "stm": 68 },
+          "nationality": "Tonga",
+          "season": "2024"
+        },
+        {
+          "id": "ton-011",
+          "name": "Siale Piutau",
+          "position": "IC",
+          "overall": 78,
+          "stats": { "str": 76, "spd": 78, "hnd": 78, "kck": 48, "tck": 72, "stm": 72 },
+          "nationality": "Tonga",
+          "season": "2024"
+        },
+        {
+          "id": "ton-012",
+          "name": "William Havili",
+          "position": "OC",
+          "overall": 77,
+          "stats": { "str": 74, "spd": 76, "hnd": 76, "kck": 52, "tck": 70, "stm": 72 },
+          "nationality": "Tonga",
+          "season": "2024"
+        },
+        {
+          "id": "ton-013",
+          "name": "Atieli Pakalani",
+          "position": "LW",
+          "overall": 75,
+          "stats": { "str": 68, "spd": 84, "hnd": 70, "kck": 42, "tck": 60, "stm": 76 },
+          "nationality": "Tonga",
+          "season": "2024"
+        },
+        {
+          "id": "ton-014",
+          "name": "Telusa Veainu",
+          "position": "RW",
+          "overall": 78,
+          "stats": { "str": 62, "spd": 88, "hnd": 76, "kck": 54, "tck": 62, "stm": 78 },
+          "nationality": "Tonga",
+          "season": "2024"
+        },
+        {
+          "id": "ton-015",
+          "name": "Vunga Lilo",
+          "position": "FB",
+          "overall": 75,
+          "stats": { "str": 60, "spd": 82, "hnd": 74, "kck": 68, "tck": 60, "stm": 74 },
+          "nationality": "Tonga",
+          "season": "2024"
+        }
+      ]
+    },
+    {
+      "club": "Georgia",
+      "season": "2024",
+      "competition": "World Cup",
+      "badge": "GEO",
+      "players": [
+        {
+          "id": "geo-001",
+          "name": "Mikheil Nariashvili",
+          "position": "LH",
+          "overall": 76,
+          "stats": { "str": 84, "spd": 52, "hnd": 56, "kck": 28, "tck": 68, "stm": 66 },
+          "nationality": "Georgia",
+          "season": "2024"
+        },
+        {
+          "id": "geo-002",
+          "name": "Shalva Mamukashvili",
+          "position": "HK",
+          "overall": 77,
+          "stats": { "str": 80, "spd": 58, "hnd": 62, "kck": 32, "tck": 70, "stm": 70 },
+          "nationality": "Georgia",
+          "season": "2024"
+        },
+        {
+          "id": "geo-003",
+          "name": "Giorgi Saghinadze",
+          "position": "TH",
+          "overall": 74,
+          "stats": { "str": 86, "spd": 44, "hnd": 52, "kck": 26, "tck": 64, "stm": 60 },
+          "nationality": "Georgia",
+          "season": "2024"
+        },
+        {
+          "id": "geo-004",
+          "name": "Kote Mikautadze",
+          "position": "LL",
+          "overall": 74,
+          "stats": { "str": 84, "spd": 50, "hnd": 54, "kck": 26, "tck": 70, "stm": 66 },
+          "nationality": "Georgia",
+          "season": "2024"
+        },
+        {
+          "id": "geo-005",
+          "name": "Giorgi Nemsadze",
+          "position": "RL",
+          "overall": 75,
+          "stats": { "str": 85, "spd": 52, "hnd": 54, "kck": 26, "tck": 72, "stm": 66 },
+          "nationality": "Georgia",
+          "season": "2024"
+        },
+        {
+          "id": "geo-006",
+          "name": "Beka Saginadze",
+          "position": "BF",
+          "overall": 75,
+          "stats": { "str": 82, "spd": 62, "hnd": 62, "kck": 28, "tck": 78, "stm": 74 },
+          "nationality": "Georgia",
+          "season": "2024"
+        },
+        {
+          "id": "geo-007",
+          "name": "Tornike Jalagonia",
+          "position": "OF",
+          "overall": 74,
+          "stats": { "str": 76, "spd": 66, "hnd": 62, "kck": 28, "tck": 78, "stm": 78 },
+          "nationality": "Georgia",
+          "season": "2024"
+        },
+        {
+          "id": "geo-008",
+          "name": "Lasha Jaiani",
+          "position": "N8",
+          "overall": 76,
+          "stats": { "str": 84, "spd": 64, "hnd": 64, "kck": 30, "tck": 74, "stm": 72 },
+          "nationality": "Georgia",
+          "season": "2024"
+        },
+        {
+          "id": "geo-009",
+          "name": "Gela Aprasidze",
+          "position": "SH",
+          "overall": 75,
+          "stats": { "str": 56, "spd": 76, "hnd": 78, "kck": 64, "tck": 58, "stm": 76 },
+          "nationality": "Georgia",
+          "season": "2024"
+        },
+        {
+          "id": "geo-010",
+          "name": "Tedo Abzhandadze",
+          "position": "FH",
+          "overall": 77,
+          "stats": { "str": 52, "spd": 66, "hnd": 78, "kck": 84, "tck": 52, "stm": 68 },
+          "nationality": "Georgia",
+          "season": "2024"
+        },
+        {
+          "id": "geo-011",
+          "name": "Giorgi Kveseladze",
+          "position": "IC",
+          "overall": 76,
+          "stats": { "str": 72, "spd": 74, "hnd": 74, "kck": 44, "tck": 70, "stm": 70 },
+          "nationality": "Georgia",
+          "season": "2024"
+        },
+        {
+          "id": "geo-012",
+          "name": "Demur Tapladze",
+          "position": "OC",
+          "overall": 73,
+          "stats": { "str": 70, "spd": 72, "hnd": 70, "kck": 40, "tck": 68, "stm": 68 },
+          "nationality": "Georgia",
+          "season": "2024"
+        },
+        {
+          "id": "geo-013",
+          "name": "Akaki Tabutsadze",
+          "position": "LW",
+          "overall": 74,
+          "stats": { "str": 66, "spd": 82, "hnd": 70, "kck": 42, "tck": 58, "stm": 74 },
+          "nationality": "Georgia",
+          "season": "2024"
+        },
+        {
+          "id": "geo-014",
+          "name": "Alexander Todua",
+          "position": "RW",
+          "overall": 76,
+          "stats": { "str": 64, "spd": 86, "hnd": 72, "kck": 44, "tck": 60, "stm": 76 },
+          "nationality": "Georgia",
+          "season": "2024"
+        },
+        {
+          "id": "geo-015",
+          "name": "Sandro Todua",
+          "position": "FB",
+          "overall": 76,
+          "stats": { "str": 62, "spd": 84, "hnd": 72, "kck": 62, "tck": 60, "stm": 74 },
+          "nationality": "Georgia",
+          "season": "2024"
+        }
+      ]
+    },
+    {
+      "club": "Uruguay",
+      "season": "2024",
+      "competition": "World Cup",
+      "badge": "URU",
+      "players": [
+        {
+          "id": "uru-001",
+          "name": "Mateo Sanguinetti",
+          "position": "LH",
+          "overall": 72,
+          "stats": { "str": 80, "spd": 50, "hnd": 54, "kck": 28, "tck": 66, "stm": 64 },
+          "nationality": "Uruguay",
+          "season": "2024"
+        },
+        {
+          "id": "uru-002",
+          "name": "German Kessler",
+          "position": "HK",
+          "overall": 73,
+          "stats": { "str": 76, "spd": 56, "hnd": 60, "kck": 32, "tck": 66, "stm": 68 },
+          "nationality": "Uruguay",
+          "season": "2024"
+        },
+        {
+          "id": "uru-003",
+          "name": "Facundo Gattas",
+          "position": "TH",
+          "overall": 72,
+          "stats": { "str": 82, "spd": 44, "hnd": 52, "kck": 26, "tck": 62, "stm": 60 },
+          "nationality": "Uruguay",
+          "season": "2024"
+        },
+        {
+          "id": "uru-004",
+          "name": "Ignacio Dotti",
+          "position": "LL",
+          "overall": 72,
+          "stats": { "str": 80, "spd": 50, "hnd": 54, "kck": 26, "tck": 68, "stm": 64 },
+          "nationality": "Uruguay",
+          "season": "2024"
+        },
+        {
+          "id": "uru-005",
+          "name": "Manuel Ardao",
+          "position": "RL",
+          "overall": 73,
+          "stats": { "str": 82, "spd": 52, "hnd": 54, "kck": 26, "tck": 70, "stm": 66 },
+          "nationality": "Uruguay",
+          "season": "2024"
+        },
+        {
+          "id": "uru-006",
+          "name": "Manuel Diana",
+          "position": "BF",
+          "overall": 74,
+          "stats": { "str": 78, "spd": 62, "hnd": 62, "kck": 30, "tck": 76, "stm": 74 },
+          "nationality": "Uruguay",
+          "season": "2024"
+        },
+        {
+          "id": "uru-007",
+          "name": "Santiago Civetta",
+          "position": "OF",
+          "overall": 74,
+          "stats": { "str": 74, "spd": 66, "hnd": 62, "kck": 28, "tck": 76, "stm": 78 },
+          "nationality": "Uruguay",
+          "season": "2024"
+        },
+        {
+          "id": "uru-008",
+          "name": "Ignacio Peculo",
+          "position": "N8",
+          "overall": 75,
+          "stats": { "str": 82, "spd": 62, "hnd": 64, "kck": 30, "tck": 72, "stm": 70 },
+          "nationality": "Uruguay",
+          "season": "2024"
+        },
+        {
+          "id": "uru-009",
+          "name": "Agustín Ormaechea",
+          "position": "SH",
+          "overall": 76,
+          "stats": { "str": 58, "spd": 76, "hnd": 78, "kck": 66, "tck": 60, "stm": 78 },
+          "nationality": "Uruguay",
+          "season": "2024"
+        },
+        {
+          "id": "uru-010",
+          "name": "Felipe Etcheverry",
+          "position": "FH",
+          "overall": 75,
+          "stats": { "str": 52, "spd": 64, "hnd": 76, "kck": 82, "tck": 50, "stm": 66 },
+          "nationality": "Uruguay",
+          "season": "2024"
+        },
+        {
+          "id": "uru-011",
+          "name": "Andrés Vilaseca",
+          "position": "IC",
+          "overall": 74,
+          "stats": { "str": 72, "spd": 70, "hnd": 72, "kck": 42, "tck": 68, "stm": 68 },
+          "nationality": "Uruguay",
+          "season": "2024"
+        },
+        {
+          "id": "uru-012",
+          "name": "Baltazar Amaya",
+          "position": "OC",
+          "overall": 73,
+          "stats": { "str": 70, "spd": 72, "hnd": 70, "kck": 40, "tck": 66, "stm": 68 },
+          "nationality": "Uruguay",
+          "season": "2024"
+        },
+        {
+          "id": "uru-013",
+          "name": "Gastón Mieres",
+          "position": "LW",
+          "overall": 76,
+          "stats": { "str": 64, "spd": 82, "hnd": 74, "kck": 58, "tck": 60, "stm": 74 },
+          "nationality": "Uruguay",
+          "season": "2024"
+        },
+        {
+          "id": "uru-014",
+          "name": "Nicolás Freitas",
+          "position": "RW",
+          "overall": 78,
+          "stats": { "str": 66, "spd": 84, "hnd": 76, "kck": 54, "tck": 62, "stm": 76 },
+          "nationality": "Uruguay",
+          "season": "2024"
+        },
+        {
+          "id": "uru-015",
+          "name": "Juan Manuel Cat",
+          "position": "FB",
+          "overall": 76,
+          "stats": { "str": 62, "spd": 80, "hnd": 74, "kck": 68, "tck": 60, "stm": 72 },
+          "nationality": "Uruguay",
+          "season": "2024"
+        }
+      ]
+    },
+    {
+      "club": "Namibia",
+      "season": "2024",
+      "competition": "World Cup",
+      "badge": "NAM",
+      "players": [
+        {
+          "id": "nam-001",
+          "name": "Adriaan Booysen",
+          "position": "LH",
+          "overall": 66,
+          "stats": { "str": 76, "spd": 48, "hnd": 50, "kck": 24, "tck": 60, "stm": 58 },
+          "nationality": "Namibia",
+          "season": "2024"
+        },
+        {
+          "id": "nam-002",
+          "name": "Louis van der Westhuizen",
+          "position": "HK",
+          "overall": 67,
+          "stats": { "str": 74, "spd": 54, "hnd": 56, "kck": 28, "tck": 62, "stm": 62 },
+          "nationality": "Namibia",
+          "season": "2024"
+        },
+        {
+          "id": "nam-003",
+          "name": "Nelius Theron",
+          "position": "TH",
+          "overall": 66,
+          "stats": { "str": 80, "spd": 42, "hnd": 48, "kck": 22, "tck": 58, "stm": 56 },
+          "nationality": "Namibia",
+          "season": "2024"
+        },
+        {
+          "id": "nam-004",
+          "name": "Tjiuee Uanivi",
+          "position": "LL",
+          "overall": 68,
+          "stats": { "str": 78, "spd": 48, "hnd": 52, "kck": 24, "tck": 64, "stm": 62 },
+          "nationality": "Namibia",
+          "season": "2024"
+        },
+        {
+          "id": "nam-005",
+          "name": "PJ van Lill",
+          "position": "RL",
+          "overall": 67,
+          "stats": { "str": 78, "spd": 48, "hnd": 50, "kck": 22, "tck": 62, "stm": 60 },
+          "nationality": "Namibia",
+          "season": "2024"
+        },
+        {
+          "id": "nam-006",
+          "name": "Wian Conradie",
+          "position": "BF",
+          "overall": 68,
+          "stats": { "str": 76, "spd": 58, "hnd": 58, "kck": 26, "tck": 72, "stm": 68 },
+          "nationality": "Namibia",
+          "season": "2024"
+        },
+        {
+          "id": "nam-007",
+          "name": "Rohan Kitshoff",
+          "position": "OF",
+          "overall": 69,
+          "stats": { "str": 72, "spd": 62, "hnd": 60, "kck": 26, "tck": 74, "stm": 76 },
+          "nationality": "Namibia",
+          "season": "2024"
+        },
+        {
+          "id": "nam-008",
+          "name": "Wian Burger",
+          "position": "N8",
+          "overall": 70,
+          "stats": { "str": 78, "spd": 60, "hnd": 62, "kck": 28, "tck": 68, "stm": 66 },
+          "nationality": "Namibia",
+          "season": "2024"
+        },
+        {
+          "id": "nam-009",
+          "name": "Damian Stevens",
+          "position": "SH",
+          "overall": 68,
+          "stats": { "str": 54, "spd": 72, "hnd": 72, "kck": 58, "tck": 54, "stm": 70 },
+          "nationality": "Namibia",
+          "season": "2024"
+        },
+        {
+          "id": "nam-010",
+          "name": "Cliven Loubser",
+          "position": "FH",
+          "overall": 70,
+          "stats": { "str": 50, "spd": 64, "hnd": 72, "kck": 78, "tck": 48, "stm": 64 },
+          "nationality": "Namibia",
+          "season": "2024"
+        },
+        {
+          "id": "nam-011",
+          "name": "Johan Deysel",
+          "position": "IC",
+          "overall": 70,
+          "stats": { "str": 72, "spd": 68, "hnd": 68, "kck": 38, "tck": 66, "stm": 66 },
+          "nationality": "Namibia",
+          "season": "2024"
+        },
+        {
+          "id": "nam-012",
+          "name": "Lesley Klim",
+          "position": "OC",
+          "overall": 68,
+          "stats": { "str": 68, "spd": 68, "hnd": 66, "kck": 36, "tck": 62, "stm": 64 },
+          "nationality": "Namibia",
+          "season": "2024"
+        },
+        {
+          "id": "nam-013",
+          "name": "Christi Botha",
+          "position": "LW",
+          "overall": 69,
+          "stats": { "str": 62, "spd": 78, "hnd": 66, "kck": 40, "tck": 56, "stm": 70 },
+          "nationality": "Namibia",
+          "season": "2024"
+        },
+        {
+          "id": "nam-014",
+          "name": "JC Greyling",
+          "position": "RW",
+          "overall": 69,
+          "stats": { "str": 62, "spd": 78, "hnd": 64, "kck": 38, "tck": 56, "stm": 70 },
+          "nationality": "Namibia",
+          "season": "2024"
+        },
+        {
+          "id": "nam-015",
+          "name": "Hugo Horn",
+          "position": "FB",
+          "overall": 71,
+          "stats": { "str": 60, "spd": 76, "hnd": 70, "kck": 68, "tck": 56, "stm": 68 },
+          "nationality": "Namibia",
+          "season": "2024"
+        }
+      ]
+    },
+    {
+      "club": "Portugal",
+      "season": "2024",
+      "competition": "World Cup",
+      "badge": "POR",
+      "players": [
+        {
+          "id": "por-001",
+          "name": "Tomás Appleton",
+          "position": "LH",
+          "overall": 67,
+          "stats": { "str": 76, "spd": 48, "hnd": 52, "kck": 24, "tck": 60, "stm": 60 },
+          "nationality": "Portugal",
+          "season": "2024"
+        },
+        {
+          "id": "por-002",
+          "name": "Mike Tadjer",
+          "position": "HK",
+          "overall": 68,
+          "stats": { "str": 74, "spd": 54, "hnd": 58, "kck": 30, "tck": 62, "stm": 64 },
+          "nationality": "Portugal",
+          "season": "2024"
+        },
+        {
+          "id": "por-003",
+          "name": "António Couto",
+          "position": "TH",
+          "overall": 67,
+          "stats": { "str": 80, "spd": 42, "hnd": 50, "kck": 22, "tck": 58, "stm": 56 },
+          "nationality": "Portugal",
+          "season": "2024"
+        },
+        {
+          "id": "por-004",
+          "name": "José Madeira",
+          "position": "LL",
+          "overall": 67,
+          "stats": { "str": 78, "spd": 48, "hnd": 52, "kck": 24, "tck": 62, "stm": 62 },
+          "nationality": "Portugal",
+          "season": "2024"
+        },
+        {
+          "id": "por-005",
+          "name": "Martim Belo",
+          "position": "RL",
+          "overall": 68,
+          "stats": { "str": 80, "spd": 50, "hnd": 52, "kck": 24, "tck": 64, "stm": 62 },
+          "nationality": "Portugal",
+          "season": "2024"
+        },
+        {
+          "id": "por-006",
+          "name": "Thierry Ntamack",
+          "position": "BF",
+          "overall": 69,
+          "stats": { "str": 76, "spd": 62, "hnd": 60, "kck": 28, "tck": 72, "stm": 72 },
+          "nationality": "Portugal",
+          "season": "2024"
+        },
+        {
+          "id": "por-007",
+          "name": "João Granate",
+          "position": "OF",
+          "overall": 68,
+          "stats": { "str": 72, "spd": 64, "hnd": 60, "kck": 26, "tck": 72, "stm": 74 },
+          "nationality": "Portugal",
+          "season": "2024"
+        },
+        {
+          "id": "por-008",
+          "name": "Nicolas Martins",
+          "position": "N8",
+          "overall": 69,
+          "stats": { "str": 80, "spd": 60, "hnd": 62, "kck": 28, "tck": 68, "stm": 66 },
+          "nationality": "Portugal",
+          "season": "2024"
+        },
+        {
+          "id": "por-009",
+          "name": "Samuel Marques",
+          "position": "SH",
+          "overall": 72,
+          "stats": { "str": 56, "spd": 76, "hnd": 78, "kck": 66, "tck": 58, "stm": 76 },
+          "nationality": "Portugal",
+          "season": "2024"
+        },
+        {
+          "id": "por-010",
+          "name": "Jerónimo Portela",
+          "position": "FH",
+          "overall": 71,
+          "stats": { "str": 52, "spd": 66, "hnd": 74, "kck": 80, "tck": 50, "stm": 66 },
+          "nationality": "Portugal",
+          "season": "2024"
+        },
+        {
+          "id": "por-011",
+          "name": "Rafael Simões",
+          "position": "IC",
+          "overall": 70,
+          "stats": { "str": 70, "spd": 70, "hnd": 70, "kck": 42, "tck": 66, "stm": 68 },
+          "nationality": "Portugal",
+          "season": "2024"
+        },
+        {
+          "id": "por-012",
+          "name": "Tomás Gomes",
+          "position": "OC",
+          "overall": 69,
+          "stats": { "str": 68, "spd": 70, "hnd": 68, "kck": 38, "tck": 64, "stm": 66 },
+          "nationality": "Portugal",
+          "season": "2024"
+        },
+        {
+          "id": "por-013",
+          "name": "Rodrigo Marta",
+          "position": "LW",
+          "overall": 71,
+          "stats": { "str": 64, "spd": 80, "hnd": 70, "kck": 44, "tck": 58, "stm": 72 },
+          "nationality": "Portugal",
+          "season": "2024"
+        },
+        {
+          "id": "por-014",
+          "name": "Raffaele Storti",
+          "position": "RW",
+          "overall": 70,
+          "stats": { "str": 62, "spd": 78, "hnd": 68, "kck": 42, "tck": 56, "stm": 70 },
+          "nationality": "Portugal",
+          "season": "2024"
+        },
+        {
+          "id": "por-015",
+          "name": "Nuno Sousa Guedes",
+          "position": "FB",
+          "overall": 73,
+          "stats": { "str": 62, "spd": 78, "hnd": 72, "kck": 72, "tck": 58, "stm": 72 },
+          "nationality": "Portugal",
+          "season": "2024"
+        }
+      ]
+    },
+    {
+      "club": "Chile",
+      "season": "2024",
+      "competition": "World Cup",
+      "badge": "CHI",
+      "players": [
+        {
+          "id": "chi-001",
+          "name": "Matías Dittus",
+          "position": "LH",
+          "overall": 65,
+          "stats": { "str": 74, "spd": 46, "hnd": 50, "kck": 22, "tck": 58, "stm": 56 },
+          "nationality": "Chile",
+          "season": "2024"
+        },
+        {
+          "id": "chi-002",
+          "name": "Tutu Vidal",
+          "position": "HK",
+          "overall": 66,
+          "stats": { "str": 72, "spd": 52, "hnd": 56, "kck": 26, "tck": 60, "stm": 62 },
+          "nationality": "Chile",
+          "season": "2024"
+        },
+        {
+          "id": "chi-003",
+          "name": "Raimundo Martínez",
+          "position": "TH",
+          "overall": 65,
+          "stats": { "str": 78, "spd": 40, "hnd": 48, "kck": 20, "tck": 56, "stm": 54 },
+          "nationality": "Chile",
+          "season": "2024"
+        },
+        {
+          "id": "chi-004",
+          "name": "Javier Eissmann",
+          "position": "LL",
+          "overall": 66,
+          "stats": { "str": 76, "spd": 48, "hnd": 50, "kck": 22, "tck": 62, "stm": 60 },
+          "nationality": "Chile",
+          "season": "2024"
+        },
+        {
+          "id": "chi-005",
+          "name": "Nicolás Garafulic",
+          "position": "RL",
+          "overall": 67,
+          "stats": { "str": 78, "spd": 50, "hnd": 52, "kck": 22, "tck": 64, "stm": 62 },
+          "nationality": "Chile",
+          "season": "2024"
+        },
+        {
+          "id": "chi-006",
+          "name": "Martín Sigren",
+          "position": "BF",
+          "overall": 68,
+          "stats": { "str": 74, "spd": 60, "hnd": 58, "kck": 26, "tck": 72, "stm": 70 },
+          "nationality": "Chile",
+          "season": "2024"
+        },
+        {
+          "id": "chi-007",
+          "name": "Clemente Saavedra",
+          "position": "OF",
+          "overall": 67,
+          "stats": { "str": 70, "spd": 62, "hnd": 58, "kck": 24, "tck": 70, "stm": 72 },
+          "nationality": "Chile",
+          "season": "2024"
+        },
+        {
+          "id": "chi-008",
+          "name": "Romain Poite",
+          "position": "N8",
+          "overall": 68,
+          "stats": { "str": 78, "spd": 58, "hnd": 60, "kck": 26, "tck": 66, "stm": 64 },
+          "nationality": "Chile",
+          "season": "2024"
+        },
+        {
+          "id": "chi-009",
+          "name": "Marcelo Torrealba",
+          "position": "SH",
+          "overall": 68,
+          "stats": { "str": 54, "spd": 72, "hnd": 74, "kck": 60, "tck": 54, "stm": 72 },
+          "nationality": "Chile",
+          "season": "2024"
+        },
+        {
+          "id": "chi-010",
+          "name": "Rodrigo Fernández",
+          "position": "FH",
+          "overall": 70,
+          "stats": { "str": 52, "spd": 66, "hnd": 74, "kck": 78, "tck": 50, "stm": 66 },
+          "nationality": "Chile",
+          "season": "2024"
+        },
+        {
+          "id": "chi-011",
+          "name": "Santiago Videla",
+          "position": "IC",
+          "overall": 68,
+          "stats": { "str": 68, "spd": 68, "hnd": 68, "kck": 38, "tck": 64, "stm": 66 },
+          "nationality": "Chile",
+          "season": "2024"
+        },
+        {
+          "id": "chi-012",
+          "name": "Domingo Saavedra",
+          "position": "OC",
+          "overall": 67,
+          "stats": { "str": 66, "spd": 68, "hnd": 66, "kck": 36, "tck": 62, "stm": 64 },
+          "nationality": "Chile",
+          "season": "2024"
+        },
+        {
+          "id": "chi-013",
+          "name": "Sebastián Musso",
+          "position": "LW",
+          "overall": 70,
+          "stats": { "str": 62, "spd": 78, "hnd": 68, "kck": 42, "tck": 56, "stm": 70 },
+          "nationality": "Chile",
+          "season": "2024"
+        },
+        {
+          "id": "chi-014",
+          "name": "Benjamín Vidmar",
+          "position": "RW",
+          "overall": 69,
+          "stats": { "str": 60, "spd": 78, "hnd": 66, "kck": 40, "tck": 54, "stm": 70 },
+          "nationality": "Chile",
+          "season": "2024"
+        },
+        {
+          "id": "chi-015",
+          "name": "Tomás Dussaillant",
+          "position": "FB",
+          "overall": 71,
+          "stats": { "str": 60, "spd": 76, "hnd": 70, "kck": 70, "tck": 56, "stm": 68 },
+          "nationality": "Chile",
+          "season": "2024"
+        }
+      ]
+    },
+    {
+      "club": "United States",
+      "season": "2024",
+      "competition": "World Cup",
+      "badge": "USA",
+      "players": [
+        {
+          "id": "usa-001",
+          "name": "David Tameilau",
+          "position": "LH",
+          "overall": 66,
+          "stats": { "str": 74, "spd": 48, "hnd": 52, "kck": 22, "tck": 58, "stm": 58 },
+          "nationality": "United States",
+          "season": "2024"
+        },
+        {
+          "id": "usa-002",
+          "name": "Dylan Fawsitt",
+          "position": "HK",
+          "overall": 68,
+          "stats": { "str": 72, "spd": 56, "hnd": 58, "kck": 28, "tck": 62, "stm": 64 },
+          "nationality": "United States",
+          "season": "2024"
+        },
+        {
+          "id": "usa-003",
+          "name": "Paul Mullen",
+          "position": "TH",
+          "overall": 66,
+          "stats": { "str": 78, "spd": 42, "hnd": 48, "kck": 20, "tck": 56, "stm": 54 },
+          "nationality": "United States",
+          "season": "2024"
+        },
+        {
+          "id": "usa-004",
+          "name": "Greg Peterson",
+          "position": "LL",
+          "overall": 66,
+          "stats": { "str": 76, "spd": 48, "hnd": 50, "kck": 22, "tck": 62, "stm": 60 },
+          "nationality": "United States",
+          "season": "2024"
+        },
+        {
+          "id": "usa-005",
+          "name": "Nate Brakeley",
+          "position": "RL",
+          "overall": 67,
+          "stats": { "str": 78, "spd": 50, "hnd": 52, "kck": 22, "tck": 62, "stm": 62 },
+          "nationality": "United States",
+          "season": "2024"
+        },
+        {
+          "id": "usa-006",
+          "name": "Tony Lamborn",
+          "position": "BF",
+          "overall": 68,
+          "stats": { "str": 74, "spd": 60, "hnd": 58, "kck": 26, "tck": 72, "stm": 70 },
+          "nationality": "United States",
+          "season": "2024"
+        },
+        {
+          "id": "usa-007",
+          "name": "Hanco Germishuys",
+          "position": "OF",
+          "overall": 69,
+          "stats": { "str": 70, "spd": 64, "hnd": 60, "kck": 26, "tck": 74, "stm": 76 },
+          "nationality": "United States",
+          "season": "2024"
+        },
+        {
+          "id": "usa-008",
+          "name": "Cam Dolan",
+          "position": "N8",
+          "overall": 70,
+          "stats": { "str": 78, "spd": 62, "hnd": 62, "kck": 28, "tck": 68, "stm": 68 },
+          "nationality": "United States",
+          "season": "2024"
+        },
+        {
+          "id": "usa-009",
+          "name": "Ruben de Haas",
+          "position": "SH",
+          "overall": 69,
+          "stats": { "str": 54, "spd": 74, "hnd": 74, "kck": 62, "tck": 56, "stm": 72 },
+          "nationality": "United States",
+          "season": "2024"
+        },
+        {
+          "id": "usa-010",
+          "name": "AJ MacGinty",
+          "position": "FH",
+          "overall": 73,
+          "stats": { "str": 52, "spd": 64, "hnd": 76, "kck": 82, "tck": 50, "stm": 66 },
+          "nationality": "United States",
+          "season": "2024"
+        },
+        {
+          "id": "usa-011",
+          "name": "Will Hooley",
+          "position": "IC",
+          "overall": 69,
+          "stats": { "str": 66, "spd": 70, "hnd": 70, "kck": 58, "tck": 62, "stm": 66 },
+          "nationality": "United States",
+          "season": "2024"
+        },
+        {
+          "id": "usa-012",
+          "name": "Parker Elrington",
+          "position": "OC",
+          "overall": 68,
+          "stats": { "str": 66, "spd": 70, "hnd": 66, "kck": 36, "tck": 62, "stm": 64 },
+          "nationality": "United States",
+          "season": "2024"
+        },
+        {
+          "id": "usa-013",
+          "name": "Mike Dabulas",
+          "position": "LW",
+          "overall": 70,
+          "stats": { "str": 64, "spd": 78, "hnd": 68, "kck": 40, "tck": 58, "stm": 70 },
+          "nationality": "United States",
+          "season": "2024"
+        },
+        {
+          "id": "usa-014",
+          "name": "Blaine Scully",
+          "position": "RW",
+          "overall": 70,
+          "stats": { "str": 62, "spd": 78, "hnd": 68, "kck": 44, "tck": 58, "stm": 70 },
+          "nationality": "United States",
+          "season": "2024"
+        },
+        {
+          "id": "usa-015",
+          "name": "Bryce Campbell",
+          "position": "FB",
+          "overall": 71,
+          "stats": { "str": 60, "spd": 76, "hnd": 70, "kck": 68, "tck": 58, "stm": 68 },
+          "nationality": "United States",
+          "season": "2024"
+        }
+      ]
+    },
+    {
+      "club": "Japan",
+      "season": "2024",
+      "competition": "World Cup",
+      "badge": "JPN",
+      "players": [
+        {
+          "id": "jpn-001",
+          "name": "Keita Inagaki",
+          "position": "LH",
+          "overall": 75,
+          "stats": { "str": 82, "spd": 56, "hnd": 60, "kck": 30, "tck": 68, "stm": 70 },
+          "nationality": "Japan",
+          "season": "2024"
+        },
+        {
+          "id": "jpn-002",
+          "name": "Shota Horie",
+          "position": "HK",
+          "overall": 76,
+          "stats": { "str": 78, "spd": 62, "hnd": 66, "kck": 36, "tck": 70, "stm": 74 },
+          "nationality": "Japan",
+          "season": "2024"
+        },
+        {
+          "id": "jpn-003",
+          "name": "Jiwon Gu",
+          "position": "TH",
+          "overall": 74,
+          "stats": { "str": 84, "spd": 48, "hnd": 54, "kck": 28, "tck": 66, "stm": 64 },
+          "nationality": "Japan",
+          "season": "2024"
+        },
+        {
+          "id": "jpn-004",
+          "name": "Amato Fakatava",
+          "position": "LL",
+          "overall": 74,
+          "stats": { "str": 82, "spd": 54, "hnd": 58, "kck": 28, "tck": 70, "stm": 68 },
+          "nationality": "Japan",
+          "season": "2024"
+        },
+        {
+          "id": "jpn-005",
+          "name": "Jack Cornelsen",
+          "position": "RL",
+          "overall": 75,
+          "stats": { "str": 83, "spd": 56, "hnd": 60, "kck": 28, "tck": 72, "stm": 70 },
+          "nationality": "Japan",
+          "season": "2024"
+        },
+        {
+          "id": "jpn-006",
+          "name": "Kazuki Himeno",
+          "position": "BF",
+          "overall": 78,
+          "stats": { "str": 80, "spd": 70, "hnd": 70, "kck": 34, "tck": 82, "stm": 82 },
+          "nationality": "Japan",
+          "season": "2024"
+        },
+        {
+          "id": "jpn-007",
+          "name": "Michael Leitch",
+          "position": "OF",
+          "overall": 76,
+          "stats": { "str": 78, "spd": 68, "hnd": 68, "kck": 32, "tck": 82, "stm": 82 },
+          "nationality": "Japan",
+          "season": "2024"
+        },
+        {
+          "id": "jpn-008",
+          "name": "Tevita Tatafu",
+          "position": "N8",
+          "overall": 76,
+          "stats": { "str": 84, "spd": 66, "hnd": 66, "kck": 32, "tck": 74, "stm": 72 },
+          "nationality": "Japan",
+          "season": "2024"
+        },
+        {
+          "id": "jpn-009",
+          "name": "Yutaka Nagare",
+          "position": "SH",
+          "overall": 76,
+          "stats": { "str": 56, "spd": 80, "hnd": 80, "kck": 66, "tck": 60, "stm": 80 },
+          "nationality": "Japan",
+          "season": "2024"
+        },
+        {
+          "id": "jpn-010",
+          "name": "Rikiya Matsuda",
+          "position": "FH",
+          "overall": 78,
+          "stats": { "str": 54, "spd": 72, "hnd": 82, "kck": 82, "tck": 56, "stm": 72 },
+          "nationality": "Japan",
+          "season": "2024"
+        },
+        {
+          "id": "jpn-011",
+          "name": "Dylan Riley",
+          "position": "IC",
+          "overall": 79,
+          "stats": { "str": 76, "spd": 80, "hnd": 78, "kck": 46, "tck": 76, "stm": 76 },
+          "nationality": "Japan",
+          "season": "2024"
+        },
+        {
+          "id": "jpn-012",
+          "name": "Ryoto Nakamura",
+          "position": "OC",
+          "overall": 77,
+          "stats": { "str": 68, "spd": 78, "hnd": 78, "kck": 50, "tck": 70, "stm": 74 },
+          "nationality": "Japan",
+          "season": "2024"
+        },
+        {
+          "id": "jpn-013",
+          "name": "Kotaro Matsushima",
+          "position": "LW",
+          "overall": 80,
+          "stats": { "str": 64, "spd": 90, "hnd": 78, "kck": 56, "tck": 62, "stm": 80 },
+          "nationality": "Japan",
+          "season": "2024"
+        },
+        {
+          "id": "jpn-014",
+          "name": "Tomoki Osada",
+          "position": "RW",
+          "overall": 75,
+          "stats": { "str": 62, "spd": 86, "hnd": 72, "kck": 46, "tck": 60, "stm": 78 },
+          "nationality": "Japan",
+          "season": "2024"
+        },
+        {
+          "id": "jpn-015",
+          "name": "Semisi Masirewa",
+          "position": "FB",
+          "overall": 78,
+          "stats": { "str": 64, "spd": 88, "hnd": 76, "kck": 66, "tck": 62, "stm": 78 },
+          "nationality": "Japan",
+          "season": "2024"
+        }
+      ]
+    },
+    {
+      "club": "Wales",
+      "season": "2024",
+      "competition": "World Cup",
+      "badge": "WAL",
+      "players": [
+        {
+          "id": "wal-001",
+          "name": "Gareth Thomas",
+          "position": "LH",
+          "overall": 78,
+          "stats": { "str": 82, "spd": 54, "hnd": 60, "kck": 34, "tck": 70, "stm": 68 },
+          "nationality": "Wales",
+          "season": "2024"
+        },
+        {
+          "id": "wal-002",
+          "name": "Dewi Lake",
+          "position": "HK",
+          "overall": 80,
+          "stats": { "str": 80, "spd": 62, "hnd": 66, "kck": 40, "tck": 74, "stm": 74 },
+          "nationality": "Wales",
+          "season": "2024"
+        },
+        {
+          "id": "wal-003",
+          "name": "Tomas Francis",
+          "position": "TH",
+          "overall": 79,
+          "stats": { "str": 88, "spd": 44, "hnd": 54, "kck": 32, "tck": 68, "stm": 64 },
+          "nationality": "Wales",
+          "season": "2024"
+        },
+        {
+          "id": "wal-004",
+          "name": "Adam Beard",
+          "position": "LL",
+          "overall": 79,
+          "stats": { "str": 84, "spd": 54, "hnd": 58, "kck": 32, "tck": 74, "stm": 70 },
+          "nationality": "Wales",
+          "season": "2024"
+        },
+        {
+          "id": "wal-005",
+          "name": "Alun Wyn Jones",
+          "position": "RL",
+          "overall": 80,
+          "stats": { "str": 86, "spd": 50, "hnd": 62, "kck": 34, "tck": 78, "stm": 74 },
+          "nationality": "Wales",
+          "season": "2024"
+        },
+        {
+          "id": "wal-006",
+          "name": "Tommy Reffell",
+          "position": "BF",
+          "overall": 82,
+          "stats": { "str": 76, "spd": 70, "hnd": 68, "kck": 36, "tck": 86, "stm": 82 },
+          "nationality": "Wales",
+          "season": "2024"
+        },
+        {
+          "id": "wal-007",
+          "name": "Jac Morgan",
+          "position": "OF",
+          "overall": 83,
+          "stats": { "str": 76, "spd": 72, "hnd": 70, "kck": 36, "tck": 88, "stm": 88 },
+          "nationality": "Wales",
+          "season": "2024"
+        },
+        {
+          "id": "wal-008",
+          "name": "Taulupe Faletau",
+          "position": "N8",
+          "overall": 84,
+          "stats": { "str": 82, "spd": 70, "hnd": 76, "kck": 40, "tck": 84, "stm": 80 },
+          "nationality": "Wales",
+          "season": "2024"
+        },
+        {
+          "id": "wal-009",
+          "name": "Tomos Williams",
+          "position": "SH",
+          "overall": 82,
+          "stats": { "str": 58, "spd": 80, "hnd": 82, "kck": 68, "tck": 64, "stm": 82 },
+          "nationality": "Wales",
+          "season": "2024"
+        },
+        {
+          "id": "wal-010",
+          "name": "Dan Biggar",
+          "position": "FH",
+          "overall": 84,
+          "stats": { "str": 60, "spd": 64, "hnd": 82, "kck": 88, "tck": 62, "stm": 74 },
+          "nationality": "Wales",
+          "season": "2024"
+        },
+        {
+          "id": "wal-011",
+          "name": "Mason Grady",
+          "position": "IC",
+          "overall": 81,
+          "stats": { "str": 76, "spd": 80, "hnd": 76, "kck": 46, "tck": 74, "stm": 76 },
+          "nationality": "Wales",
+          "season": "2024"
+        },
+        {
+          "id": "wal-012",
+          "name": "Nick Tompkins",
+          "position": "OC",
+          "overall": 79,
+          "stats": { "str": 70, "spd": 74, "hnd": 76, "kck": 46, "tck": 72, "stm": 74 },
+          "nationality": "Wales",
+          "season": "2024"
+        },
+        {
+          "id": "wal-013",
+          "name": "Josh Adams",
+          "position": "LW",
+          "overall": 84,
+          "stats": { "str": 70, "spd": 86, "hnd": 78, "kck": 52, "tck": 68, "stm": 80 },
+          "nationality": "Wales",
+          "season": "2024"
+        },
+        {
+          "id": "wal-014",
+          "name": "Louis Rees-Zammit",
+          "position": "RW",
+          "overall": 84,
+          "stats": { "str": 66, "spd": 92, "hnd": 76, "kck": 54, "tck": 62, "stm": 82 },
+          "nationality": "Wales",
+          "season": "2024"
+        },
+        {
+          "id": "wal-015",
+          "name": "Liam Williams",
+          "position": "FB",
+          "overall": 83,
+          "stats": { "str": 66, "spd": 84, "hnd": 78, "kck": 70, "tck": 66, "stm": 80 },
+          "nationality": "Wales",
+          "season": "2024"
+        }
+      ]
+    },
+    {
+      "club": "Argentina",
+      "season": "2024",
+      "competition": "World Cup",
+      "badge": "ARG",
+      "players": [
+        {
+          "id": "arg-001",
+          "name": "Thomas Gallo",
+          "position": "LH",
+          "overall": 82,
+          "stats": { "str": 86, "spd": 56, "hnd": 62, "kck": 36, "tck": 74, "stm": 70 },
+          "nationality": "Argentina",
+          "season": "2024"
+        },
+        {
+          "id": "arg-002",
+          "name": "Julián Montoya",
+          "position": "HK",
+          "overall": 84,
+          "stats": { "str": 82, "spd": 64, "hnd": 70, "kck": 42, "tck": 78, "stm": 76 },
+          "nationality": "Argentina",
+          "season": "2024"
+        },
+        {
+          "id": "arg-003",
+          "name": "Eduardo Bello",
+          "position": "TH",
+          "overall": 79,
+          "stats": { "str": 87, "spd": 48, "hnd": 56, "kck": 34, "tck": 70, "stm": 66 },
+          "nationality": "Argentina",
+          "season": "2024"
+        },
+        {
+          "id": "arg-004",
+          "name": "Guido Petti",
+          "position": "LL",
+          "overall": 80,
+          "stats": { "str": 86, "spd": 56, "hnd": 60, "kck": 34, "tck": 76, "stm": 72 },
+          "nationality": "Argentina",
+          "season": "2024"
+        },
+        {
+          "id": "arg-005",
+          "name": "Matías Alemanno",
+          "position": "RL",
+          "overall": 79,
+          "stats": { "str": 85, "spd": 54, "hnd": 58, "kck": 32, "tck": 74, "stm": 70 },
+          "nationality": "Argentina",
+          "season": "2024"
+        },
+        {
+          "id": "arg-006",
+          "name": "Marcos Kremer",
+          "position": "BF",
+          "overall": 83,
+          "stats": { "str": 84, "spd": 68, "hnd": 68, "kck": 36, "tck": 84, "stm": 80 },
+          "nationality": "Argentina",
+          "season": "2024"
+        },
+        {
+          "id": "arg-007",
+          "name": "Pablo Matera",
+          "position": "OF",
+          "overall": 84,
+          "stats": { "str": 82, "spd": 72, "hnd": 72, "kck": 38, "tck": 86, "stm": 86 },
+          "nationality": "Argentina",
+          "season": "2024"
+        },
+        {
+          "id": "arg-008",
+          "name": "Facundo Isa",
+          "position": "N8",
+          "overall": 82,
+          "stats": { "str": 84, "spd": 68, "hnd": 70, "kck": 38, "tck": 80, "stm": 78 },
+          "nationality": "Argentina",
+          "season": "2024"
+        },
+        {
+          "id": "arg-009",
+          "name": "Gonzalo Bertranou",
+          "position": "SH",
+          "overall": 81,
+          "stats": { "str": 60, "spd": 78, "hnd": 82, "kck": 68, "tck": 64, "stm": 82 },
+          "nationality": "Argentina",
+          "season": "2024"
+        },
+        {
+          "id": "arg-010",
+          "name": "Santiago Carreras",
+          "position": "FH",
+          "overall": 82,
+          "stats": { "str": 58, "spd": 76, "hnd": 82, "kck": 84, "tck": 58, "stm": 74 },
+          "nationality": "Argentina",
+          "season": "2024"
+        },
+        {
+          "id": "arg-011",
+          "name": "Jerónimo de la Fuente",
+          "position": "IC",
+          "overall": 82,
+          "stats": { "str": 74, "spd": 76, "hnd": 80, "kck": 50, "tck": 78, "stm": 76 },
+          "nationality": "Argentina",
+          "season": "2024"
+        },
+        {
+          "id": "arg-012",
+          "name": "Matías Orlando",
+          "position": "OC",
+          "overall": 80,
+          "stats": { "str": 72, "spd": 76, "hnd": 78, "kck": 48, "tck": 74, "stm": 74 },
+          "nationality": "Argentina",
+          "season": "2024"
+        },
+        {
+          "id": "arg-013",
+          "name": "Emiliano Boffelli",
+          "position": "LW",
+          "overall": 85,
+          "stats": { "str": 66, "spd": 86, "hnd": 80, "kck": 84, "tck": 64, "stm": 80 },
+          "nationality": "Argentina",
+          "season": "2024"
+        },
+        {
+          "id": "arg-014",
+          "name": "Mateo Carreras",
+          "position": "RW",
+          "overall": 83,
+          "stats": { "str": 64, "spd": 90, "hnd": 76, "kck": 52, "tck": 62, "stm": 82 },
+          "nationality": "Argentina",
+          "season": "2024"
+        },
+        {
+          "id": "arg-015",
+          "name": "Juan Cruz Mallía",
+          "position": "FB",
+          "overall": 83,
+          "stats": { "str": 64, "spd": 84, "hnd": 80, "kck": 76, "tck": 66, "stm": 78 },
+          "nationality": "Argentina",
+          "season": "2024"
+        }
+      ]
+    },
+    {
+      "club": "New Zealand",
+      "season": "2015",
+      "competition": "World Cup",
+      "badge": "NZ15",
+      "players": [
+        {
+          "id": "nz15-001",
+          "name": "Wyatt Crockett",
+          "position": "LH",
+          "overall": 89,
+          "stats": { "str": 92, "spd": 60, "hnd": 68, "kck": 42, "tck": 78, "stm": 74 },
+          "nationality": "New Zealand",
+          "season": "2015"
+        },
+        {
+          "id": "nz15-002",
+          "name": "Dane Coles",
+          "position": "HK",
+          "overall": 92,
+          "stats": { "str": 86, "spd": 74, "hnd": 82, "kck": 58, "tck": 84, "stm": 84 },
+          "nationality": "New Zealand",
+          "season": "2015"
+        },
+        {
+          "id": "nz15-003",
+          "name": "Owen Franks",
+          "position": "TH",
+          "overall": 90,
+          "stats": { "str": 93, "spd": 54, "hnd": 66, "kck": 40, "tck": 76, "stm": 72 },
+          "nationality": "New Zealand",
+          "season": "2015"
+        },
+        {
+          "id": "nz15-004",
+          "name": "Luke Romano",
+          "position": "LL",
+          "overall": 88,
+          "stats": { "str": 88, "spd": 60, "hnd": 66, "kck": 42, "tck": 82, "stm": 76 },
+          "nationality": "New Zealand",
+          "season": "2015"
+        },
+        {
+          "id": "nz15-005",
+          "name": "Brodie Retallick",
+          "position": "RL",
+          "overall": 93,
+          "stats": { "str": 92, "spd": 68, "hnd": 76, "kck": 46, "tck": 88, "stm": 84 },
+          "nationality": "New Zealand",
+          "season": "2015"
+        },
+        {
+          "id": "nz15-006",
+          "name": "Jerome Kaino",
+          "position": "BF",
+          "overall": 91,
+          "stats": { "str": 88, "spd": 74, "hnd": 74, "kck": 44, "tck": 90, "stm": 84 },
+          "nationality": "New Zealand",
+          "season": "2015"
+        },
+        {
+          "id": "nz15-007",
+          "name": "Richie McCaw",
+          "position": "OF",
+          "overall": 97,
+          "stats": { "str": 84, "spd": 82, "hnd": 86, "kck": 50, "tck": 96, "stm": 96 },
+          "nationality": "New Zealand",
+          "season": "2015"
+        },
+        {
+          "id": "nz15-008",
+          "name": "Kieran Read",
+          "position": "N8",
+          "overall": 94,
+          "stats": { "str": 90, "spd": 76, "hnd": 84, "kck": 54, "tck": 90, "stm": 88 },
+          "nationality": "New Zealand",
+          "season": "2015"
+        },
+        {
+          "id": "nz15-009",
+          "name": "Aaron Smith",
+          "position": "SH",
+          "overall": 94,
+          "stats": { "str": 64, "spd": 90, "hnd": 94, "kck": 82, "tck": 76, "stm": 92 },
+          "nationality": "New Zealand",
+          "season": "2015"
+        },
+        {
+          "id": "nz15-010",
+          "name": "Dan Carter",
+          "position": "FH",
+          "overall": 97,
+          "stats": { "str": 64, "spd": 76, "hnd": 94, "kck": 98, "tck": 66, "stm": 82 },
+          "nationality": "New Zealand",
+          "season": "2015"
+        },
+        {
+          "id": "nz15-011",
+          "name": "Ma'a Nonu",
+          "position": "IC",
+          "overall": 93,
+          "stats": { "str": 88, "spd": 84, "hnd": 86, "kck": 58, "tck": 88, "stm": 84 },
+          "nationality": "New Zealand",
+          "season": "2015"
+        },
+        {
+          "id": "nz15-012",
+          "name": "Conrad Smith",
+          "position": "OC",
+          "overall": 92,
+          "stats": { "str": 74, "spd": 82, "hnd": 90, "kck": 66, "tck": 86, "stm": 82 },
+          "nationality": "New Zealand",
+          "season": "2015"
+        },
+        {
+          "id": "nz15-013",
+          "name": "Julian Savea",
+          "position": "LW",
+          "overall": 93,
+          "stats": { "str": 84, "spd": 94, "hnd": 82, "kck": 54, "tck": 76, "stm": 86 },
+          "nationality": "New Zealand",
+          "season": "2015"
+        },
+        {
+          "id": "nz15-014",
+          "name": "Nehe Milner-Skudder",
+          "position": "RW",
+          "overall": 90,
+          "stats": { "str": 68, "spd": 96, "hnd": 82, "kck": 52, "tck": 68, "stm": 86 },
+          "nationality": "New Zealand",
+          "season": "2015"
+        },
+        {
+          "id": "nz15-015",
+          "name": "Ben Smith",
+          "position": "FB",
+          "overall": 92,
+          "stats": { "str": 70, "spd": 88, "hnd": 86, "kck": 84, "tck": 76, "stm": 86 },
+          "nationality": "New Zealand",
+          "season": "2015"
+        }
+      ]
+    },
+    {
+      "club": "England",
+      "season": "2003",
+      "competition": "World Cup",
+      "badge": "EN03",
+      "players": [
+        {
+          "id": "en03-001",
+          "name": "Trevor Woodman",
+          "position": "LH",
+          "overall": 88,
+          "stats": { "str": 91, "spd": 58, "hnd": 66, "kck": 40, "tck": 76, "stm": 72 },
+          "nationality": "England",
+          "season": "2003"
+        },
+        {
+          "id": "en03-002",
+          "name": "Steve Thompson",
+          "position": "HK",
+          "overall": 89,
+          "stats": { "str": 86, "spd": 64, "hnd": 72, "kck": 52, "tck": 82, "stm": 78 },
+          "nationality": "England",
+          "season": "2003"
+        },
+        {
+          "id": "en03-003",
+          "name": "Phil Vickery",
+          "position": "TH",
+          "overall": 89,
+          "stats": { "str": 93, "spd": 52, "hnd": 64, "kck": 40, "tck": 76, "stm": 70 },
+          "nationality": "England",
+          "season": "2003"
+        },
+        {
+          "id": "en03-004",
+          "name": "Martin Johnson",
+          "position": "LL",
+          "overall": 95,
+          "stats": { "str": 94, "spd": 62, "hnd": 72, "kck": 46, "tck": 92, "stm": 84 },
+          "nationality": "England",
+          "season": "2003"
+        },
+        {
+          "id": "en03-005",
+          "name": "Ben Kay",
+          "position": "RL",
+          "overall": 88,
+          "stats": { "str": 88, "spd": 60, "hnd": 68, "kck": 42, "tck": 82, "stm": 76 },
+          "nationality": "England",
+          "season": "2003"
+        },
+        {
+          "id": "en03-006",
+          "name": "Lawrence Dallaglio",
+          "position": "BF",
+          "overall": 93,
+          "stats": { "str": 88, "spd": 72, "hnd": 78, "kck": 48, "tck": 90, "stm": 86 },
+          "nationality": "England",
+          "season": "2003"
+        },
+        {
+          "id": "en03-007",
+          "name": "Neil Back",
+          "position": "OF",
+          "overall": 91,
+          "stats": { "str": 76, "spd": 80, "hnd": 82, "kck": 48, "tck": 92, "stm": 92 },
+          "nationality": "England",
+          "season": "2003"
+        },
+        {
+          "id": "en03-008",
+          "name": "Richard Hill",
+          "position": "N8",
+          "overall": 92,
+          "stats": { "str": 86, "spd": 74, "hnd": 80, "kck": 48, "tck": 90, "stm": 86 },
+          "nationality": "England",
+          "season": "2003"
+        },
+        {
+          "id": "en03-009",
+          "name": "Matt Dawson",
+          "position": "SH",
+          "overall": 90,
+          "stats": { "str": 64, "spd": 82, "hnd": 88, "kck": 80, "tck": 72, "stm": 86 },
+          "nationality": "England",
+          "season": "2003"
+        },
+        {
+          "id": "en03-010",
+          "name": "Jonny Wilkinson",
+          "position": "FH",
+          "overall": 97,
+          "stats": { "str": 70, "spd": 72, "hnd": 90, "kck": 99, "tck": 78, "stm": 82 },
+          "nationality": "England",
+          "season": "2003"
+        },
+        {
+          "id": "en03-011",
+          "name": "Mike Catt",
+          "position": "IC",
+          "overall": 88,
+          "stats": { "str": 72, "spd": 76, "hnd": 86, "kck": 82, "tck": 74, "stm": 76 },
+          "nationality": "England",
+          "season": "2003"
+        },
+        {
+          "id": "en03-012",
+          "name": "Will Greenwood",
+          "position": "OC",
+          "overall": 91,
+          "stats": { "str": 72, "spd": 82, "hnd": 90, "kck": 64, "tck": 82, "stm": 80 },
+          "nationality": "England",
+          "season": "2003"
+        },
+        {
+          "id": "en03-013",
+          "name": "Ben Cohen",
+          "position": "LW",
+          "overall": 90,
+          "stats": { "str": 78, "spd": 90, "hnd": 80, "kck": 58, "tck": 72, "stm": 84 },
+          "nationality": "England",
+          "season": "2003"
+        },
+        {
+          "id": "en03-014",
+          "name": "Jason Robinson",
+          "position": "RW",
+          "overall": 93,
+          "stats": { "str": 68, "spd": 97, "hnd": 86, "kck": 58, "tck": 70, "stm": 88 },
+          "nationality": "England",
+          "season": "2003"
+        },
+        {
+          "id": "en03-015",
+          "name": "Josh Lewsey",
+          "position": "FB",
+          "overall": 90,
+          "stats": { "str": 70, "spd": 88, "hnd": 82, "kck": 78, "tck": 74, "stm": 84 },
+          "nationality": "England",
+          "season": "2003"
+        }
+      ]
+    },
+    {
+      "club": "South Africa",
+      "season": "1995",
+      "competition": "World Cup",
+      "badge": "RS95",
+      "players": [
+        {
+          "id": "rs95-001",
+          "name": "Os du Randt",
+          "position": "LH",
+          "overall": 92,
+          "stats": { "str": 95, "spd": 58, "hnd": 66, "kck": 40, "tck": 80, "stm": 74 },
+          "nationality": "South Africa",
+          "season": "1995"
+        },
+        {
+          "id": "rs95-002",
+          "name": "Naka Drotské",
+          "position": "HK",
+          "overall": 88,
+          "stats": { "str": 84, "spd": 64, "hnd": 72, "kck": 50, "tck": 82, "stm": 78 },
+          "nationality": "South Africa",
+          "season": "1995"
+        },
+        {
+          "id": "rs95-003",
+          "name": "Balie Swart",
+          "position": "TH",
+          "overall": 88,
+          "stats": { "str": 92, "spd": 52, "hnd": 62, "kck": 38, "tck": 74, "stm": 68 },
+          "nationality": "South Africa",
+          "season": "1995"
+        },
+        {
+          "id": "rs95-004",
+          "name": "Mark Andrews",
+          "position": "LL",
+          "overall": 90,
+          "stats": { "str": 90, "spd": 62, "hnd": 70, "kck": 44, "tck": 86, "stm": 80 },
+          "nationality": "South Africa",
+          "season": "1995"
+        },
+        {
+          "id": "rs95-005",
+          "name": "Hannes Strydom",
+          "position": "RL",
+          "overall": 88,
+          "stats": { "str": 90, "spd": 58, "hnd": 66, "kck": 42, "tck": 84, "stm": 76 },
+          "nationality": "South Africa",
+          "season": "1995"
+        },
+        {
+          "id": "rs95-006",
+          "name": "Ruben Kruger",
+          "position": "BF",
+          "overall": 91,
+          "stats": { "str": 86, "spd": 74, "hnd": 72, "kck": 44, "tck": 92, "stm": 86 },
+          "nationality": "South Africa",
+          "season": "1995"
+        },
+        {
+          "id": "rs95-007",
+          "name": "Francois Pienaar",
+          "position": "OF",
+          "overall": 93,
+          "stats": { "str": 84, "spd": 76, "hnd": 80, "kck": 48, "tck": 92, "stm": 90 },
+          "nationality": "South Africa",
+          "season": "1995"
+        },
+        {
+          "id": "rs95-008",
+          "name": "Adriaan Richter",
+          "position": "N8",
+          "overall": 89,
+          "stats": { "str": 88, "spd": 72, "hnd": 74, "kck": 46, "tck": 86, "stm": 80 },
+          "nationality": "South Africa",
+          "season": "1995"
+        },
+        {
+          "id": "rs95-009",
+          "name": "Joost van der Westhuizen",
+          "position": "SH",
+          "overall": 95,
+          "stats": { "str": 72, "spd": 92, "hnd": 90, "kck": 78, "tck": 84, "stm": 90 },
+          "nationality": "South Africa",
+          "season": "1995"
+        },
+        {
+          "id": "rs95-010",
+          "name": "Joel Stransky",
+          "position": "FH",
+          "overall": 91,
+          "stats": { "str": 62, "spd": 70, "hnd": 88, "kck": 94, "tck": 62, "stm": 76 },
+          "nationality": "South Africa",
+          "season": "1995"
+        },
+        {
+          "id": "rs95-011",
+          "name": "Japie Mulder",
+          "position": "IC",
+          "overall": 89,
+          "stats": { "str": 82, "spd": 80, "hnd": 82, "kck": 54, "tck": 86, "stm": 80 },
+          "nationality": "South Africa",
+          "season": "1995"
+        },
+        {
+          "id": "rs95-012",
+          "name": "Brendan Venter",
+          "position": "OC",
+          "overall": 89,
+          "stats": { "str": 78, "spd": 80, "hnd": 84, "kck": 58, "tck": 84, "stm": 80 },
+          "nationality": "South Africa",
+          "season": "1995"
+        },
+        {
+          "id": "rs95-013",
+          "name": "James Small",
+          "position": "LW",
+          "overall": 90,
+          "stats": { "str": 70, "spd": 92, "hnd": 80, "kck": 54, "tck": 72, "stm": 84 },
+          "nationality": "South Africa",
+          "season": "1995"
+        },
+        {
+          "id": "rs95-014",
+          "name": "Pieter Hendriks",
+          "position": "RW",
+          "overall": 89,
+          "stats": { "str": 68, "spd": 93, "hnd": 78, "kck": 52, "tck": 68, "stm": 84 },
+          "nationality": "South Africa",
+          "season": "1995"
+        },
+        {
+          "id": "rs95-015",
+          "name": "Andre Joubert",
+          "position": "FB",
+          "overall": 92,
+          "stats": { "str": 70, "spd": 88, "hnd": 86, "kck": 84, "tck": 76, "stm": 84 },
+          "nationality": "South Africa",
+          "season": "1995"
+        }
+      ]
+    },
+    {
+      "club": "Australia",
+      "season": "1999",
+      "competition": "World Cup",
+      "badge": "AU99",
+      "players": [
+        {
+          "id": "au99-001",
+          "name": "Bill Young",
+          "position": "LH",
+          "overall": 88,
+          "stats": { "str": 91, "spd": 58, "hnd": 66, "kck": 40, "tck": 76, "stm": 72 },
+          "nationality": "Australia",
+          "season": "1999"
+        },
+        {
+          "id": "au99-002",
+          "name": "Michael Foley",
+          "position": "HK",
+          "overall": 88,
+          "stats": { "str": 84, "spd": 64, "hnd": 72, "kck": 52, "tck": 82, "stm": 78 },
+          "nationality": "Australia",
+          "season": "1999"
+        },
+        {
+          "id": "au99-003",
+          "name": "Andrew Blades",
+          "position": "TH",
+          "overall": 87,
+          "stats": { "str": 92, "spd": 52, "hnd": 62, "kck": 38, "tck": 74, "stm": 68 },
+          "nationality": "Australia",
+          "season": "1999"
+        },
+        {
+          "id": "au99-004",
+          "name": "John Eales",
+          "position": "LL",
+          "overall": 95,
+          "stats": { "str": 90, "spd": 66, "hnd": 78, "kck": 86, "tck": 88, "stm": 82 },
+          "nationality": "Australia",
+          "season": "1999"
+        },
+        {
+          "id": "au99-005",
+          "name": "David Giffin",
+          "position": "RL",
+          "overall": 88,
+          "stats": { "str": 88, "spd": 60, "hnd": 66, "kck": 42, "tck": 82, "stm": 76 },
+          "nationality": "Australia",
+          "season": "1999"
+        },
+        {
+          "id": "au99-006",
+          "name": "Matt Cockbain",
+          "position": "BF",
+          "overall": 87,
+          "stats": { "str": 82, "spd": 70, "hnd": 68, "kck": 42, "tck": 86, "stm": 80 },
+          "nationality": "Australia",
+          "season": "1999"
+        },
+        {
+          "id": "au99-007",
+          "name": "David Wilson",
+          "position": "OF",
+          "overall": 88,
+          "stats": { "str": 78, "spd": 76, "hnd": 76, "kck": 44, "tck": 88, "stm": 88 },
+          "nationality": "Australia",
+          "season": "1999"
+        },
+        {
+          "id": "au99-008",
+          "name": "Toutai Kefu",
+          "position": "N8",
+          "overall": 92,
+          "stats": { "str": 90, "spd": 74, "hnd": 80, "kck": 48, "tck": 88, "stm": 84 },
+          "nationality": "Australia",
+          "season": "1999"
+        },
+        {
+          "id": "au99-009",
+          "name": "George Gregan",
+          "position": "SH",
+          "overall": 93,
+          "stats": { "str": 66, "spd": 84, "hnd": 92, "kck": 78, "tck": 78, "stm": 90 },
+          "nationality": "Australia",
+          "season": "1999"
+        },
+        {
+          "id": "au99-010",
+          "name": "Stephen Larkham",
+          "position": "FH",
+          "overall": 93,
+          "stats": { "str": 62, "spd": 76, "hnd": 92, "kck": 88, "tck": 64, "stm": 80 },
+          "nationality": "Australia",
+          "season": "1999"
+        },
+        {
+          "id": "au99-011",
+          "name": "Jason Little",
+          "position": "IC",
+          "overall": 89,
+          "stats": { "str": 74, "spd": 82, "hnd": 86, "kck": 60, "tck": 82, "stm": 78 },
+          "nationality": "Australia",
+          "season": "1999"
+        },
+        {
+          "id": "au99-012",
+          "name": "Tim Horan",
+          "position": "OC",
+          "overall": 94,
+          "stats": { "str": 76, "spd": 84, "hnd": 92, "kck": 66, "tck": 86, "stm": 82 },
+          "nationality": "Australia",
+          "season": "1999"
+        },
+        {
+          "id": "au99-013",
+          "name": "Joe Roff",
+          "position": "LW",
+          "overall": 92,
+          "stats": { "str": 72, "spd": 92, "hnd": 84, "kck": 74, "tck": 70, "stm": 86 },
+          "nationality": "Australia",
+          "season": "1999"
+        },
+        {
+          "id": "au99-014",
+          "name": "Ben Tune",
+          "position": "RW",
+          "overall": 90,
+          "stats": { "str": 70, "spd": 92, "hnd": 80, "kck": 56, "tck": 68, "stm": 84 },
+          "nationality": "Australia",
+          "season": "1999"
+        },
+        {
+          "id": "au99-015",
+          "name": "Matt Burke",
+          "position": "FB",
+          "overall": 91,
+          "stats": { "str": 70, "spd": 84, "hnd": 84, "kck": 90, "tck": 72, "stm": 82 },
+          "nationality": "Australia",
+          "season": "1999"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1005 @@
+{
+  "nations": [
+    {
+      "club": "England",
+      "season": "2026",
+      "competition": "Six Nations",
+      "badge": "ENG",
+      "players": [
+        {
+          "id": "eng-001",
+          "name": "Ellis Genge",
+          "position": "LH",
+          "overall": 85,
+          "stats": { "str": 88, "spd": 62, "hnd": 68, "kck": 45, "tck": 76, "stm": 72 },
+          "nationality": "England",
+          "season": "2026"
+        },
+        {
+          "id": "eng-002",
+          "name": "Jamie George",
+          "position": "HK",
+          "overall": 88,
+          "stats": { "str": 84, "spd": 65, "hnd": 74, "kck": 58, "tck": 80, "stm": 76 },
+          "nationality": "England",
+          "season": "2026"
+        },
+        {
+          "id": "eng-003",
+          "name": "Will Stuart",
+          "position": "TH",
+          "overall": 84,
+          "stats": { "str": 89, "spd": 50, "hnd": 60, "kck": 40, "tck": 73, "stm": 69 },
+          "nationality": "England",
+          "season": "2026"
+        },
+        {
+          "id": "eng-004",
+          "name": "Maro Itoje",
+          "position": "LL",
+          "overall": 91,
+          "stats": { "str": 88, "spd": 70, "hnd": 74, "kck": 52, "tck": 88, "stm": 82 },
+          "nationality": "England",
+          "season": "2026"
+        },
+        {
+          "id": "eng-005",
+          "name": "Ollie Chessum",
+          "position": "RL",
+          "overall": 85,
+          "stats": { "str": 86, "spd": 66, "hnd": 68, "kck": 44, "tck": 80, "stm": 76 },
+          "nationality": "England",
+          "season": "2026"
+        },
+        {
+          "id": "eng-006",
+          "name": "Chandler Cunningham-South",
+          "position": "BF",
+          "overall": 85,
+          "stats": { "str": 83, "spd": 71, "hnd": 68, "kck": 42, "tck": 85, "stm": 79 },
+          "nationality": "England",
+          "season": "2026"
+        },
+        {
+          "id": "eng-007",
+          "name": "Tom Curry",
+          "position": "OF",
+          "overall": 87,
+          "stats": { "str": 78, "spd": 78, "hnd": 78, "kck": 46, "tck": 88, "stm": 88 },
+          "nationality": "England",
+          "season": "2026"
+        },
+        {
+          "id": "eng-008",
+          "name": "Ben Earl",
+          "position": "N8",
+          "overall": 87,
+          "stats": { "str": 85, "spd": 75, "hnd": 77, "kck": 48, "tck": 85, "stm": 81 },
+          "nationality": "England",
+          "season": "2026"
+        },
+        {
+          "id": "eng-009",
+          "name": "Alex Mitchell",
+          "position": "SH",
+          "overall": 85,
+          "stats": { "str": 66, "spd": 80, "hnd": 84, "kck": 76, "tck": 72, "stm": 86 },
+          "nationality": "England",
+          "season": "2026"
+        },
+        {
+          "id": "eng-010",
+          "name": "Fin Smith",
+          "position": "FH",
+          "overall": 85,
+          "stats": { "str": 62, "spd": 70, "hnd": 86, "kck": 88, "tck": 62, "stm": 74 },
+          "nationality": "England",
+          "season": "2026"
+        },
+        {
+          "id": "eng-011",
+          "name": "Ollie Lawrence",
+          "position": "IC",
+          "overall": 85,
+          "stats": { "str": 80, "spd": 82, "hnd": 78, "kck": 50, "tck": 82, "stm": 76 },
+          "nationality": "England",
+          "season": "2026"
+        },
+        {
+          "id": "eng-012",
+          "name": "Henry Slade",
+          "position": "OC",
+          "overall": 84,
+          "stats": { "str": 70, "spd": 78, "hnd": 84, "kck": 72, "tck": 76, "stm": 74 },
+          "nationality": "England",
+          "season": "2026"
+        },
+        {
+          "id": "eng-013",
+          "name": "Tommy Freeman",
+          "position": "LW",
+          "overall": 85,
+          "stats": { "str": 68, "spd": 88, "hnd": 78, "kck": 52, "tck": 68, "stm": 84 },
+          "nationality": "England",
+          "season": "2026"
+        },
+        {
+          "id": "eng-014",
+          "name": "Immanuel Feyi-Waboso",
+          "position": "RW",
+          "overall": 86,
+          "stats": { "str": 74, "spd": 90, "hnd": 78, "kck": 50, "tck": 70, "stm": 82 },
+          "nationality": "England",
+          "season": "2026"
+        },
+        {
+          "id": "eng-015",
+          "name": "Freddie Steward",
+          "position": "FB",
+          "overall": 86,
+          "stats": { "str": 72, "spd": 82, "hnd": 80, "kck": 78, "tck": 74, "stm": 80 },
+          "nationality": "England",
+          "season": "2026"
+        }
+      ]
+    },
+    {
+      "club": "Ireland",
+      "season": "2026",
+      "competition": "Six Nations",
+      "badge": "IRE",
+      "players": [
+        {
+          "id": "ire-001",
+          "name": "Andrew Porter",
+          "position": "LH",
+          "overall": 88,
+          "stats": { "str": 90, "spd": 62, "hnd": 70, "kck": 44, "tck": 78, "stm": 74 },
+          "nationality": "Ireland",
+          "season": "2026"
+        },
+        {
+          "id": "ire-002",
+          "name": "Tom Stewart",
+          "position": "HK",
+          "overall": 86,
+          "stats": { "str": 83, "spd": 68, "hnd": 74, "kck": 52, "tck": 78, "stm": 78 },
+          "nationality": "Ireland",
+          "season": "2026"
+        },
+        {
+          "id": "ire-003",
+          "name": "Tadhg Furlong",
+          "position": "TH",
+          "overall": 91,
+          "stats": { "str": 92, "spd": 58, "hnd": 72, "kck": 44, "tck": 78, "stm": 74 },
+          "nationality": "Ireland",
+          "season": "2026"
+        },
+        {
+          "id": "ire-004",
+          "name": "Joe McCarthy",
+          "position": "LL",
+          "overall": 86,
+          "stats": { "str": 86, "spd": 66, "hnd": 70, "kck": 44, "tck": 82, "stm": 78 },
+          "nationality": "Ireland",
+          "season": "2026"
+        },
+        {
+          "id": "ire-005",
+          "name": "Tadhg Beirne",
+          "position": "RL",
+          "overall": 89,
+          "stats": { "str": 86, "spd": 68, "hnd": 74, "kck": 48, "tck": 86, "stm": 82 },
+          "nationality": "Ireland",
+          "season": "2026"
+        },
+        {
+          "id": "ire-006",
+          "name": "Peter O'Mahony",
+          "position": "BF",
+          "overall": 87,
+          "stats": { "str": 84, "spd": 65, "hnd": 72, "kck": 48, "tck": 88, "stm": 80 },
+          "nationality": "Ireland",
+          "season": "2026"
+        },
+        {
+          "id": "ire-007",
+          "name": "Josh van der Flier",
+          "position": "OF",
+          "overall": 90,
+          "stats": { "str": 80, "spd": 78, "hnd": 80, "kck": 46, "tck": 90, "stm": 92 },
+          "nationality": "Ireland",
+          "season": "2026"
+        },
+        {
+          "id": "ire-008",
+          "name": "Caelan Doris",
+          "position": "N8",
+          "overall": 91,
+          "stats": { "str": 86, "spd": 78, "hnd": 82, "kck": 50, "tck": 88, "stm": 84 },
+          "nationality": "Ireland",
+          "season": "2026"
+        },
+        {
+          "id": "ire-009",
+          "name": "Jamison Gibson-Park",
+          "position": "SH",
+          "overall": 89,
+          "stats": { "str": 64, "spd": 88, "hnd": 88, "kck": 74, "tck": 72, "stm": 90 },
+          "nationality": "Ireland",
+          "season": "2026"
+        },
+        {
+          "id": "ire-010",
+          "name": "Jack Crowley",
+          "position": "FH",
+          "overall": 87,
+          "stats": { "str": 64, "spd": 72, "hnd": 86, "kck": 88, "tck": 62, "stm": 76 },
+          "nationality": "Ireland",
+          "season": "2026"
+        },
+        {
+          "id": "ire-011",
+          "name": "Bundee Aki",
+          "position": "IC",
+          "overall": 88,
+          "stats": { "str": 84, "spd": 78, "hnd": 82, "kck": 52, "tck": 86, "stm": 80 },
+          "nationality": "Ireland",
+          "season": "2026"
+        },
+        {
+          "id": "ire-012",
+          "name": "Garry Ringrose",
+          "position": "OC",
+          "overall": 88,
+          "stats": { "str": 72, "spd": 82, "hnd": 88, "kck": 62, "tck": 82, "stm": 78 },
+          "nationality": "Ireland",
+          "season": "2026"
+        },
+        {
+          "id": "ire-013",
+          "name": "James Lowe",
+          "position": "LW",
+          "overall": 87,
+          "stats": { "str": 76, "spd": 86, "hnd": 82, "kck": 68, "tck": 72, "stm": 84 },
+          "nationality": "Ireland",
+          "season": "2026"
+        },
+        {
+          "id": "ire-014",
+          "name": "Calvin Nash",
+          "position": "RW",
+          "overall": 85,
+          "stats": { "str": 68, "spd": 90, "hnd": 78, "kck": 54, "tck": 68, "stm": 84 },
+          "nationality": "Ireland",
+          "season": "2026"
+        },
+        {
+          "id": "ire-015",
+          "name": "Hugo Keenan",
+          "position": "FB",
+          "overall": 88,
+          "stats": { "str": 68, "spd": 86, "hnd": 82, "kck": 76, "tck": 74, "stm": 84 },
+          "nationality": "Ireland",
+          "season": "2026"
+        }
+      ]
+    },
+    {
+      "club": "France",
+      "season": "2026",
+      "competition": "Six Nations",
+      "badge": "FRA",
+      "players": [
+        {
+          "id": "fra-001",
+          "name": "Cyril Baille",
+          "position": "LH",
+          "overall": 88,
+          "stats": { "str": 90, "spd": 60, "hnd": 68, "kck": 42, "tck": 76, "stm": 72 },
+          "nationality": "France",
+          "season": "2026"
+        },
+        {
+          "id": "fra-002",
+          "name": "Julien Marchand",
+          "position": "HK",
+          "overall": 88,
+          "stats": { "str": 84, "spd": 66, "hnd": 74, "kck": 54, "tck": 82, "stm": 78 },
+          "nationality": "France",
+          "season": "2026"
+        },
+        {
+          "id": "fra-003",
+          "name": "Uini Atonio",
+          "position": "TH",
+          "overall": 87,
+          "stats": { "str": 93, "spd": 50, "hnd": 62, "kck": 38, "tck": 74, "stm": 66 },
+          "nationality": "France",
+          "season": "2026"
+        },
+        {
+          "id": "fra-004",
+          "name": "Thibaud Flament",
+          "position": "LL",
+          "overall": 86,
+          "stats": { "str": 86, "spd": 66, "hnd": 68, "kck": 44, "tck": 82, "stm": 78 },
+          "nationality": "France",
+          "season": "2026"
+        },
+        {
+          "id": "fra-005",
+          "name": "Emmanuel Meafou",
+          "position": "RL",
+          "overall": 87,
+          "stats": { "str": 88, "spd": 64, "hnd": 68, "kck": 42, "tck": 82, "stm": 76 },
+          "nationality": "France",
+          "season": "2026"
+        },
+        {
+          "id": "fra-006",
+          "name": "Francois Cros",
+          "position": "BF",
+          "overall": 86,
+          "stats": { "str": 82, "spd": 72, "hnd": 70, "kck": 44, "tck": 86, "stm": 80 },
+          "nationality": "France",
+          "season": "2026"
+        },
+        {
+          "id": "fra-007",
+          "name": "Charles Ollivon",
+          "position": "OF",
+          "overall": 87,
+          "stats": { "str": 80, "spd": 76, "hnd": 78, "kck": 46, "tck": 88, "stm": 88 },
+          "nationality": "France",
+          "season": "2026"
+        },
+        {
+          "id": "fra-008",
+          "name": "Gregory Alldritt",
+          "position": "N8",
+          "overall": 91,
+          "stats": { "str": 88, "spd": 76, "hnd": 82, "kck": 50, "tck": 88, "stm": 84 },
+          "nationality": "France",
+          "season": "2026"
+        },
+        {
+          "id": "fra-009",
+          "name": "Antoine Dupont",
+          "position": "SH",
+          "overall": 97,
+          "stats": { "str": 72, "spd": 96, "hnd": 96, "kck": 86, "tck": 82, "stm": 94 },
+          "nationality": "France",
+          "season": "2026"
+        },
+        {
+          "id": "fra-010",
+          "name": "Matthieu Jalibert",
+          "position": "FH",
+          "overall": 88,
+          "stats": { "str": 62, "spd": 76, "hnd": 88, "kck": 88, "tck": 62, "stm": 76 },
+          "nationality": "France",
+          "season": "2026"
+        },
+        {
+          "id": "fra-011",
+          "name": "Yoram Moefana",
+          "position": "IC",
+          "overall": 86,
+          "stats": { "str": 78, "spd": 84, "hnd": 80, "kck": 52, "tck": 80, "stm": 78 },
+          "nationality": "France",
+          "season": "2026"
+        },
+        {
+          "id": "fra-012",
+          "name": "Gael Fickou",
+          "position": "OC",
+          "overall": 87,
+          "stats": { "str": 74, "spd": 82, "hnd": 86, "kck": 64, "tck": 80, "stm": 78 },
+          "nationality": "France",
+          "season": "2026"
+        },
+        {
+          "id": "fra-013",
+          "name": "Louis Bielle-Biarrey",
+          "position": "LW",
+          "overall": 89,
+          "stats": { "str": 68, "spd": 94, "hnd": 82, "kck": 56, "tck": 68, "stm": 86 },
+          "nationality": "France",
+          "season": "2026"
+        },
+        {
+          "id": "fra-014",
+          "name": "Damian Penaud",
+          "position": "RW",
+          "overall": 88,
+          "stats": { "str": 70, "spd": 92, "hnd": 82, "kck": 58, "tck": 68, "stm": 84 },
+          "nationality": "France",
+          "season": "2026"
+        },
+        {
+          "id": "fra-015",
+          "name": "Thomas Ramos",
+          "position": "FB",
+          "overall": 88,
+          "stats": { "str": 68, "spd": 84, "hnd": 82, "kck": 88, "tck": 70, "stm": 82 },
+          "nationality": "France",
+          "season": "2026"
+        }
+      ]
+    },
+    {
+      "club": "Scotland",
+      "season": "2026",
+      "competition": "Six Nations",
+      "badge": "SCO",
+      "players": [
+        {
+          "id": "sco-001",
+          "name": "Pierre Schoeman",
+          "position": "LH",
+          "overall": 82,
+          "stats": { "str": 88, "spd": 58, "hnd": 64, "kck": 40, "tck": 72, "stm": 68 },
+          "nationality": "Scotland",
+          "season": "2026"
+        },
+        {
+          "id": "sco-002",
+          "name": "George Turner",
+          "position": "HK",
+          "overall": 80,
+          "stats": { "str": 80, "spd": 64, "hnd": 68, "kck": 48, "tck": 76, "stm": 74 },
+          "nationality": "Scotland",
+          "season": "2026"
+        },
+        {
+          "id": "sco-003",
+          "name": "Zander Fagerson",
+          "position": "TH",
+          "overall": 83,
+          "stats": { "str": 90, "spd": 50, "hnd": 62, "kck": 40, "tck": 72, "stm": 68 },
+          "nationality": "Scotland",
+          "season": "2026"
+        },
+        {
+          "id": "sco-004",
+          "name": "Richie Gray",
+          "position": "LL",
+          "overall": 80,
+          "stats": { "str": 84, "spd": 60, "hnd": 64, "kck": 42, "tck": 76, "stm": 72 },
+          "nationality": "Scotland",
+          "season": "2026"
+        },
+        {
+          "id": "sco-005",
+          "name": "Grant Gilchrist",
+          "position": "RL",
+          "overall": 80,
+          "stats": { "str": 84, "spd": 60, "hnd": 64, "kck": 42, "tck": 78, "stm": 72 },
+          "nationality": "Scotland",
+          "season": "2026"
+        },
+        {
+          "id": "sco-006",
+          "name": "Jamie Ritchie",
+          "position": "BF",
+          "overall": 82,
+          "stats": { "str": 80, "spd": 70, "hnd": 68, "kck": 42, "tck": 84, "stm": 80 },
+          "nationality": "Scotland",
+          "season": "2026"
+        },
+        {
+          "id": "sco-007",
+          "name": "Rory Darge",
+          "position": "OF",
+          "overall": 84,
+          "stats": { "str": 76, "spd": 78, "hnd": 74, "kck": 42, "tck": 86, "stm": 88 },
+          "nationality": "Scotland",
+          "season": "2026"
+        },
+        {
+          "id": "sco-008",
+          "name": "Matt Fagerson",
+          "position": "N8",
+          "overall": 82,
+          "stats": { "str": 84, "spd": 70, "hnd": 72, "kck": 44, "tck": 82, "stm": 78 },
+          "nationality": "Scotland",
+          "season": "2026"
+        },
+        {
+          "id": "sco-009",
+          "name": "Ben White",
+          "position": "SH",
+          "overall": 81,
+          "stats": { "str": 62, "spd": 80, "hnd": 82, "kck": 72, "tck": 68, "stm": 84 },
+          "nationality": "Scotland",
+          "season": "2026"
+        },
+        {
+          "id": "sco-010",
+          "name": "Finn Russell",
+          "position": "FH",
+          "overall": 88,
+          "stats": { "str": 60, "spd": 72, "hnd": 92, "kck": 88, "tck": 58, "stm": 74 },
+          "nationality": "Scotland",
+          "season": "2026"
+        },
+        {
+          "id": "sco-011",
+          "name": "Sione Tuipulotu",
+          "position": "IC",
+          "overall": 84,
+          "stats": { "str": 78, "spd": 80, "hnd": 80, "kck": 52, "tck": 82, "stm": 76 },
+          "nationality": "Scotland",
+          "season": "2026"
+        },
+        {
+          "id": "sco-012",
+          "name": "Huw Jones",
+          "position": "OC",
+          "overall": 82,
+          "stats": { "str": 70, "spd": 82, "hnd": 80, "kck": 56, "tck": 76, "stm": 76 },
+          "nationality": "Scotland",
+          "season": "2026"
+        },
+        {
+          "id": "sco-013",
+          "name": "Darcy Graham",
+          "position": "LW",
+          "overall": 84,
+          "stats": { "str": 64, "spd": 92, "hnd": 78, "kck": 54, "tck": 66, "stm": 82 },
+          "nationality": "Scotland",
+          "season": "2026"
+        },
+        {
+          "id": "sco-014",
+          "name": "Kyle Steyn",
+          "position": "RW",
+          "overall": 81,
+          "stats": { "str": 68, "spd": 88, "hnd": 74, "kck": 50, "tck": 66, "stm": 80 },
+          "nationality": "Scotland",
+          "season": "2026"
+        },
+        {
+          "id": "sco-015",
+          "name": "Blair Kinghorn",
+          "position": "FB",
+          "overall": 83,
+          "stats": { "str": 66, "spd": 84, "hnd": 78, "kck": 82, "tck": 68, "stm": 80 },
+          "nationality": "Scotland",
+          "season": "2026"
+        }
+      ]
+    },
+    {
+      "club": "Wales",
+      "season": "2026",
+      "competition": "Six Nations",
+      "badge": "WAL",
+      "players": [
+        {
+          "id": "wal-001",
+          "name": "Gareth Thomas",
+          "position": "LH",
+          "overall": 78,
+          "stats": { "str": 84, "spd": 56, "hnd": 62, "kck": 38, "tck": 70, "stm": 66 },
+          "nationality": "Wales",
+          "season": "2026"
+        },
+        {
+          "id": "wal-002",
+          "name": "Dewi Lake",
+          "position": "HK",
+          "overall": 79,
+          "stats": { "str": 80, "spd": 62, "hnd": 68, "kck": 48, "tck": 76, "stm": 74 },
+          "nationality": "Wales",
+          "season": "2026"
+        },
+        {
+          "id": "wal-003",
+          "name": "Keiron Assiratti",
+          "position": "TH",
+          "overall": 78,
+          "stats": { "str": 86, "spd": 48, "hnd": 58, "kck": 38, "tck": 68, "stm": 64 },
+          "nationality": "Wales",
+          "season": "2026"
+        },
+        {
+          "id": "wal-004",
+          "name": "Dafydd Jenkins",
+          "position": "LL",
+          "overall": 80,
+          "stats": { "str": 84, "spd": 62, "hnd": 66, "kck": 42, "tck": 78, "stm": 74 },
+          "nationality": "Wales",
+          "season": "2026"
+        },
+        {
+          "id": "wal-005",
+          "name": "Adam Beard",
+          "position": "RL",
+          "overall": 78,
+          "stats": { "str": 84, "spd": 58, "hnd": 62, "kck": 40, "tck": 74, "stm": 70 },
+          "nationality": "Wales",
+          "season": "2026"
+        },
+        {
+          "id": "wal-006",
+          "name": "Tommy Reffell",
+          "position": "BF",
+          "overall": 82,
+          "stats": { "str": 76, "spd": 72, "hnd": 68, "kck": 42, "tck": 86, "stm": 82 },
+          "nationality": "Wales",
+          "season": "2026"
+        },
+        {
+          "id": "wal-007",
+          "name": "Taine Basham",
+          "position": "OF",
+          "overall": 82,
+          "stats": { "str": 76, "spd": 76, "hnd": 72, "kck": 42, "tck": 84, "stm": 86 },
+          "nationality": "Wales",
+          "season": "2026"
+        },
+        {
+          "id": "wal-008",
+          "name": "Aaron Wainwright",
+          "position": "N8",
+          "overall": 80,
+          "stats": { "str": 82, "spd": 70, "hnd": 70, "kck": 44, "tck": 80, "stm": 76 },
+          "nationality": "Wales",
+          "season": "2026"
+        },
+        {
+          "id": "wal-009",
+          "name": "Tomos Williams",
+          "position": "SH",
+          "overall": 82,
+          "stats": { "str": 62, "spd": 82, "hnd": 82, "kck": 72, "tck": 66, "stm": 84 },
+          "nationality": "Wales",
+          "season": "2026"
+        },
+        {
+          "id": "wal-010",
+          "name": "Sam Costelow",
+          "position": "FH",
+          "overall": 80,
+          "stats": { "str": 60, "spd": 68, "hnd": 82, "kck": 86, "tck": 58, "stm": 72 },
+          "nationality": "Wales",
+          "season": "2026"
+        },
+        {
+          "id": "wal-011",
+          "name": "Mason Grady",
+          "position": "IC",
+          "overall": 81,
+          "stats": { "str": 76, "spd": 80, "hnd": 76, "kck": 50, "tck": 78, "stm": 74 },
+          "nationality": "Wales",
+          "season": "2026"
+        },
+        {
+          "id": "wal-012",
+          "name": "Joe Roberts",
+          "position": "OC",
+          "overall": 79,
+          "stats": { "str": 78, "spd": 74, "hnd": 74, "kck": 50, "tck": 76, "stm": 72 },
+          "nationality": "Wales",
+          "season": "2026"
+        },
+        {
+          "id": "wal-013",
+          "name": "Rio Dyer",
+          "position": "LW",
+          "overall": 81,
+          "stats": { "str": 66, "spd": 90, "hnd": 74, "kck": 50, "tck": 64, "stm": 80 },
+          "nationality": "Wales",
+          "season": "2026"
+        },
+        {
+          "id": "wal-014",
+          "name": "Josh Hathaway",
+          "position": "RW",
+          "overall": 79,
+          "stats": { "str": 64, "spd": 88, "hnd": 72, "kck": 48, "tck": 62, "stm": 78 },
+          "nationality": "Wales",
+          "season": "2026"
+        },
+        {
+          "id": "wal-015",
+          "name": "Liam Williams",
+          "position": "FB",
+          "overall": 82,
+          "stats": { "str": 66, "spd": 86, "hnd": 78, "kck": 74, "tck": 70, "stm": 80 },
+          "nationality": "Wales",
+          "season": "2026"
+        }
+      ]
+    },
+    {
+      "club": "Italy",
+      "season": "2026",
+      "competition": "Six Nations",
+      "badge": "ITA",
+      "players": [
+        {
+          "id": "ita-001",
+          "name": "Danilo Fischetti",
+          "position": "LH",
+          "overall": 80,
+          "stats": { "str": 86, "spd": 56, "hnd": 62, "kck": 38, "tck": 70, "stm": 66 },
+          "nationality": "Italy",
+          "season": "2026"
+        },
+        {
+          "id": "ita-002",
+          "name": "Giacomo Nicotera",
+          "position": "HK",
+          "overall": 78,
+          "stats": { "str": 80, "spd": 62, "hnd": 66, "kck": 46, "tck": 74, "stm": 72 },
+          "nationality": "Italy",
+          "season": "2026"
+        },
+        {
+          "id": "ita-003",
+          "name": "Simone Ferrari",
+          "position": "TH",
+          "overall": 79,
+          "stats": { "str": 88, "spd": 48, "hnd": 58, "kck": 38, "tck": 68, "stm": 64 },
+          "nationality": "Italy",
+          "season": "2026"
+        },
+        {
+          "id": "ita-004",
+          "name": "Federico Ruzza",
+          "position": "LL",
+          "overall": 79,
+          "stats": { "str": 84, "spd": 58, "hnd": 64, "kck": 40, "tck": 76, "stm": 72 },
+          "nationality": "Italy",
+          "season": "2026"
+        },
+        {
+          "id": "ita-005",
+          "name": "Niccolò Cannone",
+          "position": "RL",
+          "overall": 80,
+          "stats": { "str": 85, "spd": 60, "hnd": 64, "kck": 40, "tck": 76, "stm": 72 },
+          "nationality": "Italy",
+          "season": "2026"
+        },
+        {
+          "id": "ita-006",
+          "name": "Sebastian Negri",
+          "position": "BF",
+          "overall": 81,
+          "stats": { "str": 80, "spd": 68, "hnd": 66, "kck": 40, "tck": 84, "stm": 78 },
+          "nationality": "Italy",
+          "season": "2026"
+        },
+        {
+          "id": "ita-007",
+          "name": "Michele Lamaro",
+          "position": "OF",
+          "overall": 83,
+          "stats": { "str": 76, "spd": 74, "hnd": 74, "kck": 42, "tck": 86, "stm": 88 },
+          "nationality": "Italy",
+          "season": "2026"
+        },
+        {
+          "id": "ita-008",
+          "name": "Lorenzo Cannone",
+          "position": "N8",
+          "overall": 83,
+          "stats": { "str": 84, "spd": 72, "hnd": 74, "kck": 46, "tck": 82, "stm": 78 },
+          "nationality": "Italy",
+          "season": "2026"
+        },
+        {
+          "id": "ita-009",
+          "name": "Martin Page-Relo",
+          "position": "SH",
+          "overall": 80,
+          "stats": { "str": 60, "spd": 80, "hnd": 82, "kck": 70, "tck": 64, "stm": 82 },
+          "nationality": "Italy",
+          "season": "2026"
+        },
+        {
+          "id": "ita-010",
+          "name": "Paolo Garbisi",
+          "position": "FH",
+          "overall": 84,
+          "stats": { "str": 60, "spd": 70, "hnd": 84, "kck": 88, "tck": 58, "stm": 72 },
+          "nationality": "Italy",
+          "season": "2026"
+        },
+        {
+          "id": "ita-011",
+          "name": "Juan Ignacio Brex",
+          "position": "IC",
+          "overall": 83,
+          "stats": { "str": 76, "spd": 78, "hnd": 80, "kck": 54, "tck": 80, "stm": 76 },
+          "nationality": "Italy",
+          "season": "2026"
+        },
+        {
+          "id": "ita-012",
+          "name": "Tommaso Menoncello",
+          "position": "OC",
+          "overall": 84,
+          "stats": { "str": 72, "spd": 84, "hnd": 82, "kck": 54, "tck": 76, "stm": 78 },
+          "nationality": "Italy",
+          "season": "2026"
+        },
+        {
+          "id": "ita-013",
+          "name": "Monty Ioane",
+          "position": "LW",
+          "overall": 82,
+          "stats": { "str": 68, "spd": 90, "hnd": 76, "kck": 50, "tck": 64, "stm": 80 },
+          "nationality": "Italy",
+          "season": "2026"
+        },
+        {
+          "id": "ita-014",
+          "name": "Lorenzo Pani",
+          "position": "RW",
+          "overall": 80,
+          "stats": { "str": 64, "spd": 88, "hnd": 74, "kck": 52, "tck": 62, "stm": 80 },
+          "nationality": "Italy",
+          "season": "2026"
+        },
+        {
+          "id": "ita-015",
+          "name": "Ange Capuozzo",
+          "position": "FB",
+          "overall": 85,
+          "stats": { "str": 64, "spd": 92, "hnd": 80, "kck": 72, "tck": 68, "stm": 82 },
+          "nationality": "Italy",
+          "season": "2026"
+        }
+      ]
+    },
+    {
+      "club": "Ireland",
+      "season": "2018",
+      "competition": "Six Nations",
+      "badge": "IR18",
+      "players": [
+        {
+          "id": "ir18-001",
+          "name": "Cian Healy",
+          "position": "LH",
+          "overall": 89,
+          "stats": { "str": 91, "spd": 64, "hnd": 70, "kck": 44, "tck": 80, "stm": 76 },
+          "nationality": "Ireland",
+          "season": "2018"
+        },
+        {
+          "id": "ir18-002",
+          "name": "Rory Best",
+          "position": "HK",
+          "overall": 90,
+          "stats": { "str": 86, "spd": 64, "hnd": 76, "kck": 56, "tck": 84, "stm": 80 },
+          "nationality": "Ireland",
+          "season": "2018"
+        },
+        {
+          "id": "ir18-003",
+          "name": "Tadhg Furlong",
+          "position": "TH",
+          "overall": 93,
+          "stats": { "str": 94, "spd": 60, "hnd": 74, "kck": 46, "tck": 80, "stm": 76 },
+          "nationality": "Ireland",
+          "season": "2018"
+        },
+        {
+          "id": "ir18-004",
+          "name": "Devin Toner",
+          "position": "LL",
+          "overall": 88,
+          "stats": { "str": 88, "spd": 58, "hnd": 68, "kck": 44, "tck": 82, "stm": 76 },
+          "nationality": "Ireland",
+          "season": "2018"
+        },
+        {
+          "id": "ir18-005",
+          "name": "James Ryan",
+          "position": "RL",
+          "overall": 90,
+          "stats": { "str": 90, "spd": 64, "hnd": 70, "kck": 44, "tck": 86, "stm": 82 },
+          "nationality": "Ireland",
+          "season": "2018"
+        },
+        {
+          "id": "ir18-006",
+          "name": "Dan Leavy",
+          "position": "BF",
+          "overall": 89,
+          "stats": { "str": 82, "spd": 76, "hnd": 74, "kck": 44, "tck": 90, "stm": 86 },
+          "nationality": "Ireland",
+          "season": "2018"
+        },
+        {
+          "id": "ir18-007",
+          "name": "Sean O'Brien",
+          "position": "OF",
+          "overall": 92,
+          "stats": { "str": 86, "spd": 78, "hnd": 80, "kck": 46, "tck": 92, "stm": 90 },
+          "nationality": "Ireland",
+          "season": "2018"
+        },
+        {
+          "id": "ir18-008",
+          "name": "CJ Stander",
+          "position": "N8",
+          "overall": 91,
+          "stats": { "str": 90, "spd": 74, "hnd": 78, "kck": 48, "tck": 90, "stm": 86 },
+          "nationality": "Ireland",
+          "season": "2018"
+        },
+        {
+          "id": "ir18-009",
+          "name": "Conor Murray",
+          "position": "SH",
+          "overall": 92,
+          "stats": { "str": 68, "spd": 84, "hnd": 90, "kck": 88, "tck": 76, "stm": 88 },
+          "nationality": "Ireland",
+          "season": "2018"
+        },
+        {
+          "id": "ir18-010",
+          "name": "Johnny Sexton",
+          "position": "FH",
+          "overall": 95,
+          "stats": { "str": 66, "spd": 72, "hnd": 92, "kck": 96, "tck": 68, "stm": 80 },
+          "nationality": "Ireland",
+          "season": "2018"
+        },
+        {
+          "id": "ir18-011",
+          "name": "Bundee Aki",
+          "position": "IC",
+          "overall": 89,
+          "stats": { "str": 86, "spd": 80, "hnd": 84, "kck": 54, "tck": 88, "stm": 82 },
+          "nationality": "Ireland",
+          "season": "2018"
+        },
+        {
+          "id": "ir18-012",
+          "name": "Garry Ringrose",
+          "position": "OC",
+          "overall": 90,
+          "stats": { "str": 74, "spd": 84, "hnd": 90, "kck": 64, "tck": 84, "stm": 80 },
+          "nationality": "Ireland",
+          "season": "2018"
+        },
+        {
+          "id": "ir18-013",
+          "name": "Jacob Stockdale",
+          "position": "LW",
+          "overall": 89,
+          "stats": { "str": 76, "spd": 88, "hnd": 82, "kck": 74, "tck": 74, "stm": 84 },
+          "nationality": "Ireland",
+          "season": "2018"
+        },
+        {
+          "id": "ir18-014",
+          "name": "Keith Earls",
+          "position": "RW",
+          "overall": 90,
+          "stats": { "str": 70, "spd": 92, "hnd": 84, "kck": 60, "tck": 72, "stm": 88 },
+          "nationality": "Ireland",
+          "season": "2018"
+        },
+        {
+          "id": "ir18-015",
+          "name": "Rob Kearney",
+          "position": "FB",
+          "overall": 90,
+          "stats": { "str": 72, "spd": 86, "hnd": 84, "kck": 82, "tck": 76, "stm": 84 },
+          "nationality": "Ireland",
+          "season": "2018"
+        }
+      ]
+    }
+  ]
+}

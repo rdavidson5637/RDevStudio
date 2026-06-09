@@ -8,6 +8,14 @@ export const BORED_GAMES = [
     href: "/champions-draft",
   },
   {
+    slug: "rugby-draft",
+    title: "Rugby Draft",
+    description:
+      "Spin nation and club squads, draft your XV, and compete in Six Nations, World Cup, and Champions Cup modes.",
+    tag: "Rugby",
+    href: "/rugby-draft",
+  },
+  {
     slug: "longest-word",
     title: "Longest Word",
     description:

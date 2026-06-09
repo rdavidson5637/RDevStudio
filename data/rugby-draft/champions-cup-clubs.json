@@ -1,0 +1,6316 @@
+{
+  "clubs": [
+    {
+      "club": "Leinster",
+      "season": "2026",
+      "competition": "Champions Cup",
+      "badge": "LNS",
+      "players": [
+        {
+          "id": "lns-001",
+          "name": "Andrew Porter",
+          "position": "LH",
+          "overall": 88,
+          "stats": {
+            "str": 90,
+            "spd": 58,
+            "hnd": 62,
+            "kck": 42,
+            "tck": 80,
+            "stm": 76
+          },
+          "nationality": "Ireland",
+          "club": "Leinster",
+          "season": "2026"
+        },
+        {
+          "id": "lns-002",
+          "name": "Rónan Kelleher",
+          "position": "HK",
+          "overall": 86,
+          "stats": {
+            "str": 84,
+            "spd": 66,
+            "hnd": 72,
+            "kck": 40,
+            "tck": 78,
+            "stm": 78
+          },
+          "nationality": "Ireland",
+          "club": "Leinster",
+          "season": "2026"
+        },
+        {
+          "id": "lns-003",
+          "name": "Thomas Clarkson",
+          "position": "TH",
+          "overall": 85,
+          "stats": {
+            "str": 91,
+            "spd": 50,
+            "hnd": 58,
+            "kck": 38,
+            "tck": 76,
+            "stm": 72
+          },
+          "nationality": "Ireland",
+          "club": "Leinster",
+          "season": "2026"
+        },
+        {
+          "id": "lns-004",
+          "name": "James Ryan",
+          "position": "LL",
+          "overall": 88,
+          "stats": {
+            "str": 88,
+            "spd": 55,
+            "hnd": 62,
+            "kck": 38,
+            "tck": 82,
+            "stm": 80
+          },
+          "nationality": "Ireland",
+          "club": "Leinster",
+          "season": "2026"
+        },
+        {
+          "id": "lns-005",
+          "name": "Joe McCarthy",
+          "position": "RL",
+          "overall": 86,
+          "stats": {
+            "str": 86,
+            "spd": 60,
+            "hnd": 65,
+            "kck": 36,
+            "tck": 80,
+            "stm": 78
+          },
+          "nationality": "Ireland",
+          "club": "Leinster",
+          "season": "2026"
+        },
+        {
+          "id": "lns-006",
+          "name": "Max Deegan",
+          "position": "BF",
+          "overall": 83,
+          "stats": {
+            "str": 82,
+            "spd": 68,
+            "hnd": 70,
+            "kck": 40,
+            "tck": 84,
+            "stm": 82
+          },
+          "nationality": "Ireland",
+          "club": "Leinster",
+          "season": "2026"
+        },
+        {
+          "id": "lns-007",
+          "name": "Josh van der Flier",
+          "position": "OF",
+          "overall": 90,
+          "stats": {
+            "str": 80,
+            "spd": 76,
+            "hnd": 78,
+            "kck": 44,
+            "tck": 90,
+            "stm": 92
+          },
+          "nationality": "Ireland",
+          "club": "Leinster",
+          "season": "2026"
+        },
+        {
+          "id": "lns-008",
+          "name": "Caelan Doris",
+          "position": "N8",
+          "overall": 91,
+          "stats": {
+            "str": 88,
+            "spd": 78,
+            "hnd": 80,
+            "kck": 46,
+            "tck": 88,
+            "stm": 86
+          },
+          "nationality": "Ireland",
+          "club": "Leinster",
+          "season": "2026"
+        },
+        {
+          "id": "lns-009",
+          "name": "Jamison Gibson-Park",
+          "position": "SH",
+          "overall": 89,
+          "stats": {
+            "str": 64,
+            "spd": 86,
+            "hnd": 88,
+            "kck": 74,
+            "tck": 70,
+            "stm": 90
+          },
+          "nationality": "New Zealand",
+          "club": "Leinster",
+          "season": "2026"
+        },
+        {
+          "id": "lns-010",
+          "name": "Sam Prendergast",
+          "position": "FH",
+          "overall": 86,
+          "stats": {
+            "str": 60,
+            "spd": 70,
+            "hnd": 84,
+            "kck": 86,
+            "tck": 64,
+            "stm": 78
+          },
+          "nationality": "Ireland",
+          "club": "Leinster",
+          "season": "2026"
+        },
+        {
+          "id": "lns-011",
+          "name": "Jamie Osborne",
+          "position": "IC",
+          "overall": 84,
+          "stats": {
+            "str": 72,
+            "spd": 78,
+            "hnd": 80,
+            "kck": 60,
+            "tck": 80,
+            "stm": 76
+          },
+          "nationality": "Ireland",
+          "club": "Leinster",
+          "season": "2026"
+        },
+        {
+          "id": "lns-012",
+          "name": "Rieko Ioane",
+          "position": "OC",
+          "overall": 87,
+          "stats": {
+            "str": 76,
+            "spd": 90,
+            "hnd": 84,
+            "kck": 52,
+            "tck": 78,
+            "stm": 82
+          },
+          "nationality": "New Zealand",
+          "club": "Leinster",
+          "season": "2026"
+        },
+        {
+          "id": "lns-013",
+          "name": "James Lowe",
+          "position": "LW",
+          "overall": 85,
+          "stats": {
+            "str": 74,
+            "spd": 88,
+            "hnd": 80,
+            "kck": 58,
+            "tck": 72,
+            "stm": 84
+          },
+          "nationality": "New Zealand",
+          "club": "Leinster",
+          "season": "2026"
+        },
+        {
+          "id": "lns-014",
+          "name": "Tommy O'Brien",
+          "position": "RW",
+          "overall": 82,
+          "stats": {
+            "str": 68,
+            "spd": 86,
+            "hnd": 76,
+            "kck": 50,
+            "tck": 70,
+            "stm": 84
+          },
+          "nationality": "Ireland",
+          "club": "Leinster",
+          "season": "2026"
+        },
+        {
+          "id": "lns-015",
+          "name": "Hugo Keenan",
+          "position": "FB",
+          "overall": 88,
+          "stats": {
+            "str": 68,
+            "spd": 88,
+            "hnd": 82,
+            "kck": 76,
+            "tck": 74,
+            "stm": 86
+          },
+          "nationality": "Ireland",
+          "club": "Leinster",
+          "season": "2026"
+        }
+      ]
+    },
+    {
+      "club": "Munster",
+      "season": "2026",
+      "competition": "Champions Cup",
+      "badge": "MUN",
+      "players": [
+        {
+          "id": "mun-001",
+          "name": "Jeremy Loughman",
+          "position": "LH",
+          "overall": 81,
+          "stats": {
+            "str": 86,
+            "spd": 52,
+            "hnd": 58,
+            "kck": 38,
+            "tck": 74,
+            "stm": 72
+          },
+          "nationality": "Ireland",
+          "club": "Munster",
+          "season": "2026"
+        },
+        {
+          "id": "mun-002",
+          "name": "Niall Scannell",
+          "position": "HK",
+          "overall": 80,
+          "stats": {
+            "str": 82,
+            "spd": 58,
+            "hnd": 66,
+            "kck": 38,
+            "tck": 74,
+            "stm": 74
+          },
+          "nationality": "Ireland",
+          "club": "Munster",
+          "season": "2026"
+        },
+        {
+          "id": "mun-003",
+          "name": "Oli Jager",
+          "position": "TH",
+          "overall": 82,
+          "stats": {
+            "str": 90,
+            "spd": 48,
+            "hnd": 56,
+            "kck": 36,
+            "tck": 72,
+            "stm": 68
+          },
+          "nationality": "New Zealand",
+          "club": "Munster",
+          "season": "2026"
+        },
+        {
+          "id": "mun-004",
+          "name": "Jean Kleyn",
+          "position": "LL",
+          "overall": 83,
+          "stats": {
+            "str": 86,
+            "spd": 54,
+            "hnd": 62,
+            "kck": 36,
+            "tck": 78,
+            "stm": 76
+          },
+          "nationality": "South Africa",
+          "club": "Munster",
+          "season": "2026"
+        },
+        {
+          "id": "mun-005",
+          "name": "Tadhg Beirne",
+          "position": "RL",
+          "overall": 88,
+          "stats": {
+            "str": 84,
+            "spd": 66,
+            "hnd": 72,
+            "kck": 44,
+            "tck": 86,
+            "stm": 84
+          },
+          "nationality": "Ireland",
+          "club": "Munster",
+          "season": "2026"
+        },
+        {
+          "id": "mun-006",
+          "name": "Jack O'Donoghue",
+          "position": "BF",
+          "overall": 81,
+          "stats": {
+            "str": 80,
+            "spd": 64,
+            "hnd": 68,
+            "kck": 38,
+            "tck": 82,
+            "stm": 80
+          },
+          "nationality": "Ireland",
+          "club": "Munster",
+          "season": "2026"
+        },
+        {
+          "id": "mun-007",
+          "name": "John Hodnett",
+          "position": "OF",
+          "overall": 80,
+          "stats": {
+            "str": 76,
+            "spd": 72,
+            "hnd": 70,
+            "kck": 38,
+            "tck": 82,
+            "stm": 84
+          },
+          "nationality": "Ireland",
+          "club": "Munster",
+          "season": "2026"
+        },
+        {
+          "id": "mun-008",
+          "name": "Gavin Coombes",
+          "position": "N8",
+          "overall": 84,
+          "stats": {
+            "str": 86,
+            "spd": 70,
+            "hnd": 72,
+            "kck": 40,
+            "tck": 82,
+            "stm": 80
+          },
+          "nationality": "Ireland",
+          "club": "Munster",
+          "season": "2026"
+        },
+        {
+          "id": "mun-009",
+          "name": "Craig Casey",
+          "position": "SH",
+          "overall": 84,
+          "stats": {
+            "str": 60,
+            "spd": 82,
+            "hnd": 84,
+            "kck": 70,
+            "tck": 68,
+            "stm": 88
+          },
+          "nationality": "Ireland",
+          "club": "Munster",
+          "season": "2026"
+        },
+        {
+          "id": "mun-010",
+          "name": "Jack Crowley",
+          "position": "FH",
+          "overall": 86,
+          "stats": {
+            "str": 58,
+            "spd": 68,
+            "hnd": 82,
+            "kck": 86,
+            "tck": 60,
+            "stm": 74
+          },
+          "nationality": "Ireland",
+          "club": "Munster",
+          "season": "2026"
+        },
+        {
+          "id": "mun-011",
+          "name": "Tom Farrell",
+          "position": "IC",
+          "overall": 80,
+          "stats": {
+            "str": 74,
+            "spd": 76,
+            "hnd": 74,
+            "kck": 50,
+            "tck": 78,
+            "stm": 74
+          },
+          "nationality": "Ireland",
+          "club": "Munster",
+          "season": "2026"
+        },
+        {
+          "id": "mun-012",
+          "name": "Alex Nankivell",
+          "position": "OC",
+          "overall": 80,
+          "stats": {
+            "str": 72,
+            "spd": 78,
+            "hnd": 76,
+            "kck": 46,
+            "tck": 76,
+            "stm": 76
+          },
+          "nationality": "New Zealand",
+          "club": "Munster",
+          "season": "2026"
+        },
+        {
+          "id": "mun-013",
+          "name": "Thaakir Abrahams",
+          "position": "LW",
+          "overall": 82,
+          "stats": {
+            "str": 68,
+            "spd": 90,
+            "hnd": 74,
+            "kck": 48,
+            "tck": 66,
+            "stm": 82
+          },
+          "nationality": "South Africa",
+          "club": "Munster",
+          "season": "2026"
+        },
+        {
+          "id": "mun-014",
+          "name": "Calvin Nash",
+          "position": "RW",
+          "overall": 80,
+          "stats": {
+            "str": 64,
+            "spd": 88,
+            "hnd": 72,
+            "kck": 46,
+            "tck": 64,
+            "stm": 80
+          },
+          "nationality": "Ireland",
+          "club": "Munster",
+          "season": "2026"
+        },
+        {
+          "id": "mun-015",
+          "name": "Mike Haley",
+          "position": "FB",
+          "overall": 82,
+          "stats": {
+            "str": 66,
+            "spd": 84,
+            "hnd": 78,
+            "kck": 72,
+            "tck": 70,
+            "stm": 80
+          },
+          "nationality": "England",
+          "club": "Munster",
+          "season": "2026"
+        }
+      ]
+    },
+    {
+      "club": "Ulster",
+      "season": "2026",
+      "competition": "Champions Cup",
+      "badge": "ULS",
+      "players": [
+        {
+          "id": "uls-001",
+          "name": "Angus Bell",
+          "position": "LH",
+          "overall": 83,
+          "stats": {
+            "str": 86,
+            "spd": 62,
+            "hnd": 64,
+            "kck": 38,
+            "tck": 76,
+            "stm": 74
+          },
+          "nationality": "Australia",
+          "club": "Ulster",
+          "season": "2026"
+        },
+        {
+          "id": "uls-002",
+          "name": "Tom Stewart",
+          "position": "HK",
+          "overall": 82,
+          "stats": {
+            "str": 82,
+            "spd": 62,
+            "hnd": 68,
+            "kck": 40,
+            "tck": 76,
+            "stm": 76
+          },
+          "nationality": "Ireland",
+          "club": "Ulster",
+          "season": "2026"
+        },
+        {
+          "id": "uls-003",
+          "name": "Tom O'Toole",
+          "position": "TH",
+          "overall": 82,
+          "stats": {
+            "str": 88,
+            "spd": 52,
+            "hnd": 58,
+            "kck": 36,
+            "tck": 74,
+            "stm": 70
+          },
+          "nationality": "Ireland",
+          "club": "Ulster",
+          "season": "2026"
+        },
+        {
+          "id": "uls-004",
+          "name": "Iain Henderson",
+          "position": "LL",
+          "overall": 84,
+          "stats": {
+            "str": 88,
+            "spd": 56,
+            "hnd": 64,
+            "kck": 38,
+            "tck": 82,
+            "stm": 78
+          },
+          "nationality": "Ireland",
+          "club": "Ulster",
+          "season": "2026"
+        },
+        {
+          "id": "uls-005",
+          "name": "Cormac Izuchukwu",
+          "position": "RL",
+          "overall": 81,
+          "stats": {
+            "str": 84,
+            "spd": 58,
+            "hnd": 62,
+            "kck": 36,
+            "tck": 80,
+            "stm": 76
+          },
+          "nationality": "Ireland",
+          "club": "Ulster",
+          "season": "2026"
+        },
+        {
+          "id": "uls-006",
+          "name": "David McCann",
+          "position": "BF",
+          "overall": 80,
+          "stats": {
+            "str": 80,
+            "spd": 64,
+            "hnd": 66,
+            "kck": 38,
+            "tck": 82,
+            "stm": 80
+          },
+          "nationality": "Ireland",
+          "club": "Ulster",
+          "season": "2026"
+        },
+        {
+          "id": "uls-007",
+          "name": "Nick Timoney",
+          "position": "OF",
+          "overall": 83,
+          "stats": {
+            "str": 78,
+            "spd": 74,
+            "hnd": 72,
+            "kck": 40,
+            "tck": 84,
+            "stm": 86
+          },
+          "nationality": "Ireland",
+          "club": "Ulster",
+          "season": "2026"
+        },
+        {
+          "id": "uls-008",
+          "name": "Juarno Augustus",
+          "position": "N8",
+          "overall": 83,
+          "stats": {
+            "str": 86,
+            "spd": 72,
+            "hnd": 70,
+            "kck": 38,
+            "tck": 82,
+            "stm": 80
+          },
+          "nationality": "South Africa",
+          "club": "Ulster",
+          "season": "2026"
+        },
+        {
+          "id": "uls-009",
+          "name": "Nathan Doak",
+          "position": "SH",
+          "overall": 83,
+          "stats": {
+            "str": 58,
+            "spd": 82,
+            "hnd": 82,
+            "kck": 76,
+            "tck": 66,
+            "stm": 86
+          },
+          "nationality": "Ireland",
+          "club": "Ulster",
+          "season": "2026"
+        },
+        {
+          "id": "uls-010",
+          "name": "Jack Murphy",
+          "position": "FH",
+          "overall": 80,
+          "stats": {
+            "str": 56,
+            "spd": 68,
+            "hnd": 80,
+            "kck": 82,
+            "tck": 58,
+            "stm": 72
+          },
+          "nationality": "Ireland",
+          "club": "Ulster",
+          "season": "2026"
+        },
+        {
+          "id": "uls-011",
+          "name": "Stuart McCloskey",
+          "position": "IC",
+          "overall": 85,
+          "stats": {
+            "str": 78,
+            "spd": 74,
+            "hnd": 80,
+            "kck": 52,
+            "tck": 82,
+            "stm": 78
+          },
+          "nationality": "Ireland",
+          "club": "Ulster",
+          "season": "2026"
+        },
+        {
+          "id": "uls-012",
+          "name": "James Hume",
+          "position": "OC",
+          "overall": 80,
+          "stats": {
+            "str": 72,
+            "spd": 76,
+            "hnd": 76,
+            "kck": 48,
+            "tck": 78,
+            "stm": 74
+          },
+          "nationality": "Ireland",
+          "club": "Ulster",
+          "season": "2026"
+        },
+        {
+          "id": "uls-013",
+          "name": "Zac Ward",
+          "position": "LW",
+          "overall": 83,
+          "stats": {
+            "str": 68,
+            "spd": 90,
+            "hnd": 74,
+            "kck": 48,
+            "tck": 66,
+            "stm": 84
+          },
+          "nationality": "Ireland",
+          "club": "Ulster",
+          "season": "2026"
+        },
+        {
+          "id": "uls-014",
+          "name": "Werner Kok",
+          "position": "RW",
+          "overall": 83,
+          "stats": {
+            "str": 66,
+            "spd": 91,
+            "hnd": 76,
+            "kck": 46,
+            "tck": 66,
+            "stm": 84
+          },
+          "nationality": "South Africa",
+          "club": "Ulster",
+          "season": "2026"
+        },
+        {
+          "id": "uls-015",
+          "name": "Michael Lowry",
+          "position": "FB",
+          "overall": 84,
+          "stats": {
+            "str": 62,
+            "spd": 86,
+            "hnd": 80,
+            "kck": 78,
+            "tck": 68,
+            "stm": 82
+          },
+          "nationality": "Ireland",
+          "club": "Ulster",
+          "season": "2026"
+        }
+      ]
+    },
+    {
+      "club": "Connacht",
+      "season": "2026",
+      "competition": "Champions Cup",
+      "badge": "CON",
+      "players": [
+        {
+          "id": "con-001",
+          "name": "Billy Bohan",
+          "position": "LH",
+          "overall": 76,
+          "stats": {
+            "str": 82,
+            "spd": 52,
+            "hnd": 56,
+            "kck": 36,
+            "tck": 70,
+            "stm": 68
+          },
+          "nationality": "Ireland",
+          "club": "Connacht",
+          "season": "2026"
+        },
+        {
+          "id": "con-002",
+          "name": "Dave Heffernan",
+          "position": "HK",
+          "overall": 78,
+          "stats": {
+            "str": 80,
+            "spd": 58,
+            "hnd": 64,
+            "kck": 36,
+            "tck": 72,
+            "stm": 72
+          },
+          "nationality": "Ireland",
+          "club": "Connacht",
+          "season": "2026"
+        },
+        {
+          "id": "con-003",
+          "name": "Finlay Bealham",
+          "position": "TH",
+          "overall": 79,
+          "stats": {
+            "str": 86,
+            "spd": 48,
+            "hnd": 56,
+            "kck": 34,
+            "tck": 70,
+            "stm": 68
+          },
+          "nationality": "Australia",
+          "club": "Connacht",
+          "season": "2026"
+        },
+        {
+          "id": "con-004",
+          "name": "Josh Murphy",
+          "position": "LL",
+          "overall": 76,
+          "stats": {
+            "str": 82,
+            "spd": 54,
+            "hnd": 60,
+            "kck": 34,
+            "tck": 74,
+            "stm": 72
+          },
+          "nationality": "Ireland",
+          "club": "Connacht",
+          "season": "2026"
+        },
+        {
+          "id": "con-005",
+          "name": "Darragh Murray",
+          "position": "RL",
+          "overall": 81,
+          "stats": {
+            "str": 84,
+            "spd": 58,
+            "hnd": 62,
+            "kck": 36,
+            "tck": 78,
+            "stm": 76
+          },
+          "nationality": "Ireland",
+          "club": "Connacht",
+          "season": "2026"
+        },
+        {
+          "id": "con-006",
+          "name": "Cian Prendergast",
+          "position": "BF",
+          "overall": 82,
+          "stats": {
+            "str": 80,
+            "spd": 68,
+            "hnd": 70,
+            "kck": 40,
+            "tck": 84,
+            "stm": 82
+          },
+          "nationality": "Ireland",
+          "club": "Connacht",
+          "season": "2026"
+        },
+        {
+          "id": "con-007",
+          "name": "Shamus Hurley-Langton",
+          "position": "OF",
+          "overall": 78,
+          "stats": {
+            "str": 74,
+            "spd": 70,
+            "hnd": 68,
+            "kck": 36,
+            "tck": 80,
+            "stm": 82
+          },
+          "nationality": "New Zealand",
+          "club": "Connacht",
+          "season": "2026"
+        },
+        {
+          "id": "con-008",
+          "name": "Sean Jansen",
+          "position": "N8",
+          "overall": 80,
+          "stats": {
+            "str": 82,
+            "spd": 66,
+            "hnd": 68,
+            "kck": 38,
+            "tck": 80,
+            "stm": 78
+          },
+          "nationality": "New Zealand",
+          "club": "Connacht",
+          "season": "2026"
+        },
+        {
+          "id": "con-009",
+          "name": "Ben Murphy",
+          "position": "SH",
+          "overall": 78,
+          "stats": {
+            "str": 56,
+            "spd": 78,
+            "hnd": 80,
+            "kck": 68,
+            "tck": 62,
+            "stm": 82
+          },
+          "nationality": "Ireland",
+          "club": "Connacht",
+          "season": "2026"
+        },
+        {
+          "id": "con-010",
+          "name": "Jack Carty",
+          "position": "FH",
+          "overall": 80,
+          "stats": {
+            "str": 56,
+            "spd": 64,
+            "hnd": 80,
+            "kck": 84,
+            "tck": 58,
+            "stm": 72
+          },
+          "nationality": "Ireland",
+          "club": "Connacht",
+          "season": "2026"
+        },
+        {
+          "id": "con-011",
+          "name": "Bundee Aki",
+          "position": "IC",
+          "overall": 84,
+          "stats": {
+            "str": 80,
+            "spd": 74,
+            "hnd": 78,
+            "kck": 54,
+            "tck": 86,
+            "stm": 80
+          },
+          "nationality": "New Zealand",
+          "club": "Connacht",
+          "season": "2026"
+        },
+        {
+          "id": "con-012",
+          "name": "Cathal Forde",
+          "position": "OC",
+          "overall": 77,
+          "stats": {
+            "str": 70,
+            "spd": 74,
+            "hnd": 74,
+            "kck": 48,
+            "tck": 74,
+            "stm": 72
+          },
+          "nationality": "Ireland",
+          "club": "Connacht",
+          "season": "2026"
+        },
+        {
+          "id": "con-013",
+          "name": "Shayne Bolton",
+          "position": "LW",
+          "overall": 78,
+          "stats": {
+            "str": 64,
+            "spd": 86,
+            "hnd": 72,
+            "kck": 46,
+            "tck": 62,
+            "stm": 78
+          },
+          "nationality": "New Zealand",
+          "club": "Connacht",
+          "season": "2026"
+        },
+        {
+          "id": "con-014",
+          "name": "Shane Jennings",
+          "position": "RW",
+          "overall": 76,
+          "stats": {
+            "str": 62,
+            "spd": 84,
+            "hnd": 70,
+            "kck": 44,
+            "tck": 60,
+            "stm": 76
+          },
+          "nationality": "Ireland",
+          "club": "Connacht",
+          "season": "2026"
+        },
+        {
+          "id": "con-015",
+          "name": "Sam Gilbert",
+          "position": "FB",
+          "overall": 79,
+          "stats": {
+            "str": 62,
+            "spd": 82,
+            "hnd": 76,
+            "kck": 78,
+            "tck": 64,
+            "stm": 78
+          },
+          "nationality": "New Zealand",
+          "club": "Connacht",
+          "season": "2026"
+        }
+      ]
+    },
+    {
+      "club": "Glasgow Warriors",
+      "season": "2026",
+      "competition": "Champions Cup",
+      "badge": "GLA",
+      "players": [
+        {
+          "id": "gla-001",
+          "name": "Patrick Schickerling",
+          "position": "LH",
+          "overall": 82,
+          "stats": {
+            "str": 86,
+            "spd": 54,
+            "hnd": 60,
+            "kck": 36,
+            "tck": 74,
+            "stm": 72
+          },
+          "nationality": "South Africa",
+          "club": "Glasgow Warriors",
+          "season": "2026"
+        },
+        {
+          "id": "gla-002",
+          "name": "Johnny Matthews",
+          "position": "HK",
+          "overall": 83,
+          "stats": {
+            "str": 82,
+            "spd": 62,
+            "hnd": 68,
+            "kck": 38,
+            "tck": 76,
+            "stm": 76
+          },
+          "nationality": "Scotland",
+          "club": "Glasgow Warriors",
+          "season": "2026"
+        },
+        {
+          "id": "gla-003",
+          "name": "Zander Fagerson",
+          "position": "TH",
+          "overall": 85,
+          "stats": {
+            "str": 90,
+            "spd": 52,
+            "hnd": 60,
+            "kck": 36,
+            "tck": 76,
+            "stm": 72
+          },
+          "nationality": "Scotland",
+          "club": "Glasgow Warriors",
+          "season": "2026"
+        },
+        {
+          "id": "gla-004",
+          "name": "Scott Cummings",
+          "position": "LL",
+          "overall": 84,
+          "stats": {
+            "str": 86,
+            "spd": 58,
+            "hnd": 64,
+            "kck": 38,
+            "tck": 80,
+            "stm": 78
+          },
+          "nationality": "Scotland",
+          "club": "Glasgow Warriors",
+          "season": "2026"
+        },
+        {
+          "id": "gla-005",
+          "name": "Alex Samuel",
+          "position": "RL",
+          "overall": 81,
+          "stats": {
+            "str": 84,
+            "spd": 58,
+            "hnd": 62,
+            "kck": 36,
+            "tck": 78,
+            "stm": 76
+          },
+          "nationality": "Scotland",
+          "club": "Glasgow Warriors",
+          "season": "2026"
+        },
+        {
+          "id": "gla-006",
+          "name": "Matt Fagerson",
+          "position": "BF",
+          "overall": 83,
+          "stats": {
+            "str": 82,
+            "spd": 66,
+            "hnd": 70,
+            "kck": 40,
+            "tck": 84,
+            "stm": 80
+          },
+          "nationality": "Scotland",
+          "club": "Glasgow Warriors",
+          "season": "2026"
+        },
+        {
+          "id": "gla-007",
+          "name": "Rory Darge",
+          "position": "OF",
+          "overall": 85,
+          "stats": {
+            "str": 78,
+            "spd": 76,
+            "hnd": 74,
+            "kck": 40,
+            "tck": 86,
+            "stm": 88
+          },
+          "nationality": "Scotland",
+          "club": "Glasgow Warriors",
+          "season": "2026"
+        },
+        {
+          "id": "gla-008",
+          "name": "Jack Dempsey",
+          "position": "N8",
+          "overall": 83,
+          "stats": {
+            "str": 84,
+            "spd": 70,
+            "hnd": 70,
+            "kck": 38,
+            "tck": 82,
+            "stm": 80
+          },
+          "nationality": "Australia",
+          "club": "Glasgow Warriors",
+          "season": "2026"
+        },
+        {
+          "id": "gla-009",
+          "name": "George Horne",
+          "position": "SH",
+          "overall": 84,
+          "stats": {
+            "str": 58,
+            "spd": 82,
+            "hnd": 84,
+            "kck": 74,
+            "tck": 66,
+            "stm": 86
+          },
+          "nationality": "Scotland",
+          "club": "Glasgow Warriors",
+          "season": "2026"
+        },
+        {
+          "id": "gla-010",
+          "name": "Dan Lancaster",
+          "position": "FH",
+          "overall": 81,
+          "stats": {
+            "str": 58,
+            "spd": 68,
+            "hnd": 80,
+            "kck": 82,
+            "tck": 58,
+            "stm": 72
+          },
+          "nationality": "England",
+          "club": "Glasgow Warriors",
+          "season": "2026"
+        },
+        {
+          "id": "gla-011",
+          "name": "Sione Tuipulotu",
+          "position": "IC",
+          "overall": 86,
+          "stats": {
+            "str": 78,
+            "spd": 76,
+            "hnd": 82,
+            "kck": 54,
+            "tck": 84,
+            "stm": 80
+          },
+          "nationality": "Scotland",
+          "club": "Glasgow Warriors",
+          "season": "2026"
+        },
+        {
+          "id": "gla-012",
+          "name": "Stafford McDowall",
+          "position": "OC",
+          "overall": 82,
+          "stats": {
+            "str": 74,
+            "spd": 76,
+            "hnd": 78,
+            "kck": 50,
+            "tck": 80,
+            "stm": 76
+          },
+          "nationality": "Scotland",
+          "club": "Glasgow Warriors",
+          "season": "2026"
+        },
+        {
+          "id": "gla-013",
+          "name": "Kyle Rowe",
+          "position": "LW",
+          "overall": 82,
+          "stats": {
+            "str": 68,
+            "spd": 88,
+            "hnd": 74,
+            "kck": 46,
+            "tck": 64,
+            "stm": 82
+          },
+          "nationality": "Scotland",
+          "club": "Glasgow Warriors",
+          "season": "2026"
+        },
+        {
+          "id": "gla-014",
+          "name": "Kyle Steyn",
+          "position": "RW",
+          "overall": 83,
+          "stats": {
+            "str": 70,
+            "spd": 88,
+            "hnd": 76,
+            "kck": 48,
+            "tck": 68,
+            "stm": 82
+          },
+          "nationality": "South Africa",
+          "club": "Glasgow Warriors",
+          "season": "2026"
+        },
+        {
+          "id": "gla-015",
+          "name": "Josh McKay",
+          "position": "FB",
+          "overall": 83,
+          "stats": {
+            "str": 64,
+            "spd": 86,
+            "hnd": 80,
+            "kck": 76,
+            "tck": 68,
+            "stm": 82
+          },
+          "nationality": "New Zealand",
+          "club": "Glasgow Warriors",
+          "season": "2026"
+        }
+      ]
+    },
+    {
+      "club": "Edinburgh",
+      "season": "2026",
+      "competition": "Champions Cup",
+      "badge": "EDI",
+      "players": [
+        {
+          "id": "edi-001",
+          "name": "Pierre Schoeman",
+          "position": "LH",
+          "overall": 80,
+          "stats": {
+            "str": 86,
+            "spd": 56,
+            "hnd": 60,
+            "kck": 36,
+            "tck": 74,
+            "stm": 72
+          },
+          "nationality": "South Africa",
+          "club": "Edinburgh",
+          "season": "2026"
+        },
+        {
+          "id": "edi-002",
+          "name": "Ewan Ashman",
+          "position": "HK",
+          "overall": 79,
+          "stats": {
+            "str": 80,
+            "spd": 60,
+            "hnd": 64,
+            "kck": 38,
+            "tck": 72,
+            "stm": 74
+          },
+          "nationality": "Scotland",
+          "club": "Edinburgh",
+          "season": "2026"
+        },
+        {
+          "id": "edi-003",
+          "name": "D'arcy Rae",
+          "position": "TH",
+          "overall": 77,
+          "stats": {
+            "str": 84,
+            "spd": 50,
+            "hnd": 56,
+            "kck": 34,
+            "tck": 70,
+            "stm": 68
+          },
+          "nationality": "Scotland",
+          "club": "Edinburgh",
+          "season": "2026"
+        },
+        {
+          "id": "edi-004",
+          "name": "Grant Gilchrist",
+          "position": "LL",
+          "overall": 80,
+          "stats": {
+            "str": 84,
+            "spd": 54,
+            "hnd": 62,
+            "kck": 36,
+            "tck": 76,
+            "stm": 74
+          },
+          "nationality": "Scotland",
+          "club": "Edinburgh",
+          "season": "2026"
+        },
+        {
+          "id": "edi-005",
+          "name": "Sam Skinner",
+          "position": "RL",
+          "overall": 78,
+          "stats": {
+            "str": 82,
+            "spd": 56,
+            "hnd": 60,
+            "kck": 34,
+            "tck": 74,
+            "stm": 72
+          },
+          "nationality": "Scotland",
+          "club": "Edinburgh",
+          "season": "2026"
+        },
+        {
+          "id": "edi-006",
+          "name": "Jamie Ritchie",
+          "position": "BF",
+          "overall": 80,
+          "stats": {
+            "str": 78,
+            "spd": 66,
+            "hnd": 68,
+            "kck": 38,
+            "tck": 82,
+            "stm": 80
+          },
+          "nationality": "Scotland",
+          "club": "Edinburgh",
+          "season": "2026"
+        },
+        {
+          "id": "edi-007",
+          "name": "Ben Muncaster",
+          "position": "OF",
+          "overall": 78,
+          "stats": {
+            "str": 76,
+            "spd": 70,
+            "hnd": 68,
+            "kck": 36,
+            "tck": 80,
+            "stm": 82
+          },
+          "nationality": "Scotland",
+          "club": "Edinburgh",
+          "season": "2026"
+        },
+        {
+          "id": "edi-008",
+          "name": "Magnus Bradbury",
+          "position": "N8",
+          "overall": 81,
+          "stats": {
+            "str": 84,
+            "spd": 68,
+            "hnd": 68,
+            "kck": 38,
+            "tck": 80,
+            "stm": 78
+          },
+          "nationality": "Scotland",
+          "club": "Edinburgh",
+          "season": "2026"
+        },
+        {
+          "id": "edi-009",
+          "name": "Ben Vellacott",
+          "position": "SH",
+          "overall": 78,
+          "stats": {
+            "str": 56,
+            "spd": 80,
+            "hnd": 80,
+            "kck": 70,
+            "tck": 62,
+            "stm": 82
+          },
+          "nationality": "Scotland",
+          "club": "Edinburgh",
+          "season": "2026"
+        },
+        {
+          "id": "edi-010",
+          "name": "Ross Thompson",
+          "position": "FH",
+          "overall": 77,
+          "stats": {
+            "str": 56,
+            "spd": 66,
+            "hnd": 78,
+            "kck": 80,
+            "tck": 56,
+            "stm": 70
+          },
+          "nationality": "Scotland",
+          "club": "Edinburgh",
+          "season": "2026"
+        },
+        {
+          "id": "edi-011",
+          "name": "Chris Dean",
+          "position": "IC",
+          "overall": 77,
+          "stats": {
+            "str": 72,
+            "spd": 72,
+            "hnd": 74,
+            "kck": 48,
+            "tck": 74,
+            "stm": 72
+          },
+          "nationality": "Scotland",
+          "club": "Edinburgh",
+          "season": "2026"
+        },
+        {
+          "id": "edi-012",
+          "name": "Mosese Tuipulotu",
+          "position": "OC",
+          "overall": 79,
+          "stats": {
+            "str": 72,
+            "spd": 74,
+            "hnd": 76,
+            "kck": 48,
+            "tck": 76,
+            "stm": 72
+          },
+          "nationality": "Scotland",
+          "club": "Edinburgh",
+          "season": "2026"
+        },
+        {
+          "id": "edi-013",
+          "name": "Duhan van der Merwe",
+          "position": "LW",
+          "overall": 82,
+          "stats": {
+            "str": 78,
+            "spd": 88,
+            "hnd": 72,
+            "kck": 46,
+            "tck": 68,
+            "stm": 80
+          },
+          "nationality": "South Africa",
+          "club": "Edinburgh",
+          "season": "2026"
+        },
+        {
+          "id": "edi-014",
+          "name": "Darcy Graham",
+          "position": "RW",
+          "overall": 80,
+          "stats": {
+            "str": 62,
+            "spd": 90,
+            "hnd": 72,
+            "kck": 44,
+            "tck": 60,
+            "stm": 80
+          },
+          "nationality": "Scotland",
+          "club": "Edinburgh",
+          "season": "2026"
+        },
+        {
+          "id": "edi-015",
+          "name": "Harry Paterson",
+          "position": "FB",
+          "overall": 78,
+          "stats": {
+            "str": 62,
+            "spd": 84,
+            "hnd": 74,
+            "kck": 74,
+            "tck": 62,
+            "stm": 78
+          },
+          "nationality": "Scotland",
+          "club": "Edinburgh",
+          "season": "2026"
+        }
+      ]
+    },
+    {
+      "club": "Cardiff Rugby",
+      "season": "2026",
+      "competition": "Champions Cup",
+      "badge": "CAR",
+      "players": [
+        {
+          "id": "car-001",
+          "name": "Rhys Barratt",
+          "position": "LH",
+          "overall": 76,
+          "stats": {
+            "str": 82,
+            "spd": 52,
+            "hnd": 58,
+            "kck": 36,
+            "tck": 70,
+            "stm": 70
+          },
+          "nationality": "Wales",
+          "club": "Cardiff Rugby",
+          "season": "2026"
+        },
+        {
+          "id": "car-002",
+          "name": "Liam Belcher",
+          "position": "HK",
+          "overall": 79,
+          "stats": {
+            "str": 80,
+            "spd": 60,
+            "hnd": 66,
+            "kck": 38,
+            "tck": 72,
+            "stm": 74
+          },
+          "nationality": "Wales",
+          "club": "Cardiff Rugby",
+          "season": "2026"
+        },
+        {
+          "id": "car-003",
+          "name": "Keiron Assiratti",
+          "position": "TH",
+          "overall": 78,
+          "stats": {
+            "str": 86,
+            "spd": 48,
+            "hnd": 56,
+            "kck": 34,
+            "tck": 70,
+            "stm": 68
+          },
+          "nationality": "Wales",
+          "club": "Cardiff Rugby",
+          "season": "2026"
+        },
+        {
+          "id": "car-004",
+          "name": "Josh McNally",
+          "position": "LL",
+          "overall": 79,
+          "stats": {
+            "str": 84,
+            "spd": 54,
+            "hnd": 60,
+            "kck": 34,
+            "tck": 76,
+            "stm": 74
+          },
+          "nationality": "England",
+          "club": "Cardiff Rugby",
+          "season": "2026"
+        },
+        {
+          "id": "car-005",
+          "name": "Rory Thornton",
+          "position": "RL",
+          "overall": 77,
+          "stats": {
+            "str": 82,
+            "spd": 52,
+            "hnd": 58,
+            "kck": 34,
+            "tck": 72,
+            "stm": 72
+          },
+          "nationality": "Wales",
+          "club": "Cardiff Rugby",
+          "season": "2026"
+        },
+        {
+          "id": "car-006",
+          "name": "James Botham",
+          "position": "BF",
+          "overall": 79,
+          "stats": {
+            "str": 78,
+            "spd": 66,
+            "hnd": 68,
+            "kck": 38,
+            "tck": 80,
+            "stm": 78
+          },
+          "nationality": "Wales",
+          "club": "Cardiff Rugby",
+          "season": "2026"
+        },
+        {
+          "id": "car-007",
+          "name": "Dan Thomas",
+          "position": "OF",
+          "overall": 77,
+          "stats": {
+            "str": 74,
+            "spd": 68,
+            "hnd": 66,
+            "kck": 36,
+            "tck": 78,
+            "stm": 80
+          },
+          "nationality": "Wales",
+          "club": "Cardiff Rugby",
+          "season": "2026"
+        },
+        {
+          "id": "car-008",
+          "name": "Taulupe Faletau",
+          "position": "N8",
+          "overall": 82,
+          "stats": {
+            "str": 84,
+            "spd": 68,
+            "hnd": 72,
+            "kck": 40,
+            "tck": 82,
+            "stm": 76
+          },
+          "nationality": "Tonga",
+          "club": "Cardiff Rugby",
+          "season": "2026"
+        },
+        {
+          "id": "car-009",
+          "name": "Aled Davies",
+          "position": "SH",
+          "overall": 79,
+          "stats": {
+            "str": 56,
+            "spd": 78,
+            "hnd": 80,
+            "kck": 70,
+            "tck": 62,
+            "stm": 80
+          },
+          "nationality": "Wales",
+          "club": "Cardiff Rugby",
+          "season": "2026"
+        },
+        {
+          "id": "car-010",
+          "name": "Callum Sheedy",
+          "position": "FH",
+          "overall": 79,
+          "stats": {
+            "str": 56,
+            "spd": 66,
+            "hnd": 78,
+            "kck": 82,
+            "tck": 56,
+            "stm": 70
+          },
+          "nationality": "Ireland",
+          "club": "Cardiff Rugby",
+          "season": "2026"
+        },
+        {
+          "id": "car-011",
+          "name": "Ben Thomas",
+          "position": "IC",
+          "overall": 79,
+          "stats": {
+            "str": 72,
+            "spd": 72,
+            "hnd": 76,
+            "kck": 52,
+            "tck": 76,
+            "stm": 72
+          },
+          "nationality": "Wales",
+          "club": "Cardiff Rugby",
+          "season": "2026"
+        },
+        {
+          "id": "car-012",
+          "name": "Rory Jennings",
+          "position": "OC",
+          "overall": 77,
+          "stats": {
+            "str": 68,
+            "spd": 72,
+            "hnd": 74,
+            "kck": 62,
+            "tck": 72,
+            "stm": 70
+          },
+          "nationality": "Wales",
+          "club": "Cardiff Rugby",
+          "season": "2026"
+        },
+        {
+          "id": "car-013",
+          "name": "Mason Grady",
+          "position": "LW",
+          "overall": 81,
+          "stats": {
+            "str": 74,
+            "spd": 86,
+            "hnd": 74,
+            "kck": 46,
+            "tck": 66,
+            "stm": 78
+          },
+          "nationality": "Wales",
+          "club": "Cardiff Rugby",
+          "season": "2026"
+        },
+        {
+          "id": "car-014",
+          "name": "Josh Adams",
+          "position": "RW",
+          "overall": 80,
+          "stats": {
+            "str": 70,
+            "spd": 86,
+            "hnd": 72,
+            "kck": 46,
+            "tck": 64,
+            "stm": 78
+          },
+          "nationality": "Wales",
+          "club": "Cardiff Rugby",
+          "season": "2026"
+        },
+        {
+          "id": "car-015",
+          "name": "Cam Winnett",
+          "position": "FB",
+          "overall": 79,
+          "stats": {
+            "str": 62,
+            "spd": 82,
+            "hnd": 76,
+            "kck": 76,
+            "tck": 62,
+            "stm": 76
+          },
+          "nationality": "England",
+          "club": "Cardiff Rugby",
+          "season": "2026"
+        }
+      ]
+    },
+    {
+      "club": "Dragons RFC",
+      "season": "2026",
+      "competition": "Champions Cup",
+      "badge": "DRA",
+      "players": [
+        {
+          "id": "dra-001",
+          "name": "Wyn Jones",
+          "position": "LH",
+          "overall": 74,
+          "stats": {
+            "str": 80,
+            "spd": 48,
+            "hnd": 54,
+            "kck": 34,
+            "tck": 68,
+            "stm": 66
+          },
+          "nationality": "Wales",
+          "club": "Dragons RFC",
+          "season": "2026"
+        },
+        {
+          "id": "dra-002",
+          "name": "Brodie Coghlan",
+          "position": "HK",
+          "overall": 73,
+          "stats": {
+            "str": 76,
+            "spd": 54,
+            "hnd": 60,
+            "kck": 34,
+            "tck": 68,
+            "stm": 68
+          },
+          "nationality": "Wales",
+          "club": "Dragons RFC",
+          "season": "2026"
+        },
+        {
+          "id": "dra-003",
+          "name": "Chris Coleman",
+          "position": "TH",
+          "overall": 72,
+          "stats": {
+            "str": 80,
+            "spd": 46,
+            "hnd": 52,
+            "kck": 32,
+            "tck": 66,
+            "stm": 64
+          },
+          "nationality": "Wales",
+          "club": "Dragons RFC",
+          "season": "2026"
+        },
+        {
+          "id": "dra-004",
+          "name": "Ben Carter",
+          "position": "LL",
+          "overall": 76,
+          "stats": {
+            "str": 80,
+            "spd": 54,
+            "hnd": 58,
+            "kck": 34,
+            "tck": 72,
+            "stm": 70
+          },
+          "nationality": "Wales",
+          "club": "Dragons RFC",
+          "season": "2026"
+        },
+        {
+          "id": "dra-005",
+          "name": "Shane Lewis-Hughes",
+          "position": "RL",
+          "overall": 74,
+          "stats": {
+            "str": 78,
+            "spd": 52,
+            "hnd": 56,
+            "kck": 32,
+            "tck": 70,
+            "stm": 68
+          },
+          "nationality": "Wales",
+          "club": "Dragons RFC",
+          "season": "2026"
+        },
+        {
+          "id": "dra-006",
+          "name": "Ryan Woodman",
+          "position": "BF",
+          "overall": 74,
+          "stats": {
+            "str": 76,
+            "spd": 62,
+            "hnd": 62,
+            "kck": 34,
+            "tck": 76,
+            "stm": 74
+          },
+          "nationality": "Wales",
+          "club": "Dragons RFC",
+          "season": "2026"
+        },
+        {
+          "id": "dra-007",
+          "name": "Thomas Young",
+          "position": "OF",
+          "overall": 76,
+          "stats": {
+            "str": 72,
+            "spd": 68,
+            "hnd": 66,
+            "kck": 34,
+            "tck": 78,
+            "stm": 80
+          },
+          "nationality": "Wales",
+          "club": "Dragons RFC",
+          "season": "2026"
+        },
+        {
+          "id": "dra-008",
+          "name": "Aaron Wainwright",
+          "position": "N8",
+          "overall": 78,
+          "stats": {
+            "str": 80,
+            "spd": 68,
+            "hnd": 68,
+            "kck": 36,
+            "tck": 78,
+            "stm": 76
+          },
+          "nationality": "Wales",
+          "club": "Dragons RFC",
+          "season": "2026"
+        },
+        {
+          "id": "dra-009",
+          "name": "Che Hope",
+          "position": "SH",
+          "overall": 72,
+          "stats": {
+            "str": 54,
+            "spd": 76,
+            "hnd": 74,
+            "kck": 64,
+            "tck": 58,
+            "stm": 78
+          },
+          "nationality": "Wales",
+          "club": "Dragons RFC",
+          "season": "2026"
+        },
+        {
+          "id": "dra-010",
+          "name": "Tinus de Beer",
+          "position": "FH",
+          "overall": 74,
+          "stats": {
+            "str": 54,
+            "spd": 64,
+            "hnd": 74,
+            "kck": 78,
+            "tck": 52,
+            "stm": 66
+          },
+          "nationality": "South Africa",
+          "club": "Dragons RFC",
+          "season": "2026"
+        },
+        {
+          "id": "dra-011",
+          "name": "Aneurin Owen",
+          "position": "IC",
+          "overall": 73,
+          "stats": {
+            "str": 68,
+            "spd": 68,
+            "hnd": 70,
+            "kck": 46,
+            "tck": 70,
+            "stm": 68
+          },
+          "nationality": "Wales",
+          "club": "Dragons RFC",
+          "season": "2026"
+        },
+        {
+          "id": "dra-012",
+          "name": "Fine Inisi",
+          "position": "OC",
+          "overall": 73,
+          "stats": {
+            "str": 70,
+            "spd": 70,
+            "hnd": 68,
+            "kck": 42,
+            "tck": 68,
+            "stm": 68
+          },
+          "nationality": "New Zealand",
+          "club": "Dragons RFC",
+          "season": "2026"
+        },
+        {
+          "id": "dra-013",
+          "name": "Rio Dyer",
+          "position": "LW",
+          "overall": 76,
+          "stats": {
+            "str": 64,
+            "spd": 86,
+            "hnd": 68,
+            "kck": 42,
+            "tck": 58,
+            "stm": 74
+          },
+          "nationality": "Wales",
+          "club": "Dragons RFC",
+          "season": "2026"
+        },
+        {
+          "id": "dra-014",
+          "name": "Jared Rosser",
+          "position": "RW",
+          "overall": 73,
+          "stats": {
+            "str": 60,
+            "spd": 84,
+            "hnd": 66,
+            "kck": 40,
+            "tck": 56,
+            "stm": 72
+          },
+          "nationality": "Wales",
+          "club": "Dragons RFC",
+          "season": "2026"
+        },
+        {
+          "id": "dra-015",
+          "name": "Angus O'Brien",
+          "position": "FB",
+          "overall": 74,
+          "stats": {
+            "str": 60,
+            "spd": 78,
+            "hnd": 70,
+            "kck": 74,
+            "tck": 60,
+            "stm": 72
+          },
+          "nationality": "Ireland",
+          "club": "Dragons RFC",
+          "season": "2026"
+        }
+      ]
+    },
+    {
+      "club": "Saracens",
+      "season": "2026",
+      "competition": "Champions Cup",
+      "badge": "SAR",
+      "players": [
+        {
+          "id": "sar-001",
+          "name": "Mako Vunipola",
+          "position": "LH",
+          "overall": 86,
+          "stats": {
+            "str": 90,
+            "spd": 56,
+            "hnd": 64,
+            "kck": 38,
+            "tck": 78,
+            "stm": 74
+          },
+          "nationality": "England",
+          "club": "Saracens",
+          "season": "2026"
+        },
+        {
+          "id": "sar-002",
+          "name": "Jamie George",
+          "position": "HK",
+          "overall": 87,
+          "stats": {
+            "str": 84,
+            "spd": 64,
+            "hnd": 74,
+            "kck": 42,
+            "tck": 78,
+            "stm": 78
+          },
+          "nationality": "England",
+          "club": "Saracens",
+          "season": "2026"
+        },
+        {
+          "id": "sar-003",
+          "name": "Marco Riccioni",
+          "position": "TH",
+          "overall": 85,
+          "stats": {
+            "str": 90,
+            "spd": 50,
+            "hnd": 60,
+            "kck": 36,
+            "tck": 74,
+            "stm": 70
+          },
+          "nationality": "Italy",
+          "club": "Saracens",
+          "season": "2026"
+        },
+        {
+          "id": "sar-004",
+          "name": "Maro Itoje",
+          "position": "LL",
+          "overall": 91,
+          "stats": {
+            "str": 88,
+            "spd": 66,
+            "hnd": 74,
+            "kck": 40,
+            "tck": 88,
+            "stm": 86
+          },
+          "nationality": "England",
+          "club": "Saracens",
+          "season": "2026"
+        },
+        {
+          "id": "sar-005",
+          "name": "Nick Isiekwe",
+          "position": "RL",
+          "overall": 84,
+          "stats": {
+            "str": 84,
+            "spd": 60,
+            "hnd": 64,
+            "kck": 36,
+            "tck": 80,
+            "stm": 78
+          },
+          "nationality": "England",
+          "club": "Saracens",
+          "season": "2026"
+        },
+        {
+          "id": "sar-006",
+          "name": "Juan Martin Gonzalez",
+          "position": "BF",
+          "overall": 85,
+          "stats": {
+            "str": 84,
+            "spd": 68,
+            "hnd": 72,
+            "kck": 40,
+            "tck": 86,
+            "stm": 82
+          },
+          "nationality": "Argentina",
+          "club": "Saracens",
+          "season": "2026"
+        },
+        {
+          "id": "sar-007",
+          "name": "Ben Earl",
+          "position": "OF",
+          "overall": 88,
+          "stats": {
+            "str": 80,
+            "spd": 76,
+            "hnd": 78,
+            "kck": 42,
+            "tck": 88,
+            "stm": 90
+          },
+          "nationality": "England",
+          "club": "Saracens",
+          "season": "2026"
+        },
+        {
+          "id": "sar-008",
+          "name": "Billy Vunipola",
+          "position": "N8",
+          "overall": 84,
+          "stats": {
+            "str": 90,
+            "spd": 64,
+            "hnd": 70,
+            "kck": 40,
+            "tck": 80,
+            "stm": 74
+          },
+          "nationality": "England",
+          "club": "Saracens",
+          "season": "2026"
+        },
+        {
+          "id": "sar-009",
+          "name": "Ivan van Zyl",
+          "position": "SH",
+          "overall": 84,
+          "stats": {
+            "str": 58,
+            "spd": 80,
+            "hnd": 82,
+            "kck": 72,
+            "tck": 64,
+            "stm": 84
+          },
+          "nationality": "South Africa",
+          "club": "Saracens",
+          "season": "2026"
+        },
+        {
+          "id": "sar-010",
+          "name": "Owen Farrell",
+          "position": "FH",
+          "overall": 88,
+          "stats": {
+            "str": 64,
+            "spd": 66,
+            "hnd": 84,
+            "kck": 92,
+            "tck": 68,
+            "stm": 78
+          },
+          "nationality": "England",
+          "club": "Saracens",
+          "season": "2026"
+        },
+        {
+          "id": "sar-011",
+          "name": "Nick Tompkins",
+          "position": "IC",
+          "overall": 84,
+          "stats": {
+            "str": 74,
+            "spd": 74,
+            "hnd": 80,
+            "kck": 54,
+            "tck": 80,
+            "stm": 76
+          },
+          "nationality": "Wales",
+          "club": "Saracens",
+          "season": "2026"
+        },
+        {
+          "id": "sar-012",
+          "name": "Alex Lozowski",
+          "position": "OC",
+          "overall": 83,
+          "stats": {
+            "str": 70,
+            "spd": 74,
+            "hnd": 80,
+            "kck": 70,
+            "tck": 74,
+            "stm": 74
+          },
+          "nationality": "England",
+          "club": "Saracens",
+          "season": "2026"
+        },
+        {
+          "id": "sar-013",
+          "name": "Tom Parton",
+          "position": "LW",
+          "overall": 82,
+          "stats": {
+            "str": 66,
+            "spd": 88,
+            "hnd": 74,
+            "kck": 46,
+            "tck": 62,
+            "stm": 80
+          },
+          "nationality": "England",
+          "club": "Saracens",
+          "season": "2026"
+        },
+        {
+          "id": "sar-014",
+          "name": "Noah Caluori",
+          "position": "RW",
+          "overall": 84,
+          "stats": {
+            "str": 66,
+            "spd": 90,
+            "hnd": 76,
+            "kck": 48,
+            "tck": 64,
+            "stm": 84
+          },
+          "nationality": "England",
+          "club": "Saracens",
+          "season": "2026"
+        },
+        {
+          "id": "sar-015",
+          "name": "Elliot Daly",
+          "position": "FB",
+          "overall": 85,
+          "stats": {
+            "str": 68,
+            "spd": 86,
+            "hnd": 80,
+            "kck": 82,
+            "tck": 68,
+            "stm": 80
+          },
+          "nationality": "England",
+          "club": "Saracens",
+          "season": "2026"
+        }
+      ]
+    },
+    {
+      "club": "Exeter Chiefs",
+      "season": "2026",
+      "competition": "Champions Cup",
+      "badge": "EXE",
+      "players": [
+        {
+          "id": "exe-001",
+          "name": "Scott Sio",
+          "position": "LH",
+          "overall": 84,
+          "stats": {
+            "str": 88,
+            "spd": 54,
+            "hnd": 60,
+            "kck": 36,
+            "tck": 76,
+            "stm": 72
+          },
+          "nationality": "Australia",
+          "club": "Exeter Chiefs",
+          "season": "2026"
+        },
+        {
+          "id": "exe-002",
+          "name": "Jack Yeandle",
+          "position": "HK",
+          "overall": 84,
+          "stats": {
+            "str": 82,
+            "spd": 62,
+            "hnd": 68,
+            "kck": 40,
+            "tck": 76,
+            "stm": 76
+          },
+          "nationality": "England",
+          "club": "Exeter Chiefs",
+          "season": "2026"
+        },
+        {
+          "id": "exe-003",
+          "name": "Jimmy Roots",
+          "position": "TH",
+          "overall": 82,
+          "stats": {
+            "str": 88,
+            "spd": 50,
+            "hnd": 58,
+            "kck": 34,
+            "tck": 72,
+            "stm": 70
+          },
+          "nationality": "England",
+          "club": "Exeter Chiefs",
+          "season": "2026"
+        },
+        {
+          "id": "exe-004",
+          "name": "Dafydd Jenkins",
+          "position": "LL",
+          "overall": 86,
+          "stats": {
+            "str": 86,
+            "spd": 58,
+            "hnd": 66,
+            "kck": 38,
+            "tck": 82,
+            "stm": 78
+          },
+          "nationality": "Wales",
+          "club": "Exeter Chiefs",
+          "season": "2026"
+        },
+        {
+          "id": "exe-005",
+          "name": "Andrea Zambonin",
+          "position": "RL",
+          "overall": 82,
+          "stats": {
+            "str": 84,
+            "spd": 56,
+            "hnd": 60,
+            "kck": 34,
+            "tck": 78,
+            "stm": 74
+          },
+          "nationality": "Italy",
+          "club": "Exeter Chiefs",
+          "season": "2026"
+        },
+        {
+          "id": "exe-006",
+          "name": "Tom Hooper",
+          "position": "BF",
+          "overall": 84,
+          "stats": {
+            "str": 80,
+            "spd": 68,
+            "hnd": 70,
+            "kck": 38,
+            "tck": 84,
+            "stm": 82
+          },
+          "nationality": "Australia",
+          "club": "Exeter Chiefs",
+          "season": "2026"
+        },
+        {
+          "id": "exe-007",
+          "name": "Ross Vintcent",
+          "position": "OF",
+          "overall": 82,
+          "stats": {
+            "str": 76,
+            "spd": 72,
+            "hnd": 70,
+            "kck": 36,
+            "tck": 82,
+            "stm": 84
+          },
+          "nationality": "England",
+          "club": "Exeter Chiefs",
+          "season": "2026"
+        },
+        {
+          "id": "exe-008",
+          "name": "Greg Fisilau",
+          "position": "N8",
+          "overall": 83,
+          "stats": {
+            "str": 84,
+            "spd": 68,
+            "hnd": 68,
+            "kck": 36,
+            "tck": 80,
+            "stm": 78
+          },
+          "nationality": "England",
+          "club": "Exeter Chiefs",
+          "season": "2026"
+        },
+        {
+          "id": "exe-009",
+          "name": "Stephen Varney",
+          "position": "SH",
+          "overall": 84,
+          "stats": {
+            "str": 58,
+            "spd": 82,
+            "hnd": 82,
+            "kck": 72,
+            "tck": 64,
+            "stm": 86
+          },
+          "nationality": "Italy",
+          "club": "Exeter Chiefs",
+          "season": "2026"
+        },
+        {
+          "id": "exe-010",
+          "name": "Harvey Skinner",
+          "position": "FH",
+          "overall": 84,
+          "stats": {
+            "str": 58,
+            "spd": 68,
+            "hnd": 80,
+            "kck": 86,
+            "tck": 58,
+            "stm": 74
+          },
+          "nationality": "England",
+          "club": "Exeter Chiefs",
+          "season": "2026"
+        },
+        {
+          "id": "exe-011",
+          "name": "Henry Slade",
+          "position": "IC",
+          "overall": 86,
+          "stats": {
+            "str": 68,
+            "spd": 76,
+            "hnd": 84,
+            "kck": 78,
+            "tck": 74,
+            "stm": 78
+          },
+          "nationality": "England",
+          "club": "Exeter Chiefs",
+          "season": "2026"
+        },
+        {
+          "id": "exe-012",
+          "name": "Will Rigg",
+          "position": "OC",
+          "overall": 82,
+          "stats": {
+            "str": 70,
+            "spd": 76,
+            "hnd": 78,
+            "kck": 50,
+            "tck": 76,
+            "stm": 74
+          },
+          "nationality": "England",
+          "club": "Exeter Chiefs",
+          "season": "2026"
+        },
+        {
+          "id": "exe-013",
+          "name": "Olly Woodburn",
+          "position": "LW",
+          "overall": 82,
+          "stats": {
+            "str": 66,
+            "spd": 86,
+            "hnd": 74,
+            "kck": 46,
+            "tck": 62,
+            "stm": 80
+          },
+          "nationality": "England",
+          "club": "Exeter Chiefs",
+          "season": "2026"
+        },
+        {
+          "id": "exe-014",
+          "name": "Immanuel Feyi-Waboso",
+          "position": "RW",
+          "overall": 86,
+          "stats": {
+            "str": 70,
+            "spd": 92,
+            "hnd": 76,
+            "kck": 48,
+            "tck": 64,
+            "stm": 82
+          },
+          "nationality": "England",
+          "club": "Exeter Chiefs",
+          "season": "2026"
+        },
+        {
+          "id": "exe-015",
+          "name": "Josh Hodge",
+          "position": "FB",
+          "overall": 85,
+          "stats": {
+            "str": 64,
+            "spd": 84,
+            "hnd": 78,
+            "kck": 84,
+            "tck": 66,
+            "stm": 82
+          },
+          "nationality": "England",
+          "club": "Exeter Chiefs",
+          "season": "2026"
+        }
+      ]
+    },
+    {
+      "club": "Bath Rugby",
+      "season": "2026",
+      "competition": "Champions Cup",
+      "badge": "BAT",
+      "players": [
+        {
+          "id": "bat-001",
+          "name": "Beno Obano",
+          "position": "LH",
+          "overall": 83,
+          "stats": {
+            "str": 88,
+            "spd": 56,
+            "hnd": 62,
+            "kck": 36,
+            "tck": 76,
+            "stm": 74
+          },
+          "nationality": "England",
+          "club": "Bath Rugby",
+          "season": "2026"
+        },
+        {
+          "id": "bat-002",
+          "name": "Tom Dunn",
+          "position": "HK",
+          "overall": 82,
+          "stats": {
+            "str": 82,
+            "spd": 60,
+            "hnd": 68,
+            "kck": 38,
+            "tck": 74,
+            "stm": 74
+          },
+          "nationality": "England",
+          "club": "Bath Rugby",
+          "season": "2026"
+        },
+        {
+          "id": "bat-003",
+          "name": "Thomas du Toit",
+          "position": "TH",
+          "overall": 85,
+          "stats": {
+            "str": 90,
+            "spd": 52,
+            "hnd": 60,
+            "kck": 36,
+            "tck": 76,
+            "stm": 72
+          },
+          "nationality": "South Africa",
+          "club": "Bath Rugby",
+          "season": "2026"
+        },
+        {
+          "id": "bat-004",
+          "name": "Quinn Roux",
+          "position": "LL",
+          "overall": 83,
+          "stats": {
+            "str": 86,
+            "spd": 54,
+            "hnd": 62,
+            "kck": 36,
+            "tck": 78,
+            "stm": 74
+          },
+          "nationality": "South Africa",
+          "club": "Bath Rugby",
+          "season": "2026"
+        },
+        {
+          "id": "bat-005",
+          "name": "Charlie Ewels",
+          "position": "RL",
+          "overall": 82,
+          "stats": {
+            "str": 84,
+            "spd": 54,
+            "hnd": 62,
+            "kck": 36,
+            "tck": 78,
+            "stm": 74
+          },
+          "nationality": "England",
+          "club": "Bath Rugby",
+          "season": "2026"
+        },
+        {
+          "id": "bat-006",
+          "name": "Guy Pepper",
+          "position": "BF",
+          "overall": 83,
+          "stats": {
+            "str": 80,
+            "spd": 66,
+            "hnd": 70,
+            "kck": 38,
+            "tck": 84,
+            "stm": 82
+          },
+          "nationality": "England",
+          "club": "Bath Rugby",
+          "season": "2026"
+        },
+        {
+          "id": "bat-007",
+          "name": "Sam Underhill",
+          "position": "OF",
+          "overall": 85,
+          "stats": {
+            "str": 78,
+            "spd": 74,
+            "hnd": 72,
+            "kck": 38,
+            "tck": 88,
+            "stm": 86
+          },
+          "nationality": "England",
+          "club": "Bath Rugby",
+          "season": "2026"
+        },
+        {
+          "id": "bat-008",
+          "name": "Miles Reid",
+          "position": "N8",
+          "overall": 83,
+          "stats": {
+            "str": 84,
+            "spd": 68,
+            "hnd": 70,
+            "kck": 38,
+            "tck": 80,
+            "stm": 78
+          },
+          "nationality": "England",
+          "club": "Bath Rugby",
+          "season": "2026"
+        },
+        {
+          "id": "bat-009",
+          "name": "Ben Spencer",
+          "position": "SH",
+          "overall": 86,
+          "stats": {
+            "str": 60,
+            "spd": 82,
+            "hnd": 84,
+            "kck": 78,
+            "tck": 66,
+            "stm": 86
+          },
+          "nationality": "England",
+          "club": "Bath Rugby",
+          "season": "2026"
+        },
+        {
+          "id": "bat-010",
+          "name": "Finn Russell",
+          "position": "FH",
+          "overall": 88,
+          "stats": {
+            "str": 58,
+            "spd": 70,
+            "hnd": 88,
+            "kck": 90,
+            "tck": 58,
+            "stm": 76
+          },
+          "nationality": "Scotland",
+          "club": "Bath Rugby",
+          "season": "2026"
+        },
+        {
+          "id": "bat-011",
+          "name": "Cameron Redpath",
+          "position": "IC",
+          "overall": 84,
+          "stats": {
+            "str": 72,
+            "spd": 74,
+            "hnd": 82,
+            "kck": 58,
+            "tck": 78,
+            "stm": 76
+          },
+          "nationality": "Scotland",
+          "club": "Bath Rugby",
+          "season": "2026"
+        },
+        {
+          "id": "bat-012",
+          "name": "Ollie Lawrence",
+          "position": "OC",
+          "overall": 85,
+          "stats": {
+            "str": 78,
+            "spd": 78,
+            "hnd": 80,
+            "kck": 52,
+            "tck": 80,
+            "stm": 78
+          },
+          "nationality": "England",
+          "club": "Bath Rugby",
+          "season": "2026"
+        },
+        {
+          "id": "bat-013",
+          "name": "Will Muir",
+          "position": "LW",
+          "overall": 83,
+          "stats": {
+            "str": 68,
+            "spd": 88,
+            "hnd": 74,
+            "kck": 46,
+            "tck": 64,
+            "stm": 82
+          },
+          "nationality": "England",
+          "club": "Bath Rugby",
+          "season": "2026"
+        },
+        {
+          "id": "bat-014",
+          "name": "Joe Cokanasiga",
+          "position": "RW",
+          "overall": 84,
+          "stats": {
+            "str": 80,
+            "spd": 88,
+            "hnd": 72,
+            "kck": 44,
+            "tck": 66,
+            "stm": 80
+          },
+          "nationality": "England",
+          "club": "Bath Rugby",
+          "season": "2026"
+        },
+        {
+          "id": "bat-015",
+          "name": "Tom de Glanville",
+          "position": "FB",
+          "overall": 84,
+          "stats": {
+            "str": 64,
+            "spd": 84,
+            "hnd": 80,
+            "kck": 78,
+            "tck": 66,
+            "stm": 82
+          },
+          "nationality": "England",
+          "club": "Bath Rugby",
+          "season": "2026"
+        }
+      ]
+    },
+    {
+      "club": "Northampton Saints",
+      "season": "2026",
+      "competition": "Champions Cup",
+      "badge": "NOR",
+      "players": [
+        {
+          "id": "nor-001",
+          "name": "Emmanuel Iyogun",
+          "position": "LH",
+          "overall": 82,
+          "stats": {
+            "str": 86,
+            "spd": 54,
+            "hnd": 60,
+            "kck": 36,
+            "tck": 74,
+            "stm": 72
+          },
+          "nationality": "England",
+          "club": "Northampton Saints",
+          "season": "2026"
+        },
+        {
+          "id": "nor-002",
+          "name": "Curtis Langdon",
+          "position": "HK",
+          "overall": 80,
+          "stats": {
+            "str": 80,
+            "spd": 60,
+            "hnd": 66,
+            "kck": 38,
+            "tck": 72,
+            "stm": 74
+          },
+          "nationality": "England",
+          "club": "Northampton Saints",
+          "season": "2026"
+        },
+        {
+          "id": "nor-003",
+          "name": "Trevor Davison",
+          "position": "TH",
+          "overall": 80,
+          "stats": {
+            "str": 88,
+            "spd": 50,
+            "hnd": 58,
+            "kck": 34,
+            "tck": 72,
+            "stm": 70
+          },
+          "nationality": "England",
+          "club": "Northampton Saints",
+          "season": "2026"
+        },
+        {
+          "id": "nor-004",
+          "name": "Alex Coles",
+          "position": "LL",
+          "overall": 82,
+          "stats": {
+            "str": 84,
+            "spd": 58,
+            "hnd": 64,
+            "kck": 36,
+            "tck": 80,
+            "stm": 76
+          },
+          "nationality": "England",
+          "club": "Northampton Saints",
+          "season": "2026"
+        },
+        {
+          "id": "nor-005",
+          "name": "Ed Prowse",
+          "position": "RL",
+          "overall": 80,
+          "stats": {
+            "str": 82,
+            "spd": 56,
+            "hnd": 62,
+            "kck": 34,
+            "tck": 76,
+            "stm": 74
+          },
+          "nationality": "England",
+          "club": "Northampton Saints",
+          "season": "2026"
+        },
+        {
+          "id": "nor-006",
+          "name": "Callum Chick",
+          "position": "BF",
+          "overall": 82,
+          "stats": {
+            "str": 80,
+            "spd": 66,
+            "hnd": 68,
+            "kck": 38,
+            "tck": 84,
+            "stm": 80
+          },
+          "nationality": "England",
+          "club": "Northampton Saints",
+          "season": "2026"
+        },
+        {
+          "id": "nor-007",
+          "name": "Josh Kemeny",
+          "position": "OF",
+          "overall": 82,
+          "stats": {
+            "str": 76,
+            "spd": 72,
+            "hnd": 70,
+            "kck": 38,
+            "tck": 82,
+            "stm": 84
+          },
+          "nationality": "Australia",
+          "club": "Northampton Saints",
+          "season": "2026"
+        },
+        {
+          "id": "nor-008",
+          "name": "Henry Pollock",
+          "position": "N8",
+          "overall": 86,
+          "stats": {
+            "str": 82,
+            "spd": 76,
+            "hnd": 74,
+            "kck": 40,
+            "tck": 84,
+            "stm": 86
+          },
+          "nationality": "England",
+          "club": "Northampton Saints",
+          "season": "2026"
+        },
+        {
+          "id": "nor-009",
+          "name": "Alex Mitchell",
+          "position": "SH",
+          "overall": 86,
+          "stats": {
+            "str": 60,
+            "spd": 84,
+            "hnd": 84,
+            "kck": 74,
+            "tck": 66,
+            "stm": 88
+          },
+          "nationality": "England",
+          "club": "Northampton Saints",
+          "season": "2026"
+        },
+        {
+          "id": "nor-010",
+          "name": "Fin Smith",
+          "position": "FH",
+          "overall": 86,
+          "stats": {
+            "str": 58,
+            "spd": 70,
+            "hnd": 84,
+            "kck": 88,
+            "tck": 60,
+            "stm": 76
+          },
+          "nationality": "England",
+          "club": "Northampton Saints",
+          "season": "2026"
+        },
+        {
+          "id": "nor-011",
+          "name": "Fraser Dingwall",
+          "position": "IC",
+          "overall": 82,
+          "stats": {
+            "str": 72,
+            "spd": 74,
+            "hnd": 80,
+            "kck": 54,
+            "tck": 78,
+            "stm": 76
+          },
+          "nationality": "Scotland",
+          "club": "Northampton Saints",
+          "season": "2026"
+        },
+        {
+          "id": "nor-012",
+          "name": "Tommy Freeman",
+          "position": "OC",
+          "overall": 84,
+          "stats": {
+            "str": 74,
+            "spd": 82,
+            "hnd": 78,
+            "kck": 50,
+            "tck": 74,
+            "stm": 80
+          },
+          "nationality": "England",
+          "club": "Northampton Saints",
+          "season": "2026"
+        },
+        {
+          "id": "nor-013",
+          "name": "James Ramm",
+          "position": "LW",
+          "overall": 81,
+          "stats": {
+            "str": 64,
+            "spd": 88,
+            "hnd": 72,
+            "kck": 44,
+            "tck": 60,
+            "stm": 80
+          },
+          "nationality": "England",
+          "club": "Northampton Saints",
+          "season": "2026"
+        },
+        {
+          "id": "nor-014",
+          "name": "Ollie Sleightholme",
+          "position": "RW",
+          "overall": 82,
+          "stats": {
+            "str": 66,
+            "spd": 88,
+            "hnd": 74,
+            "kck": 46,
+            "tck": 62,
+            "stm": 82
+          },
+          "nationality": "England",
+          "club": "Northampton Saints",
+          "season": "2026"
+        },
+        {
+          "id": "nor-015",
+          "name": "George Furbank",
+          "position": "FB",
+          "overall": 85,
+          "stats": {
+            "str": 64,
+            "spd": 84,
+            "hnd": 80,
+            "kck": 82,
+            "tck": 68,
+            "stm": 82
+          },
+          "nationality": "England",
+          "club": "Northampton Saints",
+          "season": "2026"
+        }
+      ]
+    },
+    {
+      "club": "Sale Sharks",
+      "season": "2026",
+      "competition": "Champions Cup",
+      "badge": "SAL",
+      "players": [
+        {
+          "id": "sal-001",
+          "name": "Bevan Rodd",
+          "position": "LH",
+          "overall": 82,
+          "stats": {
+            "str": 86,
+            "spd": 56,
+            "hnd": 62,
+            "kck": 36,
+            "tck": 74,
+            "stm": 72
+          },
+          "nationality": "England",
+          "club": "Sale Sharks",
+          "season": "2026"
+        },
+        {
+          "id": "sal-002",
+          "name": "Luke Cowan-Dickie",
+          "position": "HK",
+          "overall": 81,
+          "stats": {
+            "str": 82,
+            "spd": 62,
+            "hnd": 68,
+            "kck": 38,
+            "tck": 74,
+            "stm": 76
+          },
+          "nationality": "England",
+          "club": "Sale Sharks",
+          "season": "2026"
+        },
+        {
+          "id": "sal-003",
+          "name": "Asher Opoku-Fordjour",
+          "position": "TH",
+          "overall": 80,
+          "stats": {
+            "str": 88,
+            "spd": 50,
+            "hnd": 58,
+            "kck": 34,
+            "tck": 72,
+            "stm": 68
+          },
+          "nationality": "England",
+          "club": "Sale Sharks",
+          "season": "2026"
+        },
+        {
+          "id": "sal-004",
+          "name": "Ernst van Rhyn",
+          "position": "LL",
+          "overall": 80,
+          "stats": {
+            "str": 82,
+            "spd": 58,
+            "hnd": 64,
+            "kck": 36,
+            "tck": 78,
+            "stm": 76
+          },
+          "nationality": "South Africa",
+          "club": "Sale Sharks",
+          "season": "2026"
+        },
+        {
+          "id": "sal-005",
+          "name": "Jonny Hill",
+          "position": "RL",
+          "overall": 79,
+          "stats": {
+            "str": 84,
+            "spd": 54,
+            "hnd": 60,
+            "kck": 34,
+            "tck": 76,
+            "stm": 72
+          },
+          "nationality": "England",
+          "club": "Sale Sharks",
+          "season": "2026"
+        },
+        {
+          "id": "sal-006",
+          "name": "Jean-Luc du Preez",
+          "position": "BF",
+          "overall": 81,
+          "stats": {
+            "str": 82,
+            "spd": 66,
+            "hnd": 68,
+            "kck": 38,
+            "tck": 82,
+            "stm": 80
+          },
+          "nationality": "South Africa",
+          "club": "Sale Sharks",
+          "season": "2026"
+        },
+        {
+          "id": "sal-007",
+          "name": "Ben Curry",
+          "position": "OF",
+          "overall": 82,
+          "stats": {
+            "str": 76,
+            "spd": 70,
+            "hnd": 70,
+            "kck": 38,
+            "tck": 84,
+            "stm": 86
+          },
+          "nationality": "England",
+          "club": "Sale Sharks",
+          "season": "2026"
+        },
+        {
+          "id": "sal-008",
+          "name": "Tom Curry",
+          "position": "N8",
+          "overall": 84,
+          "stats": {
+            "str": 82,
+            "spd": 72,
+            "hnd": 72,
+            "kck": 40,
+            "tck": 86,
+            "stm": 84
+          },
+          "nationality": "England",
+          "club": "Sale Sharks",
+          "season": "2026"
+        },
+        {
+          "id": "sal-009",
+          "name": "Raffi Quirke",
+          "position": "SH",
+          "overall": 82,
+          "stats": {
+            "str": 58,
+            "spd": 82,
+            "hnd": 82,
+            "kck": 72,
+            "tck": 64,
+            "stm": 86
+          },
+          "nationality": "England",
+          "club": "Sale Sharks",
+          "season": "2026"
+        },
+        {
+          "id": "sal-010",
+          "name": "George Ford",
+          "position": "FH",
+          "overall": 84,
+          "stats": {
+            "str": 56,
+            "spd": 68,
+            "hnd": 82,
+            "kck": 90,
+            "tck": 58,
+            "stm": 76
+          },
+          "nationality": "England",
+          "club": "Sale Sharks",
+          "season": "2026"
+        },
+        {
+          "id": "sal-011",
+          "name": "Rekeiti Ma'asi-White",
+          "position": "IC",
+          "overall": 80,
+          "stats": {
+            "str": 76,
+            "spd": 72,
+            "hnd": 76,
+            "kck": 50,
+            "tck": 78,
+            "stm": 74
+          },
+          "nationality": "New Zealand",
+          "club": "Sale Sharks",
+          "season": "2026"
+        },
+        {
+          "id": "sal-012",
+          "name": "Rob du Preez",
+          "position": "OC",
+          "overall": 79,
+          "stats": {
+            "str": 70,
+            "spd": 72,
+            "hnd": 76,
+            "kck": 66,
+            "tck": 72,
+            "stm": 72
+          },
+          "nationality": "South Africa",
+          "club": "Sale Sharks",
+          "season": "2026"
+        },
+        {
+          "id": "sal-013",
+          "name": "Arron Reed",
+          "position": "LW",
+          "overall": 80,
+          "stats": {
+            "str": 68,
+            "spd": 88,
+            "hnd": 72,
+            "kck": 44,
+            "tck": 62,
+            "stm": 80
+          },
+          "nationality": "Scotland",
+          "club": "Sale Sharks",
+          "season": "2026"
+        },
+        {
+          "id": "sal-014",
+          "name": "Tom Roebuck",
+          "position": "RW",
+          "overall": 80,
+          "stats": {
+            "str": 72,
+            "spd": 86,
+            "hnd": 72,
+            "kck": 44,
+            "tck": 64,
+            "stm": 80
+          },
+          "nationality": "England",
+          "club": "Sale Sharks",
+          "season": "2026"
+        },
+        {
+          "id": "sal-015",
+          "name": "Joe Carpenter",
+          "position": "FB",
+          "overall": 82,
+          "stats": {
+            "str": 64,
+            "spd": 84,
+            "hnd": 78,
+            "kck": 78,
+            "tck": 66,
+            "stm": 80
+          },
+          "nationality": "England",
+          "club": "Sale Sharks",
+          "season": "2026"
+        }
+      ]
+    },
+    {
+      "club": "Leicester Tigers",
+      "season": "2026",
+      "competition": "Champions Cup",
+      "badge": "LEI",
+      "players": [
+        {
+          "id": "lei-001",
+          "name": "Nicky Smith",
+          "position": "LH",
+          "overall": 80,
+          "stats": {
+            "str": 86,
+            "spd": 54,
+            "hnd": 60,
+            "kck": 36,
+            "tck": 74,
+            "stm": 72
+          },
+          "nationality": "Wales",
+          "club": "Leicester Tigers",
+          "season": "2026"
+        },
+        {
+          "id": "lei-002",
+          "name": "Jamie Blamire",
+          "position": "HK",
+          "overall": 79,
+          "stats": {
+            "str": 80,
+            "spd": 62,
+            "hnd": 66,
+            "kck": 38,
+            "tck": 72,
+            "stm": 74
+          },
+          "nationality": "England",
+          "club": "Leicester Tigers",
+          "season": "2026"
+        },
+        {
+          "id": "lei-003",
+          "name": "Joe Heyes",
+          "position": "TH",
+          "overall": 79,
+          "stats": {
+            "str": 86,
+            "spd": 48,
+            "hnd": 56,
+            "kck": 34,
+            "tck": 70,
+            "stm": 68
+          },
+          "nationality": "England",
+          "club": "Leicester Tigers",
+          "season": "2026"
+        },
+        {
+          "id": "lei-004",
+          "name": "Cameron Henderson",
+          "position": "LL",
+          "overall": 79,
+          "stats": {
+            "str": 84,
+            "spd": 54,
+            "hnd": 60,
+            "kck": 34,
+            "tck": 76,
+            "stm": 74
+          },
+          "nationality": "Scotland",
+          "club": "Leicester Tigers",
+          "season": "2026"
+        },
+        {
+          "id": "lei-005",
+          "name": "Ollie Chessum",
+          "position": "RL",
+          "overall": 82,
+          "stats": {
+            "str": 84,
+            "spd": 58,
+            "hnd": 64,
+            "kck": 36,
+            "tck": 80,
+            "stm": 76
+          },
+          "nationality": "England",
+          "club": "Leicester Tigers",
+          "season": "2026"
+        },
+        {
+          "id": "lei-006",
+          "name": "Hanro Liebenberg",
+          "position": "BF",
+          "overall": 82,
+          "stats": {
+            "str": 80,
+            "spd": 66,
+            "hnd": 68,
+            "kck": 38,
+            "tck": 84,
+            "stm": 82
+          },
+          "nationality": "South Africa",
+          "club": "Leicester Tigers",
+          "season": "2026"
+        },
+        {
+          "id": "lei-007",
+          "name": "Tommy Reffell",
+          "position": "OF",
+          "overall": 82,
+          "stats": {
+            "str": 76,
+            "spd": 72,
+            "hnd": 70,
+            "kck": 38,
+            "tck": 84,
+            "stm": 86
+          },
+          "nationality": "Wales",
+          "club": "Leicester Tigers",
+          "season": "2026"
+        },
+        {
+          "id": "lei-008",
+          "name": "Olly Cracknell",
+          "position": "N8",
+          "overall": 80,
+          "stats": {
+            "str": 82,
+            "spd": 68,
+            "hnd": 68,
+            "kck": 36,
+            "tck": 80,
+            "stm": 78
+          },
+          "nationality": "England",
+          "club": "Leicester Tigers",
+          "season": "2026"
+        },
+        {
+          "id": "lei-009",
+          "name": "Jack van Poortvliet",
+          "position": "SH",
+          "overall": 81,
+          "stats": {
+            "str": 58,
+            "spd": 82,
+            "hnd": 82,
+            "kck": 72,
+            "tck": 64,
+            "stm": 84
+          },
+          "nationality": "England",
+          "club": "Leicester Tigers",
+          "season": "2026"
+        },
+        {
+          "id": "lei-010",
+          "name": "James O'Connor",
+          "position": "FH",
+          "overall": 80,
+          "stats": {
+            "str": 58,
+            "spd": 70,
+            "hnd": 80,
+            "kck": 82,
+            "tck": 58,
+            "stm": 72
+          },
+          "nationality": "Australia",
+          "club": "Leicester Tigers",
+          "season": "2026"
+        },
+        {
+          "id": "lei-011",
+          "name": "Orlando Bailey",
+          "position": "IC",
+          "overall": 79,
+          "stats": {
+            "str": 68,
+            "spd": 72,
+            "hnd": 78,
+            "kck": 68,
+            "tck": 72,
+            "stm": 72
+          },
+          "nationality": "England",
+          "club": "Leicester Tigers",
+          "season": "2026"
+        },
+        {
+          "id": "lei-012",
+          "name": "Will Wand",
+          "position": "OC",
+          "overall": 78,
+          "stats": {
+            "str": 70,
+            "spd": 74,
+            "hnd": 74,
+            "kck": 50,
+            "tck": 74,
+            "stm": 72
+          },
+          "nationality": "England",
+          "club": "Leicester Tigers",
+          "season": "2026"
+        },
+        {
+          "id": "lei-013",
+          "name": "Gabriel Hamer-Webb",
+          "position": "LW",
+          "overall": 79,
+          "stats": {
+            "str": 68,
+            "spd": 86,
+            "hnd": 70,
+            "kck": 44,
+            "tck": 62,
+            "stm": 78
+          },
+          "nationality": "England",
+          "club": "Leicester Tigers",
+          "season": "2026"
+        },
+        {
+          "id": "lei-014",
+          "name": "Adam Radwan",
+          "position": "RW",
+          "overall": 79,
+          "stats": {
+            "str": 64,
+            "spd": 88,
+            "hnd": 70,
+            "kck": 42,
+            "tck": 60,
+            "stm": 78
+          },
+          "nationality": "England",
+          "club": "Leicester Tigers",
+          "season": "2026"
+        },
+        {
+          "id": "lei-015",
+          "name": "George Pearson",
+          "position": "FB",
+          "overall": 78,
+          "stats": {
+            "str": 62,
+            "spd": 82,
+            "hnd": 74,
+            "kck": 76,
+            "tck": 62,
+            "stm": 76
+          },
+          "nationality": "England",
+          "club": "Leicester Tigers",
+          "season": "2026"
+        }
+      ]
+    },
+    {
+      "club": "Harlequins",
+      "season": "2026",
+      "competition": "Champions Cup",
+      "badge": "HAR",
+      "players": [
+        {
+          "id": "har-001",
+          "name": "Joe Marler",
+          "position": "LH",
+          "overall": 80,
+          "stats": {
+            "str": 86,
+            "spd": 54,
+            "hnd": 62,
+            "kck": 36,
+            "tck": 74,
+            "stm": 72
+          },
+          "nationality": "England",
+          "club": "Harlequins",
+          "season": "2026"
+        },
+        {
+          "id": "har-002",
+          "name": "Jack Walker",
+          "position": "HK",
+          "overall": 79,
+          "stats": {
+            "str": 80,
+            "spd": 62,
+            "hnd": 66,
+            "kck": 38,
+            "tck": 72,
+            "stm": 76
+          },
+          "nationality": "England",
+          "club": "Harlequins",
+          "season": "2026"
+        },
+        {
+          "id": "har-003",
+          "name": "Will Collier",
+          "position": "TH",
+          "overall": 78,
+          "stats": {
+            "str": 86,
+            "spd": 48,
+            "hnd": 56,
+            "kck": 34,
+            "tck": 70,
+            "stm": 68
+          },
+          "nationality": "England",
+          "club": "Harlequins",
+          "season": "2026"
+        },
+        {
+          "id": "har-004",
+          "name": "Irne Herbst",
+          "position": "LL",
+          "overall": 80,
+          "stats": {
+            "str": 84,
+            "spd": 56,
+            "hnd": 62,
+            "kck": 36,
+            "tck": 78,
+            "stm": 74
+          },
+          "nationality": "South Africa",
+          "club": "Harlequins",
+          "season": "2026"
+        },
+        {
+          "id": "har-005",
+          "name": "Stephan Lewies",
+          "position": "RL",
+          "overall": 80,
+          "stats": {
+            "str": 84,
+            "spd": 56,
+            "hnd": 62,
+            "kck": 34,
+            "tck": 76,
+            "stm": 74
+          },
+          "nationality": "South Africa",
+          "club": "Harlequins",
+          "season": "2026"
+        },
+        {
+          "id": "har-006",
+          "name": "Chandler Cunningham-South",
+          "position": "BF",
+          "overall": 82,
+          "stats": {
+            "str": 80,
+            "spd": 68,
+            "hnd": 70,
+            "kck": 38,
+            "tck": 84,
+            "stm": 82
+          },
+          "nationality": "England",
+          "club": "Harlequins",
+          "season": "2026"
+        },
+        {
+          "id": "har-007",
+          "name": "Will Evans",
+          "position": "OF",
+          "overall": 80,
+          "stats": {
+            "str": 74,
+            "spd": 70,
+            "hnd": 68,
+            "kck": 36,
+            "tck": 84,
+            "stm": 86
+          },
+          "nationality": "Wales",
+          "club": "Harlequins",
+          "season": "2026"
+        },
+        {
+          "id": "har-008",
+          "name": "Alex Dombrandt",
+          "position": "N8",
+          "overall": 83,
+          "stats": {
+            "str": 84,
+            "spd": 72,
+            "hnd": 74,
+            "kck": 40,
+            "tck": 82,
+            "stm": 82
+          },
+          "nationality": "England",
+          "club": "Harlequins",
+          "season": "2026"
+        },
+        {
+          "id": "har-009",
+          "name": "Danny Care",
+          "position": "SH",
+          "overall": 80,
+          "stats": {
+            "str": 54,
+            "spd": 82,
+            "hnd": 82,
+            "kck": 72,
+            "tck": 62,
+            "stm": 84
+          },
+          "nationality": "England",
+          "club": "Harlequins",
+          "season": "2026"
+        },
+        {
+          "id": "har-010",
+          "name": "Marcus Smith",
+          "position": "FH",
+          "overall": 84,
+          "stats": {
+            "str": 56,
+            "spd": 74,
+            "hnd": 86,
+            "kck": 86,
+            "tck": 58,
+            "stm": 78
+          },
+          "nationality": "England",
+          "club": "Harlequins",
+          "season": "2026"
+        },
+        {
+          "id": "har-011",
+          "name": "Luke Northmore",
+          "position": "IC",
+          "overall": 79,
+          "stats": {
+            "str": 72,
+            "spd": 74,
+            "hnd": 76,
+            "kck": 52,
+            "tck": 76,
+            "stm": 74
+          },
+          "nationality": "England",
+          "club": "Harlequins",
+          "season": "2026"
+        },
+        {
+          "id": "har-012",
+          "name": "Andre Esterhuizen",
+          "position": "OC",
+          "overall": 81,
+          "stats": {
+            "str": 80,
+            "spd": 72,
+            "hnd": 74,
+            "kck": 48,
+            "tck": 78,
+            "stm": 74
+          },
+          "nationality": "South Africa",
+          "club": "Harlequins",
+          "season": "2026"
+        },
+        {
+          "id": "har-013",
+          "name": "Cadan Murley",
+          "position": "LW",
+          "overall": 81,
+          "stats": {
+            "str": 66,
+            "spd": 88,
+            "hnd": 74,
+            "kck": 46,
+            "tck": 62,
+            "stm": 82
+          },
+          "nationality": "England",
+          "club": "Harlequins",
+          "season": "2026"
+        },
+        {
+          "id": "har-014",
+          "name": "Louis Lynagh",
+          "position": "RW",
+          "overall": 80,
+          "stats": {
+            "str": 66,
+            "spd": 86,
+            "hnd": 74,
+            "kck": 48,
+            "tck": 62,
+            "stm": 80
+          },
+          "nationality": "Australia",
+          "club": "Harlequins",
+          "season": "2026"
+        },
+        {
+          "id": "har-015",
+          "name": "Tyrone Green",
+          "position": "FB",
+          "overall": 82,
+          "stats": {
+            "str": 64,
+            "spd": 86,
+            "hnd": 78,
+            "kck": 78,
+            "tck": 66,
+            "stm": 80
+          },
+          "nationality": "South Africa",
+          "club": "Harlequins",
+          "season": "2026"
+        }
+      ]
+    },
+    {
+      "club": "Bristol Bears",
+      "season": "2026",
+      "competition": "Champions Cup",
+      "badge": "BRI",
+      "players": [
+        {
+          "id": "bri-001",
+          "name": "Ellis Genge",
+          "position": "LH",
+          "overall": 84,
+          "stats": {
+            "str": 90,
+            "spd": 60,
+            "hnd": 66,
+            "kck": 36,
+            "tck": 78,
+            "stm": 76
+          },
+          "nationality": "England",
+          "club": "Bristol Bears",
+          "season": "2026"
+        },
+        {
+          "id": "bri-002",
+          "name": "Gabriel Oghre",
+          "position": "HK",
+          "overall": 79,
+          "stats": {
+            "str": 80,
+            "spd": 62,
+            "hnd": 66,
+            "kck": 38,
+            "tck": 72,
+            "stm": 74
+          },
+          "nationality": "England",
+          "club": "Bristol Bears",
+          "season": "2026"
+        },
+        {
+          "id": "bri-003",
+          "name": "George Kloska",
+          "position": "TH",
+          "overall": 79,
+          "stats": {
+            "str": 86,
+            "spd": 50,
+            "hnd": 58,
+            "kck": 34,
+            "tck": 70,
+            "stm": 68
+          },
+          "nationality": "England",
+          "club": "Bristol Bears",
+          "season": "2026"
+        },
+        {
+          "id": "bri-004",
+          "name": "James Dun",
+          "position": "LL",
+          "overall": 78,
+          "stats": {
+            "str": 82,
+            "spd": 54,
+            "hnd": 60,
+            "kck": 34,
+            "tck": 74,
+            "stm": 72
+          },
+          "nationality": "England",
+          "club": "Bristol Bears",
+          "season": "2026"
+        },
+        {
+          "id": "bri-005",
+          "name": "Joe Owen",
+          "position": "RL",
+          "overall": 78,
+          "stats": {
+            "str": 82,
+            "spd": 56,
+            "hnd": 60,
+            "kck": 34,
+            "tck": 74,
+            "stm": 72
+          },
+          "nationality": "England",
+          "club": "Bristol Bears",
+          "season": "2026"
+        },
+        {
+          "id": "bri-006",
+          "name": "Steven Luatua",
+          "position": "BF",
+          "overall": 82,
+          "stats": {
+            "str": 82,
+            "spd": 68,
+            "hnd": 70,
+            "kck": 38,
+            "tck": 84,
+            "stm": 80
+          },
+          "nationality": "New Zealand",
+          "club": "Bristol Bears",
+          "season": "2026"
+        },
+        {
+          "id": "bri-007",
+          "name": "Fitz Harding",
+          "position": "OF",
+          "overall": 81,
+          "stats": {
+            "str": 76,
+            "spd": 72,
+            "hnd": 70,
+            "kck": 38,
+            "tck": 82,
+            "stm": 84
+          },
+          "nationality": "England",
+          "club": "Bristol Bears",
+          "season": "2026"
+        },
+        {
+          "id": "bri-008",
+          "name": "Santiago Grondona",
+          "position": "N8",
+          "overall": 80,
+          "stats": {
+            "str": 82,
+            "spd": 66,
+            "hnd": 68,
+            "kck": 38,
+            "tck": 80,
+            "stm": 78
+          },
+          "nationality": "Argentina",
+          "club": "Bristol Bears",
+          "season": "2026"
+        },
+        {
+          "id": "bri-009",
+          "name": "Harry Randall",
+          "position": "SH",
+          "overall": 82,
+          "stats": {
+            "str": 56,
+            "spd": 84,
+            "hnd": 82,
+            "kck": 70,
+            "tck": 64,
+            "stm": 86
+          },
+          "nationality": "England",
+          "club": "Bristol Bears",
+          "season": "2026"
+        },
+        {
+          "id": "bri-010",
+          "name": "Tom Jordan",
+          "position": "FH",
+          "overall": 80,
+          "stats": {
+            "str": 58,
+            "spd": 70,
+            "hnd": 80,
+            "kck": 82,
+            "tck": 58,
+            "stm": 74
+          },
+          "nationality": "England",
+          "club": "Bristol Bears",
+          "season": "2026"
+        },
+        {
+          "id": "bri-011",
+          "name": "James Williams",
+          "position": "IC",
+          "overall": 79,
+          "stats": {
+            "str": 74,
+            "spd": 72,
+            "hnd": 76,
+            "kck": 52,
+            "tck": 76,
+            "stm": 74
+          },
+          "nationality": "England",
+          "club": "Bristol Bears",
+          "season": "2026"
+        },
+        {
+          "id": "bri-012",
+          "name": "Matias Moroni",
+          "position": "OC",
+          "overall": 79,
+          "stats": {
+            "str": 72,
+            "spd": 74,
+            "hnd": 74,
+            "kck": 48,
+            "tck": 76,
+            "stm": 74
+          },
+          "nationality": "Argentina",
+          "club": "Bristol Bears",
+          "season": "2026"
+        },
+        {
+          "id": "bri-013",
+          "name": "Aidan Boshoff",
+          "position": "LW",
+          "overall": 79,
+          "stats": {
+            "str": 64,
+            "spd": 86,
+            "hnd": 72,
+            "kck": 44,
+            "tck": 62,
+            "stm": 80
+          },
+          "nationality": "South Africa",
+          "club": "Bristol Bears",
+          "season": "2026"
+        },
+        {
+          "id": "bri-014",
+          "name": "Kalaveti Ravouvou",
+          "position": "RW",
+          "overall": 80,
+          "stats": {
+            "str": 70,
+            "spd": 88,
+            "hnd": 70,
+            "kck": 42,
+            "tck": 62,
+            "stm": 78
+          },
+          "nationality": "Fiji",
+          "club": "Bristol Bears",
+          "season": "2026"
+        },
+        {
+          "id": "bri-015",
+          "name": "Louis Rees-Zammit",
+          "position": "FB",
+          "overall": 83,
+          "stats": {
+            "str": 66,
+            "spd": 92,
+            "hnd": 76,
+            "kck": 72,
+            "tck": 64,
+            "stm": 82
+          },
+          "nationality": "Wales",
+          "club": "Bristol Bears",
+          "season": "2026"
+        }
+      ]
+    },
+    {
+      "club": "Toulouse",
+      "season": "2026",
+      "competition": "Champions Cup",
+      "badge": "TOU",
+      "players": [
+        {
+          "id": "tou-001",
+          "name": "Cyril Baille",
+          "position": "LH",
+          "overall": 88,
+          "stats": {
+            "str": 90,
+            "spd": 56,
+            "hnd": 64,
+            "kck": 38,
+            "tck": 78,
+            "stm": 76
+          },
+          "nationality": "France",
+          "club": "Toulouse",
+          "season": "2026"
+        },
+        {
+          "id": "tou-002",
+          "name": "Julien Marchand",
+          "position": "HK",
+          "overall": 87,
+          "stats": {
+            "str": 84,
+            "spd": 66,
+            "hnd": 72,
+            "kck": 40,
+            "tck": 78,
+            "stm": 80
+          },
+          "nationality": "France",
+          "club": "Toulouse",
+          "season": "2026"
+        },
+        {
+          "id": "tou-003",
+          "name": "Dorian Aldegheri",
+          "position": "TH",
+          "overall": 85,
+          "stats": {
+            "str": 90,
+            "spd": 52,
+            "hnd": 60,
+            "kck": 36,
+            "tck": 74,
+            "stm": 72
+          },
+          "nationality": "France",
+          "club": "Toulouse",
+          "season": "2026"
+        },
+        {
+          "id": "tou-004",
+          "name": "Thibaud Flament",
+          "position": "LL",
+          "overall": 87,
+          "stats": {
+            "str": 86,
+            "spd": 64,
+            "hnd": 70,
+            "kck": 38,
+            "tck": 82,
+            "stm": 80
+          },
+          "nationality": "France",
+          "club": "Toulouse",
+          "season": "2026"
+        },
+        {
+          "id": "tou-005",
+          "name": "Emmanuel Meafou",
+          "position": "RL",
+          "overall": 88,
+          "stats": {
+            "str": 90,
+            "spd": 60,
+            "hnd": 68,
+            "kck": 36,
+            "tck": 84,
+            "stm": 80
+          },
+          "nationality": "Australia",
+          "club": "Toulouse",
+          "season": "2026"
+        },
+        {
+          "id": "tou-006",
+          "name": "François Cros",
+          "position": "BF",
+          "overall": 86,
+          "stats": {
+            "str": 82,
+            "spd": 70,
+            "hnd": 72,
+            "kck": 40,
+            "tck": 86,
+            "stm": 84
+          },
+          "nationality": "France",
+          "club": "Toulouse",
+          "season": "2026"
+        },
+        {
+          "id": "tou-007",
+          "name": "Jack Willis",
+          "position": "OF",
+          "overall": 86,
+          "stats": {
+            "str": 78,
+            "spd": 74,
+            "hnd": 74,
+            "kck": 40,
+            "tck": 88,
+            "stm": 88
+          },
+          "nationality": "England",
+          "club": "Toulouse",
+          "season": "2026"
+        },
+        {
+          "id": "tou-008",
+          "name": "Alexandre Roumat",
+          "position": "N8",
+          "overall": 86,
+          "stats": {
+            "str": 86,
+            "spd": 70,
+            "hnd": 72,
+            "kck": 40,
+            "tck": 84,
+            "stm": 82
+          },
+          "nationality": "France",
+          "club": "Toulouse",
+          "season": "2026"
+        },
+        {
+          "id": "tou-009",
+          "name": "Antoine Dupont",
+          "position": "SH",
+          "overall": 94,
+          "stats": {
+            "str": 70,
+            "spd": 94,
+            "hnd": 94,
+            "kck": 86,
+            "tck": 80,
+            "stm": 94
+          },
+          "nationality": "France",
+          "club": "Toulouse",
+          "season": "2026"
+        },
+        {
+          "id": "tou-010",
+          "name": "Romain Ntamack",
+          "position": "FH",
+          "overall": 90,
+          "stats": {
+            "str": 64,
+            "spd": 78,
+            "hnd": 88,
+            "kck": 90,
+            "tck": 66,
+            "stm": 82
+          },
+          "nationality": "France",
+          "club": "Toulouse",
+          "season": "2026"
+        },
+        {
+          "id": "tou-011",
+          "name": "Pierre-Louis Barassi",
+          "position": "IC",
+          "overall": 85,
+          "stats": {
+            "str": 74,
+            "spd": 80,
+            "hnd": 84,
+            "kck": 62,
+            "tck": 80,
+            "stm": 80
+          },
+          "nationality": "France",
+          "club": "Toulouse",
+          "season": "2026"
+        },
+        {
+          "id": "tou-012",
+          "name": "Pita Ahki",
+          "position": "OC",
+          "overall": 84,
+          "stats": {
+            "str": 78,
+            "spd": 80,
+            "hnd": 82,
+            "kck": 54,
+            "tck": 78,
+            "stm": 78
+          },
+          "nationality": "New Zealand",
+          "club": "Toulouse",
+          "season": "2026"
+        },
+        {
+          "id": "tou-013",
+          "name": "Matthis Lebel",
+          "position": "LW",
+          "overall": 86,
+          "stats": {
+            "str": 70,
+            "spd": 92,
+            "hnd": 80,
+            "kck": 50,
+            "tck": 66,
+            "stm": 84
+          },
+          "nationality": "France",
+          "club": "Toulouse",
+          "season": "2026"
+        },
+        {
+          "id": "tou-014",
+          "name": "Juan Cruz Mallia",
+          "position": "RW",
+          "overall": 85,
+          "stats": {
+            "str": 68,
+            "spd": 90,
+            "hnd": 80,
+            "kck": 52,
+            "tck": 66,
+            "stm": 84
+          },
+          "nationality": "Argentina",
+          "club": "Toulouse",
+          "season": "2026"
+        },
+        {
+          "id": "tou-015",
+          "name": "Thomas Ramos",
+          "position": "FB",
+          "overall": 88,
+          "stats": {
+            "str": 66,
+            "spd": 86,
+            "hnd": 82,
+            "kck": 90,
+            "tck": 70,
+            "stm": 84
+          },
+          "nationality": "France",
+          "club": "Toulouse",
+          "season": "2026"
+        }
+      ]
+    },
+    {
+      "club": "La Rochelle",
+      "season": "2026",
+      "competition": "Champions Cup",
+      "badge": "LRO",
+      "players": [
+        {
+          "id": "lro-001",
+          "name": "Reda Wardi",
+          "position": "LH",
+          "overall": 84,
+          "stats": {
+            "str": 88,
+            "spd": 56,
+            "hnd": 62,
+            "kck": 36,
+            "tck": 76,
+            "stm": 74
+          },
+          "nationality": "France",
+          "club": "La Rochelle",
+          "season": "2026"
+        },
+        {
+          "id": "lro-002",
+          "name": "Pierre Bourgarit",
+          "position": "HK",
+          "overall": 85,
+          "stats": {
+            "str": 84,
+            "spd": 64,
+            "hnd": 70,
+            "kck": 40,
+            "tck": 78,
+            "stm": 78
+          },
+          "nationality": "France",
+          "club": "La Rochelle",
+          "season": "2026"
+        },
+        {
+          "id": "lro-003",
+          "name": "Uini Atonio",
+          "position": "TH",
+          "overall": 86,
+          "stats": {
+            "str": 96,
+            "spd": 46,
+            "hnd": 56,
+            "kck": 34,
+            "tck": 74,
+            "stm": 66
+          },
+          "nationality": "France",
+          "club": "La Rochelle",
+          "season": "2026"
+        },
+        {
+          "id": "lro-004",
+          "name": "Will Skelton",
+          "position": "LL",
+          "overall": 88,
+          "stats": {
+            "str": 96,
+            "spd": 54,
+            "hnd": 66,
+            "kck": 36,
+            "tck": 82,
+            "stm": 74
+          },
+          "nationality": "Australia",
+          "club": "La Rochelle",
+          "season": "2026"
+        },
+        {
+          "id": "lro-005",
+          "name": "Thomas Lavault",
+          "position": "RL",
+          "overall": 84,
+          "stats": {
+            "str": 86,
+            "spd": 58,
+            "hnd": 64,
+            "kck": 36,
+            "tck": 80,
+            "stm": 76
+          },
+          "nationality": "France",
+          "club": "La Rochelle",
+          "season": "2026"
+        },
+        {
+          "id": "lro-006",
+          "name": "Levani Botia",
+          "position": "BF",
+          "overall": 86,
+          "stats": {
+            "str": 84,
+            "spd": 70,
+            "hnd": 72,
+            "kck": 40,
+            "tck": 88,
+            "stm": 84
+          },
+          "nationality": "Fiji",
+          "club": "La Rochelle",
+          "season": "2026"
+        },
+        {
+          "id": "lro-007",
+          "name": "Oscar Jegou",
+          "position": "OF",
+          "overall": 84,
+          "stats": {
+            "str": 78,
+            "spd": 74,
+            "hnd": 72,
+            "kck": 38,
+            "tck": 84,
+            "stm": 86
+          },
+          "nationality": "France",
+          "club": "La Rochelle",
+          "season": "2026"
+        },
+        {
+          "id": "lro-008",
+          "name": "Gregory Alldritt",
+          "position": "N8",
+          "overall": 90,
+          "stats": {
+            "str": 88,
+            "spd": 74,
+            "hnd": 78,
+            "kck": 44,
+            "tck": 88,
+            "stm": 88
+          },
+          "nationality": "France",
+          "club": "La Rochelle",
+          "season": "2026"
+        },
+        {
+          "id": "lro-009",
+          "name": "Nolann Le Garrec",
+          "position": "SH",
+          "overall": 85,
+          "stats": {
+            "str": 58,
+            "spd": 84,
+            "hnd": 84,
+            "kck": 74,
+            "tck": 66,
+            "stm": 86
+          },
+          "nationality": "France",
+          "club": "La Rochelle",
+          "season": "2026"
+        },
+        {
+          "id": "lro-010",
+          "name": "Antoine Hastoy",
+          "position": "FH",
+          "overall": 86,
+          "stats": {
+            "str": 60,
+            "spd": 70,
+            "hnd": 84,
+            "kck": 88,
+            "tck": 60,
+            "stm": 78
+          },
+          "nationality": "France",
+          "club": "La Rochelle",
+          "season": "2026"
+        },
+        {
+          "id": "lro-011",
+          "name": "Jonathan Danty",
+          "position": "IC",
+          "overall": 85,
+          "stats": {
+            "str": 82,
+            "spd": 76,
+            "hnd": 78,
+            "kck": 50,
+            "tck": 82,
+            "stm": 78
+          },
+          "nationality": "France",
+          "club": "La Rochelle",
+          "season": "2026"
+        },
+        {
+          "id": "lro-012",
+          "name": "Jules Favre",
+          "position": "OC",
+          "overall": 84,
+          "stats": {
+            "str": 74,
+            "spd": 78,
+            "hnd": 82,
+            "kck": 56,
+            "tck": 78,
+            "stm": 78
+          },
+          "nationality": "France",
+          "club": "La Rochelle",
+          "season": "2026"
+        },
+        {
+          "id": "lro-013",
+          "name": "Dillyn Leyds",
+          "position": "LW",
+          "overall": 84,
+          "stats": {
+            "str": 66,
+            "spd": 88,
+            "hnd": 78,
+            "kck": 54,
+            "tck": 64,
+            "stm": 82
+          },
+          "nationality": "South Africa",
+          "club": "La Rochelle",
+          "season": "2026"
+        },
+        {
+          "id": "lro-014",
+          "name": "Jack Nowell",
+          "position": "RW",
+          "overall": 84,
+          "stats": {
+            "str": 70,
+            "spd": 88,
+            "hnd": 78,
+            "kck": 50,
+            "tck": 68,
+            "stm": 82
+          },
+          "nationality": "England",
+          "club": "La Rochelle",
+          "season": "2026"
+        },
+        {
+          "id": "lro-015",
+          "name": "Davit Niniashvili",
+          "position": "FB",
+          "overall": 86,
+          "stats": {
+            "str": 66,
+            "spd": 90,
+            "hnd": 82,
+            "kck": 80,
+            "tck": 68,
+            "stm": 84
+          },
+          "nationality": "Georgia",
+          "club": "La Rochelle",
+          "season": "2026"
+        }
+      ]
+    },
+    {
+      "club": "Bordeaux-Bègles",
+      "season": "2026",
+      "competition": "Champions Cup",
+      "badge": "BOR",
+      "players": [
+        {
+          "id": "bor-001",
+          "name": "Jefferson Poirot",
+          "position": "LH",
+          "overall": 83,
+          "stats": {
+            "str": 88,
+            "spd": 54,
+            "hnd": 62,
+            "kck": 36,
+            "tck": 76,
+            "stm": 72
+          },
+          "nationality": "France",
+          "club": "Bordeaux-Bègles",
+          "season": "2026"
+        },
+        {
+          "id": "bor-002",
+          "name": "Maxime Lamothe",
+          "position": "HK",
+          "overall": 82,
+          "stats": {
+            "str": 82,
+            "spd": 62,
+            "hnd": 68,
+            "kck": 38,
+            "tck": 74,
+            "stm": 76
+          },
+          "nationality": "France",
+          "club": "Bordeaux-Bègles",
+          "season": "2026"
+        },
+        {
+          "id": "bor-003",
+          "name": "Ben Tameifuna",
+          "position": "TH",
+          "overall": 84,
+          "stats": {
+            "str": 96,
+            "spd": 46,
+            "hnd": 58,
+            "kck": 34,
+            "tck": 72,
+            "stm": 66
+          },
+          "nationality": "New Zealand",
+          "club": "Bordeaux-Bègles",
+          "season": "2026"
+        },
+        {
+          "id": "bor-004",
+          "name": "Boris Palu",
+          "position": "LL",
+          "overall": 84,
+          "stats": {
+            "str": 86,
+            "spd": 58,
+            "hnd": 66,
+            "kck": 36,
+            "tck": 82,
+            "stm": 78
+          },
+          "nationality": "France",
+          "club": "Bordeaux-Bègles",
+          "season": "2026"
+        },
+        {
+          "id": "bor-005",
+          "name": "Guido Petti",
+          "position": "RL",
+          "overall": 83,
+          "stats": {
+            "str": 86,
+            "spd": 58,
+            "hnd": 64,
+            "kck": 36,
+            "tck": 80,
+            "stm": 76
+          },
+          "nationality": "Argentina",
+          "club": "Bordeaux-Bègles",
+          "season": "2026"
+        },
+        {
+          "id": "bor-006",
+          "name": "Pierre Bochaton",
+          "position": "BF",
+          "overall": 81,
+          "stats": {
+            "str": 80,
+            "spd": 66,
+            "hnd": 68,
+            "kck": 38,
+            "tck": 82,
+            "stm": 80
+          },
+          "nationality": "France",
+          "club": "Bordeaux-Bègles",
+          "season": "2026"
+        },
+        {
+          "id": "bor-007",
+          "name": "Cameron Woki",
+          "position": "OF",
+          "overall": 85,
+          "stats": {
+            "str": 80,
+            "spd": 76,
+            "hnd": 74,
+            "kck": 40,
+            "tck": 86,
+            "stm": 86
+          },
+          "nationality": "France",
+          "club": "Bordeaux-Bègles",
+          "season": "2026"
+        },
+        {
+          "id": "bor-008",
+          "name": "Marko Gazzotti",
+          "position": "N8",
+          "overall": 82,
+          "stats": {
+            "str": 84,
+            "spd": 68,
+            "hnd": 70,
+            "kck": 38,
+            "tck": 82,
+            "stm": 80
+          },
+          "nationality": "France",
+          "club": "Bordeaux-Bègles",
+          "season": "2026"
+        },
+        {
+          "id": "bor-009",
+          "name": "Maxime Lucu",
+          "position": "SH",
+          "overall": 85,
+          "stats": {
+            "str": 60,
+            "spd": 84,
+            "hnd": 86,
+            "kck": 74,
+            "tck": 66,
+            "stm": 86
+          },
+          "nationality": "France",
+          "club": "Bordeaux-Bègles",
+          "season": "2026"
+        },
+        {
+          "id": "bor-010",
+          "name": "Matthieu Jalibert",
+          "position": "FH",
+          "overall": 88,
+          "stats": {
+            "str": 62,
+            "spd": 76,
+            "hnd": 88,
+            "kck": 90,
+            "tck": 62,
+            "stm": 80
+          },
+          "nationality": "France",
+          "club": "Bordeaux-Bègles",
+          "season": "2026"
+        },
+        {
+          "id": "bor-011",
+          "name": "Yoram Moefana",
+          "position": "IC",
+          "overall": 85,
+          "stats": {
+            "str": 76,
+            "spd": 82,
+            "hnd": 82,
+            "kck": 54,
+            "tck": 80,
+            "stm": 80
+          },
+          "nationality": "France",
+          "club": "Bordeaux-Bègles",
+          "season": "2026"
+        },
+        {
+          "id": "bor-012",
+          "name": "Damian Penaud",
+          "position": "OC",
+          "overall": 87,
+          "stats": {
+            "str": 74,
+            "spd": 90,
+            "hnd": 84,
+            "kck": 56,
+            "tck": 76,
+            "stm": 82
+          },
+          "nationality": "France",
+          "club": "Bordeaux-Bègles",
+          "season": "2026"
+        },
+        {
+          "id": "bor-013",
+          "name": "Louis Bielle-Biarrey",
+          "position": "LW",
+          "overall": 88,
+          "stats": {
+            "str": 70,
+            "spd": 94,
+            "hnd": 82,
+            "kck": 52,
+            "tck": 66,
+            "stm": 86
+          },
+          "nationality": "France",
+          "club": "Bordeaux-Bègles",
+          "season": "2026"
+        },
+        {
+          "id": "bor-014",
+          "name": "Salesi Rayasi",
+          "position": "RW",
+          "overall": 85,
+          "stats": {
+            "str": 72,
+            "spd": 90,
+            "hnd": 78,
+            "kck": 48,
+            "tck": 66,
+            "stm": 84
+          },
+          "nationality": "New Zealand",
+          "club": "Bordeaux-Bègles",
+          "season": "2026"
+        },
+        {
+          "id": "bor-015",
+          "name": "Romain Buros",
+          "position": "FB",
+          "overall": 84,
+          "stats": {
+            "str": 64,
+            "spd": 86,
+            "hnd": 80,
+            "kck": 80,
+            "tck": 68,
+            "stm": 82
+          },
+          "nationality": "France",
+          "club": "Bordeaux-Bègles",
+          "season": "2026"
+        }
+      ]
+    },
+    {
+      "club": "Racing 92",
+      "season": "2026",
+      "competition": "Champions Cup",
+      "badge": "RAC",
+      "players": [
+        {
+          "id": "rac-001",
+          "name": "Kolingar",
+          "position": "LH",
+          "overall": 81,
+          "stats": {
+            "str": 86,
+            "spd": 54,
+            "hnd": 60,
+            "kck": 36,
+            "tck": 74,
+            "stm": 70
+          },
+          "nationality": "France",
+          "club": "Racing 92",
+          "season": "2026"
+        },
+        {
+          "id": "rac-002",
+          "name": "Camille Escobar",
+          "position": "HK",
+          "overall": 80,
+          "stats": {
+            "str": 80,
+            "spd": 62,
+            "hnd": 66,
+            "kck": 38,
+            "tck": 72,
+            "stm": 74
+          },
+          "nationality": "France",
+          "club": "Racing 92",
+          "season": "2026"
+        },
+        {
+          "id": "rac-003",
+          "name": "Cedate Gomes Sa",
+          "position": "TH",
+          "overall": 82,
+          "stats": {
+            "str": 88,
+            "spd": 50,
+            "hnd": 58,
+            "kck": 34,
+            "tck": 72,
+            "stm": 68
+          },
+          "nationality": "France",
+          "club": "Racing 92",
+          "season": "2026"
+        },
+        {
+          "id": "rac-004",
+          "name": "Romain Taofifénua",
+          "position": "LL",
+          "overall": 84,
+          "stats": {
+            "str": 92,
+            "spd": 52,
+            "hnd": 62,
+            "kck": 36,
+            "tck": 80,
+            "stm": 72
+          },
+          "nationality": "France",
+          "club": "Racing 92",
+          "season": "2026"
+        },
+        {
+          "id": "rac-005",
+          "name": "Jonny Gray",
+          "position": "RL",
+          "overall": 83,
+          "stats": {
+            "str": 86,
+            "spd": 56,
+            "hnd": 64,
+            "kck": 36,
+            "tck": 82,
+            "stm": 78
+          },
+          "nationality": "Scotland",
+          "club": "Racing 92",
+          "season": "2026"
+        },
+        {
+          "id": "rac-006",
+          "name": "Yoan Baudonne",
+          "position": "BF",
+          "overall": 80,
+          "stats": {
+            "str": 80,
+            "spd": 66,
+            "hnd": 68,
+            "kck": 38,
+            "tck": 82,
+            "stm": 80
+          },
+          "nationality": "France",
+          "club": "Racing 92",
+          "season": "2026"
+        },
+        {
+          "id": "rac-007",
+          "name": "Ibrahim Diallo",
+          "position": "OF",
+          "overall": 81,
+          "stats": {
+            "str": 76,
+            "spd": 72,
+            "hnd": 70,
+            "kck": 36,
+            "tck": 82,
+            "stm": 84
+          },
+          "nationality": "France",
+          "club": "Racing 92",
+          "season": "2026"
+        },
+        {
+          "id": "rac-008",
+          "name": "Lekima Tagitagivalu",
+          "position": "N8",
+          "overall": 82,
+          "stats": {
+            "str": 86,
+            "spd": 68,
+            "hnd": 68,
+            "kck": 36,
+            "tck": 82,
+            "stm": 78
+          },
+          "nationality": "France",
+          "club": "Racing 92",
+          "season": "2026"
+        },
+        {
+          "id": "rac-009",
+          "name": "Nolann Carbonneau",
+          "position": "SH",
+          "overall": 82,
+          "stats": {
+            "str": 58,
+            "spd": 82,
+            "hnd": 82,
+            "kck": 72,
+            "tck": 64,
+            "stm": 84
+          },
+          "nationality": "France",
+          "club": "Racing 92",
+          "season": "2026"
+        },
+        {
+          "id": "rac-010",
+          "name": "Emiliano Boffelli",
+          "position": "FH",
+          "overall": 83,
+          "stats": {
+            "str": 58,
+            "spd": 72,
+            "hnd": 80,
+            "kck": 86,
+            "tck": 58,
+            "stm": 76
+          },
+          "nationality": "Argentina",
+          "club": "Racing 92",
+          "season": "2026"
+        },
+        {
+          "id": "rac-011",
+          "name": "Virimi Vakatawa",
+          "position": "IC",
+          "overall": 83,
+          "stats": {
+            "str": 78,
+            "spd": 84,
+            "hnd": 80,
+            "kck": 52,
+            "tck": 78,
+            "stm": 78
+          },
+          "nationality": "France",
+          "club": "Racing 92",
+          "season": "2026"
+        },
+        {
+          "id": "rac-012",
+          "name": "Leone Nakarawa",
+          "position": "OC",
+          "overall": 82,
+          "stats": {
+            "str": 80,
+            "spd": 76,
+            "hnd": 82,
+            "kck": 48,
+            "tck": 74,
+            "stm": 76
+          },
+          "nationality": "Fiji",
+          "club": "Racing 92",
+          "season": "2026"
+        },
+        {
+          "id": "rac-013",
+          "name": "Tom Spring",
+          "position": "LW",
+          "overall": 82,
+          "stats": {
+            "str": 66,
+            "spd": 88,
+            "hnd": 76,
+            "kck": 52,
+            "tck": 62,
+            "stm": 82
+          },
+          "nationality": "France",
+          "club": "Racing 92",
+          "season": "2026"
+        },
+        {
+          "id": "rac-014",
+          "name": "Donovan Taofifénua",
+          "position": "RW",
+          "overall": 81,
+          "stats": {
+            "str": 68,
+            "spd": 86,
+            "hnd": 74,
+            "kck": 46,
+            "tck": 62,
+            "stm": 80
+          },
+          "nationality": "France",
+          "club": "Racing 92",
+          "season": "2026"
+        },
+        {
+          "id": "rac-015",
+          "name": "Léo James",
+          "position": "FB",
+          "overall": 82,
+          "stats": {
+            "str": 64,
+            "spd": 84,
+            "hnd": 80,
+            "kck": 80,
+            "tck": 64,
+            "stm": 82
+          },
+          "nationality": "France",
+          "club": "Racing 92",
+          "season": "2026"
+        }
+      ]
+    },
+    {
+      "club": "Toulon",
+      "season": "2026",
+      "competition": "Champions Cup",
+      "badge": "TVN",
+      "players": [
+        {
+          "id": "tvn-001",
+          "name": "Dany Priso",
+          "position": "LH",
+          "overall": 83,
+          "stats": {
+            "str": 88,
+            "spd": 56,
+            "hnd": 62,
+            "kck": 36,
+            "tck": 76,
+            "stm": 72
+          },
+          "nationality": "France",
+          "club": "Toulon",
+          "season": "2026"
+        },
+        {
+          "id": "tvn-002",
+          "name": "Gianmarco Lucchesi",
+          "position": "HK",
+          "overall": 82,
+          "stats": {
+            "str": 82,
+            "spd": 62,
+            "hnd": 68,
+            "kck": 38,
+            "tck": 74,
+            "stm": 76
+          },
+          "nationality": "Italy",
+          "club": "Toulon",
+          "season": "2026"
+        },
+        {
+          "id": "tvn-003",
+          "name": "Kyle Sinckler",
+          "position": "TH",
+          "overall": 85,
+          "stats": {
+            "str": 90,
+            "spd": 52,
+            "hnd": 62,
+            "kck": 36,
+            "tck": 76,
+            "stm": 72
+          },
+          "nationality": "England",
+          "club": "Toulon",
+          "season": "2026"
+        },
+        {
+          "id": "tvn-004",
+          "name": "David Ribbans",
+          "position": "LL",
+          "overall": 82,
+          "stats": {
+            "str": 84,
+            "spd": 56,
+            "hnd": 64,
+            "kck": 36,
+            "tck": 80,
+            "stm": 76
+          },
+          "nationality": "England",
+          "club": "Toulon",
+          "season": "2026"
+        },
+        {
+          "id": "tvn-005",
+          "name": "Corentin Mezou",
+          "position": "RL",
+          "overall": 80,
+          "stats": {
+            "str": 84,
+            "spd": 54,
+            "hnd": 60,
+            "kck": 34,
+            "tck": 76,
+            "stm": 74
+          },
+          "nationality": "France",
+          "club": "Toulon",
+          "season": "2026"
+        },
+        {
+          "id": "tvn-006",
+          "name": "Lewis Ludlam",
+          "position": "BF",
+          "overall": 82,
+          "stats": {
+            "str": 80,
+            "spd": 68,
+            "hnd": 70,
+            "kck": 38,
+            "tck": 84,
+            "stm": 82
+          },
+          "nationality": "England",
+          "club": "Toulon",
+          "season": "2026"
+        },
+        {
+          "id": "tvn-007",
+          "name": "Charles Ollivon",
+          "position": "OF",
+          "overall": 85,
+          "stats": {
+            "str": 82,
+            "spd": 72,
+            "hnd": 74,
+            "kck": 40,
+            "tck": 86,
+            "stm": 86
+          },
+          "nationality": "France",
+          "club": "Toulon",
+          "season": "2026"
+        },
+        {
+          "id": "tvn-008",
+          "name": "Zach Mercer",
+          "position": "N8",
+          "overall": 83,
+          "stats": {
+            "str": 84,
+            "spd": 72,
+            "hnd": 74,
+            "kck": 40,
+            "tck": 82,
+            "stm": 82
+          },
+          "nationality": "England",
+          "club": "Toulon",
+          "season": "2026"
+        },
+        {
+          "id": "tvn-009",
+          "name": "Baptiste Serin",
+          "position": "SH",
+          "overall": 83,
+          "stats": {
+            "str": 58,
+            "spd": 82,
+            "hnd": 82,
+            "kck": 72,
+            "tck": 64,
+            "stm": 84
+          },
+          "nationality": "France",
+          "club": "Toulon",
+          "season": "2026"
+        },
+        {
+          "id": "tvn-010",
+          "name": "Paolo Garbisi",
+          "position": "FH",
+          "overall": 84,
+          "stats": {
+            "str": 58,
+            "spd": 70,
+            "hnd": 82,
+            "kck": 86,
+            "tck": 58,
+            "stm": 76
+          },
+          "nationality": "Italy",
+          "club": "Toulon",
+          "season": "2026"
+        },
+        {
+          "id": "tvn-011",
+          "name": "Nacho Brex",
+          "position": "IC",
+          "overall": 83,
+          "stats": {
+            "str": 72,
+            "spd": 76,
+            "hnd": 80,
+            "kck": 58,
+            "tck": 78,
+            "stm": 76
+          },
+          "nationality": "Italy",
+          "club": "Toulon",
+          "season": "2026"
+        },
+        {
+          "id": "tvn-012",
+          "name": "Jérémy Sinzelle",
+          "position": "OC",
+          "overall": 81,
+          "stats": {
+            "str": 70,
+            "spd": 76,
+            "hnd": 78,
+            "kck": 54,
+            "tck": 74,
+            "stm": 74
+          },
+          "nationality": "France",
+          "club": "Toulon",
+          "season": "2026"
+        },
+        {
+          "id": "tvn-013",
+          "name": "Gabin Villière",
+          "position": "LW",
+          "overall": 84,
+          "stats": {
+            "str": 68,
+            "spd": 90,
+            "hnd": 76,
+            "kck": 50,
+            "tck": 66,
+            "stm": 84
+          },
+          "nationality": "France",
+          "club": "Toulon",
+          "season": "2026"
+        },
+        {
+          "id": "tvn-014",
+          "name": "Gaël Dréan",
+          "position": "RW",
+          "overall": 82,
+          "stats": {
+            "str": 66,
+            "spd": 88,
+            "hnd": 74,
+            "kck": 48,
+            "tck": 64,
+            "stm": 82
+          },
+          "nationality": "France",
+          "club": "Toulon",
+          "season": "2026"
+        },
+        {
+          "id": "tvn-015",
+          "name": "Melvyn Jaminet",
+          "position": "FB",
+          "overall": 85,
+          "stats": {
+            "str": 64,
+            "spd": 86,
+            "hnd": 80,
+            "kck": 88,
+            "tck": 66,
+            "stm": 82
+          },
+          "nationality": "France",
+          "club": "Toulon",
+          "season": "2026"
+        }
+      ]
+    },
+    {
+      "club": "Stade Français",
+      "season": "2026",
+      "competition": "Champions Cup",
+      "badge": "SFR",
+      "players": [
+        {
+          "id": "sfr-001",
+          "name": "Matis Perchaud",
+          "position": "LH",
+          "overall": 76,
+          "stats": {
+            "str": 82,
+            "spd": 52,
+            "hnd": 58,
+            "kck": 34,
+            "tck": 70,
+            "stm": 68
+          },
+          "nationality": "France",
+          "club": "Stade Français",
+          "season": "2026"
+        },
+        {
+          "id": "sfr-002",
+          "name": "Romain Latterrade",
+          "position": "HK",
+          "overall": 77,
+          "stats": {
+            "str": 78,
+            "spd": 60,
+            "hnd": 64,
+            "kck": 36,
+            "tck": 70,
+            "stm": 72
+          },
+          "nationality": "France",
+          "club": "Stade Français",
+          "season": "2026"
+        },
+        {
+          "id": "sfr-003",
+          "name": "Sipili Falatea",
+          "position": "TH",
+          "overall": 78,
+          "stats": {
+            "str": 86,
+            "spd": 48,
+            "hnd": 56,
+            "kck": 32,
+            "tck": 70,
+            "stm": 66
+          },
+          "nationality": "France",
+          "club": "Stade Français",
+          "season": "2026"
+        },
+        {
+          "id": "sfr-004",
+          "name": "JJ van der Mescht",
+          "position": "LL",
+          "overall": 78,
+          "stats": {
+            "str": 84,
+            "spd": 54,
+            "hnd": 60,
+            "kck": 34,
+            "tck": 76,
+            "stm": 72
+          },
+          "nationality": "South Africa",
+          "club": "Stade Français",
+          "season": "2026"
+        },
+        {
+          "id": "sfr-005",
+          "name": "Killian Tixeront",
+          "position": "RL",
+          "overall": 77,
+          "stats": {
+            "str": 82,
+            "spd": 54,
+            "hnd": 60,
+            "kck": 34,
+            "tck": 74,
+            "stm": 72
+          },
+          "nationality": "France",
+          "club": "Stade Français",
+          "season": "2026"
+        },
+        {
+          "id": "sfr-006",
+          "name": "Stéphane Onambélé",
+          "position": "BF",
+          "overall": 78,
+          "stats": {
+            "str": 80,
+            "spd": 64,
+            "hnd": 66,
+            "kck": 36,
+            "tck": 80,
+            "stm": 78
+          },
+          "nationality": "France",
+          "club": "Stade Français",
+          "season": "2026"
+        },
+        {
+          "id": "sfr-007",
+          "name": "Sekou Macalou",
+          "position": "OF",
+          "overall": 82,
+          "stats": {
+            "str": 78,
+            "spd": 80,
+            "hnd": 70,
+            "kck": 36,
+            "tck": 82,
+            "stm": 84
+          },
+          "nationality": "France",
+          "club": "Stade Français",
+          "season": "2026"
+        },
+        {
+          "id": "sfr-008",
+          "name": "Peniasi Dakuwaqa",
+          "position": "N8",
+          "overall": 80,
+          "stats": {
+            "str": 84,
+            "spd": 70,
+            "hnd": 70,
+            "kck": 36,
+            "tck": 80,
+            "stm": 78
+          },
+          "nationality": "Fiji",
+          "club": "Stade Français",
+          "season": "2026"
+        },
+        {
+          "id": "sfr-009",
+          "name": "Gela Aprasidze",
+          "position": "SH",
+          "overall": 78,
+          "stats": {
+            "str": 56,
+            "spd": 80,
+            "hnd": 78,
+            "kck": 68,
+            "tck": 62,
+            "stm": 80
+          },
+          "nationality": "Georgia",
+          "club": "Stade Français",
+          "season": "2026"
+        },
+        {
+          "id": "sfr-010",
+          "name": "Louis Carbonel",
+          "position": "FH",
+          "overall": 80,
+          "stats": {
+            "str": 58,
+            "spd": 68,
+            "hnd": 80,
+            "kck": 84,
+            "tck": 56,
+            "stm": 74
+          },
+          "nationality": "France",
+          "club": "Stade Français",
+          "season": "2026"
+        },
+        {
+          "id": "sfr-011",
+          "name": "Jonathan Wisniewski",
+          "position": "IC",
+          "overall": 78,
+          "stats": {
+            "str": 68,
+            "spd": 70,
+            "hnd": 76,
+            "kck": 68,
+            "tck": 70,
+            "stm": 70
+          },
+          "nationality": "France",
+          "club": "Stade Français",
+          "season": "2026"
+        },
+        {
+          "id": "sfr-012",
+          "name": "Kylan Hamdaoui",
+          "position": "OC",
+          "overall": 79,
+          "stats": {
+            "str": 70,
+            "spd": 78,
+            "hnd": 76,
+            "kck": 52,
+            "tck": 72,
+            "stm": 74
+          },
+          "nationality": "France",
+          "club": "Stade Français",
+          "season": "2026"
+        },
+        {
+          "id": "sfr-013",
+          "name": "Aymeric Luc",
+          "position": "LW",
+          "overall": 79,
+          "stats": {
+            "str": 64,
+            "spd": 86,
+            "hnd": 72,
+            "kck": 46,
+            "tck": 62,
+            "stm": 78
+          },
+          "nationality": "France",
+          "club": "Stade Français",
+          "season": "2026"
+        },
+        {
+          "id": "sfr-014",
+          "name": "Nolamito Rosa",
+          "position": "RW",
+          "overall": 77,
+          "stats": {
+            "str": 66,
+            "spd": 84,
+            "hnd": 70,
+            "kck": 42,
+            "tck": 60,
+            "stm": 76
+          },
+          "nationality": "France",
+          "club": "Stade Français",
+          "season": "2026"
+        },
+        {
+          "id": "sfr-015",
+          "name": "Léo Barré",
+          "position": "FB",
+          "overall": 79,
+          "stats": {
+            "str": 62,
+            "spd": 84,
+            "hnd": 76,
+            "kck": 78,
+            "tck": 62,
+            "stm": 78
+          },
+          "nationality": "France",
+          "club": "Stade Français",
+          "season": "2026"
+        }
+      ]
+    },
+    {
+      "club": "Clermont",
+      "season": "2026",
+      "competition": "Champions Cup",
+      "badge": "CLE",
+      "players": [
+        {
+          "id": "cle-001",
+          "name": "Ethan Doury",
+          "position": "LH",
+          "overall": 77,
+          "stats": {
+            "str": 84,
+            "spd": 52,
+            "hnd": 58,
+            "kck": 34,
+            "tck": 70,
+            "stm": 70
+          },
+          "nationality": "France",
+          "club": "Clermont",
+          "season": "2026"
+        },
+        {
+          "id": "cle-002",
+          "name": "Étienne Falgoux",
+          "position": "HK",
+          "overall": 78,
+          "stats": {
+            "str": 80,
+            "spd": 60,
+            "hnd": 64,
+            "kck": 36,
+            "tck": 72,
+            "stm": 72
+          },
+          "nationality": "France",
+          "club": "Clermont",
+          "season": "2026"
+        },
+        {
+          "id": "cle-003",
+          "name": "Giorgi Beria",
+          "position": "TH",
+          "overall": 78,
+          "stats": {
+            "str": 86,
+            "spd": 48,
+            "hnd": 56,
+            "kck": 32,
+            "tck": 70,
+            "stm": 66
+          },
+          "nationality": "Georgia",
+          "club": "Clermont",
+          "season": "2026"
+        },
+        {
+          "id": "cle-004",
+          "name": "Loïc Jacquet",
+          "position": "LL",
+          "overall": 78,
+          "stats": {
+            "str": 84,
+            "spd": 54,
+            "hnd": 60,
+            "kck": 34,
+            "tck": 76,
+            "stm": 74
+          },
+          "nationality": "France",
+          "club": "Clermont",
+          "season": "2026"
+        },
+        {
+          "id": "cle-005",
+          "name": "Régis Montagne",
+          "position": "RL",
+          "overall": 80,
+          "stats": {
+            "str": 84,
+            "spd": 58,
+            "hnd": 62,
+            "kck": 34,
+            "tck": 78,
+            "stm": 76
+          },
+          "nationality": "France",
+          "club": "Clermont",
+          "season": "2026"
+        },
+        {
+          "id": "cle-006",
+          "name": "Judicaël Cancoriet",
+          "position": "BF",
+          "overall": 78,
+          "stats": {
+            "str": 80,
+            "spd": 64,
+            "hnd": 66,
+            "kck": 36,
+            "tck": 80,
+            "stm": 78
+          },
+          "nationality": "France",
+          "club": "Clermont",
+          "season": "2026"
+        },
+        {
+          "id": "cle-007",
+          "name": "Alexandre Fischer",
+          "position": "OF",
+          "overall": 80,
+          "stats": {
+            "str": 76,
+            "spd": 72,
+            "hnd": 70,
+            "kck": 36,
+            "tck": 80,
+            "stm": 82
+          },
+          "nationality": "France",
+          "club": "Clermont",
+          "season": "2026"
+        },
+        {
+          "id": "cle-008",
+          "name": "Peceli Yato",
+          "position": "N8",
+          "overall": 82,
+          "stats": {
+            "str": 86,
+            "spd": 72,
+            "hnd": 70,
+            "kck": 36,
+            "tck": 82,
+            "stm": 80
+          },
+          "nationality": "Fiji",
+          "club": "Clermont",
+          "season": "2026"
+        },
+        {
+          "id": "cle-009",
+          "name": "Sébastien Bezy",
+          "position": "SH",
+          "overall": 78,
+          "stats": {
+            "str": 54,
+            "spd": 80,
+            "hnd": 78,
+            "kck": 68,
+            "tck": 60,
+            "stm": 80
+          },
+          "nationality": "France",
+          "club": "Clermont",
+          "season": "2026"
+        },
+        {
+          "id": "cle-010",
+          "name": "Benjamin Urdapilleta",
+          "position": "FH",
+          "overall": 80,
+          "stats": {
+            "str": 56,
+            "spd": 68,
+            "hnd": 80,
+            "kck": 84,
+            "tck": 56,
+            "stm": 72
+          },
+          "nationality": "Argentina",
+          "club": "Clermont",
+          "season": "2026"
+        },
+        {
+          "id": "cle-011",
+          "name": "George Moala",
+          "position": "IC",
+          "overall": 80,
+          "stats": {
+            "str": 76,
+            "spd": 76,
+            "hnd": 76,
+            "kck": 50,
+            "tck": 76,
+            "stm": 74
+          },
+          "nationality": "New Zealand",
+          "club": "Clermont",
+          "season": "2026"
+        },
+        {
+          "id": "cle-012",
+          "name": "Irae Simone",
+          "position": "OC",
+          "overall": 79,
+          "stats": {
+            "str": 72,
+            "spd": 76,
+            "hnd": 76,
+            "kck": 50,
+            "tck": 74,
+            "stm": 74
+          },
+          "nationality": "Australia",
+          "club": "Clermont",
+          "season": "2026"
+        },
+        {
+          "id": "cle-013",
+          "name": "Alivereti Raka",
+          "position": "LW",
+          "overall": 82,
+          "stats": {
+            "str": 74,
+            "spd": 90,
+            "hnd": 74,
+            "kck": 48,
+            "tck": 64,
+            "stm": 80
+          },
+          "nationality": "France",
+          "club": "Clermont",
+          "season": "2026"
+        },
+        {
+          "id": "cle-014",
+          "name": "Théo Retière",
+          "position": "RW",
+          "overall": 79,
+          "stats": {
+            "str": 68,
+            "spd": 88,
+            "hnd": 74,
+            "kck": 46,
+            "tck": 64,
+            "stm": 80
+          },
+          "nationality": "France",
+          "club": "Clermont",
+          "season": "2026"
+        },
+        {
+          "id": "cle-015",
+          "name": "Anthony Belleau",
+          "position": "FB",
+          "overall": 79,
+          "stats": {
+            "str": 60,
+            "spd": 82,
+            "hnd": 78,
+            "kck": 80,
+            "tck": 60,
+            "stm": 78
+          },
+          "nationality": "France",
+          "club": "Clermont",
+          "season": "2026"
+        }
+      ]
+    },
+    {
+      "club": "Lyon",
+      "season": "2026",
+      "competition": "Champions Cup",
+      "badge": "LYO",
+      "players": [
+        {
+          "id": "lyo-001",
+          "name": "Xavier Mignot",
+          "position": "LH",
+          "overall": 76,
+          "stats": {
+            "str": 82,
+            "spd": 52,
+            "hnd": 58,
+            "kck": 34,
+            "tck": 70,
+            "stm": 68
+          },
+          "nationality": "France",
+          "club": "Lyon",
+          "season": "2026"
+        },
+        {
+          "id": "lyo-002",
+          "name": "Mickael Ivaldi",
+          "position": "HK",
+          "overall": 77,
+          "stats": {
+            "str": 78,
+            "spd": 60,
+            "hnd": 64,
+            "kck": 36,
+            "tck": 70,
+            "stm": 72
+          },
+          "nationality": "France",
+          "club": "Lyon",
+          "season": "2026"
+        },
+        {
+          "id": "lyo-003",
+          "name": "Boris Goutard",
+          "position": "TH",
+          "overall": 76,
+          "stats": {
+            "str": 84,
+            "spd": 48,
+            "hnd": 54,
+            "kck": 32,
+            "tck": 68,
+            "stm": 64
+          },
+          "nationality": "France",
+          "club": "Lyon",
+          "season": "2026"
+        },
+        {
+          "id": "lyo-004",
+          "name": "Swan Rebbadj",
+          "position": "LL",
+          "overall": 78,
+          "stats": {
+            "str": 84,
+            "spd": 54,
+            "hnd": 60,
+            "kck": 34,
+            "tck": 76,
+            "stm": 72
+          },
+          "nationality": "France",
+          "club": "Lyon",
+          "season": "2026"
+        },
+        {
+          "id": "lyo-005",
+          "name": "Felix Lambey",
+          "position": "RL",
+          "overall": 79,
+          "stats": {
+            "str": 84,
+            "spd": 56,
+            "hnd": 62,
+            "kck": 34,
+            "tck": 76,
+            "stm": 74
+          },
+          "nationality": "France",
+          "club": "Lyon",
+          "season": "2026"
+        },
+        {
+          "id": "lyo-006",
+          "name": "Mickaël Guillard",
+          "position": "BF",
+          "overall": 80,
+          "stats": {
+            "str": 80,
+            "spd": 66,
+            "hnd": 68,
+            "kck": 36,
+            "tck": 82,
+            "stm": 80
+          },
+          "nationality": "France",
+          "club": "Lyon",
+          "season": "2026"
+        },
+        {
+          "id": "lyo-007",
+          "name": "Dylan Cretin",
+          "position": "OF",
+          "overall": 80,
+          "stats": {
+            "str": 76,
+            "spd": 72,
+            "hnd": 70,
+            "kck": 36,
+            "tck": 80,
+            "stm": 82
+          },
+          "nationality": "France",
+          "club": "Lyon",
+          "season": "2026"
+        },
+        {
+          "id": "lyo-008",
+          "name": "Ethan Dumortier",
+          "position": "N8",
+          "overall": 79,
+          "stats": {
+            "str": 82,
+            "spd": 70,
+            "hnd": 68,
+            "kck": 36,
+            "tck": 78,
+            "stm": 76
+          },
+          "nationality": "France",
+          "club": "Lyon",
+          "season": "2026"
+        },
+        {
+          "id": "lyo-009",
+          "name": "Baptiste Couilloud",
+          "position": "SH",
+          "overall": 78,
+          "stats": {
+            "str": 56,
+            "spd": 80,
+            "hnd": 78,
+            "kck": 68,
+            "tck": 60,
+            "stm": 80
+          },
+          "nationality": "France",
+          "club": "Lyon",
+          "season": "2026"
+        },
+        {
+          "id": "lyo-010",
+          "name": "Léo Coly",
+          "position": "FH",
+          "overall": 79,
+          "stats": {
+            "str": 56,
+            "spd": 70,
+            "hnd": 78,
+            "kck": 82,
+            "tck": 56,
+            "stm": 72
+          },
+          "nationality": "France",
+          "club": "Lyon",
+          "season": "2026"
+        },
+        {
+          "id": "lyo-011",
+          "name": "Virgile Bruni",
+          "position": "IC",
+          "overall": 77,
+          "stats": {
+            "str": 72,
+            "spd": 72,
+            "hnd": 74,
+            "kck": 50,
+            "tck": 72,
+            "stm": 72
+          },
+          "nationality": "France",
+          "club": "Lyon",
+          "season": "2026"
+        },
+        {
+          "id": "lyo-012",
+          "name": "Beka Shvangiradze",
+          "position": "OC",
+          "overall": 78,
+          "stats": {
+            "str": 72,
+            "spd": 74,
+            "hnd": 74,
+            "kck": 52,
+            "tck": 72,
+            "stm": 72
+          },
+          "nationality": "Georgia",
+          "club": "Lyon",
+          "season": "2026"
+        },
+        {
+          "id": "lyo-013",
+          "name": "Jiuta Wainiqolo",
+          "position": "LW",
+          "overall": 84,
+          "stats": {
+            "str": 72,
+            "spd": 94,
+            "hnd": 76,
+            "kck": 46,
+            "tck": 64,
+            "stm": 82
+          },
+          "nationality": "Fiji",
+          "club": "Lyon",
+          "season": "2026"
+        },
+        {
+          "id": "lyo-014",
+          "name": "Lucas Tauzin",
+          "position": "RW",
+          "overall": 79,
+          "stats": {
+            "str": 66,
+            "spd": 88,
+            "hnd": 72,
+            "kck": 48,
+            "tck": 62,
+            "stm": 78
+          },
+          "nationality": "France",
+          "club": "Lyon",
+          "season": "2026"
+        },
+        {
+          "id": "lyo-015",
+          "name": "Thibaut Regard",
+          "position": "FB",
+          "overall": 78,
+          "stats": {
+            "str": 62,
+            "spd": 82,
+            "hnd": 74,
+            "kck": 76,
+            "tck": 62,
+            "stm": 76
+          },
+          "nationality": "France",
+          "club": "Lyon",
+          "season": "2026"
+        }
+      ]
+    }
+  ]
+}
