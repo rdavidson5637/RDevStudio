@@ -23,6 +23,7 @@ export const NAV_LINKS = [
   { href: "/coming-soon", label: "Coming Soon" },
   { href: "/champions-draft", label: "Champions Draft", highlight: true },
   { href: "/rugby-draft", label: "Rugby Draft", highlight: true },
+  { href: "/pub-quiz", label: "Pub Quiz", highlight: true },
   { href: "/bored", label: "I'm Bored" },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
@@ -49,7 +50,7 @@ export const PORTFOLIO_AREAS = [
   {
     title: "Free games",
     description:
-      "Champions Draft and Rugby Draft — spin squads, draft your team, and compete in football and rugby tournaments.",
+      "Champions Draft, Rugby Draft, and Pub Quiz — squad builders and real-time multiplayer trivia.",
     href: "/bored",
     cta: "Play free",
     accent: "emerald" as const,

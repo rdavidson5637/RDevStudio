@@ -6,6 +6,8 @@ import { createPortal } from "react-dom";
 import { CHAMPIONS_DRAFT } from "@/lib/champions-draft-feature";
 import { RUGBY_DRAFT } from "@/lib/rugby-draft-feature";
 import { NAV_LINKS } from "@/lib/constants";
+import { getNavHighlightColor, type NavHighlightColor } from "@/lib/nav-highlight";
+import { PUB_QUIZ } from "@/lib/pub-quiz-feature";
 import Wordmark from "@/components/Logo";
 
 type MobileMenuProps = {
@@ -27,12 +29,20 @@ function NavItem({
   onClose: () => void;
   active: boolean;
   highlight?: boolean;
-  highlightColor?: "emerald" | "sky";
+  highlightColor?: NavHighlightColor;
 }) {
   const highlightActive =
-    highlightColor === "sky" ? "text-sky-400" : "text-emerald-400";
+    highlightColor === "sky"
+      ? "text-sky-400"
+      : highlightColor === "amber"
+        ? "text-amber-400"
+        : "text-emerald-400";
   const highlightIdle =
-    highlightColor === "sky" ? "text-sky-400/90" : "text-emerald-400/90";
+    highlightColor === "sky"
+      ? "text-sky-400/90"
+      : highlightColor === "amber"
+        ? "text-amber-400/90"
+        : "text-emerald-400/90";
 
   return (
     <Link
@@ -54,7 +64,9 @@ function NavItem({
             ? highlight
               ? highlightColor === "sky"
                 ? "bg-sky-400"
-                : "bg-emerald-400"
+                : highlightColor === "amber"
+                  ? "bg-amber-400"
+                  : "bg-emerald-400"
               : "bg-accent"
             : "bg-transparent group-hover:bg-border-strong"
         }`}
@@ -153,6 +165,13 @@ export function MobileMenu({ open, onClose, isActive }: MobileMenuProps) {
               >
                 Rugby Draft
               </Link>
+              <Link
+                href={PUB_QUIZ.href}
+                onClick={onClose}
+                className="col-span-2 rounded-lg border border-amber-400/25 bg-amber-400/10 px-3 py-2.5 text-center text-xs font-semibold text-amber-300 transition-colors hover:bg-amber-400/15"
+              >
+                Pub Quiz
+              </Link>
             </div>
           </div>
 
@@ -169,9 +188,7 @@ export function MobileMenu({ open, onClose, isActive }: MobileMenuProps) {
                   onClose={onClose}
                   active={isActive(link.href)}
                   highlight={"highlight" in link && link.highlight}
-                  highlightColor={
-                    link.href === "/rugby-draft" ? "sky" : "emerald"
-                  }
+                  highlightColor={getNavHighlightColor(link.href)}
                 />
               ))}
             </div>

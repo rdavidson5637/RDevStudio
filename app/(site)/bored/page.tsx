@@ -6,7 +6,7 @@ import { createPageMetadata } from "@/lib/metadata";
 export const metadata = createPageMetadata({
   title: "I'm Bored",
   description:
-    "Play Champions Draft and Rugby Draft — free squad builder games from RDev Studio. Plus more quick games when you're bored.",
+    "Play Champions Draft, Rugby Draft, and Pub Quiz — free games from RDev Studio. Plus more quick games when you're bored.",
   path: "/bored",
 });
 

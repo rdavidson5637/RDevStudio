@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import Logo from "@/components/Logo";
 import { NAV_LINKS } from "@/lib/constants";
+import { getNavHighlightTextClass } from "@/lib/nav-highlight";
 import { MobileMenu } from "./MobileMenu";
 
 export function Header() {
@@ -51,15 +52,10 @@ export function Header() {
                 href={link.href}
                 className={`text-sm transition-colors duration-normal ease-out hover:text-primary ${
                   "highlight" in link && link.highlight
-                    ? `font-semibold ${
-                        link.href === "/rugby-draft"
-                          ? isActive(link.href)
-                            ? "text-sky-400"
-                            : "text-sky-400/90"
-                          : isActive(link.href)
-                            ? "text-emerald-400"
-                            : "text-emerald-400/90"
-                      }`
+                    ? `font-semibold ${getNavHighlightTextClass(
+                        link.href,
+                        isActive(link.href)
+                      )}`
                     : `font-medium ${
                         isActive(link.href) ? "text-accent" : "text-secondary"
                       }`

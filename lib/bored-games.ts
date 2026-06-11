@@ -16,6 +16,14 @@ export const BORED_GAMES = [
     href: "/rugby-draft",
   },
   {
+    slug: "pub-quiz",
+    title: "Pub Quiz",
+    description:
+      "Host a quiz night or join with a code. Picture rounds, music clips, buzzer rounds, and team mode.",
+    tag: "Live",
+    href: "/pub-quiz",
+  },
+  {
     slug: "longest-word",
     title: "Longest Word",
     description:

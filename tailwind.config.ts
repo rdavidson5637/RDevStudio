@@ -4,7 +4,12 @@ const config: Config = {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./app/**/*.{js,ts,jsx,tsx,mdx,css}",
+  ],
+  safelist: [
+    { pattern: /^(bg|text|border|ring|placeholder)-quiz-/ },
+    "shadow-quiz-card",
+    "shadow-quiz-glow",
   ],
   theme: {
     extend: {
@@ -38,9 +43,28 @@ const config: Config = {
           text: "var(--color-text-secondary)",
           muted: "var(--color-text-tertiary)",
         },
+        quiz: {
+          bg: "#0c0b10",
+          "bg-elevated": "#13121a",
+          amber: "#e8a317",
+          "amber-dim": "#b87d0f",
+          surface: "#16151f",
+          "surface-hover": "#1e1d28",
+          border: "#2a2838",
+          "border-bright": "#3d3a50",
+          muted: "#9490a8",
+          ink: "#f4f0e6",
+          success: "#4ade80",
+          danger: "#f87171",
+          picture: "#a78bfa",
+          music: "#60a5fa",
+          buzzer: "#f87171",
+          risk: "#fb923c",
+        },
       },
       fontFamily: {
         display: ['"DM Serif Display"', "Georgia", "serif"],
+        serif: ["var(--font-display)", "Georgia", "serif"],
         sans: ["var(--font-inter)", "system-ui", "sans-serif"],
         body: ["var(--font-inter)", "system-ui", "sans-serif"],
       },
@@ -117,6 +141,8 @@ const config: Config = {
         card: "0 4px 24px -4px rgb(0 0 0 / 0.5)",
         "card-hover": "0 24px 48px -12px rgb(0 0 0 / 0.6)",
         glow: "0 0 60px -12px rgb(59 130 246 / 0.2)",
+        "quiz-card": "0 4px 24px -4px rgba(0, 0, 0, 0.45)",
+        "quiz-glow": "0 0 48px -8px rgba(232, 163, 23, 0.35)",
       },
       animation: {
         "fade-in": "fadeIn 0.5s ease-out forwards",
