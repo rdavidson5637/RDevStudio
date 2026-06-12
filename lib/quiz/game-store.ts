@@ -1,7 +1,10 @@
+import {
+  deleteGameFromKv,
+  loadGameFromKv,
+  saveGameToKv,
+} from "./kv-store";
 import type { GameState } from "./types";
 
-// TODO: In-memory only — game state resets on full server restart.
-// Migrate to Redis (or similar) for production persistence.
 const globalForGameStore = globalThis as typeof globalThis & {
   __pubQuizGameStore?: Map<string, GameState>;
 };
@@ -13,18 +16,30 @@ function createStore(): Map<string, GameState> {
 export const gameStore =
   globalForGameStore.__pubQuizGameStore ?? createStore();
 
-if (process.env.NODE_ENV !== "production") {
-  globalForGameStore.__pubQuizGameStore = gameStore;
+globalForGameStore.__pubQuizGameStore = gameStore;
+
+export async function getGame(id: string): Promise<GameState | undefined> {
+  const cached = gameStore.get(id);
+  if (cached) {
+    return cached;
+  }
+
+  const remote = await loadGameFromKv(id);
+  if (!remote) {
+    return undefined;
+  }
+
+  gameStore.set(id, remote);
+  return remote;
 }
 
-export function getGame(id: string): GameState | undefined {
-  return gameStore.get(id);
-}
-
-export function setGame(id: string, state: GameState): void {
+export async function setGame(id: string, state: GameState): Promise<void> {
   gameStore.set(id, state);
+  await saveGameToKv(id, state);
 }
 
-export function deleteGame(id: string): boolean {
-  return gameStore.delete(id);
+export async function deleteGame(id: string): Promise<boolean> {
+  const deleted = gameStore.delete(id);
+  await deleteGameFromKv(id);
+  return deleted;
 }

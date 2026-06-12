@@ -37,7 +37,7 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const game = getGame(gameId);
+    const game = await getGame(gameId);
 
     if (!game) {
       return NextResponse.json({ error: "Game not found" }, { status: 404 });

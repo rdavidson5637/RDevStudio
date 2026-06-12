@@ -27,10 +27,18 @@ export function getExcludeListForPrompt(): string[] {
   return getHistoryStore().slice(-PROMPT_EXCLUDE_LIMIT);
 }
 
+function isFallbackQuestion(question: Question): boolean {
+  return question.id.startsWith("fallback_");
+}
+
 export function markQuestionsAsUsed(questions: Question[]): void {
   const store = getHistoryStore();
 
   for (const question of questions) {
+    if (isFallbackQuestion(question)) {
+      continue;
+    }
+
     const fingerprint = questionFingerprint(question.text);
     if (!store.includes(fingerprint)) {
       store.push(fingerprint);

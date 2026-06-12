@@ -32,7 +32,7 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: "Invalid reaction emoji" }, { status: 400 });
     }
 
-    const game = getGame(gameId);
+    const game = await getGame(gameId);
 
     if (!game) {
       return NextResponse.json({ error: "Game not found" }, { status: 404 });

@@ -30,7 +30,7 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const game = getGame(gameId);
+    const game = await getGame(gameId);
     if (!game) {
       return NextResponse.json({ error: "Game not found" }, { status: 404 });
     }
@@ -96,13 +96,13 @@ export async function POST(request: NextRequest) {
         nextRound,
       });
 
-      setGame(gameId, game);
+      await setGame(gameId, game);
       return NextResponse.json({ ok: true });
     }
 
     if (nextIndex < game.questions.length) {
       await broadcastQuestion(gameId, game, nextIndex);
-      setGame(gameId, game);
+      await setGame(gameId, game);
       return NextResponse.json({ ok: true });
     }
 
@@ -110,7 +110,7 @@ export async function POST(request: NextRequest) {
     game.activeBuzz = null;
     game.buzzLockedOutPlayerIds = [];
     game.buzzLockedOutTeamIds = [];
-    setGame(gameId, game);
+    await setGame(gameId, game);
 
     const sortedTeams =
       game.teamMode && game.teams ? getSortedTeams(game.teams) : undefined;

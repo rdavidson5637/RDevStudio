@@ -29,7 +29,7 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const game = getGame(gameId);
+    const game = await getGame(gameId);
     if (!game) {
       return NextResponse.json({ error: "Game not found" }, { status: 404 });
     }
@@ -70,7 +70,7 @@ export async function POST(request: NextRequest) {
     };
 
     game.players.push(player);
-    setGame(gameId, game);
+    await setGame(gameId, game);
 
     await triggerGameEvent(gameId, "game:player-joined", {
       player,

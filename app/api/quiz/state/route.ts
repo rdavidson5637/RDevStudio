@@ -12,7 +12,7 @@ export async function GET(request: NextRequest) {
     return NextResponse.json({ error: "gameId is required" }, { status: 400 });
   }
 
-  const game = getGame(gameId);
+  const game = await getGame(gameId);
 
   if (!game) {
     return NextResponse.json({ error: "Game not found" }, { status: 404 });

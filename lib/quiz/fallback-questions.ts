@@ -48,6 +48,51 @@ export const fallbackQuestions: Record<QuizCategory, Question[]> = {
       category: QuizCategory.GENERAL,
       explanation: "Mandarin has over 900 million native speakers.",
     },
+    {
+      id: "fallback_general_6",
+      text: "How many continents are there?",
+      type: QuestionType.MULTIPLE_CHOICE,
+      options: ["5", "6", "7", "8"],
+      correctAnswer: "7",
+      category: QuizCategory.GENERAL,
+      explanation: "Africa, Antarctica, Asia, Europe, North America, Oceania, and South America.",
+    },
+    {
+      id: "fallback_general_7",
+      text: "What is the capital of Japan?",
+      type: QuestionType.TEXT,
+      options: null,
+      correctAnswer: "Tokyo",
+      category: QuizCategory.GENERAL,
+      explanation: "Tokyo has been Japan's capital since 1868.",
+    },
+    {
+      id: "fallback_general_8",
+      text: "Which gas do plants absorb from the atmosphere?",
+      type: QuestionType.MULTIPLE_CHOICE,
+      options: ["Oxygen", "Nitrogen", "Carbon dioxide", "Hydrogen"],
+      correctAnswer: "Carbon dioxide",
+      category: QuizCategory.GENERAL,
+      explanation: "Plants use carbon dioxide during photosynthesis.",
+    },
+    {
+      id: "fallback_general_9",
+      text: "Who painted the Mona Lisa?",
+      type: QuestionType.TEXT,
+      options: null,
+      correctAnswer: "Leonardo da Vinci",
+      category: QuizCategory.GENERAL,
+      explanation: "Leonardo da Vinci painted it in the early 1500s.",
+    },
+    {
+      id: "fallback_general_10",
+      text: "What is the smallest prime number?",
+      type: QuestionType.MULTIPLE_CHOICE,
+      options: ["0", "1", "2", "3"],
+      correctAnswer: "2",
+      category: QuizCategory.GENERAL,
+      explanation: "2 is the only even prime number.",
+    },
   ],
   [QuizCategory.SPORT]: [
     {
@@ -433,6 +478,13 @@ export function getFallbackQuestions(
     );
   }
 
-  const unused = filterUnusedQuestions(shuffleArray(pool));
-  return unused.slice(0, count);
+  const shuffled = shuffleArray(pool);
+  const unused = filterUnusedQuestions(shuffled);
+
+  if (unused.length >= count) {
+    return unused.slice(0, count);
+  }
+
+  // Reuse questions when the global history pool is exhausted.
+  return shuffled.slice(0, count);
 }
