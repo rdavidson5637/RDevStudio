@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useState } from "react";
 
 import { normalizeWikimediaImageUrl } from "@/lib/quiz/wikimedia";
@@ -53,12 +54,12 @@ export function QuestionImage({
         />
       ) : null}
 
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img
+      <Image
         key={src}
         src={src}
         alt={imageAlt}
-        referrerPolicy="no-referrer"
+        width={1200}
+        height={700}
         onLoad={() => setLoaded(true)}
         onError={() => setErrored(true)}
         className={`mx-auto w-full object-contain transition-opacity duration-500 ${

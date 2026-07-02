@@ -19,7 +19,7 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    if (getGame(gameState.id)) {
+    if (await getGame(gameState.id)) {
       return NextResponse.json({ ok: true, restored: false });
     }
 
@@ -61,7 +61,7 @@ export async function POST(request: NextRequest) {
       skippedQuestionIds: [],
     };
 
-    setGame(gameState.id, restored);
+    await setGame(gameState.id, restored);
 
     return NextResponse.json({ ok: true, restored: true });
   } catch {

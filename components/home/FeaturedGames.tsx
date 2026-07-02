@@ -27,6 +27,7 @@ export function FeaturedGamesSection({
       aria-labelledby={labelledBy}
     >
       <div className="container-wide px-4 sm:px-6 lg:px-8">
+        <p className="shell-label mb-8 text-accent">EXTRA TIME</p>
         <FeaturedGames variant={variant} />
       </div>
     </section>

@@ -1,9 +1,9 @@
 @import "./tokens.css";
 
 :root {
-  --accent: #F59E0B;
-  --accent-hover: #D97706;
-  --accent-light: #FEF3C7;
+  --accent: var(--color-pitch);
+  --accent-hover: #17492e;
+  --accent-light: #1e5c3a1f;
 }
 
 @tailwind base;
@@ -90,7 +90,7 @@ html {
 body {
   background-color: var(--color-bg-base);
   color: var(--color-text-primary);
-  font-family: var(--font-body);
+  font-family: var(--font-body-family);
   font-size: var(--text-base);
   line-height: var(--leading-relaxed);
   -webkit-font-smoothing: antialiased;
@@ -104,7 +104,7 @@ body {
 }
 
 :focus-visible {
-  outline: 2px solid var(--color-accent);
+  outline: 2px solid var(--color-pitch);
   outline-offset: 2px;
 }
 
@@ -121,11 +121,11 @@ body {
   }
 
   .btn-secondary {
-    @apply inline-flex w-full items-center justify-center rounded-md border border-border-strong bg-transparent px-6 py-3 text-sm font-semibold text-primary transition-colors duration-normal ease-out hover:border-accent hover:bg-accent/10 active:scale-[0.99] focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-base sm:w-auto;
+    @apply inline-flex w-full items-center justify-center rounded-md border border-border-strong bg-transparent px-6 py-3 text-sm font-semibold text-primary transition-colors duration-normal ease-out hover:border-accent hover:bg-accent-light active:scale-[0.99] focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-base sm:w-auto;
   }
 
   .btn-outline-accent {
-    @apply inline-flex w-full items-center justify-center rounded-md border border-accent/50 bg-transparent px-6 py-3 text-sm font-semibold text-accent transition-colors duration-normal ease-out hover:border-accent hover:bg-accent hover:text-on-accent active:scale-[0.99] focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-base sm:w-auto;
+    @apply inline-flex w-full items-center justify-center rounded-md border border-border-accent bg-transparent px-6 py-3 text-sm font-semibold text-accent transition-colors duration-normal ease-out hover:border-accent hover:bg-accent hover:text-on-accent active:scale-[0.99] focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-base sm:w-auto;
   }
 
   .section-padding {
@@ -145,7 +145,7 @@ body {
   }
 
   .card-hover {
-    @apply transition-all duration-slow ease-out hover:-translate-y-0.5;
+    @apply transition-colors duration-normal ease-out;
   }
 
   .editorial-rule {
@@ -153,11 +153,15 @@ body {
   }
 
   .label-caps {
-    @apply text-xs font-semibold uppercase tracking-wider text-secondary;
+    @apply text-xs font-semibold uppercase text-secondary;
+    font-family: var(--font-label-family);
+    letter-spacing: 0.08em;
   }
 
   .section-label {
-    @apply mb-2 inline-flex items-center text-xs uppercase tracking-widest text-accent;
+    @apply mb-2 inline-flex items-center text-xs uppercase text-accent;
+    font-family: var(--font-label-family);
+    letter-spacing: 0.08em;
   }
 
   .section-label::before {
@@ -166,7 +170,25 @@ body {
   }
 
   .heading-display {
-    @apply font-display font-bold tracking-tight text-primary;
+    @apply font-display tracking-tight text-primary uppercase;
+    line-height: 1.02;
+  }
+
+  .programme-h1 {
+    @apply font-display uppercase tracking-tight text-primary;
+    font-size: clamp(3rem, 8vw, 6.5rem);
+    line-height: 1.02;
+    overflow-wrap: anywhere;
+  }
+
+  .shell-label {
+    @apply text-[11px] uppercase text-secondary;
+    font-family: var(--font-label-family);
+    letter-spacing: 0.08em;
+  }
+
+  .programme-rule {
+    @apply h-px w-full bg-border;
   }
 
   .section-heading {
@@ -178,7 +200,7 @@ body {
   }
 
   .interactive-surface {
-    @apply rounded-xl border border-border-strong bg-overlay transition-colors duration-normal ease-out hover:border-accent/40;
+    @apply rounded-xl border border-border-strong bg-overlay transition-colors duration-normal ease-out hover:border-border-accent;
   }
 
   .lead-text {
@@ -193,23 +215,35 @@ body {
     text-wrap: balance;
   }
 
-  .hero-heading {
-    animation: fadeUp 0.6s ease forwards;
+  .pitch-link {
+    position: relative;
   }
 
-  .hero-sub {
-    opacity: 0;
-    animation: fadeUp 0.6s ease 0.1s forwards;
+  .pitch-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    height: 2px;
+    width: 100%;
+    background: var(--color-pitch);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 200ms ease-out;
   }
 
-  .hero-trust {
-    opacity: 0;
-    animation: fadeUp 0.6s ease 0.2s forwards;
+  .pitch-link:hover::after,
+  .pitch-link:focus-visible::after {
+    transform: scaleX(1);
   }
 
-  .hero-ctas {
-    opacity: 0;
-    animation: fadeUp 0.6s ease 0.3s forwards;
+  .work-card-lift {
+    transition: transform 200ms ease-out, border-color 200ms ease-out;
+  }
+
+  .hero-line {
+    opacity: 1;
+    transform: none;
   }
 
   .hero-bg-type {
@@ -232,10 +266,10 @@ body {
 
 }
 
-@keyframes fadeUp {
+@keyframes heroLineIn {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(12px);
   }
   to {
     opacity: 1;
@@ -243,105 +277,19 @@ body {
   }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-  .hero-heading,
-  .hero-sub,
-  .hero-trust,
-  .hero-ctas,
-  .card-hover { transform: none; }
-  .hire-reveal,
-  .hire-finale-heading,
-  .hire-finale-section,
-  .hire-meter-glow,
-  .rudi-modal-in,
-  .animate-slide-in-right,
-  .coming-soon-chevron-bounce {
-    animation: none !important;
-    transform: none !important;
-    opacity: 1 !important;
-  }
-
-  .coming-soon-project-card:hover {
-    transform: none !important;
-  }
-}
-
-@keyframes hireReveal {
-  from {
+@media (prefers-reduced-motion: no-preference) {
+  .hero-line {
     opacity: 0;
-    transform: translateY(16px);
+    transform: translateY(12px);
+    animation: heroLineIn 400ms ease-out forwards;
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
 
-@keyframes hireFinalePulse {
-  0%, 100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.02);
+  .work-card-lift:hover {
+    transform: translateY(-2px);
   }
 }
 
-.hire-reveal {
-  opacity: 1;
-  animation: hireReveal 0.7s ease-out forwards;
-}
-
-.hire-finale-heading {
-  animation: hireFinalePulse 4s ease-in-out infinite;
-}
-
-.hire-chaos-active .hire-finale-section {
-  background:
-    radial-gradient(ellipse at 50% 0%, rgb(245 158 11 / 0.08) 0%, transparent 55%),
-    var(--color-bg-raised);
-}
-
-@keyframes hire-glow {
-  0%, 100% { box-shadow: 0 0 20px rgba(245, 158, 11, 0.2); }
-  50% { box-shadow: 0 0 60px rgba(245, 158, 11, 0.6); }
-}
-
-.hire-meter-glow {
-  animation: hire-glow 2s ease-in-out infinite;
-}
-
-@keyframes rudi-modal-in {
-  from {
-    opacity: 0;
-    transform: scale(0.92);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-.rudi-modal-in {
-  opacity: 1;
-  animation: rudi-modal-in 350ms ease-out forwards;
-}
-
-@keyframes comingSoonChevronBounce {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(8px); }
-}
-
-.coming-soon-chevron-bounce {
-  animation: comingSoonChevronBounce 2s ease-in-out infinite;
-}
-
-.coming-soon-project-card:hover {
-  transform: translateY(-4px);
-  border-color: rgba(245, 158, 11, 0.35);
-  box-shadow: 0 8px 40px rgba(245, 158, 11, 0.08);
-}
-
+/* Quiz UI motion — scoped to live game sessions only */
 @keyframes player-enter {
   from {
     opacity: 0;
@@ -353,7 +301,7 @@ body {
   }
 }
 
-.player-enter {
+.quiz-page .player-enter {
   animation: player-enter 0.35s ease-out;
 }
 
@@ -368,7 +316,7 @@ body {
   }
 }
 
-.question-fade-in {
+.quiz-page .question-fade-in {
   animation: question-fade-in 0.5s ease-out;
 }
 
@@ -386,7 +334,7 @@ body {
   }
 }
 
-.reveal-pop {
+.quiz-page .reveal-pop {
   animation: reveal-pop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
@@ -401,7 +349,7 @@ body {
   }
 }
 
-.result-fade-in {
+.quiz-page .result-fade-in {
   animation: result-fade-in 0.4s ease-out 0.4s both;
 }
 
@@ -416,7 +364,7 @@ body {
   }
 }
 
-.leaderboard-slide-in {
+.quiz-page .leaderboard-slide-in {
   animation: leaderboard-slide-in 0.35s ease-out both;
 }
 
@@ -430,7 +378,7 @@ body {
   }
 }
 
-.score-flash {
+.quiz-page .score-flash {
   animation: score-flash 0.7s ease-out;
 }
 
@@ -443,7 +391,7 @@ body {
   }
 }
 
-.image-shimmer {
+.quiz-page .image-shimmer {
   background: linear-gradient(
     90deg,
     rgba(255, 255, 255, 0.02) 0%,
@@ -469,7 +417,7 @@ body {
   }
 }
 
-.score-popup-float {
+.quiz-page .score-popup-float {
   animation: score-popup-float 1.5s ease-out forwards;
 }
 
@@ -488,7 +436,7 @@ body {
   }
 }
 
-.reaction-float {
+.quiz-page .reaction-float {
   animation: reaction-float 2.5s ease-out forwards;
 }
 
@@ -502,7 +450,7 @@ body {
   }
 }
 
-.buzzer-glow {
+.quiz-page .buzzer-glow {
   animation: buzzer-glow 2s ease-in-out infinite;
 }
 
@@ -516,7 +464,7 @@ body {
   }
 }
 
-.buzz-banner {
+.quiz-page .buzz-banner {
   animation: buzz-banner-pulse 1.5s ease-in-out infinite;
 }
 
@@ -532,6 +480,34 @@ body {
   }
 }
 
-.risk-flash {
+.quiz-page .risk-flash {
   animation: risk-flash-keyframes 0.6s ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .hero-line {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
+
+  .work-card-lift:hover {
+    transform: none;
+  }
+
+  .pitch-link::after {
+    transition: none;
+    transform: scaleX(1);
+  }
+
+  .quiz-page *,
+  .quiz-page *::before,
+  .quiz-page *::after {
+    animation: none !important;
+    transition-duration: 0ms !important;
+  }
 }

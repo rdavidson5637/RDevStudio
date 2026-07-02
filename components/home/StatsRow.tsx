@@ -4,7 +4,7 @@ const STATS = [
   {
     value: "2 games",
     label: "Play free now",
-    href: "/bored",
+    href: "/games",
     highlight: true,
   },
   { value: "5+", label: "Projects shipped" },

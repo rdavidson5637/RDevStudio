@@ -27,7 +27,7 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: "hostId is required" }, { status: 400 });
     }
 
-    const game = getGame(gameId);
+    const game = await getGame(gameId);
     if (!game) {
       return NextResponse.json({ error: "Game not found" }, { status: 404 });
     }
@@ -82,7 +82,7 @@ export async function POST(request: NextRequest) {
     game.questionStartedAt = Date.now();
     game.timeLimitMs = QUESTION_TIME_LIMIT_MS;
 
-    setGame(gameId, game);
+    await setGame(gameId, game);
 
     const firstRound = game.rounds[0];
     const firstQuestion = game.questions[0];
@@ -99,7 +99,7 @@ export async function POST(request: NextRequest) {
     }
 
     await broadcastQuestion(gameId, game, 0);
-    setGame(gameId, game);
+    await setGame(gameId, game);
 
     return NextResponse.json({
       state: toPublicGameState(game),

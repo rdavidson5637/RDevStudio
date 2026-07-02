@@ -2,81 +2,51 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
-import Logo from "@/components/Logo";
-import { NAV_LINKS } from "@/lib/constants";
-import { getNavHighlightTextClass } from "@/lib/nav-highlight";
+import { useState } from "react";
+import { SHELL_NAV_LINKS } from "@/lib/constants";
 import { MobileMenu } from "./MobileMenu";
 
 export function Header() {
   const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
 
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 16);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
-  const isActive = (href: string) => pathname.startsWith(href);
+  const isActive = (href: string) =>
+    href === "/" ? pathname === "/" : pathname.startsWith(href);
 
   const closeMobile = () => setMobileOpen(false);
 
   return (
     <>
-      <header
-        className={`fixed top-0 z-[100] w-full transition-all duration-normal ease-out ${
-          scrolled
-            ? "border-b border-border bg-base/85 shadow-sm shadow-black/10 backdrop-blur-md"
-            : "border-b border-transparent bg-transparent"
-        }`}
-      >
-        <div className="container-wide flex h-14 items-center justify-between gap-4 sm:h-16">
+        <header className="sticky top-0 z-[100] min-h-20 border-b border-border bg-base/95 backdrop-blur-sm">
+        <div className="container-wide flex h-20 items-center justify-between gap-4 px-6">
           <Link
             href="/"
-            className="inline-flex shrink-0 transition-opacity duration-normal ease-out hover:opacity-85"
+            className="pitch-link inline-flex shrink-0 text-lg font-semibold tracking-tight text-primary transition-colors hover:text-accent"
             aria-label="RDev Studio — Home"
           >
-            <Logo dark />
+            RDev Studio
           </Link>
 
           <nav
-            className="hidden items-center gap-6 md:flex md:gap-8 lg:gap-10"
+            className="hidden items-center gap-7 md:flex"
             aria-label="Main navigation"
           >
-            {NAV_LINKS.map((link) => (
+            {SHELL_NAV_LINKS.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className={`text-sm transition-colors duration-normal ease-out hover:text-primary ${
-                  "highlight" in link && link.highlight
-                    ? `font-semibold ${getNavHighlightTextClass(
-                        link.href,
-                        isActive(link.href)
-                      )}`
-                    : `font-medium ${
-                        isActive(link.href) ? "text-accent" : "text-secondary"
-                      }`
+                className={`pitch-link shell-label transition-colors ${
+                  isActive(link.href) ? "text-accent" : "text-secondary hover:text-accent"
                 }`}
               >
-                <span className="relative after:absolute after:bottom-0 after:left-0 after:h-px after:w-0 after:bg-accent after:transition-all after:duration-200 after:content-[''] hover:after:w-full">
-                  {link.label}
-                </span>
+                {link.label}
               </Link>
             ))}
             <Link
-              href="/bored"
-              className="ml-2 hidden rounded-lg bg-emerald-500 px-4 py-2 text-sm font-semibold text-black transition-colors hover:bg-emerald-400 lg:inline-flex"
+              href="/hire"
+              className="rounded-md bg-primary px-4 py-2 text-sm font-semibold text-base transition-colors hover:bg-[#d22b2b]"
             >
-              Play
-            </Link>
-            <Link
-              href="/contact"
-              className="hidden rounded-lg border border-white/20 px-4 py-2 text-sm font-medium text-primary transition-colors hover:border-accent hover:text-accent lg:inline-flex"
-            >
-              Contact
+              Hire me
             </Link>
           </nav>
 
@@ -88,7 +58,13 @@ export function Header() {
             aria-controls="mobile-menu"
             aria-label="Open menu"
           >
-            <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <svg
+              className="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              aria-hidden="true"
+            >
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 6h16M4 12h16M4 18h16" />
             </svg>
           </button>

@@ -16,7 +16,7 @@ function ServicePrice({
     <p className="mt-3 sm:mt-4">
       <span className="text-2xl font-bold text-accent">{price}</span>
       {priceNote ? (
-        <span className="ml-1 text-sm text-white/40">{priceNote}</span>
+        <span className="ml-1 text-sm text-secondary">{priceNote}</span>
       ) : null}
     </p>
   );

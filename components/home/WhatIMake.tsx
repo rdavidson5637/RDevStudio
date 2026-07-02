@@ -4,27 +4,27 @@ import { SectionHeader } from "@/components/ui/SectionHeader";
 
 const ACCENT_STYLES = {
   amber: {
-    card: "border-amber-500/25 bg-raised hover:border-amber-500/45 hover:bg-[#1e293b]",
-    label: "text-amber-300",
+    card: "border-amber-600/25 bg-raised hover:border-amber-600/45 hover:bg-overlay",
+    label: "text-amber-800",
     title: "text-primary",
     body: "text-secondary",
-    cta: "text-amber-300 group-hover:text-amber-200",
+    cta: "text-amber-800 group-hover:text-amber-950",
     glow: "bg-[radial-gradient(ellipse_at_0%_100%,rgb(245_158_11/0.14)_0%,transparent_60%)]",
   },
   emerald: {
-    card: "border-emerald-500/25 bg-raised hover:border-emerald-500/45 hover:bg-[#1e293b]",
-    label: "text-emerald-300",
+    card: "border-emerald-700/25 bg-raised hover:border-emerald-700/45 hover:bg-overlay",
+    label: "text-emerald-800",
     title: "text-primary",
     body: "text-secondary",
-    cta: "text-emerald-300 group-hover:text-emerald-200",
+    cta: "text-emerald-800 group-hover:text-emerald-950",
     glow: "bg-[radial-gradient(ellipse_at_0%_100%,rgb(16_185_129/0.14)_0%,transparent_60%)]",
   },
   violet: {
-    card: "border-violet-500/25 bg-raised hover:border-violet-500/45 hover:bg-[#1e293b]",
-    label: "text-violet-300",
+    card: "border-violet-700/25 bg-raised hover:border-violet-700/45 hover:bg-overlay",
+    label: "text-violet-800",
     title: "text-primary",
     body: "text-secondary",
-    cta: "text-violet-300 group-hover:text-violet-200",
+    cta: "text-violet-800 group-hover:text-violet-950",
     glow: "bg-[radial-gradient(ellipse_at_0%_100%,rgb(139_92_246/0.14)_0%,transparent_60%)]",
   },
 } as const;

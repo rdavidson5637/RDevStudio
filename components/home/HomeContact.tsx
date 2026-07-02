@@ -1,27 +1,18 @@
-import { DirectContactOptions } from "@/components/contact/DirectContactOptions";
-import { SectionHeader } from "@/components/ui/SectionHeader";
-import { HomeContactForm } from "./HomeContactForm";
+import Link from "next/link";
 
 export function HomeContact() {
   return (
-    <section id="contact" className="section-padding border-t border-border bg-base">
-      <div className="container-wide px-4 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-xl">
-          <SectionHeader label="Contact" title="Say hello" />
-
-          <p className="lead-text mt-4">
-            Working on something, want to collaborate, or just fancy a chat?
-            Drop me a message — I usually reply within a day.
+    <section className="section-padding border-t border-border bg-base">
+      <div className="container-wide px-6">
+        <p className="shell-label mb-3 text-accent">FULL TIME</p>
+        <div className="flex flex-col gap-6 border-t border-border pt-8 sm:flex-row sm:items-center sm:justify-between">
+          <p className="max-w-xl text-base leading-relaxed text-secondary sm:text-lg">
+            Freelance projects, job opportunities, or a rematch on Champions
+            Draft — all welcome.
           </p>
-          <p className="editorial-note mt-4">
-            Interested in my services? I take on a small number of website and
-            web projects — happy to talk if something here caught your eye.
-          </p>
-
-          <div className="mt-8 rounded-xl border border-border bg-raised/80 p-6 sm:mt-10 sm:p-8">
-            <DirectContactOptions />
-            <HomeContactForm />
-          </div>
+          <Link href="/contact" className="btn-primary shrink-0">
+            Get in touch
+          </Link>
         </div>
       </div>
     </section>

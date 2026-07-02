@@ -36,7 +36,7 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: "hostId is required" }, { status: 400 });
     }
 
-    const game = getGame(gameId);
+    const game = await getGame(gameId);
     if (!game) {
       return NextResponse.json({ error: "Game not found" }, { status: 404 });
     }
@@ -69,7 +69,7 @@ export async function POST(request: NextRequest) {
       }
 
       await broadcastQuestion(gameId, game, nextIndex);
-      setGame(gameId, game);
+      await setGame(gameId, game);
 
       return NextResponse.json({ state: toPublicGameState(game) });
     }
@@ -107,13 +107,13 @@ export async function POST(request: NextRequest) {
         nextRound,
       });
 
-      setGame(gameId, game);
+      await setGame(gameId, game);
       return NextResponse.json({ state: toPublicGameState(game) });
     }
 
     if (nextIndex < game.questions.length) {
       await broadcastQuestion(gameId, game, nextIndex);
-      setGame(gameId, game);
+      await setGame(gameId, game);
     } else if (!game.tiebreakerUsed && hasTieAtTop(game)) {
       const tiebreaker = await createTiebreakerQuestion(gameId);
 
@@ -141,10 +141,10 @@ export async function POST(request: NextRequest) {
         game.roundConfigs = [...game.roundConfigs, tiebreakerRound];
 
         await broadcastQuestion(gameId, game, game.questions.length - 1);
-        setGame(gameId, game);
+        await setGame(gameId, game);
       } else {
         game.status = "finished";
-        setGame(gameId, game);
+        await setGame(gameId, game);
 
         await triggerGameEvent(gameId, "game:finished", {
           finalLeaderboard: getSortedPlayers(game.players),
@@ -159,7 +159,7 @@ export async function POST(request: NextRequest) {
       }
     } else {
       game.status = "finished";
-      setGame(gameId, game);
+      await setGame(gameId, game);
 
       const finalLeaderboard = getSortedPlayers(game.players);
 

@@ -489,7 +489,7 @@ function fastSimulateEntireKnockouts(
   }
 }
 
-function getUserJourneySummary(
+function getUserProgressSummary(
   userClub: string,
   winner: string,
   eliminatedAt: string | null
@@ -1546,7 +1546,7 @@ export default function ChampionsCup({ state, onUpdate, onExit }: Props) {
     const userResult =
       finalWinner === userClub
         ? 'You are the Champions!'
-        : getUserJourneySummary(userClub, winner, eliminatedAt)
+        : getUserProgressSummary(userClub, winner, eliminatedAt)
     const poolAward = userPool
       ? getPoolWinnerAward(userClub, userPool.table)
       : null

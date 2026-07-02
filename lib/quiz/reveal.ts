@@ -99,7 +99,7 @@ export async function triggerReveal(
 
   game.status = "reveal";
   game.lastReveal = payload;
-  setGame(gameId, game);
+  await setGame(gameId, game);
 
   await triggerGameEvent(gameId, "game:reveal", payload);
   await triggerGameEvent(gameId, "game:leaderboard", {
@@ -127,8 +127,8 @@ export async function revealIfAllAnswered(
   return triggerReveal(gameId, game, questionId);
 }
 
-export function getGameFromStore(gameId: string): GameState {
-  const game = getGame(gameId);
+export async function getGameFromStore(gameId: string): Promise<GameState> {
+  const game = await getGame(gameId);
   if (!game) {
     throw new Error("Game not found");
   }

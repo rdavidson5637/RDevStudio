@@ -3,7 +3,7 @@ import { SOCIAL_PROOF_ITEMS } from "@/lib/constants";
 export function SocialProofBar() {
   return (
     <section
-      className="border-y border-slate-800 bg-navy py-5"
+      className="border-y border-white/15 bg-navy py-5"
       aria-label="Key benefits"
     >
       <div className="container-narrow overflow-x-auto px-4 sm:px-6 lg:px-8">

@@ -15,7 +15,7 @@ export function GamePageHeader({ game }: GamePageHeaderProps) {
       <div className="section-padding relative pb-10 sm:pb-12">
         <div className="container-wide mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <Link
-            href="/bored"
+            href="/games"
             className="text-sm font-medium text-secondary transition-colors hover:text-accent"
           >
             ← I&apos;m Bored

@@ -372,7 +372,7 @@ function fastSimulateEntireKnockouts(
   }
 }
 
-function getUserJourneySummary(
+function getUserProgressSummary(
   userNation: string,
   winner: string,
   eliminatedAt: string | null
@@ -1070,7 +1070,7 @@ export default function WorldCup({ state, onUpdate, onExit }: Props) {
     const userResult =
       finalWinner === userNation
         ? 'You are the Champions!'
-        : getUserJourneySummary(userNation, winner, eliminatedAt)
+        : getUserProgressSummary(userNation, winner, eliminatedAt)
     const poolAward = userPool
       ? getPoolWinnerAward(userNation, userPool.table)
       : null

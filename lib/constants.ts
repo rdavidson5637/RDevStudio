@@ -1,10 +1,11 @@
 export const SITE_NAME = "RDev Studio";
 export const SITE_URL = "https://rdevstudio.co.uk";
-export const SITE_TITLE = "RDev Studio — Portfolio of Ryan Davidson";
+export const SITE_TITLE = "Ryan Davidson, designer & developer, Belfast";
 export const SITE_DESCRIPTION =
-  "The portfolio of Ryan Davidson — websites, web apps, side projects, and small games.";
+  "Ryan Davidson builds useful web products in Belfast: case studies, browser games, and practical digital work.";
 export const EMAIL = "ryan@rdevstudio.co.uk";
 export const CONTACT_EMAIL = "ryan@rdevstudio.co.uk";
+export const GITHUB_URL = "https://github.com/rdavidson5637";
 export const FORMSPREE_FORM_ID = "mgoqjqve";
 
 export const CONTACT_SERVICE_OPTIONS = [
@@ -20,11 +21,18 @@ export const SITE_TAGLINE =
 export const NAV_LINKS = [
   { href: "/work", label: "Work" },
   { href: "/hire", label: "Hire Ryan" },
-  { href: "/coming-soon", label: "Coming Soon" },
+  { href: "/games", label: "Games", highlight: true },
   { href: "/champions-draft", label: "Champions Draft", highlight: true },
   { href: "/rugby-draft", label: "Rugby Draft", highlight: true },
   { href: "/pub-quiz", label: "Pub Quiz", highlight: true },
-  { href: "/bored", label: "I'm Bored" },
+  { href: "/games", label: "Games" },
+  { href: "/about", label: "About" },
+  { href: "/contact", label: "Contact" },
+] as const;
+
+export const SHELL_NAV_LINKS = [
+  { href: "/work", label: "Work" },
+  { href: "/games", label: "Games" },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
 ] as const;
@@ -42,7 +50,7 @@ export const PORTFOLIO_AREAS = [
   {
     title: "Websites & apps",
     description:
-      "Real projects and demo builds — a university dissertation app, a free site for RVS Cold Brew, and fictional business sites to show what's possible.",
+      "Real projects and concept builds — a university dissertation app, a client site for RVS Cold Brew, and three local-business concepts showing range.",
     href: "/work",
     cta: "Browse work",
     accent: "amber" as const,
@@ -51,7 +59,7 @@ export const PORTFOLIO_AREAS = [
     title: "Free games",
     description:
       "Champions Draft, Rugby Draft, and Pub Quiz — squad builders and real-time multiplayer trivia.",
-    href: "/bored",
+    href: "/games",
     cta: "Play free",
     accent: "emerald" as const,
   },
@@ -69,7 +77,7 @@ export const STUDIO_STATEMENT =
   "I like making things that look sharp and work properly — on the web, on mobile, and in the small gaps between projects.";
 
 export const ABOUT_BLURB =
-  "I'm Ryan Davidson — I design and build things for the web. I recently finished my MSc in Software Development at Queen's, work full time in Belfast, and build side projects in my spare time. This site is my portfolio: university projects, demo sites, side experiments, and the odd game when I'm bored.";
+  "I'm Ryan Davidson — I design and build things for the web. I recently finished my MSc in Software Development at Queen's and this site is my portfolio of case studies, concept builds, and browser games.";
 
 export const SOCIAL_PROOF_ITEMS = [
   "Websites & web apps",
@@ -166,7 +174,7 @@ export const FAQ_ITEMS = [
 export type ProjectCategory =
   | "University Project"
   | "Client Work"
-  | "Demo Site"
+  | "Concept Build"
   | "Food & Drink";
 
 export const PROJECTS = [
@@ -175,82 +183,50 @@ export const PROJECTS = [
     title: "ShelterLink",
     category: "University Project" as const,
     type: "Volunteer Management App",
-    summary: "University dissertation — work in progress",
+    summary: "Real client · charity",
     description:
-      "My university dissertation project: a volunteer management platform built for Assisi Animal Sanctuary. It covers shift scheduling, role management, and an admin dashboard — but it's not finished yet. I'm still actively developing and improving it.",
+      "Volunteer management platform for Assisi Animal Sanctuary — shift scheduling, role management, and an admin dashboard, now being prepared for live rollout.",
     highlights: ["Shift scheduling", "Admin dashboard", "Role management"],
     tags: ["Node.js", "Express", "MySQL"],
-    buttonLabel: "View on GitHub",
-    href: "https://github.com/rdavidson5637/ShelterLink",
+    buttonLabel: "Read the case study",
+    href: "/work/shelterlink",
     image: "/images/work/shelterlink.png",
     imageAlt:
       "ShelterLink landing page — volunteer management platform for Assisi Animal Sanctuary",
-    outcome: "Dissertation project — ongoing development",
-  },
-  {
-    id: "carrick-plumbing",
-    title: "Carrick Plumbing Co",
-    category: "Demo Site" as const,
-    type: "Trades Website",
-    summary: "Demo site — fictional business",
-    description:
-      "A demo site for a made-up plumbing business. Built to show how a trades company could look online — clear services, contact form, Google Maps, and a mobile-first layout.",
-    highlights: ["5-page layout", "Contact form", "Google Maps"],
-    tags: ["Next.js", "Tailwind", "Vercel"],
-    buttonLabel: "View live site",
-    href: "https://carrick-plumbing-co.vercel.app/",
-    image: "/images/work/carrick-plumbing.png",
-    imageAlt: "Carrick Plumbing Co homepage — demo trades website",
-    outcome: "Portfolio demo — not a real business",
-  },
-  {
-    id: "anchor-restaurant",
-    title: "The Anchor Restaurant",
-    category: "Demo Site" as const,
-    type: "Restaurant Website",
-    summary: "Demo site — fictional business",
-    description:
-      "A demo site for a made-up coastal restaurant. Menu display, opening hours, and a booking enquiry form — designed to show what a real restaurant site could look like.",
-    highlights: ["Menu display", "Enquiry form", "Opening hours"],
-    tags: ["Next.js", "Tailwind", "Vercel"],
-    buttonLabel: "View live site",
-    href: "https://the-anchor-restaurant.vercel.app/",
-    image: "/images/work/anchor-restaurant.png",
-    imageAlt: "The Anchor Restaurant website — demo restaurant site",
-    outcome: "Portfolio demo — not a real business",
-  },
-  {
-    id: "harbour-hair",
-    title: "Harbour Hair Studio",
-    category: "Demo Site" as const,
-    type: "Salon Website",
-    summary: "Demo site — fictional business",
-    description:
-      "A demo site for a made-up hair salon. Services, pricing, and a gallery — built to showcase how a salon could present itself online.",
-    highlights: ["Services & pricing", "Gallery", "Booking enquiry"],
-    tags: ["Next.js", "Tailwind", "Vercel"],
-    buttonLabel: "View live site",
-    href: "https://harbour-hair-studio11.vercel.app/",
-    image: "/images/work/harbour-hair.png",
-    imageAlt: "Harbour Hair Studio website — demo salon site",
-    outcome: "Portfolio demo — not a real business",
+    outcome: "Dissertation project — active rollout phase",
   },
   {
     id: "rvs-coldbrew",
     title: "RVS Cold Brew",
     category: "Client Work" as const,
-    type: "Coffee Brand Website",
-    summary: "Free site for RVS Cold Brew",
+    type: "Brand Site",
+    summary: "Client · brand site",
     description:
-      "I'm building this website for free for RVS Cold Brew — a local cold brew coffee business I genuinely love. Brand-led design with product focus, strong visuals, and a layout that tells the story behind the product.",
-    highlights: ["Product pages", "Brand storytelling", "Mobile-first"],
+      "Brand-led site for a Northern Irish cold brew company — product-first layout, tight palette, and fast loads on mobile.",
+    highlights: ["Product-led design", "Brand palette", "Mobile-first"],
     tags: ["Next.js", "Tailwind", "Vercel"],
-    buttonLabel: "View live site",
-    href: "https://rvscoldbrew.vercel.app",
+    buttonLabel: "Read the case study",
+    href: "/work/rvs-cold-brew",
     image: "/images/work/rvs-coldbrew.png",
     imageAlt: "RVS Cold Brew logo — circular badge with cream typography on dark teal",
     previewFit: "contain" as const,
     previewBg: "#0a1a1f",
-    outcome: "Passion project — built for free, still in development",
+    outcome: "Client project — active build",
+  },
+  {
+    id: "concept-builds",
+    title: "Concept builds",
+    category: "Concept Build" as const,
+    type: "Set of 3",
+    summary: "Concept · set of 3",
+    description:
+      "Three local-business sites — trades, restaurant, and salon — showing range across different brands and audiences.",
+    highlights: ["Trades firm", "Restaurant", "Salon"],
+    tags: ["Next.js", "Tailwind", "Vercel"],
+    buttonLabel: "Read the case study",
+    href: "/work/concept-builds",
+    image: "/images/work/carrick-plumbing.png",
+    imageAlt: "Carrick Plumbing Co homepage — concept trades website",
+    outcome: "Concept builds demonstrating design range",
   },
 ] as const;

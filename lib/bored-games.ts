@@ -29,6 +29,7 @@ export const BORED_GAMES = [
     description:
       "Spell the longest word you can from today's 4×4 letter grid. Same grid for everyone — resets at midnight.",
     tag: "Daily",
+    href: "/games",
   },
 ] as const;
 

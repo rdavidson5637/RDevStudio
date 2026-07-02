@@ -12,8 +12,8 @@ export function AboutClose() {
           <p className="lead-text mt-8 text-lg sm:text-xl">{ABOUT_BLURB}</p>
 
           <p className="editorial-note mt-6">
-            Open to freelance work — get in touch if something here caught your
-            eye.
+            Open to freelance work — say hello if you want to talk through a
+            project.
           </p>
 
           <Link href="/about" className="link-editorial mt-8 inline-flex items-center gap-2">

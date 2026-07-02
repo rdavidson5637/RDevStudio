@@ -47,7 +47,7 @@ export default function ModeSelect({ onSelect }: Props) {
   return (
     <div className="relative min-h-screen bg-[#0a0a12] flex flex-col items-center justify-center px-4 py-12 overflow-hidden">
       <Link
-        href="/bored"
+        href="/games"
         className="fixed top-4 left-4 z-50 rounded-full border border-white/15 bg-black/50 px-4 py-2 text-xs font-bold uppercase tracking-widest text-white/70 backdrop-blur transition-colors hover:border-white/30 hover:text-white"
       >
         ← RDev Studio

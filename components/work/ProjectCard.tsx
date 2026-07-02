@@ -75,7 +75,7 @@ export function ProjectCard({
 
   return (
     <article
-      className={`group overflow-hidden rounded-md border border-border-strong bg-raised transition-[transform,border-color] duration-[250ms] ease-out hover:-translate-y-1 hover:border-white/40 ${
+      className={`work-card-lift group overflow-hidden rounded-md border border-border-strong bg-raised transition-[transform,border-color] duration-[200ms] ease-out hover:border-accent ${
         alternating
           ? reverse
             ? "flex flex-col md:flex-row-reverse"

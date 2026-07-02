@@ -13,11 +13,12 @@ export function createPageMetadata({
   path,
 }: PageMeta): Metadata {
   const isHome = path === "/";
-  const pageTitle = isHome ? SITE_TITLE : `${title} | ${SITE_NAME}`;
+  const pageTitle = isHome ? SITE_TITLE : `${title} — ${SITE_TITLE}`;
   const url = `${SITE_URL}${path === "/" ? "" : path}`;
+  const ogImage = `${SITE_URL}/images/og/og-image-slot.svg`;
 
   return {
-    title: isHome ? { absolute: SITE_TITLE } : title,
+    title: isHome ? { absolute: SITE_TITLE } : pageTitle,
     description,
     alternates: {
       canonical: path,
@@ -29,11 +30,20 @@ export function createPageMetadata({
       siteName: SITE_NAME,
       locale: "en_GB",
       type: "website",
+      images: [
+        {
+          url: ogImage,
+          width: 1200,
+          height: 630,
+          alt: "RDev Studio — Ryan Davidson, designer and developer in Belfast",
+        },
+      ],
     },
     twitter: {
-      card: "summary",
+      card: "summary_large_image",
       title: pageTitle,
       description,
+      images: [ogImage],
     },
   };
 }
@@ -41,7 +51,7 @@ export function createPageMetadata({
 export const rootMetadata: Metadata = {
   title: {
     default: SITE_TITLE,
-    template: `%s | ${SITE_NAME}`,
+    template: `%s — ${SITE_TITLE}`,
   },
   description: SITE_DESCRIPTION,
   metadataBase: new URL(SITE_URL),
@@ -55,14 +65,23 @@ export const rootMetadata: Metadata = {
     siteName: SITE_NAME,
     locale: "en_GB",
     type: "website",
+    images: [
+      {
+        url: `${SITE_URL}/images/og/og-image-slot.svg`,
+        width: 1200,
+        height: 630,
+        alt: "RDev Studio — Ryan Davidson, designer and developer in Belfast",
+      },
+    ],
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     title: SITE_TITLE,
     description: SITE_DESCRIPTION,
+    images: [`${SITE_URL}/images/og/og-image-slot.svg`],
   },
   icons: {
-    icon: "/images/logo/rdevstudio-logo.png",
-    apple: "/images/logo/rdevstudio-logo.png",
+    icon: "/favicon.svg",
+    apple: "/favicon.svg",
   },
 };

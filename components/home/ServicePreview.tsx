@@ -19,12 +19,12 @@ export function ServicePreview() {
         <div className="mx-auto max-w-lg">
           <article className="card-hover overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-card">
             <div className="bg-navy px-8 py-6 text-center text-white">
-              <p className="text-sm font-medium uppercase tracking-wider text-slate-muted">
+              <p className="text-sm font-medium uppercase tracking-wider text-white/70">
                 Get Online
               </p>
               <p className="mt-2 text-5xl font-bold">
                 £650
-                <span className="text-lg font-normal text-slate-muted">
+                <span className="text-lg font-normal text-white/70">
                   {" "}
                   one-off
                 </span>

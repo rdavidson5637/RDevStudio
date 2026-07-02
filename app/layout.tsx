@@ -1,18 +1,27 @@
 import type { Metadata, Viewport } from "next";
 import { Analytics } from "@vercel/analytics/next";
-import { DM_Serif_Display, Inter } from "next/font/google";
+import { Anton, Archivo, Space_Mono } from "next/font/google";
 import { rootMetadata } from "@/lib/metadata";
 import "./globals.css";
 
-const dmSerif = DM_Serif_Display({
+const anton = Anton({
   weight: "400",
   subsets: ["latin"],
   variable: "--font-display",
+  display: "swap",
 });
 
-const inter = Inter({
+const archivo = Archivo({
+  weight: ["400", "600"],
   subsets: ["latin"],
-  variable: "--font-inter",
+  variable: "--font-body",
+  display: "swap",
+});
+
+const spaceMono = Space_Mono({
+  weight: ["400", "700"],
+  subsets: ["latin"],
+  variable: "--font-label",
   display: "swap",
 });
 
@@ -29,7 +38,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en-GB" className={`${dmSerif.variable} ${inter.variable}`}>
+    <html
+      lang="en-GB"
+      className={`${anton.variable} ${archivo.variable} ${spaceMono.variable}`}
+    >
       <body className="font-sans antialiased">
         {children}
         <Analytics />

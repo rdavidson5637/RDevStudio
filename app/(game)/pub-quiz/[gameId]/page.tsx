@@ -506,6 +506,42 @@ export default function GameRoomPage() {
     };
   }, [gameId, playerId, router, timeLimitMs]);
 
+  useEffect(() => {
+    if (!playerId || !isReady) {
+      return;
+    }
+
+    const shouldPoll =
+      connectionStatus !== "connected" || view !== "lobby";
+
+    if (!shouldPoll) {
+      return;
+    }
+
+    const syncState = async () => {
+      const state = await fetchGameState(gameId, playerId);
+      if (state) {
+        applyPublicState(state, playerId);
+      }
+    };
+
+    void syncState();
+    const interval = window.setInterval(() => {
+      void syncState();
+    }, 2500);
+
+    return () => {
+      window.clearInterval(interval);
+    };
+  }, [
+    applyPublicState,
+    connectionStatus,
+    gameId,
+    isReady,
+    playerId,
+    view,
+  ]);
+
   const removeReaction = useCallback((reactionId: string) => {
     setReactions((current) =>
       current.filter((reaction) => reaction.id !== reactionId)

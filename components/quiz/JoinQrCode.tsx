@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import QRCode from "qrcode";
 import { useEffect, useState } from "react";
 
@@ -43,13 +44,13 @@ export function JoinQrCode({ joinUrl, size = 160 }: JoinQrCodeProps) {
   }
 
   return (
-    // eslint-disable-next-line @next/next/no-img-element
-    <img
+    <Image
       src={dataUrl}
       alt="QR code to join this game"
       width={size}
       height={size}
       className="rounded-xl"
+      unoptimized
     />
   );
 }

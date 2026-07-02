@@ -6,22 +6,36 @@ import { FormSuccess } from "@/components/contact/FormSuccess";
 import {
   inputClassName,
   labelClassName,
+  selectClassName,
   submitButtonClassName,
 } from "@/components/contact/form-styles";
 import { FORMSPREE_FORM_ID } from "@/lib/constants";
 
+function isValidEmail(value: string) {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+}
+
 function ContactFormFields({ onReset }: { onReset: () => void }) {
   const [state, handleSubmit] = useForm(FORMSPREE_FORM_ID);
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+
+  const canSubmit =
+    name.trim().length > 0 &&
+    isValidEmail(email.trim()) &&
+    message.trim().length > 0 &&
+    !state.submitting;
 
   if (state.succeeded) {
     return <FormSuccess onReset={onReset} />;
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-5">
+    <form onSubmit={handleSubmit} className="space-y-5" noValidate>
       <div>
         <label htmlFor="name" className={labelClassName}>
-          Name <span className="text-accent">*</span>
+          Name
         </label>
         <input
           type="text"
@@ -29,28 +43,15 @@ function ContactFormFields({ onReset }: { onReset: () => void }) {
           name="name"
           required
           autoComplete="name"
+          value={name}
+          onChange={(event) => setName(event.target.value)}
           className={inputClassName}
-          placeholder="Your name"
-        />
-      </div>
-
-      <div>
-        <label htmlFor="business" className={labelClassName}>
-          Business Name
-        </label>
-        <input
-          type="text"
-          id="business"
-          name="business"
-          autoComplete="organization"
-          className={inputClassName}
-          placeholder="Your business name"
         />
       </div>
 
       <div>
         <label htmlFor="email" className={labelClassName}>
-          Email <span className="text-accent">*</span>
+          Email
         </label>
         <input
           type="email"
@@ -58,62 +59,72 @@ function ContactFormFields({ onReset }: { onReset: () => void }) {
           name="email"
           required
           autoComplete="email"
+          value={email}
+          onChange={(event) => setEmail(event.target.value)}
           className={inputClassName}
-          placeholder="you@business.com"
         />
         <ValidationError
           prefix="Email"
           field="email"
           errors={state.errors}
-          className="mt-1.5 text-sm text-red-400"
+          className="mt-1.5 text-sm text-[#d22b2b]"
         />
       </div>
 
       <div>
-        <label htmlFor="phone" className={labelClassName}>
-          Phone
+        <label htmlFor="enquiryType" className={labelClassName}>
+          What is it?
         </label>
-        <input
-          type="tel"
-          id="phone"
-          name="phone"
-          autoComplete="tel"
-          className={inputClassName}
-          placeholder="07xxx xxxxxx"
-        />
+        <select
+          id="enquiryType"
+          name="enquiryType"
+          required
+          defaultValue=""
+          className={selectClassName}
+        >
+          <option value="" disabled>
+            Choose one
+          </option>
+          <option value="Freelance project">Freelance project</option>
+          <option value="Job opportunity">Job opportunity</option>
+          <option value="Something else">Something else</option>
+        </select>
       </div>
 
       <div>
         <label htmlFor="message" className={labelClassName}>
-          Message <span className="text-accent">*</span>
+          Tell me about it
         </label>
         <textarea
           id="message"
           name="message"
           required
           rows={5}
+          value={message}
+          onChange={(event) => setMessage(event.target.value)}
           className={`${inputClassName} resize-y`}
-          placeholder="Tell us about your business and what you need..."
         />
         <ValidationError
           prefix="Message"
           field="message"
           errors={state.errors}
-          className="mt-1.5 text-sm text-red-400"
+          className="mt-1.5 text-sm text-[#d22b2b]"
         />
       </div>
 
-      <ValidationError
-        errors={state.errors}
-        className="border border-red-500/30 bg-red-500/10 px-4 py-3 text-sm text-red-400"
-      />
+      {state.errors ? (
+        <p className="text-sm leading-relaxed text-[#d22b2b]">
+          That didn&apos;t send. Try again, or just email me directly — address
+          is right there.
+        </p>
+      ) : null}
 
       <button
         type="submit"
-        disabled={state.submitting}
+        disabled={!canSubmit}
         className={submitButtonClassName}
       >
-        {state.submitting ? "Sending..." : "Send message"}
+        {state.submitting ? "Sending..." : "Send it"}
       </button>
     </form>
   );

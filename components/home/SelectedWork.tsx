@@ -22,8 +22,7 @@ export function SelectedWork() {
         </div>
 
         <p className="lead-text -mt-6 mb-10 max-w-2xl sm:-mt-4">
-          A university dissertation app, a free site for RVS Cold Brew, and demo
-          builds for fictional businesses — the kind of things I enjoy making.
+          Real clients, real users, and a few concept builds to show range.
         </p>
 
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2">

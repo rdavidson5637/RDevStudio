@@ -163,7 +163,7 @@ export async function POST(request: NextRequest) {
       createdAt: Date.now(),
     };
 
-    setGame(gameId, gameState);
+    await setGame(gameId, gameState);
 
     return NextResponse.json({ gameId, playerId, gameState });
   } catch {

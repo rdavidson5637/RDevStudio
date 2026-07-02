@@ -1,205 +1,194 @@
 import Link from "next/link";
-import { SectionHeader } from "@/components/ui/SectionHeader";
+import Image from "next/image";
+import { SITE_URL } from "@/lib/constants";
 import { createPageMetadata } from "@/lib/metadata";
-
-const TOOLKIT = [
-  {
-    label: "Stack",
-    value: "Next.js + Tailwind CSS",
-    detail: "Fast, modern, and easy to maintain",
-  },
-  {
-    label: "Hosting",
-    value: "Deployed on Vercel",
-    detail: "Quick deploys, great performance",
-  },
-  {
-    label: "Day job",
-    value: "Full time in Belfast",
-    detail: "Side projects happen evenings and weekends",
-  },
-  {
-    label: "Availability",
-    value: "Open to freelance",
-    detail: "Websites and web apps — happy to chat",
-  },
-] as const;
-
-const INTERESTS = [
-  "Clean, fast-loading websites",
-  "Side projects that actually ship",
-  "Football games when I'm bored",
-  "Building things for businesses I rate — like RVS Cold Brew",
-] as const;
 
 export const metadata = createPageMetadata({
   title: "About",
   description:
-    "About Ryan Davidson — developer, designer, and the person behind RDev Studio.",
+    "Ryan Davidson — designer, developer, and the person behind RDev Studio.",
   path: "/about",
 });
 
+const PROFILE_STATS = [
+  { label: "POSITION", value: "Designer / developer" },
+  { label: "CLUB", value: "RDev Studio" },
+  { label: "HOMETOWN", value: "Carrickfergus, Northern Ireland" },
+  {
+    label: "EDUCATION",
+    value:
+      "MSc Software Development, Queen's University Belfast (Commendation) · BSc Forensic Science, LJMU",
+  },
+  { label: "DAY JOB", value: "UK Civil Service — casework" },
+] as const;
+
+const OFF_THE_PITCH = [
+  {
+    label: "RUDI",
+    line: "Border Collie. Chief morale officer. Adopted from Assisi — yes, the same sanctuary.",
+  },
+  {
+    label: "FOOTBALL & RUGBY",
+    line: "Arsenal and Ulster. One of these causes me significantly more stress than the other.",
+  },
+  {
+    label: "OTHERWISE",
+    line: "Music, gaming, and making short videos nobody asked for.",
+  },
+] as const;
+
+const personJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Ryan Davidson",
+  jobTitle: "Designer and developer",
+  url: SITE_URL,
+  email: "mailto:ryan@rdevstudio.co.uk",
+  sameAs: [
+    "https://www.linkedin.com/in/ryan-davidson-462bb221b",
+    "https://github.com/rdavidson5637",
+  ],
+  worksFor: {
+    "@type": "Organization",
+    name: "RDev Studio",
+    url: SITE_URL,
+  },
+  alumniOf: [
+    {
+      "@type": "CollegeOrUniversity",
+      name: "Queen's University Belfast",
+    },
+    {
+      "@type": "CollegeOrUniversity",
+      name: "Liverpool John Moores University",
+    },
+  ],
+  homeLocation: {
+    "@type": "Place",
+    name: "Carrickfergus, Northern Ireland",
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Carrickfergus",
+      addressRegion: "Northern Ireland",
+      addressCountry: "GB",
+    },
+  },
+};
+
 export default function AboutPage() {
   return (
-    <>
-      {/* Hero */}
-      <section className="relative overflow-hidden border-b border-border bg-base pt-28">
-        <div
-          className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_70%_0%,rgb(139_92_246/0.08)_0%,transparent_55%)]"
-          aria-hidden="true"
-        />
-        <div
-          className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_20%_80%,rgb(245_158_11/0.06)_0%,transparent_50%)]"
-          aria-hidden="true"
-        />
-        <div className="section-padding relative">
-          <div className="container-wide max-w-4xl">
-            <p className="section-label mb-4 font-medium">About</p>
-            <h1 className="font-display text-4xl font-bold tracking-tight text-primary sm:text-5xl lg:text-6xl">
-              Ryan Davidson
-            </h1>
-            <p className="lead-text mt-6 max-w-2xl text-xl sm:text-2xl">
-              I design and build things for the web — this portfolio is where
-              they all live.
+    <div className="section-padding pt-28">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+      />
+      <article className="container-wide px-6">
+        <header className="border-b border-border pb-10">
+          <div className="grid gap-8 lg:grid-cols-[1fr,280px] lg:items-end">
+            <div>
+              <p className="shell-label mb-3 text-accent">SQUAD — No. 10</p>
+              <h1 className="programme-h1">RYAN DAVIDSON</h1>
+            </div>
+            <figure>
+              <div className="relative aspect-[3/4] w-full overflow-hidden rounded-[10px] border border-border bg-raised">
+                <Image
+                  src="/images/placeholders/screenshot-slot.svg"
+                  alt="Ryan Davidson profile photo placeholder"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 280px"
+                  className="object-cover"
+                />
+              </div>
+              <figcaption className="shell-label mt-3 text-secondary">
+                PLAYER PHOTO SLOT
+              </figcaption>
+            </figure>
+          </div>
+        </header>
+
+        <section
+          className="border-b border-border py-12"
+          aria-label="Profile stats"
+        >
+          <div className="rounded-[10px] border border-border bg-raised p-6 sm:p-8">
+            <dl className="grid gap-4 sm:grid-cols-2">
+              {PROFILE_STATS.map((stat) => (
+                <div key={stat.label}>
+                  <dt className="sr-only">{stat.label}</dt>
+                  <dd className="font-mono text-[11px] uppercase leading-relaxed tracking-[0.08em] text-secondary">
+                    <span className="text-primary">{stat.label}</span>
+                    {" — "}
+                    {stat.value}
+                  </dd>
+                </div>
+              ))}
+            </dl>
+          </div>
+        </section>
+
+        <section className="border-b border-border py-12" aria-label="Bio">
+          <div className="max-w-3xl space-y-5 text-base leading-relaxed text-primary sm:text-lg">
+            <p>
+              I didn&apos;t take the usual route in. Forensic science degree,
+              then into the civil service last August — handling casework and
+              talking to claimants for most of the day. Real problems, real
+              people, lots of process. You learn to read a file properly, spot
+              what&apos;s missing, and explain yourself clearly when
+              someone&apos;s on the phone needing a straight answer. RDev Studio
+              is what I do on the side: sites, tools, and the odd football
+              game.
+            </p>
+            <p>
+              What I like building is straightforward: useful things for real
+              people. A volunteer platform for an animal sanctuary. Sites for
+              local businesses. Football games that strangers on the internet
+              play at work when they should be doing something else. If nobody
+              uses it, I&apos;m not interested.
+            </p>
+            <p>
+              I do design and development both — from first Figma frame to
+              production — which means fewer handoffs, fewer meetings about
+              meetings, and one person who&apos;s accountable for the whole
+              thing. The day job turned out to be good training: I&apos;m hard
+              to fluster and I write things down.
             </p>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Bio */}
-      <section className="section-padding border-b border-border bg-raised">
-        <div className="container-wide">
-          <div className="mx-auto max-w-3xl">
-            <SectionHeader label="The studio" title="Who I am" />
-
-            <div className="mt-8 space-y-6 text-base leading-relaxed text-secondary sm:mt-10 sm:text-lg">
-              <p>
-                I&apos;m Ryan Davidson — a developer and designer who runs RDev
-                Studio as a side project. I work full time in Belfast and build
-                websites, apps, and the odd football game in my spare time.
-              </p>
-              <p>
-                My route into software was a bit unconventional. I did my
-                undergrad in forensic science at Liverpool John Moores, then
-                recently finished my master&apos;s in software development at
-                Queen&apos;s University Belfast. ShelterLink — the volunteer
-                management app on this site — started as my dissertation project,
-                and I&apos;m still actively developing it.
-              </p>
-              <p>
-                This portfolio also includes demo sites for fictional
-                businesses, a free website I&apos;m building for{" "}
-                <a
-                  href="https://rvscoldbrew.vercel.app"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="font-medium text-amber-400 underline decoration-amber-400/30 underline-offset-4 transition-colors hover:text-amber-300"
-                >
-                  RVS Cold Brew
-                </a>{" "}
-                (mostly because I love their coffee), and side experiments like{" "}
-                <Link
-                  href="/champions-draft"
-                  className="font-medium text-emerald-400 underline decoration-emerald-400/30 underline-offset-4 transition-colors hover:text-emerald-300"
-                >
-                  Champions Draft
-                </Link>
-                . Not everything here is finished — and that&apos;s kind of the
-                point.
-              </p>
-              <p>
-                I work with Next.js, Tailwind CSS, and Vercel to keep builds
-                fast and lightweight. I&apos;m also open to freelance work —
-                websites and web apps for businesses and side projects. If
-                something here caught your eye,{" "}
-                <Link
-                  href="/contact"
-                  className="font-medium text-accent underline decoration-accent/30 underline-offset-4 transition-colors hover:text-primary"
-                >
-                  get in touch
-                </Link>
-                .
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* What I care about */}
-      <section className="section-padding border-b border-border bg-base">
-        <div className="container-wide">
-          <SectionHeader
-            className="section-heading-gap max-w-2xl"
-            label="Approach"
-            title="What I care about"
-          />
-
-          <ul className="grid gap-4 sm:grid-cols-2">
-            {INTERESTS.map((item) => (
-              <li
-                key={item}
-                className="flex items-start gap-3 rounded-xl border border-border bg-raised/60 px-6 py-5"
-              >
-                <span
-                  className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-accent"
-                  aria-hidden="true"
-                />
-                <span className="text-base text-primary">{item}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
-
-      {/* Toolkit */}
-      <section className="section-padding border-b border-border bg-raised">
-        <div className="container-wide">
-          <SectionHeader
-            className="section-heading-gap max-w-2xl"
-            label="Toolkit"
-            title="How I work"
-          />
-
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {TOOLKIT.map((item) => (
+        <section className="border-b border-border py-12" aria-label="Off the pitch">
+          <p className="shell-label mb-4 text-accent">OFF THE PITCH</p>
+          <div className="grid gap-4 md:grid-cols-3">
+            {OFF_THE_PITCH.map((item) => (
               <article
                 key={item.label}
-                className="interactive-surface card-hover px-6 py-8"
+                className="rounded-[10px] border border-border bg-raised px-4 py-4"
               >
-                <p className="label-caps text-secondary">{item.label}</p>
-                <p className="mt-3 font-display text-lg font-bold leading-snug text-primary sm:text-xl">
-                  {item.value}
-                </p>
-                <p className="mt-2 text-sm text-secondary">{item.detail}</p>
+                <p className="shell-label mb-2 text-secondary">{item.label}</p>
+                <p className="text-sm leading-relaxed text-primary">{item.line}</p>
               </article>
             ))}
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* CTA */}
-      <section className="section-padding bg-base">
-        <div className="container-narrow">
-          <div className="border border-border bg-raised px-8 py-12 text-center sm:px-12 sm:py-16">
-            <h2 className="heading-display text-2xl sm:text-3xl">
-              Fancy a chat?
-            </h2>
-            <p className="mx-auto mt-4 max-w-md text-secondary">
-              Open to freelance website and web app work. Working on something,
-              want to collaborate, or just want to say hello? I usually reply
-              within a day.
+        <section className="py-12" aria-label="Call to action">
+          <div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
+            <p className="text-base font-semibold text-primary sm:text-lg">
+              Want the formal version?
             </p>
-            <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
-              <Link href="/contact" className="btn-primary">
+            <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
+              <a href="/cv.pdf" download className="btn-secondary">
+                Download the CV
+              </a>
+              <Link
+                href="/contact"
+                className="text-center text-sm font-semibold text-secondary underline decoration-border-strong underline-offset-4 transition-colors hover:text-accent sm:text-left"
+              >
                 Get in touch
-              </Link>
-              <Link href="/work" className="btn-secondary">
-                Browse my work
               </Link>
             </div>
           </div>
-        </div>
-      </section>
-    </>
+        </section>
+      </article>
+    </div>
   );
 }

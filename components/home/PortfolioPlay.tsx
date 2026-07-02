@@ -17,7 +17,7 @@ export function PortfolioPlay() {
             title="Games & experiments"
           />
           <Link
-            href="/bored"
+            href="/games"
             className="shrink-0 text-sm font-semibold text-primary transition-colors hover:text-accent"
           >
             All games →

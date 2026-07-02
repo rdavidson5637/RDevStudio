@@ -13,9 +13,9 @@ type ProjectPreviewProps = {
   category?: ProjectCategory;
   previewFit?: "cover" | "contain";
   previewBg?: string;
-  /** Clean screenshot — no browser chrome */
   simple?: boolean;
   className?: string;
+  priority?: boolean;
 };
 
 export function ProjectPreview({
@@ -28,6 +28,7 @@ export function ProjectPreview({
   previewBg,
   simple = false,
   className = "",
+  priority = false,
 }: ProjectPreviewProps) {
   const [imageError, setImageError] = useState(false);
   const [videoError, setVideoError] = useState(false);
@@ -47,7 +48,7 @@ export function ProjectPreview({
           muted
           playsInline
           poster={image}
-          className="h-full w-full object-cover object-top transition-[filter] duration-[250ms] ease-out group-hover:brightness-105"
+          className="h-full w-full object-cover object-top"
           aria-label={imageAlt ?? `${title} website preview`}
           onError={() => setVideoError(true)}
         >
@@ -58,11 +59,12 @@ export function ProjectPreview({
           src={image}
           alt={imageAlt}
           fill
-          className={`transition-[filter] duration-[250ms] ease-out group-hover:brightness-105 ${
+          priority={priority}
+          className={
             isLogoPreview
               ? "object-contain p-10 sm:p-14"
               : "object-cover object-top"
-          }`}
+          }
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 576px"
           onError={() => setImageError(true)}
         />
@@ -75,18 +77,9 @@ export function ProjectPreview({
             >
               {title.charAt(0)}
             </span>
-            <p className="mt-2 text-sm text-secondary">Preview coming soon</p>
+            <p className="mt-2 text-sm text-secondary">Preview not available yet</p>
           </div>
           <span className="sr-only">Preview placeholder for {title}</span>
-        </div>
-      )}
-
-      {(showVideo || showImage) && (
-        <div
-          className="pointer-events-none absolute inset-0 z-10 flex items-center justify-center bg-black/50 opacity-0 transition-opacity duration-[250ms] ease-out group-hover:opacity-100"
-          aria-hidden="true"
-        >
-          <span className="text-sm font-semibold text-white">View project →</span>
         </div>
       )}
 

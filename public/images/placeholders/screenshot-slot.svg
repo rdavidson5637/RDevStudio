@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" role="img" aria-labelledby="title desc">
+  <title id="title">Screenshot slot</title>
+  <desc id="desc">Placeholder image slot for upcoming screenshot capture.</desc>
+  <rect width="1600" height="1000" fill="#f7f5f0" />
+  <rect x="40" y="40" width="1520" height="920" fill="none" stroke="#e3dfd4" stroke-width="4" />
+  <text x="100" y="170" fill="#1e5c3a" font-family="monospace" font-size="30" letter-spacing="3">SCREENSHOT SLOT</text>
+  <text x="100" y="290" fill="#16150f" font-family="Arial, sans-serif" font-size="86" font-weight="700">RDEV STUDIO</text>
+  <text x="100" y="360" fill="#6b685e" font-family="Arial, sans-serif" font-size="34">Replace with project capture</text>
+</svg>

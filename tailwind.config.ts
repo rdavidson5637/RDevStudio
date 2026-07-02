@@ -23,22 +23,24 @@ const config: Config = {
         secondary: "var(--color-text-secondary)",
         tertiary: "var(--color-text-tertiary)",
         accent: {
-          DEFAULT: "#F59E0B",
-          hover: "#D97706",
-          light: "#FEF3C7",
-          dark: "#92400E",
+          DEFAULT: "rgb(var(--color-accent-rgb) / <alpha-value>)",
+          hover: "var(--color-accent-hover)",
+          light: "var(--color-accent-subtle)",
+          muted: "var(--color-accent-muted)",
+          dark: "#17492e",
         },
         border: {
           DEFAULT: "var(--color-border)",
           strong: "var(--color-border-strong)",
           accent: "var(--color-border-accent)",
         },
-        /* Legacy aliases — mapped to new tokens until components are migrated */
-        ink: "rgb(var(--color-bg-base-rgb) / <alpha-value>)",
+        /* Legacy aliases — semantic names kept for older components */
+        ink: "var(--color-ink)",
+        paper: "var(--color-paper)",
         surface: "var(--color-bg-raised)",
         "surface-raised": "var(--color-bg-overlay)",
-        cream: "rgb(var(--color-text-primary-rgb) / <alpha-value>)",
-        navy: "rgb(var(--color-bg-base-rgb) / <alpha-value>)",
+        cream: "var(--color-paper)",
+        navy: "var(--color-bg-inverse)",
         slate: {
           text: "var(--color-text-secondary)",
           muted: "var(--color-text-tertiary)",
@@ -63,10 +65,11 @@ const config: Config = {
         },
       },
       fontFamily: {
-        display: ['"DM Serif Display"', "Georgia", "serif"],
-        serif: ["var(--font-display)", "Georgia", "serif"],
-        sans: ["var(--font-inter)", "system-ui", "sans-serif"],
-        body: ["var(--font-inter)", "system-ui", "sans-serif"],
+        display: ["var(--font-display)", "Impact", "sans-serif"],
+        serif: ["var(--font-display)", "Impact", "sans-serif"],
+        sans: ["var(--font-body)", "system-ui", "sans-serif"],
+        body: ["var(--font-body)", "system-ui", "sans-serif"],
+        mono: ["var(--font-label)", "ui-monospace", "monospace"],
       },
       fontSize: {
         xs: ["var(--text-xs)", { lineHeight: "var(--leading-normal)" }],

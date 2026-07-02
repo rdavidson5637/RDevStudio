@@ -1,42 +1,38 @@
-/**
- * RDev Studio — Design Tokens
- * Professional dark theme — navy slate + blue accent
- */
-
 :root {
-  /* ── Colour: backgrounds ─────────────────────────────────── */
-  --color-bg-base: #0f172a;
-  --color-bg-base-rgb: 15 23 42;
-  --color-bg-raised: #1e293b;
-  --color-bg-overlay: #273449;
-  --color-bg-inverse: #f8fafc;
+  --color-paper: #f7f5f0;
+  --color-ink: #16150f;
+  --color-pitch: #1e5c3a;
+  --color-card-red: #d22b2b;
+  --color-line: #e3dfd4;
+  --color-muted: #524f47;
 
-  /* ── Colour: text ────────────────────────────────────────── */
-  --color-text-primary: #f8fafc;
-  --color-text-primary-rgb: 248 250 252;
-  --color-text-secondary: #e8edf4;
-  --color-text-tertiary: #b8c5d6;
+  --color-bg-base: var(--color-paper);
+  --color-bg-base-rgb: 247 245 240;
+  --color-bg-raised: #ffffff;
+  --color-bg-overlay: #f2efe7;
+  --color-bg-inverse: var(--color-ink);
+
+  --color-text-primary: var(--color-ink);
+  --color-text-primary-rgb: 22 21 15;
+  --color-text-secondary: var(--color-muted);
+  --color-text-tertiary: #6b685e;
   --color-text-inverse: #ffffff;
 
-  /* ── Colour: accent (professional blue) ──────────────────── */
-  --color-accent: #3b82f6;
-  --color-accent-rgb: 59 130 246;
-  --color-accent-hover: #2563eb;
-  --color-accent-muted: #3b82f626;
-  --color-accent-subtle: #3b82f614;
+  --color-accent: var(--color-pitch);
+  --color-accent-rgb: 30 92 58;
+  --color-accent-hover: #17492e;
+  --color-accent-muted: #1e5c3a1f;
+  --color-accent-subtle: #1e5c3a12;
 
-  /* ── Colour: borders & dividers ──────────────────────────── */
-  --color-border: #ffffff14;
-  --color-border-strong: #ffffff28;
-  --color-border-accent: #3b82f650;
+  --color-border: var(--color-line);
+  --color-border-strong: #d6d0c2;
+  --color-border-accent: #1e5c3a44;
 
-  /* ── Colour: focus & selection ───────────────────────────── */
-  --color-focus-ring: #3b82f680;
-  --color-selection-bg: #3b82f640;
+  --color-focus-ring: #1e5c3a66;
+  --color-selection-bg: #1e5c3a33;
 
-  /* ── Typography: families ────────────────────────────────── */
-  /* --font-display is injected by next/font on <html> */
-  --font-body: var(--font-inter), system-ui, sans-serif;
+  --font-body-family: var(--font-body), system-ui, sans-serif;
+  --font-label-family: var(--font-label), ui-monospace, monospace;
 
   /* ── Typography: scale ───────────────────────────────────── */
   --text-xs: 0.75rem;
@@ -54,7 +50,7 @@
   --text-hero: clamp(2.125rem, 5vw + 1.25rem, 6.5rem);
 
   /* ── Typography: line-height ─────────────────────────────── */
-  --leading-tight: 1.1;
+  --leading-tight: 1.05;
   --leading-snug: 1.3;
   --leading-normal: 1.5;
   --leading-relaxed: 1.65;
@@ -91,8 +87,8 @@
   --space-32: 8rem;
 
   /* ── Layout ──────────────────────────────────────────────── */
-  --container-narrow: 72rem;
-  --container-wide: 90rem;
+  --container-narrow: 64rem;
+  --container-wide: 70rem;
   --section-padding-y: var(--space-20);
   --section-padding-y-lg: var(--space-28);
 

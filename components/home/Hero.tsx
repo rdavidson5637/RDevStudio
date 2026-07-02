@@ -22,31 +22,55 @@ export function Hero() {
         <div className="max-w-3xl">
           <p className="section-label mb-4 font-medium">Ryan Davidson</p>
 
-          <h1 className="hero-heading mb-6 text-balance font-display text-5xl leading-[1.05] tracking-tight text-primary sm:text-6xl md:text-7xl lg:text-8xl">
-            I design and build things for the web.
+          <h1 className="programme-h1 mb-6 text-balance md:text-7xl lg:text-8xl">
+            <span className="hero-line block [animation-delay:0ms]">
+              I design and build
+            </span>
+            <span className="hero-line block [animation-delay:60ms]">
+              things for the web.
+            </span>
           </h1>
 
-          <p className="hero-sub lead-text mb-10 max-w-xl">
+          <p className="lead-text mb-10 max-w-xl">
             A personal portfolio of websites, apps, and side projects — plus{" "}
             <Link
               href={CHAMPIONS_DRAFT.href}
-              className="font-medium text-emerald-400 underline decoration-emerald-400/30 underline-offset-4 transition-colors hover:text-emerald-300"
+              className="pitch-link font-medium text-accent"
             >
               Champions Draft
             </Link>{" "}
             and{" "}
             <Link
               href={RUGBY_DRAFT.href}
-              className="font-medium text-sky-400 underline decoration-sky-400/30 underline-offset-4 transition-colors hover:text-sky-300"
+              className="pitch-link font-medium text-accent"
             >
               Rugby Draft
             </Link>
             , two free squad builder games.
           </p>
 
-          <div className="hero-ctas flex flex-wrap gap-4">
+          <div className="mb-10 grid min-h-[120px] grid-cols-2 gap-px overflow-hidden rounded-md border border-border bg-border md:grid-cols-4">
+            <div className="bg-base px-4 py-3">
+              <p className="shell-label text-secondary">PROJECTS SHIPPED</p>
+              <p className="mt-1 text-2xl font-display text-primary sm:text-3xl">12</p>
+            </div>
+            <div className="bg-base px-4 py-3">
+              <p className="shell-label text-secondary">GAMES BUILT</p>
+              <p className="mt-1 text-2xl font-display text-primary sm:text-3xl">3</p>
+            </div>
+            <div className="bg-base px-4 py-3">
+              <p className="shell-label text-secondary">YEARS BUILDING</p>
+              <p className="mt-1 text-2xl font-display text-primary sm:text-3xl">4</p>
+            </div>
+            <div className="bg-base px-4 py-3">
+              <p className="shell-label text-secondary">STATUS</p>
+              <p className="mt-1 text-2xl font-display text-primary sm:text-3xl">LIVE</p>
+            </div>
+          </div>
+
+          <div className="flex flex-wrap gap-4">
             <Link
-              href="/bored"
+              href="/games"
               className="inline-flex items-center justify-center rounded-lg bg-emerald-500 px-6 py-3 text-sm font-semibold text-black transition-colors hover:bg-emerald-400"
             >
               Play free games
@@ -58,8 +82,8 @@ export function Hero() {
               View my work
             </Link>
             <Link
-              href="/bored"
-              className="inline-flex items-center justify-center rounded-lg border border-white/25 px-6 py-3 text-sm font-medium text-primary transition-colors hover:border-white/50 hover:bg-white/5"
+              href="/games"
+              className="inline-flex items-center justify-center rounded-lg border border-border-strong px-6 py-3 text-sm font-medium text-primary transition-colors hover:border-accent hover:bg-accent-light"
             >
               More games
             </Link>

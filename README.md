@@ -17,7 +17,7 @@ Professional portfolio website for [RDev Studio](https://rdevstudio.co.uk) — a
 | `/services` | Pricing, support plan, FAQ           |
 | `/work`     | Portfolio projects                   |
 | `/contact`  | Contact form and details             |
-| `/about`    | Coming soon stub                     |
+| `/about`    | About page — player profile        |
 
 ## Getting Started
 

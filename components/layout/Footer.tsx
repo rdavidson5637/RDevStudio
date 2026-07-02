@@ -1,76 +1,66 @@
 import Link from "next/link";
 import {
   CONTACT_EMAIL,
-  NAV_LINKS,
-  SITE_NAME,
-  SITE_TAGLINE,
-  SITE_URL,
-  SOCIAL_LINKS,
+  GITHUB_URL,
+  SHELL_NAV_LINKS,
 } from "@/lib/constants";
-import { Logo } from "./Logo";
-import { SocialIcon } from "./SocialIcon";
 
 export function Footer() {
-  const year = new Date().getFullYear();
-
   return (
-    <footer className="bg-raised">
-      <div className="mb-12 h-px w-full bg-white/10" />
-
-      <div className="container-wide px-4 pb-8 sm:px-6 lg:px-8">
-        <div className="flex flex-col gap-8 lg:flex-row lg:items-start lg:justify-between">
-          <div className="min-w-0 max-w-sm">
-            <Logo size="sm" />
-            <p className="lead-text mt-3 text-sm">{SITE_TAGLINE}</p>
-          </div>
-
-          <div className="flex flex-col gap-6">
-            <nav
-              className="flex flex-wrap items-center gap-x-6 gap-y-2"
-              aria-label="Footer navigation"
+    <footer className="border-t border-border bg-base">
+      <div className="container-wide px-6 pb-8 pt-12">
+        <div className="grid gap-10 md:grid-cols-3">
+          <div className="space-y-3">
+            <p className="text-sm leading-relaxed text-secondary">
+              RDev Studio - designed and built in Carrickfergus. No template, no
+              page builder, occasional dog supervision.
+            </p>
+            <Link
+              href="/contact"
+              className="shell-label transition-colors hover:text-accent"
             >
-              {NAV_LINKS.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className="text-sm font-medium text-secondary transition-colors hover:text-accent"
-                >
-                  {link.label}
-                </Link>
-              ))}
-            </nav>
-
-            <div className="flex flex-wrap items-center gap-x-6 gap-y-3">
-              <a
-                href={`mailto:${CONTACT_EMAIL}`}
-                className="text-sm text-accent transition-colors hover:text-accent-hover"
-              >
-                {CONTACT_EMAIL}
-              </a>
-
-              <div className="flex items-center gap-4">
-                {SOCIAL_LINKS.map((social) => (
-                  <a
-                    key={social.label}
-                    href={social.href}
-                    className="text-tertiary transition-colors hover:text-accent"
-                    aria-label={social.label}
-                  >
-                    <SocialIcon icon={social.icon} />
-                  </a>
-                ))}
-              </div>
-            </div>
+              FULL TIME
+            </Link>
           </div>
 
-          <p className="text-xs text-secondary lg:text-right">
-            &copy; {year} {SITE_NAME}
-          </p>
+          <nav className="flex flex-col gap-3" aria-label="Footer navigation">
+            {SHELL_NAV_LINKS.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="shell-label transition-colors hover:text-accent"
+              >
+                {link.label}
+              </Link>
+            ))}
+          </nav>
+
+          <div className="flex flex-col gap-3 text-sm">
+            <a
+              href={`mailto:${CONTACT_EMAIL}`}
+              className="text-secondary transition-colors hover:text-accent"
+            >
+              {CONTACT_EMAIL}
+            </a>
+            <a
+              href="https://www.linkedin.com/in/ryan-davidson-462bb221b"
+              className="text-secondary transition-colors hover:text-accent"
+            >
+              LinkedIn
+            </a>
+            <a
+              href={GITHUB_URL}
+              className="text-secondary transition-colors hover:text-accent"
+            >
+              GitHub
+            </a>
+          </div>
         </div>
 
-        <a href={SITE_URL} className="sr-only">
-          {SITE_URL.replace("https://", "")}
-        </a>
+        <div className="programme-rule mt-10" />
+        <p className="shell-label pt-6 text-center">
+          FULL TIME - thanks for reading the programme.
+        </p>
       </div>
     </footer>
   );
