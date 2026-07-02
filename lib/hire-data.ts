@@ -138,6 +138,7 @@ export const HIRE_PROJECTS = [
       "A football draft game where players pick squads from a pool of international players and compete across a tournament. Built and shipped to real users.",
     highlight: "Live & played",
     highlights: ["Football", "Tournament modes", "Free to play"],
+    image: "/images/games/champions-draft.jpg",
     href: "https://rdevstudio.co.uk/champions-draft",
     external: true,
     links: [
@@ -157,6 +158,7 @@ export const HIRE_PROJECTS = [
       "A rugby-specific draft game extending the Champions Draft concept — World Cup, Six Nations, and Champions Cup modes. 15 positions, full stats system, bonus point scoring.",
     highlight: "Live & played",
     highlights: ["World Cup", "Six Nations", "Champions Cup"],
+    image: "/images/games/rugby-draft.jpg",
     links: [
       { label: "Play", href: "/rugby-draft", external: false },
     ],

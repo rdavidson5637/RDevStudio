@@ -92,15 +92,16 @@ export default function AboutPage() {
             <figure>
               <div className="relative aspect-[3/4] w-full overflow-hidden rounded-[10px] border border-border bg-raised">
                 <Image
-                  src="/images/placeholders/screenshot-slot.svg"
-                  alt="Ryan Davidson profile photo placeholder"
+                  src="/images/ryan-davidson.jpg"
+                  alt="Ryan Davidson in graduation gown outside Queen's University Belfast"
                   fill
+                  priority
                   sizes="(max-width: 1024px) 100vw, 280px"
-                  className="object-cover"
+                  className="object-cover object-center"
                 />
               </div>
               <figcaption className="shell-label mt-3 text-secondary">
-                PLAYER PHOTO SLOT
+                QUEEN&apos;S UNIVERSITY BELFAST — MSc
               </figcaption>
             </figure>
           </div>

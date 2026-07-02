@@ -71,8 +71,8 @@ export default function ShelterLinkCaseStudyPage() {
         <section className="border-b border-border py-12" aria-label="Hero screenshot">
           <div className="relative h-72 w-full overflow-hidden rounded-lg border border-border bg-raised sm:h-[34rem]">
             <Image
-              src="/images/work/shelterlink.png"
-              alt="ShelterLink volunteer management platform landing page"
+              src="/images/work/shelterlink-admin-dashboard.png"
+              alt="ShelterLink admin dashboard with volunteer metrics and recent activity"
               fill
               priority
               sizes="(max-width: 1120px) 100vw, 1120px"
@@ -135,13 +135,13 @@ export default function ShelterLinkCaseStudyPage() {
             />
             <ScreenshotSlot
               caption="SCREEN 02 — SHIFT PLANNER WITH ROLE ALLOCATION"
-              src="/images/placeholders/screenshot-slot.svg"
-              alt=""
+              src="/images/work/shelterlink-browse-shifts.png"
+              alt="ShelterLink volunteer browse shifts page showing available opportunities"
             />
             <ScreenshotSlot
               caption="SCREEN 03 — ADMIN DASHBOARD AND EXPORT CONTROLS"
-              src="/images/placeholders/screenshot-slot.svg"
-              alt=""
+              src="/images/work/shelterlink-admin-dashboard.png"
+              alt="ShelterLink admin dashboard with volunteer stats and application review"
             />
           </div>
         </section>

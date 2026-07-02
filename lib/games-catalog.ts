@@ -19,7 +19,7 @@ export const GAMES_CATALOG: GameCatalogEntry[] = [
       "Draft your dream squad, live with your choices. Harder than it sounds.",
     meta: "FOOTBALL · BROWSER · FREE",
     screenshotCaption: "CHAMPIONS DRAFT SCREENSHOT",
-    screenshotSrc: "/images/placeholders/screenshot-slot.svg",
+    screenshotSrc: "/images/games/champions-draft.jpg",
   },
   {
     id: "rugby-draft",
@@ -29,7 +29,7 @@ export const GAMES_CATALOG: GameCatalogEntry[] = [
       "Same idea, more shoulders. Build a rugby squad that would actually win something.",
     meta: "RUGBY · BROWSER · FREE",
     screenshotCaption: "RUGBY DRAFT SCREENSHOT",
-    screenshotSrc: "/images/placeholders/screenshot-slot.svg",
+    screenshotSrc: "/images/games/rugby-draft.jpg",
   },
   {
     id: "pub-quiz",
@@ -39,6 +39,6 @@ export const GAMES_CATALOG: GameCatalogEntry[] = [
       "A quiz you can run from one phone. Settles arguments, starts new ones.",
     meta: "TRIVIA · PASS-AND-PLAY · FREE",
     screenshotCaption: "PUB QUIZ SCREENSHOT",
-    screenshotSrc: "/images/placeholders/screenshot-slot.svg",
+    screenshotSrc: "/images/games/pub-quiz.jpg",
   },
 ];
