@@ -60,7 +60,7 @@ export function Hero() {
             </div>
             <div className="bg-base px-4 py-3">
               <p className="shell-label text-secondary">YEARS BUILDING</p>
-              <p className="mt-1 text-2xl font-display text-primary sm:text-3xl">4</p>
+              <p className="mt-1 text-2xl font-display text-primary sm:text-3xl">2</p>
             </div>
             <div className="bg-base px-4 py-3">
               <p className="shell-label text-secondary">STATUS</p>
