@@ -19,7 +19,7 @@ export function ChampionsDraftSpotlight({
       }`}
     >
       <div
-        className="pointer-events-none absolute inset-y-0 left-0 w-1 bg-emerald-400"
+        className="pointer-events-none absolute inset-y-0 left-0 w-1 bg-emerald-800"
         aria-hidden="true"
       />
 
@@ -50,15 +50,15 @@ export function ChampionsDraftSpotlight({
 
         <div className="min-w-0 flex-1 text-center sm:text-left">
           <div className="mb-4 flex flex-wrap items-center justify-center gap-2 sm:justify-start">
-            <span className="rounded-full border border-emerald-400/60 bg-base px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-emerald-400">
+            <span className="rounded-full border border-emerald-800/25 bg-base px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-emerald-900">
               {CHAMPIONS_DRAFT.badge}
             </span>
-            <span className="rounded-full border border-accent/60 bg-base px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-accent">
+            <span className="rounded-full border border-border-strong bg-base px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-primary">
               New
             </span>
           </div>
 
-          <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-accent">
+          <p className="shell-label text-secondary">
             Featured game
           </p>
           <h2

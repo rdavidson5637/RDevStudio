@@ -22,7 +22,7 @@ export function GameCard({ game }: GameCardProps) {
       <p className="mt-3 flex-1 text-sm leading-relaxed text-secondary sm:text-base">
         {game.description}
       </p>
-      <span className="pitch-link mt-6 inline-flex w-fit text-sm font-semibold text-accent">
+      <span className="pitch-link mt-6 inline-flex w-fit text-sm font-semibold text-primary">
         Play now →
       </span>
     </Link>
