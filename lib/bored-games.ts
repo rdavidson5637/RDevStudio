@@ -41,7 +41,7 @@ export function getBoredGame(slug: string) {
 }
 
 export function getBoredGameHref(game: BoredGame) {
-  return "href" in game && game.href ? game.href : `/bored/${game.slug}`;
+  return game.href;
 }
 
 const FEATURED_GAME_SLUGS = ["champions-draft", "rugby-draft"] as const;
