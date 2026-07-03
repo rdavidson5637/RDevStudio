@@ -30,15 +30,27 @@ export function FAQ() {
                 aria-expanded={isOpen}
                 aria-controls={panelId}
               >
-                <span className="pr-2 font-semibold text-primary">{item.question}</span>
+                <span className="pr-2 font-semibold text-primary">
+                  {item.question}
+                </span>
                 <span
                   className={`flex h-8 w-8 shrink-0 items-center justify-center border border-border-accent text-accent transition-transform duration-normal ${
                     isOpen ? "rotate-180" : ""
                   }`}
                   aria-hidden="true"
                 >
-                  <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
+                  <svg
+                    className="h-4 w-4"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2.5}
+                      d="M19 9l-7 7-7-7"
+                    />
                   </svg>
                 </span>
               </button>

@@ -5,7 +5,7 @@ import { createPageMetadata } from "@/lib/metadata";
 export const metadata = createPageMetadata({
   title: "Contact",
   description:
-    "Freelance projects, job opportunities, or a rematch on Champions Draft — all welcome.",
+    "Freelance projects, job opportunities, or a rematch on Champions Draft - all welcome.",
   path: "/contact",
 });
 
@@ -20,7 +20,7 @@ export default function ContactPage() {
           <h1 className="programme-h1">GET IN TOUCH</h1>
           <p className="mt-5 max-w-3xl text-base leading-relaxed text-secondary sm:text-lg">
             Freelance projects, job opportunities, or a rematch on Champions
-            Draft — all welcome.
+            Draft - all welcome.
           </p>
         </header>
 
@@ -44,7 +44,10 @@ export default function ContactPage() {
               >
                 LinkedIn
               </a>
-              <span className="shell-label text-border-strong" aria-hidden="true">
+              <span
+                className="shell-label text-border-strong"
+                aria-hidden="true"
+              >
                 ·
               </span>
               <a

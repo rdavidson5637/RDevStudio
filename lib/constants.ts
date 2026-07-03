@@ -32,13 +32,19 @@ export const NAV_LINKS = [
 
 export const SHELL_NAV_LINKS = [
   { href: "/work", label: "Work" },
+  { href: "/toolkit", label: "Toolkit" },
+  { href: "/interactive", label: "Interactive" },
   { href: "/games", label: "Games" },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
 ] as const;
 
 export const SOCIAL_LINKS = [
-  { href: "https://www.instagram.com/rdevstudio_", label: "Instagram", icon: "instagram" as const },
+  {
+    href: "https://www.instagram.com/rdevstudio_",
+    label: "Instagram",
+    icon: "instagram" as const,
+  },
   {
     href: "https://www.linkedin.com/in/ryan-davidson-462bb221b",
     label: "LinkedIn",
@@ -208,7 +214,8 @@ export const PROJECTS = [
     buttonLabel: "Read the case study",
     href: "/work/rvs-cold-brew",
     image: "/images/work/rvs-coldbrew.png",
-    imageAlt: "RVS Cold Brew logo — circular badge with cream typography on dark teal",
+    imageAlt:
+      "RVS Cold Brew logo — circular badge with cream typography on dark teal",
     previewFit: "contain" as const,
     previewBg: "#0a1a1f",
     outcome: "Client project — active build",

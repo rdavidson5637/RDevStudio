@@ -70,7 +70,9 @@ export function AvatarPicker({
                 type="button"
                 onClick={() => onColourChange(colour)}
                 className={`flex h-12 w-full items-center justify-center rounded-xl transition-all ${
-                  isSelected ? "ring-2 ring-white ring-offset-2 ring-offset-quiz-surface" : ""
+                  isSelected
+                    ? "ring-2 ring-white ring-offset-2 ring-offset-quiz-surface"
+                    : ""
                 }`}
                 style={{ backgroundColor: colour }}
                 aria-label={`Colour ${colour}`}

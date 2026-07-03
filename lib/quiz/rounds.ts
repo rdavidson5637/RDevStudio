@@ -26,8 +26,7 @@ export const ROUND_FORMAT_OPTIONS: Array<{
     value: RoundFormat.PICTURE,
     label: "Picture",
     icon: "🖼️",
-    description:
-      "Questions based on images — flags, landmarks, faces",
+    description: "Questions based on images — flags, landmarks, faces",
   },
   {
     value: RoundFormat.MUSIC,
@@ -39,8 +38,7 @@ export const ROUND_FORMAT_OPTIONS: Array<{
     value: RoundFormat.BUZZER,
     label: "Buzzer Round",
     icon: "🔔",
-    description:
-      "First to buzz in answers — wrong answers lose points",
+    description: "First to buzz in answers — wrong answers lose points",
   },
   {
     value: RoundFormat.RISK,
@@ -53,7 +51,7 @@ export const ROUND_FORMAT_OPTIONS: Array<{
 export function defaultRoundName(
   format: RoundFormat,
   category: QuizCategory,
-  roundNumber: number
+  roundNumber: number,
 ): string {
   const formatLabel =
     ROUND_FORMAT_OPTIONS.find((option) => option.value === format)?.label ??
@@ -67,7 +65,7 @@ export function defaultRoundName(
 
 export function createDefaultRound(
   roundNumber: number,
-  category: QuizCategory = QuizCategory.GENERAL
+  category: QuizCategory = QuizCategory.GENERAL,
 ): RoundConfig {
   return {
     id: `round_${roundNumber}`,
@@ -81,7 +79,7 @@ export function createDefaultRound(
 
 export function buildRoundsFromQuestions(
   roundConfigs: RoundConfig[],
-  questions: Question[]
+  questions: Question[],
 ): Round[] {
   let cursor = 0;
 
@@ -106,18 +104,15 @@ export function buildRoundsFromQuestions(
 
 export function getRoundForQuestionIndex(
   game: GameState,
-  questionIndex: number
+  questionIndex: number,
 ): Round | undefined {
   return game.rounds.find(
     (round) =>
-      questionIndex >= round.startIndex && questionIndex <= round.endIndex
+      questionIndex >= round.startIndex && questionIndex <= round.endIndex,
   );
 }
 
-export function getRoundNumber(
-  game: GameState,
-  round?: Round
-): number | null {
+export function getRoundNumber(game: GameState, round?: Round): number | null {
   if (!round) {
     return null;
   }
@@ -128,7 +123,7 @@ export function getRoundNumber(
 
 export function isLastQuestionInRound(
   game: GameState,
-  questionIndex: number
+  questionIndex: number,
 ): boolean {
   const round = getRoundForQuestionIndex(game, questionIndex);
   return round ? questionIndex === round.endIndex : false;
@@ -143,7 +138,7 @@ export function isLastRound(game: GameState, round?: Round): boolean {
 }
 
 export function uniqueCategoriesFromRounds(
-  roundConfigs: RoundConfig[]
+  roundConfigs: RoundConfig[],
 ): QuizCategory[] {
   return [...new Set(roundConfigs.map((round) => round.category))];
 }

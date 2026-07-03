@@ -1,20 +1,20 @@
-'use client'
-import type { ReactNode } from 'react'
+"use client";
+import type { ReactNode } from "react";
 
 interface Props {
-  onClose: () => void
+  onClose: () => void;
 }
 
 interface Section {
-  title: string
-  icon: string
-  content: ReactNode
+  title: string;
+  icon: string;
+  content: ReactNode;
 }
 
 const SECTIONS: Section[] = [
   {
-    title: 'The Basics',
-    icon: '🏉',
+    title: "The Basics",
+    icon: "🏉",
     content: (
       <>
         <p>
@@ -23,18 +23,17 @@ const SECTIONS: Section[] = [
           simulate matches and see how far you can go.
         </p>
         <p className="mt-3">
-          Every run follows the same flow: <strong>pick a mode</strong> →{' '}
-          <strong>choose your club or nation</strong> →{' '}
-          <strong>draft your XV</strong> → <strong>compete</strong>. You can quit
-          anytime from the top-left and
-          return to the main menu.
+          Every run follows the same flow: <strong>pick a mode</strong> →{" "}
+          <strong>choose your club or nation</strong> →{" "}
+          <strong>draft your XV</strong> → <strong>compete</strong>. You can
+          quit anytime from the top-left and return to the main menu.
         </p>
       </>
     ),
   },
   {
-    title: 'The Draft',
-    icon: '🎯',
+    title: "The Draft",
+    icon: "🎯",
     content: (
       <>
         <ul className="space-y-2 list-disc pl-4">
@@ -61,8 +60,8 @@ const SECTIONS: Section[] = [
     ),
   },
   {
-    title: 'Champions Cup',
-    icon: '⭐',
+    title: "Champions Cup",
+    icon: "⭐",
     content: (
       <>
         <p>
@@ -87,7 +86,7 @@ const SECTIONS: Section[] = [
             cannot end in a draw — a winner is decided on the scoreline.
           </li>
           <li>
-            Watch matches one by one, or use <strong>fast</strong> /{' '}
+            Watch matches one by one, or use <strong>fast</strong> /{" "}
             <strong>skip</strong> speed modes to blast through.
           </li>
         </ul>
@@ -95,8 +94,8 @@ const SECTIONS: Section[] = [
     ),
   },
   {
-    title: 'Six Nations',
-    icon: '🏴',
+    title: "Six Nations",
+    icon: "🏴",
     content: (
       <>
         <p>
@@ -106,9 +105,7 @@ const SECTIONS: Section[] = [
         </p>
         <ul className="mt-3 space-y-2 list-disc pl-4">
           <li>Round-robin format — every nation plays each other once.</li>
-          <li>
-            Home matches give a small advantage. Away days are tougher.
-          </li>
+          <li>Home matches give a small advantage. Away days are tougher.</li>
           <li>
             Bonus points for four or more tries and losing by seven points or
             fewer.
@@ -122,8 +119,8 @@ const SECTIONS: Section[] = [
     ),
   },
   {
-    title: 'World Cup',
-    icon: '🌍',
+    title: "World Cup",
+    icon: "🌍",
     content: (
       <>
         <p>
@@ -135,9 +132,7 @@ const SECTIONS: Section[] = [
           <li>
             Pool stage: top three from each pool qualify for the knockouts.
           </li>
-          <li>
-            Knockout rounds from the Quarter-Finals through to the Final.
-          </li>
+          <li>Knockout rounds from the Quarter-Finals through to the Final.</li>
           <li>
             Pool matches use home advantage; knockout ties from the
             Quarter-Finals onward are at neutral venues.
@@ -148,8 +143,8 @@ const SECTIONS: Section[] = [
     ),
   },
   {
-    title: 'Matches & Ratings',
-    icon: '📊',
+    title: "Matches & Ratings",
+    icon: "📊",
     content: (
       <>
         <p>
@@ -166,7 +161,7 @@ const SECTIONS: Section[] = [
             penalties) — not goals.
           </li>
           <li>
-            Use <strong>normal</strong>, <strong>fast</strong>, or{' '}
+            Use <strong>normal</strong>, <strong>fast</strong>, or{" "}
             <strong>skip</strong> before a round to control match speed.
           </li>
           <li>
@@ -178,26 +173,26 @@ const SECTIONS: Section[] = [
     ),
   },
   {
-    title: 'Sharing Your Result',
-    icon: '📤',
+    title: "Sharing Your Result",
+    icon: "📤",
     content: (
       <>
         <p>
           When a run ends — whether you win the tournament, lift the trophy, or
-          get knocked out — you&apos;ll see a share card with your final position
-          and full drafted XV.
+          get knocked out — you&apos;ll see a share card with your final
+          position and full drafted XV.
         </p>
         <p className="mt-3">
-          Tap <strong>Share</strong> to send it via your phone&apos;s share sheet,
-          or <strong>Copy</strong> to paste the text anywhere. Challenge your
-          mates: &ldquo;Think you can beat my XV?&rdquo;
+          Tap <strong>Share</strong> to send it via your phone&apos;s share
+          sheet, or <strong>Copy</strong> to paste the text anywhere. Challenge
+          your mates: &ldquo;Think you can beat my XV?&rdquo;
         </p>
       </>
     ),
   },
   {
-    title: 'Tips',
-    icon: '💡',
+    title: "Tips",
+    icon: "💡",
     content: (
       <ul className="space-y-2 list-disc pl-4">
         <li>
@@ -205,21 +200,21 @@ const SECTIONS: Section[] = [
           are weak.
         </li>
         <li>
-          Props and locks are interchangeable within their pairs — use compatible
-          positions to fill gaps.
+          Props and locks are interchangeable within their pairs — use
+          compatible positions to fill gaps.
         </li>
         <li>
           Don&apos;t burn spins on positions you&apos;ve already filled — watch
           the highlighted slot on the pitch.
         </li>
         <li>
-          Try all three modes. Champions Cup is club rugby; Six Nations and World
-          Cup are international thrillers.
+          Try all three modes. Champions Cup is club rugby; Six Nations and
+          World Cup are international thrillers.
         </li>
       </ul>
     ),
   },
-]
+];
 
 export default function HowToPlayModal({ onClose }: Props) {
   return (
@@ -229,7 +224,7 @@ export default function HowToPlayModal({ onClose }: Props) {
     >
       <div
         className="relative w-full sm:max-w-lg max-h-[92vh] sm:max-h-[85vh] bg-[#0e0e18] border border-white/10 sm:rounded-2xl rounded-t-2xl overflow-hidden flex flex-col shadow-2xl"
-        onClick={e => e.stopPropagation()}
+        onClick={(e) => e.stopPropagation()}
       >
         <div className="flex items-center justify-between px-5 py-4 border-b border-white/10 bg-[#0e0e18]/95 backdrop-blur sticky top-0 z-10">
           <div>
@@ -250,7 +245,7 @@ export default function HowToPlayModal({ onClose }: Props) {
         </div>
 
         <div className="overflow-y-auto px-5 py-5 space-y-6">
-          {SECTIONS.map(section => (
+          {SECTIONS.map((section) => (
             <section key={section.title}>
               <div className="flex items-center gap-2 mb-2">
                 <span className="text-lg">{section.icon}</span>
@@ -275,5 +270,5 @@ export default function HowToPlayModal({ onClose }: Props) {
         </div>
       </div>
     </div>
-  )
+  );
 }

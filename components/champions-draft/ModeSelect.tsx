@@ -1,48 +1,48 @@
-'use client'
-import { useState } from 'react'
-import Link from 'next/link'
-import type { GameState } from '@/types/champions-draft'
-import BrandLogo from './BrandLogo'
-import { InlineGameBugReport } from '@/components/games/GameBugReport'
-import HowToPlayModal from './HowToPlayModal'
+"use client";
+import { useState } from "react";
+import Link from "next/link";
+import type { GameState } from "@/types/champions-draft";
+import BrandLogo from "./BrandLogo";
+import { InlineGameBugReport } from "@/components/games/GameBugReport";
+import HowToPlayModal from "./HowToPlayModal";
 
 interface Props {
-  onSelect: (updates: Partial<GameState>) => void
+  onSelect: (updates: Partial<GameState>) => void;
 }
 
 const MODES = [
   {
-    id: 'league',
-    title: 'League Season',
-    subtitle: 'Draft your XI then compete in a full league season',
-    icon: '🏆',
-    detail: 'Pick a league. Play every team. Win the title.',
-    accent: 'hover:border-emerald-400/40 group-hover:shadow-emerald-400/10',
-    iconBg: 'bg-emerald-400/10',
+    id: "league",
+    title: "League Season",
+    subtitle: "Draft your XI then compete in a full league season",
+    icon: "🏆",
+    detail: "Pick a league. Play every team. Win the title.",
+    accent: "hover:border-emerald-400/40 group-hover:shadow-emerald-400/10",
+    iconBg: "bg-emerald-400/10",
   },
   {
-    id: 'champions-league',
-    title: 'Champions League',
-    subtitle: 'Group stage through to the final',
-    icon: '⭐',
-    detail: 'League phase. Knockouts. Final. Glory.',
-    accent: 'hover:border-amber-400/40 group-hover:shadow-amber-400/10',
-    iconBg: 'bg-amber-400/10',
+    id: "champions-league",
+    title: "Champions League",
+    subtitle: "Group stage through to the final",
+    icon: "⭐",
+    detail: "League phase. Knockouts. Final. Glory.",
+    accent: "hover:border-amber-400/40 group-hover:shadow-amber-400/10",
+    iconBg: "bg-amber-400/10",
   },
   {
-    id: 'world-cup',
-    title: 'World Cup',
-    subtitle: 'Represent a nation and win the World Cup',
-    icon: '🌍',
-    detail: 'Choose your nation. Draft your squad. Win it all.',
-    accent: 'hover:border-sky-400/40 group-hover:shadow-sky-400/10',
-    iconBg: 'bg-sky-400/10',
+    id: "world-cup",
+    title: "World Cup",
+    subtitle: "Represent a nation and win the World Cup",
+    icon: "🌍",
+    detail: "Choose your nation. Draft your squad. Win it all.",
+    accent: "hover:border-sky-400/40 group-hover:shadow-sky-400/10",
+    iconBg: "bg-sky-400/10",
   },
-]
+];
 
 export default function ModeSelect({ onSelect }: Props) {
-  const [showHowToPlay, setShowHowToPlay] = useState(false)
-  const [logoLoaded, setLogoLoaded] = useState(false)
+  const [showHowToPlay, setShowHowToPlay] = useState(false);
+  const [logoLoaded, setLogoLoaded] = useState(false);
 
   return (
     <div className="relative min-h-screen bg-[#0a0a12] flex flex-col items-center justify-center px-4 py-12 overflow-hidden">
@@ -72,7 +72,8 @@ export default function ModeSelect({ onSelect }: Props) {
           Spin · Draft · Compete
         </p>
         <p className="text-white/45 text-sm md:text-base leading-relaxed">
-          Spin iconic squads, draft your ultimate XI, and see how far you can go.
+          Spin iconic squads, draft your ultimate XI, and see how far you can
+          go.
         </p>
         <div className="mt-5 flex flex-wrap items-center justify-center gap-3">
           <button
@@ -87,18 +88,18 @@ export default function ModeSelect({ onSelect }: Props) {
       </div>
 
       <div className="relative grid grid-cols-1 md:grid-cols-3 gap-4 w-full max-w-4xl">
-        {MODES.map(mode => (
+        {MODES.map((mode) => (
           <button
             key={mode.id}
             onClick={() =>
               onSelect({
-                mode: mode.id as GameState['mode'],
+                mode: mode.id as GameState["mode"],
                 phase:
-                  mode.id === 'league'
-                    ? 'league-select'
-                    : mode.id === 'world-cup'
-                    ? 'nation-select'
-                    : 'formation-select',
+                  mode.id === "league"
+                    ? "league-select"
+                    : mode.id === "world-cup"
+                      ? "nation-select"
+                      : "formation-select",
               })
             }
             className={`group relative flex flex-col gap-3 bg-white/[0.04] hover:bg-white/[0.08] border border-white/10 rounded-2xl p-6 text-left transition-all duration-200 cursor-pointer hover:scale-[1.02] hover:shadow-xl ${mode.accent}`}
@@ -133,5 +134,5 @@ export default function ModeSelect({ onSelect }: Props) {
         <HowToPlayModal onClose={() => setShowHowToPlay(false)} />
       )}
     </div>
-  )
+  );
 }

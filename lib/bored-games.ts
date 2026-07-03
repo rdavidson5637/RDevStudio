@@ -48,6 +48,9 @@ const FEATURED_GAME_SLUGS = ["champions-draft", "rugby-draft"] as const;
 
 export function getOtherBoredGames() {
   return BORED_GAMES.filter(
-    (game) => !FEATURED_GAME_SLUGS.includes(game.slug as (typeof FEATURED_GAME_SLUGS)[number])
+    (game) =>
+      !FEATURED_GAME_SLUGS.includes(
+        game.slug as (typeof FEATURED_GAME_SLUGS)[number],
+      ),
   );
 }

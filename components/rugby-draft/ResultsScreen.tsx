@@ -1,22 +1,22 @@
-'use client'
-import type { GameMode } from '@/types/rugby-draft'
+"use client";
+import type { GameMode } from "@/types/rugby-draft";
 
 interface Props {
-  winner: string
-  userResult: string
-  userTeam: string
-  topTryScorer: { playerName: string; club: string; tries: number }
-  playerOfTournament: { playerName: string; club: string; overall: number }
-  mode: GameMode
-  onPlayAgain: () => void
-  onShare?: () => void
+  winner: string;
+  userResult: string;
+  userTeam: string;
+  topTryScorer: { playerName: string; club: string; tries: number };
+  playerOfTournament: { playerName: string; club: string; overall: number };
+  mode: GameMode;
+  onPlayAgain: () => void;
+  onShare?: () => void;
 }
 
 const MODE_LABELS: Record<GameMode, string> = {
-  'world-cup': 'Rugby World Cup',
-  'six-nations': 'Six Nations',
-  'champions-cup': 'Champions Cup',
-}
+  "world-cup": "Rugby World Cup",
+  "six-nations": "Six Nations",
+  "champions-cup": "Champions Cup",
+};
 
 export default function ResultsScreen({
   winner,
@@ -28,14 +28,14 @@ export default function ResultsScreen({
   onPlayAgain,
   onShare,
 }: Props) {
-  const isChampion = userResult.toLowerCase().includes('champion')
+  const isChampion = userResult.toLowerCase().includes("champion");
 
   return (
     <div
       className={`rounded-2xl border p-6 md:p-8 ${
         isChampion
-          ? 'bg-emerald-400/5 border-emerald-400/30 shadow-[0_0_40px_rgba(52,211,153,0.12)]'
-          : 'bg-white/5 border-white/10'
+          ? "bg-emerald-400/5 border-emerald-400/30 shadow-[0_0_40px_rgba(52,211,153,0.12)]"
+          : "bg-white/5 border-white/10"
       }`}
     >
       <div className="text-center mb-8">
@@ -48,7 +48,7 @@ export default function ResultsScreen({
         </h2>
         <p
           className={`text-sm mt-3 font-semibold ${
-            isChampion ? 'text-emerald-400' : 'text-white/50'
+            isChampion ? "text-emerald-400" : "text-white/50"
           }`}
         >
           {userResult}
@@ -102,5 +102,5 @@ export default function ResultsScreen({
         </button>
       </div>
     </div>
-  )
+  );
 }

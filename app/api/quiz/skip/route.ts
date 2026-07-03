@@ -26,7 +26,7 @@ export async function POST(request: NextRequest) {
     if (!gameId?.trim() || !hostId?.trim()) {
       return NextResponse.json(
         { error: "gameId and hostId are required" },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
@@ -38,20 +38,23 @@ export async function POST(request: NextRequest) {
     if (game.hostId !== hostId) {
       return NextResponse.json(
         { error: "Only the host can skip questions" },
-        { status: 403 }
+        { status: 403 },
       );
     }
 
     if (game.status !== "question") {
       return NextResponse.json(
         { error: "Can only skip during an active question" },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
     const currentQuestion = game.questions[game.currentQuestionIndex];
     if (!currentQuestion) {
-      return NextResponse.json({ error: "No active question" }, { status: 400 });
+      return NextResponse.json(
+        { error: "No active question" },
+        { status: 400 },
+      );
     }
 
     if (!game.skippedQuestionIds) {
@@ -72,7 +75,8 @@ export async function POST(request: NextRequest) {
     await triggerGameEvent(gameId, "game:question-skipped", {
       skippedQuestionId: currentQuestion.id,
       skippedQuestionIndex: skippedIndex,
-      nextQuestionIndex: nextIndex < game.questions.length ? nextIndex : undefined,
+      nextQuestionIndex:
+        nextIndex < game.questions.length ? nextIndex : undefined,
     });
 
     if (endOfRound && currentRound && !isLastRound(game, currentRound)) {
@@ -129,8 +133,11 @@ export async function POST(request: NextRequest) {
   } catch (error) {
     console.error("skip failed:", error);
     return NextResponse.json(
-      { error: error instanceof Error ? error.message : "Failed to skip question" },
-      { status: 500 }
+      {
+        error:
+          error instanceof Error ? error.message : "Failed to skip question",
+      },
+      { status: 500 },
     );
   }
 }

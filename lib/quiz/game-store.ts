@@ -1,8 +1,4 @@
-import {
-  deleteGameFromKv,
-  loadGameFromKv,
-  saveGameToKv,
-} from "./kv-store";
+import { deleteGameFromKv, loadGameFromKv, saveGameToKv } from "./kv-store";
 import type { GameState } from "./types";
 
 const globalForGameStore = globalThis as typeof globalThis & {
@@ -13,8 +9,7 @@ function createStore(): Map<string, GameState> {
   return new Map<string, GameState>();
 }
 
-export const gameStore =
-  globalForGameStore.__pubQuizGameStore ?? createStore();
+export const gameStore = globalForGameStore.__pubQuizGameStore ?? createStore();
 
 globalForGameStore.__pubQuizGameStore = gameStore;
 

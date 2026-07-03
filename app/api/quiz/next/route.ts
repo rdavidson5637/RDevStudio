@@ -11,10 +11,7 @@ import {
 } from "@/lib/quiz/rounds";
 import { triggerGameEvent } from "@/lib/quiz/pusher";
 import { buildTeamStandings, getSortedTeams } from "@/lib/quiz/teams";
-import {
-  createTiebreakerQuestion,
-  hasTieAtTop,
-} from "@/lib/quiz/tiebreaker";
+import { createTiebreakerQuestion, hasTieAtTop } from "@/lib/quiz/tiebreaker";
 import { getSortedPlayers } from "@/lib/quiz/utils";
 import { Difficulty, RoundFormat } from "@/lib/quiz/types";
 
@@ -29,11 +26,17 @@ export async function POST(request: NextRequest) {
     const { gameId, hostId } = body;
 
     if (!gameId?.trim()) {
-      return NextResponse.json({ error: "gameId is required" }, { status: 400 });
+      return NextResponse.json(
+        { error: "gameId is required" },
+        { status: 400 },
+      );
     }
 
     if (!hostId?.trim()) {
-      return NextResponse.json({ error: "hostId is required" }, { status: 400 });
+      return NextResponse.json(
+        { error: "hostId is required" },
+        { status: 400 },
+      );
     }
 
     const game = await getGame(gameId);
@@ -44,7 +47,7 @@ export async function POST(request: NextRequest) {
     if (game.hostId !== hostId) {
       return NextResponse.json(
         { error: "Only the host can advance the game" },
-        { status: 403 }
+        { status: 403 },
       );
     }
 
@@ -54,7 +57,7 @@ export async function POST(request: NextRequest) {
       if (nextIndex === undefined || nextIndex >= game.questions.length) {
         return NextResponse.json(
           { error: "No pending question for next round" },
-          { status: 400 }
+          { status: 400 },
         );
       }
 
@@ -77,18 +80,15 @@ export async function POST(request: NextRequest) {
     if (game.status !== "reveal") {
       return NextResponse.json(
         { error: "Game is not ready to advance" },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
     const currentRound = getRoundForQuestionIndex(
       game,
-      game.currentQuestionIndex
+      game.currentQuestionIndex,
     );
-    const endOfRound = isLastQuestionInRound(
-      game,
-      game.currentQuestionIndex
-    );
+    const endOfRound = isLastQuestionInRound(game, game.currentQuestionIndex);
     const nextIndex = game.currentQuestionIndex + 1;
 
     if (endOfRound && currentRound && !isLastRound(game, currentRound)) {
@@ -102,7 +102,8 @@ export async function POST(request: NextRequest) {
         completedRound: currentRound,
         roundNumber: getRoundNumber(game, currentRound) ?? 1,
         leaderboard: getSortedPlayers(game.players),
-        teams: game.teamMode && game.teams ? getSortedTeams(game.teams) : undefined,
+        teams:
+          game.teamMode && game.teams ? getSortedTeams(game.teams) : undefined,
         teamMode: game.teamMode || undefined,
         nextRound,
       });
@@ -149,7 +150,9 @@ export async function POST(request: NextRequest) {
         await triggerGameEvent(gameId, "game:finished", {
           finalLeaderboard: getSortedPlayers(game.players),
           teams:
-            game.teamMode && game.teams ? getSortedTeams(game.teams) : undefined,
+            game.teamMode && game.teams
+              ? getSortedTeams(game.teams)
+              : undefined,
           teamMode: game.teamMode || undefined,
           teamStandings:
             game.teamMode && game.teams
@@ -181,8 +184,11 @@ export async function POST(request: NextRequest) {
   } catch (error) {
     console.error("next failed:", error);
     return NextResponse.json(
-      { error: error instanceof Error ? error.message : "Failed to advance game" },
-      { status: 500 }
+      {
+        error:
+          error instanceof Error ? error.message : "Failed to advance game",
+      },
+      { status: 500 },
     );
   }
 }

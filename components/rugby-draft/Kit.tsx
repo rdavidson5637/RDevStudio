@@ -1,22 +1,28 @@
-'use client'
-import { getClubColour } from '@/lib/rugby-draft/utils'
+"use client";
+import { getClubColour } from "@/lib/rugby-draft/utils";
 
 interface Props {
-  badge: string
-  initials: string
-  overall: number
-  size?: 'sm' | 'md' | 'lg'
-  dimmed?: boolean
+  badge: string;
+  initials: string;
+  overall: number;
+  size?: "sm" | "md" | "lg";
+  dimmed?: boolean;
 }
 
-export default function Kit({ badge, initials, overall, size = 'md', dimmed = false }: Props) {
-  const colour = getClubColour(badge)
+export default function Kit({
+  badge,
+  initials,
+  overall,
+  size = "md",
+  dimmed = false,
+}: Props) {
+  const colour = getClubColour(badge);
   const sizes = {
     sm: { outer: 36, shirt: 28, font: 8, ratingSize: 10, ratingOffset: 12 },
     md: { outer: 52, shirt: 40, font: 11, ratingSize: 13, ratingOffset: 17 },
     lg: { outer: 68, shirt: 52, font: 14, ratingSize: 16, ratingOffset: 22 },
-  }
-  const s = sizes[size]
+  };
+  const s = sizes[size];
 
   return (
     <div
@@ -54,19 +60,20 @@ export default function Kit({ badge, initials, overall, size = 'md', dimmed = fa
 
       <div
         style={{
-          position: 'absolute',
+          position: "absolute",
           top: 0,
           right: 0,
           width: s.ratingSize,
           height: s.ratingSize,
-          borderRadius: '50%',
-          background: overall >= 90 ? '#f59e0b' : overall >= 80 ? '#10b981' : '#6b7280',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
+          borderRadius: "50%",
+          background:
+            overall >= 90 ? "#f59e0b" : overall >= 80 ? "#10b981" : "#6b7280",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
           fontSize: s.ratingSize * 0.6,
           fontWeight: 700,
-          color: '#fff',
+          color: "#fff",
           lineHeight: 1,
           opacity: dimmed ? 0.35 : 1,
         }}
@@ -74,5 +81,5 @@ export default function Kit({ badge, initials, overall, size = 'md', dimmed = fa
         {overall}
       </div>
     </div>
-  )
+  );
 }

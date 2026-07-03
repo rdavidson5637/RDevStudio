@@ -31,8 +31,7 @@ export function CountdownTimer({
   isActive,
   initialRemainingSeconds,
 }: CountdownTimerProps) {
-  const startRemaining =
-    initialRemainingSeconds ?? durationSeconds;
+  const startRemaining = initialRemainingSeconds ?? durationSeconds;
 
   const [timeLeft, setTimeLeft] = useState(startRemaining);
   const hasExpiredRef = useRef(false);
@@ -67,19 +66,13 @@ export function CountdownTimer({
     return () => window.clearInterval(intervalId);
   }, [isActive, durationSeconds, initialRemainingSeconds]);
 
-  const progress =
-    durationSeconds > 0 ? timeLeft / durationSeconds : 0;
+  const progress = durationSeconds > 0 ? timeLeft / durationSeconds : 0;
   const strokeDashoffset = CIRCUMFERENCE * (1 - progress);
   const ringColor = getRingColor(progress);
 
   return (
     <div className="relative flex h-16 w-16 items-center justify-center">
-      <svg
-        width={SIZE}
-        height={SIZE}
-        className="-rotate-90"
-        aria-hidden="true"
-      >
+      <svg width={SIZE} height={SIZE} className="-rotate-90" aria-hidden="true">
         <circle
           cx={SIZE / 2}
           cy={SIZE / 2}

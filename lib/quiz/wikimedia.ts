@@ -24,7 +24,9 @@ export function normalizeWikimediaImageUrl(url: string): string {
 }
 
 /** Check that Wikimedia will actually serve this image (AI often hallucinates paths). */
-export async function isWikimediaImageAccessible(url: string): Promise<boolean> {
+export async function isWikimediaImageAccessible(
+  url: string,
+): Promise<boolean> {
   const normalized = normalizeWikimediaImageUrl(url);
 
   if (!isValidWikimediaImageUrl(normalized)) {

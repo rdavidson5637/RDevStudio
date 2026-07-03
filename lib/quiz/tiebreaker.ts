@@ -21,7 +21,7 @@ export function hasTieAtTop(game: GameState): boolean {
 }
 
 export async function createTiebreakerQuestion(
-  gameId: string
+  gameId: string,
 ): Promise<Question | null> {
   const round = {
     ...createDefaultRound(99, QuizCategory.GENERAL),

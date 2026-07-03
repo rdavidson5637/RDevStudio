@@ -1,10 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 
 import { getGame, setGame } from "@/lib/quiz/game-store";
-import {
-  getAnsweredPlayerIds,
-  revealIfAllAnswered,
-} from "@/lib/quiz/reveal";
+import { getAnsweredPlayerIds, revealIfAllAnswered } from "@/lib/quiz/reveal";
 import { triggerGameEvent } from "@/lib/quiz/pusher";
 import { getRoundForQuestionIndex } from "@/lib/quiz/rounds";
 import {
@@ -29,31 +26,37 @@ export async function POST(request: NextRequest) {
     const { gameId, playerId, questionId, answer, answerTimeMs } = body;
 
     if (!gameId?.trim()) {
-      return NextResponse.json({ error: "gameId is required" }, { status: 400 });
+      return NextResponse.json(
+        { error: "gameId is required" },
+        { status: 400 },
+      );
     }
 
     if (!playerId?.trim()) {
       return NextResponse.json(
         { error: "playerId is required" },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
     if (!questionId?.trim()) {
       return NextResponse.json(
         { error: "questionId is required" },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
     if (answer === undefined || answer === null) {
-      return NextResponse.json({ error: "answer is required" }, { status: 400 });
+      return NextResponse.json(
+        { error: "answer is required" },
+        { status: 400 },
+      );
     }
 
     if (!Number.isFinite(answerTimeMs) || answerTimeMs < 0) {
       return NextResponse.json(
         { error: "answerTimeMs must be a non-negative number" },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
@@ -65,7 +68,7 @@ export async function POST(request: NextRequest) {
     if (game.status !== "question") {
       return NextResponse.json(
         { error: "Game is not accepting answers" },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
@@ -73,7 +76,7 @@ export async function POST(request: NextRequest) {
     if (!currentQuestion || currentQuestion.id !== questionId) {
       return NextResponse.json(
         { error: "Question is not active" },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
@@ -83,13 +86,13 @@ export async function POST(request: NextRequest) {
     }
 
     const alreadyAnswered = player.answers.some(
-      (playerAnswer) => playerAnswer.questionId === questionId
+      (playerAnswer) => playerAnswer.questionId === questionId,
     );
 
     if (alreadyAnswered) {
       return NextResponse.json(
         { error: "Player has already answered this question" },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
@@ -102,7 +105,7 @@ export async function POST(request: NextRequest) {
     if (isBuzzerRound) {
       return NextResponse.json(
         { error: "Use buzz-in for this round" },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
@@ -164,8 +167,11 @@ export async function POST(request: NextRequest) {
   } catch (error) {
     console.error("answer failed:", error);
     return NextResponse.json(
-      { error: error instanceof Error ? error.message : "Failed to submit answer" },
-      { status: 500 }
+      {
+        error:
+          error instanceof Error ? error.message : "Failed to submit answer",
+      },
+      { status: 500 },
     );
   }
 }

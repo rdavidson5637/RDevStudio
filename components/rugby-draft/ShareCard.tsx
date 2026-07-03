@@ -1,7 +1,7 @@
-'use client'
-import type { GameState, GameMode } from '@/types/rugby-draft'
-import { RUGBY_POSITIONS } from '@/lib/rugby-draft/utils'
-import ShareCardActions from './ShareCardActions'
+"use client";
+import type { GameState, GameMode } from "@/types/rugby-draft";
+import { RUGBY_POSITIONS } from "@/lib/rugby-draft/utils";
+import ShareCardActions from "./ShareCardActions";
 import {
   formatAwardsForShare,
   formatSquadShareLines,
@@ -11,28 +11,28 @@ import {
   SHARE_CHALLENGE,
   sortSquadForDisplay,
   type ShareAward,
-} from './shareHelpers'
+} from "./shareHelpers";
 
 interface Props {
-  state: GameState
-  userTeam: string
-  result: string
-  awards?: ShareAward[]
-  onClose: () => void
+  state: GameState;
+  userTeam: string;
+  result: string;
+  awards?: ShareAward[];
+  onClose: () => void;
 }
 
-const AWARD_TONE_STYLES: Record<ShareAward['tone'], string> = {
-  gold: 'bg-amber-400/10 border-amber-400/30 text-amber-300',
-  silver: 'bg-white/10 border-white/20 text-white/80',
-  bronze: 'bg-orange-400/10 border-orange-400/25 text-orange-200',
-  muted: 'bg-white/5 border-white/10 text-white/45',
-}
+const AWARD_TONE_STYLES: Record<ShareAward["tone"], string> = {
+  gold: "bg-amber-400/10 border-amber-400/30 text-amber-300",
+  silver: "bg-white/10 border-white/20 text-white/80",
+  bronze: "bg-orange-400/10 border-orange-400/25 text-orange-200",
+  muted: "bg-white/5 border-white/10 text-white/45",
+};
 
 const MODE_LABELS: Record<GameMode, string> = {
-  'world-cup': 'Rugby World Cup',
-  'six-nations': 'Six Nations',
-  'champions-cup': 'Champions Cup',
-}
+  "world-cup": "Rugby World Cup",
+  "six-nations": "Six Nations",
+  "champions-cup": "Champions Cup",
+};
 
 function buildShareText(
   userTeam: string,
@@ -41,31 +41,31 @@ function buildShareText(
   awards: ShareAward[],
   squadLines: string,
   ratings: { forwards: number; backs: number; overall: number } | null,
-  url: string
+  url: string,
 ): string {
   const ratingLine = ratings
     ? `FWD ${ratings.forwards} · BCK ${ratings.backs} · OVR ${ratings.overall}`
-    : ''
-  const awardsLine = formatAwardsForShare(awards)
+    : "";
+  const awardsLine = formatAwardsForShare(awards);
 
   return [
-    '🏉 Rugby Draft',
-    '',
+    "🏉 Rugby Draft",
+    "",
     `${userTeam} · ${modeLabel}`,
     result,
     awardsLine,
-    '',
-    'My XV:',
+    "",
+    "My XV:",
     squadLines,
-    '',
+    "",
     ratingLine,
-    '',
+    "",
     SHARE_CHALLENGE,
-    '',
+    "",
     `Play now → ${url}`,
   ]
     .filter(Boolean)
-    .join('\n')
+    .join("\n");
 }
 
 export default function ShareCard({
@@ -75,11 +75,11 @@ export default function ShareCard({
   awards = [],
   onClose,
 }: Props) {
-  const mode = state.mode ?? 'world-cup'
-  const modeLabel = MODE_LABELS[mode]
-  const squad = sortSquadForDisplay(getShareSquadFromSlots(state.draftSlots))
-  const ratings = state.teamRatings
-  const shareUrl = getShareUrl()
+  const mode = state.mode ?? "world-cup";
+  const modeLabel = MODE_LABELS[mode];
+  const squad = sortSquadForDisplay(getShareSquadFromSlots(state.draftSlots));
+  const ratings = state.teamRatings;
+  const shareUrl = getShareUrl();
   const shareText = buildShareText(
     userTeam,
     modeLabel,
@@ -87,13 +87,13 @@ export default function ShareCard({
     awards,
     formatSquadShareLines(squad),
     ratings,
-    shareUrl
-  )
+    shareUrl,
+  );
 
-  const slotsByPosition = RUGBY_POSITIONS.map(pos => {
-    const slot = state.draftSlots.find(s => s.position === pos)
-    return { position: pos, player: slot?.player ?? null }
-  })
+  const slotsByPosition = RUGBY_POSITIONS.map((pos) => {
+    const slot = state.draftSlots.find((s) => s.position === pos);
+    return { position: pos, player: slot?.player ?? null };
+  });
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 px-4 py-8 overflow-y-auto">
@@ -124,7 +124,7 @@ export default function ShareCard({
 
           {awards.length > 0 && (
             <div className="mt-4 flex flex-wrap gap-2">
-              {awards.map(award => (
+              {awards.map((award) => (
                 <span
                   key={award.label}
                   className={`inline-flex items-center gap-1.5 rounded-full border px-2.5 py-1 text-[10px] font-bold uppercase tracking-wide ${AWARD_TONE_STYLES[award.tone]}`}
@@ -139,9 +139,9 @@ export default function ShareCard({
           {ratings && (
             <div className="mt-4 grid grid-cols-3 gap-2">
               {[
-                { label: 'Forwards', value: ratings.forwards },
-                { label: 'Backs', value: ratings.backs },
-                { label: 'Overall', value: ratings.overall },
+                { label: "Forwards", value: ratings.forwards },
+                { label: "Backs", value: ratings.backs },
+                { label: "Overall", value: ratings.overall },
               ].map(({ label, value }) => (
                 <div
                   key={label}
@@ -171,10 +171,10 @@ export default function ShareCard({
                   {position}
                 </span>
                 <span className="text-white/85 flex-1 truncate text-xs">
-                  {player?.name ?? '—'}
+                  {player?.name ?? "—"}
                 </span>
                 <span className="text-white/40 font-black text-xs tabular-nums">
-                  {player?.overall ?? '—'}
+                  {player?.overall ?? "—"}
                 </span>
               </div>
             ))}
@@ -192,5 +192,5 @@ export default function ShareCard({
         />
       </div>
     </div>
-  )
+  );
 }

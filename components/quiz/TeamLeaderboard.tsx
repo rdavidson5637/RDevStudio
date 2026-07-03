@@ -21,15 +21,15 @@ export function TeamLeaderboard({
   showDelta = true,
 }: TeamLeaderboardProps) {
   const [expandedTeamId, setExpandedTeamId] = useState<string | null>(
-    teams.find((team) => team.playerIds.includes(currentPlayerId))?.id ?? null
+    teams.find((team) => team.playerIds.includes(currentPlayerId))?.id ?? null,
   );
   const [flashingTeamIds, setFlashingTeamIds] = useState<Set<string>>(
-    new Set()
+    new Set(),
   );
   const previousScoresRef = useRef<Record<string, number>>({});
 
   const currentTeamId = teams.find((team) =>
-    team.playerIds.includes(currentPlayerId)
+    team.playerIds.includes(currentPlayerId),
   )?.id;
 
   useEffect(() => {
@@ -82,15 +82,11 @@ export function TeamLeaderboard({
                 ? "border-l-4 bg-white/5"
                 : "border-quiz-border bg-quiz-surface"
             } ${isFlashing ? "score-flash" : ""}`}
-            style={
-              isCurrentTeam ? { borderLeftColor: team.colour } : undefined
-            }
+            style={isCurrentTeam ? { borderLeftColor: team.colour } : undefined}
           >
             <button
               type="button"
-              onClick={() =>
-                setExpandedTeamId(isExpanded ? null : team.id)
-              }
+              onClick={() => setExpandedTeamId(isExpanded ? null : team.id)}
               className="flex w-full items-center gap-3 px-4 py-3 text-left"
             >
               <span className="w-8 shrink-0 text-center font-mono text-sm text-quiz-muted">

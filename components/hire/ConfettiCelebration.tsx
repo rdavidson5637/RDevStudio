@@ -21,11 +21,24 @@ type Particle = {
   life: number;
 };
 
-const COLORS = ["#F59E0B", "#3B82F6", "#10B981", "#A78BFA", "#F472B6", "#F8FAFC"];
+const COLORS = [
+  "#F59E0B",
+  "#3B82F6",
+  "#10B981",
+  "#A78BFA",
+  "#F472B6",
+  "#F8FAFC",
+];
 
-function createParticles(count: number, width: number, burst = false): Particle[] {
+function createParticles(
+  count: number,
+  width: number,
+  burst = false,
+): Particle[] {
   return Array.from({ length: count }, () => {
-    const angle = burst ? Math.random() * Math.PI * 2 : Math.random() * Math.PI + Math.PI;
+    const angle = burst
+      ? Math.random() * Math.PI * 2
+      : Math.random() * Math.PI + Math.PI;
     const speed = burst ? 2 + Math.random() * 5 : 1 + Math.random() * 3;
 
     return {
@@ -55,7 +68,9 @@ export function ConfettiCelebration({
   useEffect(() => {
     if (!active) return;
 
-    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const reducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
     if (reducedMotion) return;
 
     const canvas = canvasRef.current;
@@ -121,7 +136,12 @@ export function ConfettiCelebration({
           ctx.arc(0, 0, particle.size / 2, 0, Math.PI * 2);
           ctx.fill();
         } else {
-          ctx.fillRect(-particle.size / 2, -particle.size / 3, particle.size, particle.size / 1.5);
+          ctx.fillRect(
+            -particle.size / 2,
+            -particle.size / 3,
+            particle.size,
+            particle.size / 1.5,
+          );
         }
 
         ctx.restore();

@@ -5,7 +5,7 @@ import {
   captureElementAsPng,
   downloadImageBlob,
   shareImageBlob,
-} from '@/lib/rugby-draft/shareCardImage'
+} from "@/lib/rugby-draft/shareCardImage";
 
 interface Props {
   shareText: string;

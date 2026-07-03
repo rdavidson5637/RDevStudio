@@ -18,7 +18,7 @@ export async function POST(request: NextRequest) {
     if (!gameId?.trim() || !hostId?.trim() || !targetPlayerId?.trim()) {
       return NextResponse.json(
         { error: "gameId, hostId, and targetPlayerId are required" },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
@@ -30,14 +30,14 @@ export async function POST(request: NextRequest) {
     if (game.hostId !== hostId) {
       return NextResponse.json(
         { error: "Only the host can remove players" },
-        { status: 403 }
+        { status: 403 },
       );
     }
 
     if (targetPlayerId === hostId) {
       return NextResponse.json(
         { error: "You cannot remove yourself" },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
@@ -54,7 +54,9 @@ export async function POST(request: NextRequest) {
       game.kickedPlayerIds.push(targetPlayerId);
     }
 
-    game.players = game.players.filter((player) => player.id !== targetPlayerId);
+    game.players = game.players.filter(
+      (player) => player.id !== targetPlayerId,
+    );
 
     if (game.teamMode && game.teams) {
       game.teams = removePlayerFromTeams(game.teams, targetPlayerId);
@@ -71,8 +73,11 @@ export async function POST(request: NextRequest) {
   } catch (error) {
     console.error("kick failed:", error);
     return NextResponse.json(
-      { error: error instanceof Error ? error.message : "Failed to remove player" },
-      { status: 500 }
+      {
+        error:
+          error instanceof Error ? error.message : "Failed to remove player",
+      },
+      { status: 500 },
     );
   }
 }

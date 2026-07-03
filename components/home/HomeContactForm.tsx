@@ -9,10 +9,7 @@ import {
   selectClassName,
   submitButtonClassName,
 } from "@/components/contact/form-styles";
-import {
-  CONTACT_SERVICE_OPTIONS,
-  FORMSPREE_FORM_ID,
-} from "@/lib/constants";
+import { CONTACT_SERVICE_OPTIONS, FORMSPREE_FORM_ID } from "@/lib/constants";
 
 function HomeContactFormFields({ onReset }: { onReset: () => void }) {
   const [state, handleSubmit] = useForm(FORMSPREE_FORM_ID);

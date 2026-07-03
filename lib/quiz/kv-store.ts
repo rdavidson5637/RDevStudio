@@ -45,7 +45,7 @@ async function runKvCommand(command: (string | number)[]): Promise<unknown> {
 }
 
 export async function loadGameFromKv(
-  gameId: string
+  gameId: string,
 ): Promise<GameState | null> {
   try {
     const result = await runKvCommand(["GET", `${GAME_KEY_PREFIX}${gameId}`]);
@@ -63,7 +63,7 @@ export async function loadGameFromKv(
 
 export async function saveGameToKv(
   gameId: string,
-  state: GameState
+  state: GameState,
 ): Promise<void> {
   try {
     await runKvCommand([

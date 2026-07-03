@@ -1,8 +1,4 @@
-import {
-  PLAYER_AVATARS,
-  PLAYER_COLOURS,
-  type Player,
-} from "./types";
+import { PLAYER_AVATARS, PLAYER_COLOURS, type Player } from "./types";
 
 export function isValidPlayerColour(colour: string): boolean {
   return (PLAYER_COLOURS as readonly string[]).includes(colour);
@@ -38,7 +34,7 @@ export function pickAvailableAvatar(players: Player[]): string {
 
 export function resolvePlayerIdentity(
   existingPlayers: Player[],
-  requested?: { colour?: string; avatar?: string }
+  requested?: { colour?: string; avatar?: string },
 ): { colour: string; avatar: string } | { error: string } {
   const takenColours = getTakenColours(existingPlayers);
   const takenAvatars = getTakenAvatars(existingPlayers);

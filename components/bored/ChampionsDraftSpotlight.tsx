@@ -25,7 +25,9 @@ export function ChampionsDraftSpotlight({
 
       <div
         className={`relative flex flex-col gap-8 ${
-          isHero ? "lg:flex-row lg:items-center lg:gap-12" : "sm:flex-row sm:items-center"
+          isHero
+            ? "lg:flex-row lg:items-center lg:gap-12"
+            : "sm:flex-row sm:items-center"
         }`}
       >
         <div
@@ -35,7 +37,9 @@ export function ChampionsDraftSpotlight({
         >
           <div
             className={`relative rounded-2xl border border-border-strong bg-base p-3 ${
-              isHero ? "h-40 w-40 sm:h-48 sm:w-48 lg:h-52 lg:w-52" : "h-28 w-28 sm:h-32 sm:w-32"
+              isHero
+                ? "h-40 w-40 sm:h-48 sm:w-48 lg:h-52 lg:w-52"
+                : "h-28 w-28 sm:h-32 sm:w-32"
             }`}
           >
             <Image
@@ -58,9 +62,7 @@ export function ChampionsDraftSpotlight({
             </span>
           </div>
 
-          <p className="shell-label text-secondary">
-            Featured game
-          </p>
+          <p className="shell-label text-secondary">Featured game</p>
           <h2
             className={`mt-2 font-display font-bold tracking-tight text-primary ${
               isHero

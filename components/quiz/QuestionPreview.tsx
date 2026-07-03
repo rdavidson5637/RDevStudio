@@ -38,7 +38,7 @@ export function QuestionPreview({ rounds }: QuestionPreviewProps) {
           });
 
           const response = await fetch(
-            `/api/quiz/generate-preview?${params.toString()}`
+            `/api/quiz/generate-preview?${params.toString()}`,
           );
           const data = await response.json();
 
@@ -50,7 +50,7 @@ export function QuestionPreview({ rounds }: QuestionPreviewProps) {
             roundName: round.name,
             questions: data.questions as PreviewQuestion[],
           };
-        })
+        }),
       );
 
       setSamples(results);
@@ -59,7 +59,7 @@ export function QuestionPreview({ rounds }: QuestionPreviewProps) {
       setError(
         previewError instanceof Error
           ? previewError.message
-          : "Could not generate preview"
+          : "Could not generate preview",
       );
     } finally {
       setLoading(false);

@@ -6,7 +6,7 @@ export const BUZZER_WRONG_DEDUCTION = 50;
 export function calculatePoints(
   isCorrect: boolean,
   answerTimeMs: number,
-  timeLimitMs: number
+  timeLimitMs: number,
 ): number {
   if (!isCorrect) {
     return 0;
@@ -22,7 +22,7 @@ export function calculatePoints(
 export function calculateRiskPoints(
   isCorrect: boolean,
   answerTimeMs: number,
-  timeLimitMs: number
+  timeLimitMs: number,
 ): number {
   if (isCorrect) {
     return calculatePoints(true, answerTimeMs, timeLimitMs);

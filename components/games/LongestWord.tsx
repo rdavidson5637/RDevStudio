@@ -37,7 +37,9 @@ function buildGrid(seed: number): string[] {
 }
 
 function sortFound(words: FoundWord[]): FoundWord[] {
-  return [...words].sort((a, b) => b.len - a.len || a.word.localeCompare(b.word));
+  return [...words].sort(
+    (a, b) => b.len - a.len || a.word.localeCompare(b.word),
+  );
 }
 
 function formatToday(): string {
@@ -63,7 +65,7 @@ export function LongestWord() {
 
   const currentWord = useMemo(
     () => selected.map((index) => grid[index]).join(""),
-    [selected, grid]
+    [selected, grid],
   );
 
   const persist = useCallback(
@@ -71,13 +73,13 @@ export function LongestWord() {
       try {
         localStorage.setItem(
           storageKey,
-          JSON.stringify({ found: nextFound, attempts: nextAttempts })
+          JSON.stringify({ found: nextFound, attempts: nextAttempts }),
         );
       } catch {
         // ignore storage errors
       }
     },
-    [storageKey]
+    [storageKey],
   );
 
   useEffect(() => {
@@ -135,7 +137,7 @@ export function LongestWord() {
 
     try {
       const response = await fetch(
-        `https://api.dictionaryapi.dev/api/v2/entries/en/${encodeURIComponent(word)}`
+        `https://api.dictionaryapi.dev/api/v2/entries/en/${encodeURIComponent(word)}`,
       );
 
       if (response.ok) {

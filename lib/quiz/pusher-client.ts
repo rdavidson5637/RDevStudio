@@ -5,7 +5,7 @@ let pusherClient: Pusher | null = null;
 function isPusherConfigured(): boolean {
   return Boolean(
     process.env.NEXT_PUBLIC_PUSHER_KEY &&
-      process.env.NEXT_PUBLIC_PUSHER_CLUSTER
+      process.env.NEXT_PUBLIC_PUSHER_CLUSTER,
   );
 }
 

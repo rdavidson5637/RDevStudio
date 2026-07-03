@@ -26,7 +26,7 @@ interface QuestionScreenProps {
   playerId: string;
   onAnswerSubmitted: (
     answer: string,
-    timeMs: number
+    timeMs: number,
   ) => Promise<{ correct: boolean } | void>;
   questionNumber: number;
   totalQuestions: number;
@@ -103,7 +103,7 @@ export function QuestionScreen({
     Boolean(question.audioUrl);
 
   const categoryMeta = CATEGORY_OPTIONS.find(
-    (option) => option.value === question.category
+    (option) => option.value === question.category,
   );
 
   useEffect(() => {
@@ -132,7 +132,7 @@ export function QuestionScreen({
         window.setTimeout(() => setRiskFlash(false), 600);
       }
     },
-    [isBuzzerRound, isRiskRound, onAnswerSubmitted]
+    [isBuzzerRound, isRiskRound, onAnswerSubmitted],
   );
 
   const handleExpire = useCallback(() => {
@@ -277,9 +277,7 @@ export function QuestionScreen({
         />
       ) : null}
 
-      {question.audioUrl ? (
-        <AudioPlayer audioUrl={question.audioUrl} />
-      ) : null}
+      {question.audioUrl ? <AudioPlayer audioUrl={question.audioUrl} /> : null}
 
       <h2
         key={question.id}
@@ -293,141 +291,139 @@ export function QuestionScreen({
       </h2>
 
       {isBuzzerRound ? (
-            <div className="flex flex-1 flex-col gap-6">
-              {isHost && activeBuzz ? (
-                <div className="space-y-3 text-center">
-                  <p className="text-sm text-quiz-muted">
-                    Mark their verbal answer (only you can see this)
-                  </p>
-                  <div className="flex justify-center gap-4">
-                    <button
-                      type="button"
-                      onClick={() => void handleBuzzJudge(true)}
-                      disabled={judgingBuzz}
-                      className="rounded-xl border border-quiz-success/40 bg-quiz-success/10 px-6 py-3 text-sm font-semibold text-quiz-success transition-colors hover:bg-quiz-success/20 disabled:opacity-50"
-                    >
-                      Correct
-                    </button>
-                    <button
-                      type="button"
-                      onClick={() => void handleBuzzJudge(false)}
-                      disabled={judgingBuzz}
-                      className="rounded-xl border border-quiz-danger/40 bg-quiz-danger/10 px-6 py-3 text-sm font-semibold text-quiz-danger transition-colors hover:bg-quiz-danger/20 disabled:opacity-50"
-                    >
-                      Wrong
-                    </button>
-                  </div>
-                </div>
-              ) : null}
-
-              {!isHost && someoneElseBuzzed ? (
-                <div className="flex flex-1 flex-col items-center justify-center gap-3 text-center">
-                  <p className="text-lg text-quiz-muted">
-                    Waiting for {activeBuzz?.playerName} to answer...
-                  </p>
-                </div>
-              ) : (
-                <BuzzerButton
-                  gameId={gameId}
-                  playerId={playerId}
-                  disabled={someoneElseBuzzed}
-                  youBuzzed={youBuzzed}
-                  lockedOut={lockedOut}
-                  teamLockedOut={teamLockedOut}
-                />
-              )}
-
-              {canSkipBuzzerWaiting ? (
-                <div className="text-center">
-                  <button
-                    type="button"
-                    onClick={onSkipWaiting}
-                    disabled={isSkipping}
-                    className="quiz-btn-secondary"
-                  >
-                    {isSkipping ? "Revealing..." : "End question early"}
-                  </button>
-                </div>
-              ) : null}
-            </div>
-          ) : submitted ? (
-            <div className="flex flex-1 flex-col items-center justify-center gap-5 text-center">
-              <p className="animate-pulse text-lg font-medium text-quiz-amber">
-                Answer locked in! Waiting for others...
+        <div className="flex flex-1 flex-col gap-6">
+          {isHost && activeBuzz ? (
+            <div className="space-y-3 text-center">
+              <p className="text-sm text-quiz-muted">
+                Mark their verbal answer (only you can see this)
               </p>
-
-              <div className="rounded-full border border-quiz-border bg-quiz-surface px-4 py-2 text-sm text-quiz-muted">
-                <span className="font-semibold text-white">{answeredCount}</span>
-                {" / "}
-                {totalPlayers} players answered
+              <div className="flex justify-center gap-4">
+                <button
+                  type="button"
+                  onClick={() => void handleBuzzJudge(true)}
+                  disabled={judgingBuzz}
+                  className="rounded-xl border border-quiz-success/40 bg-quiz-success/10 px-6 py-3 text-sm font-semibold text-quiz-success transition-colors hover:bg-quiz-success/20 disabled:opacity-50"
+                >
+                  Correct
+                </button>
+                <button
+                  type="button"
+                  onClick={() => void handleBuzzJudge(false)}
+                  disabled={judgingBuzz}
+                  className="rounded-xl border border-quiz-danger/40 bg-quiz-danger/10 px-6 py-3 text-sm font-semibold text-quiz-danger transition-colors hover:bg-quiz-danger/20 disabled:opacity-50"
+                >
+                  Wrong
+                </button>
               </div>
-
-              <div className="flex gap-1.5" aria-hidden="true">
-                <span className="h-2 w-2 animate-bounce rounded-full bg-quiz-amber [animation-delay:0ms]" />
-                <span className="h-2 w-2 animate-bounce rounded-full bg-quiz-amber [animation-delay:150ms]" />
-                <span className="h-2 w-2 animate-bounce rounded-full bg-quiz-amber [animation-delay:300ms]" />
-              </div>
-
-              {canSkipWaiting ? (
-                <div className="mt-4 space-y-2">
-                  <button
-                    type="button"
-                    onClick={onSkipWaiting}
-                    disabled={isSkipping}
-                    className="quiz-btn-secondary"
-                  >
-                    {isSkipping ? "Revealing..." : "Reveal answers now"}
-                  </button>
-                  <p className="text-xs text-quiz-muted">
-                    (only you can see this)
-                  </p>
-                </div>
-              ) : null}
             </div>
-          ) : hasMultipleChoice && question.options ? (
-            <div className="grid gap-3 sm:grid-cols-2">
-              {question.options.slice(0, 4).map((option, index) => (
-                <AnswerButton
-                  key={`${question.id}-${index}`}
-                  letter={LETTERS[index]}
-                  text={option}
-                  selected={selectedOption === option}
-                  disabled={submitted}
-                  riskMode={isRiskRound}
-                  onClick={() => handleOptionSelect(option)}
-                />
-              ))}
+          ) : null}
+
+          {!isHost && someoneElseBuzzed ? (
+            <div className="flex flex-1 flex-col items-center justify-center gap-3 text-center">
+              <p className="text-lg text-quiz-muted">
+                Waiting for {activeBuzz?.playerName} to answer...
+              </p>
             </div>
           ) : (
-            <form
-              onSubmit={handleTextSubmit}
-              className="mx-auto flex w-full max-w-md flex-col gap-4"
-            >
-              <input
-                type="text"
-                value={textAnswer}
-                onChange={(event) => setTextAnswer(event.target.value)}
-                placeholder="Type your answer..."
-                disabled={submitted}
-                className={`quiz-input text-center text-lg ${
-                  isRiskRound ? "focus:border-red-500 focus:ring-red-500/40" : ""
-                }`}
-                autoComplete="off"
-                autoFocus
-              />
-              <button
-                type="submit"
-                disabled={submitted || !textAnswer.trim()}
-                className={`w-full rounded-xl px-6 py-3 font-semibold transition-all disabled:cursor-not-allowed disabled:opacity-50 ${
-                  isRiskRound
-                    ? "bg-red-500/90 text-white hover:bg-red-500"
-                    : "quiz-btn-primary"
-                }`}
-              >
-                Submit Answer
-              </button>
-            </form>
+            <BuzzerButton
+              gameId={gameId}
+              playerId={playerId}
+              disabled={someoneElseBuzzed}
+              youBuzzed={youBuzzed}
+              lockedOut={lockedOut}
+              teamLockedOut={teamLockedOut}
+            />
           )}
+
+          {canSkipBuzzerWaiting ? (
+            <div className="text-center">
+              <button
+                type="button"
+                onClick={onSkipWaiting}
+                disabled={isSkipping}
+                className="quiz-btn-secondary"
+              >
+                {isSkipping ? "Revealing..." : "End question early"}
+              </button>
+            </div>
+          ) : null}
+        </div>
+      ) : submitted ? (
+        <div className="flex flex-1 flex-col items-center justify-center gap-5 text-center">
+          <p className="animate-pulse text-lg font-medium text-quiz-amber">
+            Answer locked in! Waiting for others...
+          </p>
+
+          <div className="rounded-full border border-quiz-border bg-quiz-surface px-4 py-2 text-sm text-quiz-muted">
+            <span className="font-semibold text-white">{answeredCount}</span>
+            {" / "}
+            {totalPlayers} players answered
+          </div>
+
+          <div className="flex gap-1.5" aria-hidden="true">
+            <span className="h-2 w-2 animate-bounce rounded-full bg-quiz-amber [animation-delay:0ms]" />
+            <span className="h-2 w-2 animate-bounce rounded-full bg-quiz-amber [animation-delay:150ms]" />
+            <span className="h-2 w-2 animate-bounce rounded-full bg-quiz-amber [animation-delay:300ms]" />
+          </div>
+
+          {canSkipWaiting ? (
+            <div className="mt-4 space-y-2">
+              <button
+                type="button"
+                onClick={onSkipWaiting}
+                disabled={isSkipping}
+                className="quiz-btn-secondary"
+              >
+                {isSkipping ? "Revealing..." : "Reveal answers now"}
+              </button>
+              <p className="text-xs text-quiz-muted">(only you can see this)</p>
+            </div>
+          ) : null}
+        </div>
+      ) : hasMultipleChoice && question.options ? (
+        <div className="grid gap-3 sm:grid-cols-2">
+          {question.options.slice(0, 4).map((option, index) => (
+            <AnswerButton
+              key={`${question.id}-${index}`}
+              letter={LETTERS[index]}
+              text={option}
+              selected={selectedOption === option}
+              disabled={submitted}
+              riskMode={isRiskRound}
+              onClick={() => handleOptionSelect(option)}
+            />
+          ))}
+        </div>
+      ) : (
+        <form
+          onSubmit={handleTextSubmit}
+          className="mx-auto flex w-full max-w-md flex-col gap-4"
+        >
+          <input
+            type="text"
+            value={textAnswer}
+            onChange={(event) => setTextAnswer(event.target.value)}
+            placeholder="Type your answer..."
+            disabled={submitted}
+            className={`quiz-input text-center text-lg ${
+              isRiskRound ? "focus:border-red-500 focus:ring-red-500/40" : ""
+            }`}
+            autoComplete="off"
+            autoFocus
+          />
+          <button
+            type="submit"
+            disabled={submitted || !textAnswer.trim()}
+            className={`w-full rounded-xl px-6 py-3 font-semibold transition-all disabled:cursor-not-allowed disabled:opacity-50 ${
+              isRiskRound
+                ? "bg-red-500/90 text-white hover:bg-red-500"
+                : "quiz-btn-primary"
+            }`}
+          >
+            Submit Answer
+          </button>
+        </form>
+      )}
     </div>
   );
 }

@@ -1,42 +1,42 @@
-'use client'
-import ShareCardActions from './ShareCardActions'
-import ShareCardShell from './ShareCardShell'
-import ShareStatPills from './ShareStatPills'
+"use client";
+import ShareCardActions from "./ShareCardActions";
+import ShareCardShell from "./ShareCardShell";
+import ShareStatPills from "./ShareStatPills";
 import {
   formatSquadShareLines,
   getShareUrl,
   SHARE_CARD_CAPTURE_ID,
   SHARE_CHALLENGE,
   type ShareSquadPlayer,
-} from './shareHelpers'
+} from "./shareHelpers";
 
 interface Props {
-  leagueName: string
-  position: number
-  points: number
-  won: number
-  drawn: number
-  lost: number
-  goalDifference: number
-  topScorer: string
-  topScorerGoals: number
-  playerOfSeason: string
-  playerOfSeasonOvr: number
-  formation?: string | null
+  leagueName: string;
+  position: number;
+  points: number;
+  won: number;
+  drawn: number;
+  lost: number;
+  goalDifference: number;
+  topScorer: string;
+  topScorerGoals: number;
+  playerOfSeason: string;
+  playerOfSeasonOvr: number;
+  formation?: string | null;
   teamRatings?: {
-    attack: number
-    midfield: number
-    defence: number
-    goalkeeper: number
-  }
-  squad: ShareSquadPlayer[]
+    attack: number;
+    midfield: number;
+    defence: number;
+    goalkeeper: number;
+  };
+  squad: ShareSquadPlayer[];
 }
 
 function getPositionSuffix(pos: number): string {
-  if (pos === 1) return 'st'
-  if (pos === 2) return 'nd'
-  if (pos === 3) return 'rd'
-  return 'th'
+  if (pos === 1) return "st";
+  if (pos === 2) return "nd";
+  if (pos === 3) return "rd";
+  return "th";
 }
 
 function buildShareText(props: Props, url: string): string {
@@ -54,43 +54,43 @@ function buildShareText(props: Props, url: string): string {
     playerOfSeasonOvr,
     formation,
     squad,
-  } = props
+  } = props;
 
-  const gd = goalDifference > 0 ? `+${goalDifference}` : `${goalDifference}`
+  const gd = goalDifference > 0 ? `+${goalDifference}` : `${goalDifference}`;
   const title =
     position === 1
-      ? '🏆 CHAMPIONS!'
-      : `Finished ${position}${getPositionSuffix(position)}`
-  const squadLines = formatSquadShareLines(squad)
+      ? "🏆 CHAMPIONS!"
+      : `Finished ${position}${getPositionSuffix(position)}`;
+  const squadLines = formatSquadShareLines(squad);
 
   return [
-    '⚽ Champions Draft',
-    '',
+    "⚽ Champions Draft",
+    "",
     `${leagueName} Season`,
-    '',
+    "",
     title,
     `${points} pts · ${won}W ${drawn}D ${lost}L · GD ${gd}`,
-    formation ? `Formation: ${formation}` : '',
-    '',
-    'My XI:',
+    formation ? `Formation: ${formation}` : "",
+    "",
+    "My XI:",
     squadLines,
-    '',
+    "",
     `Top Scorer: ${topScorer} (${topScorerGoals} goals)`,
     `Player of Season: ${playerOfSeason} (${playerOfSeasonOvr} OVR)`,
-    '',
+    "",
     SHARE_CHALLENGE,
-    '',
+    "",
     `Play now → ${url}`,
   ]
     .filter(Boolean)
-    .join('\n')
+    .join("\n");
 }
 
 export default function SeasonShareCard(props: Props) {
   const { leagueName, position, points, won, drawn, lost, goalDifference } =
-    props
-  const gd = goalDifference > 0 ? `+${goalDifference}` : `${goalDifference}`
-  const shareText = buildShareText(props, getShareUrl())
+    props;
+  const gd = goalDifference > 0 ? `+${goalDifference}` : `${goalDifference}`;
+  const shareText = buildShareText(props, getShareUrl());
 
   return (
     <div className="mb-8 w-full max-w-xs mx-auto">
@@ -132,5 +132,5 @@ export default function SeasonShareCard(props: Props) {
         imageFilename="champions-draft-league.png"
       />
     </div>
-  )
+  );
 }

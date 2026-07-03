@@ -17,7 +17,7 @@ export function Header() {
 
   return (
     <>
-        <header className="sticky top-0 z-[100] min-h-20 border-b border-border bg-base/95 backdrop-blur-sm">
+      <header className="sticky top-0 z-[100] min-h-20 border-b border-border bg-base/95 backdrop-blur-sm">
         <div className="container-wide flex h-20 items-center justify-between gap-4 px-6">
           <Link
             href="/"
@@ -36,7 +36,9 @@ export function Header() {
                 key={link.href}
                 href={link.href}
                 className={`pitch-link shell-label transition-colors ${
-                  isActive(link.href) ? "text-accent" : "text-secondary hover:text-accent"
+                  isActive(link.href)
+                    ? "text-accent"
+                    : "text-secondary hover:text-accent"
                 }`}
               >
                 {link.label}
@@ -65,7 +67,12 @@ export function Header() {
               stroke="currentColor"
               aria-hidden="true"
             >
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 6h16M4 12h16M4 18h16" />
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={1.5}
+                d="M4 6h16M4 12h16M4 18h16"
+              />
             </svg>
           </button>
         </div>

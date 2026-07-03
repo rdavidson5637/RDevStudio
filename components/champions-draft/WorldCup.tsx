@@ -1,12 +1,12 @@
-'use client'
-import { useState, useEffect, useCallback, useRef } from 'react'
+"use client";
+import { useState, useEffect, useCallback, useRef } from "react";
 import type {
   GameState,
   MatchResult,
   WorldCupGroup,
   TournamentRound,
-} from '@/types/champions-draft'
-import { WORLD_CUP_NATIONS } from '@/lib/champions-draft/data'
+} from "@/types/champions-draft";
+import { WORLD_CUP_NATIONS } from "@/lib/champions-draft/data";
 import {
   buildWorldCupGroups,
   simulateWorldCupGroups,
@@ -14,232 +14,237 @@ import {
   buildKnockoutPairings,
   simulateKnockoutRoundFromPairings,
   getWCTopScorer,
-} from '@/lib/champions-draft/matchEngine'
-import MatchAnimation from './MatchAnimation'
-import WCGroupStage from './WCGroupStage'
-import KnockoutBracket from './KnockoutBracket'
-import KnockoutDrawPreview from './KnockoutDrawPreview'
-import WCShareCard from './WCShareCard'
-import QuitButton from './QuitButton'
-import { getShareSquadFromSlots } from './shareHelpers'
+} from "@/lib/champions-draft/matchEngine";
+import MatchAnimation from "./MatchAnimation";
+import WCGroupStage from "./WCGroupStage";
+import KnockoutBracket from "./KnockoutBracket";
+import KnockoutDrawPreview from "./KnockoutDrawPreview";
+import WCShareCard from "./WCShareCard";
+import QuitButton from "./QuitButton";
+import { getShareSquadFromSlots } from "./shareHelpers";
 
 interface Props {
-  state: GameState
-  onUpdate: (updates: Partial<GameState>) => void
-  onExit: () => void
+  state: GameState;
+  onUpdate: (updates: Partial<GameState>) => void;
+  onExit: () => void;
 }
 
-const USER_TEAM = 'My XI'
+const USER_TEAM = "My XI";
 
 type WCPhase =
-  | 'preview'
-  | 'groups-playing'
-  | 'groups-done'
-  | 'r32-preview'
-  | 'r32-playing'
-  | 'r32-done'
-  | 'qf-preview'
-  | 'qf-playing'
-  | 'qf-done'
-  | 'sf-preview'
-  | 'sf-playing'
-  | 'sf-done'
-  | 'final-preview'
-  | 'final-playing'
-  | 'winner'
-  | 'eliminated'
+  | "preview"
+  | "groups-playing"
+  | "groups-done"
+  | "r32-preview"
+  | "r32-playing"
+  | "r32-done"
+  | "qf-preview"
+  | "qf-playing"
+  | "qf-done"
+  | "sf-preview"
+  | "sf-playing"
+  | "sf-done"
+  | "final-preview"
+  | "final-playing"
+  | "winner"
+  | "eliminated";
 
 export default function WorldCup({ state, onUpdate, onExit }: Props) {
-  const [wcPhase, setWCPhase] = useState<WCPhase>('preview')
-  const [groups, setGroups] = useState<WorldCupGroup[]>([])
-  const [knockoutRounds, setKnockoutRounds] = useState<TournamentRound[]>([])
-  const [currentMatchIndex, setCurrentMatchIndex] = useState(0)
-  const [activeMatches, setActiveMatches] = useState<MatchResult[]>([])
-  const [speedMode, setSpeedMode] = useState<'normal' | 'fast' | 'skip'>(
-    state.speedMode
-  )
-  const [eliminatedAt, setEliminatedAt] = useState('')
-  const [allGroupResults, setAllGroupResults] = useState<MatchResult[]>([])
-  const [pendingKnockout, setPendingKnockout] = useState<TournamentRound | null>(
-    null
-  )
-  const [isSimulating, setIsSimulating] = useState(false)
-  const knockoutEliminatedRef = useRef(false)
+  const [wcPhase, setWCPhase] = useState<WCPhase>("preview");
+  const [groups, setGroups] = useState<WorldCupGroup[]>([]);
+  const [knockoutRounds, setKnockoutRounds] = useState<TournamentRound[]>([]);
+  const [currentMatchIndex, setCurrentMatchIndex] = useState(0);
+  const [activeMatches, setActiveMatches] = useState<MatchResult[]>([]);
+  const [speedMode, setSpeedMode] = useState<"normal" | "fast" | "skip">(
+    state.speedMode,
+  );
+  const [eliminatedAt, setEliminatedAt] = useState("");
+  const [allGroupResults, setAllGroupResults] = useState<MatchResult[]>([]);
+  const [pendingKnockout, setPendingKnockout] =
+    useState<TournamentRound | null>(null);
+  const [isSimulating, setIsSimulating] = useState(false);
+  const knockoutEliminatedRef = useRef(false);
 
-  const userRatings = state.teamRatings!
-  const selectedNation = state.selectedNation ?? 'Unknown'
+  const userRatings = state.teamRatings!;
+  const selectedNation = state.selectedNation ?? "Unknown";
 
   const draftedAttackers = state.draftSlots
-    .filter(s =>
-      s.player &&
-      ['ST', 'CF', 'LW', 'RW', 'LM', 'RM'].includes(s.player.position)
+    .filter(
+      (s) =>
+        s.player &&
+        ["ST", "CF", "LW", "RW", "LM", "RM"].includes(s.player.position),
     )
-    .map(s => s.player!.name)
+    .map((s) => s.player!.name);
 
   const playerOfTournament = state.draftSlots
-    .filter(s => s.player)
-    .sort((a, b) => (b.player?.overall ?? 0) - (a.player?.overall ?? 0))[0]
-    ?.player
+    .filter((s) => s.player)
+    .sort(
+      (a, b) => (b.player?.overall ?? 0) - (a.player?.overall ?? 0),
+    )[0]?.player;
 
   useEffect(() => {
-    const builtGroups = buildWorldCupGroups(USER_TEAM, WORLD_CUP_NATIONS)
-    setGroups(builtGroups)
-  }, [])
+    const builtGroups = buildWorldCupGroups(USER_TEAM, WORLD_CUP_NATIONS);
+    setGroups(builtGroups);
+  }, []);
 
   const handleStartGroups = useCallback(() => {
-    setIsSimulating(true)
+    setIsSimulating(true);
     setTimeout(() => {
       const simulated = simulateWorldCupGroups(
         USER_TEAM,
         userRatings,
         groups,
-        WORLD_CUP_NATIONS
-      )
-      setGroups(simulated)
-      const allResults = simulated.flatMap(g => g.fixtures)
-      setAllGroupResults(allResults)
-      const userMatches = simulated.flatMap(g =>
+        WORLD_CUP_NATIONS,
+      );
+      setGroups(simulated);
+      const allResults = simulated.flatMap((g) => g.fixtures);
+      setAllGroupResults(allResults);
+      const userMatches = simulated.flatMap((g) =>
         g.fixtures.filter(
-          f => f.homeTeam === USER_TEAM || f.awayTeam === USER_TEAM
-        )
-      )
-      setActiveMatches(userMatches)
-      setCurrentMatchIndex(0)
-      setIsSimulating(false)
-      setWCPhase('groups-playing')
-    }, 0)
-  }, [groups, userRatings])
+          (f) => f.homeTeam === USER_TEAM || f.awayTeam === USER_TEAM,
+        ),
+      );
+      setActiveMatches(userMatches);
+      setCurrentMatchIndex(0);
+      setIsSimulating(false);
+      setWCPhase("groups-playing");
+    }, 0);
+  }, [groups, userRatings]);
 
   const handleMatchComplete = useCallback(() => {
-    setCurrentMatchIndex(prev => {
-      const next = prev + 1
+    setCurrentMatchIndex((prev) => {
+      const next = prev + 1;
       if (next >= activeMatches.length) {
-        setWCPhase(p => {
-          if (p === 'groups-playing') return 'groups-done'
-          if (p === 'r32-playing') {
-            return knockoutEliminatedRef.current ? 'eliminated' : 'r32-done'
+        setWCPhase((p) => {
+          if (p === "groups-playing") return "groups-done";
+          if (p === "r32-playing") {
+            return knockoutEliminatedRef.current ? "eliminated" : "r32-done";
           }
-          if (p === 'qf-playing') {
-            return knockoutEliminatedRef.current ? 'eliminated' : 'qf-done'
+          if (p === "qf-playing") {
+            return knockoutEliminatedRef.current ? "eliminated" : "qf-done";
           }
-          if (p === 'sf-playing') {
-            return knockoutEliminatedRef.current ? 'eliminated' : 'sf-done'
+          if (p === "sf-playing") {
+            return knockoutEliminatedRef.current ? "eliminated" : "sf-done";
           }
-          if (p === 'final-playing') {
-            return knockoutEliminatedRef.current ? 'eliminated' : 'winner'
+          if (p === "final-playing") {
+            return knockoutEliminatedRef.current ? "eliminated" : "winner";
           }
-          return p
-        })
+          return p;
+        });
       }
-      return next
-    })
-  }, [activeMatches.length])
+      return next;
+    });
+  }, [activeMatches.length]);
 
   const prepareKnockoutRound = useCallback(
     (roundName: string, teams: string[], previewPhase: WCPhase) => {
-      const pairings = buildKnockoutPairings(teams, roundName)
-      setPendingKnockout(pairings)
-      setWCPhase(previewPhase)
+      const pairings = buildKnockoutPairings(teams, roundName);
+      setPendingKnockout(pairings);
+      setWCPhase(previewPhase);
     },
-    []
-  )
+    [],
+  );
 
   const startPendingKnockout = useCallback(
     (playingPhase: WCPhase) => {
-      if (!pendingKnockout) return
+      if (!pendingKnockout) return;
 
       const { round, userEliminated } = simulateKnockoutRoundFromPairings(
         USER_TEAM,
         userRatings,
         pendingKnockout,
         WORLD_CUP_NATIONS,
-        true
-      )
+        true,
+      );
 
-      setKnockoutRounds(prev => [...prev, round])
-      setPendingKnockout(null)
+      setKnockoutRounds((prev) => [...prev, round]);
+      setPendingKnockout(null);
 
       const userMatch = round.fixtures.find(
-        f => f.homeTeam === USER_TEAM || f.awayTeam === USER_TEAM
-      )
-      setActiveMatches(userMatch ? [userMatch] : [])
-      setCurrentMatchIndex(0)
-      knockoutEliminatedRef.current = userEliminated
+        (f) => f.homeTeam === USER_TEAM || f.awayTeam === USER_TEAM,
+      );
+      setActiveMatches(userMatch ? [userMatch] : []);
+      setCurrentMatchIndex(0);
+      knockoutEliminatedRef.current = userEliminated;
       if (userEliminated) {
-        setEliminatedAt(pendingKnockout.name)
+        setEliminatedAt(pendingKnockout.name);
       }
-      setWCPhase(playingPhase)
+      setWCPhase(playingPhase);
     },
-    [pendingKnockout, userRatings]
-  )
+    [pendingKnockout, userRatings],
+  );
 
   const handleAdvanceFromGroups = useCallback(() => {
-    const qualifiers = getWCKnockoutTeams(groups)
-    prepareKnockoutRound('Round of 16', qualifiers, 'r32-preview')
-  }, [groups, prepareKnockoutRound])
+    const qualifiers = getWCKnockoutTeams(groups);
+    prepareKnockoutRound("Round of 16", qualifiers, "r32-preview");
+  }, [groups, prepareKnockoutRound]);
 
   const getWinnersFromLastRound = useCallback(() => {
-    const lastRound = knockoutRounds[knockoutRounds.length - 1]
-    return lastRound.fixtures.map(f =>
+    const lastRound = knockoutRounds[knockoutRounds.length - 1];
+    return lastRound.fixtures.map((f) =>
       f.homeScore > f.awayScore
         ? f.homeTeam
         : f.awayScore > f.homeScore
-        ? f.awayTeam
-        : Math.random() > 0.5
-        ? f.homeTeam
-        : f.awayTeam
-    )
-  }, [knockoutRounds])
+          ? f.awayTeam
+          : Math.random() > 0.5
+            ? f.homeTeam
+            : f.awayTeam,
+    );
+  }, [knockoutRounds]);
 
   const handleAdvanceFromR32 = useCallback(() => {
     prepareKnockoutRound(
-      'Quarter-Final',
+      "Quarter-Final",
       getWinnersFromLastRound(),
-      'qf-preview'
-    )
-  }, [prepareKnockoutRound, getWinnersFromLastRound])
+      "qf-preview",
+    );
+  }, [prepareKnockoutRound, getWinnersFromLastRound]);
 
   const handleAdvanceFromQF = useCallback(() => {
-    prepareKnockoutRound('Semi-Final', getWinnersFromLastRound(), 'sf-preview')
-  }, [prepareKnockoutRound, getWinnersFromLastRound])
+    prepareKnockoutRound("Semi-Final", getWinnersFromLastRound(), "sf-preview");
+  }, [prepareKnockoutRound, getWinnersFromLastRound]);
 
   const handleAdvanceFromSF = useCallback(() => {
-    prepareKnockoutRound('Final', getWinnersFromLastRound(), 'final-preview')
-  }, [prepareKnockoutRound, getWinnersFromLastRound])
+    prepareKnockoutRound("Final", getWinnersFromLastRound(), "final-preview");
+  }, [prepareKnockoutRound, getWinnersFromLastRound]);
 
-  const topScorer = getWCTopScorer(USER_TEAM, draftedAttackers, allGroupResults)
+  const topScorer = getWCTopScorer(
+    USER_TEAM,
+    draftedAttackers,
+    allGroupResults,
+  );
 
   const shareCardProps = {
     selectedNation,
     wcDraftMode: state.wcDraftMode,
     topScorer: topScorer.playerName,
     topScorerGoals: topScorer.goals,
-    playerOfTournament: playerOfTournament?.name ?? '—',
+    playerOfTournament: playerOfTournament?.name ?? "—",
     playerOfTournamentOvr: playerOfTournament?.overall ?? 0,
     formation: state.formation,
     teamRatings: state.teamRatings ?? undefined,
     squad: getShareSquadFromSlots(state.draftSlots),
-  }
+  };
 
   const SpeedControls = () => (
     <div className="absolute top-4 right-4 flex gap-2 z-10">
-      {(['normal', 'fast', 'skip'] as const).map(s => (
+      {(["normal", "fast", "skip"] as const).map((s) => (
         <button
           key={s}
           onClick={() => setSpeedMode(s)}
           className={`px-3 py-1.5 rounded-lg text-xs font-bold uppercase tracking-wide transition-all ${
             speedMode === s
-              ? 'bg-white text-black'
-              : 'bg-white/10 text-white/40 hover:bg-white/20'
+              ? "bg-white text-black"
+              : "bg-white/10 text-white/40 hover:bg-white/20"
           }`}
         >
           {s}
         </button>
       ))}
     </div>
-  )
+  );
 
-  if (wcPhase === 'preview') {
+  if (wcPhase === "preview") {
     return (
       <div className="relative min-h-screen bg-[#0a0a12] px-4 py-12">
         <QuitButton onQuit={onExit} className="absolute top-6 left-6 z-10" />
@@ -267,14 +272,14 @@ export default function WorldCup({ state, onUpdate, onExit }: Props) {
               Match speed
             </p>
             <div className="flex gap-2">
-              {(['normal', 'fast', 'skip'] as const).map(s => (
+              {(["normal", "fast", "skip"] as const).map((s) => (
                 <button
                   key={s}
                   onClick={() => setSpeedMode(s)}
                   className={`flex-1 py-2.5 rounded-xl text-sm font-bold uppercase tracking-wide transition-all ${
                     speedMode === s
-                      ? 'bg-white text-black'
-                      : 'bg-white/5 text-white/40 border border-white/10 hover:bg-white/10'
+                      ? "bg-white text-black"
+                      : "bg-white/5 text-white/40 border border-white/10 hover:bg-white/10"
                   }`}
                 >
                   {s}
@@ -289,24 +294,24 @@ export default function WorldCup({ state, onUpdate, onExit }: Props) {
               disabled={groups.length === 0 || isSimulating}
               className="px-10 py-4 bg-white text-black font-black text-lg uppercase tracking-widest rounded-xl hover:bg-white/90 active:scale-95 transition-all disabled:opacity-40"
             >
-              {isSimulating ? 'Simulating...' : 'Play Group Stage'}
+              {isSimulating ? "Simulating..." : "Play Group Stage"}
             </button>
           </div>
         </div>
       </div>
-    )
+    );
   }
 
   const knockoutPreviewConfig: Partial<
     Record<WCPhase, { playing: WCPhase; label: string }>
   > = {
-    'r32-preview': { playing: 'r32-playing', label: 'Play Round of 16' },
-    'qf-preview': { playing: 'qf-playing', label: 'Play Quarter-Final' },
-    'sf-preview': { playing: 'sf-playing', label: 'Play Semi-Final' },
-    'final-preview': { playing: 'final-playing', label: 'Play Final' },
-  }
+    "r32-preview": { playing: "r32-playing", label: "Play Round of 16" },
+    "qf-preview": { playing: "qf-playing", label: "Play Quarter-Final" },
+    "sf-preview": { playing: "sf-playing", label: "Play Semi-Final" },
+    "final-preview": { playing: "final-playing", label: "Play Final" },
+  };
 
-  const knockoutPreview = knockoutPreviewConfig[wcPhase]
+  const knockoutPreview = knockoutPreviewConfig[wcPhase];
   if (knockoutPreview && pendingKnockout) {
     return (
       <div className="relative min-h-screen bg-[#0a0a12] flex flex-col items-center justify-center px-4 py-12">
@@ -327,14 +332,14 @@ export default function WorldCup({ state, onUpdate, onExit }: Props) {
 
         <div className="flex flex-col gap-3 w-full max-w-xs mt-8">
           <div className="flex gap-2">
-            {(['normal', 'fast', 'skip'] as const).map(s => (
+            {(["normal", "fast", "skip"] as const).map((s) => (
               <button
                 key={s}
                 onClick={() => setSpeedMode(s)}
                 className={`flex-1 py-2.5 rounded-xl text-sm font-bold uppercase tracking-wide transition-all ${
                   speedMode === s
-                    ? 'bg-white text-black'
-                    : 'bg-white/5 text-white/40 border border-white/10 hover:bg-white/10'
+                    ? "bg-white text-black"
+                    : "bg-white/5 text-white/40 border border-white/10 hover:bg-white/10"
                 }`}
               >
                 {s}
@@ -349,15 +354,15 @@ export default function WorldCup({ state, onUpdate, onExit }: Props) {
           </button>
         </div>
       </div>
-    )
+    );
   }
 
   if (
-    (wcPhase === 'groups-playing' ||
-      wcPhase === 'r32-playing' ||
-      wcPhase === 'qf-playing' ||
-      wcPhase === 'sf-playing' ||
-      wcPhase === 'final-playing') &&
+    (wcPhase === "groups-playing" ||
+      wcPhase === "r32-playing" ||
+      wcPhase === "qf-playing" ||
+      wcPhase === "sf-playing" ||
+      wcPhase === "final-playing") &&
     activeMatches[currentMatchIndex]
   ) {
     return (
@@ -372,16 +377,15 @@ export default function WorldCup({ state, onUpdate, onExit }: Props) {
           totalMatches={activeMatches.length}
         />
       </div>
-    )
+    );
   }
 
-  if (wcPhase === 'groups-done') {
-    const userGroup = groups.find(g => g.teams.includes(USER_TEAM))
-    const userPosition =
-      userGroup
-        ? userGroup.table.findIndex(r => r.club === USER_TEAM) + 1
-        : 0
-    const qualified = userPosition <= 2
+  if (wcPhase === "groups-done") {
+    const userGroup = groups.find((g) => g.teams.includes(USER_TEAM));
+    const userPosition = userGroup
+      ? userGroup.table.findIndex((r) => r.club === USER_TEAM) + 1
+      : 0;
+    const qualified = userPosition <= 2;
 
     return (
       <div className="min-h-screen bg-[#0a0a12] px-4 py-12">
@@ -392,15 +396,15 @@ export default function WorldCup({ state, onUpdate, onExit }: Props) {
             </p>
             <h2
               className={`font-black text-4xl uppercase tracking-tight ${
-                qualified ? 'text-emerald-400' : 'text-red-400'
+                qualified ? "text-emerald-400" : "text-red-400"
               }`}
             >
-              {qualified ? 'You Qualified!' : 'Eliminated'}
+              {qualified ? "You Qualified!" : "Eliminated"}
             </h2>
             <p className="text-white/40 text-sm mt-2">
               {qualified
-                ? `Finished ${userPosition === 1 ? '1st' : '2nd'} in Group ${userGroup?.name}`
-                : `Finished ${userPosition}${userPosition === 3 ? 'rd' : 'th'} in Group ${userGroup?.name}`}
+                ? `Finished ${userPosition === 1 ? "1st" : "2nd"} in Group ${userGroup?.name}`
+                : `Finished ${userPosition}${userPosition === 3 ? "rd" : "th"} in Group ${userGroup?.name}`}
             </p>
           </div>
 
@@ -413,7 +417,7 @@ export default function WorldCup({ state, onUpdate, onExit }: Props) {
               <WCShareCard
                 {...shareCardProps}
                 result="eliminated"
-                groupFinish={`${userPosition}${userPosition === 3 ? 'rd' : 'th'} in Group ${userGroup?.name}`}
+                groupFinish={`${userPosition}${userPosition === 3 ? "rd" : "th"} in Group ${userGroup?.name}`}
               />
             )}
             {qualified ? (
@@ -427,7 +431,7 @@ export default function WorldCup({ state, onUpdate, onExit }: Props) {
               <button
                 onClick={() =>
                   onUpdate({
-                    phase: 'mode-select',
+                    phase: "mode-select",
                     mode: null,
                     formation: null,
                     draftSlots: [],
@@ -444,29 +448,29 @@ export default function WorldCup({ state, onUpdate, onExit }: Props) {
           </div>
         </div>
       </div>
-    )
+    );
   }
 
   if (
-    wcPhase === 'r32-done' ||
-    wcPhase === 'qf-done' ||
-    wcPhase === 'sf-done'
+    wcPhase === "r32-done" ||
+    wcPhase === "qf-done" ||
+    wcPhase === "sf-done"
   ) {
     const roundIndex =
-      wcPhase === 'r32-done' ? 0 : wcPhase === 'qf-done' ? 1 : 2
-    const currentRound = knockoutRounds[roundIndex]
+      wcPhase === "r32-done" ? 0 : wcPhase === "qf-done" ? 1 : 2;
+    const currentRound = knockoutRounds[roundIndex];
     const nextLabel =
-      wcPhase === 'r32-done'
-        ? 'Quarter-Finals'
-        : wcPhase === 'qf-done'
-        ? 'Semi-Finals'
-        : 'The Final'
+      wcPhase === "r32-done"
+        ? "Quarter-Finals"
+        : wcPhase === "qf-done"
+          ? "Semi-Finals"
+          : "The Final";
     const handleNext =
-      wcPhase === 'r32-done'
+      wcPhase === "r32-done"
         ? handleAdvanceFromR32
-        : wcPhase === 'qf-done'
-        ? handleAdvanceFromQF
-        : handleAdvanceFromSF
+        : wcPhase === "qf-done"
+          ? handleAdvanceFromQF
+          : handleAdvanceFromSF;
 
     return (
       <div className="min-h-screen bg-[#0a0a12] px-4 py-12">
@@ -482,10 +486,7 @@ export default function WorldCup({ state, onUpdate, onExit }: Props) {
 
           {currentRound && (
             <div className="mb-8">
-              <KnockoutBracket
-                rounds={[currentRound]}
-                userTeam={USER_TEAM}
-              />
+              <KnockoutBracket rounds={[currentRound]} userTeam={USER_TEAM} />
             </div>
           )}
 
@@ -499,11 +500,11 @@ export default function WorldCup({ state, onUpdate, onExit }: Props) {
           </div>
         </div>
       </div>
-    )
+    );
   }
 
-  if (wcPhase === 'winner') {
-    const finalRound = knockoutRounds[knockoutRounds.length - 1]
+  if (wcPhase === "winner") {
+    const finalRound = knockoutRounds[knockoutRounds.length - 1];
 
     return (
       <div className="min-h-screen bg-[#0a0a12] flex flex-col items-center justify-center px-4 py-12">
@@ -530,8 +531,8 @@ export default function WorldCup({ state, onUpdate, onExit }: Props) {
           <button
             onClick={() =>
               onUpdate({
-                phase: 'playing',
-                mode: 'champions-league',
+                phase: "playing",
+                mode: "champions-league",
                 selectedNation: null,
                 wcDraftMode: null,
               })
@@ -543,7 +544,7 @@ export default function WorldCup({ state, onUpdate, onExit }: Props) {
           <button
             onClick={() =>
               onUpdate({
-                phase: 'mode-select',
+                phase: "mode-select",
                 mode: null,
                 formation: null,
                 draftSlots: [],
@@ -558,10 +559,10 @@ export default function WorldCup({ state, onUpdate, onExit }: Props) {
           </button>
         </div>
       </div>
-    )
+    );
   }
 
-  if (wcPhase === 'eliminated') {
+  if (wcPhase === "eliminated") {
     return (
       <div className="min-h-screen bg-[#0a0a12] flex flex-col items-center justify-center px-4 py-12">
         <div className="text-center mb-10">
@@ -572,17 +573,12 @@ export default function WorldCup({ state, onUpdate, onExit }: Props) {
           <h2 className="text-red-400 font-black text-4xl uppercase tracking-tight">
             {eliminatedAt}
           </h2>
-          <p className="text-white/40 text-sm mt-3">
-            So close. Try again.
-          </p>
+          <p className="text-white/40 text-sm mt-3">So close. Try again.</p>
         </div>
 
         {knockoutRounds.length > 0 && (
           <div className="w-full max-w-lg mb-8">
-            <KnockoutBracket
-              rounds={knockoutRounds}
-              userTeam={USER_TEAM}
-            />
+            <KnockoutBracket rounds={knockoutRounds} userTeam={USER_TEAM} />
           </div>
         )}
 
@@ -595,7 +591,7 @@ export default function WorldCup({ state, onUpdate, onExit }: Props) {
         <button
           onClick={() =>
             onUpdate({
-              phase: 'mode-select',
+              phase: "mode-select",
               mode: null,
               formation: null,
               draftSlots: [],
@@ -609,8 +605,8 @@ export default function WorldCup({ state, onUpdate, onExit }: Props) {
           Start New Draft
         </button>
       </div>
-    )
+    );
   }
 
-  return null
+  return null;
 }

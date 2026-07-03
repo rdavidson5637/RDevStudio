@@ -1,21 +1,30 @@
-'use client'
-import type { Formation, GameState, GameMode, WCDraftMode } from '@/types/champions-draft'
+"use client";
+import type {
+  Formation,
+  GameState,
+  GameMode,
+  WCDraftMode,
+} from "@/types/champions-draft";
 
 interface Props {
-  onSelect: (updates: Partial<GameState>) => void
-  onBack: () => void
-  mode?: GameMode | null
-  selectedNation?: string | null
-  wcDraftMode?: WCDraftMode | null
+  onSelect: (updates: Partial<GameState>) => void;
+  onBack: () => void;
+  mode?: GameMode | null;
+  selectedNation?: string | null;
+  wcDraftMode?: WCDraftMode | null;
 }
 
 const FORMATIONS: { id: Formation; label: string; description: string }[] = [
-  { id: '4-3-3', label: '4-3-3', description: 'Attacking. Wide. Classic.' },
-  { id: '4-4-2', label: '4-4-2', description: 'Balanced. Solid. Traditional.' },
-  { id: '4-2-3-1', label: '4-2-3-1', description: 'Controlled. Modern. Tactical.' },
-  { id: '3-5-2', label: '3-5-2', description: 'Wing play. Two up top.' },
-  { id: '5-3-2', label: '5-3-2', description: 'Defensive. Counter. Compact.' },
-]
+  { id: "4-3-3", label: "4-3-3", description: "Attacking. Wide. Classic." },
+  { id: "4-4-2", label: "4-4-2", description: "Balanced. Solid. Traditional." },
+  {
+    id: "4-2-3-1",
+    label: "4-2-3-1",
+    description: "Controlled. Modern. Tactical.",
+  },
+  { id: "3-5-2", label: "3-5-2", description: "Wing play. Two up top." },
+  { id: "5-3-2", label: "5-3-2", description: "Defensive. Counter. Compact." },
+];
 
 export default function FormationSelect({
   onSelect,
@@ -24,7 +33,8 @@ export default function FormationSelect({
   selectedNation,
   wcDraftMode,
 }: Props) {
-  const isNationalWC = mode === 'world-cup' && wcDraftMode === 'national' && selectedNation
+  const isNationalWC =
+    mode === "world-cup" && wcDraftMode === "national" && selectedNation;
 
   return (
     <div className="min-h-screen bg-[#0a0a12] flex flex-col items-center justify-center px-4 py-12">
@@ -42,18 +52,18 @@ export default function FormationSelect({
         <p className="text-white/40 text-sm mt-3">
           {isNationalWC
             ? `National Squad rules — only ${selectedNation} players in your spins`
-            : 'This shapes how your XI is laid out on the pitch'}
+            : "This shapes how your XI is laid out on the pitch"}
         </p>
       </div>
 
       <div className="flex flex-col gap-3 w-full max-w-md">
-        {FORMATIONS.map(f => (
+        {FORMATIONS.map((f) => (
           <button
             key={f.id}
             onClick={() =>
               onSelect({
                 formation: f.id,
-                phase: 'drafting',
+                phase: "drafting",
               })
             }
             className="flex items-center justify-between bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/30 rounded-xl px-6 py-5 text-left transition-all duration-200 cursor-pointer group"
@@ -71,5 +81,5 @@ export default function FormationSelect({
         ))}
       </div>
     </div>
-  )
+  );
 }

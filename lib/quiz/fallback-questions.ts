@@ -55,7 +55,8 @@ export const fallbackQuestions: Record<QuizCategory, Question[]> = {
       options: ["5", "6", "7", "8"],
       correctAnswer: "7",
       category: QuizCategory.GENERAL,
-      explanation: "Africa, Antarctica, Asia, Europe, North America, Oceania, and South America.",
+      explanation:
+        "Africa, Antarctica, Asia, Europe, North America, Oceania, and South America.",
     },
     {
       id: "fallback_general_7",
@@ -138,7 +139,8 @@ export const fallbackQuestions: Record<QuizCategory, Question[]> = {
       options: ["Cricket", "Rugby", "Hockey", "Basketball"],
       correctAnswer: "Rugby",
       category: QuizCategory.SPORT,
-      explanation: "A scrum restarts play after certain infringements in rugby.",
+      explanation:
+        "A scrum restarts play after certain infringements in rugby.",
     },
   ],
   [QuizCategory.MUSIC]: [
@@ -202,7 +204,12 @@ export const fallbackQuestions: Record<QuizCategory, Question[]> = {
       id: "fallback_filmtv_2",
       text: "Which film won the Academy Award for Best Picture in 1995?",
       type: QuestionType.MULTIPLE_CHOICE,
-      options: ["Pulp Fiction", "Forrest Gump", "The Shawshank Redemption", "Speed"],
+      options: [
+        "Pulp Fiction",
+        "Forrest Gump",
+        "The Shawshank Redemption",
+        "Speed",
+      ],
       correctAnswer: "Forrest Gump",
       category: QuizCategory.FILM_TV,
       explanation: "Forrest Gump won six Oscars including Best Picture.",
@@ -252,7 +259,8 @@ export const fallbackQuestions: Record<QuizCategory, Question[]> = {
       options: ["Amazon", "Nile", "Yangtze", "Mississippi"],
       correctAnswer: "Nile",
       category: QuizCategory.GEOGRAPHY,
-      explanation: "The Nile flows roughly 6,650 km through northeastern Africa.",
+      explanation:
+        "The Nile flows roughly 6,650 km through northeastern Africa.",
     },
     {
       id: "fallback_geography_3",
@@ -381,12 +389,7 @@ export const fallbackQuestions: Record<QuizCategory, Question[]> = {
       id: "fallback_science_3",
       text: "What is the speed of light in a vacuum (approx.)?",
       type: QuestionType.MULTIPLE_CHOICE,
-      options: [
-        "300,000 km/s",
-        "150,000 km/s",
-        "30,000 km/s",
-        "3,000 km/s",
-      ],
+      options: ["300,000 km/s", "150,000 km/s", "30,000 km/s", "3,000 km/s"],
       correctAnswer: "300,000 km/s",
       category: QuizCategory.SCIENCE,
       explanation: "Light travels at roughly 299,792 km/s.",
@@ -444,12 +447,7 @@ export const fallbackQuestions: Record<QuizCategory, Question[]> = {
       id: "fallback_pop_3",
       text: "Which TV show features dragons and the Iron Throne?",
       type: QuestionType.MULTIPLE_CHOICE,
-      options: [
-        "The Witcher",
-        "Game of Thrones",
-        "Vikings",
-        "The Crown",
-      ],
+      options: ["The Witcher", "Game of Thrones", "Vikings", "The Crown"],
       correctAnswer: "Game of Thrones",
       category: QuizCategory.POP_CULTURE,
       explanation: "Game of Thrones ran on HBO from 2011 to 2019.",
@@ -468,13 +466,13 @@ function shuffleArray<T>(items: T[]): T[] {
 
 export function getFallbackQuestions(
   category: QuizCategory,
-  count: number
+  count: number,
 ): Question[] {
   const pool = fallbackQuestions[category];
 
   if (count > pool.length) {
     console.warn(
-      `Requested ${count} fallback questions for ${category} but only ${pool.length} available`
+      `Requested ${count} fallback questions for ${category} but only ${pool.length} available`,
     );
   }
 

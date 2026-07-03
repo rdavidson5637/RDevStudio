@@ -134,9 +134,6 @@ export function ContactForm() {
   const [formKey, setFormKey] = useState(0);
 
   return (
-    <ContactFormFields
-      key={formKey}
-      onReset={() => setFormKey((k) => k + 1)}
-    />
+    <ContactFormFields key={formKey} onReset={() => setFormKey((k) => k + 1)} />
   );
 }

@@ -1,24 +1,24 @@
-'use client'
+"use client";
 import {
   getPositionStyle,
   getSquadAvgOvr,
   sortSquadForDisplay,
   type ShareSquadPlayer,
-} from './shareHelpers'
+} from "./shareHelpers";
 
 interface Props {
-  squad: ShareSquadPlayer[]
-  formation?: string | null
+  squad: ShareSquadPlayer[];
+  formation?: string | null;
 }
 
 export default function ShareSquadMini({ squad, formation }: Props) {
-  if (squad.length === 0) return null
+  if (squad.length === 0) return null;
 
-  const sorted = sortSquadForDisplay(squad)
-  const avgOvr = getSquadAvgOvr(sorted)
+  const sorted = sortSquadForDisplay(squad);
+  const avgOvr = getSquadAvgOvr(sorted);
   const starPlayer = sorted.reduce((best, p) =>
-    p.overall > best.overall ? p : best
-  )
+    p.overall > best.overall ? p : best,
+  );
 
   return (
     <div className="mt-4 pt-4 border-t border-white/10">
@@ -40,12 +40,12 @@ export default function ShareSquadMini({ squad, formation }: Props) {
 
       <div className="space-y-1">
         {sorted.map((player, i) => {
-          const isStar = player.name === starPlayer.name
+          const isStar = player.name === starPlayer.name;
           return (
             <div
               key={`${player.name}-${i}`}
               className={`flex items-center gap-2 min-w-0 rounded-md px-1.5 py-0.5 ${
-                isStar ? 'bg-white/[0.06]' : ''
+                isStar ? "bg-white/[0.06]" : ""
               }`}
             >
               <span
@@ -59,15 +59,15 @@ export default function ShareSquadMini({ squad, formation }: Props) {
               </span>
               <span
                 className={`text-[9px] font-black tabular-nums flex-shrink-0 ${
-                  isStar ? 'text-amber-300' : 'text-white/40'
+                  isStar ? "text-amber-300" : "text-white/40"
                 }`}
               >
                 {player.overall}
               </span>
             </div>
-          )
+          );
         })}
       </div>
     </div>
-  )
+  );
 }

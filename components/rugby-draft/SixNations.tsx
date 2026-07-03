@@ -1,257 +1,272 @@
-'use client'
-import { useState, useEffect, useCallback, useMemo } from 'react'
+"use client";
+import { useState, useEffect, useCallback, useMemo } from "react";
 import type {
   GameState,
   MatchResult,
   LeagueTableRow,
   TeamRatings,
   Squad,
-} from '@/types/rugby-draft'
-import { getDraftPool, findSquadByClub } from '@/lib/rugby-draft/data'
+} from "@/types/rugby-draft";
+import { getDraftPool, findSquadByClub } from "@/lib/rugby-draft/data";
 import {
   buildLeagueTable,
   updateTableWithResult,
   sortTable,
-} from '@/lib/rugby-draft/utils'
+} from "@/lib/rugby-draft/utils";
 import {
   simulateFullMatch,
   generateOpponentVsOpponentResult,
   getSquadRatings,
   getTopTryScorer,
-} from '@/lib/rugby-draft/matchEngine'
-import MatchAnimation, { CompletedMatchCard } from './MatchAnimation'
-import LeagueTable from './LeagueTable'
-import QuitButton from './QuitButton'
-import QuitConfirmModal from './QuitConfirmModal'
-import SpeedControls from './SpeedControls'
-import ResultsScreen from './ResultsScreen'
-import ShareCard from './ShareCard'
+} from "@/lib/rugby-draft/matchEngine";
+import MatchAnimation, { CompletedMatchCard } from "./MatchAnimation";
+import LeagueTable from "./LeagueTable";
+import QuitButton from "./QuitButton";
+import QuitConfirmModal from "./QuitConfirmModal";
+import SpeedControls from "./SpeedControls";
+import ResultsScreen from "./ResultsScreen";
+import ShareCard from "./ShareCard";
 import {
   getPlayerOfTournament,
   getSixNationsUserAwards,
   getTryScorerCandidates,
-} from './shareHelpers'
+} from "./shareHelpers";
 
 interface Props {
-  state: GameState
-  onUpdate: (updates: Partial<GameState>) => void
-  onExit: () => void
+  state: GameState;
+  onUpdate: (updates: Partial<GameState>) => void;
+  onExit: () => void;
 }
 
 const SIX_NATIONS_TEAMS = [
-  'England',
-  'Ireland',
-  'Wales',
-  'Scotland',
-  'France',
-  'Italy',
-]
+  "England",
+  "Ireland",
+  "Wales",
+  "Scotland",
+  "France",
+  "Italy",
+];
 
-const HOME_NATIONS = ['England', 'Ireland', 'Wales', 'Scotland']
+const HOME_NATIONS = ["England", "Ireland", "Wales", "Scotland"];
 
-type SixNationsPhase = 'fixtures' | 'playing' | 'results'
+type SixNationsPhase = "fixtures" | "playing" | "results";
 
 interface Fixture {
-  round: number
-  home: string
-  away: string
+  round: number;
+  home: string;
+  away: string;
 }
 
 interface SixNationsAwards {
-  grandSlam: string | null
-  tripleCrown: string | null
-  woodenSpoon: string
-  championship: string
+  grandSlam: string | null;
+  tripleCrown: string | null;
+  woodenSpoon: string;
+  championship: string;
 }
 
 function generateRoundRobinFixtures(teams: string[]): Fixture[] {
-  const n = teams.length
-  const rotating = teams.slice(1)
-  const fixed = teams[0]
-  const fixtures: Fixture[] = []
+  const n = teams.length;
+  const rotating = teams.slice(1);
+  const fixed = teams[0];
+  const fixtures: Fixture[] = [];
 
   for (let round = 0; round < n - 1; round++) {
-    const roundTeams = [fixed, ...rotating]
+    const roundTeams = [fixed, ...rotating];
     for (let i = 0; i < n / 2; i++) {
       fixtures.push({
         round: round + 1,
         home: roundTeams[i],
         away: roundTeams[n - 1 - i],
-      })
+      });
     }
-    rotating.unshift(rotating.pop()!)
+    rotating.unshift(rotating.pop()!);
   }
 
-  return fixtures
+  return fixtures;
 }
 
 function getNationSquads(): Squad[] {
-  return getDraftPool('six-nations').filter(
-    s => SIX_NATIONS_TEAMS.includes(s.club) && s.competition === 'Six Nations'
-  )
+  return getDraftPool("six-nations").filter(
+    (s) =>
+      SIX_NATIONS_TEAMS.includes(s.club) && s.competition === "Six Nations",
+  );
 }
 
 function getTeamRatings(
   team: string,
   userNation: string,
   userRatings: TeamRatings,
-  squads: Squad[]
+  squads: Squad[],
 ): TeamRatings {
-  if (team === userNation) return userRatings
-  const squad = findSquadByClub(squads, team, { competition: 'Six Nations' })
+  if (team === userNation) return userRatings;
+  const squad = findSquadByClub(squads, team, { competition: "Six Nations" });
   return squad
     ? getSquadRatings(squad)
-    : { forwards: 80, backs: 80, overall: 80 }
+    : { forwards: 80, backs: 80, overall: 80 };
 }
 
 function simulateFixture(
   fixture: Fixture,
   userNation: string,
   userRatings: TeamRatings,
-  squads: Squad[]
+  squads: Squad[],
 ): MatchResult {
-  const { home, away } = fixture
+  const { home, away } = fixture;
   if (home === userNation || away === userNation) {
-    const isHome = home === userNation
-    const opponent = isHome ? away : home
-    const oppRatings = getTeamRatings(opponent, userNation, userRatings, squads)
+    const isHome = home === userNation;
+    const opponent = isHome ? away : home;
+    const oppRatings = getTeamRatings(
+      opponent,
+      userNation,
+      userRatings,
+      squads,
+    );
     return simulateFullMatch(
       userRatings,
       oppRatings,
       userNation,
       opponent,
-      isHome
-    )
+      isHome,
+    );
   }
-  return generateOpponentVsOpponentResult(home, away, squads)
+  return generateOpponentVsOpponentResult(home, away, squads);
 }
 
 function calculateTripleCrown(results: MatchResult[]): string | null {
   for (const nation of HOME_NATIONS) {
-    const others = HOME_NATIONS.filter(n => n !== nation)
-    const beatAll = others.every(opponent => {
+    const others = HOME_NATIONS.filter((n) => n !== nation);
+    const beatAll = others.every((opponent) => {
       const match = results.find(
-        r =>
+        (r) =>
           (r.homeTeam === nation && r.awayTeam === opponent) ||
-          (r.homeTeam === opponent && r.awayTeam === nation)
-      )
-      if (!match) return false
-      if (match.homeTeam === nation) return match.homeScore > match.awayScore
-      return match.awayScore > match.homeScore
-    })
-    if (beatAll) return nation
+          (r.homeTeam === opponent && r.awayTeam === nation),
+      );
+      if (!match) return false;
+      if (match.homeTeam === nation) return match.homeScore > match.awayScore;
+      return match.awayScore > match.homeScore;
+    });
+    if (beatAll) return nation;
   }
-  return null
+  return null;
 }
 
 function calculateAwards(
   table: LeagueTableRow[],
-  results: MatchResult[]
+  results: MatchResult[],
 ): SixNationsAwards {
-  const sorted = sortTable(table)
+  const sorted = sortTable(table);
   return {
     championship: sorted[0].club,
     woodenSpoon: sorted[sorted.length - 1].club,
-    grandSlam: sorted.find(r => r.played === 5 && r.won === 5)?.club ?? null,
+    grandSlam: sorted.find((r) => r.played === 5 && r.won === 5)?.club ?? null,
     tripleCrown: calculateTripleCrown(results),
-  }
+  };
 }
 
 function ordinal(n: number): string {
   const suffix =
     n % 10 === 1 && n % 100 !== 11
-      ? 'st'
+      ? "st"
       : n % 10 === 2 && n % 100 !== 12
-        ? 'nd'
+        ? "nd"
         : n % 10 === 3 && n % 100 !== 13
-          ? 'rd'
-          : 'th'
-  return `${n}${suffix}`
+          ? "rd"
+          : "th";
+  return `${n}${suffix}`;
 }
 
 export default function SixNations({ state, onUpdate, onExit }: Props) {
-  const [phase, setPhase] = useState<SixNationsPhase>('fixtures')
-  const [fixtures, setFixtures] = useState<Fixture[]>([])
-  const [results, setResults] = useState<MatchResult[]>([])
-  const [table, setTable] = useState<LeagueTableRow[]>([])
-  const [currentMatchIndex, setCurrentMatchIndex] = useState(0)
-  const [pendingResult, setPendingResult] = useState<MatchResult | null>(null)
-  const [awards, setAwards] = useState<SixNationsAwards | null>(null)
-  const [showShareCard, setShowShareCard] = useState(false)
-  const [showQuitConfirm, setShowQuitConfirm] = useState(false)
+  const [phase, setPhase] = useState<SixNationsPhase>("fixtures");
+  const [fixtures, setFixtures] = useState<Fixture[]>([]);
+  const [results, setResults] = useState<MatchResult[]>([]);
+  const [table, setTable] = useState<LeagueTableRow[]>([]);
+  const [currentMatchIndex, setCurrentMatchIndex] = useState(0);
+  const [pendingResult, setPendingResult] = useState<MatchResult | null>(null);
+  const [awards, setAwards] = useState<SixNationsAwards | null>(null);
+  const [showShareCard, setShowShareCard] = useState(false);
+  const [showQuitConfirm, setShowQuitConfirm] = useState(false);
 
-  const userNation = state.selectedNation ?? 'England'
-  const speedMode = state.speedMode
-  const userRatings = state.teamRatings!
-  const nationSquads = useMemo(() => getNationSquads(), [])
-
-  useEffect(() => {
-    const generated = generateRoundRobinFixtures(SIX_NATIONS_TEAMS)
-    setFixtures(generated)
-    setTable(sortTable(buildLeagueTable(SIX_NATIONS_TEAMS)))
-  }, [])
+  const userNation = state.selectedNation ?? "England";
+  const speedMode = state.speedMode;
+  const userRatings = state.teamRatings!;
+  const nationSquads = useMemo(() => getNationSquads(), []);
 
   useEffect(() => {
-    if (phase !== 'playing' || currentMatchIndex >= fixtures.length) return
+    const generated = generateRoundRobinFixtures(SIX_NATIONS_TEAMS);
+    setFixtures(generated);
+    setTable(sortTable(buildLeagueTable(SIX_NATIONS_TEAMS)));
+  }, []);
+
+  useEffect(() => {
+    if (phase !== "playing" || currentMatchIndex >= fixtures.length) return;
     const result = simulateFixture(
       fixtures[currentMatchIndex],
       userNation,
       userRatings,
-      nationSquads
-    )
-    setPendingResult(result)
-  }, [phase, currentMatchIndex, fixtures, userNation, userRatings, nationSquads])
+      nationSquads,
+    );
+    setPendingResult(result);
+  }, [
+    phase,
+    currentMatchIndex,
+    fixtures,
+    userNation,
+    userRatings,
+    nationSquads,
+  ]);
 
   const handleBeginTournament = useCallback(() => {
-    setResults([])
-    setCurrentMatchIndex(0)
-    setPendingResult(null)
-    setAwards(null)
-    setTable(sortTable(buildLeagueTable(SIX_NATIONS_TEAMS)))
-    setPhase('playing')
-  }, [])
+    setResults([]);
+    setCurrentMatchIndex(0);
+    setPendingResult(null);
+    setAwards(null);
+    setTable(sortTable(buildLeagueTable(SIX_NATIONS_TEAMS)));
+    setPhase("playing");
+  }, []);
 
   const handleMatchComplete = useCallback(() => {
-    if (!pendingResult) return
+    if (!pendingResult) return;
 
-    setTable(prevTable => {
-      const newTable = sortTable(updateTableWithResult(prevTable, pendingResult))
-      setResults(prevResults => {
-        const newResults = [...prevResults, pendingResult]
-        const nextIndex = currentMatchIndex + 1
+    setTable((prevTable) => {
+      const newTable = sortTable(
+        updateTableWithResult(prevTable, pendingResult),
+      );
+      setResults((prevResults) => {
+        const newResults = [...prevResults, pendingResult];
+        const nextIndex = currentMatchIndex + 1;
         if (nextIndex >= fixtures.length) {
-          setAwards(calculateAwards(newTable, newResults))
-          setPhase('results')
-          onUpdate({ leagueTable: newTable, fixtures: newResults })
+          setAwards(calculateAwards(newTable, newResults));
+          setPhase("results");
+          onUpdate({ leagueTable: newTable, fixtures: newResults });
         } else {
-          setCurrentMatchIndex(nextIndex)
+          setCurrentMatchIndex(nextIndex);
         }
-        return newResults
-      })
-      return newTable
-    })
-    setPendingResult(null)
-  }, [pendingResult, currentMatchIndex, fixtures.length, onUpdate])
+        return newResults;
+      });
+      return newTable;
+    });
+    setPendingResult(null);
+  }, [pendingResult, currentMatchIndex, fixtures.length, onUpdate]);
 
   const fixturesByRound = useMemo(() => {
-    const grouped: Record<number, Fixture[]> = {}
+    const grouped: Record<number, Fixture[]> = {};
     for (const fixture of fixtures) {
-      if (!grouped[fixture.round]) grouped[fixture.round] = []
-      grouped[fixture.round].push(fixture)
+      if (!grouped[fixture.round]) grouped[fixture.round] = [];
+      grouped[fixture.round].push(fixture);
     }
-    return grouped
-  }, [fixtures])
+    return grouped;
+  }, [fixtures]);
 
-  const sortedTable = sortTable(table)
-  const userRow = sortedTable.find(r => r.club === userNation)
-  const userPosition = sortedTable.findIndex(r => r.club === userNation) + 1
+  const sortedTable = sortTable(table);
+  const userRow = sortedTable.find((r) => r.club === userNation);
+  const userPosition = sortedTable.findIndex((r) => r.club === userNation) + 1;
 
   const tryScorerCandidates = useMemo(
     () => getTryScorerCandidates(state.draftSlots),
-    [state.draftSlots]
-  )
+    [state.draftSlots],
+  );
 
-  if (phase === 'fixtures') {
+  if (phase === "fixtures") {
     return (
       <div className="relative min-h-screen bg-[#0a0a12] px-4 py-12">
         {showQuitConfirm && (
@@ -292,21 +307,21 @@ export default function SixNations({ state, onUpdate, onExit }: Props) {
                     {roundFixtures.map((fixture, i) => {
                       const involvesUser =
                         fixture.home === userNation ||
-                        fixture.away === userNation
+                        fixture.away === userNation;
                       return (
                         <div
                           key={`${fixture.home}-${fixture.away}-${i}`}
                           className={`flex items-center justify-between rounded-xl px-4 py-3 border ${
                             involvesUser
-                              ? 'bg-emerald-400/10 border-emerald-400/30'
-                              : 'bg-white/5 border-white/10'
+                              ? "bg-emerald-400/10 border-emerald-400/30"
+                              : "bg-white/5 border-white/10"
                           }`}
                         >
                           <span
                             className={`text-sm font-semibold ${
                               fixture.home === userNation
-                                ? 'text-emerald-400'
-                                : 'text-white/80'
+                                ? "text-emerald-400"
+                                : "text-white/80"
                             }`}
                           >
                             {fixture.home}
@@ -317,14 +332,14 @@ export default function SixNations({ state, onUpdate, onExit }: Props) {
                           <span
                             className={`text-sm font-semibold ${
                               fixture.away === userNation
-                                ? 'text-emerald-400'
-                                : 'text-white/80'
+                                ? "text-emerald-400"
+                                : "text-white/80"
                             }`}
                           >
                             {fixture.away}
                           </span>
                         </div>
-                      )
+                      );
                     })}
                   </div>
                 </div>
@@ -337,7 +352,7 @@ export default function SixNations({ state, onUpdate, onExit }: Props) {
             </p>
             <SpeedControls
               speedMode={speedMode}
-              onChange={s => onUpdate({ speedMode: s })}
+              onChange={(s) => onUpdate({ speedMode: s })}
               className="justify-center"
             />
           </div>
@@ -353,19 +368,19 @@ export default function SixNations({ state, onUpdate, onExit }: Props) {
           </div>
         </div>
       </div>
-    )
+    );
   }
 
-  if (phase === 'playing' && !pendingResult) {
+  if (phase === "playing" && !pendingResult) {
     return (
       <div className="min-h-screen bg-[#0a0a12] flex items-center justify-center">
         <span className="w-6 h-6 border-2 border-white/20 border-t-white rounded-full animate-spin" />
       </div>
-    )
+    );
   }
 
-  if (phase === 'playing' && pendingResult) {
-    const completedMatches = results.slice().reverse()
+  if (phase === "playing" && pendingResult) {
+    const completedMatches = results.slice().reverse();
 
     return (
       <div className="relative min-h-screen bg-[#0a0a12] flex flex-col">
@@ -385,7 +400,7 @@ export default function SixNations({ state, onUpdate, onExit }: Props) {
         <div className="absolute top-4 right-4 z-20">
           <SpeedControls
             speedMode={speedMode}
-            onChange={s => onUpdate({ speedMode: s })}
+            onChange={(s) => onUpdate({ speedMode: s })}
           />
         </div>
         <div className="sticky top-0 z-10 bg-[#0a0a12]/95 backdrop-blur border-b border-white/10 px-4 py-4 pt-14">
@@ -437,17 +452,17 @@ export default function SixNations({ state, onUpdate, onExit }: Props) {
           </div>
         </div>
       </div>
-    )
+    );
   }
 
-  if (phase === 'results' && awards) {
-    const totalPoints = (userRow?.points ?? 0) + (userRow?.bonusPoints ?? 0)
-    const topScorer = getTopTryScorer(userNation, tryScorerCandidates, results)
-    const playerOfTournament = getPlayerOfTournament(state.draftSlots)
+  if (phase === "results" && awards) {
+    const totalPoints = (userRow?.points ?? 0) + (userRow?.bonusPoints ?? 0);
+    const topScorer = getTopTryScorer(userNation, tryScorerCandidates, results);
+    const playerOfTournament = getPlayerOfTournament(state.draftSlots);
     const userResult =
       awards.championship === userNation
-        ? 'You are the Champions!'
-        : `Finished ${ordinal(userPosition)} with ${totalPoints} points`
+        ? "You are the Champions!"
+        : `Finished ${ordinal(userPosition)} with ${totalPoints} points`;
 
     return (
       <div className="min-h-screen bg-[#0a0a12] px-4 py-12">
@@ -473,7 +488,11 @@ export default function SixNations({ state, onUpdate, onExit }: Props) {
           />
 
           <div className="bg-white/5 border border-white/10 rounded-xl p-4 mb-6 mt-6">
-            <LeagueTable table={sortedTable} userTeam={userNation} title="Final Standings" />
+            <LeagueTable
+              table={sortedTable}
+              userTeam={userNation}
+              title="Final Standings"
+            />
           </div>
 
           <div className="mb-6">
@@ -521,11 +540,10 @@ export default function SixNations({ state, onUpdate, onExit }: Props) {
               )}
             </div>
           </div>
-
         </div>
       </div>
-    )
+    );
   }
 
-  return null
+  return null;
 }

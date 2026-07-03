@@ -1,10 +1,10 @@
-'use client'
-import { AVAILABLE_LEAGUES } from '@/lib/champions-draft/data'
-import type { GameState } from '@/types/champions-draft'
+"use client";
+import { AVAILABLE_LEAGUES } from "@/lib/champions-draft/data";
+import type { GameState } from "@/types/champions-draft";
 
 interface Props {
-  onSelect: (updates: Partial<GameState>) => void
-  onBack: () => void
+  onSelect: (updates: Partial<GameState>) => void;
+  onBack: () => void;
 }
 
 export default function LeagueSelect({ onSelect, onBack }: Props) {
@@ -27,13 +27,13 @@ export default function LeagueSelect({ onSelect, onBack }: Props) {
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 w-full max-w-2xl">
-        {AVAILABLE_LEAGUES.map(league => (
+        {AVAILABLE_LEAGUES.map((league) => (
           <button
             key={league.id}
             onClick={() =>
               onSelect({
-                selectedLeague: league.id as GameState['selectedLeague'],
-                phase: 'formation-select',
+                selectedLeague: league.id as GameState["selectedLeague"],
+                phase: "formation-select",
               })
             }
             className="flex items-center gap-4 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/30 rounded-xl p-5 text-left transition-all duration-200 cursor-pointer group"
@@ -46,5 +46,5 @@ export default function LeagueSelect({ onSelect, onBack }: Props) {
         ))}
       </div>
     </div>
-  )
+  );
 }

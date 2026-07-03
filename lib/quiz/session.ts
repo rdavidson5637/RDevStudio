@@ -31,7 +31,7 @@ export function saveLobbyCache(gameState: GameState): void {
 
   sessionStorage.setItem(
     LOBBY_CACHE_KEY,
-    JSON.stringify(toLobbyGameState(gameState))
+    JSON.stringify(toLobbyGameState(gameState)),
   );
 }
 
@@ -77,7 +77,7 @@ export function loadQuizSession(): QuizSession | null {
 
     if (legacy.gameState?.id) {
       const hostPlayer = legacy.gameState.players.find(
-        (player) => player.id === legacy.playerId
+        (player) => player.id === legacy.playerId,
       );
 
       return {

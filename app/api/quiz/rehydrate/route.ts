@@ -15,7 +15,7 @@ export async function POST(request: NextRequest) {
     if (!gameState?.id) {
       return NextResponse.json(
         { error: "gameState with id is required" },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
@@ -26,7 +26,7 @@ export async function POST(request: NextRequest) {
     if (gameState.status !== "lobby") {
       return NextResponse.json(
         { error: "Can only rehydrate games still in the lobby" },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
@@ -39,7 +39,7 @@ export async function POST(request: NextRequest) {
     if (!hasRounds && !hasCategories) {
       return NextResponse.json(
         { error: "Invalid lobby state — missing round configuration" },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
@@ -65,6 +65,9 @@ export async function POST(request: NextRequest) {
 
     return NextResponse.json({ ok: true, restored: true });
   } catch {
-    return NextResponse.json({ error: "Invalid request body" }, { status: 400 });
+    return NextResponse.json(
+      { error: "Invalid request body" },
+      { status: 400 },
+    );
   }
 }

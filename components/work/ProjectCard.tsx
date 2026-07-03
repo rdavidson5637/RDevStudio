@@ -52,26 +52,25 @@ export function ProjectCard({
     </svg>
   );
 
-  const cta =
-    project.href.startsWith("http") ? (
-      <a
-        href={project.href}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="mt-5 inline-flex items-center gap-2 text-sm font-medium text-accent transition-colors hover:text-primary"
-      >
-        {project.buttonLabel}
-        {LinkIcon}
-      </a>
-    ) : (
-      <Link
-        href={project.href}
-        className="mt-5 inline-flex items-center gap-2 text-sm font-medium text-accent transition-colors hover:text-primary"
-      >
-        {project.buttonLabel}
-        {LinkIcon}
-      </Link>
-    );
+  const cta = project.href.startsWith("http") ? (
+    <a
+      href={project.href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="mt-5 inline-flex items-center gap-2 text-sm font-medium text-accent transition-colors hover:text-primary"
+    >
+      {project.buttonLabel}
+      {LinkIcon}
+    </a>
+  ) : (
+    <Link
+      href={project.href}
+      className="mt-5 inline-flex items-center gap-2 text-sm font-medium text-accent transition-colors hover:text-primary"
+    >
+      {project.buttonLabel}
+      {LinkIcon}
+    </Link>
+  );
 
   return (
     <article
@@ -85,9 +84,7 @@ export function ProjectCard({
     >
       <div
         className={
-          alternating
-            ? "relative md:w-[60%] md:shrink-0"
-            : "relative w-full"
+          alternating ? "relative md:w-[60%] md:shrink-0" : "relative w-full"
         }
       >
         <ProjectPreview
@@ -126,7 +123,9 @@ export function ProjectCard({
           {project.description}
         </p>
 
-        <p className="mt-2 text-sm font-medium text-accent">{project.outcome}</p>
+        <p className="mt-2 text-sm font-medium text-accent">
+          {project.outcome}
+        </p>
 
         {!compact && (
           <ul className="mt-4 flex flex-wrap gap-2" aria-label="Key features">

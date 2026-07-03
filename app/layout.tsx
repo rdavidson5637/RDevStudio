@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Analytics } from "@vercel/analytics/next";
 import { Anton, Archivo, Space_Mono } from "next/font/google";
 import { rootMetadata } from "@/lib/metadata";
+import { StructuredData } from "@/components/StructuredData";
 import "./globals.css";
 
 const anton = Anton({
@@ -43,6 +44,7 @@ export default function RootLayout({
       className={`${anton.variable} ${archivo.variable} ${spaceMono.variable}`}
     >
       <body className="font-sans antialiased">
+        <StructuredData />
         {children}
         <Analytics />
       </body>

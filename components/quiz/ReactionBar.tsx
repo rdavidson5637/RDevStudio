@@ -52,7 +52,7 @@ export function ReactionBar({ gameId, playerId }: ReactionBarProps) {
         // Reactions are best-effort — no UI error needed
       }
     },
-    [cooldown, gameId, playerId]
+    [cooldown, gameId, playerId],
   );
 
   return (

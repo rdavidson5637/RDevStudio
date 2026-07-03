@@ -3,7 +3,8 @@ import type { GameState } from "./types";
 export function resumeGameTimer(game: GameState): number {
   if (game.timerPausedAt) {
     const pauseDuration = Date.now() - game.timerPausedAt;
-    game.questionStartedAt = (game.questionStartedAt ?? Date.now()) + pauseDuration;
+    game.questionStartedAt =
+      (game.questionStartedAt ?? Date.now()) + pauseDuration;
     game.timerPausedAt = undefined;
   }
 

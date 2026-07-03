@@ -4,7 +4,12 @@ import {
   type RoundPromptOptions,
 } from "./prompts/round-prompts";
 import { filterUnusedQuestions, markQuestionsAsUsed } from "./question-history";
-import { QuestionType, RoundFormat, QuizCategory, type Question } from "./types";
+import {
+  QuestionType,
+  RoundFormat,
+  QuizCategory,
+  type Question,
+} from "./types";
 import {
   isValidWikimediaImageUrl,
   normalizeWikimediaImageUrl,
@@ -37,7 +42,7 @@ function stripMarkdownFences(text: string): string {
 
 function parseQuestionType(
   type: string,
-  format: RoundFormat
+  format: RoundFormat,
 ): QuestionType | null {
   const normalized = type.toLowerCase().replace(/-/g, "_");
 
@@ -85,9 +90,14 @@ function resolveImageAlt(raw: RawAIQuestion): string | undefined {
 function validateQuestion(
   raw: RawAIQuestion,
   expectedCategory: QuizCategory,
-  format: RoundFormat
+  format: RoundFormat,
 ): Question | null {
-  if (!raw.id?.trim() || !raw.text?.trim() || !raw.type || !raw.correctAnswer?.trim()) {
+  if (
+    !raw.id?.trim() ||
+    !raw.text?.trim() ||
+    !raw.type ||
+    !raw.correctAnswer?.trim()
+  ) {
     return null;
   }
 
@@ -97,7 +107,9 @@ function validateQuestion(
   }
 
   const category =
-    raw.category && isValidCategory(raw.category) ? raw.category : expectedCategory;
+    raw.category && isValidCategory(raw.category)
+      ? raw.category
+      : expectedCategory;
 
   const imageUrl = resolveImageUrl(raw);
   const imageAlt = resolveImageAlt(raw);
@@ -113,7 +125,11 @@ function validateQuestion(
       ? raw.audioUrl.trim()
       : undefined;
 
-  if (type === QuestionType.MULTIPLE_CHOICE || type === QuestionType.PICTURE || type === QuestionType.MUSIC) {
+  if (
+    type === QuestionType.MULTIPLE_CHOICE ||
+    type === QuestionType.PICTURE ||
+    type === QuestionType.MUSIC
+  ) {
     if (!Array.isArray(raw.options) || raw.options.length !== 4) {
       if (type === QuestionType.PICTURE || type === QuestionType.MUSIC) {
         if (raw.options !== null && raw.options !== undefined) {
@@ -152,7 +168,10 @@ function validateQuestion(
   return {
     id: raw.id.trim(),
     text: raw.text.trim(),
-    type: type === QuestionType.PICTURE || type === QuestionType.MUSIC ? type : QuestionType.TEXT,
+    type:
+      type === QuestionType.PICTURE || type === QuestionType.MUSIC
+        ? type
+        : QuestionType.TEXT,
     options: null,
     correctAnswer: raw.correctAnswer.trim(),
     category,
@@ -169,7 +188,7 @@ function filterPictureQuestions(questions: Question[]): Question[] {
   for (const question of questions) {
     if (!question.imageUrl || !isValidWikimediaImageUrl(question.imageUrl)) {
       console.warn(
-        `Filtered picture question "${question.id}" — invalid imageUrl: ${question.imageUrl ?? "missing"}`
+        `Filtered picture question "${question.id}" — invalid imageUrl: ${question.imageUrl ?? "missing"}`,
       );
       continue;
     }
@@ -181,7 +200,7 @@ function filterPictureQuestions(questions: Question[]): Question[] {
 }
 
 export async function generateQuestionsFromAI(
-  options: RoundPromptOptions
+  options: RoundPromptOptions,
 ): Promise<Question[]> {
   const apiKey = process.env.ANTHROPIC_API_KEY;
 
@@ -242,7 +261,7 @@ export async function generateQuestionsFromAI(
 
   if (unique.length < options.count) {
     console.warn(
-      `AI returned ${unique.length} unique questions for ${options.roundName}, requested ${options.count}`
+      `AI returned ${unique.length} unique questions for ${options.roundName}, requested ${options.count}`,
     );
   }
 

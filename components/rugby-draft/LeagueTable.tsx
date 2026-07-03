@@ -1,14 +1,18 @@
-'use client'
-import type { LeagueTableRow } from '@/types/rugby-draft'
-import { getTotalTablePoints } from '@/lib/rugby-draft/utils'
+"use client";
+import type { LeagueTableRow } from "@/types/rugby-draft";
+import { getTotalTablePoints } from "@/lib/rugby-draft/utils";
 
 interface Props {
-  table: LeagueTableRow[]
-  userTeam: string
-  title?: string
+  table: LeagueTableRow[];
+  userTeam: string;
+  title?: string;
 }
 
-export default function LeagueTable({ table, userTeam, title = 'League Table' }: Props) {
+export default function LeagueTable({
+  table,
+  userTeam,
+  title = "League Table",
+}: Props) {
   return (
     <div className="w-full">
       {title && (
@@ -35,19 +39,23 @@ export default function LeagueTable({ table, userTeam, title = 'League Table' }:
           </thead>
           <tbody>
             {table.map((row, index) => {
-              const isUser = row.club === userTeam
+              const isUser = row.club === userTeam;
               return (
                 <tr
                   key={row.club}
                   className={`border-b border-white/5 transition-colors ${
                     isUser
-                      ? 'bg-emerald-400/10 text-emerald-400'
-                      : 'text-white/70 hover:bg-white/5'
+                      ? "bg-emerald-400/10 text-emerald-400"
+                      : "text-white/70 hover:bg-white/5"
                   }`}
                 >
-                  <td className="py-2.5 pr-2 text-white/30 text-xs">{index + 1}</td>
+                  <td className="py-2.5 pr-2 text-white/30 text-xs">
+                    {index + 1}
+                  </td>
                   <td className="py-2.5 pr-4">
-                    <span className={`font-semibold ${isUser ? 'text-emerald-400' : 'text-white'}`}>
+                    <span
+                      className={`font-semibold ${isUser ? "text-emerald-400" : "text-white"}`}
+                    >
                       {row.club}
                       {isUser && (
                         <span className="ml-2 text-[10px] bg-emerald-400/20 text-emerald-400 px-1.5 py-0.5 rounded-full uppercase tracking-wide">
@@ -56,25 +64,40 @@ export default function LeagueTable({ table, userTeam, title = 'League Table' }:
                       )}
                     </span>
                   </td>
-                  <td className="py-2.5 px-2 text-center tabular-nums">{row.played}</td>
-                  <td className="py-2.5 px-2 text-center tabular-nums">{row.won}</td>
-                  <td className="py-2.5 px-2 text-center tabular-nums">{row.drawn}</td>
-                  <td className="py-2.5 px-2 text-center tabular-nums">{row.lost}</td>
-                  <td className="py-2.5 px-2 text-center tabular-nums">{row.bonusPoints}</td>
-                  <td className="py-2.5 px-2 text-center tabular-nums">{row.pointsFor}</td>
-                  <td className="py-2.5 px-2 text-center tabular-nums">{row.pointsAgainst}</td>
                   <td className="py-2.5 px-2 text-center tabular-nums">
-                    {row.pointsDifference > 0 ? '+' : ''}{row.pointsDifference}
+                    {row.played}
+                  </td>
+                  <td className="py-2.5 px-2 text-center tabular-nums">
+                    {row.won}
+                  </td>
+                  <td className="py-2.5 px-2 text-center tabular-nums">
+                    {row.drawn}
+                  </td>
+                  <td className="py-2.5 px-2 text-center tabular-nums">
+                    {row.lost}
+                  </td>
+                  <td className="py-2.5 px-2 text-center tabular-nums">
+                    {row.bonusPoints}
+                  </td>
+                  <td className="py-2.5 px-2 text-center tabular-nums">
+                    {row.pointsFor}
+                  </td>
+                  <td className="py-2.5 px-2 text-center tabular-nums">
+                    {row.pointsAgainst}
+                  </td>
+                  <td className="py-2.5 px-2 text-center tabular-nums">
+                    {row.pointsDifference > 0 ? "+" : ""}
+                    {row.pointsDifference}
                   </td>
                   <td className="py-2.5 px-2 text-center tabular-nums font-black text-white">
                     {getTotalTablePoints(row)}
                   </td>
                 </tr>
-              )
+              );
             })}
           </tbody>
         </table>
       </div>
     </div>
-  )
+  );
 }

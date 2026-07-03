@@ -14,7 +14,10 @@ const STATS = [
 
 export function StatsRow() {
   return (
-    <section className="border-y border-border bg-raised/50" aria-label="Portfolio highlights">
+    <section
+      className="border-y border-border bg-raised/50"
+      aria-label="Portfolio highlights"
+    >
       <div className="container-wide px-4 sm:px-6 lg:px-8">
         <dl className="grid grid-cols-2 divide-x divide-y divide-border lg:grid-cols-4 lg:divide-y-0">
           {STATS.map((stat) => {

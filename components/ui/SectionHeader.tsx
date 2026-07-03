@@ -4,7 +4,11 @@ type SectionHeaderProps = {
   className?: string;
 };
 
-export function SectionHeader({ label, title, className = "" }: SectionHeaderProps) {
+export function SectionHeader({
+  label,
+  title,
+  className = "",
+}: SectionHeaderProps) {
   return (
     <div className={className}>
       {label && <p className="section-label">{label}</p>}

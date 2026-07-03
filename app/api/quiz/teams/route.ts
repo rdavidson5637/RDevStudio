@@ -2,10 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 
 import { getGame, setGame } from "@/lib/quiz/game-store";
 import { triggerGameEvent } from "@/lib/quiz/pusher";
-import {
-  isValidTeamColour,
-  preserveTeamScores,
-} from "@/lib/quiz/teams";
+import { isValidTeamColour, preserveTeamScores } from "@/lib/quiz/teams";
 import type { Team } from "@/lib/quiz/types";
 
 interface TeamsRequestBody {
@@ -22,14 +19,14 @@ export async function POST(request: NextRequest) {
     if (!gameId?.trim() || !hostId?.trim()) {
       return NextResponse.json(
         { error: "gameId and hostId are required" },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
     if (!Array.isArray(teams) || teams.length < 2 || teams.length > 4) {
       return NextResponse.json(
         { error: "teams must be an array of 2 to 4 teams" },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
@@ -42,21 +39,21 @@ export async function POST(request: NextRequest) {
     if (game.hostId !== hostId) {
       return NextResponse.json(
         { error: "Only the host can update teams" },
-        { status: 403 }
+        { status: 403 },
       );
     }
 
     if (!game.teamMode) {
       return NextResponse.json(
         { error: "This game is not in team mode" },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
     if (game.status !== "lobby") {
       return NextResponse.json(
         { error: "Teams can only be updated in the lobby" },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
@@ -115,7 +112,7 @@ export async function POST(request: NextRequest) {
         error:
           error instanceof Error ? error.message : "Failed to update teams",
       },
-      { status: 400 }
+      { status: 400 },
     );
   }
 }

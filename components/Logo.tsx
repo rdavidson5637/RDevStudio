@@ -44,7 +44,10 @@ export default function Logo({ size = "md", dark = false }: LogoProps) {
       >
         [
       </span>
-      <span className="font-bold" style={{ color: wordmarkColor, fontWeight: 700 }}>
+      <span
+        className="font-bold"
+        style={{ color: wordmarkColor, fontWeight: 700 }}
+      >
         RDev
       </span>
       <span style={{ color: wordmarkColor, fontWeight: 300 }}> Studio</span>

@@ -30,11 +30,11 @@ export function TeamAssignment({
 
   const unassignedIds = useMemo(
     () => getUnassignedPlayerIds(players, teams),
-    [players, teams]
+    [players, teams],
   );
 
   const unassignedPlayers = players.filter((player) =>
-    unassignedIds.includes(player.id)
+    unassignedIds.includes(player.id),
   );
 
   async function persistTeams(nextTeams: Team[]) {
@@ -102,14 +102,14 @@ export function TeamAssignment({
 
   function updateTeamName(teamId: string, name: string) {
     const nextTeams = teams.map((team) =>
-      team.id === teamId ? { ...team, name } : team
+      team.id === teamId ? { ...team, name } : team,
     );
     onTeamsChange(nextTeams);
   }
 
   function updateTeamColour(teamId: string, colour: string) {
     const nextTeams = teams.map((team) =>
-      team.id === teamId ? { ...team, colour } : team
+      team.id === teamId ? { ...team, colour } : team,
     );
     void persistTeams(nextTeams);
   }
@@ -293,7 +293,9 @@ export function TeamAssignment({
                         className="flex items-center gap-2 rounded-lg bg-quiz-surface px-2 py-1"
                       >
                         <PlayerAvatar player={player} size="sm" />
-                        <span className="text-sm text-white">{player.name}</span>
+                        <span className="text-sm text-white">
+                          {player.name}
+                        </span>
                       </button>
                     ))}
                   </div>

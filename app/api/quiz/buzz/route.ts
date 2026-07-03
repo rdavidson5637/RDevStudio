@@ -21,7 +21,7 @@ export async function POST(request: NextRequest) {
     if (!gameId?.trim() || !playerId?.trim()) {
       return NextResponse.json(
         { error: "gameId and playerId are required" },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
@@ -34,7 +34,7 @@ export async function POST(request: NextRequest) {
     if (game.status !== "question") {
       return NextResponse.json(
         { error: "Game is not accepting buzzes" },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
@@ -43,33 +43,33 @@ export async function POST(request: NextRequest) {
     if (round?.format !== RoundFormat.BUZZER) {
       return NextResponse.json(
         { error: "This is not a buzzer round" },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
     const player = game.players.find((entry) => entry.id === playerId);
 
     if (!player) {
-      return NextResponse.json({ error: "Player not in game" }, { status: 403 });
+      return NextResponse.json(
+        { error: "Player not in game" },
+        { status: 403 },
+      );
     }
 
     if (game.buzzLockedOutPlayerIds.includes(playerId)) {
       return NextResponse.json(
         { error: "You cannot buzz in again on this question" },
-        { status: 403 }
+        { status: 403 },
       );
     }
 
     if (game.teamMode && game.teams) {
       const team = findTeamForPlayer(game.teams, playerId);
 
-      if (
-        team &&
-        (game.buzzLockedOutTeamIds ?? []).includes(team.id)
-      ) {
+      if (team && (game.buzzLockedOutTeamIds ?? []).includes(team.id)) {
         return NextResponse.json(
           { error: "Your team is locked out on this question" },
-          { status: 403 }
+          { status: 403 },
         );
       }
     }
@@ -77,7 +77,7 @@ export async function POST(request: NextRequest) {
     if (game.activeBuzz) {
       return NextResponse.json(
         { ok: false, alreadyBuzzed: true },
-        { status: 409 }
+        { status: 409 },
       );
     }
 
@@ -110,7 +110,7 @@ export async function POST(request: NextRequest) {
     console.error("buzz failed:", error);
     return NextResponse.json(
       { error: error instanceof Error ? error.message : "Failed to buzz in" },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }

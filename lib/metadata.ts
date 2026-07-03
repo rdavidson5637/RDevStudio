@@ -13,9 +13,8 @@ export function createPageMetadata({
   path,
 }: PageMeta): Metadata {
   const isHome = path === "/";
-  const pageTitle = isHome ? SITE_TITLE : `${title} — ${SITE_TITLE}`;
+  const pageTitle = isHome ? SITE_TITLE : `${title} - ${SITE_TITLE}`;
   const url = `${SITE_URL}${path === "/" ? "" : path}`;
-  const ogImage = `${SITE_URL}/images/og/og-image-slot.svg`;
 
   return {
     title: isHome ? { absolute: SITE_TITLE } : pageTitle,
@@ -30,20 +29,13 @@ export function createPageMetadata({
       siteName: SITE_NAME,
       locale: "en_GB",
       type: "website",
-      images: [
-        {
-          url: ogImage,
-          width: 1200,
-          height: 630,
-          alt: "RDev Studio — Ryan Davidson, designer and developer in Belfast",
-        },
-      ],
+      // OG image is provided site-wide by app/opengraph-image.tsx
     },
     twitter: {
       card: "summary_large_image",
       title: pageTitle,
       description,
-      images: [ogImage],
+      // Twitter image falls back to app/opengraph-image.tsx
     },
   };
 }
@@ -51,7 +43,7 @@ export function createPageMetadata({
 export const rootMetadata: Metadata = {
   title: {
     default: SITE_TITLE,
-    template: `%s — ${SITE_TITLE}`,
+    template: `%s - ${SITE_TITLE}`,
   },
   description: SITE_DESCRIPTION,
   metadataBase: new URL(SITE_URL),
@@ -65,20 +57,13 @@ export const rootMetadata: Metadata = {
     siteName: SITE_NAME,
     locale: "en_GB",
     type: "website",
-    images: [
-      {
-        url: `${SITE_URL}/images/og/og-image-slot.svg`,
-        width: 1200,
-        height: 630,
-        alt: "RDev Studio — Ryan Davidson, designer and developer in Belfast",
-      },
-    ],
+    // OG image is provided site-wide by app/opengraph-image.tsx
   },
   twitter: {
     card: "summary_large_image",
     title: SITE_TITLE,
     description: SITE_DESCRIPTION,
-    images: [`${SITE_URL}/images/og/og-image-slot.svg`],
+    // Twitter image falls back to app/opengraph-image.tsx
   },
   icons: {
     icon: "/favicon.svg",

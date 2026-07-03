@@ -19,13 +19,16 @@ export async function POST(request: NextRequest) {
     const { gameId, playerName, colour, avatar } = body;
 
     if (!gameId?.trim()) {
-      return NextResponse.json({ error: "gameId is required" }, { status: 400 });
+      return NextResponse.json(
+        { error: "gameId is required" },
+        { status: 400 },
+      );
     }
 
     if (!playerName?.trim()) {
       return NextResponse.json(
         { error: "playerName is required" },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
@@ -37,19 +40,19 @@ export async function POST(request: NextRequest) {
     if (game.status !== "lobby") {
       return NextResponse.json(
         { error: "Game has already started" },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
     const trimmedName = playerName.trim();
     const nameTaken = game.players.some(
-      (player) => player.name.toLowerCase() === trimmedName.toLowerCase()
+      (player) => player.name.toLowerCase() === trimmedName.toLowerCase(),
     );
 
     if (nameTaken) {
       return NextResponse.json(
         { error: "Player name is already taken" },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
@@ -79,6 +82,9 @@ export async function POST(request: NextRequest) {
 
     return NextResponse.json({ playerId, gameState: game });
   } catch {
-    return NextResponse.json({ error: "Invalid request body" }, { status: 400 });
+    return NextResponse.json(
+      { error: "Invalid request body" },
+      { status: 400 },
+    );
   }
 }

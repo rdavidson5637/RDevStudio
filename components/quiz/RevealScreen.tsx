@@ -8,8 +8,17 @@ import { PlayerResultsGrid } from "@/components/quiz/PlayerResultsGrid";
 import { TeamLeaderboard } from "@/components/quiz/TeamLeaderboard";
 import { ScorePopup } from "@/components/quiz/ScorePopup";
 import { POINTS_BASE } from "@/lib/quiz/scoring";
-import { playCorrectSound, playRevealSound, playWrongSound } from "@/lib/quiz/sounds";
-import { RoundFormat, type Player, type Question, type Team } from "@/lib/quiz/types";
+import {
+  playCorrectSound,
+  playRevealSound,
+  playWrongSound,
+} from "@/lib/quiz/sounds";
+import {
+  RoundFormat,
+  type Player,
+  type Question,
+  type Team,
+} from "@/lib/quiz/types";
 import { RISK_WRONG_DEDUCTION } from "@/lib/quiz/scoring";
 
 interface PlayerResult {
@@ -61,7 +70,11 @@ function XIcon() {
       strokeWidth={2.5}
       aria-hidden="true"
     >
-      <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M6 18L18 6M6 6l12 12"
+      />
     </svg>
   );
 }
@@ -99,16 +112,15 @@ export function RevealScreen({
   teams = [],
 }: RevealScreenProps) {
   const currentResult = playerResults.find(
-    (result) => result.playerId === playerId
+    (result) => result.playerId === playerId,
   );
   const currentPlayer = leaderboard.find((player) => player.id === playerId);
 
   const [showScorePopup] = useState(
-    () => (currentResult?.pointsAwarded ?? 0) > 0
+    () => (currentResult?.pointsAwarded ?? 0) > 0,
   );
 
-  const timedOut =
-    !currentResult?.answer || currentResult.answer.trim() === "";
+  const timedOut = !currentResult?.answer || currentResult.answer.trim() === "";
 
   useEffect(() => {
     playRevealSound();
@@ -130,20 +142,19 @@ export function RevealScreen({
     teams.map((team) => {
       const delta = team.playerIds.reduce((sum, memberId) => {
         const result = playerResults.find(
-          (entry) => entry.playerId === memberId
+          (entry) => entry.playerId === memberId,
         );
         return sum + (result?.pointsAwarded ?? 0);
       }, 0);
 
       return [team.id, team.score - delta];
-    })
+    }),
   );
 
-  const currentTeam = teams.find((team) =>
-    team.playerIds.includes(playerId)
-  );
+  const currentTeam = teams.find((team) => team.playerIds.includes(playerId));
   const teamPointsDelta = currentTeam
-    ? currentTeam.score - (previousTeamScores[currentTeam.id] ?? currentTeam.score)
+    ? currentTeam.score -
+      (previousTeamScores[currentTeam.id] ?? currentTeam.score)
     : 0;
 
   return (
@@ -180,7 +191,9 @@ export function RevealScreen({
           timedOut ? (
             <div className="flex items-center justify-center gap-3">
               <ClockIcon />
-              <p className="text-lg font-medium text-quiz-amber">Out of time!</p>
+              <p className="text-lg font-medium text-quiz-amber">
+                Out of time!
+              </p>
             </div>
           ) : currentResult.isCorrect ? (
             <div className="space-y-2 text-center">

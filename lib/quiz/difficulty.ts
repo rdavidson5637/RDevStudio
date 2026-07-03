@@ -9,7 +9,8 @@ export const DIFFICULTY_OPTIONS: Array<{
   {
     value: Difficulty.EASY,
     label: "Easy",
-    description: "Well-known facts and popular culture — most adults should know these",
+    description:
+      "Well-known facts and popular culture — most adults should know these",
     className: "border-green-500/60 bg-green-500/15 text-green-400",
   },
   {
@@ -21,7 +22,8 @@ export const DIFFICULTY_OPTIONS: Array<{
   {
     value: Difficulty.HARD,
     label: "Hard",
-    description: "Challenging trivia for knowledgeable players — obscure facts welcome",
+    description:
+      "Challenging trivia for knowledgeable players — obscure facts welcome",
     className: "border-red-500/60 bg-red-500/15 text-red-400",
   },
   {

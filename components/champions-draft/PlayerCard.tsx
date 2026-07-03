@@ -1,21 +1,26 @@
-'use client'
-import Kit from './Kit'
-import type { Player } from '@/types/champions-draft'
+"use client";
+import Kit from "./Kit";
+import type { Player } from "@/types/champions-draft";
 
 interface Props {
-  player: Player
-  onSelect: (player: Player) => void
-  badge: string
+  player: Player;
+  onSelect: (player: Player) => void;
+  badge: string;
 }
 
 const STAT_LABELS: Record<string, string> = {
-  pac: 'PAC', sho: 'SHO', pas: 'PAS', dri: 'DRI', def: 'DEF', phy: 'PHY',
-}
+  pac: "PAC",
+  sho: "SHO",
+  pas: "PAS",
+  dri: "DRI",
+  def: "DEF",
+  phy: "PHY",
+};
 
 function getInitials(name: string): string {
-  const parts = name.trim().split(' ')
-  if (parts.length === 1) return parts[0].substring(0, 2).toUpperCase()
-  return (parts[0][0] + parts[parts.length - 1][0]).toUpperCase()
+  const parts = name.trim().split(" ");
+  if (parts.length === 1) return parts[0].substring(0, 2).toUpperCase();
+  return (parts[0][0] + parts[parts.length - 1][0]).toUpperCase();
 }
 
 export default function PlayerCard({ player, onSelect, badge }: Props) {
@@ -46,12 +51,10 @@ export default function PlayerCard({ player, onSelect, badge }: Props) {
             <span className="text-white/30 text-[9px] font-bold uppercase tracking-wide">
               {STAT_LABELS[key] ?? key}
             </span>
-            <span className="text-white/80 text-[10px] font-bold">
-              {val}
-            </span>
+            <span className="text-white/80 text-[10px] font-bold">{val}</span>
           </div>
         ))}
       </div>
     </button>
-  )
+  );
 }

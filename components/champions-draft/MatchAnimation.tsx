@@ -1,26 +1,29 @@
-'use client'
-import { useEffect, useState, useRef } from 'react'
-import type { MatchResult } from '@/types/champions-draft'
+"use client";
+import { useEffect, useState, useRef } from "react";
+import type { MatchResult } from "@/types/champions-draft";
 
 interface AnimationProps {
-  result: MatchResult
-  speedMode: 'normal' | 'fast' | 'skip'
-  onComplete: () => void
-  matchNumber: number
-  totalMatches: number
-  userTeam?: string
+  result: MatchResult;
+  speedMode: "normal" | "fast" | "skip";
+  onComplete: () => void;
+  matchNumber: number;
+  totalMatches: number;
+  userTeam?: string;
 }
 
-function getUserResult(result: MatchResult, userTeam: string): 'W' | 'D' | 'L' | null {
-  const isHome = result.homeTeam === userTeam
-  const isAway = result.awayTeam === userTeam
-  if (!isHome && !isAway) return null
+function getUserResult(
+  result: MatchResult,
+  userTeam: string,
+): "W" | "D" | "L" | null {
+  const isHome = result.homeTeam === userTeam;
+  const isAway = result.awayTeam === userTeam;
+  if (!isHome && !isAway) return null;
 
-  const userScore = isHome ? result.homeScore : result.awayScore
-  const oppScore = isHome ? result.awayScore : result.homeScore
-  if (userScore > oppScore) return 'W'
-  if (userScore < oppScore) return 'L'
-  return 'D'
+  const userScore = isHome ? result.homeScore : result.awayScore;
+  const oppScore = isHome ? result.awayScore : result.homeScore;
+  if (userScore > oppScore) return "W";
+  if (userScore < oppScore) return "L";
+  return "D";
 }
 
 export function CompletedMatchCard({
@@ -28,11 +31,11 @@ export function CompletedMatchCard({
   matchNumber,
   userTeam,
 }: {
-  result: MatchResult
-  matchNumber: number
-  userTeam?: string
+  result: MatchResult;
+  matchNumber: number;
+  userTeam?: string;
 }) {
-  const outcome = userTeam ? getUserResult(result, userTeam) : null
+  const outcome = userTeam ? getUserResult(result, userTeam) : null;
 
   return (
     <div className="bg-white/5 border border-white/10 rounded-xl px-4 py-3 flex items-center gap-3">
@@ -42,7 +45,9 @@ export function CompletedMatchCard({
       <div className="flex-1 min-w-0 grid grid-cols-[1fr_auto_1fr] items-center gap-2 text-sm">
         <span
           className={`truncate text-right ${
-            result.homeTeam === userTeam ? 'text-emerald-400 font-semibold' : 'text-white/70'
+            result.homeTeam === userTeam
+              ? "text-emerald-400 font-semibold"
+              : "text-white/70"
           }`}
         >
           {result.homeTeam}
@@ -52,7 +57,9 @@ export function CompletedMatchCard({
         </span>
         <span
           className={`truncate ${
-            result.awayTeam === userTeam ? 'text-emerald-400 font-semibold' : 'text-white/70'
+            result.awayTeam === userTeam
+              ? "text-emerald-400 font-semibold"
+              : "text-white/70"
           }`}
         >
           {result.awayTeam}
@@ -61,18 +68,18 @@ export function CompletedMatchCard({
       {outcome && (
         <span
           className={`text-[10px] font-black uppercase tracking-wide px-2 py-1 rounded-full flex-shrink-0 ${
-            outcome === 'W'
-              ? 'bg-emerald-400/20 text-emerald-400'
-              : outcome === 'D'
-              ? 'bg-white/10 text-white/50'
-              : 'bg-red-400/20 text-red-400'
+            outcome === "W"
+              ? "bg-emerald-400/20 text-emerald-400"
+              : outcome === "D"
+                ? "bg-white/10 text-white/50"
+                : "bg-red-400/20 text-red-400"
           }`}
         >
           {outcome}
         </span>
       )}
     </div>
-  )
+  );
 }
 
 export default function MatchAnimation({
@@ -83,87 +90,89 @@ export default function MatchAnimation({
   totalMatches,
   userTeam,
 }: AnimationProps) {
-  const [homeScore, setHomeScore] = useState(0)
-  const [awayScore, setAwayScore] = useState(0)
-  const [minute, setMinute] = useState(0)
-  const [done, setDone] = useState(false)
-  const doneRef = useRef(false)
+  const [homeScore, setHomeScore] = useState(0);
+  const [awayScore, setAwayScore] = useState(0);
+  const [minute, setMinute] = useState(0);
+  const [done, setDone] = useState(false);
+  const doneRef = useRef(false);
 
   useEffect(() => {
-    doneRef.current = false
-    setHomeScore(0)
-    setAwayScore(0)
-    setMinute(0)
-    setDone(false)
+    doneRef.current = false;
+    setHomeScore(0);
+    setAwayScore(0);
+    setMinute(0);
+    setDone(false);
 
-    if (speedMode === 'skip') {
-      setHomeScore(result.homeScore)
-      setAwayScore(result.awayScore)
-      setMinute(90)
-      setDone(true)
-      doneRef.current = true
-      return
+    if (speedMode === "skip") {
+      setHomeScore(result.homeScore);
+      setAwayScore(result.awayScore);
+      setMinute(90);
+      setDone(true);
+      doneRef.current = true;
+      return;
     }
 
-    const totalGoals = result.homeScore + result.awayScore
-    const goalMinutes = Array.from({ length: totalGoals }, () =>
-      Math.floor(Math.random() * 85) + 1
-    ).sort((a, b) => a - b)
+    const totalGoals = result.homeScore + result.awayScore;
+    const goalMinutes = Array.from(
+      { length: totalGoals },
+      () => Math.floor(Math.random() * 85) + 1,
+    ).sort((a, b) => a - b);
 
-    let homeGoalsScored = 0
-    let awayGoalsScored = 0
-    const goalQueue = [...goalMinutes]
+    let homeGoalsScored = 0;
+    let awayGoalsScored = 0;
+    const goalQueue = [...goalMinutes];
 
-    const duration = speedMode === 'fast' ? 1200 : 3500
-    const intervalMs = duration / 90
-    let currentMinute = 0
+    const duration = speedMode === "fast" ? 1200 : 3500;
+    const intervalMs = duration / 90;
+    let currentMinute = 0;
 
-    const homeGoalProb = result.homeScore / Math.max(1, totalGoals)
+    const homeGoalProb = result.homeScore / Math.max(1, totalGoals);
 
     const tick = setInterval(() => {
       if (doneRef.current) {
-        clearInterval(tick)
-        return
+        clearInterval(tick);
+        return;
       }
-      currentMinute++
-      setMinute(currentMinute)
+      currentMinute++;
+      setMinute(currentMinute);
 
       if (goalQueue.length > 0 && currentMinute >= goalQueue[0]) {
-        goalQueue.shift()
-        const isHome = Math.random() < homeGoalProb
+        goalQueue.shift();
+        const isHome = Math.random() < homeGoalProb;
         if (isHome && homeGoalsScored < result.homeScore) {
-          homeGoalsScored++
-          setHomeScore(homeGoalsScored)
+          homeGoalsScored++;
+          setHomeScore(homeGoalsScored);
         } else if (!isHome && awayGoalsScored < result.awayScore) {
-          awayGoalsScored++
-          setAwayScore(awayGoalsScored)
+          awayGoalsScored++;
+          setAwayScore(awayGoalsScored);
         }
       }
 
       if (currentMinute >= 90) {
-        clearInterval(tick)
-        setHomeScore(result.homeScore)
-        setAwayScore(result.awayScore)
-        setMinute(90)
-        setDone(true)
-        doneRef.current = true
+        clearInterval(tick);
+        setHomeScore(result.homeScore);
+        setAwayScore(result.awayScore);
+        setMinute(90);
+        setDone(true);
+        doneRef.current = true;
       }
-    }, intervalMs)
+    }, intervalMs);
 
     return () => {
-      clearInterval(tick)
-    }
-  }, [result, speedMode, matchNumber])
+      clearInterval(tick);
+    };
+  }, [result, speedMode, matchNumber]);
 
   useEffect(() => {
     if (done) {
-      const delay = speedMode === 'skip' ? 200 : speedMode === 'fast' ? 300 : 600
-      const t = setTimeout(onComplete, delay)
-      return () => clearTimeout(t)
+      const delay =
+        speedMode === "skip" ? 200 : speedMode === "fast" ? 300 : 600;
+      const t = setTimeout(onComplete, delay);
+      return () => clearTimeout(t);
     }
-  }, [done, onComplete, speedMode])
+  }, [done, onComplete, speedMode]);
 
-  const progressWidth = (minute / 90) * 100
+  const progressWidth = (minute / 90) * 100;
 
   return (
     <div className="bg-emerald-400/5 border border-emerald-400/30 rounded-xl p-4">
@@ -172,26 +181,30 @@ export default function MatchAnimation({
           Live · Match {matchNumber} of {totalMatches}
         </p>
         <p className="text-white/30 text-xs tabular-nums">
-          {done ? 'FT' : `${minute}'`}
+          {done ? "FT" : `${minute}'`}
         </p>
       </div>
 
       <div className="grid grid-cols-[1fr_auto_1fr] items-center gap-3 mb-3">
         <p
           className={`text-sm font-bold truncate text-right ${
-            result.homeTeam === userTeam ? 'text-emerald-400' : 'text-white'
+            result.homeTeam === userTeam ? "text-emerald-400" : "text-white"
           }`}
         >
           {result.homeTeam}
         </p>
         <div className="flex items-center gap-2">
-          <span className="text-white font-black text-3xl tabular-nums">{homeScore}</span>
+          <span className="text-white font-black text-3xl tabular-nums">
+            {homeScore}
+          </span>
           <span className="text-white/30 font-black text-xl">–</span>
-          <span className="text-white font-black text-3xl tabular-nums">{awayScore}</span>
+          <span className="text-white font-black text-3xl tabular-nums">
+            {awayScore}
+          </span>
         </div>
         <p
           className={`text-sm font-bold truncate ${
-            result.awayTeam === userTeam ? 'text-emerald-400' : 'text-white'
+            result.awayTeam === userTeam ? "text-emerald-400" : "text-white"
           }`}
         >
           {result.awayTeam}
@@ -205,5 +218,5 @@ export default function MatchAnimation({
         />
       </div>
     </div>
-  )
+  );
 }

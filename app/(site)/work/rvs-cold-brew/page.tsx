@@ -10,9 +10,7 @@ export const metadata = createPageMetadata({
 });
 
 function SectionHeading({ children }: { children: React.ReactNode }) {
-  return (
-    <h2 className="shell-label mb-3 text-accent">{children}</h2>
-  );
+  return <h2 className="shell-label mb-3 text-accent">{children}</h2>;
 }
 
 function ScreenshotSlot({
@@ -59,7 +57,10 @@ export default function RvsColdBrewCaseStudyPage() {
           </div>
         </header>
 
-        <section className="border-b border-border py-12" aria-label="Hero screenshot">
+        <section
+          className="border-b border-border py-12"
+          aria-label="Hero screenshot"
+        >
           <div className="relative h-72 w-full overflow-hidden rounded-lg border border-border bg-raised sm:h-[34rem]">
             <Image
               src="/images/work/rvs-coldbrew.png"
@@ -89,8 +90,8 @@ export default function RvsColdBrewCaseStudyPage() {
           <p className="max-w-3xl text-base leading-relaxed text-secondary sm:text-lg">
             The site leads with the product: strong photography, a tight palette
             pulled from the brand, and copy that gets out of the way. Under the
-            hood it&apos;s lightweight and fast — no heavy framework, quick loads
-            on mobile, where most of their customers are.
+            hood it&apos;s lightweight and fast — no heavy framework, quick
+            loads on mobile, where most of their customers are.
           </p>
 
           <div className="mt-10 grid gap-8">

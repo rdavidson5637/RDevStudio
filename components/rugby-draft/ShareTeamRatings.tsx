@@ -1,18 +1,18 @@
 interface Props {
   ratings: {
-    forwards: number
-    backs: number
-    overall: number
-  }
+    forwards: number;
+    backs: number;
+    overall: number;
+  };
 }
 
 export default function ShareTeamRatings({ ratings }: Props) {
   return (
     <div className="mt-3 grid grid-cols-3 gap-1.5">
       {[
-        { label: 'FWD', value: ratings.forwards },
-        { label: 'BCK', value: ratings.backs },
-        { label: 'OVR', value: ratings.overall },
+        { label: "FWD", value: ratings.forwards },
+        { label: "BCK", value: ratings.backs },
+        { label: "OVR", value: ratings.overall },
       ].map(({ label, value }) => (
         <div
           key={label}
@@ -25,5 +25,5 @@ export default function ShareTeamRatings({ ratings }: Props) {
         </div>
       ))}
     </div>
-  )
+  );
 }

@@ -81,7 +81,7 @@ export function PubQuizLanding() {
       }
 
       const hostPlayer = data.gameState.players.find(
-        (player: { id: string }) => player.id === data.playerId
+        (player: { id: string }) => player.id === data.playerId,
       );
 
       saveQuizSession({
@@ -99,7 +99,7 @@ export function PubQuizLanding() {
       setError(
         createError instanceof Error
           ? createError.message
-          : "Failed to create game"
+          : "Failed to create game",
       );
     } finally {
       setLoading(false);
@@ -130,7 +130,7 @@ export function PubQuizLanding() {
       }
 
       const joinedPlayer = data.gameState.players.find(
-        (player: { id: string }) => player.id === data.playerId
+        (player: { id: string }) => player.id === data.playerId,
       );
 
       saveQuizSession({
@@ -146,7 +146,7 @@ export function PubQuizLanding() {
       router.push(`/pub-quiz/${gameCode.trim().toUpperCase()}`);
     } catch (joinError) {
       setError(
-        joinError instanceof Error ? joinError.message : "Failed to join game"
+        joinError instanceof Error ? joinError.message : "Failed to join game",
       );
     } finally {
       setLoading(false);
@@ -188,7 +188,9 @@ export function PubQuizLanding() {
               <span className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg border border-quiz-amber/30 bg-quiz-amber/10 font-serif text-lg text-quiz-amber">
                 H
               </span>
-              <span className="font-serif text-2xl text-quiz-ink">Host a game</span>
+              <span className="font-serif text-2xl text-quiz-ink">
+                Host a game
+              </span>
               <p className="mt-2 text-sm leading-relaxed text-quiz-muted">
                 Set up rounds, formats, and difficulty — then share your code.
               </p>
@@ -205,7 +207,9 @@ export function PubQuizLanding() {
               <span className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg border border-quiz-border-bright bg-quiz-bg-elevated font-serif text-lg text-quiz-muted transition-colors group-hover:border-quiz-amber/30 group-hover:text-quiz-amber">
                 J
               </span>
-              <span className="font-serif text-2xl text-quiz-ink">Join a game</span>
+              <span className="font-serif text-2xl text-quiz-ink">
+                Join a game
+              </span>
               <p className="mt-2 text-sm leading-relaxed text-quiz-muted">
                 Enter the six-character code from your host to jump in.
               </p>
@@ -226,7 +230,10 @@ export function PubQuizLanding() {
             </div>
 
             <div className="space-y-2">
-              <label htmlFor="hostName" className="text-sm font-medium text-white">
+              <label
+                htmlFor="hostName"
+                className="text-sm font-medium text-white"
+              >
                 Your name
               </label>
               <input
@@ -266,7 +273,9 @@ export function PubQuizLanding() {
 
             <div className="space-y-3 rounded-xl border border-quiz-border bg-quiz-bg/40 p-4">
               <label className="flex items-center justify-between gap-3">
-                <span className="text-sm font-medium text-white">Team Mode</span>
+                <span className="text-sm font-medium text-white">
+                  Team Mode
+                </span>
                 <button
                   type="button"
                   role="switch"
@@ -346,7 +355,10 @@ export function PubQuizLanding() {
             </div>
 
             <div className="space-y-2">
-              <label htmlFor="joinName" className="text-sm font-medium text-white">
+              <label
+                htmlFor="joinName"
+                className="text-sm font-medium text-white"
+              >
                 Your name
               </label>
               <input
@@ -367,7 +379,10 @@ export function PubQuizLanding() {
             />
 
             <div className="space-y-2">
-              <label htmlFor="gameCode" className="text-sm font-medium text-white">
+              <label
+                htmlFor="gameCode"
+                className="text-sm font-medium text-white"
+              >
                 Game code
               </label>
               <input

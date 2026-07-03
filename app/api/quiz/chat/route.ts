@@ -18,13 +18,16 @@ export async function POST(request: NextRequest) {
     const { gameId, playerId, text } = body;
 
     if (!gameId?.trim()) {
-      return NextResponse.json({ error: "gameId is required" }, { status: 400 });
+      return NextResponse.json(
+        { error: "gameId is required" },
+        { status: 400 },
+      );
     }
 
     if (!playerId?.trim()) {
       return NextResponse.json(
         { error: "playerId is required" },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
@@ -33,7 +36,7 @@ export async function POST(request: NextRequest) {
     if (!sanitised) {
       return NextResponse.json(
         { error: "Message cannot be empty" },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
@@ -46,7 +49,10 @@ export async function POST(request: NextRequest) {
     const player = game.players.find((entry) => entry.id === playerId);
 
     if (!player) {
-      return NextResponse.json({ error: "Player not in game" }, { status: 403 });
+      return NextResponse.json(
+        { error: "Player not in game" },
+        { status: 403 },
+      );
     }
 
     const message = {
@@ -63,6 +69,9 @@ export async function POST(request: NextRequest) {
 
     return NextResponse.json({ ok: true });
   } catch {
-    return NextResponse.json({ error: "Invalid request body" }, { status: 400 });
+    return NextResponse.json(
+      { error: "Invalid request body" },
+      { status: 400 },
+    );
   }
 }

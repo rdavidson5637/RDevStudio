@@ -13,7 +13,7 @@ import { normalizeWikimediaImageUrl } from "./wikimedia";
 
 function getFormatFallbackQuestions(
   round: RoundConfig,
-  count: number
+  count: number,
 ): Question[] {
   if (round.format === RoundFormat.PICTURE) {
     return getPictureFallbackQuestions(count);
@@ -28,7 +28,7 @@ function getFormatFallbackQuestions(
 
 export async function generateQuestionsForRound(
   round: RoundConfig,
-  gameId: string
+  gameId: string,
 ): Promise<Question[]> {
   if (round.questionCount <= 0) {
     return [];
@@ -48,14 +48,14 @@ export async function generateQuestionsForRound(
   } catch (error) {
     console.error(
       `AI generation failed for ${round.name}, using fallback:`,
-      error
+      error,
     );
   }
 
   if (questions.length < round.questionCount) {
     const needed = round.questionCount - questions.length;
     const fallback = filterUnusedQuestions(
-      getFormatFallbackQuestions(round, needed * 2)
+      getFormatFallbackQuestions(round, needed * 2),
     ).slice(0, needed);
 
     questions = [...questions, ...fallback];
@@ -64,7 +64,7 @@ export async function generateQuestionsForRound(
   if (round.format === RoundFormat.PICTURE) {
     questions = await buildPictureRoundQuestions(
       questions,
-      round.questionCount
+      round.questionCount,
     );
   } else if (round.format === RoundFormat.MUSIC) {
     questions = enrichMusicRoundQuestions(questions);
@@ -86,20 +86,20 @@ export async function generateQuestionsForRound(
       imageUrl: question.imageUrl
         ? normalizeWikimediaImageUrl(question.imageUrl)
         : undefined,
-    }))
+    })),
   );
 }
 
 export async function generateQuestionsForGame(
   roundConfigs: RoundConfig[],
-  gameId: string
+  gameId: string,
 ): Promise<Question[]> {
   if (roundConfigs.length === 0) {
     return [];
   }
 
   const questionSets = await Promise.all(
-    roundConfigs.map((round) => generateQuestionsForRound(round, gameId))
+    roundConfigs.map((round) => generateQuestionsForRound(round, gameId)),
   );
 
   return questionSets.flat();

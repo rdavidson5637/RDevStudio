@@ -61,7 +61,9 @@ export function LeaderboardRow({
       <div className="min-w-0 flex-1" />
 
       {showDelta ? (
-        <span className={`shrink-0 font-semibold tabular-nums ${delta.className}`}>
+        <span
+          className={`shrink-0 font-semibold tabular-nums ${delta.className}`}
+        >
           {delta.text}
         </span>
       ) : null}

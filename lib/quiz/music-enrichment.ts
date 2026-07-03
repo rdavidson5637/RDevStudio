@@ -12,7 +12,7 @@ function shuffle<T>(items: T[]): T[] {
 
 function buildArtistOptions(correctArtist: string): string[] {
   const pool = MUSIC_CLIPS.map((clip) => clip.artist).filter(
-    (artist) => artist !== correctArtist
+    (artist) => artist !== correctArtist,
   );
   const distractors = shuffle(pool).slice(0, 3);
 

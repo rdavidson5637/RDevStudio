@@ -72,14 +72,8 @@ export function HireRyanPage() {
         title={recentAchievement}
         prefersReducedMotion={prefersReducedMotion}
       />
-      <RudiModal
-        open={rudiModalOpen}
-        onClose={() => setRudiModalOpen(false)}
-      />
-      <CatModal
-        open={catModalOpen}
-        onClose={() => setCatModalOpen(false)}
-      />
+      <RudiModal open={rudiModalOpen} onClose={() => setRudiModalOpen(false)} />
+      <CatModal open={catModalOpen} onClose={() => setCatModalOpen(false)} />
 
       {/* Section 1 — Hero */}
       <section className="relative overflow-hidden border-b border-border bg-base pb-16 pt-28 md:pb-20">
@@ -121,7 +115,9 @@ export function HireRyanPage() {
               {HIRE_STATS.map((stat) => (
                 <div key={stat} className="interactive-surface px-5 py-4">
                   <dt className="sr-only">Credential</dt>
-                  <dd className="text-sm font-medium text-primary/90">{stat}</dd>
+                  <dd className="text-sm font-medium text-primary/90">
+                    {stat}
+                  </dd>
                 </div>
               ))}
             </dl>
@@ -186,8 +182,8 @@ export function HireRyanPage() {
                 <p className="lead-text mt-3 max-w-2xl">{item.detail}</p>
                 {index === 0 && (
                   <p className="editorial-note mt-3">
-                    Graduating Summer 2026 — completing while working full time in
-                    Belfast.
+                    Graduating Summer 2026 — completing while working full time
+                    in Belfast.
                   </p>
                 )}
               </li>
@@ -214,7 +210,9 @@ export function HireRyanPage() {
                 <h3 className="font-display text-2xl font-bold text-primary">
                   {role.title}
                 </h3>
-                <p className="mt-1 text-sm font-medium text-accent">{role.period}</p>
+                <p className="mt-1 text-sm font-medium text-accent">
+                  {role.period}
+                </p>
                 <p className="lead-text mt-3">{role.summary}</p>
                 <ul className="mt-5 flex flex-wrap gap-2">
                   {role.skills.map((skill) => (
@@ -278,7 +276,9 @@ export function HireRyanPage() {
                     <h3 className="mt-2 font-display text-xl font-bold text-primary">
                       {project.title}
                     </h3>
-                    <p className="lead-text mt-3 text-sm">{project.description}</p>
+                    <p className="lead-text mt-3 text-sm">
+                      {project.description}
+                    </p>
                     <p className="mt-4">
                       <span
                         className={`inline-block rounded-md px-2.5 py-1 text-xs font-medium ${
@@ -309,7 +309,11 @@ export function HireRyanPage() {
                               key={link.label}
                               href={link.href}
                               target={link.external ? "_blank" : undefined}
-                              rel={link.external ? "noopener noreferrer" : undefined}
+                              rel={
+                                link.external
+                                  ? "noopener noreferrer"
+                                  : undefined
+                              }
                               className="text-sm font-medium text-accent transition-colors hover:text-primary"
                             >
                               {link.label} →
@@ -410,7 +414,9 @@ export function HireRyanPage() {
 
               const testimonialCaption = (
                 <p className="mt-4 text-sm text-secondary">
-                  <span className="font-semibold text-primary">{item.author}</span>
+                  <span className="font-semibold text-primary">
+                    {item.author}
+                  </span>
                   <span className="text-tertiary"> — {item.role}</span>
                 </p>
               );
@@ -446,7 +452,11 @@ export function HireRyanPage() {
             })}
           </div>
         </div>
-        <div ref={registerSection("testimonials")} className="h-px" aria-hidden="true" />
+        <div
+          ref={registerSection("testimonials")}
+          className="h-px"
+          aria-hidden="true"
+        />
       </section>
 
       {chaosStarted && (
@@ -460,12 +470,14 @@ export function HireRyanPage() {
 
       {/* Section 8 — Achievements (visible once chaos starts) */}
       {chaosStarted && (
-        <section className={`section-padding border-b border-border bg-raised ${revealClass}`}>
+        <section
+          className={`section-padding border-b border-border bg-raised ${revealClass}`}
+        >
           <div className="container-wide max-w-4xl">
             <SectionHeader label="Gamification" title={HIRE_MILESTONES_TITLE} />
             <p className="lead-text mt-4">
-              Congratulations. You scrolled through an entire CV. That alone should
-              count for something.
+              Congratulations. You scrolled through an entire CV. That alone
+              should count for something.
             </p>
             <div className="mt-8 grid gap-4 sm:grid-cols-2">
               {ACHIEVEMENTS.map((achievement) => {
@@ -512,15 +524,23 @@ export function HireRyanPage() {
 
       {/* Section 12 — Weaknesses */}
       {chaosStarted && (
-        <section className={`section-padding border-b border-border bg-base ${revealClass}`}>
+        <section
+          className={`section-padding border-b border-border bg-base ${revealClass}`}
+        >
           <div className="container-wide max-w-4xl">
-            <SectionHeader label="Interview prep" title="Strengths & Weaknesses" />
+            <SectionHeader
+              label="Interview prep"
+              title="Strengths & Weaknesses"
+            />
             <div className="mt-8 grid gap-6 lg:grid-cols-2">
               <div className="interactive-surface px-6 py-7">
                 <h3 className="label-caps text-emerald-400">Strengths</h3>
                 <ul className="mt-4 space-y-2">
                   {HIRE_STRENGTHS.map((item) => (
-                    <li key={item} className="flex items-center gap-2 text-primary">
+                    <li
+                      key={item}
+                      className="flex items-center gap-2 text-primary"
+                    >
                       <span className="text-emerald-400" aria-hidden="true">
                         ✓
                       </span>
@@ -543,9 +563,7 @@ export function HireRyanPage() {
                         isCatWarning ? "cursor-pointer" : ""
                       }`}
                       onClick={
-                        isCatWarning
-                          ? () => setCatModalOpen(true)
-                          : undefined
+                        isCatWarning ? () => setCatModalOpen(true) : undefined
                       }
                     >
                       <p className="text-amber-400">

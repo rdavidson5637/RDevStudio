@@ -46,13 +46,13 @@ export function toPublicGameState(game: GameState): PublicGameState {
   const questionId = currentQuestion?.id;
   const currentRound = getRoundForQuestionIndex(
     game,
-    game.currentQuestionIndex
+    game.currentQuestionIndex,
   );
 
   const answeredPlayerIds = questionId
     ? game.players
         .filter((player) =>
-          player.answers.some((answer) => answer.questionId === questionId)
+          player.answers.some((answer) => answer.questionId === questionId),
         )
         .map((player) => player.id)
     : [];
@@ -98,7 +98,10 @@ export function toPublicGameState(game: GameState): PublicGameState {
     publicState.reveal = game.lastReveal;
   }
 
-  if (game.status === "round-break" && game.pendingQuestionIndex !== undefined) {
+  if (
+    game.status === "round-break" &&
+    game.pendingQuestionIndex !== undefined
+  ) {
     const nextRound = game.rounds[game.currentRoundIndex + 1];
     const completedRound = game.rounds[game.currentRoundIndex];
 

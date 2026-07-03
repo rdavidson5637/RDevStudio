@@ -136,8 +136,7 @@ export default function AboutPage() {
               people, lots of process. You learn to read a file properly, spot
               what&apos;s missing, and explain yourself clearly when
               someone&apos;s on the phone needing a straight answer. RDev Studio
-              is what I do on the side: sites, tools, and the odd football
-              game.
+              is what I do on the side: sites, tools, and the odd football game.
             </p>
             <p>
               What I like building is straightforward: useful things for real
@@ -156,7 +155,10 @@ export default function AboutPage() {
           </div>
         </section>
 
-        <section className="border-b border-border py-12" aria-label="Off the pitch">
+        <section
+          className="border-b border-border py-12"
+          aria-label="Off the pitch"
+        >
           <p className="shell-label mb-4 text-accent">OFF THE PITCH</p>
           <div className="grid gap-4 md:grid-cols-3">
             {OFF_THE_PITCH.map((item) => (
@@ -165,7 +167,9 @@ export default function AboutPage() {
                 className="rounded-[10px] border border-border bg-raised px-4 py-4"
               >
                 <p className="shell-label mb-2 text-secondary">{item.label}</p>
-                <p className="text-sm leading-relaxed text-primary">{item.line}</p>
+                <p className="text-sm leading-relaxed text-primary">
+                  {item.line}
+                </p>
               </article>
             ))}
           </div>

@@ -17,7 +17,7 @@ export function isValidTeamColour(colour: string): boolean {
 
 export function findTeamForPlayer(
   teams: Team[] | null | undefined,
-  playerId: string
+  playerId: string,
 ): Team | undefined {
   return teams?.find((team) => team.playerIds.includes(playerId));
 }
@@ -25,7 +25,7 @@ export function findTeamForPlayer(
 export function applyPointsToPlayerTeam(
   teams: Team[] | null | undefined,
   playerId: string,
-  points: number
+  points: number,
 ): void {
   const team = findTeamForPlayer(teams, playerId);
 
@@ -40,7 +40,7 @@ export function getSortedTeams(teams: Team[]): Team[] {
 
 export function getUnassignedPlayerIds(
   players: Player[],
-  teams: Team[]
+  teams: Team[],
 ): string[] {
   const assigned = new Set(teams.flatMap((team) => team.playerIds));
   return players.filter((player) => !assigned.has(player.id)).map((p) => p.id);
@@ -82,7 +82,7 @@ export function autoAssignTeams(players: Player[], teams: Team[]): Team[] {
 
 export function validateTeamAssignments(
   players: Player[],
-  teams: Team[]
+  teams: Team[],
 ): string | null {
   if (teams.length < 2) {
     return "At least 2 teams are required";
@@ -114,7 +114,7 @@ export function validateTeamAssignments(
 }
 
 export function normalizeTeamsFromRequest(
-  teams: Array<{ name: string; colour: string; playerIds: string[] }>
+  teams: Array<{ name: string; colour: string; playerIds: string[] }>,
 ): Team[] {
   return teams.map((team, index) => ({
     id: `team_${index + 1}_${randomUUID().slice(0, 8)}`,
@@ -129,7 +129,7 @@ export function normalizeTeamsFromRequest(
 
 export function preserveTeamScores(
   existing: Team[] | null,
-  updated: Team[]
+  updated: Team[],
 ): Team[] {
   if (!existing?.length) {
     return updated;
@@ -141,7 +141,7 @@ export function preserveTeamScores(
         item.name === team.name &&
         item.colour === team.colour &&
         item.playerIds.length === team.playerIds.length &&
-        item.playerIds.every((id) => team.playerIds.includes(id))
+        item.playerIds.every((id) => team.playerIds.includes(id)),
     );
 
     return match ? { ...team, id: match.id, score: match.score } : team;
@@ -155,7 +155,7 @@ export function findMvp(players: Player[]): Player | undefined {
 export function hasTeammateAnsweredQuestion(
   game: GameState,
   playerId: string,
-  questionId: string
+  questionId: string,
 ): boolean {
   if (!game.teamMode || !game.teams) {
     return false;
@@ -174,9 +174,7 @@ export function hasTeammateAnsweredQuestion(
 
     const teammate = game.players.find((player) => player.id === teammateId);
 
-    return teammate?.answers.some(
-      (answer) => answer.questionId === questionId
-    );
+    return teammate?.answers.some((answer) => answer.questionId === questionId);
   });
 }
 
@@ -204,7 +202,7 @@ export function lockTeamOutOfBuzzing(game: GameState, teamId: string): void {
 
 export function buildTeamStandings(
   teams: Team[],
-  players: Player[]
+  players: Player[],
 ): Array<{ team: Team; members: Player[] }> {
   return getSortedTeams(teams).map((team) => ({
     team,

@@ -8,7 +8,10 @@ import {
 } from "@/lib/quiz/constants";
 import { gameStore, setGame } from "@/lib/quiz/game-store";
 import { resolvePlayerIdentity } from "@/lib/quiz/player-identity";
-import { createDefaultRound, uniqueCategoriesFromRounds } from "@/lib/quiz/rounds";
+import {
+  createDefaultRound,
+  uniqueCategoriesFromRounds,
+} from "@/lib/quiz/rounds";
 import { createDefaultTeams } from "@/lib/quiz/teams";
 import type { GameState, Player, RoundConfig } from "@/lib/quiz/types";
 import { Difficulty, QuizCategory } from "@/lib/quiz/types";
@@ -71,7 +74,10 @@ function normalizeRoundConfigs(body: CreateRequestBody): RoundConfig[] {
     ];
   }
 
-  const perCategory = Math.max(1, Math.floor(totalQuestions / categories.length));
+  const perCategory = Math.max(
+    1,
+    Math.floor(totalQuestions / categories.length),
+  );
   return categories.map((category, index) => ({
     ...createDefaultRound(index + 1, category),
     questionCount: perCategory,
@@ -82,41 +88,39 @@ export async function POST(request: NextRequest) {
   try {
     const body = (await request.json()) as CreateRequestBody;
     const { hostName, colour, avatar, teamMode = false } = body;
-    const teamCount = Math.min(
-      4,
-      Math.max(2, Number(body.teamCount) || 2)
-    );
+    const teamCount = Math.min(4, Math.max(2, Number(body.teamCount) || 2));
 
     if (!hostName?.trim()) {
       return NextResponse.json(
         { error: "hostName is required" },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
-    const roundConfigs = normalizeRoundConfigs(body).map(normalizeRoundDifficulty);
+    const roundConfigs = normalizeRoundConfigs(body).map(
+      normalizeRoundDifficulty,
+    );
 
-    if (
-      roundConfigs.length < MIN_ROUNDS ||
-      roundConfigs.length > MAX_ROUNDS
-    ) {
+    if (roundConfigs.length < MIN_ROUNDS || roundConfigs.length > MAX_ROUNDS) {
       return NextResponse.json(
-        { error: `Games must have between ${MIN_ROUNDS} and ${MAX_ROUNDS} rounds` },
-        { status: 400 }
+        {
+          error: `Games must have between ${MIN_ROUNDS} and ${MAX_ROUNDS} rounds`,
+        },
+        { status: 400 },
       );
     }
 
     if (!roundConfigs.every(isValidRoundConfig)) {
       return NextResponse.json(
         { error: "Invalid round configuration" },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
     const categories = uniqueCategoriesFromRounds(roundConfigs);
     const totalQuestions = roundConfigs.reduce(
       (sum, round) => sum + round.questionCount,
-      0
+      0,
     );
 
     let gameId = generateGameId();
@@ -167,6 +171,9 @@ export async function POST(request: NextRequest) {
 
     return NextResponse.json({ gameId, playerId, gameState });
   } catch {
-    return NextResponse.json({ error: "Invalid request body" }, { status: 400 });
+    return NextResponse.json(
+      { error: "Invalid request body" },
+      { status: 400 },
+    );
   }
 }

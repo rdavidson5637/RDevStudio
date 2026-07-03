@@ -37,7 +37,8 @@ export const pictureFallbackQuestions: Question[] = [
     options: ["Japan", "Bangladesh", "Palau", "South Korea"],
     correctAnswer: "Japan",
     category: QuizCategory.GEOGRAPHY,
-    explanation: "The Japanese flag is known as the Hinomaru — 'circle of the sun'.",
+    explanation:
+      "The Japanese flag is known as the Hinomaru — 'circle of the sun'.",
   },
   {
     id: "pic_004",
@@ -46,10 +47,16 @@ export const pictureFallbackQuestions: Question[] = [
     imageUrl:
       "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Tour_Eiffel_Wikimedia_Commons_%28cropped%29.jpg/330px-Tour_Eiffel_Wikimedia_Commons_%28cropped%29.jpg",
     imageAlt: "An iron lattice tower in Paris",
-    options: ["Eiffel Tower", "Tokyo Tower", "CN Tower", "Leaning Tower of Pisa"],
+    options: [
+      "Eiffel Tower",
+      "Tokyo Tower",
+      "CN Tower",
+      "Leaning Tower of Pisa",
+    ],
     correctAnswer: "Eiffel Tower",
     category: QuizCategory.GEOGRAPHY,
-    explanation: "The Eiffel Tower was built for the 1889 World's Fair in Paris.",
+    explanation:
+      "The Eiffel Tower was built for the 1889 World's Fair in Paris.",
   },
   {
     id: "pic_005",
@@ -61,7 +68,8 @@ export const pictureFallbackQuestions: Question[] = [
     options: ["Colosseum", "Parthenon", "Pantheon", "Acropolis"],
     correctAnswer: "Colosseum",
     category: QuizCategory.GEOGRAPHY,
-    explanation: "The Colosseum could hold an estimated 50,000–80,000 spectators.",
+    explanation:
+      "The Colosseum could hold an estimated 50,000–80,000 spectators.",
   },
   {
     id: "pic_006",
@@ -100,7 +108,12 @@ export const pictureFallbackQuestions: Question[] = [
     imageUrl:
       "https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/African_Bush_Elephant.jpg/330px-African_Bush_Elephant.jpg",
     imageAlt: "A large grey elephant with tusks on the savannah",
-    options: ["African elephant", "Asian elephant", "Rhinoceros", "Hippopotamus"],
+    options: [
+      "African elephant",
+      "Asian elephant",
+      "Rhinoceros",
+      "Hippopotamus",
+    ],
     correctAnswer: "African elephant",
     category: QuizCategory.GENERAL,
     explanation: "African elephants have larger ears than their Asian cousins.",
@@ -156,7 +169,8 @@ export const pictureFallbackQuestions: Question[] = [
     options: ["Germany", "Belgium", "Austria", "Estonia"],
     correctAnswer: "Germany",
     category: QuizCategory.GEOGRAPHY,
-    explanation: "The German flag's black-red-gold colours date to the 19th century.",
+    explanation:
+      "The German flag's black-red-gold colours date to the 19th century.",
   },
 ];
 

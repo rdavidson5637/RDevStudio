@@ -63,6 +63,8 @@ const config: Config = {
           buzzer: "#f87171",
           risk: "#fb923c",
         },
+        destructive: "var(--color-card-red)",
+        warning: "#9a6700",
       },
       fontFamily: {
         display: ["var(--font-display)", "Impact", "sans-serif"],

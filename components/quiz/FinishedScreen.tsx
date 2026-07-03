@@ -33,8 +33,7 @@ export function FinishedScreen({
   const winningTeam = teams[0];
   const mvp = findMvp(players);
   const currentPlayer = players.find((player) => player.id === playerId);
-  const currentRank =
-    players.findIndex((player) => player.id === playerId) + 1;
+  const currentRank = players.findIndex((player) => player.id === playerId) + 1;
   const currentTeam = teams.find((team) => team.playerIds.includes(playerId));
 
   useEffect(() => {
@@ -115,7 +114,12 @@ export function FinishedScreen({
               .map((id) => players.find((player) => player.id === id))
               .filter((player): player is Player => Boolean(player))
               .map((player) => (
-                <PlayerAvatar key={player.id} player={player} size="lg" showName />
+                <PlayerAvatar
+                  key={player.id}
+                  player={player}
+                  size="lg"
+                  showName
+                />
               ))}
           </div>
         </div>
@@ -140,9 +144,7 @@ export function FinishedScreen({
           </p>
           <div className="mt-3 flex flex-col items-center gap-2">
             <PlayerAvatar player={mvp} size="lg" showName />
-            <p className="text-lg text-white">
-              {mvp.score} personal points
-            </p>
+            <p className="text-lg text-white">{mvp.score} personal points</p>
           </div>
         </div>
       ) : null}

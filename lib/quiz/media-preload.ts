@@ -41,7 +41,7 @@ export function preloadAudio(url: string): Promise<void> {
 
 export async function preloadQuestionMedia(
   question: MediaQuestion,
-  timeoutMs = 3000
+  timeoutMs = 3000,
 ): Promise<void> {
   const tasks: Promise<void>[] = [];
 
@@ -49,7 +49,7 @@ export async function preloadQuestionMedia(
     tasks.push(
       preloadImage(normalizeWikimediaImageUrl(question.imageUrl)).catch(() => {
         /* show question anyway — QuestionImage handles error UI */
-      })
+      }),
     );
   }
 
@@ -57,7 +57,7 @@ export async function preloadQuestionMedia(
     tasks.push(
       preloadAudio(question.audioUrl).catch(() => {
         /* AudioPlayer handles error UI */
-      })
+      }),
     );
   }
 

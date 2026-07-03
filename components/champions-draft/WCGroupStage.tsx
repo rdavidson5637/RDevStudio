@@ -1,41 +1,45 @@
-'use client'
-import type { WorldCupGroup } from '@/types/champions-draft'
-import LeagueTable from './LeagueTable'
+"use client";
+import type { WorldCupGroup } from "@/types/champions-draft";
+import LeagueTable from "./LeagueTable";
 
 interface Props {
-  groups: WorldCupGroup[]
-  userTeam: string
-  preview?: boolean
+  groups: WorldCupGroup[];
+  userTeam: string;
+  preview?: boolean;
 }
 
 function GroupTeamsList({
   teams,
   userTeam,
 }: {
-  teams: string[]
-  userTeam: string
+  teams: string[];
+  userTeam: string;
 }) {
   return (
     <div className="flex flex-col gap-2">
-      {teams.map(team => (
+      {teams.map((team) => (
         <div
           key={team}
           className={`rounded-lg px-3 py-2 text-sm font-semibold ${
             team === userTeam
-              ? 'bg-emerald-400/15 text-emerald-400 border border-emerald-400/20'
-              : 'bg-white/5 text-white border border-white/10'
+              ? "bg-emerald-400/15 text-emerald-400 border border-emerald-400/20"
+              : "bg-white/5 text-white border border-white/10"
           }`}
         >
           {team}
         </div>
       ))}
     </div>
-  )
+  );
 }
 
-export default function WCGroupStage({ groups, userTeam, preview = false }: Props) {
-  const userGroup = groups.find(g => g.teams.includes(userTeam))
-  const otherGroups = groups.filter(g => !g.teams.includes(userTeam))
+export default function WCGroupStage({
+  groups,
+  userTeam,
+  preview = false,
+}: Props) {
+  const userGroup = groups.find((g) => g.teams.includes(userTeam));
+  const otherGroups = groups.filter((g) => !g.teams.includes(userTeam));
 
   return (
     <div className="w-full flex flex-col gap-6">
@@ -53,7 +57,7 @@ export default function WCGroupStage({ groups, userTeam, preview = false }: Prop
       )}
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        {otherGroups.map(group => (
+        {otherGroups.map((group) => (
           <div
             key={group.name}
             className="bg-white/5 border border-white/10 rounded-xl p-4"
@@ -70,5 +74,5 @@ export default function WCGroupStage({ groups, userTeam, preview = false }: Prop
         ))}
       </div>
     </div>
-  )
+  );
 }

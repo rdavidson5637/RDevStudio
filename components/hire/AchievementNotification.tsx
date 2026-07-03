@@ -21,7 +21,9 @@ export function AchievementNotification({
       <p className="text-xs font-semibold uppercase tracking-widest text-emerald-400">
         Achievement Unlocked
       </p>
-      <p className="mt-2 font-display text-lg font-bold text-primary">{title}</p>
+      <p className="mt-2 font-display text-lg font-bold text-primary">
+        {title}
+      </p>
     </div>
   );
 }

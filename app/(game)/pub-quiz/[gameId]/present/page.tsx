@@ -28,7 +28,7 @@ export default function PresenterPage() {
   useEffect(() => {
     async function loadState() {
       const response = await fetch(
-        `/api/quiz/state?gameId=${encodeURIComponent(gameId)}`
+        `/api/quiz/state?gameId=${encodeURIComponent(gameId)}`,
       );
       const data = await response.json();
 
@@ -51,7 +51,7 @@ export default function PresenterPage() {
 
     const refresh = async () => {
       const response = await fetch(
-        `/api/quiz/state?gameId=${encodeURIComponent(gameId)}`
+        `/api/quiz/state?gameId=${encodeURIComponent(gameId)}`,
       );
       const data = await response.json();
 
@@ -89,7 +89,7 @@ export default function PresenterPage() {
 
     const tick = () => {
       setTimeRemaining(
-        getRemainingSeconds(state.questionStartedAt!, state.timeLimitMs)
+        getRemainingSeconds(state.questionStartedAt!, state.timeLimitMs),
       );
     };
 
@@ -116,7 +116,7 @@ export default function PresenterPage() {
   }
 
   const formatBadge = getRoundFormatBadge(
-    state.currentRound?.format ?? state.currentQuestion?.format
+    state.currentRound?.format ?? state.currentQuestion?.format,
   );
 
   return (
@@ -139,12 +139,16 @@ export default function PresenterPage() {
 
         {state.status === "lobby" ? (
           <section className="quiz-card flex flex-col items-center gap-6 p-10 text-center">
-            <p className="font-serif text-4xl text-quiz-ink">Waiting to start</p>
+            <p className="font-serif text-4xl text-quiz-ink">
+              Waiting to start
+            </p>
             <p className="font-mono text-5xl font-bold tracking-[0.2em] text-quiz-amber">
               {gameId}
             </p>
             <JoinQrCode joinUrl={joinUrl} size={200} />
-            <p className="text-quiz-muted">Scan to join · {state.players.length} players</p>
+            <p className="text-quiz-muted">
+              Scan to join · {state.players.length} players
+            </p>
           </section>
         ) : null}
 

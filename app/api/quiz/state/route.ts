@@ -19,7 +19,10 @@ export async function GET(request: NextRequest) {
   }
 
   if (playerId && !game.players.some((player) => player.id === playerId)) {
-    return NextResponse.json({ error: "Player not found in game" }, { status: 404 });
+    return NextResponse.json(
+      { error: "Player not found in game" },
+      { status: 404 },
+    );
   }
 
   return NextResponse.json({ state: toPublicGameState(game) });

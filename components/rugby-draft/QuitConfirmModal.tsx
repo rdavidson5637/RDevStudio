@@ -1,19 +1,19 @@
-'use client'
+"use client";
 
 interface Props {
-  title: string
-  message: string
-  confirmLabel?: string
-  cancelLabel?: string
-  onConfirm: () => void
-  onCancel: () => void
+  title: string;
+  message: string;
+  confirmLabel?: string;
+  cancelLabel?: string;
+  onConfirm: () => void;
+  onCancel: () => void;
 }
 
 export default function QuitConfirmModal({
   title,
   message,
-  confirmLabel = 'Quit',
-  cancelLabel = 'Keep Playing',
+  confirmLabel = "Quit",
+  cancelLabel = "Keep Playing",
   onConfirm,
   onCancel,
 }: Props) {
@@ -40,5 +40,5 @@ export default function QuitConfirmModal({
         </div>
       </div>
     </div>
-  )
+  );
 }

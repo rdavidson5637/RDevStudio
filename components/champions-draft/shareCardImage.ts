@@ -26,7 +26,7 @@ export function downloadImageBlob(blob: Blob, filename: string) {
 export async function shareImageBlob(
   blob: Blob,
   filename: string,
-  title: string
+  title: string,
 ): Promise<boolean> {
   const file = new File([blob], filename, { type: "image/png" });
 

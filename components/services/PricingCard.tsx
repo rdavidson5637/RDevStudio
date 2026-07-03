@@ -6,16 +6,17 @@ export function PricingCard() {
     <article className="card-hover flex h-full flex-col overflow-hidden border border-border bg-raised">
       <div className="border-b border-border bg-base px-8 py-10 text-center">
         <p className="label-caps text-tertiary">Website Design & Build</p>
-        <p className="mt-2 font-display text-6xl font-extrabold text-primary">£650</p>
-        <p className="mt-2 text-sm text-secondary">One-off payment · No hidden fees</p>
+        <p className="mt-2 font-display text-6xl font-extrabold text-primary">
+          £650
+        </p>
+        <p className="mt-2 text-sm text-secondary">
+          One-off payment · No hidden fees
+        </p>
       </div>
       <div className="flex flex-1 flex-col p-8 sm:p-10">
         <ul className="space-y-4">
           {PRICING_FEATURES.map((feature) => (
-            <li
-              key={feature}
-              className="flex items-start gap-3 text-secondary"
-            >
+            <li key={feature} className="flex items-start gap-3 text-secondary">
               <svg
                 className="mt-0.5 h-5 w-5 shrink-0 text-accent"
                 fill="none"
@@ -34,7 +35,10 @@ export function PricingCard() {
             </li>
           ))}
         </ul>
-        <Link href="/contact" className="btn-primary mt-auto pt-10 w-full text-center">
+        <Link
+          href="/contact"
+          className="btn-primary mt-auto pt-10 w-full text-center"
+        >
           Get started
         </Link>
       </div>

@@ -71,7 +71,9 @@ export function WhatIMake() {
                   {area.title}
                 </h3>
 
-                <p className={`relative mt-3 flex-1 text-base leading-relaxed ${styles.body}`}>
+                <p
+                  className={`relative mt-3 flex-1 text-base leading-relaxed ${styles.body}`}
+                >
                   {area.description}
                 </p>
 

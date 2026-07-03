@@ -20,11 +20,17 @@ export async function POST(request: NextRequest) {
     const { gameId, hostId } = body;
 
     if (!gameId?.trim()) {
-      return NextResponse.json({ error: "gameId is required" }, { status: 400 });
+      return NextResponse.json(
+        { error: "gameId is required" },
+        { status: 400 },
+      );
     }
 
     if (!hostId?.trim()) {
-      return NextResponse.json({ error: "hostId is required" }, { status: 400 });
+      return NextResponse.json(
+        { error: "hostId is required" },
+        { status: 400 },
+      );
     }
 
     const game = await getGame(gameId);
@@ -35,21 +41,21 @@ export async function POST(request: NextRequest) {
     if (game.hostId !== hostId) {
       return NextResponse.json(
         { error: "Only the host can start the game" },
-        { status: 403 }
+        { status: 403 },
       );
     }
 
     if (game.status !== "lobby") {
       return NextResponse.json(
         { error: "Game has already started" },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
     if (!game.roundConfigs?.length) {
       return NextResponse.json(
         { error: "No rounds configured for this game" },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
@@ -66,7 +72,7 @@ export async function POST(request: NextRequest) {
     if (questions.length === 0) {
       return NextResponse.json(
         { error: "No questions available for this game" },
-        { status: 500 }
+        { status: 500 },
       );
     }
 
@@ -112,10 +118,9 @@ export async function POST(request: NextRequest) {
     console.error("Failed to start game:", error);
     return NextResponse.json(
       {
-        error:
-          error instanceof Error ? error.message : "Failed to start game",
+        error: error instanceof Error ? error.message : "Failed to start game",
       },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }

@@ -77,7 +77,9 @@ export function ProjectPreview({
             >
               {title.charAt(0)}
             </span>
-            <p className="mt-2 text-sm text-secondary">Preview not available yet</p>
+            <p className="mt-2 text-sm text-secondary">
+              Preview not available yet
+            </p>
           </div>
           <span className="sr-only">Preview placeholder for {title}</span>
         </div>

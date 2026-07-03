@@ -7,8 +7,8 @@ export function SupportSection() {
           Monthly Support — £30/month
         </h2>
         <p className="mt-4 text-secondary">
-          Covers hosting, security updates and minor content changes. Keeps
-          your site running without you lifting a finger.
+          Covers hosting, security updates and minor content changes. Keeps your
+          site running without you lifting a finger.
         </p>
       </div>
     </section>

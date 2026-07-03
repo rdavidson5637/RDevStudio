@@ -137,9 +137,7 @@ export function buildRoundUserPrompt(options: RoundPromptOptions): string {
       : "";
 
   const audioField =
-    format === RoundFormat.MUSIC
-      ? `\n  "audioUrl": null,`
-      : "";
+    format === RoundFormat.MUSIC ? `\n  "audioUrl": null,` : "";
 
   return `Generate exactly ${count} pub quiz questions for this round.
 

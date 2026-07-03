@@ -7,7 +7,7 @@ import { getTimeLimitMsForRound, stripCorrectAnswer } from "./utils";
 export async function broadcastQuestion(
   gameId: string,
   game: GameState,
-  questionIndex: number
+  questionIndex: number,
 ): Promise<void> {
   const question = game.questions[questionIndex];
   const round = getRoundForQuestionIndex(game, questionIndex);

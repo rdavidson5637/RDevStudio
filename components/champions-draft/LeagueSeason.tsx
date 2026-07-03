@@ -1,105 +1,119 @@
-'use client'
-import { useState, useEffect, useCallback, useRef } from 'react'
-import type { GameState, MatchResult, LeagueTableRow } from '@/types/champions-draft'
-import { LEAGUE_SQUADS } from '@/lib/champions-draft/data'
-import { simulateFullSeason, getTopScorer } from '@/lib/champions-draft/matchEngine'
-import { sortTable } from '@/lib/champions-draft/utils'
-import MatchAnimation, { CompletedMatchCard } from './MatchAnimation'
-import LeagueTable from './LeagueTable'
-import SeasonShareCard from './SeasonShareCard'
-import { getShareSquadFromSlots } from './shareHelpers'
+"use client";
+import { useState, useEffect, useCallback, useRef, useMemo } from "react";
+import type {
+  GameState,
+  MatchResult,
+  LeagueTableRow,
+} from "@/types/champions-draft";
+import { LEAGUE_SQUADS } from "@/lib/champions-draft/data";
+import {
+  simulateFullSeason,
+  getTopScorer,
+} from "@/lib/champions-draft/matchEngine";
+import { sortTable } from "@/lib/champions-draft/utils";
+import MatchAnimation, { CompletedMatchCard } from "./MatchAnimation";
+import LeagueTable from "./LeagueTable";
+import SeasonShareCard from "./SeasonShareCard";
+import { getShareSquadFromSlots } from "./shareHelpers";
 
 interface Props {
-  state: GameState
-  onUpdate: (updates: Partial<GameState>) => void
-  onExit: () => void
+  state: GameState;
+  onUpdate: (updates: Partial<GameState>) => void;
+  onExit: () => void;
 }
 
-const USER_TEAM = 'My XI'
+const USER_TEAM = "My XI";
 
-type SeasonPhase = 'preview' | 'playing' | 'table' | 'done'
+type SeasonPhase = "preview" | "playing" | "table" | "done";
 
 export default function LeagueSeason({ state, onUpdate, onExit }: Props) {
-  const [seasonPhase, setSeasonPhase] = useState<SeasonPhase>('preview')
-  const [allResults, setAllResults] = useState<MatchResult[]>([])
-  const [table, setTable] = useState<LeagueTableRow[]>([])
-  const [currentMatchIndex, setCurrentMatchIndex] = useState(0)
-  const [speedMode, setSpeedMode] = useState<'normal' | 'fast' | 'skip'>(
-    state.speedMode
-  )
-  const [isSimulating, setIsSimulating] = useState(true)
-  const feedRef = useRef<HTMLDivElement>(null)
+  const [seasonPhase, setSeasonPhase] = useState<SeasonPhase>("preview");
+  const [allResults, setAllResults] = useState<MatchResult[]>([]);
+  const [table, setTable] = useState<LeagueTableRow[]>([]);
+  const [currentMatchIndex, setCurrentMatchIndex] = useState(0);
+  const [speedMode, setSpeedMode] = useState<"normal" | "fast" | "skip">(
+    state.speedMode,
+  );
+  const [isSimulating, setIsSimulating] = useState(true);
+  const feedRef = useRef<HTMLDivElement>(null);
 
-  const leagueName = state.selectedLeague ?? 'Premier League'
-  const leagueSquads = LEAGUE_SQUADS[leagueName] ?? []
-  const userRatings = state.teamRatings!
+  const leagueName = state.selectedLeague ?? "Premier League";
+  const leagueSquads = useMemo(
+    () => LEAGUE_SQUADS[leagueName] ?? [],
+    [leagueName],
+  );
+  const userRatings = state.teamRatings!;
 
   const draftedAttackers = state.draftSlots
-    .filter(s => s.player && ['ST', 'CF', 'LW', 'RW', 'LM', 'RM'].includes(s.player.position))
-    .map(s => s.player!.name)
+    .filter(
+      (s) =>
+        s.player &&
+        ["ST", "CF", "LW", "RW", "LM", "RM"].includes(s.player.position),
+    )
+    .map((s) => s.player!.name);
 
   useEffect(() => {
-    if (seasonPhase !== 'preview') return
+    if (seasonPhase !== "preview") return;
 
-    setIsSimulating(true)
-    let cancelled = false
+    setIsSimulating(true);
+    let cancelled = false;
 
     const timer = setTimeout(() => {
       const { allResults: results, table: finalTable } = simulateFullSeason(
         USER_TEAM,
         userRatings,
-        leagueSquads
-      )
+        leagueSquads,
+      );
       if (!cancelled) {
-        setAllResults(results)
-        setTable(finalTable)
-        setIsSimulating(false)
+        setAllResults(results);
+        setTable(finalTable);
+        setIsSimulating(false);
       }
-    }, 0)
+    }, 0);
 
     return () => {
-      cancelled = true
-      clearTimeout(timer)
-    }
-  }, [seasonPhase, userRatings, leagueSquads, leagueName])
+      cancelled = true;
+      clearTimeout(timer);
+    };
+  }, [seasonPhase, userRatings, leagueSquads, leagueName]);
 
   const userMatches = allResults.filter(
-    r => r.homeTeam === USER_TEAM || r.awayTeam === USER_TEAM
-  )
+    (r) => r.homeTeam === USER_TEAM || r.awayTeam === USER_TEAM,
+  );
 
   const handleMatchComplete = useCallback(() => {
-    setCurrentMatchIndex(prev => {
-      const next = prev + 1
+    setCurrentMatchIndex((prev) => {
+      const next = prev + 1;
       if (next >= userMatches.length) {
-        setSeasonPhase('table')
+        setSeasonPhase("table");
       }
-      return next
-    })
-  }, [userMatches.length])
+      return next;
+    });
+  }, [userMatches.length]);
 
   const handleStartSeason = useCallback(() => {
-    if (isSimulating || userMatches.length === 0) return
-    setSeasonPhase('playing')
-    setCurrentMatchIndex(0)
-  }, [isSimulating, userMatches.length])
+    if (isSimulating || userMatches.length === 0) return;
+    setSeasonPhase("playing");
+    setCurrentMatchIndex(0);
+  }, [isSimulating, userMatches.length]);
 
   const handleSkipAll = useCallback(() => {
-    setSeasonPhase('table')
-  }, [])
+    setSeasonPhase("table");
+  }, []);
 
-  const completedMatches = userMatches.slice(0, currentMatchIndex).reverse()
+  const completedMatches = userMatches.slice(0, currentMatchIndex).reverse();
 
   useEffect(() => {
-    if (seasonPhase === 'playing') {
-      feedRef.current?.scrollTo({ top: 0, behavior: 'smooth' })
+    if (seasonPhase === "playing") {
+      feedRef.current?.scrollTo({ top: 0, behavior: "smooth" });
     }
-  }, [currentMatchIndex, seasonPhase])
+  }, [currentMatchIndex, seasonPhase]);
 
-  const userPosition = table.findIndex(r => r.club === USER_TEAM) + 1
-  const userRow = table.find(r => r.club === USER_TEAM)
-  const winner = table[0]?.club ?? ''
+  const userPosition = table.findIndex((r) => r.club === USER_TEAM) + 1;
+  const userRow = table.find((r) => r.club === USER_TEAM);
+  const winner = table[0]?.club ?? "";
 
-  if (seasonPhase === 'preview') {
+  if (seasonPhase === "preview") {
     return (
       <div className="relative min-h-screen bg-[#0a0a12] flex flex-col items-center justify-center px-4 py-12">
         <button
@@ -122,13 +136,18 @@ export default function LeagueSeason({ state, onUpdate, onExit }: Props) {
 
         <div className="grid grid-cols-2 gap-3 w-full max-w-xs mb-8">
           {[
-            { label: 'Attack', value: userRatings.attack },
-            { label: 'Midfield', value: userRatings.midfield },
-            { label: 'Defence', value: userRatings.defence },
-            { label: 'GK', value: userRatings.goalkeeper },
+            { label: "Attack", value: userRatings.attack },
+            { label: "Midfield", value: userRatings.midfield },
+            { label: "Defence", value: userRatings.defence },
+            { label: "GK", value: userRatings.goalkeeper },
           ].map(({ label, value }) => (
-            <div key={label} className="bg-white/5 rounded-xl p-4 border border-white/10 text-center">
-              <p className="text-white/40 text-xs uppercase tracking-widest">{label}</p>
+            <div
+              key={label}
+              className="bg-white/5 rounded-xl p-4 border border-white/10 text-center"
+            >
+              <p className="text-white/40 text-xs uppercase tracking-widest">
+                {label}
+              </p>
               <p className="text-white font-black text-3xl mt-1">{value}</p>
             </div>
           ))}
@@ -139,14 +158,14 @@ export default function LeagueSeason({ state, onUpdate, onExit }: Props) {
             Match speed
           </p>
           <div className="flex gap-2">
-            {(['normal', 'fast', 'skip'] as const).map(s => (
+            {(["normal", "fast", "skip"] as const).map((s) => (
               <button
                 key={s}
                 onClick={() => setSpeedMode(s)}
                 className={`flex-1 py-2.5 rounded-xl text-sm font-bold uppercase tracking-wide transition-all ${
                   speedMode === s
-                    ? 'bg-white text-black'
-                    : 'bg-white/5 text-white/40 border border-white/10 hover:bg-white/10'
+                    ? "bg-white text-black"
+                    : "bg-white/5 text-white/40 border border-white/10 hover:bg-white/10"
                 }`}
               >
                 {s}
@@ -160,14 +179,15 @@ export default function LeagueSeason({ state, onUpdate, onExit }: Props) {
           disabled={isSimulating}
           className="px-10 py-4 bg-white text-black font-black text-lg uppercase tracking-widest rounded-xl hover:bg-white/90 active:scale-95 transition-all disabled:opacity-40 disabled:cursor-not-allowed"
         >
-          {isSimulating ? 'Simulating Season...' : 'Kick Off'}
+          {isSimulating ? "Simulating Season..." : "Kick Off"}
         </button>
       </div>
-    )
+    );
   }
 
-  if (seasonPhase === 'playing') {
-    const seasonProgress = (currentMatchIndex / Math.max(1, userMatches.length)) * 100
+  if (seasonPhase === "playing") {
+    const seasonProgress =
+      (currentMatchIndex / Math.max(1, userMatches.length)) * 100;
 
     return (
       <div className="min-h-screen bg-[#0a0a12] flex flex-col">
@@ -201,14 +221,14 @@ export default function LeagueSeason({ state, onUpdate, onExit }: Props) {
             </div>
 
             <div className="flex gap-2 flex-wrap">
-              {(['normal', 'fast', 'skip'] as const).map(s => (
+              {(["normal", "fast", "skip"] as const).map((s) => (
                 <button
                   key={s}
                   onClick={() => setSpeedMode(s)}
                   className={`px-3 py-1.5 rounded-lg text-xs font-bold uppercase tracking-wide transition-all ${
                     speedMode === s
-                      ? 'bg-white text-black'
-                      : 'bg-white/10 text-white/40 hover:bg-white/20'
+                      ? "bg-white text-black"
+                      : "bg-white/10 text-white/40 hover:bg-white/20"
                   }`}
                 >
                   {s}
@@ -255,27 +275,29 @@ export default function LeagueSeason({ state, onUpdate, onExit }: Props) {
           </div>
         </div>
       </div>
-    )
+    );
   }
 
-  if (seasonPhase === 'table' || seasonPhase === 'done') {
-    const topScorerData = getTopScorer(USER_TEAM, draftedAttackers, allResults)
+  if (seasonPhase === "table" || seasonPhase === "done") {
+    const topScorerData = getTopScorer(USER_TEAM, draftedAttackers, allResults);
     const playerOfSeason = state.draftSlots
-      .filter(s => s.player)
-      .sort((a, b) => (b.player?.overall ?? 0) - (a.player?.overall ?? 0))[0]?.player
+      .filter((s) => s.player)
+      .sort(
+        (a, b) => (b.player?.overall ?? 0) - (a.player?.overall ?? 0),
+      )[0]?.player;
 
     const userRecord = userMatches.reduce(
       (acc, r) => {
-        const isHome = r.homeTeam === USER_TEAM
-        const userScore = isHome ? r.homeScore : r.awayScore
-        const oppScore = isHome ? r.awayScore : r.homeScore
-        if (userScore > oppScore) acc.won++
-        else if (userScore < oppScore) acc.lost++
-        else acc.drawn++
-        return acc
+        const isHome = r.homeTeam === USER_TEAM;
+        const userScore = isHome ? r.homeScore : r.awayScore;
+        const oppScore = isHome ? r.awayScore : r.homeScore;
+        if (userScore > oppScore) acc.won++;
+        else if (userScore < oppScore) acc.lost++;
+        else acc.drawn++;
+        return acc;
       },
-      { won: 0, drawn: 0, lost: 0 }
-    )
+      { won: 0, drawn: 0, lost: 0 },
+    );
 
     return (
       <div className="min-h-screen bg-[#0a0a12] px-4 py-12">
@@ -295,7 +317,7 @@ export default function LeagueSeason({ state, onUpdate, onExit }: Props) {
                 Champion
               </p>
               <p className="text-white font-black text-sm leading-tight">
-                {winner === USER_TEAM ? '🏆 You!' : winner}
+                {winner === USER_TEAM ? "🏆 You!" : winner}
               </p>
             </div>
             <div className="bg-white/5 border border-white/10 rounded-xl p-4 text-center">
@@ -303,7 +325,14 @@ export default function LeagueSeason({ state, onUpdate, onExit }: Props) {
                 Your Finish
               </p>
               <p className="text-white font-black text-2xl">
-                {userPosition}{userPosition === 1 ? 'st' : userPosition === 2 ? 'nd' : userPosition === 3 ? 'rd' : 'th'}
+                {userPosition}
+                {userPosition === 1
+                  ? "st"
+                  : userPosition === 2
+                    ? "nd"
+                    : userPosition === 3
+                      ? "rd"
+                      : "th"}
               </p>
             </div>
             <div className="bg-white/5 border border-white/10 rounded-xl p-4 text-center">
@@ -325,7 +354,9 @@ export default function LeagueSeason({ state, onUpdate, onExit }: Props) {
               <p className="text-white/30 text-xs uppercase tracking-widest mb-2">
                 Top Scorer
               </p>
-              <p className="text-white font-bold text-sm">{topScorerData.playerName}</p>
+              <p className="text-white font-bold text-sm">
+                {topScorerData.playerName}
+              </p>
               <p className="text-emerald-400 font-black text-2xl mt-1">
                 {topScorerData.goals} goals
               </p>
@@ -335,7 +366,9 @@ export default function LeagueSeason({ state, onUpdate, onExit }: Props) {
                 <p className="text-white/30 text-xs uppercase tracking-widest mb-2">
                   Player of Season
                 </p>
-                <p className="text-white font-bold text-sm">{playerOfSeason.name}</p>
+                <p className="text-white font-bold text-sm">
+                  {playerOfSeason.name}
+                </p>
                 <p className="text-amber-400 font-black text-2xl mt-1">
                   {playerOfSeason.overall} OVR
                 </p>
@@ -353,7 +386,7 @@ export default function LeagueSeason({ state, onUpdate, onExit }: Props) {
             goalDifference={userRow?.goalDifference ?? 0}
             topScorer={topScorerData.playerName}
             topScorerGoals={topScorerData.goals}
-            playerOfSeason={playerOfSeason?.name ?? '—'}
+            playerOfSeason={playerOfSeason?.name ?? "—"}
             playerOfSeasonOvr={playerOfSeason?.overall ?? 0}
             formation={state.formation}
             teamRatings={state.teamRatings ?? undefined}
@@ -362,13 +395,24 @@ export default function LeagueSeason({ state, onUpdate, onExit }: Props) {
 
           <div className="flex flex-col gap-3">
             <button
-              onClick={() => onUpdate({ phase: 'playing', mode: 'champions-league' })}
+              onClick={() =>
+                onUpdate({ phase: "playing", mode: "champions-league" })
+              }
               className="w-full py-4 bg-white/10 text-white font-black text-base uppercase tracking-widest rounded-xl hover:bg-white/20 border border-white/10 transition-all"
             >
               Play Champions League →
             </button>
             <button
-              onClick={() => onUpdate({ phase: 'mode-select', mode: null, formation: null, draftSlots: [], teamRatings: null, selectedLeague: null })}
+              onClick={() =>
+                onUpdate({
+                  phase: "mode-select",
+                  mode: null,
+                  formation: null,
+                  draftSlots: [],
+                  teamRatings: null,
+                  selectedLeague: null,
+                })
+              }
               className="w-full py-3 text-white/30 font-bold text-sm uppercase tracking-widest hover:text-white/60 transition-colors"
             >
               Start New Draft
@@ -376,8 +420,8 @@ export default function LeagueSeason({ state, onUpdate, onExit }: Props) {
           </div>
         </div>
       </div>
-    )
+    );
   }
 
-  return null
+  return null;
 }

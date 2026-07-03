@@ -1,50 +1,50 @@
-'use client'
-import Kit from './Kit'
-import type { Player } from '@/types/rugby-draft'
+"use client";
+import Kit from "./Kit";
+import type { Player } from "@/types/rugby-draft";
 
 interface Props {
-  player: Player
-  onSelect: (player: Player) => void
-  badge: string
+  player: Player;
+  onSelect: (player: Player) => void;
+  badge: string;
 }
 
 const STAT_LABELS: Record<string, string> = {
-  str: 'STR',
-  spd: 'SPD',
-  hnd: 'HND',
-  kck: 'KCK',
-  tck: 'TCK',
-  stm: 'STM',
-}
+  str: "STR",
+  spd: "SPD",
+  hnd: "HND",
+  kck: "KCK",
+  tck: "TCK",
+  stm: "STM",
+};
 
-const STAT_ORDER = ['str', 'spd', 'hnd', 'kck', 'tck', 'stm'] as const
+const STAT_ORDER = ["str", "spd", "hnd", "kck", "tck", "stm"] as const;
 
 const POSITION_NAMES: Record<string, string> = {
-  LH: 'Loosehead',
-  HK: 'Hooker',
-  TH: 'Tighthead',
-  LL: 'Lock',
-  RL: 'Lock',
-  BF: 'Blindside',
-  OF: 'Openside',
-  N8: 'No.8',
-  SH: 'Scrum-half',
-  FH: 'Fly-half',
-  IC: 'Inside Centre',
-  OC: 'Outside Centre',
-  LW: 'Wing',
-  RW: 'Wing',
-  FB: 'Fullback',
-}
+  LH: "Loosehead",
+  HK: "Hooker",
+  TH: "Tighthead",
+  LL: "Lock",
+  RL: "Lock",
+  BF: "Blindside",
+  OF: "Openside",
+  N8: "No.8",
+  SH: "Scrum-half",
+  FH: "Fly-half",
+  IC: "Inside Centre",
+  OC: "Outside Centre",
+  LW: "Wing",
+  RW: "Wing",
+  FB: "Fullback",
+};
 
 function getInitials(name: string): string {
-  const parts = name.trim().split(' ')
-  if (parts.length === 1) return parts[0].substring(0, 2).toUpperCase()
-  return (parts[0][0] + parts[parts.length - 1][0]).toUpperCase()
+  const parts = name.trim().split(" ");
+  if (parts.length === 1) return parts[0].substring(0, 2).toUpperCase();
+  return (parts[0][0] + parts[parts.length - 1][0]).toUpperCase();
 }
 
 export default function PlayerCard({ player, onSelect, badge }: Props) {
-  const positionName = POSITION_NAMES[player.position] ?? player.position
+  const positionName = POSITION_NAMES[player.position] ?? player.position;
 
   return (
     <button
@@ -68,7 +68,7 @@ export default function PlayerCard({ player, onSelect, badge }: Props) {
       </div>
 
       <div className="grid grid-cols-3 gap-x-3 gap-y-1 w-full mt-1">
-        {STAT_ORDER.map(key => (
+        {STAT_ORDER.map((key) => (
           <div key={key} className="flex justify-between items-center">
             <span className="text-white/30 text-[9px] font-bold uppercase tracking-wide">
               {STAT_LABELS[key]}
@@ -80,5 +80,5 @@ export default function PlayerCard({ player, onSelect, badge }: Props) {
         ))}
       </div>
     </button>
-  )
+  );
 }

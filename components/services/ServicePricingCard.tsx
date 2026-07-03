@@ -36,10 +36,7 @@ export function ServicePricingCard({
         )}
         <ul className="space-y-4">
           {features.map((feature) => (
-            <li
-              key={feature}
-              className="flex items-start gap-3 text-secondary"
-            >
+            <li key={feature} className="flex items-start gap-3 text-secondary">
               <svg
                 className="mt-0.5 h-5 w-5 shrink-0 text-accent"
                 fill="none"
@@ -58,7 +55,10 @@ export function ServicePricingCard({
             </li>
           ))}
         </ul>
-        <Link href={ctaHref} className="btn-primary mt-auto pt-10 w-full text-center">
+        <Link
+          href={ctaHref}
+          className="btn-primary mt-auto pt-10 w-full text-center"
+        >
           {ctaLabel}
         </Link>
       </div>

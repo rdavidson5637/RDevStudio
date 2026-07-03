@@ -3,7 +3,11 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { ACHIEVEMENTS } from "@/lib/hire-data";
 
-type SectionKey = "qualifications" | "experience" | "testimonials" | "final-cta";
+type SectionKey =
+  | "qualifications"
+  | "experience"
+  | "testimonials"
+  | "final-cta";
 
 export function useHireExperience() {
   const prefersReducedMotion =
@@ -14,8 +18,12 @@ export function useHireExperience() {
   const [motionReduced, setMotionReduced] = useState(prefersReducedMotion);
   const [chaosStarted, setChaosStarted] = useState(false);
   const [finaleReached, setFinaleReached] = useState(false);
-  const [unlockedAchievements, setUnlockedAchievements] = useState<string[]>([]);
-  const [recentAchievement, setRecentAchievement] = useState<string | null>(null);
+  const [unlockedAchievements, setUnlockedAchievements] = useState<string[]>(
+    [],
+  );
+  const [recentAchievement, setRecentAchievement] = useState<string | null>(
+    null,
+  );
   const [celebrationKey, setCelebrationKey] = useState(0);
   const sectionRefs = useRef<Record<SectionKey, HTMLElement | null>>({
     qualifications: null,
@@ -52,7 +60,11 @@ export function useHireExperience() {
   useEffect(() => {
     const observers: IntersectionObserver[] = [];
 
-    const observe = (key: SectionKey, onEnter: () => void, threshold = 0.45) => {
+    const observe = (
+      key: SectionKey,
+      onEnter: () => void,
+      threshold = 0.45,
+    ) => {
       const node = sectionRefs.current[key];
       if (!node) return;
 
@@ -74,14 +86,18 @@ export function useHireExperience() {
       observers.length = 0;
 
       observe("qualifications", () => {
-        const achievement = ACHIEVEMENTS.find((item) => item.id === "qualifications");
+        const achievement = ACHIEVEMENTS.find(
+          (item) => item.id === "qualifications",
+        );
         if (achievement) unlockAchievement(achievement.id, achievement.title);
       });
 
       observe(
         "experience",
         () => {
-          const achievement = ACHIEVEMENTS.find((item) => item.id === "experience");
+          const achievement = ACHIEVEMENTS.find(
+            (item) => item.id === "experience",
+          );
           if (achievement) unlockAchievement(achievement.id, achievement.title);
         },
         0,
@@ -92,7 +108,9 @@ export function useHireExperience() {
         () => {
           setChaosStarted(true);
           setCelebrationKey((value) => value + 1);
-          const achievement = ACHIEVEMENTS.find((item) => item.id === "full-cv");
+          const achievement = ACHIEVEMENTS.find(
+            (item) => item.id === "full-cv",
+          );
           if (achievement) unlockAchievement(achievement.id, achievement.title);
         },
         0,
@@ -103,7 +121,9 @@ export function useHireExperience() {
         () => {
           setFinaleReached(true);
           setCelebrationKey((value) => value + 1);
-          const achievement = ACHIEVEMENTS.find((item) => item.id === "the-end");
+          const achievement = ACHIEVEMENTS.find(
+            (item) => item.id === "the-end",
+          );
           if (achievement) unlockAchievement(achievement.id, achievement.title);
         },
         0.2,

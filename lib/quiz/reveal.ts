@@ -6,22 +6,22 @@ import { getSortedPlayers, isAnswerCorrect } from "./utils";
 
 export function getAnsweredPlayerIds(
   game: GameState,
-  questionId: string
+  questionId: string,
 ): string[] {
   return game.players
     .filter((player) =>
-      player.answers.some((answer) => answer.questionId === questionId)
+      player.answers.some((answer) => answer.questionId === questionId),
     )
     .map((player) => player.id);
 }
 
 export function submitMissingAnswers(
   game: GameState,
-  questionId: string
+  questionId: string,
 ): void {
   for (const player of game.players) {
     const hasAnswered = player.answers.some(
-      (answer) => answer.questionId === questionId
+      (answer) => answer.questionId === questionId,
     );
 
     if (!hasAnswered) {
@@ -37,10 +37,10 @@ export function submitMissingAnswers(
 
 export function buildRevealPayload(
   game: GameState,
-  questionId: string
+  questionId: string,
 ): GameEventMap["game:reveal"] {
   const currentQuestion = game.questions.find(
-    (question) => question.id === questionId
+    (question) => question.id === questionId,
   );
 
   if (!currentQuestion) {
@@ -49,7 +49,7 @@ export function buildRevealPayload(
 
   const playerResults = game.players.map((player) => {
     const playerAnswer = player.answers.find(
-      (answer) => answer.questionId === questionId
+      (answer) => answer.questionId === questionId,
     )!;
 
     return {
@@ -57,7 +57,7 @@ export function buildRevealPayload(
       answer: playerAnswer.answer,
       isCorrect: isAnswerCorrect(
         playerAnswer.answer,
-        currentQuestion.correctAnswer
+        currentQuestion.correctAnswer,
       ),
       pointsAwarded: playerAnswer.pointsAwarded,
     };
@@ -68,10 +68,10 @@ export function buildRevealPayload(
   const previousScores = Object.fromEntries(
     game.players.map((player) => {
       const playerAnswer = player.answers.find(
-        (answer) => answer.questionId === questionId
+        (answer) => answer.questionId === questionId,
       );
       return [player.id, player.score - (playerAnswer?.pointsAwarded ?? 0)];
-    })
+    }),
   );
 
   const payload: GameEventMap["game:reveal"] = {
@@ -93,7 +93,7 @@ export function buildRevealPayload(
 export async function triggerReveal(
   gameId: string,
   game: GameState,
-  questionId: string
+  questionId: string,
 ): Promise<GameEventMap["game:reveal"]> {
   const payload = buildRevealPayload(game, questionId);
 
@@ -114,10 +114,10 @@ export async function triggerReveal(
 export async function revealIfAllAnswered(
   gameId: string,
   game: GameState,
-  questionId: string
+  questionId: string,
 ): Promise<GameEventMap["game:reveal"] | null> {
   const allAnswered = game.players.every((player) =>
-    player.answers.some((answer) => answer.questionId === questionId)
+    player.answers.some((answer) => answer.questionId === questionId),
   );
 
   if (!allAnswered) {

@@ -1,10 +1,10 @@
-'use client'
-import { AVAILABLE_NATIONS } from '@/lib/champions-draft/data'
-import type { GameState } from '@/types/champions-draft'
+"use client";
+import { AVAILABLE_NATIONS } from "@/lib/champions-draft/data";
+import type { GameState } from "@/types/champions-draft";
 
 interface Props {
-  onSelect: (updates: Partial<GameState>) => void
-  onBack: () => void
+  onSelect: (updates: Partial<GameState>) => void;
+  onBack: () => void;
 }
 
 export default function NationSelect({ onSelect, onBack }: Props) {
@@ -27,14 +27,14 @@ export default function NationSelect({ onSelect, onBack }: Props) {
       </div>
 
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 w-full max-w-2xl">
-        {AVAILABLE_NATIONS.map(nation => (
+        {AVAILABLE_NATIONS.map((nation) => (
           <button
             key={nation.id}
             onClick={() =>
               onSelect({
                 selectedNation: nation.id,
                 wcDraftMode: null,
-                phase: 'wc-draft-mode-select',
+                phase: "wc-draft-mode-select",
               })
             }
             className="flex flex-col items-center gap-2 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/30 rounded-xl p-5 text-center transition-all duration-200 cursor-pointer group"
@@ -47,5 +47,5 @@ export default function NationSelect({ onSelect, onBack }: Props) {
         ))}
       </div>
     </div>
-  )
+  );
 }

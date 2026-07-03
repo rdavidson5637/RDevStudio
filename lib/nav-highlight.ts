@@ -14,7 +14,7 @@ export function getNavHighlightColor(href: string): NavHighlightColor {
 
 export function getNavHighlightTextClass(
   href: string,
-  active: boolean
+  active: boolean,
 ): string {
   const color = getNavHighlightColor(href);
 

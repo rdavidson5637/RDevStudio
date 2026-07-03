@@ -1,9 +1,5 @@
 import Link from "next/link";
-import {
-  CONTACT_EMAIL,
-  GITHUB_URL,
-  SHELL_NAV_LINKS,
-} from "@/lib/constants";
+import { CONTACT_EMAIL, GITHUB_URL, SHELL_NAV_LINKS } from "@/lib/constants";
 
 export function Footer() {
   return (

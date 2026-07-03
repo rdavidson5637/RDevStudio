@@ -52,19 +52,27 @@ export function Hero() {
           <div className="mb-10 grid min-h-[120px] grid-cols-2 gap-px overflow-hidden rounded-md border border-border bg-border md:grid-cols-4">
             <div className="bg-base px-4 py-3">
               <p className="shell-label text-secondary">PROJECTS SHIPPED</p>
-              <p className="mt-1 text-2xl font-display text-primary sm:text-3xl">12</p>
+              <p className="mt-1 text-2xl font-display text-primary sm:text-3xl">
+                12
+              </p>
             </div>
             <div className="bg-base px-4 py-3">
               <p className="shell-label text-secondary">GAMES BUILT</p>
-              <p className="mt-1 text-2xl font-display text-primary sm:text-3xl">3</p>
+              <p className="mt-1 text-2xl font-display text-primary sm:text-3xl">
+                3
+              </p>
             </div>
             <div className="bg-base px-4 py-3">
               <p className="shell-label text-secondary">YEARS BUILDING</p>
-              <p className="mt-1 text-2xl font-display text-primary sm:text-3xl">2</p>
+              <p className="mt-1 text-2xl font-display text-primary sm:text-3xl">
+                2
+              </p>
             </div>
             <div className="bg-base px-4 py-3">
               <p className="shell-label text-secondary">STATUS</p>
-              <p className="mt-1 text-2xl font-display text-primary sm:text-3xl">LIVE</p>
+              <p className="mt-1 text-2xl font-display text-primary sm:text-3xl">
+                LIVE
+              </p>
             </div>
           </div>
 

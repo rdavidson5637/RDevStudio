@@ -1,5 +1,5 @@
-'use client'
-import { useState, useEffect, useCallback, useMemo, useRef } from 'react'
+"use client";
+import { useState, useEffect, useCallback, useMemo, useRef } from "react";
 import type {
   GameState,
   MatchResult,
@@ -7,13 +7,13 @@ import type {
   TournamentRound,
   TeamRatings,
   Squad,
-} from '@/types/rugby-draft'
-import { getDraftPool, findSquadByClub } from '@/lib/rugby-draft/data'
+} from "@/types/rugby-draft";
+import { getDraftPool, findSquadByClub } from "@/lib/rugby-draft/data";
 import {
   buildLeagueTable,
   updateTableWithResult,
   sortTable,
-} from '@/lib/rugby-draft/utils'
+} from "@/lib/rugby-draft/utils";
 import {
   simulateFullMatch,
   simulateKnockoutFullMatch,
@@ -21,95 +21,95 @@ import {
   generateKnockoutOpponentResult,
   getSquadRatings,
   getTopTryScorer,
-} from '@/lib/rugby-draft/matchEngine'
-import MatchAnimation, { CompletedMatchCard } from './MatchAnimation'
-import LeagueTable from './LeagueTable'
-import KnockoutBracket from './KnockoutBracket'
-import QuitButton from './QuitButton'
-import QuitConfirmModal from './QuitConfirmModal'
-import SpeedControls from './SpeedControls'
-import ResultsScreen from './ResultsScreen'
-import ShareCard from './ShareCard'
+} from "@/lib/rugby-draft/matchEngine";
+import MatchAnimation, { CompletedMatchCard } from "./MatchAnimation";
+import LeagueTable from "./LeagueTable";
+import KnockoutBracket from "./KnockoutBracket";
+import QuitButton from "./QuitButton";
+import QuitConfirmModal from "./QuitConfirmModal";
+import SpeedControls from "./SpeedControls";
+import ResultsScreen from "./ResultsScreen";
+import ShareCard from "./ShareCard";
 import {
   getKnockoutUserAwards,
   getPlayerOfTournament,
   getPoolWinnerAward,
   getTryScorerCandidates,
-} from './shareHelpers'
+} from "./shareHelpers";
 
 interface Props {
-  state: GameState
-  onUpdate: (updates: Partial<GameState>) => void
-  onExit: () => void
+  state: GameState;
+  onUpdate: (updates: Partial<GameState>) => void;
+  onExit: () => void;
 }
 
 const WORLD_CUP_NATIONS = [
-  'New Zealand',
-  'Ireland',
-  'South Africa',
-  'France',
-  'England',
-  'Australia',
-  'Argentina',
-  'Wales',
-  'Scotland',
-  'Italy',
-  'Fiji',
-  'Samoa',
-  'Tonga',
-  'Japan',
-  'Georgia',
-  'Uruguay',
-  'Namibia',
-  'Portugal',
-  'Chile',
-  'United States',
-]
+  "New Zealand",
+  "Ireland",
+  "South Africa",
+  "France",
+  "England",
+  "Australia",
+  "Argentina",
+  "Wales",
+  "Scotland",
+  "Italy",
+  "Fiji",
+  "Samoa",
+  "Tonga",
+  "Japan",
+  "Georgia",
+  "Uruguay",
+  "Namibia",
+  "Portugal",
+  "Chile",
+  "United States",
+];
 
 type WCPhase =
-  | 'pool-draw'
-  | 'pool-stage'
-  | 'quarter-final-draw'
-  | 'knockouts'
-  | 'results'
+  | "pool-draw"
+  | "pool-stage"
+  | "quarter-final-draw"
+  | "knockouts"
+  | "results";
 
-type KnockoutRoundKey = 'quarter-final' | 'semi-final' | 'final'
+type KnockoutRoundKey = "quarter-final" | "semi-final" | "final";
 
 interface PoolFixture {
-  pool: string
-  home: string
-  away: string
+  pool: string;
+  home: string;
+  away: string;
 }
 
 function shuffleArray<T>(arr: T[]): T[] {
-  const a = [...arr]
+  const a = [...arr];
   for (let i = a.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1))
-    ;[a[i], a[j]] = [a[j], a[i]]
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
   }
-  return a
+  return a;
 }
 
 function buildWorldCupPools(userNation: string): RugbyGroup[] {
   const others = shuffleArray(
-    WORLD_CUP_NATIONS.filter(n => n !== userNation)
-  )
-  const poolA = [userNation, ...others.slice(0, 4)]
-  const remaining = others.slice(4)
-  const poolB = remaining.slice(0, 5)
-  const poolC = remaining.slice(5, 10)
-  const poolD = remaining.slice(10, 15)
+    WORLD_CUP_NATIONS.filter((n) => n !== userNation),
+  );
+  const poolA = [userNation, ...others.slice(0, 4)];
+  const remaining = others.slice(4);
+  const poolB = remaining.slice(0, 5);
+  const poolC = remaining.slice(5, 10);
+  const poolD = remaining.slice(10, 15);
 
   return [
-    { name: 'A', teams: poolA, table: buildLeagueTable(poolA), fixtures: [] },
-    { name: 'B', teams: poolB, table: buildLeagueTable(poolB), fixtures: [] },
-    { name: 'C', teams: poolC, table: buildLeagueTable(poolC), fixtures: [] },
-    { name: 'D', teams: poolD, table: buildLeagueTable(poolD), fixtures: [] },
-  ]
+    { name: "A", teams: poolA, table: buildLeagueTable(poolA), fixtures: [] },
+    { name: "B", teams: poolB, table: buildLeagueTable(poolB), fixtures: [] },
+    { name: "C", teams: poolC, table: buildLeagueTable(poolC), fixtures: [] },
+    { name: "D", teams: poolD, table: buildLeagueTable(poolD), fixtures: [] },
+  ];
 }
 
 function generatePoolFixtures(groups: RugbyGroup[]): PoolFixture[] {
-  const fixtures: PoolFixture[] = []
+  const fixtures: PoolFixture[] = [];
   for (const group of groups) {
     for (let i = 0; i < group.teams.length; i++) {
       for (let j = i + 1; j < group.teams.length; j++) {
@@ -117,52 +117,57 @@ function generatePoolFixtures(groups: RugbyGroup[]): PoolFixture[] {
           pool: group.name,
           home: group.teams[i],
           away: group.teams[j],
-        })
+        });
       }
     }
   }
-  return fixtures
+  return fixtures;
 }
 
 function getWorldCupSquads(): Squad[] {
-  return getDraftPool('world-cup').filter(
-    s => WORLD_CUP_NATIONS.includes(s.club) && s.season === '2024'
-  )
+  return getDraftPool("world-cup").filter(
+    (s) => WORLD_CUP_NATIONS.includes(s.club) && s.season === "2024",
+  );
 }
 
 function getTeamRatings(
   team: string,
   userNation: string,
   userRatings: TeamRatings,
-  squads: Squad[]
+  squads: Squad[],
 ): TeamRatings {
-  if (team === userNation) return userRatings
-  const squad = findSquadByClub(squads, team, { season: '2024' })
+  if (team === userNation) return userRatings;
+  const squad = findSquadByClub(squads, team, { season: "2024" });
   return squad
     ? getSquadRatings(squad)
-    : { forwards: 80, backs: 80, overall: 80 }
+    : { forwards: 80, backs: 80, overall: 80 };
 }
 
 function simulatePoolMatch(
   fixture: PoolFixture,
   userNation: string,
   userRatings: TeamRatings,
-  squads: Squad[]
+  squads: Squad[],
 ): MatchResult {
-  const { home, away } = fixture
+  const { home, away } = fixture;
   if (home === userNation || away === userNation) {
-    const isHome = home === userNation
-    const opponent = isHome ? away : home
-    const oppRatings = getTeamRatings(opponent, userNation, userRatings, squads)
+    const isHome = home === userNation;
+    const opponent = isHome ? away : home;
+    const oppRatings = getTeamRatings(
+      opponent,
+      userNation,
+      userRatings,
+      squads,
+    );
     return simulateFullMatch(
       userRatings,
       oppRatings,
       userNation,
       opponent,
-      isHome
-    )
+      isHome,
+    );
   }
-  return generateOpponentVsOpponentResult(home, away, squads)
+  return generateOpponentVsOpponentResult(home, away, squads);
 }
 
 function simulateKnockoutMatch(
@@ -171,63 +176,68 @@ function simulateKnockoutMatch(
   userNation: string,
   userRatings: TeamRatings,
   squads: Squad[],
-  neutralVenue: boolean
+  neutralVenue: boolean,
 ): MatchResult {
   if (home === userNation || away === userNation) {
-    const isHome = home === userNation
-    const opponent = isHome ? away : home
-    const oppRatings = getTeamRatings(opponent, userNation, userRatings, squads)
+    const isHome = home === userNation;
+    const opponent = isHome ? away : home;
+    const oppRatings = getTeamRatings(
+      opponent,
+      userNation,
+      userRatings,
+      squads,
+    );
     return simulateKnockoutFullMatch(
       userRatings,
       oppRatings,
       userNation,
       opponent,
       isHome,
-      neutralVenue
-    )
+      neutralVenue,
+    );
   }
-  return generateKnockoutOpponentResult(home, away, squads, neutralVenue)
+  return generateKnockoutOpponentResult(home, away, squads, neutralVenue);
 }
 
 function updateGroupsWithResult(
   groups: RugbyGroup[],
   pool: string,
-  result: MatchResult
+  result: MatchResult,
 ): RugbyGroup[] {
-  return groups.map(g => {
-    if (g.name !== pool) return g
+  return groups.map((g) => {
+    if (g.name !== pool) return g;
     return {
       ...g,
       table: sortTable(updateTableWithResult(g.table, result)),
       fixtures: [...g.fixtures, result],
-    }
-  })
+    };
+  });
 }
 
 function isPoolComplete(group: RugbyGroup): boolean {
-  const expected = (group.teams.length * (group.teams.length - 1)) / 2
-  return group.fixtures.length >= expected
+  const expected = (group.teams.length * (group.teams.length - 1)) / 2;
+  return group.fixtures.length >= expected;
 }
 
 function getUserPoolPosition(groups: RugbyGroup[], userNation: string): number {
-  const userPool = groups.find(g => g.teams.includes(userNation))
-  if (!userPool) return 0
-  const sorted = sortTable(userPool.table)
-  return sorted.findIndex(r => r.club === userNation) + 1
+  const userPool = groups.find((g) => g.teams.includes(userNation));
+  if (!userPool) return 0;
+  const sorted = sortTable(userPool.table);
+  return sorted.findIndex((r) => r.club === userNation) + 1;
 }
 
 function buildQuarterFinalDraw(groups: RugbyGroup[]): TournamentRound {
-  const poolFinishers: Record<string, { first: string; second: string }> = {}
+  const poolFinishers: Record<string, { first: string; second: string }> = {};
   for (const group of groups) {
-    const sorted = sortTable(group.table)
+    const sorted = sortTable(group.table);
     poolFinishers[group.name] = {
       first: sorted[0].club,
       second: sorted[1].club,
-    }
+    };
   }
 
   return {
-    name: 'Quarter-Final',
+    name: "Quarter-Final",
     fixtures: [
       {
         homeTeam: poolFinishers.A.first,
@@ -254,15 +264,15 @@ function buildQuarterFinalDraw(groups: RugbyGroup[]): TournamentRound {
         awayScore: 0,
       },
     ],
-  }
+  };
 }
 
 function buildSemiFinalDraw(qfRound: TournamentRound): TournamentRound {
-  const winners = qfRound.fixtures.map(f =>
-    f.homeScore > f.awayScore ? f.homeTeam : f.awayTeam
-  )
+  const winners = qfRound.fixtures.map((f) =>
+    f.homeScore > f.awayScore ? f.homeTeam : f.awayTeam,
+  );
   return {
-    name: 'Semi-Final',
+    name: "Semi-Final",
     fixtures: [
       {
         homeTeam: winners[0],
@@ -277,15 +287,15 @@ function buildSemiFinalDraw(qfRound: TournamentRound): TournamentRound {
         awayScore: 0,
       },
     ],
-  }
+  };
 }
 
 function buildFinalDraw(sfRound: TournamentRound): TournamentRound {
-  const winners = sfRound.fixtures.map(f =>
-    f.homeScore > f.awayScore ? f.homeTeam : f.awayTeam
-  )
+  const winners = sfRound.fixtures.map((f) =>
+    f.homeScore > f.awayScore ? f.homeTeam : f.awayTeam,
+  );
   return {
-    name: 'Final',
+    name: "Final",
     fixtures: [
       {
         homeTeam: winners[0],
@@ -294,13 +304,13 @@ function buildFinalDraw(sfRound: TournamentRound): TournamentRound {
         awayScore: 0,
       },
     ],
-  }
+  };
 }
 
 function getMatchWinner(result: MatchResult): string {
   return result.homeScore > result.awayScore
     ? result.homeTeam
-    : result.awayTeam
+    : result.awayTeam;
 }
 
 function fastSimulateKnockoutRound(
@@ -309,16 +319,16 @@ function fastSimulateKnockoutRound(
   userNation: string,
   userRatings: TeamRatings,
   squads: Squad[],
-  neutralVenue: boolean
+  neutralVenue: boolean,
 ): TournamentRound {
-  const fixtures: MatchResult[] = []
+  const fixtures: MatchResult[] = [];
 
   for (let i = 0; i < round.fixtures.length; i++) {
     if (i < fromIndex) {
-      fixtures.push(round.fixtures[i])
-      continue
+      fixtures.push(round.fixtures[i]);
+      continue;
     }
-    const pairing = round.fixtures[i]
+    const pairing = round.fixtures[i];
     fixtures.push(
       simulateKnockoutMatch(
         pairing.homeTeam,
@@ -326,19 +336,19 @@ function fastSimulateKnockoutRound(
         userNation,
         userRatings,
         squads,
-        neutralVenue
-      )
-    )
+        neutralVenue,
+      ),
+    );
   }
 
-  return { name: round.name, fixtures }
+  return { name: round.name, fixtures };
 }
 
 function fastSimulateEntireKnockouts(
   qfDraw: TournamentRound,
   userNation: string,
   userRatings: TeamRatings,
-  squads: Squad[]
+  squads: Squad[],
 ): { rounds: TournamentRound[]; winner: string } {
   const qf = fastSimulateKnockoutRound(
     qfDraw,
@@ -346,109 +356,108 @@ function fastSimulateEntireKnockouts(
     userNation,
     userRatings,
     squads,
-    false
-  )
-  const sf = buildSemiFinalDraw(qf)
+    false,
+  );
+  const sf = buildSemiFinalDraw(qf);
   const sfSim = fastSimulateKnockoutRound(
     sf,
     0,
     userNation,
     userRatings,
     squads,
-    true
-  )
-  const final = buildFinalDraw(sfSim)
+    true,
+  );
+  const final = buildFinalDraw(sfSim);
   const finalSim = fastSimulateKnockoutRound(
     final,
     0,
     userNation,
     userRatings,
     squads,
-    true
-  )
+    true,
+  );
   return {
     rounds: [qf, sfSim, finalSim],
     winner: getMatchWinner(finalSim.fixtures[0]),
-  }
+  };
 }
 
 function getUserProgressSummary(
   userNation: string,
   winner: string,
-  eliminatedAt: string | null
+  eliminatedAt: string | null,
 ): string {
-  if (winner === userNation) return 'You won the World Cup'
-  if (eliminatedAt === 'Pool Stage') {
-    return 'You were eliminated in the Pool Stage'
+  if (winner === userNation) return "You won the World Cup";
+  if (eliminatedAt === "Pool Stage") {
+    return "You were eliminated in the Pool Stage";
   }
-  if (eliminatedAt === 'Quarter-Final') {
-    return 'You reached the Quarter-Finals'
+  if (eliminatedAt === "Quarter-Final") {
+    return "You reached the Quarter-Finals";
   }
-  if (eliminatedAt === 'Semi-Final') {
-    return 'You reached the Semi-Finals'
+  if (eliminatedAt === "Semi-Final") {
+    return "You reached the Semi-Finals";
   }
-  if (eliminatedAt === 'Final') {
-    return 'You reached the Final'
+  if (eliminatedAt === "Final") {
+    return "You reached the Final";
   }
-  return 'Tournament complete'
+  return "Tournament complete";
 }
 
 const KNOCKOUT_ROUND_NAMES: Record<KnockoutRoundKey, string> = {
-  'quarter-final': 'Quarter-Final',
-  'semi-final': 'Semi-Final',
-  final: 'Final',
-}
+  "quarter-final": "Quarter-Final",
+  "semi-final": "Semi-Final",
+  final: "Final",
+};
 
 export default function WorldCup({ state, onUpdate, onExit }: Props) {
-  const [phase, setPhase] = useState<WCPhase>('pool-draw')
-  const [groups, setGroups] = useState<RugbyGroup[]>([])
-  const [poolFixtures, setPoolFixtures] = useState<PoolFixture[]>([])
-  const [poolMatchIndex, setPoolMatchIndex] = useState(0)
-  const [poolResults, setPoolResults] = useState<MatchResult[]>([])
-  const [pendingResult, setPendingResult] = useState<MatchResult | null>(null)
-  const [quarterFinalDraw, setQuarterFinalDraw] = useState<TournamentRound | null>(
-    null
-  )
-  const [knockoutRounds, setKnockoutRounds] = useState<TournamentRound[]>([])
+  const [phase, setPhase] = useState<WCPhase>("pool-draw");
+  const [groups, setGroups] = useState<RugbyGroup[]>([]);
+  const [poolFixtures, setPoolFixtures] = useState<PoolFixture[]>([]);
+  const [poolMatchIndex, setPoolMatchIndex] = useState(0);
+  const [poolResults, setPoolResults] = useState<MatchResult[]>([]);
+  const [pendingResult, setPendingResult] = useState<MatchResult | null>(null);
+  const [quarterFinalDraw, setQuarterFinalDraw] =
+    useState<TournamentRound | null>(null);
+  const [knockoutRounds, setKnockoutRounds] = useState<TournamentRound[]>([]);
   const [activeKnockoutRound, setActiveKnockoutRound] =
-    useState<TournamentRound | null>(null)
+    useState<TournamentRound | null>(null);
   const [knockoutRoundKey, setKnockoutRoundKey] =
-    useState<KnockoutRoundKey>('quarter-final')
-  const [knockoutMatchIndex, setKnockoutMatchIndex] = useState(0)
-  const [winner, setWinner] = useState<string>('')
-  const [showShareCard, setShowShareCard] = useState(false)
-  const [showQuitConfirm, setShowQuitConfirm] = useState(false)
-  const speedMode = state.speedMode
-  const [eliminatedAt, setEliminatedAt] = useState<string | null>(null)
-  const [userPoolEliminated, setUserPoolEliminated] = useState(false)
-  const userPoolEliminatedRef = useRef(false)
+    useState<KnockoutRoundKey>("quarter-final");
+  const [knockoutMatchIndex, setKnockoutMatchIndex] = useState(0);
+  const [winner, setWinner] = useState<string>("");
+  const [showShareCard, setShowShareCard] = useState(false);
+  const [showQuitConfirm, setShowQuitConfirm] = useState(false);
+  const speedMode = state.speedMode;
+  const [eliminatedAt, setEliminatedAt] = useState<string | null>(null);
+  const [userPoolEliminated, setUserPoolEliminated] = useState(false);
+  const userPoolEliminatedRef = useRef(false);
 
-  const userNation = state.selectedNation ?? 'England'
-  const userRatings = state.teamRatings!
-  const nationSquads = useMemo(() => getWorldCupSquads(), [])
+  const userNation = state.selectedNation ?? "England";
+  const userRatings = state.teamRatings!;
+  const nationSquads = useMemo(() => getWorldCupSquads(), []);
 
   const tryScorerCandidates = useMemo(
     () => getTryScorerCandidates(state.draftSlots),
-    [state.draftSlots]
-  )
+    [state.draftSlots],
+  );
 
-  const userPool = groups.find(g => g.teams.includes(userNation))
-
-  useEffect(() => {
-    const built = buildWorldCupPools(userNation)
-    setGroups(built)
-    setPoolFixtures(generatePoolFixtures(built))
-  }, [userNation])
+  const userPool = groups.find((g) => g.teams.includes(userNation));
 
   useEffect(() => {
-    if (phase !== 'pool-stage' || poolMatchIndex >= poolFixtures.length) return
+    const built = buildWorldCupPools(userNation);
+    setGroups(built);
+    setPoolFixtures(generatePoolFixtures(built));
+  }, [userNation]);
+
+  useEffect(() => {
+    if (phase !== "pool-stage" || poolMatchIndex >= poolFixtures.length) return;
     const result = simulatePoolMatch(
       poolFixtures[poolMatchIndex],
       userNation,
       userRatings,
-      nationSquads
-    )
-    setPendingResult(result)
+      nationSquads,
+    );
+    setPendingResult(result);
   }, [
     phase,
     poolMatchIndex,
@@ -456,23 +465,23 @@ export default function WorldCup({ state, onUpdate, onExit }: Props) {
     userNation,
     userRatings,
     nationSquads,
-  ])
+  ]);
 
   useEffect(() => {
-    if (phase !== 'knockouts' || !activeKnockoutRound) return
-    if (knockoutMatchIndex >= activeKnockoutRound.fixtures.length) return
+    if (phase !== "knockouts" || !activeKnockoutRound) return;
+    if (knockoutMatchIndex >= activeKnockoutRound.fixtures.length) return;
 
-    const pairing = activeKnockoutRound.fixtures[knockoutMatchIndex]
-    const neutral = knockoutRoundKey !== 'quarter-final'
+    const pairing = activeKnockoutRound.fixtures[knockoutMatchIndex];
+    const neutral = knockoutRoundKey !== "quarter-final";
     const result = simulateKnockoutMatch(
       pairing.homeTeam,
       pairing.awayTeam,
       userNation,
       userRatings,
       nationSquads,
-      neutral
-    )
-    setPendingResult(result)
+      neutral,
+    );
+    setPendingResult(result);
   }, [
     phase,
     activeKnockoutRound,
@@ -481,69 +490,70 @@ export default function WorldCup({ state, onUpdate, onExit }: Props) {
     userNation,
     userRatings,
     nationSquads,
-  ])
+  ]);
 
   const handleBeginPoolStage = useCallback(() => {
-    setPoolMatchIndex(0)
-    setPoolResults([])
-    setPendingResult(null)
-    setUserPoolEliminated(false)
-    userPoolEliminatedRef.current = false
-    setPhase('pool-stage')
-  }, [])
+    setPoolMatchIndex(0);
+    setPoolResults([]);
+    setPendingResult(null);
+    setUserPoolEliminated(false);
+    userPoolEliminatedRef.current = false;
+    setPhase("pool-stage");
+  }, []);
 
   const handlePoolMatchComplete = useCallback(() => {
-    if (!pendingResult) return
+    if (!pendingResult) return;
 
-    const fixture = poolFixtures[poolMatchIndex]
-    const result = pendingResult
-    setPendingResult(null)
+    const fixture = poolFixtures[poolMatchIndex];
+    const result = pendingResult;
+    setPendingResult(null);
 
-    const updatedGroups = updateGroupsWithResult(groups, fixture.pool, result)
-    const newResults = [...poolResults, result]
+    const updatedGroups = updateGroupsWithResult(groups, fixture.pool, result);
+    const newResults = [...poolResults, result];
 
-    setGroups(updatedGroups)
-    setPoolResults(newResults)
+    setGroups(updatedGroups);
+    setPoolResults(newResults);
 
-    const userGroup = updatedGroups.find(g => g.teams.includes(userNation))
+    const userGroup = updatedGroups.find((g) => g.teams.includes(userNation));
     if (
       userGroup &&
       isPoolComplete(userGroup) &&
       !userPoolEliminatedRef.current
     ) {
-      const position = getUserPoolPosition(updatedGroups, userNation)
+      const position = getUserPoolPosition(updatedGroups, userNation);
       if (position > 2) {
-        userPoolEliminatedRef.current = true
-        setUserPoolEliminated(true)
-        setEliminatedAt('Pool Stage')
+        userPoolEliminatedRef.current = true;
+        setUserPoolEliminated(true);
+        setEliminatedAt("Pool Stage");
       }
     }
 
-    const nextIndex = poolMatchIndex + 1
+    const nextIndex = poolMatchIndex + 1;
     if (nextIndex >= poolFixtures.length) {
       if (userPoolEliminatedRef.current) {
-        const qf = buildQuarterFinalDraw(updatedGroups)
-        const { rounds, winner: tournamentWinner } = fastSimulateEntireKnockouts(
-          qf,
-          userNation,
-          userRatings,
-          nationSquads
-        )
-        setKnockoutRounds(rounds)
-        setWinner(tournamentWinner)
-        setPhase('results')
+        const qf = buildQuarterFinalDraw(updatedGroups);
+        const { rounds, winner: tournamentWinner } =
+          fastSimulateEntireKnockouts(
+            qf,
+            userNation,
+            userRatings,
+            nationSquads,
+          );
+        setKnockoutRounds(rounds);
+        setWinner(tournamentWinner);
+        setPhase("results");
         onUpdate({
           groups: updatedGroups,
           fixtures: newResults,
           knockoutRounds: rounds,
-        })
+        });
       } else {
-        setQuarterFinalDraw(buildQuarterFinalDraw(updatedGroups))
-        setPhase('quarter-final-draw')
-        onUpdate({ groups: updatedGroups, fixtures: newResults })
+        setQuarterFinalDraw(buildQuarterFinalDraw(updatedGroups));
+        setPhase("quarter-final-draw");
+        onUpdate({ groups: updatedGroups, fixtures: newResults });
       }
     } else {
-      setPoolMatchIndex(nextIndex)
+      setPoolMatchIndex(nextIndex);
     }
   }, [
     pendingResult,
@@ -555,181 +565,185 @@ export default function WorldCup({ state, onUpdate, onExit }: Props) {
     userRatings,
     nationSquads,
     onUpdate,
-  ])
+  ]);
 
   const finishTournament = useCallback(
-    (rounds: TournamentRound[], finalWinner: string, exitStage: string | null) => {
-      setKnockoutRounds(rounds)
-      setWinner(finalWinner)
-      if (exitStage) setEliminatedAt(exitStage)
-      setPhase('results')
-      onUpdate({ knockoutRounds: rounds, groups })
+    (
+      rounds: TournamentRound[],
+      finalWinner: string,
+      exitStage: string | null,
+    ) => {
+      setKnockoutRounds(rounds);
+      setWinner(finalWinner);
+      if (exitStage) setEliminatedAt(exitStage);
+      setPhase("results");
+      onUpdate({ knockoutRounds: rounds, groups });
     },
-    [groups, onUpdate]
-  )
+    [groups, onUpdate],
+  );
 
   const advanceKnockoutRound = useCallback(
     (
       completedRound: TournamentRound,
       existingRounds: TournamentRound[],
-      nextKey: KnockoutRoundKey | null
+      nextKey: KnockoutRoundKey | null,
     ) => {
-      const rounds = [...existingRounds, completedRound]
+      const rounds = [...existingRounds, completedRound];
 
-      if (nextKey === 'semi-final') {
-        const sf = buildSemiFinalDraw(completedRound)
-        setKnockoutRounds(rounds)
-        setActiveKnockoutRound(sf)
-        setKnockoutRoundKey('semi-final')
-        setKnockoutMatchIndex(0)
-        setPendingResult(null)
-        return
+      if (nextKey === "semi-final") {
+        const sf = buildSemiFinalDraw(completedRound);
+        setKnockoutRounds(rounds);
+        setActiveKnockoutRound(sf);
+        setKnockoutRoundKey("semi-final");
+        setKnockoutMatchIndex(0);
+        setPendingResult(null);
+        return;
       }
 
-      if (nextKey === 'final') {
-        const finalRound = buildFinalDraw(completedRound)
-        setKnockoutRounds(rounds)
-        setActiveKnockoutRound(finalRound)
-        setKnockoutRoundKey('final')
-        setKnockoutMatchIndex(0)
-        setPendingResult(null)
-        return
+      if (nextKey === "final") {
+        const finalRound = buildFinalDraw(completedRound);
+        setKnockoutRounds(rounds);
+        setActiveKnockoutRound(finalRound);
+        setKnockoutRoundKey("final");
+        setKnockoutMatchIndex(0);
+        setPendingResult(null);
+        return;
       }
 
-      const finalWinner = getMatchWinner(completedRound.fixtures[0])
-      finishTournament(rounds, finalWinner, eliminatedAt)
+      const finalWinner = getMatchWinner(completedRound.fixtures[0]);
+      finishTournament(rounds, finalWinner, eliminatedAt);
     },
-    [eliminatedAt, finishTournament]
-  )
+    [eliminatedAt, finishTournament],
+  );
 
   const fastSimulateToEnd = useCallback(
     (
       currentRound: TournamentRound,
       fromMatchIndex: number,
       existingRounds: TournamentRound[],
-      roundKey: KnockoutRoundKey
+      roundKey: KnockoutRoundKey,
     ) => {
-      const exitStage = KNOCKOUT_ROUND_NAMES[roundKey]
-      setEliminatedAt(exitStage)
+      const exitStage = KNOCKOUT_ROUND_NAMES[roundKey];
+      setEliminatedAt(exitStage);
 
-      const neutral = roundKey !== 'quarter-final'
+      const neutral = roundKey !== "quarter-final";
       const completedRound = fastSimulateKnockoutRound(
         currentRound,
         fromMatchIndex,
         userNation,
         userRatings,
         nationSquads,
-        neutral
-      )
-      const roundsSoFar = [...existingRounds, completedRound]
+        neutral,
+      );
+      const roundsSoFar = [...existingRounds, completedRound];
 
-      if (roundKey === 'quarter-final') {
-        const sf = buildSemiFinalDraw(completedRound)
+      if (roundKey === "quarter-final") {
+        const sf = buildSemiFinalDraw(completedRound);
         const sfSim = fastSimulateKnockoutRound(
           sf,
           0,
           userNation,
           userRatings,
           nationSquads,
-          true
-        )
-        const final = buildFinalDraw(sfSim)
+          true,
+        );
+        const final = buildFinalDraw(sfSim);
         const finalSim = fastSimulateKnockoutRound(
           final,
           0,
           userNation,
           userRatings,
           nationSquads,
-          true
-        )
+          true,
+        );
         finishTournament(
           [...roundsSoFar, sfSim, finalSim],
           getMatchWinner(finalSim.fixtures[0]),
-          exitStage
-        )
-        return
+          exitStage,
+        );
+        return;
       }
 
-      if (roundKey === 'semi-final') {
-        const final = buildFinalDraw(completedRound)
+      if (roundKey === "semi-final") {
+        const final = buildFinalDraw(completedRound);
         const finalSim = fastSimulateKnockoutRound(
           final,
           0,
           userNation,
           userRatings,
           nationSquads,
-          true
-        )
+          true,
+        );
         finishTournament(
           [...roundsSoFar, finalSim],
           getMatchWinner(finalSim.fixtures[0]),
-          exitStage
-        )
-        return
+          exitStage,
+        );
+        return;
       }
 
       finishTournament(
         roundsSoFar,
         getMatchWinner(completedRound.fixtures[0]),
-        exitStage
-      )
+        exitStage,
+      );
     },
-    [userNation, userRatings, nationSquads, finishTournament]
-  )
+    [userNation, userRatings, nationSquads, finishTournament],
+  );
 
   const handleBeginKnockouts = useCallback(() => {
-    if (!quarterFinalDraw) return
-    setKnockoutRounds([])
-    setActiveKnockoutRound(quarterFinalDraw)
-    setKnockoutRoundKey('quarter-final')
-    setKnockoutMatchIndex(0)
-    setPendingResult(null)
-    setPhase('knockouts')
-  }, [quarterFinalDraw])
+    if (!quarterFinalDraw) return;
+    setKnockoutRounds([]);
+    setActiveKnockoutRound(quarterFinalDraw);
+    setKnockoutRoundKey("quarter-final");
+    setKnockoutMatchIndex(0);
+    setPendingResult(null);
+    setPhase("knockouts");
+  }, [quarterFinalDraw]);
 
   const handleKnockoutMatchComplete = useCallback(() => {
-    if (!pendingResult || !activeKnockoutRound) return
+    if (!pendingResult || !activeKnockoutRound) return;
 
-    const result = pendingResult
+    const result = pendingResult;
     const userPlayed =
-      result.homeTeam === userNation || result.awayTeam === userNation
-    const userWon = getMatchWinner(result) === userNation
-    const userLost = userPlayed && !userWon
+      result.homeTeam === userNation || result.awayTeam === userNation;
+    const userWon = getMatchWinner(result) === userNation;
+    const userLost = userPlayed && !userWon;
 
-    const updatedFixtures = [...activeKnockoutRound.fixtures]
-    updatedFixtures[knockoutMatchIndex] = result
+    const updatedFixtures = [...activeKnockoutRound.fixtures];
+    updatedFixtures[knockoutMatchIndex] = result;
     const updatedRound: TournamentRound = {
       name: activeKnockoutRound.name,
       fixtures: updatedFixtures,
-    }
-    setActiveKnockoutRound(updatedRound)
-    setPendingResult(null)
+    };
+    setActiveKnockoutRound(updatedRound);
+    setPendingResult(null);
 
-    const nextIndex = knockoutMatchIndex + 1
+    const nextIndex = knockoutMatchIndex + 1;
 
     if (userLost) {
       fastSimulateToEnd(
         updatedRound,
         nextIndex,
         knockoutRounds,
-        knockoutRoundKey
-      )
-      return
+        knockoutRoundKey,
+      );
+      return;
     }
 
     if (nextIndex >= updatedRound.fixtures.length) {
-      if (knockoutRoundKey === 'quarter-final') {
-        advanceKnockoutRound(updatedRound, knockoutRounds, 'semi-final')
-      } else if (knockoutRoundKey === 'semi-final') {
-        advanceKnockoutRound(updatedRound, knockoutRounds, 'final')
+      if (knockoutRoundKey === "quarter-final") {
+        advanceKnockoutRound(updatedRound, knockoutRounds, "semi-final");
+      } else if (knockoutRoundKey === "semi-final") {
+        advanceKnockoutRound(updatedRound, knockoutRounds, "final");
       } else {
-        const finalWinner = getMatchWinner(result)
-        finishTournament([...knockoutRounds, updatedRound], finalWinner, null)
+        const finalWinner = getMatchWinner(result);
+        finishTournament([...knockoutRounds, updatedRound], finalWinner, null);
       }
-      return
+      return;
     }
 
-    setKnockoutMatchIndex(nextIndex)
+    setKnockoutMatchIndex(nextIndex);
   }, [
     pendingResult,
     activeKnockoutRound,
@@ -740,7 +754,7 @@ export default function WorldCup({ state, onUpdate, onExit }: Props) {
     fastSimulateToEnd,
     advanceKnockoutRound,
     finishTournament,
-  ])
+  ]);
 
   const quitModal = showQuitConfirm ? (
     <QuitConfirmModal
@@ -750,21 +764,21 @@ export default function WorldCup({ state, onUpdate, onExit }: Props) {
       onCancel={() => setShowQuitConfirm(false)}
       onConfirm={onExit}
     />
-  ) : null
+  ) : null;
 
   const PoolTables = ({ compact = false }: { compact?: boolean }) => (
     <div
       className={`grid gap-4 ${
-        compact ? 'grid-cols-1 sm:grid-cols-2' : 'grid-cols-1 sm:grid-cols-2'
+        compact ? "grid-cols-1 sm:grid-cols-2" : "grid-cols-1 sm:grid-cols-2"
       }`}
     >
-      {groups.map(group => (
+      {groups.map((group) => (
         <div
           key={group.name}
           className={`bg-white/5 border rounded-xl p-3 ${
             group.teams.includes(userNation)
-              ? 'border-emerald-400/30'
-              : 'border-white/10'
+              ? "border-emerald-400/30"
+              : "border-white/10"
           }`}
         >
           <LeagueTable
@@ -775,13 +789,16 @@ export default function WorldCup({ state, onUpdate, onExit }: Props) {
         </div>
       ))}
     </div>
-  )
+  );
 
-  if (phase === 'pool-draw') {
+  if (phase === "pool-draw") {
     return (
       <div className="relative min-h-screen bg-[#0a0a12] px-4 py-12">
         {quitModal}
-        <QuitButton onQuit={() => setShowQuitConfirm(true)} className="absolute top-6 left-6 z-10" />
+        <QuitButton
+          onQuit={() => setShowQuitConfirm(true)}
+          className="absolute top-6 left-6 z-10"
+        />
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-8">
             <p className="text-white/30 text-xs uppercase tracking-widest mb-2">
@@ -807,7 +824,7 @@ export default function WorldCup({ state, onUpdate, onExit }: Props) {
             </p>
             <SpeedControls
               speedMode={speedMode}
-              onChange={s => onUpdate({ speedMode: s })}
+              onChange={(s) => onUpdate({ speedMode: s })}
               className="justify-center flex-wrap"
             />
           </div>
@@ -823,28 +840,31 @@ export default function WorldCup({ state, onUpdate, onExit }: Props) {
           </div>
         </div>
       </div>
-    )
+    );
   }
 
-  if (phase === 'pool-stage' && !pendingResult) {
+  if (phase === "pool-stage" && !pendingResult) {
     return (
       <div className="min-h-screen bg-[#0a0a12] flex items-center justify-center">
         <span className="w-6 h-6 border-2 border-white/20 border-t-white rounded-full animate-spin" />
       </div>
-    )
+    );
   }
 
-  if (phase === 'pool-stage' && pendingResult) {
-    const completedMatches = poolResults.slice().reverse()
+  if (phase === "pool-stage" && pendingResult) {
+    const completedMatches = poolResults.slice().reverse();
 
     return (
       <div className="relative min-h-screen bg-[#0a0a12] flex flex-col">
         {quitModal}
-        <QuitButton onQuit={() => setShowQuitConfirm(true)} className="absolute top-4 left-4 z-20" />
+        <QuitButton
+          onQuit={() => setShowQuitConfirm(true)}
+          className="absolute top-4 left-4 z-20"
+        />
         <div className="absolute top-4 right-4 z-20">
           <SpeedControls
             speedMode={speedMode}
-            onChange={s => onUpdate({ speedMode: s })}
+            onChange={(s) => onUpdate({ speedMode: s })}
             className="flex-wrap"
           />
         </div>
@@ -897,14 +917,17 @@ export default function WorldCup({ state, onUpdate, onExit }: Props) {
           </div>
         </div>
       </div>
-    )
+    );
   }
 
-  if (phase === 'quarter-final-draw' && quarterFinalDraw) {
+  if (phase === "quarter-final-draw" && quarterFinalDraw) {
     return (
       <div className="relative min-h-screen bg-[#0a0a12] px-4 py-12">
         {quitModal}
-        <QuitButton onQuit={() => setShowQuitConfirm(true)} className="absolute top-6 left-6 z-10" />
+        <QuitButton
+          onQuit={() => setShowQuitConfirm(true)}
+          className="absolute top-6 left-6 z-10"
+        />
         <div className="max-w-lg mx-auto">
           <div className="text-center mb-8">
             <p className="text-white/30 text-xs uppercase tracking-widest mb-2">
@@ -922,21 +945,21 @@ export default function WorldCup({ state, onUpdate, onExit }: Props) {
             {quarterFinalDraw.fixtures.map((fixture, i) => {
               const involvesUser =
                 fixture.homeTeam === userNation ||
-                fixture.awayTeam === userNation
+                fixture.awayTeam === userNation;
               return (
                 <div
                   key={i}
                   className={`flex items-center justify-between rounded-xl px-4 py-3 border ${
                     involvesUser
-                      ? 'bg-emerald-400/10 border-emerald-400/30'
-                      : 'bg-white/5 border-white/10'
+                      ? "bg-emerald-400/10 border-emerald-400/30"
+                      : "bg-white/5 border-white/10"
                   }`}
                 >
                   <span
                     className={`text-sm font-semibold ${
                       fixture.homeTeam === userNation
-                        ? 'text-emerald-400'
-                        : 'text-white/80'
+                        ? "text-emerald-400"
+                        : "text-white/80"
                     }`}
                   >
                     {fixture.homeTeam}
@@ -947,21 +970,21 @@ export default function WorldCup({ state, onUpdate, onExit }: Props) {
                   <span
                     className={`text-sm font-semibold ${
                       fixture.awayTeam === userNation
-                        ? 'text-emerald-400'
-                        : 'text-white/80'
+                        ? "text-emerald-400"
+                        : "text-white/80"
                     }`}
                   >
                     {fixture.awayTeam}
                   </span>
                 </div>
-              )
+              );
             })}
           </div>
 
           <div className="flex flex-col gap-3 w-full max-w-xs mx-auto mb-6">
             <SpeedControls
               speedMode={speedMode}
-              onChange={s => onUpdate({ speedMode: s })}
+              onChange={(s) => onUpdate({ speedMode: s })}
               className="justify-center flex-wrap"
             />
           </div>
@@ -976,31 +999,34 @@ export default function WorldCup({ state, onUpdate, onExit }: Props) {
           </div>
         </div>
       </div>
-    )
+    );
   }
 
-  if (phase === 'knockouts' && !pendingResult) {
+  if (phase === "knockouts" && !pendingResult) {
     return (
       <div className="min-h-screen bg-[#0a0a12] flex items-center justify-center">
         <span className="w-6 h-6 border-2 border-white/20 border-t-white rounded-full animate-spin" />
       </div>
-    )
+    );
   }
 
-  if (phase === 'knockouts' && pendingResult && activeKnockoutRound) {
+  if (phase === "knockouts" && pendingResult && activeKnockoutRound) {
     const completedInRound = activeKnockoutRound.fixtures.slice(
       0,
-      knockoutMatchIndex
-    )
+      knockoutMatchIndex,
+    );
 
     return (
       <div className="relative min-h-screen bg-[#0a0a12] flex flex-col">
         {quitModal}
-        <QuitButton onQuit={() => setShowQuitConfirm(true)} className="absolute top-4 left-4 z-20" />
+        <QuitButton
+          onQuit={() => setShowQuitConfirm(true)}
+          className="absolute top-4 left-4 z-20"
+        />
         <div className="absolute top-4 right-4 z-20">
           <SpeedControls
             speedMode={speedMode}
-            onChange={s => onUpdate({ speedMode: s })}
+            onChange={(s) => onUpdate({ speedMode: s })}
             className="flex-wrap"
           />
         </div>
@@ -1010,7 +1036,7 @@ export default function WorldCup({ state, onUpdate, onExit }: Props) {
               {activeKnockoutRound.name}
             </p>
             <h2 className="text-white font-black text-lg uppercase tracking-tight">
-              Match {knockoutMatchIndex + 1} of{' '}
+              Match {knockoutMatchIndex + 1} of{" "}
               {activeKnockoutRound.fixtures.length}
             </h2>
           </div>
@@ -1029,10 +1055,7 @@ export default function WorldCup({ state, onUpdate, onExit }: Props) {
             />
 
             {knockoutRounds.length > 0 && (
-              <KnockoutBracket
-                rounds={knockoutRounds}
-                userTeam={userNation}
-              />
+              <KnockoutBracket rounds={knockoutRounds} userTeam={userNation} />
             )}
 
             {completedInRound.length > 0 && (
@@ -1053,36 +1076,41 @@ export default function WorldCup({ state, onUpdate, onExit }: Props) {
           </div>
         </div>
       </div>
-    )
+    );
   }
 
-  if (phase === 'results') {
-    const allResults = [...poolResults, ...knockoutRounds.flatMap(r => r.fixtures)]
-    const topScorer = getTopTryScorer(userNation, tryScorerCandidates, allResults)
-    const playerOfTournament = getPlayerOfTournament(state.draftSlots)
+  if (phase === "results") {
+    const allResults = [
+      ...poolResults,
+      ...knockoutRounds.flatMap((r) => r.fixtures),
+    ];
+    const topScorer = getTopTryScorer(
+      userNation,
+      tryScorerCandidates,
+      allResults,
+    );
+    const playerOfTournament = getPlayerOfTournament(state.draftSlots);
     const finalWinner =
       winner ||
       (knockoutRounds.length > 0
-        ? getMatchWinner(
-            knockoutRounds[knockoutRounds.length - 1].fixtures[0]
-          )
-        : '')
+        ? getMatchWinner(knockoutRounds[knockoutRounds.length - 1].fixtures[0])
+        : "");
     const userResult =
       finalWinner === userNation
-        ? 'You are the Champions!'
-        : getUserProgressSummary(userNation, winner, eliminatedAt)
+        ? "You are the Champions!"
+        : getUserProgressSummary(userNation, winner, eliminatedAt);
     const poolAward = userPool
       ? getPoolWinnerAward(userNation, userPool.table)
-      : null
+      : null;
     const shareAwards = [
       ...getKnockoutUserAwards(
         userNation,
         finalWinner,
         eliminatedAt,
-        'World Cup'
+        "World Cup",
       ),
       ...(poolAward ? [poolAward] : []),
-    ]
+    ];
 
     return (
       <div className="min-h-screen bg-[#0a0a12] px-4 py-12">
@@ -1125,8 +1153,8 @@ export default function WorldCup({ state, onUpdate, onExit }: Props) {
           )}
         </div>
       </div>
-    )
+    );
   }
 
-  return null
+  return null;
 }

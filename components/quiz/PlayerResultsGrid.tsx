@@ -27,7 +27,7 @@ export function PlayerResultsGrid({
       <div className="flex flex-wrap justify-center gap-3">
         {players.map((player) => {
           const result = playerResults.find(
-            (entry) => entry.playerId === player.id
+            (entry) => entry.playerId === player.id,
           );
           const timedOut = !result?.answer?.trim();
           const isCorrect = result?.isCorrect ?? false;

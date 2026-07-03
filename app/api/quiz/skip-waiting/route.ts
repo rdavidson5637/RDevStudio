@@ -21,7 +21,7 @@ export async function POST(request: NextRequest) {
     if (!gameId?.trim() || !hostId?.trim()) {
       return NextResponse.json(
         { error: "gameId and hostId are required" },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
@@ -34,14 +34,14 @@ export async function POST(request: NextRequest) {
     if (game.hostId !== hostId) {
       return NextResponse.json(
         { error: "Only the host can skip waiting" },
-        { status: 403 }
+        { status: 403 },
       );
     }
 
     if (game.status !== "question") {
       return NextResponse.json(
         { error: "Game is not on a question" },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
@@ -50,7 +50,7 @@ export async function POST(request: NextRequest) {
     if (!currentQuestion) {
       return NextResponse.json(
         { error: "No active question" },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
@@ -59,7 +59,7 @@ export async function POST(request: NextRequest) {
     if (answeredBefore.length === game.players.length) {
       return NextResponse.json(
         { error: "All players have already answered" },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
@@ -76,7 +76,7 @@ export async function POST(request: NextRequest) {
         error:
           error instanceof Error ? error.message : "Failed to skip waiting",
       },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }

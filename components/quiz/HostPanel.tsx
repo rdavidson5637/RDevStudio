@@ -77,7 +77,9 @@ export function HostPanel({
           <div className="mx-auto w-full max-w-2xl space-y-4">
             <div className="flex items-center justify-between gap-3">
               <div>
-                <p className="text-sm font-semibold text-white">Host controls</p>
+                <p className="text-sm font-semibold text-white">
+                  Host controls
+                </p>
                 <p className="text-xs text-quiz-muted">Only you see this</p>
               </div>
               <button
@@ -93,7 +95,8 @@ export function HostPanel({
               <div className="rounded-xl border border-quiz-border/60 bg-quiz-surface/50 px-4 py-3 text-sm">
                 <p className="font-medium text-white">{currentRound.name}</p>
                 <p className="mt-1 text-xs text-quiz-muted">
-                  {questionsLeft} question{questionsLeft === 1 ? "" : "s"} remaining
+                  {questionsLeft} question{questionsLeft === 1 ? "" : "s"}{" "}
+                  remaining
                   {questionInRound && currentRound.questionCount
                     ? ` · Q${questionInRound} of ${currentRound.questionCount} this round`
                     : ""}

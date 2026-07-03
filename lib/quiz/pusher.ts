@@ -9,7 +9,7 @@ function isPusherConfigured(): boolean {
     process.env.PUSHER_APP_ID &&
       process.env.PUSHER_KEY &&
       process.env.PUSHER_SECRET &&
-      process.env.PUSHER_CLUSTER
+      process.env.PUSHER_CLUSTER,
   );
 }
 
@@ -34,13 +34,13 @@ function getPusher(): Pusher | null {
 export async function triggerGameEvent<E extends GameEventType>(
   gameId: string,
   event: E,
-  data: GameEventMap[E]
+  data: GameEventMap[E],
 ): Promise<void> {
   const client = getPusher();
 
   if (!client) {
     console.warn(
-      `[Pusher] Skipping event "${event}" — Pusher credentials not configured`
+      `[Pusher] Skipping event "${event}" — Pusher credentials not configured`,
     );
     return;
   }

@@ -1,19 +1,18 @@
-import type { DraftSlot } from '@/types/champions-draft'
-import { SITE_URL } from '@/lib/constants'
+import type { DraftSlot } from "@/types/champions-draft";
+import { SITE_URL } from "@/lib/constants";
 
 export interface ShareSquadPlayer {
-  name: string
-  position: string
-  overall: number
+  name: string;
+  position: string;
+  overall: number;
 }
 
 export const SHARE_PLAY_URL =
-  process.env.NEXT_PUBLIC_GAME_URL?.trim() ||
-  `${SITE_URL}/champions-draft`;
+  process.env.NEXT_PUBLIC_GAME_URL?.trim() || `${SITE_URL}/champions-draft`;
 
-export const SHARE_CHALLENGE = 'Think you can beat my XI?'
+export const SHARE_CHALLENGE = "Think you can beat my XI?";
 
-export const SHARE_CARD_CAPTURE_ID = 'champions-draft-share-card'
+export const SHARE_CARD_CAPTURE_ID = "champions-draft-share-card";
 
 const POSITION_ORDER: Record<string, number> = {
   GK: 0,
@@ -29,53 +28,54 @@ const POSITION_ORDER: Record<string, number> = {
   RW: 10,
   CF: 11,
   ST: 12,
-}
+};
 
 export function getShareSquadFromSlots(slots: DraftSlot[]): ShareSquadPlayer[] {
   return slots
-    .filter(s => s.player)
-    .map(s => ({
+    .filter((s) => s.player)
+    .map((s) => ({
       name: s.player!.name,
       position: s.position,
       overall: s.player!.overall,
-    }))
+    }));
 }
 
 export function sortSquadForDisplay(
-  players: ShareSquadPlayer[]
+  players: ShareSquadPlayer[],
 ): ShareSquadPlayer[] {
   return [...players].sort(
     (a, b) =>
-      (POSITION_ORDER[a.position] ?? 99) - (POSITION_ORDER[b.position] ?? 99)
-  )
+      (POSITION_ORDER[a.position] ?? 99) - (POSITION_ORDER[b.position] ?? 99),
+  );
 }
 
 export function getSquadAvgOvr(players: ShareSquadPlayer[]): number {
-  if (players.length === 0) return 0
-  const total = players.reduce((sum, p) => sum + p.overall, 0)
-  return Math.round(total / players.length)
+  if (players.length === 0) return 0;
+  const total = players.reduce((sum, p) => sum + p.overall, 0);
+  return Math.round(total / players.length);
 }
 
 export function getPositionStyle(position: string): string {
-  if (position === 'GK') return 'text-amber-300 bg-amber-400/15'
-  if (['CB', 'LB', 'RB'].includes(position)) return 'text-sky-300 bg-sky-400/15'
-  if (['CDM', 'CM', 'CAM', 'LM', 'RM'].includes(position)) {
-    return 'text-emerald-300 bg-emerald-400/15'
+  if (position === "GK") return "text-amber-300 bg-amber-400/15";
+  if (["CB", "LB", "RB"].includes(position))
+    return "text-sky-300 bg-sky-400/15";
+  if (["CDM", "CM", "CAM", "LM", "RM"].includes(position)) {
+    return "text-emerald-300 bg-emerald-400/15";
   }
-  return 'text-rose-300 bg-rose-400/15'
+  return "text-rose-300 bg-rose-400/15";
 }
 
 export function formatSquadShareLines(players: ShareSquadPlayer[]): string {
-  if (players.length === 0) return ''
+  if (players.length === 0) return "";
   return sortSquadForDisplay(players)
-    .map(p => `${p.position} ${p.name} (${p.overall})`)
-    .join('\n')
+    .map((p) => `${p.position} ${p.name} (${p.overall})`)
+    .join("\n");
 }
 
 export function getShareUrl(): string {
-  if (SHARE_PLAY_URL) return SHARE_PLAY_URL
-  if (typeof window !== 'undefined') {
-    return `${window.location.origin}/champions-draft`
+  if (SHARE_PLAY_URL) return SHARE_PLAY_URL;
+  if (typeof window !== "undefined") {
+    return `${window.location.origin}/champions-draft`;
   }
-  return '/champions-draft'
+  return "/champions-draft";
 }

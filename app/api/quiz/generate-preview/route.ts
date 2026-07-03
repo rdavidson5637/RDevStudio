@@ -26,7 +26,7 @@ export async function GET(request: NextRequest) {
   if (!categoryParam || !isValidCategory(categoryParam)) {
     return NextResponse.json(
       { error: "Valid category query param is required" },
-      { status: 400 }
+      { status: 400 },
     );
   }
 
@@ -38,7 +38,7 @@ export async function GET(request: NextRequest) {
   if (!Number.isInteger(count) || count < 1 || count > 20) {
     return NextResponse.json(
       { error: "count must be an integer between 1 and 20" },
-      { status: 400 }
+      { status: 400 },
     );
   }
 
@@ -71,7 +71,7 @@ export async function GET(request: NextRequest) {
     console.error("generate-preview failed:", error);
     return NextResponse.json(
       { error: "Failed to generate questions" },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }

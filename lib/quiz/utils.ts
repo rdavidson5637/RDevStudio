@@ -19,9 +19,10 @@ const DEFAULT_TIME_BY_FORMAT: Record<RoundFormat, number> = {
 
 export function generateGameId(): string {
   const bytes = randomBytes(6);
-  return Array.from(bytes, (byte) => GAME_ID_CHARS[byte % GAME_ID_CHARS.length]).join(
-    ""
-  );
+  return Array.from(
+    bytes,
+    (byte) => GAME_ID_CHARS[byte % GAME_ID_CHARS.length],
+  ).join("");
 }
 
 export function generatePlayerId(): string {
@@ -55,7 +56,7 @@ function levenshteinDistance(a: string, b: string): number {
   }
 
   const matrix: number[][] = Array.from({ length: a.length + 1 }, () =>
-    Array(b.length + 1).fill(0)
+    Array(b.length + 1).fill(0),
   );
 
   for (let i = 0; i <= a.length; i++) {
@@ -72,7 +73,7 @@ function levenshteinDistance(a: string, b: string): number {
       matrix[i][j] = Math.min(
         matrix[i - 1][j] + 1,
         matrix[i][j - 1] + 1,
-        matrix[i - 1][j - 1] + cost
+        matrix[i - 1][j - 1] + cost,
       );
     }
   }
@@ -82,7 +83,7 @@ function levenshteinDistance(a: string, b: string): number {
 
 export function isAnswerCorrect(
   submitted: string,
-  correctAnswer: string
+  correctAnswer: string,
 ): boolean {
   const normalizedSubmitted = normalizeAnswer(submitted);
   const normalizedCorrect = normalizeAnswer(correctAnswer);
@@ -128,7 +129,7 @@ export function getTimeLimitMsForRound(round?: Round): number {
 }
 
 export function stripCorrectAnswer(
-  question: Question
+  question: Question,
 ): Omit<Question, "correctAnswer"> {
   const { correctAnswer: _, ...publicQuestion } = question;
   return publicQuestion;
@@ -145,6 +146,6 @@ export function allPlayersAnswered(game: GameState): boolean {
   }
 
   return game.players.every((player) =>
-    player.answers.some((answer) => answer.questionId === question.id)
+    player.answers.some((answer) => answer.questionId === question.id),
   );
 }

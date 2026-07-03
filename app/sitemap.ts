@@ -1,4 +1,6 @@
 import type { MetadataRoute } from "next";
+import { BUSINESS_TOOLS } from "@/lib/business-toolkit/catalog";
+import { INTERACTIVE_TOOLS } from "@/lib/interactive-tools/catalog";
 import { SITE_URL } from "@/lib/constants";
 
 const ROUTES = [
@@ -7,6 +9,10 @@ const ROUTES = [
   "/work/shelterlink",
   "/work/rvs-cold-brew",
   "/work/concept-builds",
+  "/toolkit",
+  ...BUSINESS_TOOLS.map((tool) => tool.href),
+  "/interactive",
+  ...INTERACTIVE_TOOLS.map((tool) => tool.href),
   "/games",
   "/about",
   "/contact",

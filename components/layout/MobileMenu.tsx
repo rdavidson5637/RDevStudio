@@ -77,7 +77,12 @@ export function MobileMenu({ open, onClose, isActive }: MobileMenuProps) {
               stroke="currentColor"
               aria-hidden="true"
             >
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M6 18L18 6M6 6l12 12" />
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={1.5}
+                d="M6 18L18 6M6 6l12 12"
+              />
             </svg>
           </button>
         </div>
@@ -91,7 +96,9 @@ export function MobileMenu({ open, onClose, isActive }: MobileMenuProps) {
               href={link.href}
               onClick={onClose}
               className={`font-display text-5xl uppercase leading-none tracking-tight transition-colors ${
-                isActive(link.href) ? "text-accent" : "text-primary hover:text-accent"
+                isActive(link.href)
+                  ? "text-accent"
+                  : "text-primary hover:text-accent"
               }`}
             >
               {link.label}
@@ -112,6 +119,6 @@ export function MobileMenu({ open, onClose, isActive }: MobileMenuProps) {
         </div>
       </nav>
     </div>,
-    document.body
+    document.body,
   );
 }

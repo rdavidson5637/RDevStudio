@@ -70,7 +70,8 @@ const BUILDS = [
     href: "https://the-anchor-restaurant.vercel.app/",
     screenshotCaption: "SCREENSHOT — THE ANCHOR RESTAURANT LANDING PAGE",
     screenshotSrc: "/images/work/anchor-restaurant.png",
-    screenshotAlt: "The Anchor Restaurant landing page — restaurant concept site",
+    screenshotAlt:
+      "The Anchor Restaurant landing page — restaurant concept site",
   },
   {
     title: "Harbour Hair Studio",
@@ -94,10 +95,10 @@ export default function ConceptBuildsPage() {
             Three sites exploring how local businesses could look online.
           </p>
           <p className="max-w-3xl text-base leading-relaxed text-secondary sm:text-lg">
-            Not every business I want to design for has hired me yet. These three
-            concept builds — a trades firm, a restaurant, and a salon — are how I
-            show range: three different brands, three different audiences, one
-            standard.
+            Not every business I want to design for has hired me yet. These
+            three concept builds — a trades firm, a restaurant, and a salon —
+            are how I show range: three different brands, three different
+            audiences, one standard.
           </p>
         </header>
 

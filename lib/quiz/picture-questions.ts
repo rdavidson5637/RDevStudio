@@ -9,7 +9,7 @@ import {
 } from "./wikimedia";
 
 async function verifyPictureQuestion(
-  question: Question
+  question: Question,
 ): Promise<Question | null> {
   if (!question.imageUrl || !question.imageAlt) {
     return null;
@@ -19,7 +19,7 @@ async function verifyPictureQuestion(
 
   if (!(await isWikimediaImageAccessible(imageUrl))) {
     console.warn(
-      `Picture question "${question.id}" dropped — image not accessible: ${imageUrl}`
+      `Picture question "${question.id}" dropped — image not accessible: ${imageUrl}`,
     );
     return null;
   }
@@ -37,7 +37,7 @@ async function verifyPictureQuestion(
  */
 export async function buildPictureRoundQuestions(
   aiQuestions: Question[],
-  count: number
+  count: number,
 ): Promise<Question[]> {
   const verified: Question[] = [];
 

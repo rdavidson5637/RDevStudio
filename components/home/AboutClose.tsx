@@ -4,7 +4,10 @@ import { SectionHeader } from "@/components/ui/SectionHeader";
 
 export function AboutClose() {
   return (
-    <section id="about" className="section-padding border-t border-border bg-raised">
+    <section
+      id="about"
+      className="section-padding border-t border-border bg-raised"
+    >
       <div className="container-wide px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-3xl">
           <SectionHeader label="About" title="A bit about me" />
@@ -16,7 +19,10 @@ export function AboutClose() {
             project.
           </p>
 
-          <Link href="/about" className="link-editorial mt-8 inline-flex items-center gap-2">
+          <Link
+            href="/about"
+            className="link-editorial mt-8 inline-flex items-center gap-2"
+          >
             More about me
             <span aria-hidden="true">→</span>
           </Link>

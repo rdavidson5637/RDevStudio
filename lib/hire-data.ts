@@ -5,8 +5,7 @@ export const HIRE_CHAOS_TRANSITION = "Still here? Fine. Here's the rest.";
 
 export const HIRE_MILESTONES_TITLE = "Milestones";
 
-export const HIRE_TAGLINE =
-  "Software Developer & Product Designer";
+export const HIRE_TAGLINE = "Software Developer & Product Designer";
 
 export const HIRE_PROFILE =
   "Software developer graduating Summer 2026 with an MSc in Software Development — and a genuine interest in product design, particularly where technology meets real human behaviour. I've built ShelterLink in close collaboration with Assisi Animal Sanctuary, making every UX decision myself. I also run RDev Studio, serving local NI businesses. I work extensively with AI tools including Cursor and Claude to stay focused on what actually matters: solving the right problem well.";
@@ -96,7 +95,11 @@ export const HIRE_PROJECTS = [
     description:
       "A volunteer management platform with real-world impact. Shift scheduling, role management, and an admin dashboard built for Assisi Animal Sanctuary.",
     highlight: "Dissertation project",
-    highlights: ["Real-world impact", "Volunteer management", "Platform development"],
+    highlights: [
+      "Real-world impact",
+      "Volunteer management",
+      "Platform development",
+    ],
     image: "/images/work/shelterlink.png",
     href: "https://github.com/rdavidson19/ShelterLink",
     external: true,
@@ -159,9 +162,7 @@ export const HIRE_PROJECTS = [
     highlight: "Live & played",
     highlights: ["World Cup", "Six Nations", "Champions Cup"],
     image: "/images/games/rugby-draft.jpg",
-    links: [
-      { label: "Play", href: "/rugby-draft", external: false },
-    ],
+    links: [{ label: "Play", href: "/rugby-draft", external: false }],
     github: "https://github.com/rdavidson5637",
   },
 ] as const;
@@ -195,8 +196,7 @@ export const HIRE_TESTIMONIALS = [
     real: false,
   },
   {
-    quote:
-      "10/10 ear scratches. Would recommend. Has treats.",
+    quote: "10/10 ear scratches. Would recommend. Has treats.",
     author: "Rudi",
     role: "Chief Morale Officer",
     real: false,
@@ -254,8 +254,14 @@ export const HIRE_STRENGTHS = [
 export const HIRE_WEAKNESSES = [
   { text: "Makes spelling misteaks", code: "WARN_SPELL_CHECK" },
   { text: "Occasionally talks too much", code: "WARN_VERBOSITY" },
-  { text: "Starts new projects before finishing old ones", code: "WARN_SCOPE_CREEP" },
-  { text: "Can spend excessive time perfecting tiny details", code: "WARN_PERFECTIONISM" },
+  {
+    text: "Starts new projects before finishing old ones",
+    code: "WARN_SCOPE_CREEP",
+  },
+  {
+    text: "Can spend excessive time perfecting tiny details",
+    code: "WARN_PERFECTIONISM",
+  },
   {
     id: "cat-warning",
     code: "FELINE_DISTRACTION_DETECTED",

@@ -1,6 +1,6 @@
-'use client'
-import { useState, useCallback } from 'react'
-import type { GameState, Player, Squad, DraftSlot } from '@/types/rugby-draft'
+"use client";
+import { useState, useCallback } from "react";
+import type { GameState, Player, Squad, DraftSlot } from "@/types/rugby-draft";
 import {
   getEligiblePlayers,
   getEmptySlots,
@@ -8,151 +8,143 @@ import {
   calculateTeamRatings,
   squadHasEligibleNationalPlayers,
   COMPATIBLE_POSITIONS,
-} from '@/lib/rugby-draft/utils'
-import { getDraftPool } from '@/lib/rugby-draft/data'
-import Pitch from './Pitch'
-import PlayerCard from './PlayerCard'
-import QuitButton from './QuitButton'
-import QuitConfirmModal from './QuitConfirmModal'
+} from "@/lib/rugby-draft/utils";
+import { getDraftPool } from "@/lib/rugby-draft/data";
+import Pitch from "./Pitch";
+import PlayerCard from "./PlayerCard";
+import QuitButton from "./QuitButton";
+import QuitConfirmModal from "./QuitConfirmModal";
 
 interface Props {
-  state: GameState
-  onUpdate: (updates: Partial<GameState>) => void
-  onExit: () => void
+  state: GameState;
+  onUpdate: (updates: Partial<GameState>) => void;
+  onExit: () => void;
 }
 
 function spinRandomSquad(
   slots: DraftSlot[],
   squads: Squad[],
   nationality?: string,
-  excludedPlayerIds?: string[]
+  excludedPlayerIds?: string[],
 ): { squad: Squad; eligible: Player[] } | null {
-  const emptySlots = getEmptySlots(slots)
-  if (emptySlots.length === 0) return null
+  const emptySlots = getEmptySlots(slots);
+  if (emptySlots.length === 0) return null;
 
-  const available = squads.filter(s => {
+  const available = squads.filter((s) => {
     if (nationality) {
       return squadHasEligibleNationalPlayers(
         s,
         emptySlots,
         nationality,
-        excludedPlayerIds
-      )
+        excludedPlayerIds,
+      );
     }
-    return getEligiblePlayers(s, emptySlots, undefined, excludedPlayerIds).length > 0
-  })
-  if (available.length === 0) return null
+    return (
+      getEligiblePlayers(s, emptySlots, undefined, excludedPlayerIds).length > 0
+    );
+  });
+  if (available.length === 0) return null;
 
-  const shuffled = [...available].sort(() => Math.random() - 0.5)
+  const shuffled = [...available].sort(() => Math.random() - 0.5);
 
   for (const squad of shuffled) {
     const eligible = getEligiblePlayers(
       squad,
       emptySlots,
       nationality,
-      excludedPlayerIds
-    )
+      excludedPlayerIds,
+    );
     if (eligible.length > 0) {
-      return { squad, eligible }
+      return { squad, eligible };
     }
   }
 
-  return null
+  return null;
 }
 
 function assignPlayerToSlot(
   slots: DraftSlot[],
   player: Player,
-  badge: string
+  badge: string,
 ): DraftSlot[] {
-  const playerWithBadge = { ...player, badge } as Player & { badge: string }
-  const compatible = COMPATIBLE_POSITIONS[player.position] ?? [player.position]
+  const playerWithBadge = { ...player, badge } as Player & { badge: string };
+  const compatible = COMPATIBLE_POSITIONS[player.position] ?? [player.position];
 
   const match = slots
     .map((slot, index) => ({ slot, index }))
-    .find(({ slot }) => slot.player === null && compatible.includes(slot.position))
+    .find(
+      ({ slot }) => slot.player === null && compatible.includes(slot.position),
+    );
 
-  if (!match) return slots
+  if (!match) return slots;
 
-  const newSlots = [...slots]
+  const newSlots = [...slots];
   newSlots[match.index] = {
     ...newSlots[match.index],
     player: playerWithBadge,
-  }
-  return newSlots
+  };
+  return newSlots;
 }
 
 export default function DraftEngine({ state, onUpdate, onExit }: Props) {
-  const [spinning, setSpinning] = useState(false)
-  const [showQuitConfirm, setShowQuitConfirm] = useState(false)
-  const [spinFailed, setSpinFailed] = useState(false)
-  const {
-    draftSlots,
-    currentSpinSquad,
-    eligiblePlayers,
-    usedPlayerIds,
-  } = state
+  const [spinning, setSpinning] = useState(false);
+  const [showQuitConfirm, setShowQuitConfirm] = useState(false);
+  const [spinFailed, setSpinFailed] = useState(false);
+  const { draftSlots, currentSpinSquad, eligiblePlayers, usedPlayerIds } =
+    state;
 
-  const draftPool = getDraftPool(state.mode!)
+  const draftPool = getDraftPool(state.mode!);
 
-  const filledCount = draftSlots.filter(s => s.player !== null).length
-  const totalSlots = draftSlots.length
-  const isDraftComplete = filledCount === totalSlots
-  const nextSlotIndex = getNextEmptySlotIndex(draftSlots)
+  const filledCount = draftSlots.filter((s) => s.player !== null).length;
+  const totalSlots = draftSlots.length;
+  const isDraftComplete = filledCount === totalSlots;
+  const nextSlotIndex = getNextEmptySlotIndex(draftSlots);
 
   const handleSpin = useCallback(() => {
-    setSpinning(true)
-    setSpinFailed(false)
+    setSpinning(true);
+    setSpinFailed(false);
     setTimeout(() => {
       const result = spinRandomSquad(
         draftSlots,
         draftPool,
         undefined,
-        usedPlayerIds
-      )
+        usedPlayerIds,
+      );
       if (result) {
         onUpdate({
           currentSpinSquad: result.squad,
           eligiblePlayers: result.eligible,
-        })
+        });
       } else {
-        setSpinFailed(true)
+        setSpinFailed(true);
       }
-      setSpinning(false)
-    }, 600)
-  }, [usedPlayerIds, draftSlots, onUpdate, draftPool])
+      setSpinning(false);
+    }, 600);
+  }, [usedPlayerIds, draftSlots, onUpdate, draftPool]);
 
   const handleSelectPlayer = useCallback(
     (player: Player) => {
-      if (!currentSpinSquad) return
-      const badge = currentSpinSquad.badge
-      const newSlots = assignPlayerToSlot(draftSlots, player, badge)
-      if (newSlots === draftSlots) return
-      const newFilledCount = newSlots.filter(s => s.player !== null).length
-      const complete = newFilledCount === totalSlots
-      const ratings = complete ? calculateTeamRatings(newSlots) : null
+      if (!currentSpinSquad) return;
+      const badge = currentSpinSquad.badge;
+      const newSlots = assignPlayerToSlot(draftSlots, player, badge);
+      if (newSlots === draftSlots) return;
+      const newFilledCount = newSlots.filter((s) => s.player !== null).length;
+      const complete = newFilledCount === totalSlots;
+      const ratings = complete ? calculateTeamRatings(newSlots) : null;
 
       onUpdate({
         draftSlots: newSlots,
         currentSpinSquad: null,
         eligiblePlayers: [],
         usedPlayerIds: [...usedPlayerIds, player.id],
-        ...(complete && { phase: 'draft-complete', teamRatings: ratings }),
-      })
+        ...(complete && { phase: "draft-complete", teamRatings: ratings }),
+      });
     },
-    [
-      currentSpinSquad,
-      draftSlots,
-      totalSlots,
-      usedPlayerIds,
-      onUpdate,
-    ]
-  )
+    [currentSpinSquad, draftSlots, totalSlots, usedPlayerIds, onUpdate],
+  );
 
   const teamLabel =
-    state.mode === 'champions-cup'
-      ? state.selectedClub
-      : state.selectedNation
+    state.mode === "champions-cup" ? state.selectedClub : state.selectedNation;
 
   return (
     <div className="min-h-screen bg-[#0a0a12] flex flex-col">
@@ -185,7 +177,7 @@ export default function DraftEngine({ state, onUpdate, onExit }: Props) {
               </h2>
               <p className="text-white/40 text-xs mt-0.5">
                 {filledCount} / {totalSlots} players drafted
-                {teamLabel ? ` · ${teamLabel}` : ''}
+                {teamLabel ? ` · ${teamLabel}` : ""}
               </p>
             </div>
             <div className="flex gap-1 flex-wrap justify-end max-w-[120px]">
@@ -194,10 +186,10 @@ export default function DraftEngine({ state, onUpdate, onExit }: Props) {
                   key={i}
                   className={`w-2 h-2 rounded-full ${
                     slot.player
-                      ? 'bg-emerald-400'
+                      ? "bg-emerald-400"
                       : i === nextSlotIndex
-                        ? 'bg-white animate-pulse'
-                        : 'bg-white/20'
+                        ? "bg-white animate-pulse"
+                        : "bg-white/20"
                   }`}
                 />
               ))}
@@ -222,9 +214,9 @@ export default function DraftEngine({ state, onUpdate, onExit }: Props) {
                 <div className="grid grid-cols-3 gap-3 mb-8">
                   {(
                     [
-                      ['Forwards', state.teamRatings.forwards],
-                      ['Backs', state.teamRatings.backs],
-                      ['Overall', state.teamRatings.overall],
+                      ["Forwards", state.teamRatings.forwards],
+                      ["Backs", state.teamRatings.backs],
+                      ["Overall", state.teamRatings.overall],
                     ] as const
                   ).map(([label, value]) => (
                     <div
@@ -242,7 +234,7 @@ export default function DraftEngine({ state, onUpdate, onExit }: Props) {
                 </div>
               )}
               <button
-                onClick={() => onUpdate({ phase: 'playing' })}
+                onClick={() => onUpdate({ phase: "playing" })}
                 className="w-full py-4 bg-white text-black font-black text-sm uppercase tracking-widest rounded-xl hover:bg-white/90 active:scale-[0.98] transition-all"
               >
                 Start Tournament →
@@ -257,7 +249,7 @@ export default function DraftEngine({ state, onUpdate, onExit }: Props) {
                     disabled={spinning || nextSlotIndex < 0}
                     className="w-full py-5 bg-white text-black font-black text-lg uppercase tracking-widest rounded-2xl hover:bg-white/90 active:scale-[0.98] transition-all disabled:opacity-50 disabled:cursor-not-allowed"
                   >
-                    {spinning ? 'Spinning…' : 'Spin Squad'}
+                    {spinning ? "Spinning…" : "Spin Squad"}
                   </button>
                   {spinFailed && (
                     <p className="text-red-400 text-sm mt-4">
@@ -293,7 +285,7 @@ export default function DraftEngine({ state, onUpdate, onExit }: Props) {
                     </div>
                   </div>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 max-h-[60vh] overflow-y-auto">
-                    {eligiblePlayers.map(player => (
+                    {eligiblePlayers.map((player) => (
                       <PlayerCard
                         key={player.id}
                         player={player}
@@ -309,5 +301,5 @@ export default function DraftEngine({ state, onUpdate, onExit }: Props) {
         </div>
       </div>
     </div>
-  )
+  );
 }

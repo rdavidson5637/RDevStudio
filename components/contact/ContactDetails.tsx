@@ -20,7 +20,9 @@ export function ContactDetails() {
           <p className="font-display text-xs font-semibold uppercase tracking-widest text-secondary">
             Availability
           </p>
-          <p className="mt-1 text-secondary">Open to freelance — based in Belfast</p>
+          <p className="mt-1 text-secondary">
+            Open to freelance — based in Belfast
+          </p>
         </li>
         <li>
           <p className="font-display text-xs font-semibold uppercase tracking-widest text-secondary">

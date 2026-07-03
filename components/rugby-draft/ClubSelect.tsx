@@ -1,44 +1,44 @@
-'use client'
-import type { GameState } from '@/types/rugby-draft'
-import { getClubColour } from '@/lib/rugby-draft/utils'
+"use client";
+import type { GameState } from "@/types/rugby-draft";
+import { getClubColour } from "@/lib/rugby-draft/utils";
 
 interface Props {
-  onSelect: (updates: Partial<GameState>) => void
-  onBack: () => void
+  onSelect: (updates: Partial<GameState>) => void;
+  onBack: () => void;
 }
 
 const CLUBS = {
-  'United Rugby Championship': [
-    { name: 'Leinster', badge: 'LNS' },
-    { name: 'Munster', badge: 'MUN' },
-    { name: 'Ulster', badge: 'ULS' },
-    { name: 'Connacht', badge: 'CON' },
-    { name: 'Glasgow Warriors', badge: 'GLA' },
-    { name: 'Edinburgh', badge: 'EDI' },
-    { name: 'Cardiff Rugby', badge: 'CAR' },
-    { name: 'Dragons RFC', badge: 'DRA' },
+  "United Rugby Championship": [
+    { name: "Leinster", badge: "LNS" },
+    { name: "Munster", badge: "MUN" },
+    { name: "Ulster", badge: "ULS" },
+    { name: "Connacht", badge: "CON" },
+    { name: "Glasgow Warriors", badge: "GLA" },
+    { name: "Edinburgh", badge: "EDI" },
+    { name: "Cardiff Rugby", badge: "CAR" },
+    { name: "Dragons RFC", badge: "DRA" },
   ],
   Premiership: [
-    { name: 'Saracens', badge: 'SAR' },
-    { name: 'Exeter Chiefs', badge: 'EXE' },
-    { name: 'Bath Rugby', badge: 'BAT' },
-    { name: 'Northampton Saints', badge: 'NOR' },
-    { name: 'Sale Sharks', badge: 'SAL' },
-    { name: 'Leicester Tigers', badge: 'LEI' },
-    { name: 'Harlequins', badge: 'HAR' },
-    { name: 'Bristol Bears', badge: 'BRI' },
+    { name: "Saracens", badge: "SAR" },
+    { name: "Exeter Chiefs", badge: "EXE" },
+    { name: "Bath Rugby", badge: "BAT" },
+    { name: "Northampton Saints", badge: "NOR" },
+    { name: "Sale Sharks", badge: "SAL" },
+    { name: "Leicester Tigers", badge: "LEI" },
+    { name: "Harlequins", badge: "HAR" },
+    { name: "Bristol Bears", badge: "BRI" },
   ],
-  'Top 14': [
-    { name: 'Toulouse', badge: 'TOU' },
-    { name: 'La Rochelle', badge: 'LRO' },
-    { name: 'Bordeaux-Bègles', badge: 'BOR' },
-    { name: 'Stade Français', badge: 'SFR' },
-    { name: 'Clermont', badge: 'CLE' },
-    { name: 'Racing 92', badge: 'RAC' },
-    { name: 'Toulon', badge: 'TVN' },
-    { name: 'Lyon', badge: 'LYO' },
+  "Top 14": [
+    { name: "Toulouse", badge: "TOU" },
+    { name: "La Rochelle", badge: "LRO" },
+    { name: "Bordeaux-Bègles", badge: "BOR" },
+    { name: "Stade Français", badge: "SFR" },
+    { name: "Clermont", badge: "CLE" },
+    { name: "Racing 92", badge: "RAC" },
+    { name: "Toulon", badge: "TVN" },
+    { name: "Lyon", badge: "LYO" },
   ],
-} as const
+} as const;
 
 export default function ClubSelect({ onSelect, onBack }: Props) {
   return (
@@ -66,15 +66,15 @@ export default function ClubSelect({ onSelect, onBack }: Props) {
               {league}
             </p>
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
-              {clubs.map(club => {
-                const colour = getClubColour(club.badge)
+              {clubs.map((club) => {
+                const colour = getClubColour(club.badge);
                 return (
                   <button
                     key={club.name}
                     onClick={() =>
                       onSelect({
                         selectedClub: club.name,
-                        phase: 'drafting',
+                        phase: "drafting",
                       })
                     }
                     className="flex flex-col items-center gap-2 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/30 rounded-xl p-5 text-center transition-all duration-200 cursor-pointer group"
@@ -93,12 +93,12 @@ export default function ClubSelect({ onSelect, onBack }: Props) {
                       {club.name}
                     </span>
                   </button>
-                )
+                );
               })}
             </div>
           </div>
         ))}
       </div>
     </div>
-  )
+  );
 }

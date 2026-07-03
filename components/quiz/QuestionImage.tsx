@@ -46,9 +46,7 @@ export function QuestionImage({
       {!loaded ? (
         <div
           className={`image-shimmer flex w-full items-center justify-center bg-quiz-bg/80 ${
-            prominent
-              ? "h-[200px] sm:h-[280px]"
-              : "h-[160px] sm:h-[200px]"
+            prominent ? "h-[200px] sm:h-[280px]" : "h-[160px] sm:h-[200px]"
           }`}
           aria-hidden="true"
         />

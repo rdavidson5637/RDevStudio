@@ -1,14 +1,18 @@
-'use client'
-import type { CLLeaguePhase } from '@/lib/champions-draft/matchEngine'
+"use client";
+import type { CLLeaguePhase } from "@/lib/champions-draft/matchEngine";
 
 interface Props {
-  leaguePhase: CLLeaguePhase
-  userTeam: string
-  participantCount: number
+  leaguePhase: CLLeaguePhase;
+  userTeam: string;
+  participantCount: number;
 }
 
-export default function CLLeagueDraw({ leaguePhase, userTeam, participantCount }: Props) {
-  const { userFixtures } = leaguePhase
+export default function CLLeagueDraw({
+  leaguePhase,
+  userTeam,
+  participantCount,
+}: Props) {
+  const { userFixtures } = leaguePhase;
 
   return (
     <div className="w-full max-w-md">
@@ -30,8 +34,8 @@ export default function CLLeagueDraw({ leaguePhase, userTeam, participantCount }
 
       <div className="flex flex-col gap-2">
         {userFixtures.map((fixture, i) => {
-          const isHome = fixture.home === userTeam
-          const opponent = isHome ? fixture.away : fixture.home
+          const isHome = fixture.home === userTeam;
+          const opponent = isHome ? fixture.away : fixture.home;
           return (
             <div
               key={i}
@@ -44,10 +48,10 @@ export default function CLLeagueDraw({ leaguePhase, userTeam, participantCount }
                 {opponent}
               </span>
               <span className="text-white/30 text-[10px] uppercase tracking-widest font-bold">
-                {isHome ? 'Home' : 'Away'}
+                {isHome ? "Home" : "Away"}
               </span>
             </div>
-          )
+          );
         })}
       </div>
 
@@ -55,5 +59,5 @@ export default function CLLeagueDraw({ leaguePhase, userTeam, participantCount }
         Top 8 qualify · 9th–24th playoff · 25th+ out
       </p>
     </div>
-  )
+  );
 }

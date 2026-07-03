@@ -27,13 +27,12 @@ export function RoundBreakScreen({
 }: RoundBreakScreenProps) {
   const formatLabel =
     ROUND_FORMAT_OPTIONS.find(
-      (option) => option.value === completedRound.format
+      (option) => option.value === completedRound.format,
     )?.label ?? "Round";
 
   const nextFormatLabel = nextRound
-    ? ROUND_FORMAT_OPTIONS.find(
-        (option) => option.value === nextRound.format
-      )?.label
+    ? ROUND_FORMAT_OPTIONS.find((option) => option.value === nextRound.format)
+        ?.label
     : null;
 
   return (
@@ -97,7 +96,9 @@ export function RoundBreakScreen({
           </>
         ) : (
           <div className="flex flex-col items-center gap-2">
-            <p className="text-quiz-muted">Waiting for host to start the next round...</p>
+            <p className="text-quiz-muted">
+              Waiting for host to start the next round...
+            </p>
             <div className="flex gap-1.5" aria-hidden="true">
               <span className="h-2 w-2 animate-bounce rounded-full bg-quiz-amber [animation-delay:0ms]" />
               <span className="h-2 w-2 animate-bounce rounded-full bg-quiz-amber [animation-delay:150ms]" />

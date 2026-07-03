@@ -10,7 +10,8 @@ const musicTriviaFallback: Question[] = [
     options: ["Queen", "The Beatles", "Led Zeppelin", "Pink Floyd"],
     correctAnswer: "Queen",
     category: QuizCategory.MUSIC,
-    explanation: "Bohemian Rhapsody topped the UK charts twice — in 1975 and 1991.",
+    explanation:
+      "Bohemian Rhapsody topped the UK charts twice — in 1975 and 1991.",
   },
   {
     id: "music_trivia_002",
@@ -79,7 +80,7 @@ const musicTriviaFallback: Question[] = [
 
 function buildClipQuestion(
   clip: (typeof MUSIC_CLIPS)[number],
-  index: number
+  index: number,
 ): Question {
   const distractors = MUSIC_CLIPS.filter((item) => item.artist !== clip.artist)
     .slice(0, 3)
@@ -100,7 +101,7 @@ function buildClipQuestion(
 export const musicFallbackQuestions: Question[] = [
   ...musicTriviaFallback,
   ...MUSIC_CLIPS.slice(0, 6).map((clip, index) =>
-    buildClipQuestion(clip, index)
+    buildClipQuestion(clip, index),
   ),
 ];
 

@@ -10,9 +10,7 @@ export const metadata = createPageMetadata({
 });
 
 function SectionHeading({ children }: { children: React.ReactNode }) {
-  return (
-    <h2 className="shell-label mb-3 text-accent">{children}</h2>
-  );
+  return <h2 className="shell-label mb-3 text-accent">{children}</h2>;
 }
 
 function ScreenshotSlot({
@@ -68,7 +66,10 @@ export default function ShelterLinkCaseStudyPage() {
           </div>
         </header>
 
-        <section className="border-b border-border py-12" aria-label="Hero screenshot">
+        <section
+          className="border-b border-border py-12"
+          aria-label="Hero screenshot"
+        >
           <div className="relative h-72 w-full overflow-hidden rounded-lg border border-border bg-raised sm:h-[34rem]">
             <Image
               src="/images/work/shelterlink-admin-dashboard.png"
@@ -87,12 +88,12 @@ export default function ShelterLinkCaseStudyPage() {
         <section className="border-b border-border py-12">
           <SectionHeading>THE PROBLEM</SectionHeading>
           <p className="max-w-3xl text-base leading-relaxed text-secondary sm:text-lg">
-            Assisi Animal Sanctuary runs on volunteers — and coordinating them ran
-            on paper rotas, phone calls and memory. Scheduling shifts, tracking
-            who was trained for which roles, and onboarding new volunteers all
-            ate staff time that should have gone to the animals. Nothing was
-            broken, exactly. It just didn&apos;t scale, and too much of it lived
-            in people&apos;s heads.
+            Assisi Animal Sanctuary runs on volunteers — and coordinating them
+            ran on paper rotas, phone calls and memory. Scheduling shifts,
+            tracking who was trained for which roles, and onboarding new
+            volunteers all ate staff time that should have gone to the animals.
+            Nothing was broken, exactly. It just didn&apos;t scale, and too much
+            of it lived in people&apos;s heads.
           </p>
         </section>
 
@@ -100,19 +101,20 @@ export default function ShelterLinkCaseStudyPage() {
           <SectionHeading>THE BUILD</SectionHeading>
           <div className="max-w-3xl space-y-5 text-base leading-relaxed text-secondary sm:text-lg">
             <p>
-              ShelterLink is a full-stack platform built around how the sanctuary
-              actually works. Volunteers register and build a profile; staff assign
-              roles, manage shifts and see who&apos;s coming in from an admin
-              dashboard; records export to CSV when they&apos;re needed
-              elsewhere.
+              ShelterLink is a full-stack platform built around how the
+              sanctuary actually works. Volunteers register and build a profile;
+              staff assign roles, manage shifts and see who&apos;s coming in
+              from an admin dashboard; records export to CSV when they&apos;re
+              needed elsewhere.
             </p>
             <p>
-              Under the surface it&apos;s deliberately unflashy: Node and Express
-              on the back end, a MySQL database, and a plain JavaScript front end
-              — no framework, no build step. Security was treated as a feature,
-              not an afterthought: authentication, rate limiting and a strict
-              content security policy are baked in, because a charity holding
-              volunteers&apos; personal details can&apos;t be casual about it.
+              Under the surface it&apos;s deliberately unflashy: Node and
+              Express on the back end, a MySQL database, and a plain JavaScript
+              front end — no framework, no build step. Security was treated as a
+              feature, not an afterthought: authentication, rate limiting and a
+              strict content security policy are baked in, because a charity
+              holding volunteers&apos; personal details can&apos;t be casual
+              about it.
             </p>
           </div>
 
@@ -166,9 +168,9 @@ export default function ShelterLinkCaseStudyPage() {
                 PicoCSS over a design system
               </h3>
               <p className="max-w-3xl text-base leading-relaxed text-secondary sm:text-lg">
-                Semantic HTML with sensible defaults kept the front end small and
-                accessible without a pile of classes. The design budget went on
-                clarity, not chrome.
+                Semantic HTML with sensible defaults kept the front end small
+                and accessible without a pile of classes. The design budget went
+                on clarity, not chrome.
               </p>
             </section>
 
@@ -189,8 +191,8 @@ export default function ShelterLinkCaseStudyPage() {
           <p className="max-w-3xl text-base leading-relaxed text-secondary sm:text-lg">
             ShelterLink was submitted and demonstrated as my MSc dissertation at
             Queen&apos;s University Belfast — I graduated with Commendation.
-            Development didn&apos;t stop at submission: the platform is now being
-            prepared for live rollout at the sanctuary.
+            Development didn&apos;t stop at submission: the platform is now
+            being prepared for live rollout at the sanctuary.
           </p>
 
           <blockquote className="mt-8 rounded-lg border border-border bg-raised px-5 py-5">

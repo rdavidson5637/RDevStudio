@@ -18,18 +18,24 @@ export async function POST(request: NextRequest) {
     const { gameId, playerId, emoji } = body;
 
     if (!gameId?.trim()) {
-      return NextResponse.json({ error: "gameId is required" }, { status: 400 });
+      return NextResponse.json(
+        { error: "gameId is required" },
+        { status: 400 },
+      );
     }
 
     if (!playerId?.trim()) {
       return NextResponse.json(
         { error: "playerId is required" },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
     if (!emoji || !isAllowedReaction(emoji)) {
-      return NextResponse.json({ error: "Invalid reaction emoji" }, { status: 400 });
+      return NextResponse.json(
+        { error: "Invalid reaction emoji" },
+        { status: 400 },
+      );
     }
 
     const game = await getGame(gameId);
@@ -41,7 +47,10 @@ export async function POST(request: NextRequest) {
     const player = game.players.find((entry) => entry.id === playerId);
 
     if (!player) {
-      return NextResponse.json({ error: "Player not in game" }, { status: 403 });
+      return NextResponse.json(
+        { error: "Player not in game" },
+        { status: 403 },
+      );
     }
 
     const reaction = {
@@ -57,6 +66,9 @@ export async function POST(request: NextRequest) {
 
     return NextResponse.json({ ok: true });
   } catch {
-    return NextResponse.json({ error: "Invalid request body" }, { status: 400 });
+    return NextResponse.json(
+      { error: "Invalid request body" },
+      { status: 400 },
+    );
   }
 }

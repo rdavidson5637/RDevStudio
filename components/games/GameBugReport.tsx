@@ -1,29 +1,29 @@
-'use client'
+"use client";
 
-import { useEffect, useState } from 'react'
-import { useForm, ValidationError } from '@formspree/react'
-import { FORMSPREE_FORM_ID } from '@/lib/constants'
+import { useEffect, useState } from "react";
+import { useForm, ValidationError } from "@formspree/react";
+import { FORMSPREE_FORM_ID } from "@/lib/constants";
 
-export type GameBugReportGame = 'Champions Draft' | 'Rugby Draft'
+export type GameBugReportGame = "Champions Draft" | "Rugby Draft";
 
 type GameBugReportProps = {
-  game: GameBugReportGame
-  context?: string
-}
+  game: GameBugReportGame;
+  context?: string;
+};
 
 type ModalProps = GameBugReportProps & {
-  onClose: () => void
-}
+  onClose: () => void;
+};
 
 function BugReportForm({ game, context, onClose }: ModalProps) {
-  const [state, handleSubmit] = useForm(FORMSPREE_FORM_ID)
-  const [pageUrl, setPageUrl] = useState('')
-  const [userAgent, setUserAgent] = useState('')
+  const [state, handleSubmit] = useForm(FORMSPREE_FORM_ID);
+  const [pageUrl, setPageUrl] = useState("");
+  const [userAgent, setUserAgent] = useState("");
 
   useEffect(() => {
-    setPageUrl(window.location.href)
-    setUserAgent(navigator.userAgent)
-  }, [])
+    setPageUrl(window.location.href);
+    setUserAgent(navigator.userAgent);
+  }, []);
 
   if (state.succeeded) {
     return (
@@ -43,7 +43,7 @@ function BugReportForm({ game, context, onClose }: ModalProps) {
           Close
         </button>
       </div>
-    )
+    );
   }
 
   return (
@@ -52,11 +52,14 @@ function BugReportForm({ game, context, onClose }: ModalProps) {
       <input type="hidden" name="type" value="bug_report" />
       <input type="hidden" name="game" value={game} />
       <input type="hidden" name="page_url" value={pageUrl} />
-      <input type="hidden" name="game_context" value={context ?? ''} />
+      <input type="hidden" name="game_context" value={context ?? ""} />
       <input type="hidden" name="user_agent" value={userAgent} />
 
       <div>
-        <label htmlFor={`bug-message-${game}`} className="mb-2 block text-[10px] font-black uppercase tracking-[0.2em] text-white/40">
+        <label
+          htmlFor={`bug-message-${game}`}
+          className="mb-2 block text-[10px] font-black uppercase tracking-[0.2em] text-white/40"
+        >
           What went wrong?
         </label>
         <textarea
@@ -77,7 +80,10 @@ function BugReportForm({ game, context, onClose }: ModalProps) {
       </div>
 
       <div>
-        <label htmlFor={`bug-email-${game}`} className="mb-2 block text-[10px] font-black uppercase tracking-[0.2em] text-white/40">
+        <label
+          htmlFor={`bug-email-${game}`}
+          className="mb-2 block text-[10px] font-black uppercase tracking-[0.2em] text-white/40"
+        >
           Email <span className="text-white/25">(optional)</span>
         </label>
         <input
@@ -100,10 +106,10 @@ function BugReportForm({ game, context, onClose }: ModalProps) {
         disabled={state.submitting}
         className="w-full rounded-xl bg-white py-3.5 text-sm font-black uppercase tracking-widest text-black transition-all hover:bg-white/90 active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-60"
       >
-        {state.submitting ? 'Sending...' : 'Send report'}
+        {state.submitting ? "Sending..." : "Send report"}
       </button>
     </form>
-  )
+  );
 }
 
 function BugReportModal({ game, context, onClose }: ModalProps) {
@@ -144,11 +150,11 @@ function BugReportModal({ game, context, onClose }: ModalProps) {
         <BugReportForm game={game} context={context} onClose={onClose} />
       </div>
     </div>
-  )
+  );
 }
 
 export function GameBugReport({ game, context }: GameBugReportProps) {
-  const [open, setOpen] = useState(false)
+  const [open, setOpen] = useState(false);
 
   return (
     <>
@@ -168,19 +174,19 @@ export function GameBugReport({ game, context }: GameBugReportProps) {
         />
       )}
     </>
-  )
+  );
 }
 
 type InlineBugReportProps = GameBugReportProps & {
-  className?: string
-}
+  className?: string;
+};
 
 export function InlineGameBugReport({
   game,
   context,
-  className = '',
+  className = "",
 }: InlineBugReportProps) {
-  const [open, setOpen] = useState(false)
+  const [open, setOpen] = useState(false);
 
   return (
     <>
@@ -201,5 +207,5 @@ export function InlineGameBugReport({
         />
       )}
     </>
-  )
+  );
 }

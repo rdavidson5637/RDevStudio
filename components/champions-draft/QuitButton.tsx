@@ -1,15 +1,15 @@
-'use client'
+"use client";
 
 interface Props {
-  onQuit: () => void
-  className?: string
-  label?: string
+  onQuit: () => void;
+  className?: string;
+  label?: string;
 }
 
 export default function QuitButton({
   onQuit,
-  className = '',
-  label = '← Quit',
+  className = "",
+  label = "← Quit",
 }: Props) {
   return (
     <button
@@ -18,5 +18,5 @@ export default function QuitButton({
     >
       {label}
     </button>
-  )
+  );
 }

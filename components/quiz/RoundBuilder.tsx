@@ -15,7 +15,12 @@ import {
   defaultRoundName,
 } from "@/lib/quiz/rounds";
 import { DIFFICULTY_OPTIONS } from "@/lib/quiz/difficulty";
-import { Difficulty, QuizCategory, RoundFormat, type RoundConfig } from "@/lib/quiz/types";
+import {
+  Difficulty,
+  QuizCategory,
+  RoundFormat,
+  type RoundConfig,
+} from "@/lib/quiz/types";
 
 interface RoundBuilderProps {
   rounds: RoundConfig[];
@@ -25,7 +30,7 @@ interface RoundBuilderProps {
 export function RoundBuilder({ rounds, onChange }: RoundBuilderProps) {
   const totalQuestions = rounds.reduce(
     (sum, round) => sum + round.questionCount,
-    0
+    0,
   );
 
   function updateRound(index: number, patch: Partial<RoundConfig>) {
@@ -41,12 +46,12 @@ export function RoundBuilder({ rounds, onChange }: RoundBuilderProps) {
           updated.name = defaultRoundName(
             updated.format,
             updated.category,
-            index + 1
+            index + 1,
           );
         }
 
         return updated;
-      })
+      }),
     );
   }
 
@@ -73,7 +78,7 @@ export function RoundBuilder({ rounds, onChange }: RoundBuilderProps) {
           ...round,
           id: `round_${roundIndex + 1}`,
           name: defaultRoundName(round.format, round.category, roundIndex + 1),
-        }))
+        })),
     );
   }
 
@@ -141,7 +146,7 @@ export function RoundBuilder({ rounds, onChange }: RoundBuilderProps) {
               <p className="text-xs text-quiz-muted">
                 {
                   ROUND_FORMAT_OPTIONS.find(
-                    (option) => option.value === round.format
+                    (option) => option.value === round.format,
                   )?.description
                 }
               </p>

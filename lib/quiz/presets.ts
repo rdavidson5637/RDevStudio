@@ -1,7 +1,4 @@
-import {
-  DEFAULT_TIME_LIMIT_SECONDS,
-  QUESTIONS_PER_ROUND,
-} from "./constants";
+import { DEFAULT_TIME_LIMIT_SECONDS, QUESTIONS_PER_ROUND } from "./constants";
 import { defaultRoundName } from "./rounds";
 import {
   Difficulty,
@@ -26,7 +23,7 @@ function round(
     difficulty?: Difficulty;
     timeLimitSeconds?: number;
     doublePoints?: boolean;
-  }
+  },
 ): RoundConfig {
   const format = spec.format;
   const category = spec.category;
@@ -49,7 +46,10 @@ export const QUIZ_PRESETS: QuizPreset[] = [
     name: "Classic pub night",
     description: "General → Sport → Music → Picture. The full experience.",
     buildRounds: () => [
-      round(1, { format: RoundFormat.STANDARD, category: QuizCategory.GENERAL }),
+      round(1, {
+        format: RoundFormat.STANDARD,
+        category: QuizCategory.GENERAL,
+      }),
       round(2, { format: RoundFormat.STANDARD, category: QuizCategory.SPORT }),
       round(3, {
         format: RoundFormat.MUSIC,

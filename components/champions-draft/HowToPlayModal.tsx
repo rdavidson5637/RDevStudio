@@ -1,20 +1,20 @@
-'use client'
-import type { ReactNode } from 'react'
+"use client";
+import type { ReactNode } from "react";
 
 interface Props {
-  onClose: () => void
+  onClose: () => void;
 }
 
 interface Section {
-  title: string
-  icon: string
-  content: ReactNode
+  title: string;
+  icon: string;
+  content: ReactNode;
 }
 
 const SECTIONS: Section[] = [
   {
-    title: 'The Basics',
-    icon: '⚽',
+    title: "The Basics",
+    icon: "⚽",
     content: (
       <>
         <p>
@@ -23,8 +23,8 @@ const SECTIONS: Section[] = [
           simulate matches and see how far you can go.
         </p>
         <p className="mt-3">
-          Every run follows the same flow: <strong>pick a mode</strong> →{' '}
-          <strong>choose a formation</strong> → <strong>draft your XI</strong> →{' '}
+          Every run follows the same flow: <strong>pick a mode</strong> →{" "}
+          <strong>choose a formation</strong> → <strong>draft your XI</strong> →{" "}
           <strong>compete</strong>. You can quit anytime from the top-left and
           return to the main menu.
         </p>
@@ -32,8 +32,8 @@ const SECTIONS: Section[] = [
     ),
   },
   {
-    title: 'The Draft',
-    icon: '🎯',
+    title: "The Draft",
+    icon: "🎯",
     content: (
       <>
         <ul className="space-y-2 list-disc pl-4">
@@ -48,7 +48,7 @@ const SECTIONS: Section[] = [
             pitch.
           </li>
           <li>
-            In standard modes, each squad can only be spun <strong>once</strong>{' '}
+            In standard modes, each squad can only be spun <strong>once</strong>{" "}
             per draft. Plan your picks around the positions you still need.
           </li>
           <li>
@@ -60,8 +60,8 @@ const SECTIONS: Section[] = [
     ),
   },
   {
-    title: 'League Season',
-    icon: '🏆',
+    title: "League Season",
+    icon: "🏆",
     content: (
       <>
         <p>
@@ -70,11 +70,9 @@ const SECTIONS: Section[] = [
         </p>
         <ul className="mt-3 space-y-2 list-disc pl-4">
           <li>Every team plays each other home and away.</li>
+          <li>Home matches give a small advantage. Away days are tougher.</li>
           <li>
-            Home matches give a small advantage. Away days are tougher.
-          </li>
-          <li>
-            Watch your matches one by one, or use <strong>fast</strong> /{' '}
+            Watch your matches one by one, or use <strong>fast</strong> /{" "}
             <strong>skip</strong> speed modes to blast through.
           </li>
           <li>
@@ -86,8 +84,8 @@ const SECTIONS: Section[] = [
     ),
   },
   {
-    title: 'Champions League',
-    icon: '⭐',
+    title: "Champions League",
+    icon: "⭐",
     content: (
       <>
         <p>
@@ -121,8 +119,8 @@ const SECTIONS: Section[] = [
     ),
   },
   {
-    title: 'World Cup',
-    icon: '🌍',
+    title: "World Cup",
+    icon: "🌍",
     content: (
       <>
         <p>Choose a nation, then pick how you want to draft:</p>
@@ -134,8 +132,8 @@ const SECTIONS: Section[] = [
           </li>
           <li>
             <strong>Dream Team</strong> — draft any legends from the full pool.
-            Your nation is still shown on the kit, but there&apos;s no nationality
-            filter.
+            Your nation is still shown on the kit, but there&apos;s no
+            nationality filter.
           </li>
         </ul>
         <p className="mt-3">
@@ -147,8 +145,8 @@ const SECTIONS: Section[] = [
     ),
   },
   {
-    title: 'Matches & Ratings',
-    icon: '📊',
+    title: "Matches & Ratings",
+    icon: "📊",
     content: (
       <>
         <p>
@@ -161,7 +159,7 @@ const SECTIONS: Section[] = [
             Higher-rated XIs generally perform better, but upsets can happen.
           </li>
           <li>
-            Use <strong>normal</strong>, <strong>fast</strong>, or{' '}
+            Use <strong>normal</strong>, <strong>fast</strong>, or{" "}
             <strong>skip</strong> before a round to control match speed.
           </li>
           <li>
@@ -173,26 +171,26 @@ const SECTIONS: Section[] = [
     ),
   },
   {
-    title: 'Sharing Your Result',
-    icon: '📤',
+    title: "Sharing Your Result",
+    icon: "📤",
     content: (
       <>
         <p>
           When a run ends — whether you win the league, lift the trophy, or get
-          knocked out — you&apos;ll see a share card with your final position and
-          full drafted XI.
+          knocked out — you&apos;ll see a share card with your final position
+          and full drafted XI.
         </p>
         <p className="mt-3">
-          Tap <strong>Share</strong> to send it via your phone&apos;s share sheet,
-          or <strong>Copy</strong> to paste the text anywhere. Challenge your
-          mates: &ldquo;Think you can beat my XI?&rdquo;
+          Tap <strong>Share</strong> to send it via your phone&apos;s share
+          sheet, or <strong>Copy</strong> to paste the text anywhere. Challenge
+          your mates: &ldquo;Think you can beat my XI?&rdquo;
         </p>
       </>
     ),
   },
   {
-    title: 'Tips',
-    icon: '💡',
+    title: "Tips",
+    icon: "💡",
     content: (
       <ul className="space-y-2 list-disc pl-4">
         <li>
@@ -214,7 +212,7 @@ const SECTIONS: Section[] = [
       </ul>
     ),
   },
-]
+];
 
 export default function HowToPlayModal({ onClose }: Props) {
   return (
@@ -224,7 +222,7 @@ export default function HowToPlayModal({ onClose }: Props) {
     >
       <div
         className="relative w-full sm:max-w-lg max-h-[92vh] sm:max-h-[85vh] bg-[#0e0e18] border border-white/10 sm:rounded-2xl rounded-t-2xl overflow-hidden flex flex-col shadow-2xl"
-        onClick={e => e.stopPropagation()}
+        onClick={(e) => e.stopPropagation()}
       >
         <div className="flex items-center justify-between px-5 py-4 border-b border-white/10 bg-[#0e0e18]/95 backdrop-blur sticky top-0 z-10">
           <div>
@@ -245,7 +243,7 @@ export default function HowToPlayModal({ onClose }: Props) {
         </div>
 
         <div className="overflow-y-auto px-5 py-5 space-y-6">
-          {SECTIONS.map(section => (
+          {SECTIONS.map((section) => (
             <section key={section.title}>
               <div className="flex items-center gap-2 mb-2">
                 <span className="text-lg">{section.icon}</span>
@@ -270,5 +268,5 @@ export default function HowToPlayModal({ onClose }: Props) {
         </div>
       </div>
     </div>
-  )
+  );
 }

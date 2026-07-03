@@ -57,10 +57,10 @@ type ConnectionStatus = "connected" | "disconnected" | "unavailable";
 
 async function fetchGameState(
   gameId: string,
-  playerId: string
+  playerId: string,
 ): Promise<PublicGameState | null> {
   const response = await fetch(
-    `/api/quiz/state?gameId=${encodeURIComponent(gameId)}&playerId=${encodeURIComponent(playerId)}`
+    `/api/quiz/state?gameId=${encodeURIComponent(gameId)}&playerId=${encodeURIComponent(playerId)}`,
   );
 
   if (response.ok) {
@@ -78,7 +78,7 @@ async function fetchGameState(
       });
 
       const retry = await fetch(
-        `/api/quiz/state?gameId=${encodeURIComponent(gameId)}&playerId=${encodeURIComponent(playerId)}`
+        `/api/quiz/state?gameId=${encodeURIComponent(gameId)}&playerId=${encodeURIComponent(playerId)}`,
       );
 
       if (retry.ok) {
@@ -112,12 +112,12 @@ export default function GameRoomPage() {
     GameEventMap["game:round-break"] | null
   >(null);
   const [currentQuestion, setCurrentQuestion] = useState<PublicQuestion | null>(
-    null
+    null,
   );
   const [questionIndex, setQuestionIndex] = useState(0);
   const [timeLimitMs, setTimeLimitMs] = useState(30_000);
   const [questionStartedAt, setQuestionStartedAt] = useState<number | null>(
-    null
+    null,
   );
   const [timeRemaining, setTimeRemaining] = useState(30);
   const [answeredCount, setAnsweredCount] = useState(0);
@@ -140,10 +140,12 @@ export default function GameRoomPage() {
   const [chatOpen, setChatOpen] = useState(false);
   const [unreadCount, setUnreadCount] = useState(0);
   const [activeBuzz, setActiveBuzz] = useState<ActiveBuzz | null>(null);
-  const [buzzLockedOutPlayerIds, setBuzzLockedOutPlayerIds] = useState<string[]>(
-    []
+  const [buzzLockedOutPlayerIds, setBuzzLockedOutPlayerIds] = useState<
+    string[]
+  >([]);
+  const [buzzLockedOutTeamIds, setBuzzLockedOutTeamIds] = useState<string[]>(
+    [],
   );
-  const [buzzLockedOutTeamIds, setBuzzLockedOutTeamIds] = useState<string[]>([]);
   const [timerPaused, setTimerPaused] = useState(false);
   const [teamMode, setTeamMode] = useState(false);
   const [teams, setTeams] = useState<Team[]>([]);
@@ -204,7 +206,7 @@ export default function GameRoomPage() {
       if (state.questionStartedAt) {
         setQuestionStartedAt(state.questionStartedAt);
         setTimeRemaining(
-          getRemainingSeconds(state.questionStartedAt, state.timeLimitMs)
+          getRemainingSeconds(state.questionStartedAt, state.timeLimitMs),
         );
       }
 
@@ -214,7 +216,7 @@ export default function GameRoomPage() {
         setAnswerAttempt((attempt) => attempt + 1);
       }
     },
-    []
+    [],
   );
 
   useEffect(() => {
@@ -237,9 +239,7 @@ export default function GameRoomPage() {
       if (state) {
         applyPublicState(state, session.playerId);
       } else {
-        setError(
-          "Could not load game state. Go back and create a new game."
-        );
+        setError("Could not load game state. Go back and create a new game.");
       }
 
       setIsReady(true);
@@ -312,7 +312,7 @@ export default function GameRoomPage() {
       setTimeLimitMs(data.timeLimitMs);
       setQuestionStartedAt(data.questionStartedAt);
       setTimeRemaining(
-        getRemainingSeconds(data.questionStartedAt, data.timeLimitMs)
+        getRemainingSeconds(data.questionStartedAt, data.timeLimitMs),
       );
       setAnsweredCount(data.answeredCount);
       setRevealData(null);
@@ -321,7 +321,7 @@ export default function GameRoomPage() {
     };
 
     const handleAnswerSubmitted = (
-      data: GameEventMap["game:answer-submitted"]
+      data: GameEventMap["game:answer-submitted"],
     ) => {
       setAnsweredCount(data.answeredCount);
     };
@@ -361,7 +361,7 @@ export default function GameRoomPage() {
 
       window.setTimeout(() => {
         setReactions((current) =>
-          current.filter((reaction) => reaction.id !== data.id)
+          current.filter((reaction) => reaction.id !== data.id),
         );
       }, 3000);
     };
@@ -385,7 +385,7 @@ export default function GameRoomPage() {
       setTimerPaused(true);
       setQuestionStartedAt(data.questionStartedAt);
       setTimeRemaining(
-        getRemainingSeconds(data.questionStartedAt, timeLimitMs)
+        getRemainingSeconds(data.questionStartedAt, timeLimitMs),
       );
     };
 
@@ -396,7 +396,7 @@ export default function GameRoomPage() {
       setBuzzLockedOutTeamIds(data.buzzLockedOutTeamIds ?? []);
       setQuestionStartedAt(data.questionStartedAt);
       setTimeRemaining(
-        getRemainingSeconds(data.questionStartedAt, timeLimitMs)
+        getRemainingSeconds(data.questionStartedAt, timeLimitMs),
       );
     };
 
@@ -410,7 +410,7 @@ export default function GameRoomPage() {
     };
 
     const handleQuestionSkipped = (
-      data: GameEventMap["game:question-skipped"]
+      data: GameEventMap["game:question-skipped"],
     ) => {
       if (data.nextQuestionIndex !== undefined) {
         setQuestionIndex(data.nextQuestionIndex);
@@ -426,8 +426,8 @@ export default function GameRoomPage() {
                   ...player,
                   score: Math.max(0, player.score + data.pointsAwarded),
                 }
-              : player
-          )
+              : player,
+          ),
         );
 
         if (data.teamId && data.teamPointsAwarded !== undefined) {
@@ -436,13 +436,10 @@ export default function GameRoomPage() {
               team.id === data.teamId
                 ? {
                     ...team,
-                    score: Math.max(
-                      0,
-                      team.score + data.teamPointsAwarded!
-                    ),
+                    score: Math.max(0, team.score + data.teamPointsAwarded!),
                   }
-                : team
-            )
+                : team,
+            ),
           );
         } else {
           setTeams((current) =>
@@ -452,8 +449,8 @@ export default function GameRoomPage() {
                     ...team,
                     score: Math.max(0, team.score + data.pointsAwarded),
                   }
-                : team
-            )
+                : team,
+            ),
           );
         }
       }
@@ -511,8 +508,7 @@ export default function GameRoomPage() {
       return;
     }
 
-    const shouldPoll =
-      connectionStatus !== "connected" || view !== "lobby";
+    const shouldPoll = connectionStatus !== "connected" || view !== "lobby";
 
     if (!shouldPoll) {
       return;
@@ -533,18 +529,11 @@ export default function GameRoomPage() {
     return () => {
       window.clearInterval(interval);
     };
-  }, [
-    applyPublicState,
-    connectionStatus,
-    gameId,
-    isReady,
-    playerId,
-    view,
-  ]);
+  }, [applyPublicState, connectionStatus, gameId, isReady, playerId, view]);
 
   const removeReaction = useCallback((reactionId: string) => {
     setReactions((current) =>
-      current.filter((reaction) => reaction.id !== reactionId)
+      current.filter((reaction) => reaction.id !== reactionId),
     );
   }, []);
 
@@ -567,7 +556,7 @@ export default function GameRoomPage() {
         score: 0,
         answers: [],
       },
-    [playerAvatar, playerColour, playerId, playerName, players]
+    [playerAvatar, playerColour, playerId, playerName, players],
   );
 
   const showReactionBar = view === "question" || view === "reveal";
@@ -607,7 +596,7 @@ export default function GameRoomPage() {
       setTeams(data.teams);
       setTeamWarning(null);
     },
-    [gameId, isHost, playerId]
+    [gameId, isHost, playerId],
   );
 
   const copyInviteLink = useCallback(async () => {
@@ -663,11 +652,11 @@ export default function GameRoomPage() {
         setError(
           submitError instanceof Error
             ? submitError.message
-            : "Failed to submit answer"
+            : "Failed to submit answer",
         );
       }
     },
-    [answerSubmitted, currentQuestion, gameId, playerId]
+    [answerSubmitted, currentQuestion, gameId, playerId],
   );
 
   const handleBuzzJudge = useCallback(
@@ -702,11 +691,11 @@ export default function GameRoomPage() {
         setError(
           judgeError instanceof Error
             ? judgeError.message
-            : "Failed to judge buzzer answer"
+            : "Failed to judge buzzer answer",
         );
       }
     },
-    [applyPublicState, gameId, isHost, playerId]
+    [applyPublicState, gameId, isHost, playerId],
   );
 
   const handleKickPlayer = useCallback(
@@ -737,12 +726,12 @@ export default function GameRoomPage() {
         setError(
           kickError instanceof Error
             ? kickError.message
-            : "Failed to remove player"
+            : "Failed to remove player",
         );
         throw kickError;
       }
     },
-    [gameId, isHost, playerId]
+    [gameId, isHost, playerId],
   );
 
   const handleSkipQuestion = useCallback(async () => {
@@ -769,7 +758,7 @@ export default function GameRoomPage() {
       setError(
         skipError instanceof Error
           ? skipError.message
-          : "Failed to skip question"
+          : "Failed to skip question",
       );
     } finally {
       setIsSkippingQuestion(false);
@@ -804,7 +793,7 @@ export default function GameRoomPage() {
       setError(
         skipError instanceof Error
           ? skipError.message
-          : "Failed to reveal answers"
+          : "Failed to reveal answers",
       );
     } finally {
       setIsSkipping(false);
@@ -839,7 +828,7 @@ export default function GameRoomPage() {
       setError(
         nextError instanceof Error
           ? nextError.message
-          : "Failed to advance game"
+          : "Failed to advance game",
       );
     } finally {
       setLoading(false);
@@ -903,7 +892,7 @@ export default function GameRoomPage() {
       setError(
         startError instanceof Error
           ? startError.message
-          : "Failed to start game"
+          : "Failed to start game",
       );
     } finally {
       setLoading(false);
@@ -919,7 +908,10 @@ export default function GameRoomPage() {
     );
   }
 
-  const pageShell = (children: React.ReactNode, options?: { withSocialPad?: boolean }) => (
+  const pageShell = (
+    children: React.ReactNode,
+    options?: { withSocialPad?: boolean },
+  ) => (
     <>
       <HostPanel
         gameId={gameId}
@@ -1014,7 +1006,7 @@ export default function GameRoomPage() {
         totalQuestions={totalQuestions}
         teamMode={teamMode}
         teams={teams}
-      />
+      />,
     );
   }
 
@@ -1026,8 +1018,7 @@ export default function GameRoomPage() {
   const currentPlayerTeam =
     teamMode && playerId ? findTeamForPlayer(teams, playerId) : undefined;
   const teamLockedOut = Boolean(
-    currentPlayerTeam &&
-      buzzLockedOutTeamIds.includes(currentPlayerTeam.id)
+    currentPlayerTeam && buzzLockedOutTeamIds.includes(currentPlayerTeam.id),
   );
 
   if (view === "round-break" && roundBreak) {
@@ -1041,7 +1032,7 @@ export default function GameRoomPage() {
         isHost={isHost}
         onContinue={handleNext}
         isAdvancing={loading}
-      />
+      />,
     );
   }
 
@@ -1063,7 +1054,7 @@ export default function GameRoomPage() {
         teamMode={teamMode}
         teams={revealData.teams ?? teams}
       />,
-      { withSocialPad: true }
+      { withSocialPad: true },
     );
   }
 
@@ -1090,7 +1081,7 @@ export default function GameRoomPage() {
         durationSeconds={Math.ceil(timeLimitMs / 1000)}
         initialRemainingSeconds={getRemainingSeconds(
           questionStartedAt ?? undefined,
-          timeLimitMs
+          timeLimitMs,
         )}
         answeredCount={answeredCount}
         totalPlayers={players.length}
@@ -1099,7 +1090,7 @@ export default function GameRoomPage() {
         isSkipping={isSkipping}
         initialSubmitted={answerSubmitted}
       />,
-      { withSocialPad: true }
+      { withSocialPad: true },
     );
   }
 
@@ -1155,7 +1146,7 @@ export default function GameRoomPage() {
                 {roundConfigs.map((round, index) => {
                   const badge = getRoundFormatBadge(round.format);
                   const formatMeta = ROUND_FORMAT_OPTIONS.find(
-                    (option) => option.value === round.format
+                    (option) => option.value === round.format,
                   );
 
                   return (
@@ -1168,12 +1159,12 @@ export default function GameRoomPage() {
                       </span>
                       <div className="flex flex-wrap items-center gap-2 text-quiz-muted">
                         {CATEGORY_OPTIONS.find(
-                          (option) => option.value === round.category
+                          (option) => option.value === round.category,
                         ) ? (
                           <span className="text-xs">
                             {
                               CATEGORY_OPTIONS.find(
-                                (option) => option.value === round.category
+                                (option) => option.value === round.category,
                               )?.label
                             }
                           </span>
@@ -1226,7 +1217,8 @@ export default function GameRoomPage() {
           <div className="text-center">
             {isHost ? (
               <div className="space-y-3">
-                {teamMode && getUnassignedPlayerIds(players, teams).length > 0 ? (
+                {teamMode &&
+                getUnassignedPlayerIds(players, teams).length > 0 ? (
                   <p className="text-sm text-amber-300">
                     Assign all players to teams before starting
                   </p>
@@ -1268,6 +1260,6 @@ export default function GameRoomPage() {
           </div>
         </>
       ) : null}
-    </div>
+    </div>,
   );
 }

@@ -12,8 +12,7 @@ export const ROUND_FORMAT_BADGES: Partial<
   [RoundFormat.PICTURE]: {
     icon: "🖼",
     label: "Picture",
-    className:
-      "border-quiz-picture/40 bg-quiz-picture/10 text-quiz-picture",
+    className: "border-quiz-picture/40 bg-quiz-picture/10 text-quiz-picture",
   },
   [RoundFormat.MUSIC]: {
     icon: "♪",
@@ -33,7 +32,7 @@ export const ROUND_FORMAT_BADGES: Partial<
 };
 
 export function getRoundFormatBadge(
-  format?: RoundFormat
+  format?: RoundFormat,
 ): RoundFormatBadge | null {
   if (!format) {
     return null;

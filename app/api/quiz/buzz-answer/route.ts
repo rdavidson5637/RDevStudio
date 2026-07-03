@@ -11,10 +11,7 @@ import {
 } from "@/lib/quiz/teams";
 import { triggerReveal } from "@/lib/quiz/reveal";
 import { triggerGameEvent } from "@/lib/quiz/pusher";
-import {
-  BUZZER_WRONG_DEDUCTION,
-  calculatePoints,
-} from "@/lib/quiz/scoring";
+import { BUZZER_WRONG_DEDUCTION, calculatePoints } from "@/lib/quiz/scoring";
 import { RoundFormat } from "@/lib/quiz/types";
 import { QUESTION_TIME_LIMIT_MS } from "@/lib/quiz/utils";
 
@@ -33,14 +30,14 @@ export async function POST(request: NextRequest) {
     if (!gameId?.trim() || !hostId?.trim()) {
       return NextResponse.json(
         { error: "gameId and hostId are required" },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
     if (typeof correct !== "boolean") {
       return NextResponse.json(
         { error: "correct must be a boolean" },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
@@ -53,14 +50,14 @@ export async function POST(request: NextRequest) {
     if (game.hostId !== hostId) {
       return NextResponse.json(
         { error: "Only the host can judge buzzer answers" },
-        { status: 403 }
+        { status: 403 },
       );
     }
 
     if (game.status !== "question") {
       return NextResponse.json(
         { error: "Game is not on a question" },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
@@ -69,14 +66,14 @@ export async function POST(request: NextRequest) {
     if (round?.format !== RoundFormat.BUZZER) {
       return NextResponse.json(
         { error: "This is not a buzzer round" },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
     if (!game.activeBuzz) {
       return NextResponse.json(
         { error: "No active buzz to judge" },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
@@ -85,16 +82,19 @@ export async function POST(request: NextRequest) {
     if (!currentQuestion) {
       return NextResponse.json(
         { error: "No active question" },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
     const buzzer = game.players.find(
-      (player) => player.id === game.activeBuzz!.playerId
+      (player) => player.id === game.activeBuzz!.playerId,
     );
 
     if (!buzzer) {
-      return NextResponse.json({ error: "Buzzing player not found" }, { status: 404 });
+      return NextResponse.json(
+        { error: "Buzzing player not found" },
+        { status: 404 },
+      );
     }
 
     const timeLimitMs = game.timeLimitMs ?? QUESTION_TIME_LIMIT_MS;
@@ -128,7 +128,7 @@ export async function POST(request: NextRequest) {
         }
 
         const alreadyAnswered = player.answers.some(
-          (entry) => entry.questionId === currentQuestion.id
+          (entry) => entry.questionId === currentQuestion.id,
         );
 
         if (!alreadyAnswered) {
@@ -169,11 +169,7 @@ export async function POST(request: NextRequest) {
     buzzer.score = Math.max(0, buzzer.score - BUZZER_WRONG_DEDUCTION);
 
     if (game.teamMode && game.teams) {
-      applyPointsToPlayerTeam(
-        game.teams,
-        buzzer.id,
-        -BUZZER_WRONG_DEDUCTION
-      );
+      applyPointsToPlayerTeam(game.teams, buzzer.id, -BUZZER_WRONG_DEDUCTION);
     }
 
     const buzzerTeam =
@@ -216,9 +212,11 @@ export async function POST(request: NextRequest) {
     return NextResponse.json(
       {
         error:
-          error instanceof Error ? error.message : "Failed to judge buzzer answer",
+          error instanceof Error
+            ? error.message
+            : "Failed to judge buzzer answer",
       },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }

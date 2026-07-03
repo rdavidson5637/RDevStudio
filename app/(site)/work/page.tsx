@@ -60,7 +60,9 @@ export default function WorkPage() {
                   <h2 className="text-xl font-semibold text-primary transition-colors group-hover:text-accent">
                     {fixture.title}
                   </h2>
-                  <p className="mt-1 text-sm text-secondary">{fixture.description}</p>
+                  <p className="mt-1 text-sm text-secondary">
+                    {fixture.description}
+                  </p>
                 </div>
                 <p className="shell-label text-secondary">{fixture.tag}</p>
                 <p className="shell-label text-secondary">{fixture.year}</p>
