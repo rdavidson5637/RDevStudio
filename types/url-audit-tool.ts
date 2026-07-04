@@ -21,5 +21,5 @@ export type UrlAuditToolConfig = {
   loadingSubtitle: string;
   progressLabel: string;
   placeholderNotice?: string;
-  getResult: (url: string) => UrlAuditResult;
+  getResult: (url: string) => UrlAuditResult | Promise<UrlAuditResult>;
 };

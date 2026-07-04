@@ -115,7 +115,7 @@ export function LeadCaptureCard({
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           placeholder="you@yourbusiness.co.uk"
-          className="flex-1 rounded-md border border-border-strong bg-base px-4 py-3 text-primary placeholder:text-secondary/60 focus:border-accent focus:outline-none"
+          className="flex-1 rounded-md border border-border-strong bg-base px-4 py-3 text-primary placeholder:text-secondary focus:border-accent focus:outline-none"
           aria-invalid={Boolean(error)}
           aria-describedby={error ? "lead-error" : undefined}
         />

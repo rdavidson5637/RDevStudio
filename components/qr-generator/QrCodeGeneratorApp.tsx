@@ -33,18 +33,20 @@ export function QrCodeGeneratorApp() {
     const payload = getPayload();
     if (!payload) return;
 
-    import("qrcode").then((QRCode) => {
-      if (cancelled) return;
-      const canvas = document.getElementById(
-        canvasId,
-      ) as HTMLCanvasElement | null;
-      if (!canvas) return;
-      QRCode.toCanvas(canvas, payload, {
-        width: 280,
-        margin: 2,
-        color: { dark: "#16150f", light: "#ffffff" },
-      }).catch(() => setError("Could not generate QR code for this input."));
-    });
+    import("qrcode")
+      .then((QRCode) => {
+        if (cancelled) return;
+        const canvas = document.getElementById(
+          canvasId,
+        ) as HTMLCanvasElement | null;
+        if (!canvas) return;
+        QRCode.toCanvas(canvas, payload, {
+          width: 280,
+          margin: 2,
+          color: { dark: "#16150f", light: "#ffffff" },
+        }).catch(() => setError("Could not generate QR code for this input."));
+      })
+      .catch(() => setError("Could not load QR code generator."));
 
     return () => {
       cancelled = true;

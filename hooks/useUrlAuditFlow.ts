@@ -8,7 +8,7 @@ import type { AuditPhase, ScanStep } from "@/types/toolkit-audit";
 type UseUrlAuditFlowOptions<T> = {
   toolSlug: string;
   steps: readonly ScanStep[];
-  getResult: (url: string) => T;
+  getResult: (url: string) => T | Promise<T>;
   stepDurationMs?: number;
 };
 
@@ -23,6 +23,7 @@ export function useUrlAuditFlow<T>({
   const [progress, setProgress] = useState(0);
   const [activeStepIndex, setActiveStepIndex] = useState(0);
   const [result, setResult] = useState<T | null>(null);
+  const [error, setError] = useState<string | null>(null);
   const abortRef = useRef(false);
 
   useEffect(() => {
@@ -40,22 +41,32 @@ export function useUrlAuditFlow<T>({
       setProgress(0);
       setActiveStepIndex(0);
       setResult(null);
+      setError(null);
 
-      const scanResult = await simulateScan(
-        steps,
-        () => getResult(url),
-        (nextProgress, stepIndex) => {
-          if (!abortRef.current) {
-            setProgress(nextProgress);
-            setActiveStepIndex(stepIndex);
-          }
-        },
-        stepDurationMs
-      );
+      try {
+        const scanResult = await simulateScan(
+          steps,
+          () => getResult(url),
+          (nextProgress, stepIndex) => {
+            if (!abortRef.current) {
+              setProgress(nextProgress);
+              setActiveStepIndex(stepIndex);
+            }
+          },
+          stepDurationMs,
+        );
 
-      if (!abortRef.current) {
-        setResult(scanResult);
-        setPhase("results");
+        if (!abortRef.current) {
+          setResult(scanResult);
+          setPhase("results");
+        }
+      } catch (err) {
+        if (!abortRef.current) {
+          setError(
+            err instanceof Error ? err.message : "Audit failed. Try again.",
+          );
+          setPhase("error");
+        }
       }
     },
     [steps, getResult, stepDurationMs]
@@ -66,6 +77,7 @@ export function useUrlAuditFlow<T>({
     setPhase("input");
     setActiveUrl("");
     setResult(null);
+    setError(null);
     setProgress(0);
     setActiveStepIndex(0);
   }, []);
@@ -76,6 +88,7 @@ export function useUrlAuditFlow<T>({
     progress,
     activeStepIndex,
     result,
+    error,
     runScan,
     reset,
   };

@@ -68,7 +68,7 @@ export function formatScannedAt(iso: string): string {
 
 export async function simulateScan<T>(
   steps: readonly ScanStep[],
-  getResult: () => T,
+  getResult: () => T | Promise<T>,
   onProgress: (progress: number, stepIndex: number) => void,
   stepDurationMs = 520,
 ): Promise<T> {
@@ -76,7 +76,7 @@ export async function simulateScan<T>(
     onProgress(Math.round(((step + 1) / steps.length) * 100), step);
     await new Promise((resolve) => setTimeout(resolve, stepDurationMs));
   }
-  return getResult();
+  return await getResult();
 }
 
 export function staggerDelay(

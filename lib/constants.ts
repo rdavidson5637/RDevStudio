@@ -2,7 +2,7 @@ export const SITE_NAME = "RDev Studio";
 export const SITE_URL = "https://rdevstudio.co.uk";
 export const SITE_TITLE = "Ryan Davidson, designer & developer, Belfast";
 export const SITE_DESCRIPTION =
-  "Ryan Davidson builds useful web products in Belfast: case studies, browser games, and practical digital work.";
+  "Ryan Davidson — web designer and developer in Northern Ireland. Websites, web apps, free tools, and browser games from RDev Studio.";
 export const EMAIL = "ryan@rdevstudio.co.uk";
 export const CONTACT_EMAIL = "ryan@rdevstudio.co.uk";
 export const GITHUB_URL = "https://github.com/rdavidson5637";

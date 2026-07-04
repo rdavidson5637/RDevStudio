@@ -61,7 +61,7 @@ function GameCard({ game, index }: { game: GameCatalogEntry; index: number }) {
           ) : null}
           <Link
             href={game.href}
-            className="mt-8 inline-flex w-fit rounded-md bg-primary px-6 py-3 text-sm font-semibold text-base transition-colors hover:bg-[#d22b2b]"
+            className="mt-8 inline-flex w-fit rounded-md bg-primary px-6 py-3 text-sm font-semibold text-paper transition-colors hover:bg-[#d22b2b]"
           >
             Play →
           </Link>

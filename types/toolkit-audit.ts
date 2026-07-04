@@ -1,4 +1,4 @@
-export type AuditPhase = "input" | "loading" | "results";
+export type AuditPhase = "input" | "loading" | "results" | "error";
 
 export type UrlValidationResult =
   | { valid: true; normalizedUrl: string }

@@ -122,7 +122,7 @@ export function HireRyanPage() {
               ))}
             </dl>
 
-            <p className="mt-14 text-center text-xs font-medium uppercase tracking-widest text-tertiary opacity-60">
+            <p className="mt-14 text-center text-xs font-medium uppercase tracking-widest text-secondary">
               Scroll to explore
               <span className="mt-2 block text-base" aria-hidden="true">
                 ↓
@@ -498,19 +498,23 @@ export function HireRyanPage() {
                     <div>
                       <p
                         className={`text-xs font-semibold uppercase tracking-widest ${
-                          unlocked ? "text-amber-400" : "text-secondary"
+                          unlocked ? "text-amber-400" : "text-white/50"
                         }`}
                       >
                         {unlocked ? "Achievement Unlocked" : "Locked"}
                       </p>
                       <p
                         className={`mt-1 font-medium ${
-                          unlocked ? "text-white" : "text-secondary"
+                          unlocked ? "text-white" : "text-white/60"
                         }`}
                       >
                         {achievement.title}
                       </p>
-                      <p className="mt-1 text-sm text-secondary">
+                      <p
+                        className={`mt-1 text-sm ${
+                          unlocked ? "text-white/70" : "text-white/45"
+                        }`}
+                      >
                         {achievement.description}
                       </p>
                     </div>

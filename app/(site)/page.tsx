@@ -9,7 +9,7 @@ import { createPageMetadata } from "@/lib/metadata";
 export const metadata = createPageMetadata({
   title: "Portfolio",
   description:
-    "The portfolio of Ryan Davidson - websites, web apps, and free games including Champions Draft and Rugby Draft from RDev Studio.",
+    "Ryan Davidson — web designer and developer in Northern Ireland. Portfolio, free business tools, browser games, and client work from RDev Studio.",
   path: "/",
 });
 

@@ -90,24 +90,28 @@ export function MobileMenu({ open, onClose, isActive }: MobileMenuProps) {
         <div className="programme-rule mt-6" />
 
         <div className="flex flex-1 flex-col justify-center gap-5">
-          {SHELL_NAV_LINKS.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              onClick={onClose}
-              className={`font-display text-5xl uppercase leading-none tracking-tight transition-colors ${
-                isActive(link.href)
-                  ? "text-accent"
-                  : "text-primary hover:text-accent"
-              }`}
-            >
-              {link.label}
-            </Link>
-          ))}
+          {SHELL_NAV_LINKS.map((link) => {
+            const active = isActive(link.href);
+            return (
+              <Link
+                key={link.href}
+                href={link.href}
+                onClick={onClose}
+                aria-current={active ? "page" : undefined}
+                className={`rounded-sm font-display text-5xl uppercase leading-none tracking-tight transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-base ${
+                  active
+                    ? "text-accent"
+                    : "text-primary hover:text-accent"
+                }`}
+              >
+                {link.label}
+              </Link>
+            );
+          })}
           <Link
             href="/hire"
             onClick={onClose}
-            className="mt-2 inline-flex w-fit rounded-md bg-primary px-4 py-2 text-sm font-semibold text-base transition-colors hover:bg-[#d22b2b]"
+            className="mt-2 inline-flex w-fit rounded-md bg-primary px-4 py-2 text-sm font-semibold text-paper transition-colors hover:bg-[#d22b2b]"
           >
             Hire me
           </Link>

@@ -1,15 +1,15 @@
 "use client";
 
 import { useId } from "react";
+import { AuditErrorPanel } from "@/components/toolkit-audit/AuditErrorPanel";
 import { AuditResultsHeader } from "@/components/toolkit-audit/AuditResultsHeader";
 import { LeadCaptureCard } from "@/components/toolkit-audit/LeadCaptureCard";
-import { PlaceholderNotice } from "@/components/toolkit-audit/PlaceholderNotice";
 import { ScanLoadingPanel } from "@/components/toolkit-audit/ScanLoadingPanel";
 import { ScoreCard } from "@/components/toolkit-audit/ScoreCard";
 import { ToolkitToolHeader } from "@/components/toolkit-audit/ToolkitToolHeader";
 import { UrlAuditForm } from "@/components/toolkit-audit/UrlAuditForm";
 import { GRADER_LOADING_STEPS } from "@/lib/website-grader/constants";
-import { getPlaceholderGraderResult } from "@/lib/website-grader/placeholder";
+import { fetchAuditResult } from "@/lib/audit-tools/fetch-audit";
 import { useFocusOnPhaseChange } from "@/hooks/useFocusOnPhaseChange";
 import { useUrlAuditFlow } from "@/hooks/useUrlAuditFlow";
 import { getHostname, staggerDelay } from "@/lib/toolkit-audit/utils";
@@ -25,12 +25,14 @@ export function WebsiteGraderApp() {
     progress,
     activeStepIndex,
     result,
+    error,
     runScan,
     reset,
   } = useUrlAuditFlow<WebsiteGraderResult>({
     toolSlug: "website-grader",
     steps: GRADER_LOADING_STEPS,
-    getResult: getPlaceholderGraderResult,
+    getResult: async (url) =>
+      (await fetchAuditResult(url)) as WebsiteGraderResult,
   });
 
   useFocusOnPhaseChange(phase, resultsHeadingId);
@@ -49,7 +51,9 @@ export function WebsiteGraderApp() {
           ? `Grading ${host}. Please wait.`
           : phase === "results"
             ? `Grading complete for ${host}.`
-            : ""}
+            : phase === "error"
+              ? `Grading failed for ${host}.`
+              : ""}
       </p>
 
       <ToolkitToolHeader
@@ -80,6 +84,14 @@ export function WebsiteGraderApp() {
         />
       ) : null}
 
+      {phase === "error" && error ? (
+        <AuditErrorPanel
+          message={error}
+          onRetry={reset}
+          retryLabel="Try again"
+        />
+      ) : null}
+
       {phase === "results" && result ? (
         <section className="py-8" aria-labelledby={resultsHeadingId}>
           <AuditResultsHeader
@@ -107,8 +119,6 @@ export function WebsiteGraderApp() {
               ))}
             </div>
           </div>
-
-          <PlaceholderNotice />
 
           <div className="mt-8">
             <LeadCaptureCard

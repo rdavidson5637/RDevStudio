@@ -182,7 +182,7 @@ export function LongestWord() {
   if (!hydrated) {
     return (
       <div className="mx-auto max-w-[440px] rounded-xl bg-[#0e0e0e] p-6">
-        <p className="text-sm text-secondary">Loading today&apos;s grid...</p>
+        <p className="text-sm text-white/70">Loading today&apos;s grid...</p>
       </div>
     );
   }
@@ -193,7 +193,7 @@ export function LongestWord() {
         <p className="text-xs font-medium uppercase tracking-widest text-accent">
           Longest Word
         </p>
-        <p className="text-right text-xs text-tertiary">{formatToday()}</p>
+        <p className="text-right text-xs text-white/55">{formatToday()}</p>
       </div>
 
       <div className="grid grid-cols-4 gap-2">
@@ -210,7 +210,7 @@ export function LongestWord() {
               className={`relative flex aspect-square cursor-pointer items-center justify-center rounded-lg border text-2xl font-bold transition-all active:scale-95 hover:border-accent/50 disabled:cursor-not-allowed disabled:opacity-60 ${
                 isSelected
                   ? "border-accent bg-accent/10 text-accent"
-                  : "border-white/10 bg-[#1a1a1a] text-primary"
+                  : "border-white/10 bg-[#1a1a1a] text-paper"
               }`}
               aria-label={`Letter ${letter}${isSelected ? `, position ${order + 1}` : ""}`}
             >
@@ -228,12 +228,12 @@ export function LongestWord() {
       <div className="mt-5 flex items-center justify-between gap-4 rounded-lg border border-white/10 bg-[#1a1a1a] px-4 py-4">
         <p
           className={`min-h-[2rem] flex-1 font-display text-2xl font-bold tracking-widest ${
-            currentWord ? "text-primary" : "text-tertiary"
+            currentWord ? "text-paper" : "text-white/50"
           }`}
         >
           {currentWord ? currentWord.toUpperCase() : "Tap letters to spell"}
         </p>
-        <span className="shrink-0 text-sm text-tertiary">
+        <span className="shrink-0 text-sm text-white/55">
           {currentWord.length}
         </span>
       </div>
@@ -243,7 +243,7 @@ export function LongestWord() {
           type="button"
           onClick={handleClear}
           disabled={checking || selected.length === 0}
-          className="flex-1 rounded-md border border-white/20 bg-[#1a1a1a] px-4 py-3 text-sm font-semibold text-primary transition-colors hover:border-white/40 disabled:cursor-not-allowed disabled:opacity-50"
+          className="flex-1 rounded-md border border-white/20 bg-[#1a1a1a] px-4 py-3 text-sm font-semibold text-paper transition-colors hover:border-white/40 disabled:cursor-not-allowed disabled:opacity-50"
         >
           Clear
         </button>
@@ -266,16 +266,16 @@ export function LongestWord() {
 
       <div className="mt-8 border-t border-white/10 pt-6">
         <div className="mb-4 flex items-center justify-between gap-4">
-          <p className="text-xs font-medium uppercase tracking-widest text-secondary">
+          <p className="text-xs font-medium uppercase tracking-widest text-white/70">
             Today&apos;s best words
           </p>
-          <p className="text-xs text-tertiary">
+          <p className="text-xs text-white/55">
             {attempts} attempt{attempts === 1 ? "" : "s"}
           </p>
         </div>
 
         {found.length === 0 ? (
-          <p className="text-sm text-tertiary">No words found yet.</p>
+          <p className="text-sm text-white/55">No words found yet.</p>
         ) : (
           <ul className="space-y-2">
             {found.map((entry, index) => (
@@ -287,7 +287,7 @@ export function LongestWord() {
                     : "border-white/10 bg-[#1a1a1a]"
                 }`}
               >
-                <span className="font-bold uppercase tracking-wide text-primary">
+                <span className="font-bold uppercase tracking-wide text-paper">
                   {entry.word}
                 </span>
                 <span className="text-sm font-medium text-accent">

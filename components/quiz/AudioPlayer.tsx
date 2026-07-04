@@ -58,6 +58,10 @@ export function AudioPlayer({
       void audio.play().then(() => {
         setPlaying(true);
         onPlay?.();
+      }).catch(() => {
+        setErrored(true);
+        setPlaying(false);
+        onError?.();
       });
     }
 
@@ -86,6 +90,10 @@ export function AudioPlayer({
     void audio.play().then(() => {
       setPlaying(true);
       onPlay?.();
+    }).catch(() => {
+      setErrored(true);
+      setPlaying(false);
+      onError?.();
     });
   }
 

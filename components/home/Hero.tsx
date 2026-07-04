@@ -24,10 +24,10 @@ export function Hero() {
 
           <h1 className="programme-h1 mb-6 text-balance md:text-7xl lg:text-8xl">
             <span className="hero-line block [animation-delay:0ms]">
-              I design and build
+              Web designer &amp; developer
             </span>
             <span className="hero-line block [animation-delay:60ms]">
-              things for the web.
+              in Northern Ireland.
             </span>
           </h1>
 

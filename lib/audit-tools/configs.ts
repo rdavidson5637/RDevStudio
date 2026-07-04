@@ -1,4 +1,5 @@
 import type { UrlAuditResult } from "@/types/url-audit-tool";
+import { fetchAuditResult } from "@/lib/audit-tools/fetch-audit";
 import { getHostname } from "@/lib/toolkit-audit/utils";
 
 function baseResult(
@@ -44,57 +45,7 @@ export const SEO_CHECKER_CONFIG = {
   resetLabel: "Check another site",
   loadingSubtitle: "Running on-page SEO checks and metadata review.",
   progressLabel: "SEO scan progress",
-  getResult: (url: string): UrlAuditResult =>
-    baseResult(
-      url,
-      [
-        {
-          id: "meta",
-          title: "Meta Tags",
-          score: 74,
-          summary:
-            "Core meta tags are present but descriptions could be stronger.",
-          highlights: ["Title tag found", "Viewport meta configured"],
-          issues: [
-            "Meta description missing or too short",
-            "Open Graph tags incomplete",
-          ],
-        },
-        {
-          id: "headings",
-          title: "Headings",
-          score: 81,
-          summary:
-            "Heading hierarchy is mostly logical with one skipped level.",
-          highlights: ["Single H1 detected", "Section headings use H2"],
-          issues: ["H3 appears before H2 in one section"],
-        },
-        {
-          id: "content",
-          title: "Content & Keywords",
-          score: 69,
-          summary: "Copy is readable but keyword focus is inconsistent.",
-          highlights: ["Sufficient word count on landing page"],
-          issues: [
-            "Target keyword absent from first paragraph",
-            "Thin content on /about",
-          ],
-        },
-        {
-          id: "technical",
-          title: "Technical SEO",
-          score: 77,
-          summary:
-            "Crawlability looks fine; a few indexation signals need attention.",
-          highlights: ["Canonical tag present", "Robots.txt allows crawling"],
-          issues: [
-            "No XML sitemap referenced in robots.txt",
-            "Hreflang not configured",
-          ],
-        },
-      ],
-      "{host} has solid SEO foundations - tighten metadata and heading structure for quick wins.",
-    ),
+  getResult: (url: string) => fetchAuditResult(url, "seo"),
 };
 
 export const ACCESSIBILITY_CHECKER_CONFIG = {
@@ -116,6 +67,8 @@ export const ACCESSIBILITY_CHECKER_CONFIG = {
   resetLabel: "Check another site",
   loadingSubtitle: "Evaluating WCAG-oriented checks across the page.",
   progressLabel: "Accessibility scan progress",
+  placeholderNotice:
+    "Sample data shown for preview — deep accessibility checks (contrast, keyboard traps) need a headless browser audit.",
   getResult: (url: string): UrlAuditResult =>
     baseResult(
       url,
@@ -193,6 +146,8 @@ export const GBP_AUDIT_CONFIG = {
   loadingSubtitle:
     "Reviewing listing completeness, photos, reviews, and local signals.",
   progressLabel: "GBP audit progress",
+  placeholderNotice:
+    "Sample data shown for preview — Google Places API is not connected yet.",
   getResult: (url: string): UrlAuditResult => {
     const result = baseResult(
       url,

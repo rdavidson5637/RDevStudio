@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { InteractiveToolHeader } from "@/components/interactive-tools/InteractiveToolHeader";
 import { FadeIn } from "@/components/toolkit-audit/FadeIn";
 import { recordInteractiveToolVisit } from "@/lib/interactive-tools/storage";
+import { getWheelWinnerIndex } from "@/lib/random-wheel";
 
 const SEGMENT_COLORS = [
   "#1e5c3a",
@@ -11,7 +12,7 @@ const SEGMENT_COLORS = [
   "#9a6700",
   "#524f47",
   "#16150f",
-  "#6b685e",
+  "#575449",
 ];
 
 export function RandomWheelApp() {
@@ -75,17 +76,14 @@ export function RandomWheelApp() {
     const tick = (now: number) => {
       const t = Math.min((now - startTime) / duration, 1);
       const ease = 1 - Math.pow(1 - t, 3);
-      setRotation(start + extra * ease);
-      if (t < 1) requestAnimationFrame(tick);
-      else {
+      const nextRotation = start + extra * ease;
+      setRotation(nextRotation);
+      if (t < 1) {
+        requestAnimationFrame(tick);
+      } else {
         setSpinning(false);
-        const norm = (start + extra) % (2 * Math.PI);
-        const idx =
-          Math.floor(
-            ((2 * Math.PI - norm + Math.PI / 2) % (2 * Math.PI)) /
-              ((2 * Math.PI) / items.length),
-          ) % items.length;
-        setWinner(items[idx]);
+        const idx = getWheelWinnerIndex(nextRotation, items.length);
+        setWinner(items[idx] ?? null);
       }
     };
     requestAnimationFrame(tick);
@@ -100,11 +98,12 @@ export function RandomWheelApp() {
       />
       <div className="grid gap-8 py-10 lg:grid-cols-2">
         <FadeIn className="rounded-[10px] border border-border-strong bg-raised p-5 sm:p-6">
-          <label className="block">
+          <label className="block" htmlFor="wheel-options">
             <span className="shell-label text-accent">
               Options (one per line)
             </span>
             <textarea
+              id="wheel-options"
               value={options}
               onChange={(e) => setOptions(e.target.value)}
               rows={8}

@@ -21,7 +21,7 @@ export function Header() {
         <div className="container-wide flex h-20 items-center justify-between gap-4 px-6">
           <Link
             href="/"
-            className="pitch-link inline-flex shrink-0 text-lg font-semibold tracking-tight text-primary transition-colors hover:text-accent"
+            className="pitch-link inline-flex shrink-0 rounded-sm text-lg font-semibold tracking-tight text-primary transition-colors hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-base"
             aria-label="RDev Studio — Home"
           >
             RDev Studio
@@ -31,22 +31,26 @@ export function Header() {
             className="hidden items-center gap-7 md:flex"
             aria-label="Main navigation"
           >
-            {SHELL_NAV_LINKS.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className={`pitch-link shell-label transition-colors ${
-                  isActive(link.href)
-                    ? "text-accent"
-                    : "text-secondary hover:text-accent"
-                }`}
-              >
-                {link.label}
-              </Link>
-            ))}
+            {SHELL_NAV_LINKS.map((link) => {
+              const active = isActive(link.href);
+              return (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  aria-current={active ? "page" : undefined}
+                  className={`pitch-link shell-label rounded-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-base ${
+                    active
+                      ? "text-accent"
+                      : "text-secondary hover:text-accent"
+                  }`}
+                >
+                  {link.label}
+                </Link>
+              );
+            })}
             <Link
               href="/hire"
-              className="rounded-md bg-primary px-4 py-2 text-sm font-semibold text-base transition-colors hover:bg-[#d22b2b]"
+              className="rounded-md bg-primary px-4 py-2 text-sm font-semibold text-paper transition-colors hover:bg-[#d22b2b]"
             >
               Hire me
             </Link>

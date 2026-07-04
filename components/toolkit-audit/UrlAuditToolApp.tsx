@@ -1,6 +1,7 @@
 "use client";
 
 import { useId } from "react";
+import { AuditErrorPanel } from "@/components/toolkit-audit/AuditErrorPanel";
 import { AuditResultsHeader } from "@/components/toolkit-audit/AuditResultsHeader";
 import { LeadCaptureCard } from "@/components/toolkit-audit/LeadCaptureCard";
 import { PlaceholderNotice } from "@/components/toolkit-audit/PlaceholderNotice";
@@ -28,6 +29,7 @@ export function UrlAuditToolApp({ config }: UrlAuditToolAppProps) {
     progress,
     activeStepIndex,
     result,
+    error,
     runScan,
     reset,
   } = useUrlAuditFlow({
@@ -52,7 +54,9 @@ export function UrlAuditToolApp({ config }: UrlAuditToolAppProps) {
           ? `Analysing ${host}. Please wait.`
           : phase === "results"
             ? `Analysis complete for ${host}.`
-            : ""}
+            : phase === "error"
+              ? `Analysis failed for ${host}.`
+              : ""}
       </p>
 
       <ToolkitToolHeader
@@ -81,6 +85,10 @@ export function UrlAuditToolApp({ config }: UrlAuditToolAppProps) {
           ariaLabel={`Analysing ${host}`}
           progressLabel={config.progressLabel}
         />
+      ) : null}
+
+      {phase === "error" && error ? (
+        <AuditErrorPanel message={error} onRetry={reset} />
       ) : null}
 
       {phase === "results" && result ? (
@@ -115,7 +123,9 @@ export function UrlAuditToolApp({ config }: UrlAuditToolAppProps) {
               />
             ) : null}
           </div>
-          <PlaceholderNotice message={config.placeholderNotice} />
+          {config.placeholderNotice ? (
+            <PlaceholderNotice message={config.placeholderNotice} />
+          ) : null}
 
           <div className="mt-8">
             <LeadCaptureCard
