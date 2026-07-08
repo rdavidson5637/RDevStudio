@@ -89,7 +89,7 @@ export default function ConceptBuildsPage() {
     <div className="section-padding pt-28">
       <article className="container-wide px-6">
         <header className="space-y-6 border-b border-border pb-10">
-          <p className="shell-label text-accent">CASE STUDY — 03</p>
+          <p className="shell-label text-accent">CASE STUDY — 04</p>
           <h1 className="programme-h1">CONCEPT BUILDS</h1>
           <p className="max-w-2xl text-lg text-secondary">
             Three sites exploring how local businesses could look online.

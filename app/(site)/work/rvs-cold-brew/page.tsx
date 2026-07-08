@@ -111,7 +111,7 @@ export default function RvsColdBrewCaseStudyPage() {
         <footer className="py-12">
           <div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
             <Link
-              href="/work/concept-builds"
+              href="/work/paintball-wales"
               className="shell-label text-lg text-primary transition-colors hover:text-accent"
             >
               NEXT FIXTURE →

@@ -27,6 +27,15 @@ const FIXTURES = [
   },
   {
     index: "03",
+    title: "Paintball Wales",
+    description:
+      "Mobile-first marketing site for a Snowdonia paintball park.",
+    tag: "CLIENT · MARKETING SITE",
+    year: "2026",
+    href: "/work/paintball-wales",
+  },
+  {
+    index: "04",
     title: "Concept builds",
     description: "Three local-business sites: trades, restaurant, salon.",
     tag: "CONCEPT · SET OF 3",
