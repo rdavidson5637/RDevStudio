@@ -229,6 +229,23 @@ export const PROJECTS = [
     outcome: "Client project — active build",
   },
   {
+    id: "paintball-wales",
+    title: "Paintball Wales",
+    category: "Client Work" as const,
+    type: "Marketing Site",
+    summary: "Client · bookings-focused site",
+    description:
+      "Mobile-first marketing site for a Snowdonia paintball park, designed to turn seasonal campaign traffic into enquiries and bookings.",
+    highlights: ["Campaign landing pages", "Clear booking CTAs", "Fast mobile UX"],
+    tags: ["Next.js", "Tailwind", "Vercel"],
+    buttonLabel: "Read the case study",
+    href: "/work/paintball-wales",
+    image: "/images/work/paintball-wales-hero.jpg",
+    imageAlt:
+      "Paintball Wales hero scene with players in masks and camouflage gear",
+    outcome: "Client project — launched",
+  },
+  {
     id: "concept-builds",
     title: "Concept builds",
     category: "Concept Build" as const,
