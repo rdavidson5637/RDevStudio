@@ -12,6 +12,7 @@ import {
   getLiveInteractiveTools,
 } from "@/lib/interactive-tools/catalog";
 import { getTrendingSlugs } from "@/lib/interactive-tools/storage";
+import { WardrobeAISpotlight } from "@/components/wardrobe-ai/WardrobeAISpotlight";
 import { InteractiveCategoryFilters } from "./InteractiveCategoryFilters";
 import { InteractiveToolCard } from "./InteractiveToolCard";
 import { InteractiveToolSearch } from "./InteractiveToolSearch";
@@ -164,6 +165,20 @@ export function InteractiveToolsLanding() {
 
       {showHighlightSections ? (
         <>
+          <section className="border-b border-border py-10">
+            <header
+              className="mb-6 animate-fade-in opacity-0"
+              style={{ animationDelay: "80ms" }}
+            >
+              <p className="shell-label mb-2 text-accent">Also on the site</p>
+              <h2 className="font-display text-2xl uppercase tracking-tight text-primary sm:text-3xl">
+                Wardrobe AI
+              </h2>
+            </header>
+            <div className="max-w-xl">
+              <WardrobeAISpotlight animationDelayMs={120} />
+            </div>
+          </section>
           <InteractiveSection
             label="Featured"
             title="Start here"

@@ -13,6 +13,7 @@ const ROUTES = [
   ...BUSINESS_TOOLS.map((tool) => tool.href),
   "/interactive",
   ...INTERACTIVE_TOOLS.map((tool) => tool.href),
+  "/wardrobe-ai",
   "/games",
   "/about",
   "/contact",

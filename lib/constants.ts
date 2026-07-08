@@ -30,10 +30,18 @@ export const NAV_LINKS = [
   { href: "/contact", label: "Contact" },
 ] as const;
 
+export const WARDROBE_AI = {
+  href: "/wardrobe-ai",
+  label: "Wardrobe AI",
+  description:
+    "Generate outfits from a real wardrobe. AI-tagged clothes, every valid line-up, an honest verdict.",
+} as const;
+
 export const SHELL_NAV_LINKS = [
   { href: "/work", label: "Work" },
   { href: "/toolkit", label: "Toolkit" },
   { href: "/interactive", label: "Interactive" },
+  { href: WARDROBE_AI.href, label: "Wardrobe" },
   { href: "/games", label: "Games" },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },

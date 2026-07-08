@@ -1,0 +1,242 @@
+/* Wardrobe AI - scoped visuals. Layout uses the site's utility classes; this module
+   handles the ghost-clothing tiles and the specific grids. All colours pull from tokens.css. */
+
+.scoreboard {
+  display: inline-flex;
+  flex-wrap: wrap;
+  border: 1px solid var(--color-ink);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--color-ink);
+}
+.scoreCell {
+  padding: 12px 20px;
+  color: #fff;
+  font-family: var(--font-label-family);
+  text-align: center;
+}
+.scoreCell + .scoreCell {
+  border-left: 1px solid #33322a;
+}
+.scoreNum {
+  display: block;
+  font-size: 1.6rem;
+  line-height: 1;
+}
+.scoreCap {
+  display: block;
+  margin-top: 6px;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #b9b6a8;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+@media (min-width: 620px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (min-width: 900px) {
+  .grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.card {
+  background: var(--color-bg-raised);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+.ghost {
+  aspect-ratio: 1 / 1;
+  background: radial-gradient(120% 120% at 50% 15%, #ffffff 0%, #f3f1ea 70%, #ece9e0 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+.ghost img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+}
+.ghostEmpty {
+  color: var(--color-text-secondary);
+  font-family: var(--font-label-family);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.meta {
+  padding: 10px 12px 12px;
+}
+.name {
+  font-weight: 600;
+  text-transform: capitalize;
+}
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 8px;
+}
+.tag {
+  font-family: var(--font-label-family);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-text-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  padding: 2px 8px;
+}
+.tagReview {
+  color: var(--color-card-red);
+  border-color: #d22b2b44;
+}
+.cardDel {
+  display: block;
+  width: 100%;
+  border: none;
+  border-top: 1px solid var(--color-border);
+  background: transparent;
+  color: var(--color-card-red);
+  font-family: var(--font-label-family);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 8px;
+  cursor: pointer;
+}
+
+.lineups {
+  display: grid;
+  gap: 16px;
+}
+@media (min-width: 760px) {
+  .lineups {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+.lineup {
+  background: var(--color-bg-raised);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 16px;
+}
+.pieces {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  padding-bottom: 6px;
+}
+.piece {
+  flex: 0 0 76px;
+  text-align: center;
+}
+.piece .ghost {
+  width: 76px;
+  height: 76px;
+  border-radius: 8px;
+  padding: 6px;
+}
+.piece small {
+  display: block;
+  font-family: var(--font-label-family);
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-text-secondary);
+  margin-top: 5px;
+}
+.actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+  flex-wrap: wrap;
+}
+.verdict {
+  margin-top: 12px;
+  border-top: 1px solid var(--color-border);
+  padding-top: 12px;
+}
+.score {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  line-height: 1;
+  color: var(--color-pitch);
+}
+.scoreOut {
+  font-size: 0.85rem;
+  color: var(--color-text-secondary);
+  font-family: var(--font-label-family);
+}
+.adminPanel {
+  background: var(--color-bg-raised);
+  border: 1px solid var(--color-pitch);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  margin-bottom: 28px;
+}
+.field {
+  margin-bottom: 12px;
+}
+.field label {
+  display: block;
+  font-family: var(--font-label-family);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-text-secondary);
+  margin-bottom: 5px;
+}
+.input {
+  width: 100%;
+  padding: 0.55rem 0.7rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-bg-base);
+  font: inherit;
+  color: var(--color-text-primary);
+}
+.adminGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.err {
+  color: var(--color-card-red);
+  font-size: 0.9rem;
+  margin-top: 8px;
+}
+.empty {
+  text-align: center;
+  color: var(--color-text-secondary);
+  padding: 40px 0;
+  font-family: var(--font-label-family);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin: 24px 0;
+}
+.switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+}
