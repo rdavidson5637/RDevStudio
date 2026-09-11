@@ -2,6 +2,7 @@ import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
 import { ChunkLoadRecovery } from "@/components/ChunkLoadRecovery";
 import { SkipToContent } from "@/components/layout/SkipToContent";
+import { BackToTop } from "@/components/ui/BackToTop";
 
 export default function SiteLayout({
   children,
@@ -15,6 +16,7 @@ export default function SiteLayout({
       <Header />
       <main id="main-content">{children}</main>
       <Footer />
+      <BackToTop />
     </div>
   );
 }
