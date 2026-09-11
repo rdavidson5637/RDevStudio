@@ -2,6 +2,7 @@ import { createPageMetadata } from "@/lib/metadata";
 import { EmptyState } from "@/components/draft/EmptyState";
 import { StatTile } from "@/components/draft/StatTile";
 import { SquadBoardClient } from "@/components/draft/SquadBoardClient";
+import { OptimisePanel } from "@/components/draft/OptimisePanel";
 import { getCurrentEvent } from "@/lib/draft/queries";
 import { getSquad } from "@/lib/draft/squad";
 
@@ -43,6 +44,8 @@ export default async function SquadBoardPage() {
         <StatTile label="Avg next FDR" value={avgFdr != null ? avgFdr.toFixed(1) : "—"} />
         <StatTile label="Bench strength" value={benchStrength.toFixed(1)} />
       </div>
+
+      <OptimisePanel squad={squad} />
 
       <SquadBoardClient squad={squad} />
     </div>
