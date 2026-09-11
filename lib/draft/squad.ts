@@ -74,7 +74,7 @@ async function fetchSquad(entryId: number, event: number): Promise<SquadPlayer[]
   const playerById = new Map((players ?? []).map((p) => [p.id, p]));
   const teamIds = Array.from(new Set((players ?? []).map((p) => p.team_id)));
 
-  const [fixturesRes, projectionsRes] = await Promise.all([
+  const [fixturesRes, projectionsRes, allTeamsRes] = await Promise.all([
     teamIds.length > 0
       ? supabasePublic
           .from("fpl_fixtures")
@@ -90,13 +90,14 @@ async function fetchSquad(entryId: number, event: number): Promise<SquadPlayer[]
           .eq("event", event)
           .in("player_id", playerIds)
       : Promise.resolve({ data: [] as never[] }),
+    // All 20 clubs, not just the squad's own - an opponent is very often a
+    // team nobody in the squad plays for.
+    supabasePublic.from("fpl_teams").select("id, short_name"),
   ]);
 
-  const teamShortNameById = new Map<number, string>();
-  for (const player of players ?? []) {
-    const team = Array.isArray(player.fpl_teams) ? player.fpl_teams[0] : player.fpl_teams;
-    if (team) teamShortNameById.set(team.id, team.short_name);
-  }
+  const teamShortNameById = new Map<number, string>(
+    (allTeamsRes.data ?? []).map((t: TeamRow) => [t.id, t.short_name]),
+  );
 
   // teamId -> its next fixture from this point on (first by event, either side)
   const nextFixtureByTeam = new Map<number, { opponent: string; isHome: boolean; difficulty: number }>();

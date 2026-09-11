@@ -4,8 +4,8 @@ import { useEffect, useState } from "react";
 
 type Props = { deadline: string | null; className?: string };
 
-function formatCountdown(ms: number): string {
-  if (ms <= 0) return "deadline passed";
+function formatCountdown(ms: number): string | null {
+  if (ms <= 0) return null;
   const totalMinutes = Math.floor(ms / 60_000);
   const days = Math.floor(totalMinutes / (60 * 24));
   const hours = Math.floor((totalMinutes % (60 * 24)) / 60);
@@ -33,11 +33,11 @@ export function DeadlineCountdown({ deadline, className }: Props) {
   }
 
   const deadlineMs = new Date(deadline).getTime();
-  const label = now == null ? "…" : formatCountdown(deadlineMs - now);
+  const countdown = now == null ? "…" : formatCountdown(deadlineMs - now);
 
   return (
     <span className={`shell-label text-accent ${className ?? ""}`} suppressHydrationWarning>
-      Deadline in {label}
+      {countdown === null ? "Deadline passed" : `Deadline in ${countdown}`}
     </span>
   );
 }

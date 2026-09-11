@@ -19,7 +19,7 @@ export default async function DraftLayout({
               <span className="shell-label text-secondary">
                 {event ? event.name.toUpperCase() : "GAMEWEEK — TBC"}
               </span>
-              <DeadlineCountdown deadline={event?.deadlineTime ?? null} />
+              <DeadlineCountdown deadline={event?.nextDeadlineTime ?? null} />
               <DataFreshness timestamp={freshness} />
             </div>
           </div>
