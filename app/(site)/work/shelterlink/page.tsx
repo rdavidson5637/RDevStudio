@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { createPageMetadata } from "@/lib/metadata";
+import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 
 export const metadata = createPageMetadata({
   title: "ShelterLink",
@@ -51,6 +52,14 @@ export default function ShelterLinkCaseStudyPage() {
   return (
     <div className="section-padding pt-28">
       <article className="container-wide px-6">
+        <Breadcrumbs
+          items={[
+            { label: "Home", href: "/" },
+            { label: "Work", href: "/work" },
+            { label: "ShelterLink" },
+          ]}
+          className="mb-8"
+        />
         <header className="space-y-6 border-b border-border pb-10">
           <p className="shell-label text-accent">CASE STUDY — 01</p>
           <h1 className="programme-h1">SHELTERLINK</h1>
