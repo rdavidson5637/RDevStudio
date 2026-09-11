@@ -5,6 +5,7 @@ import { SITE_URL } from "@/lib/constants";
 
 const ROUTES = [
   "",
+  "/services",
   "/work",
   "/work/shelterlink",
   "/work/rvs-cold-brew",
