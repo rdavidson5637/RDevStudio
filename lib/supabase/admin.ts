@@ -20,6 +20,13 @@ if (!url || !key) {
 const safeUrl = url ?? "https://example.supabase.co";
 const safeKey = key ?? "not-a-real-service-role-key";
 
+// Belt and braces against Next.js's fetch auto-caching - this client only
+// ever runs inside the (already force-dynamic) cron route, but a stale read
+// here would mean writes are based on stale lookups. See supabase/public.ts.
+const noStoreFetch: typeof fetch = (input, init) =>
+  fetch(input, { ...init, cache: "no-store" });
+
 export const supabaseAdmin = createClient(safeUrl, safeKey, {
   auth: { persistSession: false, autoRefreshToken: false },
+  global: { fetch: noStoreFetch },
 });
