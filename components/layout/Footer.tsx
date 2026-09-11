@@ -1,22 +1,21 @@
 import Link from "next/link";
 import { CONTACT_EMAIL, GITHUB_URL, SHELL_NAV_LINKS } from "@/lib/constants";
 
+const CURRENT_YEAR = new Date().getFullYear();
+
 export function Footer() {
   return (
-    <footer className="border-t border-border bg-base">
+    <footer className="border-t border-border bg-base" role="contentinfo">
       <div className="container-wide px-6 pb-8 pt-12">
         <div className="grid gap-10 md:grid-cols-3">
           <div className="space-y-3">
             <p className="text-sm leading-relaxed text-secondary">
-              RDev Studio - designed and built in Carrickfergus. No template, no
+              RDev Studio — designed and built in Carrickfergus. No template, no
               page builder, occasional dog supervision.
             </p>
-            <Link
-              href="/contact"
-              className="shell-label transition-colors hover:text-accent"
-            >
-              FULL TIME
-            </Link>
+            <p className="shell-label text-secondary">
+              © {CURRENT_YEAR} Ryan Davidson
+            </p>
           </div>
 
           <nav className="flex flex-col gap-3" aria-label="Footer navigation">
@@ -31,22 +30,29 @@ export function Footer() {
             ))}
           </nav>
 
-          <div className="flex flex-col gap-3 text-sm">
+          <div className="flex flex-col gap-3 text-sm" aria-label="Contact and social links">
             <a
               href={`mailto:${CONTACT_EMAIL}`}
               className="text-secondary transition-colors hover:text-accent"
+              aria-label={`Email Ryan at ${CONTACT_EMAIL}`}
             >
               {CONTACT_EMAIL}
             </a>
             <a
               href="https://www.linkedin.com/in/ryan-davidson-462bb221b"
               className="text-secondary transition-colors hover:text-accent"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Ryan Davidson on LinkedIn (opens in new tab)"
             >
               LinkedIn
             </a>
             <a
               href={GITHUB_URL}
               className="text-secondary transition-colors hover:text-accent"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Ryan Davidson on GitHub (opens in new tab)"
             >
               GitHub
             </a>
@@ -55,7 +61,7 @@ export function Footer() {
 
         <div className="programme-rule mt-10" />
         <p className="shell-label pt-6 text-center">
-          FULL TIME - thanks for reading the programme.
+          FULL TIME — thanks for reading the programme.
         </p>
       </div>
     </footer>
