@@ -10,7 +10,12 @@ if (!url || !key) {
   console.warn("[wardrobe] SUPABASE_URL or SUPABASE_SERVICE_ROLE_KEY missing");
 }
 
-export const supabase = createClient(url ?? "", key ?? "", {
+// Use inert defaults so Next build can complete when Wardrobe is in coming-soon mode.
+// Real requests still require proper env vars in .env.local / deployment env.
+const safeUrl = url ?? "https://example.supabase.co";
+const safeKey = key ?? "not-a-real-service-role-key";
+
+export const supabase = createClient(safeUrl, safeKey, {
   auth: { persistSession: false, autoRefreshToken: false },
 });
 
