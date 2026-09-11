@@ -42,6 +42,14 @@ const FIXTURES = [
     year: "2025",
     href: "/work/concept-builds",
   },
+  {
+    index: "05",
+    title: "UC Caseworker Assistant",
+    description: "AI assistant for Universal Credit caseworkers, built around safeguarding.",
+    tag: "PERSONAL · AI ASSISTANT",
+    year: "2026",
+    href: "/work/uc-caseworker-tool",
+  },
 ] as const;
 
 export default function WorkPage() {

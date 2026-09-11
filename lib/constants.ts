@@ -189,7 +189,8 @@ export type ProjectCategory =
   | "University Project"
   | "Client Work"
   | "Concept Build"
-  | "Food & Drink";
+  | "Food & Drink"
+  | "Personal Project";
 
 export const PROJECTS = [
   {
@@ -260,5 +261,21 @@ export const PROJECTS = [
     image: "/images/work/carrick-plumbing.png",
     imageAlt: "Carrick Plumbing Co homepage — concept trades website",
     outcome: "Concept builds demonstrating design range",
+  },
+  {
+    id: "uc-caseworker-tool",
+    title: "UC Caseworker Assistant",
+    category: "Personal Project" as const,
+    type: "AI Assistant",
+    summary: "Portfolio · responsible AI",
+    description:
+      "An AI assistant for Universal Credit caseworkers — journal responses, letter population, and case notes, built around safeguarding and human-in-the-loop review.",
+    highlights: ["Safeguarding-first design", "Deterministic letters", "Synthetic data only"],
+    tags: ["Node.js", "Express", "Claude API"],
+    buttonLabel: "Read the case study",
+    href: "/work/uc-caseworker-tool",
+    image: "/images/work/uc-caseworker-journal.jpg",
+    imageAlt: "UC Caseworker Assistant journal response tool with a synthetic example loaded",
+    outcome: "Portfolio prototype — domain expertise meets responsible AI engineering",
   },
 ] as const;

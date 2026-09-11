@@ -111,10 +111,10 @@ export default function ConceptBuildsPage() {
         <footer className="py-12">
           <div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
             <Link
-              href="/work"
+              href="/work/uc-caseworker-tool"
               className="shell-label text-lg text-primary transition-colors hover:text-accent"
             >
-              BACK TO THE FIXTURE LIST →
+              NEXT FIXTURE →
             </Link>
             <Link
               href="/contact"

@@ -39,3 +39,4 @@ next-env.d.ts
 # env backups (Claude)
 .env*.bak*
 supabase/run-in-sql-editor.sql
+.env*
