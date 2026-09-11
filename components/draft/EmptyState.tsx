@@ -11,7 +11,7 @@ export function EmptyState({ title = "Waiting for first sync", children }: Props
       <p className="shell-label mb-2 text-accent">Draft analyser</p>
       <h3 className="font-display text-xl uppercase tracking-tight text-primary">{title}</h3>
       <p className="mx-auto mt-2 max-w-md text-sm text-secondary">
-        {children ?? "This page fills in once the hourly sync has pulled data from the FPL APIs. Check back shortly."}
+        {children ?? "This page fills in once the daily sync has pulled data from the FPL APIs. Check back shortly."}
       </p>
     </div>
   );
