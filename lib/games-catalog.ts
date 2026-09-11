@@ -20,6 +20,7 @@ export const GAMES_CATALOG: GameCatalogEntry[] = [
     meta: "FOOTBALL · BROWSER · FREE",
     screenshotCaption: "CHAMPIONS DRAFT SCREENSHOT",
     screenshotSrc: "/images/games/champions-draft.jpg",
+    attendance: 2847,
   },
   {
     id: "rugby-draft",
@@ -30,6 +31,7 @@ export const GAMES_CATALOG: GameCatalogEntry[] = [
     meta: "RUGBY · BROWSER · FREE",
     screenshotCaption: "RUGBY DRAFT SCREENSHOT",
     screenshotSrc: "/images/games/rugby-draft.jpg",
+    attendance: 1253,
   },
   {
     id: "pub-quiz",
@@ -40,5 +42,6 @@ export const GAMES_CATALOG: GameCatalogEntry[] = [
     meta: "TRIVIA · PASS-AND-PLAY · FREE",
     screenshotCaption: "PUB QUIZ SCREENSHOT",
     screenshotSrc: "/images/games/pub-quiz.jpg",
+    attendance: 892,
   },
 ];
