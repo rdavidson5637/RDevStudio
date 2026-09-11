@@ -2,12 +2,14 @@
 
 import { useState } from "react";
 import { FAQ_ITEMS } from "@/lib/constants";
+import { FAQStructuredData } from "@/components/FAQStructuredData";
 
 export function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
     <section className="mt-20">
+      <FAQStructuredData items={FAQ_ITEMS} />
       <h2 className="mb-8 text-center heading-display text-2xl sm:text-3xl">
         Frequently asked questions
       </h2>
