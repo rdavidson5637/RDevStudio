@@ -295,8 +295,8 @@ export async function GET(request: NextRequest) {
     }));
 
     // No multi-statement transaction over PostgREST, so this is delete-then-
-    // insert rather than a single atomic swap. Ownership is refreshed hourly
-    // and briefly-empty rows here are an acceptable tradeoff over the added
+    // insert rather than a single atomic swap. This runs once a day and
+    // briefly-empty rows here are an acceptable tradeoff over the added
     // complexity of a database function.
     const { error: deleteError } = await supabaseAdmin
       .from("fpl_ownership")

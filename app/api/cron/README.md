@@ -7,7 +7,9 @@ Vercel Cron calls these on schedule (see `vercel.json`) with an
 ## `/api/cron/sync`
 
 Pulls players, teams, fixtures, league standings, ownership, transactions and
-picks from the FPL Draft + main APIs into Supabase. Runs hourly.
+picks from the FPL Draft + main APIs into Supabase. Runs daily at 06:00 UTC —
+Vercel's Hobby plan caps cron jobs at once a day; the spec called for hourly,
+so bump the schedule in `vercel.json` if this project is ever on Pro.
 
 Trigger it manually:
 
