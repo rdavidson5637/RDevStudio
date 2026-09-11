@@ -4,6 +4,7 @@ import { SocialProof } from "@/components/home/SocialProof";
 import { WhatIMake } from "@/components/home/WhatIMake";
 import { PortfolioPlay } from "@/components/home/PortfolioPlay";
 import { AboutClose } from "@/components/home/AboutClose";
+import { Newsletter } from "@/components/home/Newsletter";
 import { HomeContact } from "@/components/home/HomeContact";
 import { createPageMetadata } from "@/lib/metadata";
 
@@ -23,6 +24,7 @@ export default function HomePage() {
       <WhatIMake />
       <PortfolioPlay />
       <AboutClose />
+      <Newsletter />
       <HomeContact />
     </>
   );
