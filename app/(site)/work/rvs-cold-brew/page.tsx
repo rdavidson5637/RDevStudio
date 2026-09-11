@@ -63,12 +63,12 @@ export default function RvsColdBrewCaseStudyPage() {
         >
           <div className="relative h-72 w-full overflow-hidden rounded-lg border border-border bg-raised sm:h-[34rem]">
             <Image
-              src="/images/work/rvs-coldbrew.png"
+              src="/images/work/rvs-coldbrew-hero.jpg"
               alt="RVS Cold Brew landing page hero screenshot"
               fill
               priority
               sizes="(max-width: 1120px) 100vw, 1120px"
-              className="object-contain bg-[#0a1a1f]"
+              className="object-cover object-top"
             />
           </div>
           <p className="shell-label mt-3 text-secondary">
@@ -96,14 +96,14 @@ export default function RvsColdBrewCaseStudyPage() {
 
           <div className="mt-10 grid gap-8">
             <ScreenshotSlot
-              caption="SCREEN 01 — PRODUCT-LED HERO SECTION"
-              src="/images/work/rvs-coldbrew.png"
-              alt="RVS Cold Brew product-led hero section screenshot"
+              caption="SCREEN 01 — PRODUCT ROW: MENU, COLLECTION, PROCESS"
+              src="/images/work/rvs-coldbrew-product-row.jpg"
+              alt="RVS Cold Brew homepage cards linking to the menu, collection ordering, and brewing process"
             />
             <ScreenshotSlot
               caption="SCREEN 02 — STORY AND PRODUCT DETAIL LAYOUT"
-              src="/images/placeholders/screenshot-slot.svg"
-              alt=""
+              src="/images/work/rvs-coldbrew-matcha-story.jpg"
+              alt="RVS Cold Brew product story section detailing the Okumidori matcha"
             />
           </div>
         </section>

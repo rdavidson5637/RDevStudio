@@ -17,7 +17,7 @@ export function createPageMetadata({
   const url = `${SITE_URL}${path === "/" ? "" : path}`;
 
   return {
-    title: isHome ? { absolute: SITE_TITLE } : pageTitle,
+    title: { absolute: isHome ? SITE_TITLE : pageTitle },
     description,
     alternates: {
       canonical: path,

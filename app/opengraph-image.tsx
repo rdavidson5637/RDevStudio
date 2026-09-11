@@ -22,8 +22,9 @@ export default function OpengraphImage() {
           flexDirection: "column",
           justifyContent: "center",
           padding: "80px",
-          background: "#0A0A0F",
-          color: "#FFFFFF",
+          background: "#F7F5F0",
+          color: "#16150F",
+          borderTop: "10px solid #1E5C3A",
         }}
       >
         <div
@@ -31,7 +32,7 @@ export default function OpengraphImage() {
             fontSize: 30,
             letterSpacing: 8,
             textTransform: "uppercase",
-            color: "#F59E0B",
+            color: "#1E5C3A",
           }}
         >
           {SITE_NAME}
@@ -51,7 +52,7 @@ export default function OpengraphImage() {
           style={{
             marginTop: 20,
             fontSize: 40,
-            color: "#A1A1AA",
+            color: "#6B685E",
           }}
         >
           Design & development, Northern Ireland
@@ -62,7 +63,7 @@ export default function OpengraphImage() {
             display: "flex",
             alignItems: "center",
             fontSize: 28,
-            color: "#A1A1AA",
+            color: "#6B685E",
           }}
         >
           <div
@@ -70,7 +71,7 @@ export default function OpengraphImage() {
               width: 16,
               height: 16,
               borderRadius: 16,
-              background: "#F59E0B",
+              background: "#1E5C3A",
               marginRight: 16,
             }}
           />

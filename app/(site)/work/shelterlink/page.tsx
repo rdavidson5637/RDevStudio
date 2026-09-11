@@ -194,16 +194,6 @@ export default function ShelterLinkCaseStudyPage() {
             Development didn&apos;t stop at submission: the platform is now
             being prepared for live rollout at the sanctuary.
           </p>
-
-          <blockquote className="mt-8 rounded-lg border border-border bg-raised px-5 py-5">
-            <div
-              className="min-h-16 border-l-2 border-accent pl-4"
-              aria-label="Stakeholder quote"
-            />
-            <footer className="shell-label mt-3 text-secondary">
-              — STAKEHOLDER NAME, ASSISI ANIMAL SANCTUARY
-            </footer>
-          </blockquote>
         </section>
 
         <footer className="py-12">
