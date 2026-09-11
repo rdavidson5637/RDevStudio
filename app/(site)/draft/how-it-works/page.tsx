@@ -10,7 +10,7 @@ export const metadata = createPageMetadata({
 export default function HowItsBuiltPage() {
   return (
     <div className="space-y-8">
-      <SectionHeading kicker="Under the hood">How it's built</SectionHeading>
+      <SectionHeading kicker="Under the hood">How it&apos;s built</SectionHeading>
       <p className="max-w-2xl text-base leading-relaxed text-secondary sm:text-lg">
         The full write-up — data sources, the sync architecture, and the
         availability and projection models with every term shown, not hidden
