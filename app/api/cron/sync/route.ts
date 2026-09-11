@@ -140,36 +140,64 @@ export async function GET(request: NextRequest) {
     errors.push({ step: "getGameState", message: String(err) });
   }
 
-  // 2. Draft bootstrap -> teams, events, players
+  // 2. Draft bootstrap -> teams, events, players. Each upsert gets its own
+  // try/catch so, e.g., a teams failure doesn't also swallow events/players.
+  let bootstrap: Awaited<ReturnType<typeof getDraftBootstrap>> | null = null;
   try {
-    const bootstrap = await getDraftBootstrap();
+    bootstrap = await getDraftBootstrap();
+  } catch (err) {
+    errors.push({ step: "getDraftBootstrap", message: String(err) });
+  }
+
+  if (bootstrap) {
     const now = new Date().toISOString();
 
-    counts.teams = await upsertChunked(
-      "fpl_teams",
-      bootstrap.teams.map((t) => ({ ...t, updated_at: now })),
-      "id",
-    );
+    try {
+      // The draft API's teams only carry identity fields (id, code, name,
+      // short_name, pulse_id) - no strength_* columns, and pulse_id isn't
+      // in our schema. Strength gets filled in from the main API below.
+      counts.teams = await upsertChunked(
+        "fpl_teams",
+        bootstrap.teams.map((t) => ({
+          id: t.id,
+          code: t.code,
+          name: t.name,
+          short_name: t.short_name,
+          updated_at: now,
+        })),
+        "id",
+      );
+    } catch (err) {
+      errors.push({ step: "upsert fpl_teams", message: String(err) });
+    }
 
-    await upsertChunked(
-      "fpl_events",
-      bootstrap.events.map((e) => ({
-        id: e.id,
-        name: e.name,
-        deadline_time: parseDate(e.deadline_time),
-        finished: e.finished,
-        is_current: e.is_current,
-        is_next: e.is_next,
-        waivers_time: parseDate(e.waivers_time),
-      })),
-      "id",
-    );
+    try {
+      await upsertChunked(
+        "fpl_events",
+        bootstrap.events.map((e) => ({
+          id: e.id,
+          name: e.name,
+          deadline_time: parseDate(e.deadline_time),
+          finished: e.finished,
+          is_current: e.is_current,
+          is_next: e.is_next,
+          waivers_time: parseDate(e.waivers_time),
+        })),
+        "id",
+      );
+    } catch (err) {
+      errors.push({ step: "upsert fpl_events", message: String(err) });
+    }
 
-    counts.players = await upsertChunked(
-      "fpl_players",
-      bootstrap.elements.map((el) => mapDraftElementToPlayerRow(el, now)),
-      "id",
-    );
+    try {
+      counts.players = await upsertChunked(
+        "fpl_players",
+        bootstrap.elements.map((el) => mapDraftElementToPlayerRow(el, now)),
+        "id",
+      );
+    } catch (err) {
+      errors.push({ step: "upsert fpl_players", message: String(err) });
+    }
 
     // 3. Snapshot capture, right after the players upsert (prompt 04)
     try {
@@ -177,13 +205,32 @@ export async function GET(request: NextRequest) {
     } catch (err) {
       errors.push({ step: "captureSnapshots", message: String(err) });
     }
-  } catch (err) {
-    errors.push({ step: "getDraftBootstrap", message: String(err) });
   }
 
-  // 4. Main FPL bootstrap -> per-90 columns, matched on player CODE not id
+  // 4. Main FPL bootstrap -> per-90 columns (matched on player CODE not id)
+  // and team strength (the draft API's teams don't carry it at all).
   try {
     const fplBootstrap = await getFplBootstrap();
+
+    try {
+      await upsertChunked(
+        "fpl_teams",
+        fplBootstrap.teams.map((t) => ({
+          id: t.id,
+          strength: t.strength,
+          strength_overall_home: t.strength_overall_home,
+          strength_overall_away: t.strength_overall_away,
+          strength_attack_home: t.strength_attack_home,
+          strength_attack_away: t.strength_attack_away,
+          strength_defence_home: t.strength_defence_home,
+          strength_defence_away: t.strength_defence_away,
+        })),
+        "id",
+      );
+    } catch (err) {
+      errors.push({ step: "upsert fpl_teams strength", message: String(err) });
+    }
+
     const { data: existing, error: lookupError } = await supabaseAdmin
       .from("fpl_players")
       .select("id, code");
@@ -267,18 +314,23 @@ export async function GET(request: NextRequest) {
       "entry_id",
     );
 
-    counts.matches = await upsertChunked(
-      "fpl_league_matches",
-      details.matches.map((m) => ({
-        event: m.event,
-        entry_1_entry: m.entry_1_entry,
-        entry_1_points: m.entry_1_points,
-        entry_2_entry: m.entry_2_entry,
-        entry_2_points: m.entry_2_points,
-        finished: m.finished,
-      })),
-      "event,entry_1_entry,entry_2_entry",
-    );
+    // Classic-scoring leagues (this one included) don't return a `matches`
+    // array at all - only head-to-head leagues get a fixture schedule here.
+    const matches = details.matches ?? [];
+    if (matches.length > 0) {
+      counts.matches = await upsertChunked(
+        "fpl_league_matches",
+        matches.map((m) => ({
+          event: m.event,
+          entry_1_entry: m.entry_1_entry,
+          entry_1_points: m.entry_1_points,
+          entry_2_entry: m.entry_2_entry,
+          entry_2_points: m.entry_2_points,
+          finished: m.finished,
+        })),
+        "event,entry_1_entry,entry_2_entry",
+      );
+    }
   } catch (err) {
     errors.push({ step: "getLeagueDetails", message: String(err) });
   }

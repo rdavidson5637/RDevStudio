@@ -150,7 +150,9 @@ export interface LeagueMatch {
 
 export interface LeagueDetails {
   league_entries: LeagueEntry[];
-  matches: LeagueMatch[];
+  // Absent entirely for classic-scoring leagues - only head-to-head leagues
+  // get a fixture schedule here.
+  matches?: LeagueMatch[];
 }
 
 export interface ElementStatusRow {
