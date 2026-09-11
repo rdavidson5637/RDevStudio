@@ -6,6 +6,13 @@ import { AvailabilityDot } from "@/components/draft/AvailabilityDot";
 import { supabasePublic } from "@/lib/supabase/public";
 import { availabilityScore, type Status } from "@/lib/draft/availability";
 import { getCurrentEvent } from "@/lib/draft/queries";
+import { getPlayerTimeline } from "@/lib/draft/timeline";
+import { getTeamsAndFixtures } from "@/lib/draft/fixtures";
+import { FdrChip } from "@/components/draft/FdrChip";
+import { StatusTimeline } from "@/components/draft/StatusTimeline";
+import { ReportedNews } from "@/components/draft/ReportedNews";
+import { defconLimit } from "@/lib/draft/positions";
+import { getNewsForPlayer, toReportedSignal } from "@/lib/draft/news/queries";
 
 const POSITION_LABELS: Record<number, string> = { 1: "Goalkeeper", 2: "Defender", 3: "Midfielder", 4: "Forward" };
 const STATUS_LABELS: Record<string, string> = {
@@ -21,7 +28,7 @@ async function getPlayer(id: number) {
   const { data } = await supabasePublic
     .from("fpl_players")
     .select(
-      "id, web_name, first_name, second_name, element_type, status, news, news_added, news_return, chance_of_playing_this_round, chance_of_playing_next_round, form, ep_next, total_points, minutes, fpl_teams(name, short_name)",
+      "id, web_name, first_name, second_name, element_type, status, news, news_added, news_return, chance_of_playing_this_round, chance_of_playing_next_round, form, ep_next, total_points, minutes, starts, defensive_contribution_per_90, team_id, fpl_teams(name, short_name)",
     )
     .eq("id", id)
     .maybeSingle();
@@ -66,7 +73,12 @@ export default async function PlayerDetailPage({
   if (!player) notFound();
 
   const team = Array.isArray(player.fpl_teams) ? player.fpl_teams[0] : player.fpl_teams;
-  const projection = await getProjection(player.id, event?.id ?? null);
+  const [projection, timeline, fixtures, news] = await Promise.all([
+    getProjection(player.id, event?.id ?? null),
+    getPlayerTimeline(player.id),
+    event ? getTeamsAndFixtures(event.id, 6) : Promise.resolve(null),
+    getNewsForPlayer(player.id),
+  ]);
 
   const availability = availabilityScore({
     status: player.status as Status,
@@ -76,6 +88,7 @@ export default async function PlayerDetailPage({
     chanceThisRound: player.chance_of_playing_this_round,
     chanceNextRound: player.chance_of_playing_next_round,
     minutesLast4: [],
+    reportedSignal: toReportedSignal(news[0]),
     now: new Date(),
   });
 
@@ -142,10 +155,38 @@ export default async function PlayerDetailPage({
         </div>
       ) : null}
 
-      <p className="text-sm text-secondary">
-        Fixture-by-fixture history and the full projection breakdown land here
-        once the waiver wire and fixture ticker are built.
-      </p>
+      <ReportedNews items={news} />
+
+      {fixtures ? (
+        <div>
+          <p className="shell-label mb-3 text-accent">Next fixtures</p>
+          <div className="flex flex-wrap gap-2">
+            {(fixtures.byTeam.get(player.team_id) ?? []).map((fixture, index) => (
+              <FdrChip
+                key={`${fixture.event}-${index}`}
+                opponent={fixture.opponent}
+                isHome={fixture.isHome}
+                difficulty={fixture.difficulty}
+                postponed={fixture.kickoff == null}
+              />
+            ))}
+          </div>
+        </div>
+      ) : null}
+
+      <div className="rounded-lg border border-border bg-raised p-5">
+        <p className="shell-label mb-2 text-accent">DefCon rate</p>
+        <p className="text-sm text-secondary">
+          {player.defensive_contribution_per_90 != null && defconLimit(player.element_type) > 0
+            ? `${Number(player.defensive_contribution_per_90).toFixed(1)} per 90 vs a ${defconLimit(player.element_type)} threshold (${Math.min(100, Math.round((Number(player.defensive_contribution_per_90) / defconLimit(player.element_type)) * 100))}%).`
+            : "No DefCon rate for this position."}
+        </p>
+      </div>
+
+      <div>
+        <p className="shell-label mb-3 text-accent">Status timeline</p>
+        <StatusTimeline events={timeline} />
+      </div>
     </div>
   );
 }

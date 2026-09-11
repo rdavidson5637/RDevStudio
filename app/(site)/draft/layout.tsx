@@ -1,12 +1,26 @@
 import { DraftSubNav } from "@/components/draft/DraftSubNav";
 import { DataFreshness } from "@/components/draft/DataFreshness";
 import { DeadlineCountdown } from "@/components/draft/DeadlineCountdown";
+import { DeadlineWarning } from "@/components/draft/DeadlineWarning";
+import { DeadlineNotifier } from "@/components/draft/DeadlineNotifier";
+import { deadlineFlags } from "@/lib/draft/deadline";
 import { getCurrentEvent, getDataFreshness } from "@/lib/draft/queries";
+import { getSquad } from "@/lib/draft/squad";
 
 export default async function DraftLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   const [event, freshness] = await Promise.all([getCurrentEvent(), getDataFreshness()]);
+
+  let flags: string[] = [];
+  if (event) {
+    try {
+      const entryId = (await import("@/lib/fpl/config")).FPL_DRAFT_ENTRY_ID;
+      flags = deadlineFlags(await getSquad(entryId, event.id));
+    } catch {
+      flags = [];
+    }
+  }
 
   return (
     <div className="section-padding pt-28">
@@ -23,6 +37,8 @@ export default async function DraftLayout({
               <DataFreshness timestamp={freshness} />
             </div>
           </div>
+          <DeadlineWarning flags={flags} />
+          <DeadlineNotifier deadline={event?.nextDeadlineTime ?? null} flags={flags} />
           <div className="mt-6">
             <DraftSubNav />
           </div>

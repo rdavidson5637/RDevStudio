@@ -80,9 +80,9 @@ function minutesTrend(minutesLast4: number[]): number {
   return clamp(((lastMean - firstMean) / 90) * 10, -10, 10);
 }
 
-/** 0 to 20, applied only when a reported signal is present. Nothing in this
- * codebase supplies one yet (that's the news layer, not built) - this exists
- * so the model is ready for it and is exercised directly by tests. */
+/** 0 to 20, applied only when a reported club-feed signal is present.
+ * Official FPL status/news always wins: an injured player cannot be pushed
+ * into "safe to start" by an unverified report alone. */
 function reportedAbsence(signal: ReportedSignal | null | undefined): number {
   if (!signal) return 0;
   const weights: Record<ReportedSignal["signal"], number> = {

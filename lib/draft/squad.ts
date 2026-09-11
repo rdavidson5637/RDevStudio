@@ -1,6 +1,7 @@
 import { unstable_cache } from "next/cache";
 import { supabasePublic } from "@/lib/supabase/public";
 import { availabilityScore, type Status } from "@/lib/draft/availability";
+import { getLatestSignalsForPlayers } from "@/lib/draft/news/queries";
 
 export type SquadPlayer = {
   id: number;
@@ -70,7 +71,7 @@ async function fetchSquad(entryId: number, event: number): Promise<SquadPlayer[]
   const playerById = new Map((players ?? []).map((p) => [p.id, p]));
   const teamIds = Array.from(new Set((players ?? []).map((p) => p.team_id)));
 
-  const [fixturesRes, projectionsRes, allTeamsRes] = await Promise.all([
+  const [fixturesRes, projectionsRes, allTeamsRes, signals] = await Promise.all([
     teamIds.length > 0
       ? supabasePublic
           .from("fpl_fixtures")
@@ -89,6 +90,7 @@ async function fetchSquad(entryId: number, event: number): Promise<SquadPlayer[]
     // All 20 clubs, not just the squad's own - an opponent is very often a
     // team nobody in the squad plays for.
     supabasePublic.from("fpl_teams").select("id, short_name"),
+    getLatestSignalsForPlayers(playerIds),
   ]);
 
   const teamShortNameById = new Map<number, string>(
@@ -148,6 +150,7 @@ async function fetchSquad(entryId: number, event: number): Promise<SquadPlayer[]
         chanceThisRound: player.chance_of_playing_this_round,
         chanceNextRound: player.chance_of_playing_next_round,
         minutesLast4: [],
+        reportedSignal: signals.get(player.id) ?? null,
         now,
       }).score,
       form: toNumber(player.form),

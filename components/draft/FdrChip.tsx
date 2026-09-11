@@ -3,6 +3,7 @@ type Props = {
   isHome: boolean;
   difficulty: number; // 1 (easiest) .. 5 (hardest)
   className?: string;
+  postponed?: boolean;
 };
 
 const DIFFICULTY_STYLES: Record<number, string> = {
@@ -17,11 +18,11 @@ const DIFFICULTY_STYLES: Record<number, string> = {
  * Fixture difficulty chip. Colour is never the only signal - the numeral is
  * always printed, so the 1-5 scale reads without relying on red/green.
  */
-export function FdrChip({ opponent, isHome, difficulty, className }: Props) {
+export function FdrChip({ opponent, isHome, difficulty, className, postponed }: Props) {
   const style = DIFFICULTY_STYLES[difficulty] ?? DIFFICULTY_STYLES[3];
   return (
     <span
-      title={`${isHome ? "Home" : "Away"} vs ${opponent} — difficulty ${difficulty} of 5`}
+      title={`${postponed ? "Provisional — " : ""}${isHome ? "Home" : "Away"} vs ${opponent} — difficulty ${difficulty} of 5`}
       className={`inline-flex items-center gap-1 rounded border bg-raised px-1.5 py-0.5 font-mono text-[10px] uppercase tracking-wider ${style} ${className ?? ""}`}
     >
       <span>{opponent}</span>
@@ -31,6 +32,11 @@ export function FdrChip({ opponent, isHome, difficulty, className }: Props) {
       <span aria-hidden="true" className="font-bold">
         {difficulty}
       </span>
+      {postponed ? (
+        <span className="opacity-70" aria-label="kickoff not set">
+          P
+        </span>
+      ) : null}
     </span>
   );
 }

@@ -1,5 +1,8 @@
 import { createPageMetadata } from "@/lib/metadata";
 import { EmptyState } from "@/components/draft/EmptyState";
+import { LiveBoard } from "@/components/draft/LiveBoard";
+import { getCurrentEvent } from "@/lib/draft/queries";
+import { getLiveBoard } from "@/lib/draft/live";
 
 export const metadata = createPageMetadata({
   title: "Live Gameweek",
@@ -7,10 +10,25 @@ export const metadata = createPageMetadata({
   path: "/draft/live",
 });
 
-export default function DraftLivePage() {
-  return (
-    <EmptyState title="Live gameweek tracker — coming soon">
-      Live points, provisional bonus and a live win probability land here once the in-play cron is built.
-    </EmptyState>
-  );
+export default async function DraftLivePage() {
+  const event = await getCurrentEvent();
+  if (!event) return <EmptyState />;
+
+  let entryId: number;
+  try {
+    entryId = (await import("@/lib/fpl/config")).FPL_DRAFT_ENTRY_ID;
+  } catch {
+    return <EmptyState title="FPL_DRAFT_ENTRY_ID not set" />;
+  }
+
+  try {
+    const board = await getLiveBoard(event.id, entryId);
+    return <LiveBoard board={board} myEntryId={entryId} eventId={event.id} />;
+  } catch {
+    return (
+      <EmptyState title="Live feed unavailable">
+        The draft live endpoint did not respond. Try again once the gameweek is in play.
+      </EmptyState>
+    );
+  }
 }

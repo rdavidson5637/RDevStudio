@@ -15,6 +15,10 @@ import {
   getEntryPicks,
   getTransactions,
 } from "@/lib/fpl/client";
+import { ingestNewsLayer } from "@/lib/draft/news/ingest";
+import { getLatestSignalsForPlayers } from "@/lib/draft/news/queries";
+import { refreshLiveBoard } from "@/lib/draft/live";
+import { sendDeadlineAlerts } from "@/lib/draft/alerts";
 import type { DraftElement } from "@/lib/fpl/types";
 
 export const runtime = "nodejs";
@@ -461,6 +465,7 @@ export async function GET(request: NextRequest) {
         const scoring = resolveScoringSettings(bootstrap?.settings?.scoring);
         const now = new Date();
         const projectionRows: Record<string, unknown>[] = [];
+        const signals = await getLatestSignalsForPlayers(projectionPlayerIds);
 
         for (const player of projPlayers ?? []) {
           const fixture = nextFixtureByTeam.get(player.team_id);
@@ -474,6 +479,7 @@ export async function GET(request: NextRequest) {
             chanceThisRound: player.chance_of_playing_this_round,
             chanceNextRound: player.chance_of_playing_next_round,
             minutesLast4: [],
+            reportedSignal: signals.get(player.id) ?? null,
             now,
           });
 
@@ -508,11 +514,34 @@ export async function GET(request: NextRequest) {
     }
   }
 
+  const extras: Record<string, unknown> = {};
+  try {
+    extras.news = await ingestNewsLayer();
+  } catch (err) {
+    errors.push({ step: "ingestNewsLayer", message: String(err) });
+  }
+
+  if (currentEvent != null) {
+    try {
+      const myEntryId = (await import("@/lib/fpl/config")).FPL_DRAFT_ENTRY_ID;
+      extras.live = await refreshLiveBoard(currentEvent, myEntryId, { force: true });
+    } catch (err) {
+      errors.push({ step: "refreshLiveBoard", message: String(err) });
+    }
+  }
+
+  try {
+    extras.deadline = await sendDeadlineAlerts();
+  } catch (err) {
+    errors.push({ step: "sendDeadlineAlerts", message: String(err) });
+  }
+
   if (errors.length === 0) {
     revalidateTag("fpl-players");
     revalidateTag("fpl-league");
     revalidateTag("fpl-fixtures");
     revalidateTag("fpl-ownership");
+    revalidateTag("fpl-live");
   }
 
   return NextResponse.json({
@@ -521,6 +550,7 @@ export async function GET(request: NextRequest) {
     currentEvent,
     nextEvent,
     counts,
+    extras,
     errors,
   });
 }
