@@ -90,10 +90,10 @@ export function Hero() {
               View my work
             </Link>
             <Link
-              href="/games"
+              href="/contact"
               className="inline-flex items-center justify-center rounded-lg border border-border-strong px-6 py-3 text-sm font-medium text-primary transition-colors hover:border-accent hover:bg-accent-light"
             >
-              More games
+              Get in touch
             </Link>
           </div>
         </div>

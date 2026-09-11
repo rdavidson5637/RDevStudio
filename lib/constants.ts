@@ -25,7 +25,6 @@ export const NAV_LINKS = [
   { href: "/champions-draft", label: "Champions Draft", highlight: true },
   { href: "/rugby-draft", label: "Rugby Draft", highlight: true },
   { href: "/pub-quiz", label: "Pub Quiz", highlight: true },
-  { href: "/games", label: "Games" },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
 ] as const;
