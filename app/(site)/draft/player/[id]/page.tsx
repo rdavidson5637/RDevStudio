@@ -14,6 +14,7 @@ const STATUS_LABELS: Record<string, string> = {
   u: "Unavailable",
   n: "Not in squad",
 };
+const STATUS_BASE: Record<string, number> = { d: 55, i: 5, s: 0, u: 0, n: 15 };
 
 async function getPlayer(id: number) {
   const { data } = await supabasePublic
@@ -58,7 +59,7 @@ export default async function PlayerDetailPage({
   const scoreEstimate =
     player.status === "a"
       ? 90
-      : player.chance_of_playing_next_round ?? { d: 55, i: 5, s: 0, u: 0, n: 15 }[player.status] ?? 50;
+      : player.chance_of_playing_next_round ?? STATUS_BASE[player.status] ?? 50;
 
   return (
     <div className="space-y-8">
