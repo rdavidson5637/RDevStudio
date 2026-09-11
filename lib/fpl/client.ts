@@ -150,8 +150,13 @@ export function getElementStatus(leagueId: number): Promise<ElementStatusRespons
   return fetchJson<ElementStatusResponse>(DRAFT_BASE, `/league/${leagueId}/element-status`);
 }
 
-export function getTransactions(leagueId: number): Promise<Transaction[]> {
-  return fetchJson<Transaction[]>(DRAFT_BASE, `/draft/league/${leagueId}/transactions`);
+export async function getTransactions(leagueId: number): Promise<Transaction[]> {
+  // The live endpoint wraps the array as { transactions: [...] }, not a bare array.
+  const res = await fetchJson<{ transactions: Transaction[] }>(
+    DRAFT_BASE,
+    `/draft/league/${leagueId}/transactions`,
+  );
+  return res.transactions;
 }
 
 export function getEntryPicks(entryId: number, event: number): Promise<EntryPicks> {
