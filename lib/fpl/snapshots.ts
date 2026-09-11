@@ -1,6 +1,7 @@
 import "server-only";
 import { supabaseAdmin } from "@/lib/supabase/admin";
 import { chunk, parseDate } from "@/lib/fpl/parse";
+import { availabilityScore, type Status } from "@/lib/draft/availability";
 import type { DraftElement } from "@/lib/fpl/types";
 
 const TRACKED_FIELDS = [
@@ -18,6 +19,7 @@ type SnapshotRow = {
   news_added: string | null;
   chance_of_playing_this_round: number | null;
   chance_of_playing_next_round: number | null;
+  availability_score?: number;
 };
 
 const INSERT_CHUNK_SIZE = 200;
@@ -47,6 +49,7 @@ export async function captureSnapshots(players: DraftElement[]): Promise<number>
     }
   }
 
+  const now = new Date();
   const toInsert: SnapshotRow[] = [];
   for (const player of players) {
     const next: SnapshotRow = {
@@ -63,7 +66,19 @@ export async function captureSnapshots(players: DraftElement[]): Promise<number>
       ? TRACKED_FIELDS.some((field) => prev[field] !== next[field])
       : true;
 
-    if (changed) toInsert.push(next);
+    if (changed) {
+      next.availability_score = availabilityScore({
+        status: player.status as Status,
+        news: player.news,
+        newsAdded: next.news_added ? new Date(next.news_added) : null,
+        newsReturn: player.news_return ? new Date(player.news_return) : null,
+        chanceThisRound: player.chance_of_playing_this_round,
+        chanceNextRound: player.chance_of_playing_next_round,
+        minutesLast4: [], // no per-gameweek minutes history stored yet
+        now,
+      }).score;
+      toInsert.push(next);
+    }
   }
 
   let inserted = 0;

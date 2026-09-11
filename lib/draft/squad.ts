@@ -1,5 +1,6 @@
 import { unstable_cache } from "next/cache";
 import { supabasePublic } from "@/lib/supabase/public";
+import { availabilityScore, type Status } from "@/lib/draft/availability";
 
 export type SquadPlayer = {
   id: number;
@@ -17,15 +18,6 @@ export type SquadPlayer = {
   nextFixture: { opponent: string; isHome: boolean; difficulty: number } | null;
 };
 
-const STATUS_BASE: Record<string, number> = { a: 100, d: 55, i: 5, s: 0, u: 0, n: 15 };
-
-// Approximate stand-in for lib/draft/availability.ts's real model (prompt 07,
-// not built yet) - close enough to colour dots and sort correctly today.
-function estimateAvailability(status: string, chanceNext: number | null): number {
-  const base = STATUS_BASE[status] ?? 50;
-  return chanceNext != null ? Math.round(0.55 * base + 0.45 * chanceNext) : base;
-}
-
 function toNumber(v: string | number | null): number | null {
   if (v == null || v === "") return null;
   const n = typeof v === "number" ? v : Number(v);
@@ -38,6 +30,10 @@ type PlayerRow = {
   web_name: string;
   element_type: number;
   status: string;
+  news: string | null;
+  news_added: string | null;
+  news_return: string | null;
+  chance_of_playing_this_round: number | null;
   chance_of_playing_next_round: number | null;
   form: string | number | null;
   ep_next: string | number | null;
@@ -66,7 +62,7 @@ async function fetchSquad(entryId: number, event: number): Promise<SquadPlayer[]
   const { data: players } = await supabasePublic
     .from("fpl_players")
     .select(
-      "id, web_name, element_type, status, chance_of_playing_next_round, form, ep_next, team_id, fpl_teams ( id, short_name )",
+      "id, web_name, element_type, status, news, news_added, news_return, chance_of_playing_this_round, chance_of_playing_next_round, form, ep_next, team_id, fpl_teams ( id, short_name )",
     )
     .in("id", playerIds)
     .returns<PlayerRow[]>();
@@ -127,6 +123,7 @@ async function fetchSquad(entryId: number, event: number): Promise<SquadPlayer[]
     ]),
   );
 
+  const now = new Date();
   const squad: SquadPlayer[] = [];
   for (const pick of picks) {
     const player = playerById.get(pick.player_id);
@@ -143,7 +140,16 @@ async function fetchSquad(entryId: number, event: number): Promise<SquadPlayer[]
       pickPosition: pick.position,
       multiplier: pick.multiplier,
       status: player.status,
-      availabilityScore: estimateAvailability(player.status, player.chance_of_playing_next_round),
+      availabilityScore: availabilityScore({
+        status: player.status as Status,
+        news: player.news,
+        newsAdded: player.news_added ? new Date(player.news_added) : null,
+        newsReturn: player.news_return ? new Date(player.news_return) : null,
+        chanceThisRound: player.chance_of_playing_this_round,
+        chanceNextRound: player.chance_of_playing_next_round,
+        minutesLast4: [],
+        now,
+      }).score,
       form: toNumber(player.form),
       epNext,
       projectedPoints: projectionByPlayer.get(player.id) ?? epNext,

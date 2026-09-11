@@ -3,6 +3,8 @@ import { revalidateTag } from "next/cache";
 import { supabaseAdmin } from "@/lib/supabase/admin";
 import { chunk, parseDate, parseNum } from "@/lib/fpl/parse";
 import { captureSnapshots } from "@/lib/fpl/snapshots";
+import { availabilityScore, type Status } from "@/lib/draft/availability";
+import { projectPoints, resolveScoringSettings } from "@/lib/draft/projection";
 import {
   getDraftBootstrap,
   getElementStatus,
@@ -126,6 +128,7 @@ export async function GET(request: NextRequest) {
     ownership: 0,
     transactions: 0,
     picks: 0,
+    projections: 0,
   };
 
   let currentEvent: number | null = null;
@@ -407,6 +410,102 @@ export async function GET(request: NextRequest) {
     }
   } else if (currentEvent == null) {
     errors.push({ step: "picks", message: "Skipped: no current event from getGameState" });
+  }
+
+  // 10. Projections for the entry's own squad at the current event. The
+  // availability and projection engines are pure functions - this just
+  // wires them up with real data and stores the result. Scoped to the
+  // squad rather than the full player pool for now; the waiver wire will
+  // need the full pool later.
+  if (currentEvent != null) {
+    try {
+      const myEntryId = (await import("@/lib/fpl/config")).FPL_DRAFT_ENTRY_ID;
+
+      const { data: myPicks } = await supabaseAdmin
+        .from("fpl_picks")
+        .select("player_id")
+        .eq("entry_id", myEntryId)
+        .eq("event", currentEvent);
+
+      const projectionPlayerIds = (myPicks ?? []).map((p) => p.player_id);
+
+      if (projectionPlayerIds.length > 0) {
+        const { data: projPlayers } = await supabaseAdmin
+          .from("fpl_players")
+          .select(
+            "id, element_type, status, news, news_added, news_return, chance_of_playing_this_round, chance_of_playing_next_round, starts_per_90, expected_goals_per_90, expected_assists_per_90, defensive_contribution_per_90, bps, minutes, team_id",
+          )
+          .in("id", projectionPlayerIds);
+
+        const projTeamIds = Array.from(new Set((projPlayers ?? []).map((p) => p.team_id)));
+
+        const { data: projFixtures } = await supabaseAdmin
+          .from("fpl_fixtures")
+          .select("event, team_h, team_a, team_h_difficulty, team_a_difficulty")
+          .gte("event", currentEvent)
+          .or(`team_h.in.(${projTeamIds.join(",")}),team_a.in.(${projTeamIds.join(",")})`)
+          .order("event", { ascending: true });
+
+        const nextFixtureByTeam = new Map<number, { difficulty: number; isHome: boolean }>();
+        for (const fixture of projFixtures ?? []) {
+          for (const teamId of projTeamIds) {
+            if (nextFixtureByTeam.has(teamId)) continue;
+            if (fixture.team_h === teamId) {
+              nextFixtureByTeam.set(teamId, { difficulty: fixture.team_h_difficulty, isHome: true });
+            } else if (fixture.team_a === teamId) {
+              nextFixtureByTeam.set(teamId, { difficulty: fixture.team_a_difficulty, isHome: false });
+            }
+          }
+        }
+
+        const scoring = resolveScoringSettings(bootstrap?.settings?.scoring);
+        const now = new Date();
+        const projectionRows: Record<string, unknown>[] = [];
+
+        for (const player of projPlayers ?? []) {
+          const fixture = nextFixtureByTeam.get(player.team_id);
+          if (!fixture) continue;
+
+          const avail = availabilityScore({
+            status: player.status as Status,
+            news: player.news,
+            newsAdded: player.news_added ? new Date(player.news_added) : null,
+            newsReturn: player.news_return ? new Date(player.news_return) : null,
+            chanceThisRound: player.chance_of_playing_this_round,
+            chanceNextRound: player.chance_of_playing_next_round,
+            minutesLast4: [],
+            now,
+          });
+
+          const bpsPer90 = player.minutes > 0 ? (player.bps / player.minutes) * 90 : 0;
+
+          const projection = projectPoints({
+            position: player.element_type as 1 | 2 | 3 | 4,
+            availabilityScore: avail.score,
+            startsPer90: parseNum(player.starts_per_90) ?? 0,
+            xG90: parseNum(player.expected_goals_per_90) ?? 0,
+            xA90: parseNum(player.expected_assists_per_90) ?? 0,
+            defconPer90: parseNum(player.defensive_contribution_per_90) ?? 0,
+            bpsPer90,
+            fixtureDifficulty: fixture.difficulty,
+            isHome: fixture.isHome,
+            settings: scoring,
+          });
+
+          projectionRows.push({
+            player_id: player.id,
+            event: currentEvent,
+            projected_points: projection.xP,
+            p_start: projection.pStart,
+            components: projection.components,
+          });
+        }
+
+        counts.projections = await upsertChunked("fpl_projections", projectionRows, "player_id,event");
+      }
+    } catch (err) {
+      errors.push({ step: "projections", message: String(err) });
+    }
   }
 
   if (errors.length === 0) {

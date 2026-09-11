@@ -122,11 +122,35 @@ export interface DraftEvent {
   waivers_time: string | null;
 }
 
+export interface DraftScoringSettings {
+  goals_scored_GKP: number;
+  goals_scored_DEF: number;
+  goals_scored_MID: number;
+  goals_scored_FWD: number;
+  assists: number;
+  clean_sheets_GKP: number;
+  clean_sheets_DEF: number;
+  clean_sheets_MID: number;
+  clean_sheets_FWD: number;
+  defensive_contribution_limit_DEF: number;
+  defensive_contribution_limit_MID: number;
+  defensive_contribution_limit_FWD: number;
+  defensive_contribution_DEF: number;
+  defensive_contribution_MID: number;
+  defensive_contribution_FWD: number;
+  long_play: number;
+  short_play: number;
+  long_play_limit: number;
+  bonus: number;
+}
+
 export interface DraftBootstrap {
   elements: DraftElement[];
   teams: FplTeam[];
   events: { current: number; data: DraftEvent[] };
-  game_settings?: Record<string, unknown>;
+  // Real field is `settings.scoring` - not `game_settings`, which doesn't
+  // exist on the live API despite the original spec assuming it did.
+  settings?: { scoring?: Partial<DraftScoringSettings> };
 }
 
 export interface FplBootstrap {
