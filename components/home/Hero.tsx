@@ -1,6 +1,21 @@
 import Link from "next/link";
 import { CHAMPIONS_DRAFT } from "@/lib/champions-draft-feature";
 import { RUGBY_DRAFT } from "@/lib/rugby-draft-feature";
+import { PROJECTS } from "@/lib/constants";
+import { GAMES_CATALOG } from "@/lib/games-catalog";
+
+const STUDIO_START_YEAR = 2024;
+
+function getYearsBuilding(): number {
+  return new Date().getFullYear() - STUDIO_START_YEAR + 1;
+}
+
+const HERO_STATS = [
+  { label: "PROJECTS SHIPPED", value: PROJECTS.length },
+  { label: "GAMES BUILT", value: GAMES_CATALOG.length },
+  { label: "YEARS BUILDING", value: getYearsBuilding() },
+  { label: "STATUS", value: "LIVE" },
+] as const;
 
 export function Hero() {
   return (
@@ -49,32 +64,19 @@ export function Hero() {
             , two free squad builder games.
           </p>
 
-          <div className="mb-10 grid min-h-[120px] grid-cols-2 gap-px overflow-hidden rounded-md border border-border bg-border md:grid-cols-4">
-            <div className="bg-base px-4 py-3">
-              <p className="shell-label text-secondary">PROJECTS SHIPPED</p>
-              <p className="mt-1 text-2xl font-display text-primary sm:text-3xl">
-                12
-              </p>
-            </div>
-            <div className="bg-base px-4 py-3">
-              <p className="shell-label text-secondary">GAMES BUILT</p>
-              <p className="mt-1 text-2xl font-display text-primary sm:text-3xl">
-                3
-              </p>
-            </div>
-            <div className="bg-base px-4 py-3">
-              <p className="shell-label text-secondary">YEARS BUILDING</p>
-              <p className="mt-1 text-2xl font-display text-primary sm:text-3xl">
-                2
-              </p>
-            </div>
-            <div className="bg-base px-4 py-3">
-              <p className="shell-label text-secondary">STATUS</p>
-              <p className="mt-1 text-2xl font-display text-primary sm:text-3xl">
-                LIVE
-              </p>
-            </div>
-          </div>
+          <dl
+            className="mb-10 grid min-h-[120px] grid-cols-2 gap-px overflow-hidden rounded-md border border-border bg-border md:grid-cols-4"
+            aria-label="Studio statistics"
+          >
+            {HERO_STATS.map((stat) => (
+              <div key={stat.label} className="bg-base px-4 py-3">
+                <dt className="shell-label text-secondary">{stat.label}</dt>
+                <dd className="mt-1 text-2xl font-display text-primary sm:text-3xl">
+                  {stat.value}
+                </dd>
+              </div>
+            ))}
+          </dl>
 
           <div className="flex flex-wrap gap-4">
             <Link
