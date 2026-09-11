@@ -174,13 +174,13 @@ export async function GET(request: NextRequest) {
     try {
       await upsertChunked(
         "fpl_events",
-        bootstrap.events.map((e) => ({
+        bootstrap.events.data.map((e) => ({
           id: e.id,
           name: e.name,
           deadline_time: parseDate(e.deadline_time),
           finished: e.finished,
-          is_current: e.is_current,
-          is_next: e.is_next,
+          is_current: e.id === currentEvent,
+          is_next: e.id === nextEvent,
           waivers_time: parseDate(e.waivers_time),
         })),
         "id",

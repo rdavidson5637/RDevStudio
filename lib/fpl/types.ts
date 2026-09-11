@@ -112,10 +112,20 @@ export interface FplEvent {
   waivers_time: string | null;
 }
 
+/** The draft API's events don't carry is_current/is_next per-item - only
+ * the wrapper's `current` field says which gameweek is live. */
+export interface DraftEvent {
+  id: number;
+  name: string;
+  deadline_time: string;
+  finished: boolean;
+  waivers_time: string | null;
+}
+
 export interface DraftBootstrap {
   elements: DraftElement[];
   teams: FplTeam[];
-  events: FplEvent[];
+  events: { current: number; data: DraftEvent[] };
   game_settings?: Record<string, unknown>;
 }
 
