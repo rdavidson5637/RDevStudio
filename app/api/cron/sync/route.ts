@@ -1,0 +1,375 @@
+import { NextRequest, NextResponse } from "next/server";
+import { revalidateTag } from "next/cache";
+import { supabaseAdmin } from "@/lib/supabase/admin";
+import { chunk, parseDate, parseNum } from "@/lib/fpl/parse";
+import { captureSnapshots } from "@/lib/fpl/snapshots";
+import {
+  getDraftBootstrap,
+  getElementStatus,
+  getFixtures,
+  getFplBootstrap,
+  getGameState,
+  getLeagueDetails,
+  getEntryPicks,
+  getTransactions,
+} from "@/lib/fpl/client";
+import type { DraftElement } from "@/lib/fpl/types";
+
+export const runtime = "nodejs";
+export const dynamic = "force-dynamic";
+
+const CHUNK_SIZE = 200;
+const PICKS_DELAY_MS = 250;
+
+type StepError = { step: string; message: string };
+
+function sleep(ms: number): Promise<void> {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+async function upsertChunked(
+  table: string,
+  rows: Record<string, unknown>[],
+  onConflict: string,
+): Promise<number> {
+  let written = 0;
+  for (const batch of chunk(rows, CHUNK_SIZE)) {
+    if (batch.length === 0) continue;
+    const { error } = await supabaseAdmin.from(table).upsert(batch, { onConflict });
+    if (error) throw new Error(`${table} upsert failed: ${error.message}`);
+    written += batch.length;
+  }
+  return written;
+}
+
+function mapDraftElementToPlayerRow(el: DraftElement, updatedAt: string) {
+  return {
+    id: el.id,
+    code: el.code,
+    web_name: el.web_name,
+    first_name: el.first_name,
+    second_name: el.second_name,
+    team_id: el.team,
+    element_type: el.element_type,
+    status: el.status,
+    news: el.news,
+    news_added: parseDate(el.news_added),
+    news_return: parseDate(el.news_return),
+    chance_of_playing_this_round: el.chance_of_playing_this_round,
+    chance_of_playing_next_round: el.chance_of_playing_next_round,
+    draft_rank: el.draft_rank,
+    total_points: el.total_points,
+    event_points: el.event_points,
+    points_per_game: parseNum(el.points_per_game),
+    form: parseNum(el.form),
+    ep_this: parseNum(el.ep_this),
+    ep_next: parseNum(el.ep_next),
+    minutes: el.minutes,
+    starts: el.starts,
+    goals_scored: el.goals_scored,
+    assists: el.assists,
+    clean_sheets: el.clean_sheets,
+    goals_conceded: el.goals_conceded,
+    own_goals: el.own_goals,
+    penalties_saved: el.penalties_saved,
+    penalties_missed: el.penalties_missed,
+    yellow_cards: el.yellow_cards,
+    red_cards: el.red_cards,
+    saves: el.saves,
+    bonus: el.bonus,
+    bps: el.bps,
+    influence: parseNum(el.influence),
+    creativity: parseNum(el.creativity),
+    threat: parseNum(el.threat),
+    ict_index: parseNum(el.ict_index),
+    expected_goals: parseNum(el.expected_goals),
+    expected_assists: parseNum(el.expected_assists),
+    expected_goal_involvements: parseNum(el.expected_goal_involvements),
+    expected_goals_conceded: parseNum(el.expected_goals_conceded),
+    defensive_contribution: el.defensive_contribution,
+    tackles: el.tackles,
+    recoveries: el.recoveries,
+    clearances_blocks_interceptions: el.clearances_blocks_interceptions,
+    penalties_order: el.penalties_order,
+    penalties_text: el.penalties_text,
+    corners_and_indirect_freekicks_order: el.corners_and_indirect_freekicks_order,
+    direct_freekicks_order: el.direct_freekicks_order,
+    updated_at: updatedAt,
+  };
+}
+
+export async function GET(request: NextRequest) {
+  const started = Date.now();
+  const auth = request.headers.get("authorization");
+  if (auth !== `Bearer ${process.env.CRON_SECRET}`) {
+    return NextResponse.json({ ok: false, error: "Unauthorized" }, { status: 401 });
+  }
+
+  let leagueId: number;
+  try {
+    const config = await import("@/lib/fpl/config");
+    leagueId = config.FPL_DRAFT_LEAGUE_ID;
+  } catch (err) {
+    return NextResponse.json(
+      { ok: false, error: err instanceof Error ? err.message : "Missing FPL config" },
+      { status: 500 },
+    );
+  }
+
+  const errors: StepError[] = [];
+  const counts = {
+    players: 0,
+    teams: 0,
+    fixtures: 0,
+    entries: 0,
+    matches: 0,
+    ownership: 0,
+    transactions: 0,
+    picks: 0,
+  };
+
+  let currentEvent: number | null = null;
+  let nextEvent: number | null = null;
+
+  // 1. Game state
+  try {
+    const game = await getGameState();
+    currentEvent = game.current_event;
+    nextEvent = game.next_event;
+  } catch (err) {
+    errors.push({ step: "getGameState", message: String(err) });
+  }
+
+  // 2. Draft bootstrap -> teams, events, players
+  try {
+    const bootstrap = await getDraftBootstrap();
+    const now = new Date().toISOString();
+
+    counts.teams = await upsertChunked(
+      "fpl_teams",
+      bootstrap.teams.map((t) => ({ ...t, updated_at: now })),
+      "id",
+    );
+
+    await upsertChunked(
+      "fpl_events",
+      bootstrap.events.map((e) => ({
+        id: e.id,
+        name: e.name,
+        deadline_time: parseDate(e.deadline_time),
+        finished: e.finished,
+        is_current: e.is_current,
+        is_next: e.is_next,
+        waivers_time: parseDate(e.waivers_time),
+      })),
+      "id",
+    );
+
+    counts.players = await upsertChunked(
+      "fpl_players",
+      bootstrap.elements.map((el) => mapDraftElementToPlayerRow(el, now)),
+      "id",
+    );
+
+    // 3. Snapshot capture, right after the players upsert (prompt 04)
+    try {
+      await captureSnapshots(bootstrap.elements);
+    } catch (err) {
+      errors.push({ step: "captureSnapshots", message: String(err) });
+    }
+  } catch (err) {
+    errors.push({ step: "getDraftBootstrap", message: String(err) });
+  }
+
+  // 4. Main FPL bootstrap -> per-90 columns, matched on player CODE not id
+  try {
+    const fplBootstrap = await getFplBootstrap();
+    const { data: existing, error: lookupError } = await supabaseAdmin
+      .from("fpl_players")
+      .select("id, code");
+    if (lookupError) throw new Error(lookupError.message);
+
+    const idByCode = new Map<number, number>(
+      (existing ?? []).map((row: { id: number; code: number }) => [row.code, row.id]),
+    );
+
+    const rows: Record<string, unknown>[] = [];
+    let unmatched = 0;
+    for (const el of fplBootstrap.elements) {
+      const id = idByCode.get(el.code);
+      if (id === undefined) {
+        unmatched += 1;
+        continue;
+      }
+      rows.push({
+        id,
+        expected_goals_per_90: parseNum(el.expected_goals_per_90),
+        expected_assists_per_90: parseNum(el.expected_assists_per_90),
+        defensive_contribution_per_90: parseNum(el.defensive_contribution_per_90),
+        starts_per_90: parseNum(el.starts_per_90),
+        expected_goals_conceded_per_90: parseNum(el.expected_goals_conceded_per_90),
+        selected_by_percent: parseNum(el.selected_by_percent),
+      });
+    }
+    await upsertChunked("fpl_players", rows, "id");
+    if (unmatched > 0) {
+      errors.push({
+        step: "getFplBootstrap",
+        message: `${unmatched} player(s) from the main API had no matching code in fpl_players`,
+      });
+    }
+  } catch (err) {
+    errors.push({ step: "getFplBootstrap", message: String(err) });
+  }
+
+  // 5. Fixtures
+  try {
+    const fixtures = await getFixtures();
+    counts.fixtures = await upsertChunked(
+      "fpl_fixtures",
+      fixtures.map((f) => ({
+        id: f.id,
+        event: f.event,
+        kickoff_time: parseDate(f.kickoff_time),
+        team_h: f.team_h,
+        team_a: f.team_a,
+        team_h_score: f.team_h_score,
+        team_a_score: f.team_a_score,
+        team_h_difficulty: f.team_h_difficulty,
+        team_a_difficulty: f.team_a_difficulty,
+        started: f.started,
+        finished: f.finished,
+        finished_provisional: f.finished_provisional,
+        minutes: f.minutes,
+      })),
+      "id",
+    );
+  } catch (err) {
+    errors.push({ step: "getFixtures", message: String(err) });
+  }
+
+  // 6. League details -> entries, H2H matches
+  let leagueEntryIds: number[] = [];
+  try {
+    const details = await getLeagueDetails(leagueId);
+    leagueEntryIds = details.league_entries.map((e) => e.entry_id);
+
+    counts.entries = await upsertChunked(
+      "fpl_league_entries",
+      details.league_entries.map((e) => ({
+        entry_id: e.entry_id,
+        entry_name: e.entry_name,
+        player_first_name: e.player_first_name,
+        player_last_name: e.player_last_name,
+        short_name: e.short_name,
+        waiver_pick: e.waiver_pick,
+      })),
+      "entry_id",
+    );
+
+    counts.matches = await upsertChunked(
+      "fpl_league_matches",
+      details.matches.map((m) => ({
+        event: m.event,
+        entry_1_entry: m.entry_1_entry,
+        entry_1_points: m.entry_1_points,
+        entry_2_entry: m.entry_2_entry,
+        entry_2_points: m.entry_2_points,
+        finished: m.finished,
+      })),
+      "event,entry_1_entry,entry_2_entry",
+    );
+  } catch (err) {
+    errors.push({ step: "getLeagueDetails", message: String(err) });
+  }
+
+  // 7. Ownership - full snapshot, not a delta: replace wholesale.
+  try {
+    const statusResponse = await getElementStatus(leagueId);
+    const rows = statusResponse.element_status.map((row) => ({
+      player_id: row.element,
+      owner_entry_id: row.owner,
+      status: row.status,
+      in_accepted_trade: row.in_accepted_trade,
+      updated_at: new Date().toISOString(),
+    }));
+
+    // No multi-statement transaction over PostgREST, so this is delete-then-
+    // insert rather than a single atomic swap. Ownership is refreshed hourly
+    // and briefly-empty rows here are an acceptable tradeoff over the added
+    // complexity of a database function.
+    const { error: deleteError } = await supabaseAdmin
+      .from("fpl_ownership")
+      .delete()
+      .neq("player_id", -1);
+    if (deleteError) throw new Error(deleteError.message);
+
+    counts.ownership = await upsertChunked("fpl_ownership", rows, "player_id");
+  } catch (err) {
+    errors.push({ step: "getElementStatus", message: String(err) });
+  }
+
+  // 8. Transactions
+  try {
+    const transactions = await getTransactions(leagueId);
+    counts.transactions = await upsertChunked(
+      "fpl_transactions",
+      transactions.map((t) => ({
+        id: t.id,
+        entry_id: t.entry,
+        event: t.event,
+        element_in: t.element_in,
+        element_out: t.element_out,
+        kind: t.kind,
+        priority: t.priority,
+        result: t.result,
+        added: parseDate(t.added),
+      })),
+      "id",
+    );
+  } catch (err) {
+    errors.push({ step: "getTransactions", message: String(err) });
+  }
+
+  // 9. Picks per entry for the current event, 250ms apart.
+  if (currentEvent != null && leagueEntryIds.length > 0) {
+    const event = currentEvent; // narrow to number once; `let` doesn't narrow inside closures
+    for (const entryId of leagueEntryIds) {
+      try {
+        const picks = await getEntryPicks(entryId, event);
+        counts.picks += await upsertChunked(
+          "fpl_picks",
+          picks.picks.map((p) => ({
+            entry_id: entryId,
+            event,
+            player_id: p.element,
+            position: p.position,
+            multiplier: p.multiplier,
+          })),
+          "entry_id,event,player_id",
+        );
+      } catch (err) {
+        errors.push({ step: `getEntryPicks(${entryId})`, message: String(err) });
+      }
+      await sleep(PICKS_DELAY_MS);
+    }
+  } else if (currentEvent == null) {
+    errors.push({ step: "picks", message: "Skipped: no current event from getGameState" });
+  }
+
+  if (errors.length === 0) {
+    revalidateTag("fpl-players");
+    revalidateTag("fpl-league");
+    revalidateTag("fpl-fixtures");
+    revalidateTag("fpl-ownership");
+  }
+
+  return NextResponse.json({
+    ok: errors.length === 0,
+    durationMs: Date.now() - started,
+    currentEvent,
+    nextEvent,
+    counts,
+    errors,
+  });
+}
