@@ -1,9 +1,10 @@
 import Link from "next/link";
 import { GameCard } from "@/components/bored/GameCard";
 import { getOtherBoredGames } from "@/lib/bored-games";
-import { WARDROBE_AI } from "@/lib/constants";
+import { DRAFT_ANALYSER, WARDROBE_AI } from "@/lib/constants";
 import { FeaturedGames } from "@/components/home/FeaturedGames";
 import { SectionHeader } from "@/components/ui/SectionHeader";
+import { ExperimentSpotlight } from "@/components/ui/ExperimentSpotlight";
 
 export function PortfolioPlay() {
   const otherGames = getOtherBoredGames();
@@ -32,26 +33,9 @@ export function PortfolioPlay() {
         <p className="mb-5 text-sm font-semibold uppercase tracking-widest text-primary">
           More experiments
         </p>
-        <div className="grid grid-cols-1 gap-5 md:max-w-xl">
-          <Link
-            href={WARDROBE_AI.href}
-            className="work-card-lift group flex flex-col overflow-hidden rounded-[10px] border border-border bg-raised p-6 sm:p-8"
-          >
-            <div className="flex items-start justify-between gap-4">
-              <h2 className="font-display text-xl uppercase leading-tight text-primary sm:text-2xl">
-                {WARDROBE_AI.label}
-              </h2>
-              <span className="shrink-0 rounded-full border border-border-strong bg-base px-2.5 py-0.5 text-xs font-semibold text-accent">
-                Live
-              </span>
-            </div>
-            <p className="mt-3 flex-1 text-sm leading-relaxed text-secondary sm:text-base">
-              {WARDROBE_AI.description}
-            </p>
-            <span className="pitch-link mt-6 inline-flex w-fit text-sm font-semibold text-primary transition-colors group-hover:text-accent">
-              Open →
-            </span>
-          </Link>
+        <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
+          <ExperimentSpotlight experiment={WARDROBE_AI} animated={false} />
+          <ExperimentSpotlight experiment={DRAFT_ANALYSER} animated={false} />
           {otherGames.map((game) => (
             <GameCard key={game.slug} game={game} />
           ))}

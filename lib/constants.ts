@@ -37,11 +37,19 @@ export const WARDROBE_AI = {
     "Generate outfits from a real wardrobe. AI-tagged clothes, every valid line-up, an honest verdict.",
 } as const;
 
+export const DRAFT_ANALYSER = {
+  href: "/draft",
+  label: "Draft Analyser",
+  description:
+    "A live FPL Draft analyser: squad board, availability, projected points, and a start/sit optimiser.",
+} as const;
+
 export const SHELL_NAV_LINKS = [
   { href: "/work", label: "Work" },
   { href: "/toolkit", label: "Toolkit" },
   { href: "/interactive", label: "Interactive" },
   { href: WARDROBE_AI.href, label: "Wardrobe" },
+  { href: DRAFT_ANALYSER.href, label: "Draft" },
   { href: "/games", label: "Games" },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },

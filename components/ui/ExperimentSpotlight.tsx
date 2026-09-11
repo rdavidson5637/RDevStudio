@@ -1,24 +1,33 @@
 import Link from "next/link";
-import { WARDROBE_AI } from "@/lib/constants";
 
-type WardrobeAISpotlightProps = {
-  animationDelayMs?: number;
-  compact?: boolean;
+type Experiment = {
+  href: string;
+  label: string;
+  description: string;
 };
 
-export function WardrobeAISpotlight({
+type ExperimentSpotlightProps = {
+  experiment: Experiment;
+  animationDelayMs?: number;
+  compact?: boolean;
+  animated?: boolean;
+};
+
+export function ExperimentSpotlight({
+  experiment,
   animationDelayMs = 0,
   compact = false,
-}: WardrobeAISpotlightProps) {
+  animated = true,
+}: ExperimentSpotlightProps) {
   return (
     <article
-      className={`work-card-lift group flex animate-fade-in flex-col overflow-hidden rounded-[10px] border border-border bg-raised opacity-0 ${
-        compact ? "p-5" : "p-6 sm:p-8"
-      }`}
-      style={{ animationDelay: `${animationDelayMs}ms` }}
+      className={`work-card-lift group flex flex-col overflow-hidden rounded-[10px] border border-border bg-raised ${
+        animated ? "animate-fade-in opacity-0" : ""
+      } ${compact ? "p-5" : "p-6 sm:p-8"}`}
+      style={animated ? { animationDelay: `${animationDelayMs}ms` } : undefined}
     >
       <Link
-        href={WARDROBE_AI.href}
+        href={experiment.href}
         className="flex flex-1 flex-col focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-base"
       >
         <div className="flex items-start justify-between gap-3">
@@ -27,7 +36,7 @@ export function WardrobeAISpotlight({
               compact ? "text-lg sm:text-xl" : "text-xl sm:text-2xl"
             }`}
           >
-            {WARDROBE_AI.label}
+            {experiment.label}
           </h2>
           <span className="shrink-0 rounded-full border border-border-strong bg-base px-2.5 py-0.5 text-xs font-semibold text-accent">
             Live
@@ -39,7 +48,7 @@ export function WardrobeAISpotlight({
             compact ? "text-sm" : "text-sm sm:text-base"
           }`}
         >
-          {WARDROBE_AI.description}
+          {experiment.description}
         </p>
 
         <div className="mt-5 flex items-center justify-between gap-4">
