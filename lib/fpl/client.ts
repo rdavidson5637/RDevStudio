@@ -14,6 +14,7 @@ import type {
   ElementSummary,
   Transaction,
 } from "./types";
+import { normalizeLiveElements } from "./parse";
 
 const DRAFT_BASE = "https://draft.premierleague.com/api";
 const FPL_BASE = "https://fantasy.premierleague.com/api";
@@ -167,8 +168,9 @@ export function getEntryPublic(entryId: number): Promise<EntryPublic> {
   return fetchJson<EntryPublic>(DRAFT_BASE, `/entry/${entryId}/public`);
 }
 
-export function getDraftLive(event: number): Promise<DraftLive> {
-  return fetchJson<DraftLive>(DRAFT_BASE, `/event/${event}/live`);
+export async function getDraftLive(event: number): Promise<DraftLive> {
+  const res = await fetchJson<{ elements?: unknown }>(DRAFT_BASE, `/event/${event}/live`);
+  return { elements: normalizeLiveElements(res.elements) };
 }
 
 // ── Main FPL API ─────────────────────────────────────────────────────────────
