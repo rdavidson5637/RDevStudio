@@ -47,9 +47,14 @@ export async function getDataFreshness(): Promise<string | null> {
 
 /** Whether the first sync has ever run - drives the empty states. */
 export async function hasSyncedOnce(): Promise<boolean> {
-  const { count } = await supabasePublic
+  // Don't use `count: "exact", head: true`: Next.js's fetch wrapper drops the
+  // Content-Range header supabase-js reads the count from, so this always
+  // returned false on the live site even when fpl_players was populated.
+  const { data, error } = await supabasePublic
     .from("fpl_players")
-    .select("id", { count: "exact", head: true });
+    .select("id")
+    .limit(1)
+    .maybeSingle();
 
-  return (count ?? 0) > 0;
+  return !error && data != null;
 }
