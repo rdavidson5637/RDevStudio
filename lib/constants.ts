@@ -25,7 +25,6 @@ export const NAV_LINKS = [
   { href: "/champions-draft", label: "Champions Draft", highlight: true },
   { href: "/rugby-draft", label: "Rugby Draft", highlight: true },
   { href: "/pub-quiz", label: "Pub Quiz", highlight: true },
-  { href: "/games", label: "Games" },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
 ] as const;
@@ -45,11 +44,10 @@ export const DRAFT_ANALYSER = {
 } as const;
 
 export const SHELL_NAV_LINKS = [
+  { href: "/services", label: "Services" },
   { href: "/work", label: "Work" },
   { href: "/toolkit", label: "Toolkit" },
   { href: "/interactive", label: "Interactive" },
-  { href: WARDROBE_AI.href, label: "Wardrobe" },
-  { href: DRAFT_ANALYSER.href, label: "Draft" },
   { href: "/games", label: "Games" },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },

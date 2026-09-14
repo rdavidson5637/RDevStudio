@@ -1,8 +1,10 @@
 import { Hero } from "@/components/home/Hero";
 import { SelectedWork } from "@/components/home/SelectedWork";
+import { SocialProof } from "@/components/home/SocialProof";
 import { WhatIMake } from "@/components/home/WhatIMake";
 import { PortfolioPlay } from "@/components/home/PortfolioPlay";
 import { AboutClose } from "@/components/home/AboutClose";
+import { Newsletter } from "@/components/home/Newsletter";
 import { HomeContact } from "@/components/home/HomeContact";
 import { createPageMetadata } from "@/lib/metadata";
 
@@ -18,9 +20,11 @@ export default function HomePage() {
     <>
       <Hero />
       <SelectedWork />
+      <SocialProof />
       <WhatIMake />
       <PortfolioPlay />
       <AboutClose />
+      <Newsletter />
       <HomeContact />
     </>
   );
