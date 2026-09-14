@@ -21,7 +21,6 @@ export const SITE_TAGLINE =
 
 export const NAV_LINKS = [
   { href: "/work", label: "Work" },
-  { href: "/hire", label: "Hire Ryan" },
   { href: "/games", label: "Games", highlight: true },
   { href: "/champions-draft", label: "Champions Draft", highlight: true },
   { href: "/rugby-draft", label: "Rugby Draft", highlight: true },
@@ -110,7 +109,7 @@ export const SOCIAL_PROOF_ITEMS = [
   },
   {
     title: "RV's Cold Brew",
-    detail: "Live collection site for a Belfast cold brew and matcha counter.",
+    detail: "Live site for a Belfast cold brew and matcha counter. Menu, hours, and directions.",
   },
   {
     title: "Paintball Wales",
@@ -270,8 +269,8 @@ export const PROJECTS = [
     type: "Brand Site",
     summary: "Client · brand site",
     description:
-      "Collection site for a Belfast cold brew and matcha counter. Menu, orders, and where to find Unit 11.",
-    highlights: ["Menu and collection", "Mall location", "Phone-first"],
+      "Live site for a Belfast cold brew and matcha counter. Menu, hours, and where to find Unit 11.",
+    highlights: ["Menu and location", "Mall hours", "Phone-first"],
     tags: ["Next.js", "Tailwind", "Vercel"],
     buttonLabel: "Read the case study",
     href: "/work/rvs-cold-brew",
@@ -280,7 +279,7 @@ export const PROJECTS = [
       "RV's Cold Brew logo — circular badge with cream typography on dark teal",
     previewFit: "contain" as const,
     previewBg: "#0a1a1f",
-    outcome: "Live collection site",
+    outcome: "Live site",
   },
   {
     id: "paintball-wales",

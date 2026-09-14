@@ -11,7 +11,7 @@ export function HomeContact() {
             package. Send a note and I will come back with next steps.
           </p>
           <Link href="/contact" className="btn-primary shrink-0">
-            Get in touch
+            Start a project
           </Link>
         </div>
       </div>

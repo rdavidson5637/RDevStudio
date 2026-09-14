@@ -49,10 +49,10 @@ export function Header() {
               );
             })}
             <Link
-              href="/hire"
+              href="/contact"
               className="rounded-md bg-primary px-4 py-2 text-sm font-semibold text-paper transition-colors hover:bg-[#d22b2b]"
             >
-              Hire me
+              Start a project
             </Link>
           </nav>
 

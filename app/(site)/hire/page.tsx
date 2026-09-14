@@ -2,9 +2,9 @@ import { createPageMetadata } from "@/lib/metadata";
 import { HireRyanPage } from "@/components/hire/HireRyanPage";
 
 export const metadata = createPageMetadata({
-  title: "Hire Ryan",
+  title: "CV",
   description:
-    "Software developer, product builder, and MSc graduate based in Northern Ireland. Available for hire.",
+    "Ryan Davidson — designer and developer in Northern Ireland. Qualifications, experience, and selected work.",
   path: "/hire",
 });
 

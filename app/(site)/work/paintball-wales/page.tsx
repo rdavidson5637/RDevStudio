@@ -176,6 +176,14 @@ export default function PaintballWalesCaseStudyPage() {
             The site is live. The owner can keep contact details current
             without a developer. Built and hosted on Vercel.
           </p>
+          <a
+            href="https://paintball-wales.vercel.app"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-5 inline-flex items-center text-base font-semibold text-primary transition-colors hover:text-accent"
+          >
+            Visit live site →
+          </a>
         </section>
 
         <footer className="py-12">

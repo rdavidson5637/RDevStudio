@@ -7,7 +7,7 @@ This portfolio is styled like a modern matchday programme. Ryan Davidson is a de
 - Paper: #F7F5F0 (page background)
 - Ink: #16150F (text, solid fills — long body copy always uses Ink)
 - Pitch: #1E5C3A (structural colour - rules, labels, section markers, hover states — never paragraphs)
-- Card red: #D22B2B (used extremely sparingly - one or two moments per page max: the "Hire me" button hover, a single highlight)
+- Card red: #D22B2B (used extremely sparingly - one or two moments per page max: the "Start a project" button hover, a single highlight)
 - Line: #E3DFD4 (hairline borders)
 - Muted: #3D3B35 (captions, meta, idle states — not long body copy)
 
@@ -33,6 +33,6 @@ The scoreboard: a Space Mono strip that appears in the hero styled like a stadiu
 - Banned words: passionate, journey, seamless, leverage, crafting digital experiences.
 
 ## Global shell to build now
-- Nav: "RDev Studio" wordmark left (Archivo 600). Right: Services, Work, About, Contact in Space Mono uppercase, plus a solid Ink "Hire me" button (red on hover). Sticky, Paper background with bottom hairline. Mobile: hamburger -> full-screen Paper overlay with oversized Anton links. Toolkit, Interactive, and Games stay on their routes and live in the footer, not the sales nav.
+- Nav: "RDev Studio" wordmark left (Archivo 600). Right: Services, Work, About, Contact in Space Mono uppercase, plus a solid Ink "Start a project" button (red on hover) to /contact. Sticky, Paper background with bottom hairline. Mobile: hamburger -> full-screen Paper overlay with oversized Anton links. Toolkit, Interactive, and Games stay on their routes and live in the footer, not the sales nav. /hire (CV) lives in the footer and About, not the primary nav.
 - Footer: three columns - (1) "RDev Studio - designed and built in Carrickfergus. No template, no page builder, occasional dog supervision." (2) primary nav plus Toolkit / Interactive / Games, (3) email + LinkedIn + GitHub. Below, a full-width Space Mono line: "FULL TIME - thanks for reading the programme."
 - Load fonts via next/font. Define all colours as CSS variables. Respect prefers-reduced-motion globally.
