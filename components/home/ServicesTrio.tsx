@@ -41,7 +41,7 @@ export function ServicesTrio() {
               </h3>
 
               <p className="mt-3 sm:mt-4">
-                <span className="text-2xl font-bold text-accent">
+                <span className="text-2xl font-bold text-primary">
                   {service.price}
                 </span>
                 {service.priceNote ? (
@@ -51,7 +51,7 @@ export function ServicesTrio() {
                 ) : null}
               </p>
 
-              <p className="mt-2 flex-1 text-sm leading-relaxed text-secondary">
+              <p className="mt-2 flex-1 text-sm leading-relaxed text-primary">
                 {service.description}
               </p>
 

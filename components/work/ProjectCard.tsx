@@ -119,11 +119,11 @@ export function ProjectCard({
 
         <p className="mt-1 text-sm text-secondary">{project.summary}</p>
 
-        <p className="mt-3 flex-1 text-base leading-relaxed text-secondary">
+        <p className="mt-3 flex-1 text-base leading-relaxed text-primary">
           {project.description}
         </p>
 
-        <p className="mt-2 text-sm font-medium text-accent">
+        <p className="mt-2 text-sm font-medium text-primary">
           {project.outcome}
         </p>
 

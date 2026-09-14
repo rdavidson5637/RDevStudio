@@ -4,7 +4,7 @@
   --color-pitch: #1e5c3a;
   --color-card-red: #d22b2b;
   --color-line: #e3dfd4;
-  --color-muted: #524f47;
+  --color-muted: #3d3b35;
 
   --color-bg-base: var(--color-paper);
   --color-bg-base-rgb: 247 245 240;
@@ -15,7 +15,7 @@
   --color-text-primary: var(--color-ink);
   --color-text-primary-rgb: 22 21 15;
   --color-text-secondary: var(--color-muted);
-  --color-text-tertiary: #575449;
+  --color-text-tertiary: #4a4841;
   --color-text-inverse: #ffffff;
 
   --color-accent: var(--color-pitch);

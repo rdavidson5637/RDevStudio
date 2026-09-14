@@ -9,7 +9,7 @@ export function Footer() {
       <div className="container-wide px-6 pb-8 pt-12">
         <div className="grid gap-10 md:grid-cols-3">
           <div className="space-y-3">
-            <p className="text-sm leading-relaxed text-secondary">
+            <p className="text-sm leading-relaxed text-primary">
               RDev Studio — designed and built in Carrickfergus. No template, no
               page builder, occasional dog supervision.
             </p>
@@ -23,7 +23,7 @@ export function Footer() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="shell-label transition-colors hover:text-accent"
+                className="shell-label text-primary transition-colors hover:text-accent"
               >
                 {link.label}
               </Link>
@@ -33,14 +33,14 @@ export function Footer() {
           <div className="flex flex-col gap-3 text-sm" aria-label="Contact and social links">
             <a
               href={`mailto:${CONTACT_EMAIL}`}
-              className="text-secondary transition-colors hover:text-accent"
+              className="text-primary transition-colors hover:text-accent"
               aria-label={`Email Ryan at ${CONTACT_EMAIL}`}
             >
               {CONTACT_EMAIL}
             </a>
             <a
               href="https://www.linkedin.com/in/ryan-davidson-462bb221b"
-              className="text-secondary transition-colors hover:text-accent"
+              className="text-primary transition-colors hover:text-accent"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Ryan Davidson on LinkedIn (opens in new tab)"
@@ -49,7 +49,7 @@ export function Footer() {
             </a>
             <a
               href={GITHUB_URL}
-              className="text-secondary transition-colors hover:text-accent"
+              className="text-primary transition-colors hover:text-accent"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Ryan Davidson on GitHub (opens in new tab)"
@@ -60,7 +60,7 @@ export function Footer() {
         </div>
 
         <div className="programme-rule mt-10" />
-        <p className="shell-label pt-6 text-center">
+        <p className="shell-label pt-6 text-center text-accent">
           FULL TIME — thanks for reading the programme.
         </p>
       </div>

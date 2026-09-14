@@ -12,7 +12,8 @@ const FIXTURES = [
   {
     index: "01",
     title: "ShelterLink",
-    description: "Volunteer management platform for Assisi Animal Sanctuary.",
+    description:
+      "Volunteer rotas, roles, and an admin dashboard for Assisi Animal Sanctuary.",
     tag: "REAL CLIENT · CHARITY",
     year: "2025–26",
     href: "/work/shelterlink",
@@ -20,8 +21,9 @@ const FIXTURES = [
   },
   {
     index: "02",
-    title: "RVS Cold Brew",
-    description: "Brand-led site for a Northern Irish cold brew company.",
+    title: "RV's Cold Brew",
+    description:
+      "Collection site for a Belfast cold brew and matcha counter.",
     tag: "CLIENT · BRAND SITE",
     year: "2026",
     href: "/work/rvs-cold-brew",
@@ -31,7 +33,7 @@ const FIXTURES = [
     index: "03",
     title: "Paintball Wales",
     description:
-      "Mobile-first marketing site for a Snowdonia paintball park.",
+      "Phone-first site for a Snowdonia paintball park, built to replace a cluttered banner.",
     tag: "CLIENT · MARKETING SITE",
     year: "2026",
     href: "/work/paintball-wales",
@@ -69,7 +71,7 @@ export default function WorkPage() {
             </span>
           </div>
           <h1 className="programme-h1 mt-3">WORK</h1>
-          <p className="mt-5 max-w-2xl text-base leading-relaxed text-secondary sm:text-lg">
+          <p className="mt-5 max-w-2xl text-base leading-relaxed text-primary sm:text-lg">
             Real clients, real users, and a few concept builds to show range.
           </p>
         </header>
@@ -94,7 +96,7 @@ export default function WorkPage() {
                       →
                     </span>
                   </h2>
-                  <p className="mt-1 text-sm text-secondary">
+                  <p className="mt-1 text-sm text-primary">
                     {fixture.description}
                   </p>
                 </div>
@@ -108,7 +110,7 @@ export default function WorkPage() {
         <section className="py-12">
           <div className="rounded-xl border border-border bg-raised p-6 sm:p-8">
             <p className="shell-label mb-2 text-accent">LOOKING FOR SOMETHING?</p>
-            <p className="text-base leading-relaxed text-secondary sm:text-lg">
+            <p className="text-base leading-relaxed text-primary sm:text-lg">
               This is the highlight reel. If you&apos;re after something specific — a particular
               stack, a certain type of project, or proof I can actually do what I say —{" "}
               <Link href="/contact" className="text-accent hover:underline">

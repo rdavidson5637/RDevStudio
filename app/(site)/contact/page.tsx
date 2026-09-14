@@ -18,9 +18,9 @@ export default function ContactPage() {
         <header className="border-b border-border pb-10">
           <p className="shell-label mb-3 text-accent">FULL TIME</p>
           <h1 className="programme-h1">GET IN TOUCH</h1>
-          <p className="mt-5 max-w-3xl text-base leading-relaxed text-secondary sm:text-lg">
-            A site for the business, a platform for the charity, or a
-            collaboration. Based in Carrickfergus.
+          <p className="mt-5 max-w-3xl text-base leading-relaxed text-primary sm:text-lg">
+            Need a site, help with posting, or something that does not fit a
+            package. Form or email. I read both.
           </p>
         </header>
 
@@ -58,7 +58,7 @@ export default function ContactPage() {
               </a>
             </div>
 
-            <p className="mt-7 text-sm leading-relaxed text-secondary">
+            <p className="mt-7 text-sm leading-relaxed text-primary">
               Based in Carrickfergus. Working anywhere.
             </p>
           </aside>

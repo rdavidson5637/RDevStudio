@@ -6,7 +6,7 @@ import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 export const metadata = createPageMetadata({
   title: "ShelterLink",
   description:
-    "Case study: ShelterLink, a volunteer management platform for Assisi Animal Sanctuary.",
+    "Volunteer rotas, roles, and an admin dashboard for Assisi Animal Sanctuary.",
   path: "/work/shelterlink",
 });
 
@@ -40,12 +40,12 @@ function ScreenshotSlot({
 }
 
 const BUILD_FEATURES = [
-  "Volunteer registration & profiles",
+  "Volunteer registration and profiles",
   "Shift scheduling",
   "Role management",
   "Admin dashboards",
   "CSV exports",
-  "Auth & security middleware",
+  "Auth and security middleware",
 ] as const;
 
 export default function ShelterLinkCaseStudyPage() {
@@ -63,8 +63,9 @@ export default function ShelterLinkCaseStudyPage() {
         <header className="space-y-6 border-b border-border pb-10">
           <p className="shell-label text-accent">CASE STUDY — 01</p>
           <h1 className="programme-h1">SHELTERLINK</h1>
-          <p className="max-w-2xl text-lg text-secondary">
-            A volunteer management platform for Assisi Animal Sanctuary.
+          <p className="max-w-2xl text-lg text-primary">
+            Volunteer rotas, roles, and an admin dashboard for Assisi Animal
+            Sanctuary.
           </p>
 
           <div className="grid grid-cols-2 gap-x-4 gap-y-2 border-t border-border pt-5 font-mono text-[11px] uppercase tracking-[0.08em] text-secondary lg:grid-cols-4">
@@ -95,35 +96,31 @@ export default function ShelterLinkCaseStudyPage() {
         </section>
 
         <section className="border-b border-border py-12">
-          <SectionHeading>THE PROBLEM</SectionHeading>
-          <p className="max-w-3xl text-base leading-relaxed text-secondary sm:text-lg">
-            Assisi Animal Sanctuary runs on volunteers — and coordinating them
-            ran on paper rotas, phone calls and memory. Scheduling shifts,
-            tracking who was trained for which roles, and onboarding new
-            volunteers all ate staff time that should have gone to the animals.
-            Nothing was broken, exactly. It just didn&apos;t scale, and too much
-            of it lived in people&apos;s heads.
+          <SectionHeading>HOW THEY WERE RUNNING IT</SectionHeading>
+          <p className="max-w-3xl text-base leading-relaxed text-primary sm:text-lg">
+            Assisi runs on volunteers. Who was in, who was trained for which
+            jobs, and who was covering Sunday all lived in paper rotas, phone
+            calls, and whoever happened to remember. Staff spent time chasing
+            people when that time should have gone to the animals. It worked
+            for a smaller list. It did not work once the list got long.
           </p>
         </section>
 
         <section className="border-b border-border py-12">
-          <SectionHeading>THE BUILD</SectionHeading>
-          <div className="max-w-3xl space-y-5 text-base leading-relaxed text-secondary sm:text-lg">
+          <SectionHeading>WHAT I BUILT</SectionHeading>
+          <div className="max-w-3xl space-y-5 text-base leading-relaxed text-primary sm:text-lg">
             <p>
-              ShelterLink is a full-stack platform built around how the
-              sanctuary actually works. Volunteers register and build a profile;
-              staff assign roles, manage shifts and see who&apos;s coming in
-              from an admin dashboard; records export to CSV when they&apos;re
-              needed elsewhere.
+              ShelterLink is the system they asked for. Volunteers sign up,
+              fill in a profile, and pick shifts they can actually do. Staff
+              assign roles, plan the week from an admin dashboard, and export
+              records to CSV when they need them elsewhere.
             </p>
             <p>
-              Under the surface it&apos;s deliberately unflashy: Node and
-              Express on the back end, a MySQL database, and a plain JavaScript
-              front end — no framework, no build step. Security was treated as a
-              feature, not an afterthought: authentication, rate limiting and a
-              strict content security policy are baked in, because a charity
-              holding volunteers&apos; personal details can&apos;t be casual
-              about it.
+              The stack is plain on purpose: Node and Express, MySQL, vanilla
+              JavaScript, PicoCSS. No framework, no build step. Authentication,
+              rate limiting, and a strict content security policy are in
+              because a charity holding volunteer details cannot be casual
+              about that.
             </p>
           </div>
 
@@ -131,7 +128,7 @@ export default function ShelterLinkCaseStudyPage() {
             {BUILD_FEATURES.map((feature) => (
               <li
                 key={feature}
-                className="shell-label rounded-lg border border-border bg-raised px-4 py-3 text-secondary"
+                className="shell-label rounded-lg border border-border bg-raised px-4 py-3 text-primary"
               >
                 {feature}
               </li>
@@ -158,50 +155,28 @@ export default function ShelterLinkCaseStudyPage() {
         </section>
 
         <section className="border-b border-border py-12">
-          <SectionHeading>DECISIONS</SectionHeading>
-          <div className="grid gap-8">
-            <section className="space-y-3">
-              <h3 className="text-[1.25rem] font-semibold text-primary">
-                No framework, on purpose
-              </h3>
-              <p className="max-w-3xl text-base leading-relaxed text-secondary sm:text-lg">
-                The sanctuary doesn&apos;t have a dev team. Whatever I built had
-                to be maintainable by whoever touches it next, years from now.
-                Plain JavaScript with no build step means nothing to update,
-                nothing to break, nothing to relearn.
-              </p>
-            </section>
-
-            <section className="space-y-3">
-              <h3 className="text-[1.25rem] font-semibold text-primary">
-                PicoCSS over a design system
-              </h3>
-              <p className="max-w-3xl text-base leading-relaxed text-secondary sm:text-lg">
-                Semantic HTML with sensible defaults kept the front end small
-                and accessible without a pile of classes. The design budget went
-                on clarity, not chrome.
-              </p>
-            </section>
-
-            <section className="space-y-3">
-              <h3 className="text-[1.25rem] font-semibold text-primary">
-                Boring is a feature
-              </h3>
-              <p className="max-w-3xl text-base leading-relaxed text-secondary sm:text-lg">
-                Every technical choice optimised for the same thing: a small
-                charity being able to rely on this without me in the room.
-              </p>
-            </section>
+          <SectionHeading>WHY IT IS PLAIN</SectionHeading>
+          <div className="max-w-3xl space-y-5 text-base leading-relaxed text-primary sm:text-lg">
+            <p>
+              The sanctuary does not have a developer on staff. Whatever I
+              left them had to still make sense in a few years, to whoever
+              opens the folder next. Plain JavaScript with no build step
+              means nothing to update, nothing to break, nothing to relearn.
+            </p>
+            <p>
+              PicoCSS kept the front end small and readable without a pile of
+              classes. The design budget went on the rota, not on chrome.
+            </p>
           </div>
         </section>
 
         <section className="border-b border-border py-12">
-          <SectionHeading>THE RESULT</SectionHeading>
-          <p className="max-w-3xl text-base leading-relaxed text-secondary sm:text-lg">
-            ShelterLink was submitted and demonstrated as my MSc dissertation at
-            Queen&apos;s University Belfast — I graduated with Commendation.
-            Development didn&apos;t stop at submission: the platform is now
-            being prepared for live rollout at the sanctuary.
+          <SectionHeading>WHERE IT STANDS</SectionHeading>
+          <p className="max-w-3xl text-base leading-relaxed text-primary sm:text-lg">
+            ShelterLink was my MSc dissertation at Queen&apos;s University
+            Belfast. I graduated with Commendation. The walkthrough has been
+            sent to the sanctuary, and the platform is being prepared for live
+            use there. It is not a live staff tool yet.
           </p>
         </section>
 
@@ -215,7 +190,7 @@ export default function ShelterLinkCaseStudyPage() {
             </Link>
             <Link
               href="/contact"
-              className="text-base text-secondary underline decoration-border-strong underline-offset-4 transition-colors hover:text-accent"
+              className="text-base text-primary underline decoration-border-strong underline-offset-4 transition-colors hover:text-accent"
             >
               Got a similar problem? Get in touch.
             </Link>

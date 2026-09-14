@@ -54,7 +54,7 @@ export default function UcCaseworkerToolCaseStudyPage() {
         <header className="space-y-6 border-b border-border pb-10">
           <p className="shell-label text-accent">CASE STUDY — 05</p>
           <h1 className="programme-h1">UC CASEWORKER ASSISTANT</h1>
-          <p className="max-w-2xl text-lg text-secondary">
+          <p className="max-w-2xl text-lg text-primary">
             An AI assistant for Universal Credit caseworkers, built by a
             working caseworker with an MSc in Software Development.
           </p>
@@ -88,7 +88,7 @@ export default function UcCaseworkerToolCaseStudyPage() {
 
         <section className="border-b border-border py-12">
           <SectionHeading>THE PROBLEM</SectionHeading>
-          <p className="max-w-3xl text-base leading-relaxed text-secondary sm:text-lg">
+          <p className="max-w-3xl text-base leading-relaxed text-primary sm:text-lg">
             Caseworkers answer a high volume of claimant journal messages,
             write handover case notes, and populate repetitive standard
             letters every day. Each task carries real weight: a journal
@@ -103,7 +103,7 @@ export default function UcCaseworkerToolCaseStudyPage() {
 
         <section className="border-b border-border py-12">
           <SectionHeading>THE BUILD</SectionHeading>
-          <div className="max-w-3xl space-y-5 text-base leading-relaxed text-secondary sm:text-lg">
+          <div className="max-w-3xl space-y-5 text-base leading-relaxed text-primary sm:text-lg">
             <p>
               Three tools, one principle throughout: the AI drafts, the
               caseworker decides. The journal assistant classifies a pasted
@@ -129,7 +129,7 @@ export default function UcCaseworkerToolCaseStudyPage() {
             {BUILD_FEATURES.map((feature) => (
               <li
                 key={feature}
-                className="shell-label rounded-lg border border-border bg-raised px-4 py-3 text-secondary"
+                className="shell-label rounded-lg border border-border bg-raised px-4 py-3 text-primary"
               >
                 {feature}
               </li>
@@ -152,7 +152,7 @@ export default function UcCaseworkerToolCaseStudyPage() {
               <h3 className="text-[1.25rem] font-semibold text-primary">
                 Synthetic data, from the first commit
               </h3>
-              <p className="max-w-3xl text-base leading-relaxed text-secondary sm:text-lg">
+              <p className="max-w-3xl text-base leading-relaxed text-primary sm:text-lg">
                 This tool never uses, contains or assumes real claimant data.
                 Every example message, name and case detail is fabricated,
                 and operational values — account numbers, sort codes,
@@ -167,7 +167,7 @@ export default function UcCaseworkerToolCaseStudyPage() {
               <h3 className="text-[1.25rem] font-semibold text-primary">
                 The AI never invents policy
               </h3>
-              <p className="max-w-3xl text-base leading-relaxed text-secondary sm:text-lg">
+              <p className="max-w-3xl text-base leading-relaxed text-primary sm:text-lg">
                 Classification picks the relevant guidance files so the model
                 is never asked to search a dump of every policy area, and its
                 system prompt constrains it to draft only from the guidance
@@ -181,7 +181,7 @@ export default function UcCaseworkerToolCaseStudyPage() {
               <h3 className="text-[1.25rem] font-semibold text-primary">
                 Letters are code, not a model
               </h3>
-              <p className="max-w-3xl text-base leading-relaxed text-secondary sm:text-lg">
+              <p className="max-w-3xl text-base leading-relaxed text-primary sm:text-lg">
                 The AI may extract values from pasted text into a form; it
                 never drafts the letter itself. Generating the letter is
                 deterministic string replacement, so fixed legal wording and
@@ -196,7 +196,7 @@ export default function UcCaseworkerToolCaseStudyPage() {
               <h3 className="text-[1.25rem] font-semibold text-primary">
                 Safeguarding is flagged, not delegated
               </h3>
-              <p className="max-w-3xl text-base leading-relaxed text-secondary sm:text-lg">
+              <p className="max-w-3xl text-base leading-relaxed text-primary sm:text-lg">
                 A message that reads as suicide risk, domestic abuse, child
                 safeguarding, homelessness or a fraud admission surfaces a
                 banner before any draft is shown, pointing the caseworker to
@@ -210,7 +210,7 @@ export default function UcCaseworkerToolCaseStudyPage() {
 
         <section className="border-b border-border py-12">
           <SectionHeading>THE RESULT</SectionHeading>
-          <p className="max-w-3xl text-base leading-relaxed text-secondary sm:text-lg">
+          <p className="max-w-3xl text-base leading-relaxed text-primary sm:text-lg">
             A working prototype that argues two things at once: real
             understanding of the caseworker workflow it was built for, and
             the discipline to build safe, compliant software around an LLM
@@ -229,7 +229,7 @@ export default function UcCaseworkerToolCaseStudyPage() {
             </Link>
             <Link
               href="/contact"
-              className="text-base text-secondary underline decoration-border-strong underline-offset-4 transition-colors hover:text-accent"
+              className="text-base text-primary underline decoration-border-strong underline-offset-4 transition-colors hover:text-accent"
             >
               Got a similar problem? Get in touch.
             </Link>

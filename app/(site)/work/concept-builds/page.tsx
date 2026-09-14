@@ -38,7 +38,7 @@ function BuildSection({
         />
       </div>
       <p className="shell-label mt-3 text-secondary">{screenshotCaption}</p>
-      <p className="mt-5 max-w-3xl text-base leading-relaxed text-secondary sm:text-lg">
+      <p className="mt-5 max-w-3xl text-base leading-relaxed text-primary sm:text-lg">
         {description}
       </p>
       <a
@@ -91,10 +91,10 @@ export default function ConceptBuildsPage() {
         <header className="space-y-6 border-b border-border pb-10">
           <p className="shell-label text-accent">CASE STUDY — 04</p>
           <h1 className="programme-h1">CONCEPT BUILDS</h1>
-          <p className="max-w-2xl text-lg text-secondary">
+          <p className="max-w-2xl text-lg text-primary">
             Three sites exploring how local businesses could look online.
           </p>
-          <p className="max-w-3xl text-base leading-relaxed text-secondary sm:text-lg">
+          <p className="max-w-3xl text-base leading-relaxed text-primary sm:text-lg">
             Not every business I want to design for has hired me yet. These
             three concept builds — a trades firm, a restaurant, and a salon —
             are how I show range: three different brands, three different
@@ -118,7 +118,7 @@ export default function ConceptBuildsPage() {
             </Link>
             <Link
               href="/contact"
-              className="text-base text-secondary underline decoration-border-strong underline-offset-4 transition-colors hover:text-accent"
+              className="text-base text-primary underline decoration-border-strong underline-offset-4 transition-colors hover:text-accent"
             >
               Got a similar problem? Get in touch.
             </Link>

@@ -10,9 +10,9 @@ export const GITHUB_URL = "https://github.com/rdavidson5637";
 export const FORMSPREE_FORM_ID = "mgoqjqve";
 
 export const CONTACT_SERVICE_OPTIONS = [
-  "Website or web app",
-  "Collaboration",
-  "Just saying hello",
+  "Website",
+  "Social media",
+  "Content",
   "Something else",
 ] as const;
 
@@ -71,7 +71,7 @@ export const PORTFOLIO_AREAS = [
   {
     title: "Websites & apps",
     description:
-      "Real projects and concept builds — a university dissertation app, a client site for RVS Cold Brew, and three local-business concepts showing range.",
+      "Real projects and concept builds — a university dissertation app, a client site for RV's Cold Brew, and three local-business concepts showing range.",
     href: "/work",
     cta: "Browse work",
     accent: "amber" as const,
@@ -106,12 +106,12 @@ export const SOCIAL_PROOF_ITEMS = [
     detail: "Volunteer platform. Walkthrough sent, awaiting feedback.",
   },
   {
-    title: "RVS Cold Brew",
-    detail: "Client brand site for a Northern Irish drinks company.",
+    title: "RV's Cold Brew",
+    detail: "Live collection site for a Belfast cold brew and matcha counter.",
   },
   {
     title: "Paintball Wales",
-    detail: "Launched marketing site for a Snowdonia paintball park.",
+    detail: "Live park site. Built so groups can enquire on their phones.",
   },
 ] as const;
 
@@ -146,29 +146,29 @@ export const SERVICES = [
   {
     number: "01",
     slug: "websites",
-    title: "Website Design & Build",
+    title: "Websites",
     price: "from £650",
     priceNote: "one-off",
     description:
-      "Custom websites. Sharp, responsive, and built with modern tools.",
+      "A site that says who you are, what you do, and how to get in touch. Phones first. No template.",
   },
   {
     number: "02",
     slug: "social",
-    title: "Social Media Management",
+    title: "Social media",
     price: "from £150/mo",
     priceNote: "",
     description:
-      "Strategy, scheduling, and content for businesses who want a consistent presence.",
+      "A plan, captions, and graphics so you are not making it up every Monday.",
   },
   {
     number: "03",
     slug: "content",
-    title: "Content Creation",
+    title: "Content",
     price: "from £200/project",
     priceNote: "",
     description:
-      "Posts, graphics, and copy that sound and look like your brand.",
+      "A batch of posts or a one-off set. Written to sound like you, not like an agency.",
   },
 ] as const;
 
@@ -207,27 +207,27 @@ export const FAQ_ITEMS = [
   {
     question: "How long does it take?",
     answer:
-      "Most sites go live within a week. I keep the process simple so you're not waiting weeks for results.",
+      "Most sites go live within a week. I keep the list of pages short so you are not waiting around for a 20-page brochure.",
   },
   {
     question: "Do I need to provide content?",
     answer:
-      "Ideally yes — photos, text, and contact details. If you're stuck, I can help write copy and suggest what to include.",
+      "Photos, text, and contact details help. If you are stuck, I can write the copy and tell you what to photograph.",
   },
   {
     question: "Will it work on mobile?",
     answer:
-      "Yes. Every site I build is fully responsive and tested on phones and tablets before launch.",
+      "Yes. I build for a phone first and check it on a real handset before launch.",
   },
   {
     question: "What happens after launch?",
     answer:
-      "Your site stays live on fast hosting. I'm happy to help with updates when you need them.",
+      "The site stays up on fast hosting. I am happy to change things when you need it.",
   },
   {
     question: "Can I update it myself?",
     answer:
-      "Yes. I can show you how to make simple changes, or handle updates for you if you prefer.",
+      "Yes. I can show you the simple edits, or do them for you if you would rather not.",
   },
 ] as const;
 
@@ -251,7 +251,7 @@ export const PROJECTS = [
     type: "Volunteer Management App",
     summary: "Real client · charity",
     description:
-      "Volunteer management platform for Assisi Animal Sanctuary: shift scheduling, role management, and an admin dashboard. Walkthrough sent, awaiting feedback.",
+      "Volunteer rotas, roles, and an admin dashboard for Assisi Animal Sanctuary. Walkthrough sent, awaiting feedback.",
     highlights: ["Shift scheduling", "Admin dashboard", "Role management"],
     tags: ["Node.js", "Express", "MySQL"],
     buttonLabel: "Read the case study",
@@ -263,22 +263,22 @@ export const PROJECTS = [
   },
   {
     id: "rvs-coldbrew",
-    title: "RVS Cold Brew",
+    title: "RV's Cold Brew",
     category: "Client Work" as const,
     type: "Brand Site",
     summary: "Client · brand site",
     description:
-      "Brand-led site for a Northern Irish cold brew company. Product-first layout, tight palette, and fast loads on mobile.",
-    highlights: ["Product-led design", "Brand palette", "Mobile-first"],
+      "Collection site for a Belfast cold brew and matcha counter. Menu, orders, and where to find Unit 11.",
+    highlights: ["Menu and collection", "Mall location", "Phone-first"],
     tags: ["Next.js", "Tailwind", "Vercel"],
     buttonLabel: "Read the case study",
     href: "/work/rvs-cold-brew",
     image: "/images/work/rvs-coldbrew.png",
     imageAlt:
-      "RVS Cold Brew logo — circular badge with cream typography on dark teal",
+      "RV's Cold Brew logo — circular badge with cream typography on dark teal",
     previewFit: "contain" as const,
     previewBg: "#0a1a1f",
-    outcome: "Client brand site",
+    outcome: "Live collection site",
   },
   {
     id: "paintball-wales",
@@ -287,15 +287,15 @@ export const PROJECTS = [
     type: "Marketing Site",
     summary: "Client · bookings-focused site",
     description:
-      "Mobile-first marketing site for a Snowdonia paintball park, designed to turn seasonal campaign traffic into enquiries and bookings.",
-    highlights: ["Campaign landing pages", "Clear booking CTAs", "Fast mobile UX"],
+      "Phone-first site for a Snowdonia paintball park. Replaced a cluttered banner so groups can enquire on their phones.",
+    highlights: ["A page per group type", "Enquire on every screen", "Fast on a phone"],
     tags: ["Next.js", "Tailwind", "Vercel"],
     buttonLabel: "Read the case study",
     href: "/work/paintball-wales",
     image: "/images/work/paintball-wales-hero.jpg",
     imageAlt:
       "Paintball Wales hero scene with players in masks and camouflage gear",
-    outcome: "Launched marketing site",
+    outcome: "Live park site",
   },
   {
     id: "concept-builds",

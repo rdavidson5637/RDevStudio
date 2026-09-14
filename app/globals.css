@@ -204,7 +204,7 @@ body {
   }
 
   .lead-text {
-    @apply text-base leading-relaxed text-secondary sm:text-lg sm:leading-relaxed;
+    @apply text-base leading-relaxed text-primary sm:text-lg sm:leading-relaxed;
   }
 
   .editorial-note {
