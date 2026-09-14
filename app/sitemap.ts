@@ -9,6 +9,7 @@ const ROUTES = [
   "/work",
   "/work/shelterlink",
   "/work/rvs-cold-brew",
+  "/work/paintball-wales",
   "/work/concept-builds",
   "/toolkit",
   ...BUSINESS_TOOLS.map((tool) => tool.href),

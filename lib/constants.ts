@@ -1,8 +1,9 @@
 export const SITE_NAME = "RDev Studio";
 export const SITE_URL = "https://rdevstudio.co.uk";
-export const SITE_TITLE = "Ryan Davidson, designer & developer, Belfast";
+export const SITE_TITLE =
+  "RDev Studio, websites for NI businesses and charities";
 export const SITE_DESCRIPTION =
-  "Ryan Davidson — web designer and developer in Northern Ireland. Websites, web apps, free tools, and browser games from RDev Studio.";
+  "Websites, social media, and content for Northern Ireland small businesses and charities. Designed and built in Carrickfergus.";
 export const EMAIL = "ryan@rdevstudio.co.uk";
 export const CONTACT_EMAIL = "ryan@rdevstudio.co.uk";
 export const GITHUB_URL = "https://github.com/rdavidson5637";
@@ -16,7 +17,7 @@ export const CONTACT_SERVICE_OPTIONS = [
 ] as const;
 
 export const SITE_TAGLINE =
-  "Websites, projects, and experiments by Ryan Davidson.";
+  "Websites, social, and content for NI businesses and charities.";
 
 export const NAV_LINKS = [
   { href: "/work", label: "Work" },
@@ -100,23 +101,60 @@ export const ABOUT_BLURB =
   "I'm Ryan Davidson — I design and build things for the web. I recently finished my MSc in Software Development at Queen's and this site is my portfolio of case studies, concept builds, and browser games.";
 
 export const SOCIAL_PROOF_ITEMS = [
-  "Websites & web apps",
-  "Next.js & Tailwind",
-  "Games & experiments",
-  "Side projects",
+  {
+    title: "Assisi Animal Sanctuary",
+    detail: "Volunteer platform. Walkthrough sent, awaiting feedback.",
+  },
+  {
+    title: "RVS Cold Brew",
+    detail: "Client brand site for a Northern Irish drinks company.",
+  },
+  {
+    title: "Paintball Wales",
+    detail: "Launched marketing site for a Snowdonia paintball park.",
+  },
+] as const;
+
+export const PROCESS_STEPS = [
+  {
+    number: "01",
+    title: "Discovery",
+    description:
+      "A short call or email. What you need, who it is for, and what done looks like.",
+  },
+  {
+    number: "02",
+    title: "Proposal",
+    description:
+      "A clear quote with scope, timeline, and price. No surprises.",
+  },
+  {
+    number: "03",
+    title: "Build",
+    description:
+      "I make the thing. You see progress and give notes before anything goes live.",
+  },
+  {
+    number: "04",
+    title: "Launch",
+    description:
+      "It goes live. I handle the technical setup and check it works on a phone.",
+  },
 ] as const;
 
 export const SERVICES = [
   {
     number: "01",
+    slug: "websites",
     title: "Website Design & Build",
     price: "from £650",
     priceNote: "one-off",
     description:
-      "Custom websites — sharp, responsive, and built with modern tools.",
+      "Custom websites. Sharp, responsive, and built with modern tools.",
   },
   {
     number: "02",
+    slug: "social",
     title: "Social Media Management",
     price: "from £150/mo",
     priceNote: "",
@@ -125,12 +163,19 @@ export const SERVICES = [
   },
   {
     number: "03",
+    slug: "content",
     title: "Content Creation",
     price: "from £200/project",
     priceNote: "",
     description:
       "Posts, graphics, and copy that sound and look like your brand.",
   },
+] as const;
+
+export const HOME_PROJECT_IDS = [
+  "shelterlink",
+  "rvs-coldbrew",
+  "paintball-wales",
 ] as const;
 
 export const PRICING_FEATURES = [
@@ -206,7 +251,7 @@ export const PROJECTS = [
     type: "Volunteer Management App",
     summary: "Real client · charity",
     description:
-      "Volunteer management platform for Assisi Animal Sanctuary — shift scheduling, role management, and an admin dashboard, now being prepared for live rollout.",
+      "Volunteer management platform for Assisi Animal Sanctuary: shift scheduling, role management, and an admin dashboard. Walkthrough sent, awaiting feedback.",
     highlights: ["Shift scheduling", "Admin dashboard", "Role management"],
     tags: ["Node.js", "Express", "MySQL"],
     buttonLabel: "Read the case study",
@@ -214,7 +259,7 @@ export const PROJECTS = [
     image: "/images/work/shelterlink.png",
     imageAlt:
       "ShelterLink landing page — volunteer management platform for Assisi Animal Sanctuary",
-    outcome: "Dissertation project — active rollout phase",
+    outcome: "Walkthrough sent, awaiting feedback",
   },
   {
     id: "rvs-coldbrew",
@@ -223,7 +268,7 @@ export const PROJECTS = [
     type: "Brand Site",
     summary: "Client · brand site",
     description:
-      "Brand-led site for a Northern Irish cold brew company — product-first layout, tight palette, and fast loads on mobile.",
+      "Brand-led site for a Northern Irish cold brew company. Product-first layout, tight palette, and fast loads on mobile.",
     highlights: ["Product-led design", "Brand palette", "Mobile-first"],
     tags: ["Next.js", "Tailwind", "Vercel"],
     buttonLabel: "Read the case study",
@@ -233,7 +278,7 @@ export const PROJECTS = [
       "RVS Cold Brew logo — circular badge with cream typography on dark teal",
     previewFit: "contain" as const,
     previewBg: "#0a1a1f",
-    outcome: "Client project — active build",
+    outcome: "Client brand site",
   },
   {
     id: "paintball-wales",
@@ -250,7 +295,7 @@ export const PROJECTS = [
     image: "/images/work/paintball-wales-hero.jpg",
     imageAlt:
       "Paintball Wales hero scene with players in masks and camouflage gear",
-    outcome: "Client project — launched",
+    outcome: "Launched marketing site",
   },
   {
     id: "concept-builds",

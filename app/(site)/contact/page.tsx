@@ -5,7 +5,7 @@ import { createPageMetadata } from "@/lib/metadata";
 export const metadata = createPageMetadata({
   title: "Contact",
   description:
-    "Freelance projects, job opportunities, or a rematch on Champions Draft - all welcome.",
+    "Projects for NI businesses and charities, plus the odd collaboration. Based in Carrickfergus.",
   path: "/contact",
 });
 
@@ -19,8 +19,8 @@ export default function ContactPage() {
           <p className="shell-label mb-3 text-accent">FULL TIME</p>
           <h1 className="programme-h1">GET IN TOUCH</h1>
           <p className="mt-5 max-w-3xl text-base leading-relaxed text-secondary sm:text-lg">
-            Freelance projects, job opportunities, or a rematch on Champions
-            Draft - all welcome.
+            A site for the business, a platform for the charity, or a
+            collaboration. Based in Carrickfergus.
           </p>
         </header>
 
@@ -59,7 +59,7 @@ export default function ContactPage() {
             </div>
 
             <p className="mt-7 text-sm leading-relaxed text-secondary">
-              Based in Carrickfergus — working anywhere.
+              Based in Carrickfergus. Working anywhere.
             </p>
           </aside>
         </div>

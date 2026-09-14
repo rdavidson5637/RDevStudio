@@ -1,17 +1,15 @@
 import { Hero } from "@/components/home/Hero";
+import { ServicesTrio } from "@/components/home/ServicesTrio";
 import { SelectedWork } from "@/components/home/SelectedWork";
-import { SocialProof } from "@/components/home/SocialProof";
-import { WhatIMake } from "@/components/home/WhatIMake";
-import { PortfolioPlay } from "@/components/home/PortfolioPlay";
-import { AboutClose } from "@/components/home/AboutClose";
-import { Newsletter } from "@/components/home/Newsletter";
+import { HowItWorks } from "@/components/home/HowItWorks";
+import { SocialProofBar } from "@/components/home/SocialProofBar";
 import { HomeContact } from "@/components/home/HomeContact";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata = createPageMetadata({
-  title: "Portfolio",
+  title: "Websites for NI businesses and charities",
   description:
-    "Ryan Davidson — web designer and developer in Northern Ireland. Portfolio, free business tools, browser games, and client work from RDev Studio.",
+    "RDev Studio designs and builds websites for Northern Ireland small businesses and charities. Clear packages, straight prices, based in Carrickfergus.",
   path: "/",
 });
 
@@ -19,12 +17,10 @@ export default function HomePage() {
   return (
     <>
       <Hero />
+      <ServicesTrio />
       <SelectedWork />
-      <SocialProof />
-      <WhatIMake />
-      <PortfolioPlay />
-      <AboutClose />
-      <Newsletter />
+      <HowItWorks />
+      <SocialProofBar />
       <HomeContact />
     </>
   );
