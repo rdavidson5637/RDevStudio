@@ -5,9 +5,11 @@ import { SITE_URL } from "@/lib/constants";
 
 const ROUTES = [
   "",
+  "/services",
   "/work",
   "/work/shelterlink",
   "/work/rvs-cold-brew",
+  "/work/paintball-wales",
   "/work/concept-builds",
   "/toolkit",
   ...BUSINESS_TOOLS.map((tool) => tool.href),
