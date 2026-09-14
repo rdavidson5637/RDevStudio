@@ -11,7 +11,7 @@ export function FAQ() {
     <section className="mt-20">
       <FAQStructuredData items={FAQ_ITEMS} />
       <h2 className="mb-8 text-center heading-display text-2xl sm:text-3xl">
-        Frequently asked questions
+        Questions
       </h2>
       <div className="mx-auto max-w-2xl space-y-3">
         {FAQ_ITEMS.map((item, index) => {
@@ -64,7 +64,7 @@ export function FAQ() {
                 style={{ gridTemplateRows: isOpen ? "1fr" : "0fr" }}
               >
                 <div className="overflow-hidden">
-                  <p className="px-5 pb-5 leading-relaxed text-secondary sm:px-6 sm:pb-6">
+                  <p className="px-5 pb-5 leading-relaxed text-primary sm:px-6 sm:pb-6">
                     {item.answer}
                   </p>
                 </div>

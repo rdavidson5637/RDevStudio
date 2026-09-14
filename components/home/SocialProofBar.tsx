@@ -15,7 +15,7 @@ export function SocialProofBar() {
         />
 
         <p className="lead-text -mt-6 mb-10 max-w-2xl sm:-mt-4">
-          No made-up testimonials. These are the live jobs.
+          Three recent jobs. No made-up quotes.
         </p>
 
         <ul className="grid gap-5 md:grid-cols-3">
@@ -27,7 +27,7 @@ export function SocialProofBar() {
               <h3 className="text-lg font-semibold text-primary">
                 {item.title}
               </h3>
-              <p className="mt-2 text-sm leading-relaxed text-secondary">
+              <p className="mt-2 text-sm leading-relaxed text-primary">
                 {item.detail}
               </p>
             </li>

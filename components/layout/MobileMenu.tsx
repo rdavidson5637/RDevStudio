@@ -118,7 +118,7 @@ export function MobileMenu({ open, onClose, isActive }: MobileMenuProps) {
         </div>
         <div className="programme-rule" />
         <div className="shell-label pt-5">KICK-OFF</div>
-        <div className="text-sm text-secondary">
+        <div className="text-sm text-primary">
           Designed and built in Carrickfergus. No template. No page builder.
         </div>
       </nav>

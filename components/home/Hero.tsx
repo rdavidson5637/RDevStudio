@@ -34,9 +34,8 @@ export function Hero() {
           </h1>
 
           <p className="lead-text mb-10 max-w-xl">
-            RDev Studio designs and builds sites for Northern Ireland SMEs and
-            charities. Clear packages, straight prices, one person from first
-            message to launch.
+            Sites for Northern Ireland small businesses and charities. Clear
+            packages, straight prices, one person from first message to launch.
           </p>
 
           <dl

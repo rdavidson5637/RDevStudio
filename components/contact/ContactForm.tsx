@@ -9,7 +9,7 @@ import {
   selectClassName,
   submitButtonClassName,
 } from "@/components/contact/form-styles";
-import { FORMSPREE_FORM_ID } from "@/lib/constants";
+import { CONTACT_SERVICE_OPTIONS, FORMSPREE_FORM_ID } from "@/lib/constants";
 
 function isValidEmail(value: string) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
@@ -85,9 +85,11 @@ function ContactFormFields({ onReset }: { onReset: () => void }) {
           <option value="" disabled>
             Choose one
           </option>
-          <option value="Freelance project">Freelance project</option>
-          <option value="Job opportunity">Job opportunity</option>
-          <option value="Something else">Something else</option>
+          {CONTACT_SERVICE_OPTIONS.map((option) => (
+            <option key={option} value={option}>
+              {option}
+            </option>
+          ))}
         </select>
       </div>
 

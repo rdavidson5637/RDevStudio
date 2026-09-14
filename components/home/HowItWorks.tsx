@@ -21,7 +21,7 @@ export function HowItWorks() {
               <h3 className="mt-3 text-lg font-semibold text-primary">
                 {step.title}
               </h3>
-              <p className="mt-2 text-sm leading-relaxed text-secondary">
+              <p className="mt-2 text-sm leading-relaxed text-primary">
                 {step.description}
               </p>
             </li>

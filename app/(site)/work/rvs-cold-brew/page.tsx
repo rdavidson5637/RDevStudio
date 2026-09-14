@@ -1,11 +1,12 @@
 import Link from "next/link";
 import Image from "next/image";
 import { createPageMetadata } from "@/lib/metadata";
+import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 
 export const metadata = createPageMetadata({
-  title: "RVS Cold Brew",
+  title: "RV's Cold Brew",
   description:
-    "Case study: a brand-led site for a Northern Irish cold brew company.",
+    "Collection site for a Belfast cold brew and matcha counter at Great Northern Mall.",
   path: "/work/rvs-cold-brew",
 });
 
@@ -42,17 +43,26 @@ export default function RvsColdBrewCaseStudyPage() {
   return (
     <div className="section-padding pt-28">
       <article className="container-wide px-6">
+        <Breadcrumbs
+          items={[
+            { label: "Home", href: "/" },
+            { label: "Work", href: "/work" },
+            { label: "RV's Cold Brew" },
+          ]}
+          className="mb-8"
+        />
         <header className="space-y-6 border-b border-border pb-10">
           <p className="shell-label text-accent">CASE STUDY — 02</p>
-          <h1 className="programme-h1">RVS COLD BREW</h1>
-          <p className="max-w-2xl text-lg text-secondary">
-            A brand-led site for a Northern Irish cold brew company.
+          <h1 className="programme-h1">RV&apos;S COLD BREW</h1>
+          <p className="max-w-2xl text-lg text-primary">
+            A collection site for a Belfast cold brew and matcha counter at
+            Great Northern Mall.
           </p>
 
           <div className="grid grid-cols-2 gap-x-4 gap-y-2 border-t border-border pt-5 font-mono text-[11px] uppercase tracking-[0.08em] text-secondary lg:grid-cols-4">
             <p>ROLE — Design & development</p>
             <p>TYPE — Brand site</p>
-            <p>STATUS — Active client build</p>
+            <p>STATUS — Live · still a client</p>
             <p>YEAR — 2026</p>
           </div>
         </header>
@@ -64,7 +74,7 @@ export default function RvsColdBrewCaseStudyPage() {
           <div className="relative h-72 w-full overflow-hidden rounded-lg border border-border bg-raised sm:h-[34rem]">
             <Image
               src="/images/work/rvs-coldbrew-hero.jpg"
-              alt="RVS Cold Brew landing page hero screenshot"
+              alt="RV's Cold Brew landing page hero screenshot"
               fill
               priority
               sizes="(max-width: 1120px) 100vw, 1120px"
@@ -77,35 +87,54 @@ export default function RvsColdBrewCaseStudyPage() {
         </section>
 
         <section className="border-b border-border py-12">
-          <SectionHeading>THE BRIEF</SectionHeading>
-          <p className="max-w-3xl text-base leading-relaxed text-secondary sm:text-lg">
-            RVS makes cold brew coffee in Northern Ireland. They needed a site
-            that sells the product before a word is read — bold, simple, and
-            unmistakably theirs, not a template with a logo swapped in.
+          <SectionHeading>THE COUNTER</SectionHeading>
+          <p className="max-w-3xl text-base leading-relaxed text-primary sm:text-lg">
+            RV&apos;s pours cold brew and ceremonial Okumidori matcha from Unit
+            11 in Great Northern Mall, beside Grand Central. People find them
+            on a phone: what is on, can I order for collection, where actually
+            is it. They needed a site that shows the drinks properly and gets
+            you to an order, not a template with a logo swapped in.
           </p>
         </section>
 
         <section className="border-b border-border py-12">
-          <SectionHeading>THE BUILD</SectionHeading>
-          <p className="max-w-3xl text-base leading-relaxed text-secondary sm:text-lg">
-            The site leads with the product: strong photography, a tight palette
-            pulled from the brand, and copy that gets out of the way. Under the
-            hood it&apos;s lightweight and fast — no heavy framework, quick
-            loads on mobile, where most of their customers are.
+          <SectionHeading>THE SITE</SectionHeading>
+          <p className="max-w-3xl text-base leading-relaxed text-primary sm:text-lg">
+            It leads with the product, then three routes: the menu, collection
+            orders, and the 24-hour steep. Copy stays short. Opening hours,
+            the unit number, and directions sit where you can find them
+            without scrolling the whole page. Built to load quickly on a
+            phone, which is how most of their customers arrive.
           </p>
 
           <div className="mt-10 grid gap-8">
             <ScreenshotSlot
               caption="SCREEN 01 — PRODUCT ROW: MENU, COLLECTION, PROCESS"
               src="/images/work/rvs-coldbrew-product-row.jpg"
-              alt="RVS Cold Brew homepage cards linking to the menu, collection ordering, and brewing process"
+              alt="RV's Cold Brew homepage cards linking to the menu, collection ordering, and brewing process"
             />
             <ScreenshotSlot
               caption="SCREEN 02 — STORY AND PRODUCT DETAIL LAYOUT"
               src="/images/work/rvs-coldbrew-matcha-story.jpg"
-              alt="RVS Cold Brew product story section detailing the Okumidori matcha"
+              alt="RV's Cold Brew product story section detailing the Okumidori matcha"
             />
           </div>
+        </section>
+
+        <section className="border-b border-border py-12">
+          <SectionHeading>WHERE IT STANDS</SectionHeading>
+          <p className="max-w-3xl text-base leading-relaxed text-primary sm:text-lg">
+            The site is live for collection at the mall. RV&apos;s is still a
+            client, so the job did not stop at launch.
+          </p>
+          <a
+            href="https://rvscoldbrew.vercel.app"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-5 inline-flex items-center text-base font-semibold text-primary transition-colors hover:text-accent"
+          >
+            Visit the site →
+          </a>
         </section>
 
         <footer className="py-12">
@@ -118,7 +147,7 @@ export default function RvsColdBrewCaseStudyPage() {
             </Link>
             <Link
               href="/contact"
-              className="text-base text-secondary underline decoration-border-strong underline-offset-4 transition-colors hover:text-accent"
+              className="text-base text-primary underline decoration-border-strong underline-offset-4 transition-colors hover:text-accent"
             >
               Got a similar problem? Get in touch.
             </Link>

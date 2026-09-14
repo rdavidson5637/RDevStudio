@@ -5,11 +5,11 @@ This portfolio is styled like a modern matchday programme. Ryan Davidson is a de
 
 ## Palette
 - Paper: #F7F5F0 (page background)
-- Ink: #16150F (text, solid fills)
-- Pitch: #1E5C3A (structural colour - rules, labels, section markers, hover states)
+- Ink: #16150F (text, solid fills — long body copy always uses Ink)
+- Pitch: #1E5C3A (structural colour - rules, labels, section markers, hover states — never paragraphs)
 - Card red: #D22B2B (used extremely sparingly - one or two moments per page max: the "Hire me" button hover, a single highlight)
 - Line: #E3DFD4 (hairline borders)
-- Muted: #6B685E (secondary text)
+- Muted: #3D3B35 (captions, meta, idle states — not long body copy)
 
 ## Typography (all free)
 - Display: Anton (Google Fonts) - for h1/h2 and jersey-style numbers. Uppercase, tight leading (1.0-1.05), used with restraint.

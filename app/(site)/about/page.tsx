@@ -186,7 +186,7 @@ export default function AboutPage() {
               </a>
               <Link
                 href="/contact"
-                className="text-center text-sm font-semibold text-secondary underline decoration-border-strong underline-offset-4 transition-colors hover:text-accent sm:text-left"
+                className="text-center text-sm font-semibold text-primary underline decoration-border-strong underline-offset-4 transition-colors hover:text-accent sm:text-left"
               >
                 Get in touch
               </Link>

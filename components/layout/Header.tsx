@@ -41,7 +41,7 @@ export function Header() {
                   className={`pitch-link shell-label rounded-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-base ${
                     active
                       ? "text-accent"
-                      : "text-secondary hover:text-accent"
+                      : "text-primary hover:text-accent"
                   }`}
                 >
                   {link.label}
