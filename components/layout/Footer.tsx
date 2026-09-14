@@ -1,5 +1,10 @@
 import Link from "next/link";
-import { CONTACT_EMAIL, GITHUB_URL, SHELL_NAV_LINKS } from "@/lib/constants";
+import {
+  CONTACT_EMAIL,
+  GITHUB_URL,
+  SECONDARY_NAV_LINKS,
+  SHELL_NAV_LINKS,
+} from "@/lib/constants";
 
 const CURRENT_YEAR = new Date().getFullYear();
 
@@ -20,6 +25,16 @@ export function Footer() {
 
           <nav className="flex flex-col gap-3" aria-label="Footer navigation">
             {SHELL_NAV_LINKS.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="shell-label text-primary transition-colors hover:text-accent"
+              >
+                {link.label}
+              </Link>
+            ))}
+            <p className="shell-label mt-4 text-accent">Also on the site</p>
+            {SECONDARY_NAV_LINKS.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}

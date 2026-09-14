@@ -59,7 +59,7 @@ const BUILDS = [
     description:
       "Homeowners need to know what the firm does, where it covers, and how to get a quote — before anything else. The layout puts services and contact above the fold, with a restrained palette that reads as dependable rather than flashy.",
     href: "https://carrick-plumbing-co.vercel.app/",
-    screenshotCaption: "SCREENSHOT — CARRICK PLUMBING CO HOMEPAGE",
+    screenshotCaption: "Carrick Plumbing Co homepage",
     screenshotSrc: "/images/work/carrick-plumbing.png",
     screenshotAlt: "Carrick Plumbing Co homepage — trades firm concept site",
   },
@@ -68,7 +68,7 @@ const BUILDS = [
     description:
       "Diners want the menu, opening hours, and a way to book — fast, on a phone, often one-handed. Photography carries the atmosphere; type stays large and legible so the essentials never compete with the mood.",
     href: "https://the-anchor-restaurant.vercel.app/",
-    screenshotCaption: "SCREENSHOT — THE ANCHOR RESTAURANT LANDING PAGE",
+    screenshotCaption: "The Anchor Restaurant landing page",
     screenshotSrc: "/images/work/anchor-restaurant.png",
     screenshotAlt:
       "The Anchor Restaurant landing page — restaurant concept site",
@@ -78,7 +78,7 @@ const BUILDS = [
     description:
       "Salon visitors need services, pricing direction, and booking options without hunting through a gallery first. A single-column flow with clear treatment blocks and one prominent booking path keeps the brand polished without slowing the decision.",
     href: "https://harbour-hair-studio11.vercel.app/",
-    screenshotCaption: "SCREENSHOT — HARBOUR HAIR STUDIO HERO AND SERVICES",
+    screenshotCaption: "Harbour Hair Studio hero and services",
     screenshotSrc: "/images/work/harbour-hair.png",
     screenshotAlt: "Harbour Hair Studio hero and services — salon concept site",
   },

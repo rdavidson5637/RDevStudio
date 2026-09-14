@@ -109,15 +109,23 @@ export function ProjectCard({
         } ${compact ? "p-5 sm:p-6" : "p-6 sm:p-7"}`}
       >
         <div className="flex flex-wrap items-center gap-2">
-          <ProjectTag category={project.category} />
-          <span className="text-sm text-secondary">{project.type}</span>
+          {compact ? (
+            <span className="text-sm text-secondary">{project.summary}</span>
+          ) : (
+            <>
+              <ProjectTag category={project.category} />
+              <span className="text-sm text-secondary">{project.type}</span>
+            </>
+          )}
         </div>
 
         <h2 className="mt-3 font-display text-xl font-bold text-primary sm:text-2xl">
           {project.title}
         </h2>
 
-        <p className="mt-1 text-sm text-secondary">{project.summary}</p>
+        {!compact ? (
+          <p className="mt-1 text-sm text-secondary">{project.summary}</p>
+        ) : null}
 
         <p className="mt-3 flex-1 text-base leading-relaxed text-primary">
           {project.description}

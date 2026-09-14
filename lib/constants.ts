@@ -47,11 +47,14 @@ export const DRAFT_ANALYSER = {
 export const SHELL_NAV_LINKS = [
   { href: "/services", label: "Services" },
   { href: "/work", label: "Work" },
+  { href: "/about", label: "About" },
+  { href: "/contact", label: "Contact" },
+] as const;
+
+export const SECONDARY_NAV_LINKS = [
   { href: "/toolkit", label: "Toolkit" },
   { href: "/interactive", label: "Interactive" },
   { href: "/games", label: "Games" },
-  { href: "/about", label: "About" },
-  { href: "/contact", label: "Contact" },
 ] as const;
 
 export const SOCIAL_LINKS = [
@@ -103,7 +106,7 @@ export const ABOUT_BLURB =
 export const SOCIAL_PROOF_ITEMS = [
   {
     title: "Assisi Animal Sanctuary",
-    detail: "Volunteer platform. Walkthrough sent, awaiting feedback.",
+    detail: "Volunteer platform. Ready for live use.",
   },
   {
     title: "RV's Cold Brew",
@@ -237,7 +240,6 @@ export const FAQ_ITEMS = [
  * - Animated loop (recommended): public/images/work/{id}-preview.mp4
  */
 export type ProjectCategory =
-  | "University Project"
   | "Client Work"
   | "Concept Build"
   | "Food & Drink"
@@ -247,19 +249,19 @@ export const PROJECTS = [
   {
     id: "shelterlink",
     title: "ShelterLink",
-    category: "University Project" as const,
+    category: "Client Work" as const,
     type: "Volunteer Management App",
     summary: "Real client · charity",
     description:
-      "Volunteer rotas, roles, and an admin dashboard for Assisi Animal Sanctuary. Walkthrough sent, awaiting feedback.",
+      "Volunteer rotas, roles, and an admin dashboard for Assisi Animal Sanctuary.",
     highlights: ["Shift scheduling", "Admin dashboard", "Role management"],
     tags: ["Node.js", "Express", "MySQL"],
     buttonLabel: "Read the case study",
     href: "/work/shelterlink",
     image: "/images/work/shelterlink.png",
     imageAlt:
-      "ShelterLink landing page — volunteer management platform for Assisi Animal Sanctuary",
-    outcome: "Walkthrough sent, awaiting feedback",
+      "ShelterLink admin dashboard for Assisi Animal Sanctuary",
+    outcome: "Ready for live use",
   },
   {
     id: "rvs-coldbrew",

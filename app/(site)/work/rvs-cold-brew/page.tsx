@@ -82,7 +82,7 @@ export default function RvsColdBrewCaseStudyPage() {
             />
           </div>
           <p className="shell-label mt-3 text-secondary">
-            HERO SCREENSHOT — LANDING PAGE
+            Landing page, Great Northern Mall
           </p>
         </section>
 
@@ -109,12 +109,12 @@ export default function RvsColdBrewCaseStudyPage() {
 
           <div className="mt-10 grid gap-8">
             <ScreenshotSlot
-              caption="SCREEN 01 — PRODUCT ROW: MENU, COLLECTION, PROCESS"
+              caption="Menu, collection, and process"
               src="/images/work/rvs-coldbrew-product-row.jpg"
               alt="RV's Cold Brew homepage cards linking to the menu, collection ordering, and brewing process"
             />
             <ScreenshotSlot
-              caption="SCREEN 02 — STORY AND PRODUCT DETAIL LAYOUT"
+              caption="Okumidori matcha story"
               src="/images/work/rvs-coldbrew-matcha-story.jpg"
               alt="RV's Cold Brew product story section detailing the Okumidori matcha"
             />

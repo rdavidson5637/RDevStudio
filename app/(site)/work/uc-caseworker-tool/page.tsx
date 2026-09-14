@@ -82,7 +82,7 @@ export default function UcCaseworkerToolCaseStudyPage() {
             />
           </div>
           <p className="shell-label mt-3 text-secondary">
-            HERO SCREENSHOT — JOURNAL RESPONSE ASSISTANT
+            Journal response assistant, synthetic example
           </p>
         </section>
 
@@ -138,7 +138,7 @@ export default function UcCaseworkerToolCaseStudyPage() {
 
           <div className="mt-10 grid gap-8">
             <ScreenshotSlot
-              caption="SCREEN 01 — LETTER POPULATION, DEMONSTRATION TEMPLATE"
+              caption="Letter population, demonstration template"
               src="/images/work/uc-caseworker-letter.jpg"
               alt="UC Caseworker Assistant letter population tool with a synthetic hardship payment case pasted in"
             />

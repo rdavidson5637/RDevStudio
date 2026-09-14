@@ -71,7 +71,7 @@ export default function ShelterLinkCaseStudyPage() {
           <div className="grid grid-cols-2 gap-x-4 gap-y-2 border-t border-border pt-5 font-mono text-[11px] uppercase tracking-[0.08em] text-secondary lg:grid-cols-4">
             <p>ROLE — Design & development (solo)</p>
             <p>STACK — Node.js · Express · MySQL · Vanilla JS · PicoCSS</p>
-            <p>STATUS — Preparing for live rollout</p>
+            <p>STATUS — Ready for live use</p>
             <p>YEAR — 2025–26</p>
           </div>
         </header>
@@ -91,7 +91,7 @@ export default function ShelterLinkCaseStudyPage() {
             />
           </div>
           <p className="shell-label mt-3 text-secondary">
-            HERO SCREENSHOT — DASHBOARD OVERVIEW
+            Admin dashboard
           </p>
         </section>
 
@@ -137,17 +137,17 @@ export default function ShelterLinkCaseStudyPage() {
 
           <div className="mt-10 grid gap-8">
             <ScreenshotSlot
-              caption="SCREEN 01 — VOLUNTEER LIST AND PROFILE DETAIL"
+              caption="Volunteer list and profile"
               src="/images/work/shelterlink.png"
               alt="ShelterLink volunteer list and profile detail screenshot"
             />
             <ScreenshotSlot
-              caption="SCREEN 02 — SHIFT PLANNER WITH ROLE ALLOCATION"
+              caption="Shift planner with role allocation"
               src="/images/work/shelterlink-browse-shifts.png"
               alt="ShelterLink volunteer browse shifts page showing available opportunities"
             />
             <ScreenshotSlot
-              caption="SCREEN 03 — ADMIN DASHBOARD AND EXPORT CONTROLS"
+              caption="Admin dashboard and export controls"
               src="/images/work/shelterlink-admin-dashboard.png"
               alt="ShelterLink admin dashboard with volunteer stats and application review"
             />
@@ -173,10 +173,9 @@ export default function ShelterLinkCaseStudyPage() {
         <section className="border-b border-border py-12">
           <SectionHeading>WHERE IT STANDS</SectionHeading>
           <p className="max-w-3xl text-base leading-relaxed text-primary sm:text-lg">
-            ShelterLink was my MSc dissertation at Queen&apos;s University
-            Belfast. I graduated with Commendation. The walkthrough has been
-            sent to the sanctuary, and the platform is being prepared for live
-            use there. It is not a live staff tool yet.
+            ShelterLink started as my MSc dissertation at Queen&apos;s
+            University Belfast. I graduated with Commendation. The platform is
+            ready for the sanctuary to use.
           </p>
         </section>
 
