@@ -39,16 +39,19 @@ export function Hero() {
             message to launch.
           </p>
 
-          <div className="mb-10 grid min-h-[120px] grid-cols-2 gap-px overflow-hidden rounded-md border border-border bg-border md:grid-cols-4">
+          <dl
+            className="mb-10 grid min-h-[120px] grid-cols-2 gap-px overflow-hidden rounded-md border border-border bg-border md:grid-cols-4"
+            aria-label="Studio scoreboard"
+          >
             {SCOREBOARD.map((item) => (
               <div key={item.label} className="bg-base px-4 py-3">
-                <p className="shell-label text-secondary">{item.label}</p>
-                <p className="mt-1 text-2xl font-display text-primary sm:text-3xl">
+                <dt className="shell-label text-secondary">{item.label}</dt>
+                <dd className="mt-1 text-2xl font-display text-primary sm:text-3xl">
                   {item.value}
-                </p>
+                </dd>
               </div>
             ))}
-          </div>
+          </dl>
 
           <div className="flex flex-wrap gap-4">
             <Link href="/contact" className="btn-primary">
