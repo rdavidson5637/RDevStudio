@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { createPageMetadata } from "@/lib/metadata";
 import {
+  CHARITY_NOTE,
   CONTENT_CREATION_FEATURES,
   PRICING_FEATURES,
   PROCESS_STEPS,
@@ -101,6 +102,13 @@ export default function ServicesPage() {
             businesses and charities. Clear prices. One person from start to
             finish.
           </p>
+
+          <aside className="mt-8 max-w-3xl rounded-[10px] border border-border bg-raised p-5 sm:p-6">
+            <p className="shell-label mb-2 text-accent">Charities</p>
+            <p className="text-sm leading-relaxed text-primary">
+              {CHARITY_NOTE}
+            </p>
+          </aside>
 
           <nav
             className="mt-8 flex flex-wrap gap-3"

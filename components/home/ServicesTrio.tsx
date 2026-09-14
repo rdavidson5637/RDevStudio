@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { SERVICES } from "@/lib/constants";
+import { CHARITY_NOTE, SERVICES } from "@/lib/constants";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 
 export function ServicesTrio() {
@@ -65,6 +65,10 @@ export function ServicesTrio() {
             </article>
           ))}
         </div>
+
+        <p className="mt-6 max-w-2xl text-sm leading-relaxed text-primary">
+          {CHARITY_NOTE}
+        </p>
       </div>
     </section>
   );
