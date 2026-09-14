@@ -20,7 +20,8 @@ export default function ContactPage() {
           <h1 className="programme-h1">GET IN TOUCH</h1>
           <p className="mt-5 max-w-3xl text-base leading-relaxed text-primary sm:text-lg">
             Need a site, help with posting, or something that does not fit a
-            package. Form or email. I read both.
+            package. Form or email. I read both. I usually reply within one
+            working day.
           </p>
         </header>
 
@@ -60,6 +61,10 @@ export default function ContactPage() {
 
             <p className="mt-7 text-sm leading-relaxed text-primary">
               Based in Carrickfergus. Working anywhere.
+            </p>
+            <p className="mt-4 text-sm leading-relaxed text-secondary">
+              I only use your name and email to reply to this enquiry. I do not
+              pass them on.
             </p>
           </aside>
         </div>
