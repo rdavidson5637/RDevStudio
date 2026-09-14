@@ -43,6 +43,12 @@ export function Footer() {
                 {link.label}
               </Link>
             ))}
+            <Link
+              href="/hire"
+              className="shell-label text-primary transition-colors hover:text-accent"
+            >
+              CV
+            </Link>
           </nav>
 
           <div className="flex flex-col gap-3 text-sm" aria-label="Contact and social links">

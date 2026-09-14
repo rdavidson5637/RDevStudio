@@ -6,7 +6,7 @@ import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 export const metadata = createPageMetadata({
   title: "RV's Cold Brew",
   description:
-    "Collection site for a Belfast cold brew and matcha counter at Great Northern Mall.",
+    "Live site for a Belfast cold brew and matcha counter at Great Northern Mall. Menu, hours, and directions.",
   path: "/work/rvs-cold-brew",
 });
 
@@ -55,7 +55,7 @@ export default function RvsColdBrewCaseStudyPage() {
           <p className="shell-label text-accent">CASE STUDY — 02</p>
           <h1 className="programme-h1">RV&apos;S COLD BREW</h1>
           <p className="max-w-2xl text-lg text-primary">
-            A collection site for a Belfast cold brew and matcha counter at
+            A live site for a Belfast cold brew and matcha counter at
             Great Northern Mall.
           </p>
 
@@ -91,27 +91,25 @@ export default function RvsColdBrewCaseStudyPage() {
           <p className="max-w-3xl text-base leading-relaxed text-primary sm:text-lg">
             RV&apos;s pours cold brew and ceremonial Okumidori matcha from Unit
             11 in Great Northern Mall, beside Grand Central. People find them
-            on a phone: what is on, can I order for collection, where actually
-            is it. They needed a site that shows the drinks properly and gets
-            you to an order, not a template with a logo swapped in.
+            on a phone: what is on, where is the unit, when are they open. They
+            needed a site that shows the drinks properly and how to get there,
+            not a template with a logo swapped in.
           </p>
         </section>
 
         <section className="border-b border-border py-12">
           <SectionHeading>THE SITE</SectionHeading>
           <p className="max-w-3xl text-base leading-relaxed text-primary sm:text-lg">
-            It leads with the product, then three routes: the menu, collection
-            orders, and the 24-hour steep. Copy stays short. Opening hours,
-            the unit number, and directions sit where you can find them
-            without scrolling the whole page. Built to load quickly on a
-            phone, which is how most of their customers arrive.
+            It leads with the product, then the menu, opening hours, the unit
+            number, and directions. Copy stays short. Built to load quickly on
+            a phone, which is how most of their customers arrive.
           </p>
 
           <div className="mt-10 grid gap-8">
             <ScreenshotSlot
-              caption="Menu, collection, and process"
+              caption="Menu, visit, and process"
               src="/images/work/rvs-coldbrew-product-row.jpg"
-              alt="RV's Cold Brew homepage cards linking to the menu, collection ordering, and brewing process"
+              alt="RV's Cold Brew homepage cards for the menu, visit details, and brewing process"
             />
             <ScreenshotSlot
               caption="Okumidori matcha story"
@@ -124,8 +122,8 @@ export default function RvsColdBrewCaseStudyPage() {
         <section className="border-b border-border py-12">
           <SectionHeading>WHERE IT STANDS</SectionHeading>
           <p className="max-w-3xl text-base leading-relaxed text-primary sm:text-lg">
-            The site is live for collection at the mall. RV&apos;s is still a
-            client, so the job did not stop at launch.
+            The site is live. Menu, hours, and directions for Unit 11 at Great
+            Northern Mall. RV&apos;s is still a client.
           </p>
           <a
             href="https://rvscoldbrew.vercel.app"
@@ -133,7 +131,7 @@ export default function RvsColdBrewCaseStudyPage() {
             rel="noopener noreferrer"
             className="mt-5 inline-flex items-center text-base font-semibold text-primary transition-colors hover:text-accent"
           >
-            Visit the site →
+            Visit live site →
           </a>
         </section>
 

@@ -54,7 +54,7 @@ export function Hero() {
 
           <div className="flex flex-wrap gap-4">
             <Link href="/contact" className="btn-primary">
-              Get in touch
+              Start a project
             </Link>
             <Link href="/work" className="btn-secondary">
               See the work

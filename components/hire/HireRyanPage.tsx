@@ -25,7 +25,6 @@ import {
   HIRE_SKILLS,
   HIRE_STATS,
   HIRE_STRENGTHS,
-  HIRE_TESTIMONIALS,
   HIRE_WEAKNESSES,
 } from "@/lib/hire-data";
 
@@ -91,12 +90,12 @@ export function HireRyanPage() {
 
         <div className="section-padding relative z-10">
           <div className="container-wide max-w-5xl">
-            <p className="section-label mb-4 font-medium">Available for hire</p>
+            <p className="section-label mb-4 font-medium">The long version</p>
             <h1 className="font-display text-5xl font-bold tracking-tight text-primary sm:text-6xl lg:text-7xl">
-              Hire Ryan
+              Ryan Davidson
             </h1>
             <p className="mt-5 max-w-2xl text-sm font-medium text-accent sm:text-base">
-              Yes, this page is also a portfolio piece.
+              CV, qualifications, and selected work. For a project, use contact.
             </p>
             <p className="lead-text mt-4 max-w-3xl text-xl sm:text-2xl">
               {HIRE_TAGLINE}
@@ -104,7 +103,7 @@ export function HireRyanPage() {
 
             <div className="mt-10 flex flex-col gap-4 sm:flex-row">
               <Link href="/contact" className="btn-primary">
-                Contact Ryan
+                Get in touch
               </Link>
               <a href={HIRE_CV_PATH} download className="btn-secondary">
                 Download CV
@@ -393,65 +392,6 @@ export function HireRyanPage() {
             ))}
           </div>
         </div>
-      </section>
-
-      {/* Section 7 — Testimonials */}
-      <section className="section-padding border-b border-border bg-base">
-        <div className="container-wide max-w-4xl">
-          <SectionHeader label="References" title="Testimonials" />
-          <div className="mt-10 space-y-5">
-            {HIRE_TESTIMONIALS.map((item) => {
-              const testimonialBody =
-                "pending" in item && item.pending ? (
-                  <p className="font-display text-lg italic text-secondary sm:text-xl">
-                    Awaiting feedback
-                  </p>
-                ) : (
-                  <blockquote className="font-display text-lg leading-relaxed text-primary sm:text-xl">
-                    &ldquo;{item.quote}&rdquo;
-                  </blockquote>
-                );
-
-              const testimonialCaption = (
-                <p className="mt-4 text-sm text-secondary">
-                  <span className="font-semibold text-primary">
-                    {item.author}
-                  </span>
-                  <span className="text-tertiary"> — {item.role}</span>
-                </p>
-              );
-
-              const surfaceClass = `interactive-surface px-6 py-7 ${
-                item.real ? "border-blue-500/20" : ""
-              }`;
-
-              if ("rudi" in item && item.rudi) {
-                return (
-                  <button
-                    key={`${item.author}-${item.role}`}
-                    type="button"
-                    onClick={() => setRudiModalOpen(true)}
-                    className={`${surfaceClass} block w-full text-left transition-colors hover:border-border-strong`}
-                    aria-label="Open Rudi's full review"
-                  >
-                    {testimonialBody}
-                    {testimonialCaption}
-                  </button>
-                );
-              }
-
-              return (
-                <figure
-                  key={`${item.author}-${item.role}`}
-                  className={surfaceClass}
-                >
-                  {testimonialBody}
-                  {testimonialCaption}
-                </figure>
-              );
-            })}
-          </div>
-        </div>
         <div
           ref={registerSection("testimonials")}
           className="h-px"
@@ -606,7 +546,7 @@ export function HireRyanPage() {
                 : "heading-display text-4xl sm:text-5xl"
             }`}
           >
-            {chaosStarted ? "HIRE RYAN" : "Interested in working together?"}
+            {chaosStarted ? "Thanks for reading" : "Need a site or a hand?"}
           </h2>
 
           {chaosStarted ? (
@@ -631,8 +571,7 @@ export function HireRyanPage() {
             </>
           ) : (
             <p className="lead-text mx-auto mt-6 max-w-2xl">
-              Scroll a little further for the full experience — or get in touch
-              now if you already know what you need.
+              For a project, start on the contact page. This page is the CV.
             </p>
           )}
 
@@ -646,13 +585,10 @@ export function HireRyanPage() {
             className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row"
           >
             <Link href="/contact" className="btn-primary">
-              Hire Ryan
+              Start a project
             </Link>
             <Link href="/work" className="btn-secondary">
-              View Projects
-            </Link>
-            <Link href="/contact" className="btn-outline-accent">
-              Get In Touch
+              See the work
             </Link>
           </div>
         </div>

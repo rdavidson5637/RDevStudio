@@ -110,7 +110,7 @@ export const HIRE_PROJECTS = [
     tag: "RDev Studio client — Belfast",
     title: "RV's Cold Brew",
     description:
-      "Confirmed RDev Studio client. Website built and social media management ongoing for a Belfast cold brew coffee business.",
+      "Confirmed RDev Studio client. Live site for a Belfast cold brew and matcha counter — menu, hours, and where to find Unit 11.",
     highlight: "Client work",
     highlights: ["Business website", "Design & implementation", "Social media"],
     image: "/images/work/rvs-coldbrew.png",
@@ -180,42 +180,6 @@ export const HIRE_SKILLS = {
   Backend: ["Node.js", "Express", "REST APIs", "MySQL", "Session management"],
   Other: ["Git", "Agile", "AWS", "Docker", "Python", "SQL"],
 } as const;
-
-export const HIRE_TESTIMONIALS = [
-  {
-    quote: "",
-    author: "Client",
-    role: "Business website project",
-    real: true,
-    pending: true,
-  },
-  {
-    quote: "A clever cookie and good with all that tech stuff.",
-    author: "Nanny",
-    role: "Family reference",
-    real: false,
-  },
-  {
-    quote: "10/10 ear scratches. Would recommend. Has treats.",
-    author: "Rudi",
-    role: "Chief Morale Officer",
-    real: false,
-    rudi: true,
-  },
-  {
-    quote: "A great ponderer.",
-    author: "Plato",
-    role: "Possibly",
-    real: false,
-  },
-  {
-    quote:
-      "Stop emailing me. I don't know who you are and I refuse to give you a testimonial.",
-    author: "Mark Zuckerberg",
-    role: "Definitely not verified",
-    real: false,
-  },
-] as const;
 
 export const ACHIEVEMENTS = [
   {

@@ -109,11 +109,11 @@ export function MobileMenu({ open, onClose, isActive }: MobileMenuProps) {
             );
           })}
           <Link
-            href="/hire"
+            href="/contact"
             onClick={onClose}
             className="mt-2 inline-flex w-fit rounded-md bg-primary px-4 py-2 text-sm font-semibold text-paper transition-colors hover:bg-[#d22b2b]"
           >
-            Hire me
+            Start a project
           </Link>
         </div>
         <div className="programme-rule" />
