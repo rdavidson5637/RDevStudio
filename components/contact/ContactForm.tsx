@@ -128,6 +128,10 @@ function ContactFormFields({ onReset }: { onReset: () => void }) {
       >
         {state.submitting ? "Sending..." : "Send it"}
       </button>
+
+      <p className="text-sm leading-relaxed text-secondary">
+        Usually within one working day. I only use these details to reply.
+      </p>
     </form>
   );
 }

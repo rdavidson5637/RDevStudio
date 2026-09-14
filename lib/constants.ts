@@ -181,50 +181,54 @@ export const HOME_PROJECT_IDS = [
 ] as const;
 
 export const PRICING_FEATURES = [
-  "5-page website",
-  "Mobile responsive",
-  "Contact form",
-  "Basic SEO setup",
-  "Google Maps embed",
-  "1 round of revisions",
-  "Vercel hosting setup included",
+  "Up to 5 pages — usually home, about, what you do, a gallery or work list, and contact",
+  "Built for a phone first, checked on a real handset before launch",
+  "Contact form that lands in your inbox",
+  "Basic SEO: page titles, descriptions, and a Google Maps embed if you have a premises",
+  "Hosting set up on Vercel. If you already own a domain, I point it",
+  "One round of revisions after you see the first full draft",
 ] as const;
 
 export const SOCIAL_MEDIA_FEATURES = [
-  "Content calendar",
-  "Post scheduling",
-  "Caption writing",
-  "Basic graphics",
-  "Monthly performance summary",
+  "A month's content calendar before anything goes out",
+  "Captions written to sound like you, not like a template",
+  "Simple graphics that match your colours",
+  "Posts scheduled to the accounts you already have",
+  "A short monthly note on what went out",
 ] as const;
 
 export const CONTENT_CREATION_FEATURES = [
-  "Social graphics",
-  "Copywriting",
-  "Brand-consistent visuals",
-  "Delivered ready to post",
+  "A one-off batch of posts or a small campaign set",
+  "Copy written from a brief, in your voice",
+  "Graphics that match the brand you already have",
+  "Files delivered ready to post — you hit publish",
 ] as const;
 
 export const FAQ_ITEMS = [
   {
-    question: "How long does it take?",
+    question: "How long does a website take?",
     answer:
-      "Most sites go live within a week. I keep the list of pages short so you are not waiting around for a 20-page brochure.",
+      "Most five-page sites go live in about a week once I have your text, photos, and contact details. If those arrive late, the date moves. Social and content jobs are usually a few days to a week, depending on the size of the batch.",
   },
   {
-    question: "Do I need to provide content?",
+    question: "Who writes the content?",
     answer:
-      "Photos, text, and contact details help. If you are stuck, I can write the copy and tell you what to photograph.",
+      "You know the business; I put it into plain English. Send me what you have — prices, hours, a few photos, the sentences you already say to customers. If you are stuck, I will draft the copy and tell you what still needs a photo. I do not invent testimonials or made-up numbers.",
+  },
+  {
+    question: "How do revisions work?",
+    answer:
+      "One round is in the price. You send a list after you have seen the first full draft (or the month's social batch), and I make those changes. Extra rounds are extra — I quote before I start them, so there are no surprises.",
+  },
+  {
+    question: "Who hosts the site, and what does that cost?",
+    answer:
+      "I set the site up on Vercel. For a normal small-business site that stays within the free tier, you are not paying me a monthly hosting fee. Domain names are yours — buy it (or keep the one you have) and I point it. If the site outgrows free hosting, we talk before anything is charged.",
   },
   {
     question: "Will it work on mobile?",
     answer:
       "Yes. I build for a phone first and check it on a real handset before launch.",
-  },
-  {
-    question: "What happens after launch?",
-    answer:
-      "The site stays up on fast hosting. I am happy to change things when you need it.",
   },
   {
     question: "Can I update it myself?",
