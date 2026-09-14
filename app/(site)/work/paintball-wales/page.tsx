@@ -91,7 +91,7 @@ export default function PaintballWalesCaseStudyPage() {
             />
           </div>
           <p className="shell-label mt-3 text-secondary">
-            HERO — &ldquo;WARRIOR WOODS&rdquo;, SNOWDONIA
+            Warrior Woods, Snowdonia
           </p>
         </section>
 
@@ -116,7 +116,7 @@ export default function PaintballWalesCaseStudyPage() {
             />
           </div>
           <p className="shell-label mt-3 text-secondary">
-            BEFORE — THE LEGACY PROMOTIONAL BANNER
+            The old promotional banner
           </p>
         </section>
 

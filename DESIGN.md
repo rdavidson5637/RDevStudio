@@ -33,6 +33,6 @@ The scoreboard: a Space Mono strip that appears in the hero styled like a stadiu
 - Banned words: passionate, journey, seamless, leverage, crafting digital experiences.
 
 ## Global shell to build now
-- Nav: "RDev Studio" wordmark left (Archivo 600). Right: Work, Games, About, Contact in Space Mono uppercase, plus a solid Ink "Hire me" button (red on hover). Sticky, Paper background with bottom hairline. Mobile: hamburger -> full-screen Paper overlay with oversized Anton links.
-- Footer: three columns - (1) "RDev Studio - designed and built in Carrickfergus. No template, no page builder, occasional dog supervision." (2) nav links repeated, (3) email + LinkedIn + GitHub. Below, a full-width Space Mono line: "FULL TIME - thanks for reading the programme."
+- Nav: "RDev Studio" wordmark left (Archivo 600). Right: Services, Work, About, Contact in Space Mono uppercase, plus a solid Ink "Hire me" button (red on hover). Sticky, Paper background with bottom hairline. Mobile: hamburger -> full-screen Paper overlay with oversized Anton links. Toolkit, Interactive, and Games stay on their routes and live in the footer, not the sales nav.
+- Footer: three columns - (1) "RDev Studio - designed and built in Carrickfergus. No template, no page builder, occasional dog supervision." (2) primary nav plus Toolkit / Interactive / Games, (3) email + LinkedIn + GitHub. Below, a full-width Space Mono line: "FULL TIME - thanks for reading the programme."
 - Load fonts via next/font. Define all colours as CSS variables. Respect prefers-reduced-motion globally.
