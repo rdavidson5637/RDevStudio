@@ -1,5 +1,5 @@
 import { ContactForm } from "@/components/contact/ContactForm";
-import { CONTACT_EMAIL, GITHUB_URL } from "@/lib/constants";
+import { CHARITY_NOTE, CONTACT_EMAIL, GITHUB_URL } from "@/lib/constants";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata = createPageMetadata({
@@ -22,6 +22,9 @@ export default function ContactPage() {
             Need a site, help with posting, or something that does not fit a
             package. Form or email. I read both. I usually reply within one
             working day.
+          </p>
+          <p className="mt-4 max-w-3xl text-base leading-relaxed text-primary sm:text-lg">
+            {CHARITY_NOTE}
           </p>
         </header>
 

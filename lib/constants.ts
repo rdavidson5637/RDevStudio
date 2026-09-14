@@ -117,6 +117,9 @@ export const SOCIAL_PROOF_ITEMS = [
   },
 ] as const;
 
+export const CHARITY_NOTE =
+  "Registered charities get the same packages free — website, social, and content. Say you are registered when you get in touch.";
+
 export const PROCESS_STEPS = [
   {
     number: "01",
@@ -216,14 +219,19 @@ export const FAQ_ITEMS = [
       "You know the business; I put it into plain English. Send me what you have — prices, hours, a few photos, the sentences you already say to customers. If you are stuck, I will draft the copy and tell you what still needs a photo. I do not invent testimonials or made-up numbers.",
   },
   {
+    question: "Do registered charities pay?",
+    answer:
+      "No. Same three packages — website, social, and content — no fee. Mention you are a registered charity when you get in touch.",
+  },
+  {
     question: "How do revisions work?",
     answer:
-      "One round is in the price. You send a list after you have seen the first full draft (or the month's social batch), and I make those changes. Extra rounds are extra — I quote before I start them, so there are no surprises.",
+      "One round is included. You send a list after you have seen the first full draft (or the month's social batch), and I make those changes. Extra rounds are extra — I quote before I start them, so there are no surprises.",
   },
   {
     question: "Who hosts the site, and what does that cost?",
     answer:
-      "I set the site up on Vercel. For a normal small-business site that stays within the free tier, you are not paying me a monthly hosting fee. Domain names are yours — buy it (or keep the one you have) and I point it. If the site outgrows free hosting, we talk before anything is charged.",
+      "I set the site up on Vercel. For a normal small site that stays within the free tier, you are not paying me a monthly hosting fee. Domain names are yours — buy it (or keep the one you have) and I point it. If the site outgrows free hosting, we talk before anything is charged.",
   },
   {
     question: "Will it work on mobile?",
