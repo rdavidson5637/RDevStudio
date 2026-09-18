@@ -53,7 +53,7 @@ export default function PitchSlot({ slot, isNext = false }: Props) {
         </span>
       </div>
       <span className="text-white/20 text-[9px] tracking-wide">
-        {isNext ? "Next" : "—"}
+        {isNext ? "Next" : "-"}
       </span>
     </div>
   );

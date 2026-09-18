@@ -5,7 +5,7 @@ import { BUSINESS_TOOLS } from "@/lib/business-toolkit/catalog";
 export const metadata = createPageMetadata({
   title: "Business Toolkit",
   description:
-    "Free business tools for local shops, freelancers, and small teams — website audits, generators, and practical utilities from RDev Studio.",
+    "Free business tools for local shops, freelancers, and small teams - website audits, generators, and practical utilities from RDev Studio.",
   path: "/toolkit",
 });
 
@@ -24,7 +24,7 @@ export default function ToolkitPage() {
           </div>
           <h1 className="programme-h1 mt-3">TOOLS</h1>
           <p className="mt-5 max-w-3xl text-base leading-relaxed text-secondary sm:text-lg">
-            Practical utilities for running a small business — audits,
+            Practical utilities for running a small business - audits,
             generators, and experiments. Free to use, no sign-up, saved
             favourites on this device.
           </p>

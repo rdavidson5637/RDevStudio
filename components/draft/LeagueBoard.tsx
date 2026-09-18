@@ -14,7 +14,7 @@ export function LeagueBoard({ board }: { board: LeagueBoardData }) {
           <p className="shell-label mb-2 text-accent">This gameweek</p>
           <h2 className="font-display text-2xl uppercase text-primary">Matchup vs {board.matchup.opponentName}</h2>
           <p className="mt-3 text-sm text-secondary">
-            Projected {board.matchup.homeProjected.toFixed(1)} – {board.matchup.awayProjected.toFixed(1)}. Win chance{" "}
+            Projected {board.matchup.homeProjected.toFixed(1)} - {board.matchup.awayProjected.toFixed(1)}. Win chance{" "}
             {Math.round(board.matchup.homeWinPct * 100)}% / draw {Math.round(board.matchup.drawPct * 100)}% / lose{" "}
             {Math.round(board.matchup.awayWinPct * 100)}%.
           </p>
@@ -24,7 +24,7 @@ export function LeagueBoard({ board }: { board: LeagueBoardData }) {
         </section>
       ) : board.classicNote ? (
         <p className="text-sm text-secondary">
-          This league is not H2H — there is no single opponent this week. The table below is projected
+          This league is not H2H - there is no single opponent this week. The table below is projected
           gameweek totals against the field.
         </p>
       ) : null}
@@ -82,7 +82,7 @@ function SeasonTable({ board }: { board: LeagueBoardData }) {
   const rows = [...board.season].sort((a, b) => b.titlePct - a.titlePct);
   return (
     <section>
-      <p className="shell-label mb-3 text-accent">Season simulator — 2,500 runs, next six GWs</p>
+      <p className="shell-label mb-3 text-accent">Season simulator - 2,500 runs, next six GWs</p>
       <div className="overflow-x-auto">
         <table className="min-w-full text-sm">
           <thead>
@@ -169,7 +169,7 @@ function TradeAnalyser({ pool, myEntryId }: { pool: TradePiece[]; myEntryId: num
           >
             {theirs.map((p) => (
               <option key={p.id} value={p.id}>
-                {p.webName} — {p.owner} ({p.projected6.toFixed(1)})
+                {p.webName} - {p.owner} ({p.projected6.toFixed(1)})
               </option>
             ))}
           </select>

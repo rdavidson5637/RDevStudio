@@ -101,7 +101,7 @@ export function ImageUploadZone({
                 or choose a file from your device
               </p>
               <p className="mt-2 text-xs text-tertiary">
-                PNG, JPG, WebP, or SVG — max 5 MB
+                PNG, JPG, WebP, or SVG - max 5 MB
               </p>
             </div>
           )}

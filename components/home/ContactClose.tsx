@@ -17,7 +17,7 @@ export function ContactClose() {
 
           <div className="flex flex-col gap-6 lg:items-end">
             <p className="max-w-md text-sm leading-relaxed text-secondary lg:text-right">
-              Open to freelance work and collaborations. No pitch decks — just a
+              Open to freelance work and collaborations. No pitch decks - just a
               conversation.
             </p>
             <Link href="/contact" className="btn-primary">

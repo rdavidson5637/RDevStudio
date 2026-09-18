@@ -18,7 +18,7 @@ export function DataFreshness({ timestamp, className }: Props) {
   if (!timestamp) {
     return (
       <span className={`shell-label text-secondary ${className ?? ""}`}>
-        Data as of — waiting for first sync
+        Data as of - waiting for first sync
       </span>
     );
   }

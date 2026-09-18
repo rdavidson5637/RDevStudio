@@ -96,7 +96,7 @@ export function bestXI(
     return {
       xi: currentXi,
       bench: squad.filter((p) => p.pickPosition > constraints.totalStarters),
-      formation: "—",
+      formation: "-",
       projectedTotal: currentXi.reduce((s, p) => s + points(p), 0),
       swaps: [],
       gainOverCurrent: 0,

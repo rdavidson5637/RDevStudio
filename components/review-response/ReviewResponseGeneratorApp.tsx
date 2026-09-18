@@ -21,7 +21,7 @@ function generateResponse(
   }
   if (rating <= 2) {
     return tone === "Apologetic"
-      ? `We're sorry your experience didn't meet expectations. Thank you for the honest feedback — we'd like to make this right. Please contact ${name} directly so we can follow up.`
+      ? `We're sorry your experience didn't meet expectations. Thank you for the honest feedback - we'd like to make this right. Please contact ${name} directly so we can follow up.`
       : `Thank you for your feedback. We're disappointed we fell short and would welcome the chance to resolve this. Please reach out to ${name} at your convenience.`;
   }
   return `Thank you for taking the time to review ${name}. We appreciate your balanced feedback and will use it to keep improving.`;
@@ -47,7 +47,7 @@ export function ReviewResponseGeneratorApp() {
       <ToolkitToolHeader
         category="Generators"
         title="Review Response Generator"
-        description="Draft polite, on-brand replies to Google and social reviews — tweak and post in seconds."
+        description="Draft polite, on-brand replies to Google and social reviews - tweak and post in seconds."
       />
       <div className="grid gap-8 py-10 lg:grid-cols-2">
         <FadeIn className="space-y-4 rounded-[10px] border border-border-strong bg-raised p-5 sm:p-6">

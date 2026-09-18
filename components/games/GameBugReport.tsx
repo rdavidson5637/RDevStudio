@@ -31,7 +31,7 @@ function BugReportForm({ game, context, onClose }: ModalProps) {
         <p className="text-3xl" aria-hidden="true">
           ✓
         </p>
-        <p className="mt-3 font-bold text-white">Thanks — report sent.</p>
+        <p className="mt-3 font-bold text-white">Thanks - report sent.</p>
         <p className="mt-2 text-sm text-white/50">
           I&apos;ll look into it as soon as I can.
         </p>

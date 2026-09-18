@@ -25,7 +25,7 @@ const MODES: {
   {
     id: "dream",
     label: "Dream Team",
-    description: "Draft any legends — your XI still represents your nation",
+    description: "Draft any legends - your XI still represents your nation",
   },
 ];
 
@@ -84,7 +84,7 @@ export default function WCDraftModeSelect({
 
       {isLimitedPool && (
         <p className="text-amber-400/70 text-xs text-center max-w-sm mt-6 leading-relaxed">
-          Limited {selectedNation} player pool — National Squad works best for
+          Limited {selectedNation} player pool - National Squad works best for
           Dream Team, or try a nation with deeper coverage like Spain or Brazil.
         </p>
       )}

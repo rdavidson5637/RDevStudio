@@ -13,7 +13,7 @@ export const pictureFallbackQuestions: Question[] = [
     correctAnswer: "Ireland",
     category: QuizCategory.GEOGRAPHY,
     explanation:
-      "The Irish tricolour — green represents Irish nationalism, orange represents Unionism, white represents peace between them.",
+      "The Irish tricolour - green represents Irish nationalism, orange represents Unionism, white represents peace between them.",
   },
   {
     id: "pic_002",
@@ -38,7 +38,7 @@ export const pictureFallbackQuestions: Question[] = [
     correctAnswer: "Japan",
     category: QuizCategory.GEOGRAPHY,
     explanation:
-      "The Japanese flag is known as the Hinomaru — 'circle of the sun'.",
+      "The Japanese flag is known as the Hinomaru - 'circle of the sun'.",
   },
   {
     id: "pic_004",
@@ -69,7 +69,7 @@ export const pictureFallbackQuestions: Question[] = [
     correctAnswer: "Colosseum",
     category: QuizCategory.GEOGRAPHY,
     explanation:
-      "The Colosseum could hold an estimated 50,000–80,000 spectators.",
+      "The Colosseum could hold an estimated 50,000-80,000 spectators.",
   },
   {
     id: "pic_006",

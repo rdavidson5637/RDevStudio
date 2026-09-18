@@ -172,7 +172,7 @@ export default function CLShareCard(props: Props) {
       <ShareCardActions
         captureId={SHARE_CARD_CAPTURE_ID}
         shareText={shareText}
-        shareTitle="Champions Draft — Champions League"
+        shareTitle="Champions Draft - Champions League"
         imageFilename="champions-draft-champions-league.png"
         primaryClassName={
           result === "winner"

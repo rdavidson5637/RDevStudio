@@ -4,7 +4,7 @@ export function SupportSection() {
       <div className="mx-auto max-w-2xl text-center">
         <p className="section-label">Optional</p>
         <h2 className="heading-display text-2xl sm:text-3xl">
-          Monthly Support — £30/month
+          Monthly Support - £30/month
         </h2>
         <p className="mt-4 text-secondary">
           Covers hosting, security updates and minor content changes. Keeps your

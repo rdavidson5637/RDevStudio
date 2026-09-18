@@ -22,8 +22,8 @@ const SERVICE_DETAILS = [
     slug: "websites",
     features: PRICING_FEATURES,
     notIncluded: [
-      "An online shop or card payments — that is a separate quote",
-      "Pages beyond five — extra pages are priced before I build them",
+      "An online shop or card payments - that is a separate quote",
+      "Pages beyond five - extra pages are priced before I build them",
       "A photoshoot or a new logo",
       "Writing the whole site from nothing if you send no details",
       "Monthly posting (that is the social package)",
@@ -54,7 +54,7 @@ const SERVICE_DETAILS = [
     timeline:
       "First month's calendar in the first week. Posting starts once you sign the calendar off.",
     revisions:
-      "One round of notes on each month's batch — captions and graphics — before anything is scheduled.",
+      "One round of notes on each month's batch - captions and graphics - before anything is scheduled.",
     ideal:
       "You know you should be posting and you do not have a free hour every week to do it.",
     process: [
@@ -196,7 +196,7 @@ export default function ServicesPage() {
                             className="mt-1 text-secondary"
                             aria-hidden="true"
                           >
-                            —
+                            -
                           </span>
                           {item}
                         </li>

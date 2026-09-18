@@ -1,6 +1,6 @@
 /**
  * Wikimedia Commons only generates certain thumbnail widths.
- * 400px is NOT valid for most files — browsers get HTTP 400 and images fail.
+ * 400px is NOT valid for most files - browsers get HTTP 400 and images fail.
  * 330px is widely supported.
  */
 export function isValidWikimediaImageUrl(url: string): boolean {
@@ -17,7 +17,7 @@ export function normalizeWikimediaImageUrl(url: string): string {
 
   let normalized = url.trim();
 
-  // AI and our old prompts used 400px — Wikimedia rejects these for most assets
+  // AI and our old prompts used 400px - Wikimedia rejects these for most assets
   normalized = normalized.replace(/\/400px-/g, "/330px-");
 
   return normalized;

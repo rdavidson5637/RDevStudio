@@ -15,14 +15,14 @@ export default function HowItsBuiltPage() {
         <p className="mt-4 max-w-2xl text-base leading-relaxed text-secondary sm:text-lg">
           Both FPL APIs block browsers, so nothing in the page ever calls them. A daily cron
           writes into Supabase; the pages read Postgres. The live gameweek page is the exception
-          — Vercel Hobby cannot run every five minutes, so that route hits the live endpoint
+          - Vercel Hobby cannot run every five minutes, so that route hits the live endpoint
           server-side, stores the snapshot, and pushes it over Pusher when credentials exist.
           The tab also polls once a minute.
         </p>
       </div>
 
       <section className="rounded-lg border border-border bg-raised p-5">
-        <p className="shell-label mb-3 text-accent">Availability, 0–100</p>
+        <p className="shell-label mb-3 text-accent">Availability, 0-100</p>
         <pre className="overflow-x-auto text-xs leading-relaxed text-secondary">
 {`base = { a:100, d:55, i:5, s:0, u:0, n:15 }[status]
 cop  = chance_next ?? chance_this ?? null
@@ -32,7 +32,7 @@ score += minutesTrend(last4)             // 0 until per-match minutes exist
 score += reportedAbsence(signal)         // RSS/Claude, labelled reported
 score  = clamp(0, 100)
 if status == i: score = min(score, 40)   // unofficial reports cannot green an injury
-green >= 75   amber 40–74   red < 40`}
+green >= 75   amber 40-74   red < 40`}
         </pre>
       </section>
 

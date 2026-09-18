@@ -52,7 +52,7 @@ function buildShareText(props: Props, url: string): string {
     return [
       "⚽ Champions Draft",
       "",
-      `🏆 WORLD CUP WINNERS — ${selectedNation}`,
+      `🏆 WORLD CUP WINNERS - ${selectedNation}`,
       `${modeLabel}${formation ? ` · ${formation}` : ""}`,
       "",
       "My XI:",
@@ -72,7 +72,7 @@ function buildShareText(props: Props, url: string): string {
   const exitLine = eliminatedAt
     ? `Eliminated at ${eliminatedAt}`
     : groupFinish
-      ? `Eliminated — ${groupFinish}`
+      ? `Eliminated - ${groupFinish}`
       : "Eliminated";
 
   return [
@@ -143,7 +143,7 @@ export default function WCShareCard(props: Props) {
       <ShareCardActions
         captureId={SHARE_CARD_CAPTURE_ID}
         shareText={shareText}
-        shareTitle="Champions Draft — World Cup"
+        shareTitle="Champions Draft - World Cup"
         imageFilename="champions-draft-world-cup.png"
         primaryClassName={
           result === "winner"

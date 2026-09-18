@@ -6,7 +6,7 @@ interface CountdownTimerProps {
   durationSeconds: number;
   onExpire: () => void;
   isActive: boolean;
-  /** Server-synced remaining time — overrides duration when provided */
+  /** Server-synced remaining time - overrides duration when provided */
   initialRemainingSeconds?: number;
 }
 

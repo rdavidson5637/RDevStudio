@@ -103,7 +103,7 @@ function buildPlaceholderScores(url: string): WebsiteGraderResult {
       id: "overall",
       title: "Overall Score",
       score: average,
-      summary: `${host} scores ${average}/100 overall — a good starting point with clear wins in SEO and security.`,
+      summary: `${host} scores ${average}/100 overall - a good starting point with clear wins in SEO and security.`,
       highlights: [
         "HTTPS enabled across the site",
         "Mobile-friendly layout detected",

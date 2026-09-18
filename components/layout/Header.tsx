@@ -22,7 +22,7 @@ export function Header() {
           <Link
             href="/"
             className="pitch-link inline-flex shrink-0 rounded-sm text-lg font-semibold tracking-tight text-primary transition-colors hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-base"
-            aria-label="RDev Studio — Home"
+            aria-label="RDev Studio - Home"
           >
             RDev Studio
           </Link>

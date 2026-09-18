@@ -169,7 +169,7 @@ export function FinishedScreen({
                 {" · "}
               </>
             ) : null}
-            {playerName} — {currentPlayer.score} pts across {totalQuestions}{" "}
+            {playerName} - {currentPlayer.score} pts across {totalQuestions}{" "}
             questions
           </p>
         </div>

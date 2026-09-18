@@ -77,7 +77,7 @@ export function ColourPaletteGeneratorApp() {
       <ToolkitToolHeader
         category="Developer tools"
         title="Colour Palette Generator"
-        description="Pick a base colour and generate a harmonious palette with shades and complements — copy hex values straight into your project."
+        description="Pick a base colour and generate a harmonious palette with shades and complements - copy hex values straight into your project."
       />
       <div className="py-10">
         <FadeIn className="rounded-[10px] border border-border-strong bg-raised p-5 sm:p-6">

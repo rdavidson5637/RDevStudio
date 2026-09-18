@@ -100,7 +100,7 @@ export function getPlayerOfTournament(draftSlots: DraftSlot[]): {
     .filter((s) => s.player)
     .sort((a, b) => (b.player?.overall ?? 0) - (a.player?.overall ?? 0))[0];
   return {
-    playerName: best?.player?.name ?? "—",
+    playerName: best?.player?.name ?? "-",
     club: best?.player?.club ?? best?.player?.nationality ?? "",
     overall: best?.player?.overall ?? 0,
   };

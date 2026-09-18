@@ -44,7 +44,7 @@ const SECTIONS: Section[] = [
           </li>
           <li>
             You&apos;ll see eligible players who fit your open positions. Pick
-            exactly <strong>one</strong> — they fill the next empty slot on your
+            exactly <strong>one</strong> - they fill the next empty slot on your
             pitch.
           </li>
           <li>
@@ -89,7 +89,7 @@ const SECTIONS: Section[] = [
     content: (
       <>
         <p>
-          Skip league pick — go straight to formation and draft. Your XI enters
+          Skip league pick - go straight to formation and draft. Your XI enters
           a 36-team league phase.
         </p>
         <ul className="mt-3 space-y-2 list-disc pl-4">
@@ -98,20 +98,20 @@ const SECTIONS: Section[] = [
             <strong>Top 8</strong> qualify directly for the Round of 16.
           </li>
           <li>
-            <strong>9th–24th</strong> enter a knockout playoff for the remaining
+            <strong>9th-24th</strong> enter a knockout playoff for the remaining
             spots.
           </li>
           <li>
-            <strong>25th or below</strong> — eliminated. Share your result and
+            <strong>25th or below</strong> - eliminated. Share your result and
             try again.
           </li>
           <li>
             Knockouts run through Round of 16, Quarter-Finals, Semi-Finals, and
-            the Final. Ties cannot end in a draw — a winner is decided on the
+            the Final. Ties cannot end in a draw - a winner is decided on the
             scoreline.
           </li>
           <li>
-            You only see your own knockout tie before each round — the full
+            You only see your own knockout tie before each round - the full
             bracket is revealed after you play.
           </li>
         </ul>
@@ -126,12 +126,12 @@ const SECTIONS: Section[] = [
         <p>Choose a nation, then pick how you want to draft:</p>
         <ul className="mt-3 space-y-2 list-disc pl-4">
           <li>
-            <strong>National Squad</strong> — only players from your nation
+            <strong>National Squad</strong> - only players from your nation
             appear in spins. Squads can be re-spun; individual players can only
             be picked once.
           </li>
           <li>
-            <strong>Dream Team</strong> — draft any legends from the full pool.
+            <strong>Dream Team</strong> - draft any legends from the full pool.
             Your nation is still shown on the kit, but there&apos;s no
             nationality filter.
           </li>
@@ -139,7 +139,7 @@ const SECTIONS: Section[] = [
         <p className="mt-3">
           The tournament has a group stage (8 groups, top 2 qualify), then Round
           of 16 through to the Final. All World Cup matches are played at
-          neutral venues — no home advantage. Knockout ties never end in a draw.
+          neutral venues - no home advantage. Knockout ties never end in a draw.
         </p>
       </>
     ),
@@ -151,7 +151,7 @@ const SECTIONS: Section[] = [
       <>
         <p>
           Matches are simulated from your team&apos;s Attack, Midfield, Defence,
-          and Goalkeeper ratings — built from the overall ratings of the players
+          and Goalkeeper ratings - built from the overall ratings of the players
           you drafted into each line.
         </p>
         <ul className="mt-3 space-y-2 list-disc pl-4">
@@ -163,7 +163,7 @@ const SECTIONS: Section[] = [
             <strong>skip</strong> before a round to control match speed.
           </li>
           <li>
-            Goal scorers are tracked from your drafted attackers — check top
+            Goal scorers are tracked from your drafted attackers - check top
             scorer stats at the end of a run.
           </li>
         </ul>
@@ -176,8 +176,8 @@ const SECTIONS: Section[] = [
     content: (
       <>
         <p>
-          When a run ends — whether you win the league, lift the trophy, or get
-          knocked out — you&apos;ll see a share card with your final position
+          When a run ends - whether you win the league, lift the trophy, or get
+          knocked out - you&apos;ll see a share card with your final position
           and full drafted XI.
         </p>
         <p className="mt-3">
@@ -194,7 +194,7 @@ const SECTIONS: Section[] = [
     content: (
       <ul className="space-y-2 list-disc pl-4">
         <li>
-          Balance your squad — a stacked attack means little if your defence is
+          Balance your squad - a stacked attack means little if your defence is
           weak.
         </li>
         <li>
@@ -202,7 +202,7 @@ const SECTIONS: Section[] = [
           players. Dream Team is easier for those nations.
         </li>
         <li>
-          Don&apos;t burn spins on positions you&apos;ve already filled — watch
+          Don&apos;t burn spins on positions you&apos;ve already filled - watch
           the highlighted slot on the pitch.
         </li>
         <li>
@@ -263,7 +263,7 @@ export default function HowToPlayModal({ onClose }: Props) {
             onClick={onClose}
             className="w-full py-3.5 bg-white text-black font-black text-sm uppercase tracking-widest rounded-xl hover:bg-white/90 active:scale-[0.98] transition-all"
           >
-            Got it — Let&apos;s Play
+            Got it - Let&apos;s Play
           </button>
         </div>
       </div>

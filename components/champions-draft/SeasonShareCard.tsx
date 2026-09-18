@@ -128,7 +128,7 @@ export default function SeasonShareCard(props: Props) {
       <ShareCardActions
         captureId={SHARE_CARD_CAPTURE_ID}
         shareText={shareText}
-        shareTitle="Champions Draft — My Season"
+        shareTitle="Champions Draft - My Season"
         imageFilename="champions-draft-league.png"
       />
     </div>

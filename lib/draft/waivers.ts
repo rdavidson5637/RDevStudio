@@ -101,7 +101,7 @@ async function fetchWaiverBoard(eventId: number, entryId: number): Promise<Waive
       id: player.id,
       webName: player.web_name,
       teamId: player.team_id,
-      teamShortName: teamById.get(player.team_id)?.short_name ?? "—",
+      teamShortName: teamById.get(player.team_id)?.short_name ?? "-",
       position: player.element_type as 1 | 2 | 3 | 4,
       availabilityScore: avail,
       projected1: projected.gw1,

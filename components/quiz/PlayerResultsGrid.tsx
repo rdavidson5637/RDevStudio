@@ -33,7 +33,7 @@ export function PlayerResultsGrid({
           const isCorrect = result?.isCorrect ?? false;
 
           let ringClass = "ring-quiz-border";
-          let label = "—";
+          let label = "-";
 
           if (timedOut) {
             ringClass = "ring-quiz-muted/40";

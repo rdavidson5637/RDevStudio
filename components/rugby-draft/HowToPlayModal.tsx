@@ -39,17 +39,17 @@ const SECTIONS: Section[] = [
         <ul className="space-y-2 list-disc pl-4">
           <li>
             Tap <strong>Spin Squad</strong> to land on a random squad from the
-            pool — Champions Cup clubs, Six Nations nations, or World Cup
+            pool - Champions Cup clubs, Six Nations nations, or World Cup
             nations (including legendary sides).
           </li>
           <li>
             You&apos;ll see players from that squad who can still fill an open
-            position. Pick exactly <strong>one</strong> — they slot into the
+            position. Pick exactly <strong>one</strong> - they slot into the
             first compatible empty spot on your pitch.
           </li>
           <li>
             You can spin the same squad again if it still has players who fit
-            your open slots — but each player can only be picked once.
+            your open slots - but each player can only be picked once.
           </li>
           <li>
             When all 15 slots are filled, you&apos;ll see your team ratings
@@ -65,12 +65,12 @@ const SECTIONS: Section[] = [
     content: (
       <>
         <p>
-          Pick a club and draft your XV from the full European club pool — URC,
+          Pick a club and draft your XV from the full European club pool - URC,
           Premiership, and Top 14 sides.
         </p>
         <ul className="mt-3 space-y-2 list-disc pl-4">
           <li>
-            Pool stage: four pools of six clubs — round-robin matches against
+            Pool stage: four pools of six clubs - round-robin matches against
             drawn opponents.
           </li>
           <li>
@@ -83,7 +83,7 @@ const SECTIONS: Section[] = [
           </li>
           <li>
             Knockouts run through the Last 16, quarters, semis, and final. Ties
-            cannot end in a draw — a winner is decided on the scoreline.
+            cannot end in a draw - a winner is decided on the scoreline.
           </li>
           <li>
             Watch matches one by one, or use <strong>fast</strong> /{" "}
@@ -100,11 +100,11 @@ const SECTIONS: Section[] = [
       <>
         <p>
           Choose a nation to compete as, then draft your XV from the full Six
-          Nations pool — players from England, Ireland, France, Scotland, Wales,
+          Nations pool - players from England, Ireland, France, Scotland, Wales,
           and Italy (including legendary squads).
         </p>
         <ul className="mt-3 space-y-2 list-disc pl-4">
-          <li>Round-robin format — every nation plays each other once.</li>
+          <li>Round-robin format - every nation plays each other once.</li>
           <li>Home matches give a small advantage. Away days are tougher.</li>
           <li>
             Bonus points for four or more tries and losing by seven points or
@@ -125,7 +125,7 @@ const SECTIONS: Section[] = [
       <>
         <p>
           Choose a nation to compete as, then draft your XV from the full World
-          Cup pool — any country&apos;s players, including legendary
+          Cup pool - any country&apos;s players, including legendary
           tournament-winning squads.
         </p>
         <ul className="mt-3 space-y-2 list-disc pl-4">
@@ -149,7 +149,7 @@ const SECTIONS: Section[] = [
       <>
         <p>
           Matches are simulated from your team&apos;s Forwards, Backs, and
-          Overall ratings — built from the stats of the players you drafted into
+          Overall ratings - built from the stats of the players you drafted into
           each group.
         </p>
         <ul className="mt-3 space-y-2 list-disc pl-4">
@@ -158,14 +158,14 @@ const SECTIONS: Section[] = [
           </li>
           <li>
             Scores are in <strong>points</strong> (tries, conversions, and
-            penalties) — not goals.
+            penalties) - not goals.
           </li>
           <li>
             Use <strong>normal</strong>, <strong>fast</strong>, or{" "}
             <strong>skip</strong> before a round to control match speed.
           </li>
           <li>
-            Try scorers are tracked from your drafted backs — check top try
+            Try scorers are tracked from your drafted backs - check top try
             scorer stats at the end of a run.
           </li>
         </ul>
@@ -178,8 +178,8 @@ const SECTIONS: Section[] = [
     content: (
       <>
         <p>
-          When a run ends — whether you win the tournament, lift the trophy, or
-          get knocked out — you&apos;ll see a share card with your final
+          When a run ends - whether you win the tournament, lift the trophy, or
+          get knocked out - you&apos;ll see a share card with your final
           position and full drafted XV.
         </p>
         <p className="mt-3">
@@ -196,15 +196,15 @@ const SECTIONS: Section[] = [
     content: (
       <ul className="space-y-2 list-disc pl-4">
         <li>
-          Balance your squad — a stacked back line means little if your forwards
+          Balance your squad - a stacked back line means little if your forwards
           are weak.
         </li>
         <li>
-          Props and locks are interchangeable within their pairs — use
+          Props and locks are interchangeable within their pairs - use
           compatible positions to fill gaps.
         </li>
         <li>
-          Don&apos;t burn spins on positions you&apos;ve already filled — watch
+          Don&apos;t burn spins on positions you&apos;ve already filled - watch
           the highlighted slot on the pitch.
         </li>
         <li>
@@ -265,7 +265,7 @@ export default function HowToPlayModal({ onClose }: Props) {
             onClick={onClose}
             className="w-full py-3.5 bg-white text-black font-black text-sm uppercase tracking-widest rounded-xl hover:bg-white/90 active:scale-[0.98] transition-all"
           >
-            Got it — Let&apos;s Play
+            Got it - Let&apos;s Play
           </button>
         </div>
       </div>

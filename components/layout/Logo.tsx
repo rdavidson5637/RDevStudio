@@ -13,7 +13,7 @@ export function Logo({ className = "", size = "md" }: LogoProps) {
     <Link
       href="/"
       className={`inline-flex shrink-0 transition-opacity duration-normal ease-out hover:opacity-85 ${className}`}
-      aria-label="RDev Studio — Home"
+      aria-label="RDev Studio - Home"
     >
       <Wordmark size={size} dark />
     </Link>

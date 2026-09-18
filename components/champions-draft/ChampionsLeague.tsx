@@ -301,7 +301,7 @@ export default function ChampionsLeague({ state, onUpdate, onExit }: Props) {
     drawn: userRecord.drawn,
     lost: userRecord.lost,
     goalDifference: userRow?.goalDifference ?? 0,
-    playerOfTournament: playerOfTournament?.name ?? "—",
+    playerOfTournament: playerOfTournament?.name ?? "-",
     playerOfTournamentOvr: playerOfTournament?.overall ?? 0,
     formation: state.formation,
     teamRatings: state.teamRatings ?? undefined,
@@ -477,7 +477,7 @@ export default function ChampionsLeague({ state, onUpdate, onExit }: Props) {
             {pendingKnockout.name}
           </h2>
           <p className="text-white/40 text-sm mt-2">
-            Your knockout tie — full bracket revealed after the match
+            Your knockout tie - full bracket revealed after the match
           </p>
         </div>
 
@@ -540,7 +540,7 @@ export default function ChampionsLeague({ state, onUpdate, onExit }: Props) {
               }`}
             >
               {outcome === "direct"
-                ? "Top 8 — Auto Qualified!"
+                ? "Top 8 - Auto Qualified!"
                 : outcome === "playoff"
                   ? "Knockout Playoff Awaits"
                   : "Eliminated"}
@@ -561,11 +561,11 @@ export default function ChampionsLeague({ state, onUpdate, onExit }: Props) {
 
           <div className="grid grid-cols-3 gap-2 mb-8 text-center text-[10px] uppercase tracking-widest">
             <div className="bg-emerald-400/10 border border-emerald-400/20 rounded-lg p-3">
-              <p className="text-emerald-400 font-bold">1st–8th</p>
+              <p className="text-emerald-400 font-bold">1st-8th</p>
               <p className="text-white/40 mt-1">Round of 16</p>
             </div>
             <div className="bg-amber-400/10 border border-amber-400/20 rounded-lg p-3">
-              <p className="text-amber-400 font-bold">9th–24th</p>
+              <p className="text-amber-400 font-bold">9th-24th</p>
               <p className="text-white/40 mt-1">Playoff</p>
             </div>
             <div className="bg-red-400/10 border border-red-400/20 rounded-lg p-3">

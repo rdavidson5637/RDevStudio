@@ -54,7 +54,7 @@ export default function ShareCardActions({
       const blob = await captureImage();
       downloadImageBlob(blob, imageFilename);
     } catch {
-      // capture failed — fall back to text copy
+      // capture failed - fall back to text copy
       handleCopy();
     } finally {
       setSaving(false);

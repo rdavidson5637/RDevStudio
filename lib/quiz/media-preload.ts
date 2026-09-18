@@ -48,7 +48,7 @@ export async function preloadQuestionMedia(
   if (question.imageUrl) {
     tasks.push(
       preloadImage(normalizeWikimediaImageUrl(question.imageUrl)).catch(() => {
-        /* show question anyway — QuestionImage handles error UI */
+        /* show question anyway - QuestionImage handles error UI */
       }),
     );
   }

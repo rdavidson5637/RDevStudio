@@ -16,7 +16,7 @@ export function validateLogoFile(
     return {
       valid: false,
       message:
-        "Use PNG, JPG, WebP, or SVG — other formats aren’t supported yet.",
+        "Use PNG, JPG, WebP, or SVG - other formats aren’t supported yet.",
     };
   }
 

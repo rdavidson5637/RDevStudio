@@ -287,7 +287,7 @@ export const fallbackQuestions: Record<QuizCategory, Question[]> = {
       options: ["India", "China", "Bhutan", "Pakistan"],
       correctAnswer: "China",
       category: QuizCategory.GEOGRAPHY,
-      explanation: "The summit straddles the Nepal–China border.",
+      explanation: "The summit straddles the Nepal-China border.",
     },
   ],
   [QuizCategory.GAMING]: [

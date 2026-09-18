@@ -36,7 +36,7 @@ export function OptimisePanel({ squad }: { squad: SquadPlayer[] }) {
         <div>
           <p className="shell-label text-accent">Optimise</p>
           <h3 className="font-display text-xl uppercase tracking-tight text-primary">
-            Recommended XI — {result.formation}
+            Recommended XI - {result.formation}
           </h3>
         </div>
         <label className="flex items-center gap-2 text-sm text-secondary">
@@ -103,7 +103,7 @@ export function OptimisePanel({ squad }: { squad: SquadPlayer[] }) {
       </div>
 
       <p className="shell-label text-secondary">
-        This tells you what to do — there is no public API to write a lineup back to FPL, so you make the change yourself in the app.
+        This tells you what to do - there is no public API to write a lineup back to FPL, so you make the change yourself in the app.
       </p>
     </div>
   );

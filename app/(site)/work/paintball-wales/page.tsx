@@ -61,7 +61,7 @@ export default function PaintballWalesCaseStudyPage() {
           className="mb-8"
         />
         <header className="space-y-6 border-b border-border pb-10">
-          <p className="shell-label text-accent">CASE STUDY — 03</p>
+          <p className="shell-label text-accent">CASE STUDY - 03</p>
           <h1 className="programme-h1">PAINTBALL WALES</h1>
           <p className="max-w-2xl text-lg text-primary">
             A phone-first site for North Wales&apos; longest-established outdoor
@@ -69,10 +69,10 @@ export default function PaintballWalesCaseStudyPage() {
           </p>
 
           <div className="grid grid-cols-2 gap-x-4 gap-y-2 border-t border-border pt-5 font-mono text-[11px] uppercase tracking-[0.08em] text-secondary lg:grid-cols-4">
-            <p>ROLE — Design &amp; development</p>
-            <p>STACK — Next.js 14 · TypeScript · Tailwind</p>
-            <p>TYPE — Marketing site · Local SEO</p>
-            <p>YEAR — 2026</p>
+            <p>ROLE - Design &amp; development</p>
+            <p>STACK - Next.js 14 · TypeScript · Tailwind</p>
+            <p>TYPE - Marketing site · Local SEO</p>
+            <p>YEAR - 2026</p>
           </div>
         </header>
 
@@ -153,17 +153,17 @@ export default function PaintballWalesCaseStudyPage() {
 
           <div className="mt-10 grid gap-8">
             <ScreenshotSlot
-              caption="EXPERIENCE — STAG &amp; HEN GROUPS IN THE WOODS"
+              caption="EXPERIENCE - STAG &amp; HEN GROUPS IN THE WOODS"
               src="/images/work/paintball-wales-stag.jpg"
               alt="Stag group in fancy dress kitted up for paintball at Paintball Wales"
             />
             <ScreenshotSlot
-              caption="EXPERIENCE — KIDS' LOW-IMPACT CAPTURE THE FLAG"
+              caption="EXPERIENCE - KIDS' LOW-IMPACT CAPTURE THE FLAG"
               src="/images/work/paintball-wales-kids.jpg"
               alt="Children playing low-impact paintball with a flag at Paintball Wales"
             />
             <ScreenshotSlot
-              caption="EXPERIENCE — TOURNAMENT ACTION ON THE ARENA"
+              caption="EXPERIENCE - TOURNAMENT ACTION ON THE ARENA"
               src="/images/work/paintball-wales-action.jpg"
               alt="Paintball players taking cover during a game at Paintball Wales"
             />

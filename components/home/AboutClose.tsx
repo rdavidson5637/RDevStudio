@@ -6,7 +6,7 @@ const VALUE_PROPS = [
   {
     icon: "🎯",
     title: "One person, full ownership",
-    description: "Design to deployment — no handoffs, no miscommunication.",
+    description: "Design to deployment - no handoffs, no miscommunication.",
   },
   {
     icon: "⚡",
@@ -52,7 +52,7 @@ export function AboutClose() {
           </div>
 
           <p className="editorial-note mt-8">
-            Open to freelance work — say hello if you want to talk through a
+            Open to freelance work - say hello if you want to talk through a
             project.
           </p>
 

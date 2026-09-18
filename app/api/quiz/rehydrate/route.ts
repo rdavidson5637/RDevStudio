@@ -38,7 +38,7 @@ export async function POST(request: NextRequest) {
 
     if (!hasRounds && !hasCategories) {
       return NextResponse.json(
-        { error: "Invalid lobby state — missing round configuration" },
+        { error: "Invalid lobby state - missing round configuration" },
         { status: 400 },
       );
     }

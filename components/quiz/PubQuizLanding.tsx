@@ -192,7 +192,7 @@ export function PubQuizLanding() {
                 Host a game
               </span>
               <p className="mt-2 text-sm leading-relaxed text-quiz-muted">
-                Set up rounds, formats, and difficulty — then share your code.
+                Set up rounds, formats, and difficulty - then share your code.
               </p>
             </button>
 

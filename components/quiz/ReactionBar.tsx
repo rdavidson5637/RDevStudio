@@ -49,7 +49,7 @@ export function ReactionBar({ gameId, playerId }: ReactionBarProps) {
           body: JSON.stringify({ gameId, playerId, emoji }),
         });
       } catch {
-        // Reactions are best-effort — no UI error needed
+        // Reactions are best-effort - no UI error needed
       }
     },
     [cooldown, gameId, playerId],

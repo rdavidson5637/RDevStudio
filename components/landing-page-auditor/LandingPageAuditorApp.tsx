@@ -114,7 +114,7 @@ export function LandingPageAuditorApp() {
             />
           </div>
 
-          <PlaceholderNotice message="Sample audit data shown for preview — AI backend is not connected yet." />
+          <PlaceholderNotice message="Sample audit data shown for preview - AI backend is not connected yet." />
         </section>
       ) : null}
     </div>

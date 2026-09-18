@@ -34,7 +34,7 @@ function PlayerCard({ player }: { player: SquadPlayer }) {
           <span className="shell-label text-secondary">No fixture</span>
         )}
         <span className="tabular-nums text-sm font-semibold text-primary">
-          {player.projectedPoints != null ? player.projectedPoints.toFixed(1) : "—"}
+          {player.projectedPoints != null ? player.projectedPoints.toFixed(1) : "-"}
         </span>
       </div>
     </div>
@@ -154,7 +154,7 @@ function TableView({ squad }: { squad: SquadPlayer[] }) {
                     {p.webName}
                   </Link>
                 </td>
-                <td className="px-3 py-2 text-secondary">{POSITION_LABELS[p.position] ?? "—"}</td>
+                <td className="px-3 py-2 text-secondary">{POSITION_LABELS[p.position] ?? "-"}</td>
                 <td className="shell-label px-3 py-2 text-secondary">{p.teamShortName}</td>
                 <td className={`px-3 py-2 tabular-nums ${flagged ? "text-destructive" : "text-secondary"}`}>
                   {p.availabilityScore}
@@ -167,13 +167,13 @@ function TableView({ squad }: { squad: SquadPlayer[] }) {
                       difficulty={p.nextFixture.difficulty}
                     />
                   ) : (
-                    <span className="text-secondary">—</span>
+                    <span className="text-secondary">-</span>
                   )}
                 </td>
                 <td className="px-3 py-2 tabular-nums text-primary">
-                  {p.projectedPoints != null ? p.projectedPoints.toFixed(1) : "—"}
+                  {p.projectedPoints != null ? p.projectedPoints.toFixed(1) : "-"}
                 </td>
-                <td className="px-3 py-2 tabular-nums text-secondary">{p.form ?? "—"}</td>
+                <td className="px-3 py-2 tabular-nums text-secondary">{p.form ?? "-"}</td>
               </tr>
             );
           })}

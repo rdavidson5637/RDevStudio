@@ -19,7 +19,7 @@ async function verifyPictureQuestion(
 
   if (!(await isWikimediaImageAccessible(imageUrl))) {
     console.warn(
-      `Picture question "${question.id}" dropped — image not accessible: ${imageUrl}`,
+      `Picture question "${question.id}" dropped - image not accessible: ${imageUrl}`,
     );
     return null;
   }

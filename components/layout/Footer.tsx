@@ -15,7 +15,7 @@ export function Footer() {
         <div className="grid gap-10 md:grid-cols-3">
           <div className="space-y-3">
             <p className="text-sm leading-relaxed text-primary">
-              RDev Studio — designed and built in Carrickfergus. No template, no
+              RDev Studio - designed and built in Carrickfergus. No template, no
               page builder, occasional dog supervision.
             </p>
             <p className="shell-label text-secondary">
@@ -82,7 +82,7 @@ export function Footer() {
 
         <div className="programme-rule mt-10" />
         <p className="shell-label pt-6 text-center text-accent">
-          FULL TIME — thanks for reading the programme.
+          FULL TIME - thanks for reading the programme.
         </p>
       </div>
     </footer>

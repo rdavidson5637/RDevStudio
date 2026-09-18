@@ -67,13 +67,13 @@ export function LiveBoard({
 
       {board.h2h ? (
         <div className="rounded-lg border border-border bg-raised px-4 py-3 text-sm text-secondary">
-          Live H2H vs {board.h2h.opponentName}: {board.h2h.myPoints}–{board.h2h.theirPoints}
+          Live H2H vs {board.h2h.opponentName}: {board.h2h.myPoints}-{board.h2h.theirPoints}
           {winPct != null ? ` · live win ${Math.round(winPct * 100)}%` : ""}. Yet-to-play players are simulated;
           points already scored stay locked.
         </div>
       ) : (
         <p className="text-sm text-secondary">
-        Classic league — live points only, no H2H fixture this week.
+        Classic league - live points only, no H2H fixture this week.
       </p>
       )}
 
@@ -100,7 +100,7 @@ export function LiveBoard({
       </div>
 
       <div>
-        <p className="shell-label mb-3 text-accent">Players — live points</p>
+        <p className="shell-label mb-3 text-accent">Players - live points</p>
         <ul className="divide-y divide-border rounded-lg border border-border bg-raised">
           {board.players.slice(0, 40).map((player) => (
             <li key={`${player.entryId}-${player.id}`} className="flex items-center justify-between gap-3 px-4 py-2 text-sm">

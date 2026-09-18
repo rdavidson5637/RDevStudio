@@ -219,7 +219,7 @@ export default function WorldCup({ state, onUpdate, onExit }: Props) {
     wcDraftMode: state.wcDraftMode,
     topScorer: topScorer.playerName,
     topScorerGoals: topScorer.goals,
-    playerOfTournament: playerOfTournament?.name ?? "—",
+    playerOfTournament: playerOfTournament?.name ?? "-",
     playerOfTournamentOvr: playerOfTournament?.overall ?? 0,
     formation: state.formation,
     teamRatings: state.teamRatings ?? undefined,
@@ -324,7 +324,7 @@ export default function WorldCup({ state, onUpdate, onExit }: Props) {
             {pendingKnockout.name}
           </h2>
           <p className="text-white/40 text-sm mt-2">
-            Your knockout tie — full bracket revealed after the match
+            Your knockout tie - full bracket revealed after the match
           </p>
         </div>
 

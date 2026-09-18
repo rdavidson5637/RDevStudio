@@ -56,7 +56,7 @@ export default function CLLeagueDraw({
       </div>
 
       <p className="text-white/20 text-[10px] uppercase tracking-widest text-center mt-4">
-        Top 8 qualify · 9th–24th playoff · 25th+ out
+        Top 8 qualify · 9th-24th playoff · 25th+ out
       </p>
     </div>
   );

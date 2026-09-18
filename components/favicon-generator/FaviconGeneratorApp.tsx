@@ -49,7 +49,7 @@ export function FaviconGeneratorApp() {
       <ToolkitToolHeader
         category="Generators"
         title="Favicon Generator"
-        description="Upload an image and download common favicon sizes — 16, 32, 180, and 512 pixels."
+        description="Upload an image and download common favicon sizes - 16, 32, 180, and 512 pixels."
       />
       <div className="grid gap-8 py-10 lg:grid-cols-2">
         <FadeIn className="rounded-[10px] border border-border-strong bg-raised p-5 sm:p-6">

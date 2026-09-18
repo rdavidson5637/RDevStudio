@@ -86,7 +86,7 @@ export function QuestionPreview({ rounds }: QuestionPreviewProps) {
       {open && samples.length > 0 ? (
         <div className="space-y-4 rounded-xl border border-quiz-border bg-quiz-bg-elevated p-4">
           <p className="text-xs text-quiz-muted">
-            Sample questions — final set is generated when you start the game.
+            Sample questions - final set is generated when you start the game.
           </p>
           {samples.map((sample) => (
             <div key={sample.roundName} className="space-y-2">

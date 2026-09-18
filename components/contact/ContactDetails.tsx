@@ -21,7 +21,7 @@ export function ContactDetails() {
             Availability
           </p>
           <p className="mt-1 text-secondary">
-            Open to freelance — based in Belfast
+            Open to freelance - based in Belfast
           </p>
         </li>
         <li>
@@ -38,7 +38,7 @@ export function ContactDetails() {
         </p>
         <p className="lead-text mt-2 text-sm">
           I build websites and small web apps for businesses and side projects.
-          No agency — just me, start to finish.
+          No agency - just me, start to finish.
         </p>
       </div>
     </aside>

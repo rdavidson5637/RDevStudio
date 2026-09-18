@@ -1241,7 +1241,7 @@ export default function ChampionsCup({ state, onUpdate, onExit }: Props) {
             </h2>
             {userPoolEliminated && (
               <p className="text-amber-400/80 text-xs mt-2 uppercase tracking-widest">
-                Eliminated from Pool {userPool?.name} — remaining matches
+                Eliminated from Pool {userPool?.name} - remaining matches
                 continue
               </p>
             )}
@@ -1513,7 +1513,7 @@ export default function ChampionsCup({ state, onUpdate, onExit }: Props) {
             {completedInRound.length > 0 && (
               <div className="space-y-2">
                 <p className="text-white/30 text-xs uppercase tracking-widest">
-                  {activeKnockoutRound.name} — Completed
+                  {activeKnockoutRound.name} - Completed
                 </p>
                 {completedInRound.map((match, i) => (
                   <CompletedMatchCard
@@ -1592,7 +1592,7 @@ export default function ChampionsCup({ state, onUpdate, onExit }: Props) {
             <div className="bg-white/5 border border-white/10 rounded-xl p-4 mb-6 mt-6">
               <div className="flex items-center gap-2 mb-3">
                 <h3 className="text-white font-black text-sm uppercase tracking-tight">
-                  Your Pool ({userPool.name}) — Final Standings
+                  Your Pool ({userPool.name}) - Final Standings
                 </h3>
                 <span className="text-white/25 text-[10px] uppercase">
                   {getLeagueLabel(userClub)}

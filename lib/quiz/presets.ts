@@ -95,7 +95,7 @@ export const QUIZ_PRESETS: QuizPreset[] = [
   {
     id: "chaos",
     name: "Chaos mode",
-    description: "Buzzer, risk, picture, and music — fast and frantic.",
+    description: "Buzzer, risk, picture, and music - fast and frantic.",
     buildRounds: () => [
       round(1, {
         format: RoundFormat.BUZZER,
@@ -127,7 +127,7 @@ export const QUIZ_PRESETS: QuizPreset[] = [
   {
     id: "quick",
     name: "Quick pint",
-    description: "Two short rounds — done in about 20 minutes.",
+    description: "Two short rounds - done in about 20 minutes.",
     buildRounds: () => [
       round(1, {
         format: RoundFormat.STANDARD,

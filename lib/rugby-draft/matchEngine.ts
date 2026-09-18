@@ -499,7 +499,7 @@ export function getTopTryScorer(
     }, 0);
 
   if (candidates.length === 0) {
-    return { playerName: "—", club: userTeam, tries: userTries };
+    return { playerName: "-", club: userTeam, tries: userTries };
   }
 
   const totalWeight = candidates.reduce((sum, c) => sum + c.weight, 0);

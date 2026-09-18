@@ -101,7 +101,7 @@ export function FixtureTicker({ players, mode }: Props) {
                         aria-label={`No fixture in gameweek ${cell.event}`}
                         className="inline-flex min-h-6 min-w-10 rounded border border-dashed border-border-strong px-1.5 py-0.5 font-mono text-[10px] text-secondary"
                       >
-                        —
+                        -
                       </span>
                     ) : (
                       <span className="flex flex-col gap-1">

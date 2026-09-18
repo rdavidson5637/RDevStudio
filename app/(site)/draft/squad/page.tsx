@@ -41,7 +41,7 @@ export default async function SquadBoardPage() {
       <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
         <StatTile label="Projected XI" value={projectedTotal.toFixed(1)} />
         <StatTile label="Flagged in XI" value={flaggedCount} />
-        <StatTile label="Avg next FDR" value={avgFdr != null ? avgFdr.toFixed(1) : "—"} />
+        <StatTile label="Avg next FDR" value={avgFdr != null ? avgFdr.toFixed(1) : "-"} />
         <StatTile label="Bench strength" value={benchStrength.toFixed(1)} />
       </div>
 

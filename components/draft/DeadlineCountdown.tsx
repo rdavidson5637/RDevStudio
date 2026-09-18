@@ -29,7 +29,7 @@ export function DeadlineCountdown({ deadline, className }: Props) {
   }, []);
 
   if (!deadline) {
-    return <span className={`shell-label text-secondary ${className ?? ""}`}>Deadline — TBC</span>;
+    return <span className={`shell-label text-secondary ${className ?? ""}`}>Deadline - TBC</span>;
   }
 
   const deadlineMs = new Date(deadline).getTime();

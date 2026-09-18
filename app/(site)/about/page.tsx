@@ -6,7 +6,7 @@ import { createPageMetadata } from "@/lib/metadata";
 export const metadata = createPageMetadata({
   title: "About",
   description:
-    "Ryan Davidson — designer, developer, and the person behind RDev Studio.",
+    "Ryan Davidson - designer, developer, and the person behind RDev Studio.",
   path: "/about",
 });
 
@@ -19,13 +19,13 @@ const PROFILE_STATS = [
     value:
       "MSc Software Development, Queen's University Belfast (Commendation) · BSc Forensic Science, LJMU",
   },
-  { label: "DAY JOB", value: "UK Civil Service — casework" },
+  { label: "DAY JOB", value: "UK Civil Service - casework" },
 ] as const;
 
 const OFF_THE_PITCH = [
   {
     label: "RUDI",
-    line: "Border Collie. Chief morale officer. Adopted from Assisi — yes, the same sanctuary.",
+    line: "Border Collie. Chief morale officer. Adopted from Assisi - yes, the same sanctuary.",
   },
   {
     label: "FOOTBALL & RUGBY",
@@ -86,7 +86,7 @@ export default function AboutPage() {
         <header className="border-b border-border pb-10">
           <div className="grid gap-8 lg:grid-cols-[1fr,280px] lg:items-end">
             <div>
-              <p className="shell-label mb-3 text-accent">SQUAD — No. 10</p>
+              <p className="shell-label mb-3 text-accent">SQUAD - No. 10</p>
               <h1 className="programme-h1">RYAN DAVIDSON</h1>
             </div>
             <figure>
@@ -101,7 +101,7 @@ export default function AboutPage() {
                 />
               </div>
               <figcaption className="shell-label mt-3 text-secondary">
-                QUEEN&apos;S UNIVERSITY BELFAST — MSc
+                QUEEN&apos;S UNIVERSITY BELFAST - MSc
               </figcaption>
             </figure>
           </div>
@@ -118,7 +118,7 @@ export default function AboutPage() {
                   <dt className="sr-only">{stat.label}</dt>
                   <dd className="font-mono text-[11px] uppercase leading-relaxed tracking-[0.08em] text-secondary">
                     <span className="text-primary">{stat.label}</span>
-                    {" — "}
+                    {" - "}
                     {stat.value}
                   </dd>
                 </div>
@@ -131,7 +131,7 @@ export default function AboutPage() {
           <div className="max-w-3xl space-y-5 text-base leading-relaxed text-primary sm:text-lg">
             <p>
               I didn&apos;t take the usual route in. Forensic science degree,
-              then into the civil service last August — handling casework and
+              then into the civil service last August - handling casework and
               talking to claimants for most of the day. Real problems, real
               people, lots of process. You learn to read a file properly, spot
               what&apos;s missing, and explain yourself clearly when
@@ -146,8 +146,8 @@ export default function AboutPage() {
               uses it, I&apos;m not interested.
             </p>
             <p>
-              I do design and development both — from first Figma frame to
-              production — which means fewer handoffs, fewer meetings about
+              I do design and development both - from first Figma frame to
+              production - which means fewer handoffs, fewer meetings about
               meetings, and one person who&apos;s accountable for the whole
               thing. The day job turned out to be good training: I&apos;m hard
               to fluster and I write things down.

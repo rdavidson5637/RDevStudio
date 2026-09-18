@@ -258,7 +258,7 @@ export function RoundBuilder({ rounds, onChange }: RoundBuilderProps) {
       </div>
 
       <p className="text-xs text-quiz-muted">
-        {MIN_QUESTIONS_PER_ROUND}–{MAX_QUESTIONS_PER_ROUND} questions per round.
+        {MIN_QUESTIONS_PER_ROUND}-{MAX_QUESTIONS_PER_ROUND} questions per round.
         Questions won&apos;t repeat across games in this session.
       </p>
     </div>

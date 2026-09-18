@@ -31,7 +31,7 @@ export function AvailabilityDot({ score, band, className }: Props) {
   return (
     <span
       role="img"
-      aria-label={`${BAND_LABELS[resolved]} — availability score ${score} of 100`}
+      aria-label={`${BAND_LABELS[resolved]} - availability score ${score} of 100`}
       title={`${BAND_LABELS[resolved]} (${score}/100)`}
       className={`inline-block h-2.5 w-2.5 shrink-0 rounded-full ${BAND_STYLES[resolved]} ${className ?? ""}`}
     />

@@ -133,7 +133,7 @@ export function AudioPlayer({
           </div>
           <div className="flex justify-between text-xs text-quiz-muted">
             <span>{formatTime(progress * duration)}</span>
-            <span>{duration ? formatTime(duration) : "—"}</span>
+            <span>{duration ? formatTime(duration) : "-"}</span>
           </div>
         </div>
       </div>

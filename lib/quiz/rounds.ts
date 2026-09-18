@@ -26,7 +26,7 @@ export const ROUND_FORMAT_OPTIONS: Array<{
     value: RoundFormat.PICTURE,
     label: "Picture",
     icon: "🖼️",
-    description: "Questions based on images — flags, landmarks, faces",
+    description: "Questions based on images - flags, landmarks, faces",
   },
   {
     value: RoundFormat.MUSIC,
@@ -38,13 +38,13 @@ export const ROUND_FORMAT_OPTIONS: Array<{
     value: RoundFormat.BUZZER,
     label: "Buzzer Round",
     icon: "🔔",
-    description: "First to buzz in answers — wrong answers lose points",
+    description: "First to buzz in answers - wrong answers lose points",
   },
   {
     value: RoundFormat.RISK,
     label: "Risk Round",
     icon: "⚠️",
-    description: "Wrong answers lose 50 points — are you confident?",
+    description: "Wrong answers lose 50 points - are you confident?",
   },
 ];
 
@@ -60,7 +60,7 @@ export function defaultRoundName(
     CATEGORY_OPTIONS.find((option) => option.value === category)?.label ??
     category;
 
-  return `Round ${roundNumber}: ${formatLabel} — ${categoryLabel}`;
+  return `Round ${roundNumber}: ${formatLabel} - ${categoryLabel}`;
 }
 
 export function createDefaultRound(

@@ -11,7 +11,7 @@ const musicTriviaFallback: Question[] = [
     correctAnswer: "Queen",
     category: QuizCategory.MUSIC,
     explanation:
-      "Bohemian Rhapsody topped the UK charts twice — in 1975 and 1991.",
+      "Bohemian Rhapsody topped the UK charts twice - in 1975 and 1991.",
   },
   {
     id: "music_trivia_002",
@@ -42,7 +42,7 @@ const musicTriviaFallback: Question[] = [
   },
   {
     id: "music_trivia_005",
-    text: "Complete the song title: The Beatles — ___ Submarine",
+    text: "Complete the song title: The Beatles - ___ Submarine",
     type: QuestionType.MUSIC,
     options: ["Yellow", "Blue", "Green", "Red"],
     correctAnswer: "Yellow",

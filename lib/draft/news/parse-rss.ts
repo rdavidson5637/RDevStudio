@@ -45,7 +45,7 @@ function published(block: string): string | null {
   return Number.isNaN(date.getTime()) ? null : date.toISOString();
 }
 
-/** RSS 2.0 and Atom. Feeds and summaries only — never follows into full pages. */
+/** RSS 2.0 and Atom. Feeds and summaries only - never follows into full pages. */
 export function parseRss(xml: string, sourceName: string): RssItem[] {
   const items = [...chunks(xml, "item"), ...chunks(xml, "entry")];
   const parsed: RssItem[] = [];

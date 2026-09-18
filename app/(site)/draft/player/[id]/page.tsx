@@ -107,7 +107,7 @@ export default async function PlayerDetailPage({
             {player.web_name}
           </h1>
           <p className="shell-label mt-1 text-secondary">
-            {team?.name ?? "Unknown club"} · {POSITION_LABELS[player.element_type] ?? "—"}
+            {team?.name ?? "Unknown club"} · {POSITION_LABELS[player.element_type] ?? "-"}
           </p>
         </div>
       </header>
@@ -123,12 +123,12 @@ export default async function PlayerDetailPage({
         </div>
         <div className="rounded-lg border border-border bg-raised px-4 py-3">
           <p className="shell-label text-secondary">Form</p>
-          <p className="mt-1 text-lg tabular-nums text-primary">{player.form ?? "—"}</p>
+          <p className="mt-1 text-lg tabular-nums text-primary">{player.form ?? "-"}</p>
         </div>
         <div className="rounded-lg border border-border bg-raised px-4 py-3">
           <p className="shell-label text-secondary">Projected next GW</p>
           <p className="mt-1 text-lg tabular-nums text-primary">
-            {projectedPoints != null ? Number(projectedPoints).toFixed(1) : "—"}
+            {projectedPoints != null ? Number(projectedPoints).toFixed(1) : "-"}
           </p>
         </div>
       </div>
@@ -141,7 +141,7 @@ export default async function PlayerDetailPage({
             <div key={key}>
               <dt className="shell-label text-secondary">{key}</dt>
               <dd className="tabular-nums text-primary">
-                {value == null ? "—" : Number(value).toFixed(1)}
+                {value == null ? "-" : Number(value).toFixed(1)}
               </dd>
             </div>
           ))}
