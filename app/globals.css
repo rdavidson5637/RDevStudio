@@ -81,6 +81,23 @@
 
 @tailwind utilities;
 
+.stout-pin {
+  background: none;
+  border: none;
+}
+
+.leaflet-container {
+  font-family: var(--font-body-family);
+  background: var(--color-bg-overlay);
+}
+
+.leaflet-popup-content-wrapper,
+.leaflet-popup-tip {
+  background: var(--color-bg-raised);
+  color: var(--color-text-primary);
+  border-radius: 10px;
+}
+
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 4.5rem;
