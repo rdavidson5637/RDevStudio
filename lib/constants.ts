@@ -19,21 +19,12 @@ export const CONTACT_SERVICE_OPTIONS = [
 export const SITE_TAGLINE =
   "Websites, social, and content for NI businesses and charities.";
 
-export const NAV_LINKS = [
-  { href: "/work", label: "Work" },
-  { href: "/games", label: "Games", highlight: true },
-  { href: "/champions-draft", label: "Champions Draft", highlight: true },
-  { href: "/rugby-draft", label: "Rugby Draft", highlight: true },
-  { href: "/pub-quiz", label: "Pub Quiz", highlight: true },
-  { href: "/about", label: "About" },
-  { href: "/contact", label: "Contact" },
-] as const;
-
 export const WARDROBE_AI = {
   href: "/wardrobe-ai",
   label: "Wardrobe AI",
   description:
     "Generate outfits from a real wardrobe. AI-tagged clothes, every valid line-up, an honest verdict.",
+  status: "live",
 } as const;
 
 export const DRAFT_ANALYSER = {
@@ -41,19 +32,42 @@ export const DRAFT_ANALYSER = {
   label: "Draft Analyser",
   description:
     "A live FPL Draft analyser: squad board, availability, projected points, and a start/sit optimiser.",
+  status: "live",
+} as const;
+
+export const STOUT_FINDER = {
+  href: "/stout-finder",
+  label: "Stout Finder",
+  description:
+    "Which pubs in Antrim and Down actually have Beamish, Murphy's or Guinness on. Every claim dated, and it goes stale on its own.",
+  status: "soon",
+} as const;
+
+export const GUITAR_LAB = {
+  href: "/guitar-lab",
+  label: "Guitar Lab",
+  description:
+    "Scales, chords and progressions on a real fretboard. Alternate tunings, a capo, and a link that opens on exactly what you were looking at.",
+  status: "soon",
 } as const;
 
 export const SHELL_NAV_LINKS = [
   { href: "/services", label: "Services" },
   { href: "/work", label: "Work" },
+  { href: "/games", label: "Games" },
+  { href: "/toolkit", label: "Tools" },
+  { href: "/interactive", label: "Play" },
   { href: "/about", label: "About" },
-  { href: "/contact", label: "Contact" },
 ] as const;
 
 export const SECONDARY_NAV_LINKS = [
-  { href: "/toolkit", label: "Toolkit" },
-  { href: "/interactive", label: "Interactive" },
-  { href: "/games", label: "Games" },
+  { href: "/champions-draft", label: "Champions Draft" },
+  { href: "/rugby-draft", label: "Rugby Draft" },
+  { href: "/pub-quiz", label: "Pub Quiz" },
+  { href: "/draft", label: "Draft Analyser" },
+  { href: "/wardrobe-ai", label: "Wardrobe AI" },
+  { href: "/stout-finder", label: "Stout Finder" },
+  { href: "/guitar-lab", label: "Guitar Lab" },
 ] as const;
 
 export const SOCIAL_LINKS = [

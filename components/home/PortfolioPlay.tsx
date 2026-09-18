@@ -1,7 +1,12 @@
 import Link from "next/link";
 import { GameCard } from "@/components/bored/GameCard";
 import { getOtherBoredGames } from "@/lib/bored-games";
-import { DRAFT_ANALYSER, WARDROBE_AI } from "@/lib/constants";
+import {
+  DRAFT_ANALYSER,
+  GUITAR_LAB,
+  STOUT_FINDER,
+  WARDROBE_AI,
+} from "@/lib/constants";
 import { FeaturedGames } from "@/components/home/FeaturedGames";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { ExperimentSpotlight } from "@/components/ui/ExperimentSpotlight";
@@ -36,6 +41,8 @@ export function PortfolioPlay() {
         <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
           <ExperimentSpotlight experiment={WARDROBE_AI} animated={false} />
           <ExperimentSpotlight experiment={DRAFT_ANALYSER} animated={false} />
+          <ExperimentSpotlight experiment={STOUT_FINDER} animated={false} />
+          <ExperimentSpotlight experiment={GUITAR_LAB} animated={false} />
           {otherGames.map((game) => (
             <GameCard key={game.slug} game={game} />
           ))}

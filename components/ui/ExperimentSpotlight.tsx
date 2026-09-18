@@ -4,6 +4,7 @@ type Experiment = {
   href: string;
   label: string;
   description: string;
+  status?: "live" | "soon";
 };
 
 type ExperimentSpotlightProps = {
@@ -19,6 +20,8 @@ export function ExperimentSpotlight({
   compact = false,
   animated = true,
 }: ExperimentSpotlightProps) {
+  const soon = experiment.status === "soon";
+
   return (
     <article
       className={`work-card-lift group flex flex-col overflow-hidden rounded-[10px] border border-border bg-raised ${
@@ -38,8 +41,12 @@ export function ExperimentSpotlight({
           >
             {experiment.label}
           </h2>
-          <span className="shrink-0 rounded-full border border-border-strong bg-base px-2.5 py-0.5 text-xs font-semibold text-accent">
-            Live
+          <span
+            className={`shrink-0 rounded-full border border-border-strong bg-base px-2.5 py-0.5 text-xs font-semibold ${
+              soon ? "text-tertiary" : "text-accent"
+            }`}
+          >
+            {soon ? "Coming soon" : "Live"}
           </span>
         </div>
 
@@ -54,7 +61,7 @@ export function ExperimentSpotlight({
         <div className="mt-5 flex items-center justify-between gap-4">
           <span className="shell-label text-accent">Experiment</span>
           <span className="pitch-link text-sm font-semibold text-primary transition-colors group-hover:text-accent">
-            Open →
+            {soon ? "Have a look →" : "Open →"}
           </span>
         </div>
       </Link>

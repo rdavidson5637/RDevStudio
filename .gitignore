@@ -40,3 +40,7 @@ next-env.d.ts
 .env*.bak*
 supabase/run-in-sql-editor.sql
 .env*
+scripts/stout-finder/data/osm-pubs.json
+
+# parked for deletion / unfinished work kept out of the build
+/_to_delete/
