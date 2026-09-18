@@ -23,6 +23,7 @@ const ROUTES = [
   "/draft/live",
   "/draft/how-it-works",
   "/games",
+  "/games/longest-word",
   "/about",
   "/contact",
   "/champions-draft",

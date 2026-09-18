@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { createPageMetadata } from "@/lib/metadata";
 import { GAMES_CATALOG, type GameCatalogEntry } from "@/lib/games-catalog";
+import { GUITAR_LAB, STOUT_FINDER } from "@/lib/constants";
 
 export const metadata = createPageMetadata({
   title: "Games",
@@ -9,6 +10,30 @@ export const metadata = createPageMetadata({
     "Free browser games built by Ryan Davidson. No ads, no sign-up, no mercy.",
   path: "/games",
 });
+
+const BENCH = [
+  {
+    href: "/games/longest-word",
+    label: "Longest Word",
+    description:
+      "Daily 4x4 letter grid. Same sixteen letters for everyone, new set at midnight.",
+    soon: false,
+  },
+  {
+    href: STOUT_FINDER.href,
+    label: STOUT_FINDER.label,
+    description:
+      "Which pubs in Antrim and Down actually have Beamish, Murphy's or Guinness on.",
+    soon: true,
+  },
+  {
+    href: GUITAR_LAB.href,
+    label: GUITAR_LAB.label,
+    description:
+      "Scales, chords and progressions drawn on a real fretboard.",
+    soon: true,
+  },
+] as const;
 
 function GameCard({ game, index }: { game: GameCatalogEntry; index: number }) {
   const imageFirst = index % 2 === 0;
@@ -56,7 +81,7 @@ function GameCard({ game, index }: { game: GameCatalogEntry; index: number }) {
           <p className="shell-label mt-5 text-accent">{game.meta}</p>
           {game.attendance != null ? (
             <p className="shell-label mt-2 text-secondary">
-              ATTENDANCE — {game.attendance.toLocaleString("en-GB")} PLAYERS
+              ATTENDANCE - {game.attendance.toLocaleString("en-GB")} PLAYERS
             </p>
           ) : null}
           <Link
@@ -90,10 +115,35 @@ export default function GamesPage() {
         </section>
 
         <section className="border-t border-border pt-10">
-          <p className="shell-label mb-2 text-accent">NEXT SIGNING</p>
-          <p className="text-base leading-relaxed text-secondary sm:text-lg">
-            Something new is in pre-season. Back soon.
-          </p>
+          <p className="shell-label mb-2 text-accent">ALSO ON THE BENCH</p>
+          <ul className="mt-4 grid gap-4 sm:grid-cols-3">
+            {BENCH.map((item) => (
+              <li
+                key={item.href}
+                className="rounded-[10px] border border-border bg-raised p-5"
+              >
+                <div className="flex items-start justify-between gap-3">
+                  <p className="font-semibold text-primary">{item.label}</p>
+                  <span
+                    className={`shrink-0 rounded-full border border-border-strong bg-base px-2.5 py-0.5 text-xs font-semibold ${
+                      item.soon ? "text-tertiary" : "text-accent"
+                    }`}
+                  >
+                    {item.soon ? "Coming soon" : "Play now"}
+                  </span>
+                </div>
+                <p className="mt-2 text-sm leading-relaxed text-secondary">
+                  {item.description}
+                </p>
+                <Link
+                  href={item.href}
+                  className="mt-3 inline-block text-sm font-semibold text-accent underline-offset-2 hover:underline"
+                >
+                  {item.soon ? "Have a look →" : "Open →"}
+                </Link>
+              </li>
+            ))}
+          </ul>
         </section>
       </div>
     </div>

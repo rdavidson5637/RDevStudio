@@ -16,20 +16,20 @@ export const BORED_GAMES = [
     href: "/rugby-draft",
   },
   {
+    slug: "longest-word",
+    title: "Longest Word",
+    description:
+      "Spell the longest word you can from today's 4x4 letter grid. Same grid for everyone, resets at midnight.",
+    tag: "Daily",
+    href: "/games/longest-word",
+  },
+  {
     slug: "pub-quiz",
     title: "Pub Quiz",
     description:
       "Host a quiz night or join with a code. Picture rounds, music clips, buzzer rounds, and team mode.",
     tag: "Live",
     href: "/pub-quiz",
-  },
-  {
-    slug: "longest-word",
-    title: "Longest Word",
-    description:
-      "Spell the longest word you can from today's 4×4 letter grid. Same grid for everyone — resets at midnight.",
-    tag: "Daily",
-    href: "/games",
   },
 ] as const;
 

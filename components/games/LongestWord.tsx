@@ -149,7 +149,7 @@ export function LongestWord() {
           persist(nextFound, nextAttempts);
           setSelected([]);
           setFeedback({
-            msg: `${word.toUpperCase()} is valid — ${word.length} letters`,
+            msg: `${word.toUpperCase()} is valid - ${word.length} letters`,
             type: "ok",
           });
           setChecking(false);
@@ -164,7 +164,7 @@ export function LongestWord() {
       });
     } catch {
       persist(found, nextAttempts);
-      setFeedback({ msg: "Could not check word — try again.", type: "err" });
+      setFeedback({ msg: "Could not check word - try again.", type: "err" });
     }
 
     setChecking(false);
