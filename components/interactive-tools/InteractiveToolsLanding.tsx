@@ -12,8 +12,6 @@ import {
   getLiveInteractiveTools,
 } from "@/lib/interactive-tools/catalog";
 import { getTrendingSlugs } from "@/lib/interactive-tools/storage";
-import { DRAFT_ANALYSER, WARDROBE_AI } from "@/lib/constants";
-import { ExperimentSpotlight } from "@/components/ui/ExperimentSpotlight";
 import { InteractiveCategoryFilters } from "./InteractiveCategoryFilters";
 import { InteractiveToolCard } from "./InteractiveToolCard";
 import { InteractiveToolSearch } from "./InteractiveToolSearch";
@@ -166,27 +164,6 @@ export function InteractiveToolsLanding() {
 
       {showHighlightSections ? (
         <>
-          <section className="border-b border-border py-10">
-            <header
-              className="mb-6 animate-fade-in opacity-0"
-              style={{ animationDelay: "80ms" }}
-            >
-              <p className="shell-label mb-2 text-accent">Also on the site</p>
-              <h2 className="font-display text-2xl uppercase tracking-tight text-primary sm:text-3xl">
-                Experiments
-              </h2>
-            </header>
-            <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
-              <ExperimentSpotlight
-                experiment={WARDROBE_AI}
-                animationDelayMs={120}
-              />
-              <ExperimentSpotlight
-                experiment={DRAFT_ANALYSER}
-                animationDelayMs={180}
-              />
-            </div>
-          </section>
           <InteractiveSection
             label="Featured"
             title="Start here"

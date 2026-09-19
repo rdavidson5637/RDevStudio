@@ -2,6 +2,7 @@ import Link from "next/link";
 import {
   CONTACT_EMAIL,
   GITHUB_URL,
+  SECONDARY_NAV_HUBS,
   SECONDARY_NAV_LINKS,
   SHELL_NAV_LINKS,
 } from "@/lib/constants";
@@ -34,6 +35,16 @@ export function Footer() {
               </Link>
             ))}
             <p className="shell-label mt-4 text-accent">Also on the site</p>
+            {SECONDARY_NAV_HUBS.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="shell-label text-primary transition-colors hover:text-accent"
+              >
+                {link.label}
+              </Link>
+            ))}
+            <div className="h-1" aria-hidden="true" />
             {SECONDARY_NAV_LINKS.map((link) => (
               <Link
                 key={link.href}

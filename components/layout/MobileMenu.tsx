@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useEffect } from "react";
 import { createPortal } from "react-dom";
-import { SHELL_NAV_LINKS } from "@/lib/constants";
+import { SECONDARY_NAV_HUBS, SHELL_NAV_LINKS } from "@/lib/constants";
 
 type MobileMenuProps = {
   open: boolean;
@@ -115,6 +115,26 @@ export function MobileMenu({ open, onClose, isActive }: MobileMenuProps) {
           >
             Start a project
           </Link>
+        </div>
+        <div>
+          <p className="shell-label mb-3 text-accent">Also on the site</p>
+          <div className="flex flex-wrap gap-x-5 gap-y-2">
+            {SECONDARY_NAV_HUBS.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                onClick={onClose}
+                aria-current={isActive(link.href) ? "page" : undefined}
+                className={`shell-label rounded-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-base ${
+                  isActive(link.href)
+                    ? "text-accent"
+                    : "text-primary hover:text-accent"
+                }`}
+              >
+                {link.label}
+              </Link>
+            ))}
+          </div>
         </div>
         <div className="programme-rule" />
         <div className="shell-label pt-5">KICK-OFF</div>

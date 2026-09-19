@@ -1,12 +1,7 @@
 import Link from "next/link";
 import { GameCard } from "@/components/bored/GameCard";
 import { getOtherBoredGames } from "@/lib/bored-games";
-import {
-  DRAFT_ANALYSER,
-  GUITAR_LAB,
-  STOUT_FINDER,
-  WARDROBE_AI,
-} from "@/lib/constants";
+import { STUDIO_PROJECTS } from "@/lib/constants";
 import { FeaturedGames } from "@/components/home/FeaturedGames";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { ExperimentSpotlight } from "@/components/ui/ExperimentSpotlight";
@@ -21,7 +16,7 @@ export function PortfolioPlay() {
           <SectionHeader
             className="max-w-2xl"
             label="Play"
-            title="Games & experiments"
+            title="Games & projects"
           />
           <Link
             href="/games"
@@ -36,15 +31,33 @@ export function PortfolioPlay() {
         </div>
 
         <p className="mb-5 text-sm font-semibold uppercase tracking-widest text-primary">
-          More experiments
+          More games
         </p>
-        <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
-          <ExperimentSpotlight experiment={WARDROBE_AI} animated={false} />
-          <ExperimentSpotlight experiment={DRAFT_ANALYSER} animated={false} />
-          <ExperimentSpotlight experiment={STOUT_FINDER} animated={false} />
-          <ExperimentSpotlight experiment={GUITAR_LAB} animated={false} />
+        <div className="mb-12 grid grid-cols-1 gap-5 md:grid-cols-2">
           {otherGames.map((game) => (
             <GameCard key={game.slug} game={game} />
+          ))}
+        </div>
+
+        <div className="flex flex-col gap-4 border-t border-border pt-10 sm:flex-row sm:items-end sm:justify-between">
+          <p className="text-sm font-semibold uppercase tracking-widest text-primary">
+            Projects
+          </p>
+          <Link
+            href="/projects"
+            className="shrink-0 text-sm font-semibold text-primary transition-colors hover:text-accent"
+          >
+            All projects →
+          </Link>
+        </div>
+        <div className="mt-5 grid grid-cols-1 gap-5 md:grid-cols-2">
+          {STUDIO_PROJECTS.map((project) => (
+            <ExperimentSpotlight
+              key={project.href}
+              experiment={project}
+              animated={false}
+              kicker="Project"
+            />
           ))}
         </div>
       </div>

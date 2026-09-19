@@ -24,6 +24,7 @@ const ROUTES = [
   "/draft/how-it-works",
   "/games",
   "/games/longest-word",
+  "/projects",
   "/about",
   "/contact",
   "/champions-draft",
@@ -33,6 +34,7 @@ const ROUTES = [
   // app/(site)/stout-finder/_wip until it has real pub data.
   "/stout-finder",
   "/guitar-lab",
+  "/gig-radar",
 ] as const;
 
 export default function sitemap(): MetadataRoute.Sitemap {

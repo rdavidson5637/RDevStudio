@@ -2,7 +2,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { createPageMetadata } from "@/lib/metadata";
 import { GAMES_CATALOG, type GameCatalogEntry } from "@/lib/games-catalog";
-import { GUITAR_LAB, STOUT_FINDER } from "@/lib/constants";
 
 export const metadata = createPageMetadata({
   title: "Games",
@@ -18,20 +17,6 @@ const BENCH = [
     description:
       "Daily 4x4 letter grid. Same sixteen letters for everyone, new set at midnight.",
     soon: false,
-  },
-  {
-    href: STOUT_FINDER.href,
-    label: STOUT_FINDER.label,
-    description:
-      "Which pubs in Antrim and Down actually have Beamish, Murphy's or Guinness on.",
-    soon: true,
-  },
-  {
-    href: GUITAR_LAB.href,
-    label: GUITAR_LAB.label,
-    description:
-      "Scales, chords and progressions drawn on a real fretboard.",
-    soon: true,
   },
 ] as const;
 
@@ -144,6 +129,20 @@ export default function GamesPage() {
               </li>
             ))}
           </ul>
+        </section>
+
+        <section className="border-t border-border pt-10">
+          <p className="shell-label mb-2 text-accent">PROJECTS</p>
+          <p className="max-w-2xl text-base leading-relaxed text-secondary">
+            Draft Analyser, Stout Finder, Guitar Lab, and Gig Radar are
+            personal builds, not games.
+          </p>
+          <Link
+            href="/projects"
+            className="mt-4 inline-flex text-sm font-semibold text-accent underline-offset-2 hover:underline"
+          >
+            See projects →
+          </Link>
         </section>
       </div>
     </div>

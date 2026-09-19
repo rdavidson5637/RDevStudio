@@ -12,6 +12,7 @@ type ExperimentSpotlightProps = {
   animationDelayMs?: number;
   compact?: boolean;
   animated?: boolean;
+  kicker?: string;
 };
 
 export function ExperimentSpotlight({
@@ -19,6 +20,7 @@ export function ExperimentSpotlight({
   animationDelayMs = 0,
   compact = false,
   animated = true,
+  kicker = "Experiment",
 }: ExperimentSpotlightProps) {
   const soon = experiment.status === "soon";
 
@@ -59,7 +61,7 @@ export function ExperimentSpotlight({
         </p>
 
         <div className="mt-5 flex items-center justify-between gap-4">
-          <span className="shell-label text-accent">Experiment</span>
+          <span className="shell-label text-accent">{kicker}</span>
           <span className="pitch-link text-sm font-semibold text-primary transition-colors group-hover:text-accent">
             {soon ? "Have a look →" : "Open →"}
           </span>
