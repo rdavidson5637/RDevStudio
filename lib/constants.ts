@@ -51,13 +51,33 @@ export const GUITAR_LAB = {
   status: "soon",
 } as const;
 
+export const GIG_RADAR = {
+  href: "/gig-radar",
+  label: "Gig Radar",
+  description:
+    "A weekly email of who you listen to, playing in Belfast or Dublin, before the tickets go.",
+  status: "soon",
+} as const;
+
+export const STUDIO_PROJECTS = [
+  WARDROBE_AI,
+  DRAFT_ANALYSER,
+  GIG_RADAR,
+  STOUT_FINDER,
+  GUITAR_LAB,
+] as const;
+
 export const SHELL_NAV_LINKS = [
   { href: "/services", label: "Services" },
   { href: "/work", label: "Work" },
+  { href: "/projects", label: "Projects" },
+  { href: "/about", label: "About" },
+] as const;
+
+export const SECONDARY_NAV_HUBS = [
   { href: "/games", label: "Games" },
   { href: "/toolkit", label: "Tools" },
   { href: "/interactive", label: "Play" },
-  { href: "/about", label: "About" },
 ] as const;
 
 export const SECONDARY_NAV_LINKS = [
@@ -68,6 +88,7 @@ export const SECONDARY_NAV_LINKS = [
   { href: "/wardrobe-ai", label: "Wardrobe AI" },
   { href: "/stout-finder", label: "Stout Finder" },
   { href: "/guitar-lab", label: "Guitar Lab" },
+  { href: "/gig-radar", label: "Gig Radar" },
 ] as const;
 
 export const SOCIAL_LINKS = [
