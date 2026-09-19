@@ -134,8 +134,8 @@ export default function GamesPage() {
         <section className="border-t border-border pt-10">
           <p className="shell-label mb-2 text-accent">PROJECTS</p>
           <p className="max-w-2xl text-base leading-relaxed text-secondary">
-            Stout Finder, Guitar Lab, and Gig Radar are personal builds, not
-            games.
+            Draft Analyser, Stout Finder, Guitar Lab, and Gig Radar are
+            personal builds, not games.
           </p>
           <Link
             href="/projects"

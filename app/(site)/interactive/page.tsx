@@ -1,6 +1,7 @@
 import { InteractiveToolsLanding } from "@/components/interactive-tools/InteractiveToolsLanding";
 import { createPageMetadata } from "@/lib/metadata";
 import { INTERACTIVE_TOOLS } from "@/lib/interactive-tools/catalog";
+import Link from "next/link";
 
 export const metadata = createPageMetadata({
   title: "Interactive Tools",
@@ -30,6 +31,19 @@ export default function InteractiveToolsPage() {
         </header>
 
         <InteractiveToolsLanding />
+
+        <section className="border-t border-border pt-10">
+          <p className="shell-label mb-2 text-accent">PROJECTS</p>
+          <p className="max-w-2xl text-base leading-relaxed text-secondary">
+            Draft Analyser and Wardrobe AI live under Projects, not here.
+          </p>
+          <Link
+            href="/projects"
+            className="mt-4 inline-flex text-sm font-semibold text-accent underline-offset-2 hover:underline"
+          >
+            See projects →
+          </Link>
+        </section>
       </div>
     </div>
   );
