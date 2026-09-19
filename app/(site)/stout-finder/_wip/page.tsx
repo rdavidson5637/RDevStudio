@@ -31,7 +31,7 @@ export default async function StoutFinderPage() {
           <p className="shell-label mb-3 text-accent">ANTRIM AND DOWN</p>
           <h1 className="programme-h1">STOUT FINDER</h1>
           <p className="mt-5 max-w-3xl text-base leading-relaxed text-secondary sm:text-lg">
-            A map of Beamish, Murphy's and Guinness that treats last week as
+            A map of Beamish, Murphy&apos;s and Guinness that treats last week as
             more useful than last year. Reports come from drinkers, not from
             the brewery.
           </p>

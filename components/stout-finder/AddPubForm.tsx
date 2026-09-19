@@ -17,7 +17,7 @@ export function AddPubForm() {
   const [county, setCounty] = useState<"Antrim" | "Down">("Antrim");
   const [address, setAddress] = useState("");
   const [postcode, setPostcode] = useState("");
-  const [pin, setPin] = useState(BELFAST_CITY_HALL);
+  const [pin, setPin] = useState<{ lat: number; lng: number }>(BELFAST_CITY_HALL);
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [done, setDone] = useState(false);
