@@ -38,9 +38,9 @@ export function PlayerRow({
       <AvailabilityDot score={availabilityScore} />
       <span className="min-w-0 flex-1 truncate font-medium text-primary">{name}</span>
       <span className="shell-label w-10 shrink-0 text-secondary">{teamShortName}</span>
-      <span className="shell-label w-8 shrink-0 text-secondary">{POSITION_LABELS[position] ?? "—"}</span>
+      <span className="shell-label w-8 shrink-0 text-secondary">{POSITION_LABELS[position] ?? "-"}</span>
       <span className="w-12 shrink-0 text-right tabular-nums text-primary">
-        {projectedPoints != null ? projectedPoints.toFixed(1) : "—"}
+        {projectedPoints != null ? projectedPoints.toFixed(1) : "-"}
       </span>
       {children}
     </Link>

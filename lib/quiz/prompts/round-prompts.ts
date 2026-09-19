@@ -42,29 +42,29 @@ const FORMAT_INSTRUCTIONS: Record<RoundFormat, string> = {
   [RoundFormat.MUSIC]: `Round type: MUSIC round.
 Generate music pub quiz questions. For each question, choose ONE of these formats:
 
-FORMAT A — Lyric/title style (set audioUrl to null — audio is attached separately):
+FORMAT A - Lyric/title style (set audioUrl to null - audio is attached separately):
 Questions like 'Which artist is known for this lyric: [first line only]?' or
 'Complete the song title: [Artist] - ___' or
 'In what year was [well-known song] released?'
 
-FORMAT B — Music trivia (no audio needed):
+FORMAT B - Music trivia (no audio needed):
 Questions about chart history, album names, band members, music awards,
 famous music facts. These should be genuinely interesting pub quiz questions.
 
 Mix: roughly 40% Format A style (lyric/title questions), 60% trivia.
 Focus on: pop, rock, hip-hop, dance, Irish/UK artists,
 decades from the 60s to present. Avoid too much obscure indie.
-Set audioUrl to null for all questions — never invent audio URLs.`,
+Set audioUrl to null for all questions - never invent audio URLs.`,
 
   [RoundFormat.BUZZER]: `Round type: BUZZER round.
-- Players buzz in and answer out loud — no typed answers
+- Players buzz in and answer out loud - no typed answers
 - Make questions where the answer comes to you quickly or not at all
-- Favour clear factual recall — avoid trick questions and ambiguous wording
+- Favour clear factual recall - avoid trick questions and ambiguous wording
 - Prefer short, punchy questions with definitive answers
 - Mix multiple_choice style questions shown on screen (players answer verbally)`,
 
   [RoundFormat.RISK]: `Round type: RISK round (minus points for wrong answers).
-- Make questions moderately difficult — players are risking points so questions should reward confident knowledge
+- Make questions moderately difficult - players are risking points so questions should reward confident knowledge
 - Avoid trick questions or obscure trivia
 - Favour questions where a confident player can score but a guesser might lose points
 - Mix multiple_choice and text with plausible wrong options`,
@@ -74,7 +74,7 @@ export const PICTURE_ROUND_SYSTEM_ADDITION = `For picture round questions, you M
 real, publicly accessible image on Wikimedia Commons. Use this URL format:
 https://upload.wikimedia.org/wikipedia/commons/thumb/[path]/330px-[filename]
 
-The question should be answerable FROM the image — e.g. 'What country does
+The question should be answerable FROM the image - e.g. 'What country does
 this flag belong to?', 'Name this landmark', 'Which footballer is this?',
 'What animal is pictured?'
 
@@ -86,7 +86,7 @@ Good Wikimedia image categories to use:
 - World capitals (skyline or iconic building photos)
 - Album covers (use only very famous ones with clear Wikimedia availability)
 
-Always use 330px thumbnail width (NOT 400px — Wikimedia rejects 400px for most files).
+Always use 330px thumbnail width (NOT 400px - Wikimedia rejects 400px for most files).
 Always verify the imageUrl is a valid Wikimedia Commons thumbnail URL.
 The correctAnswer should be what is shown in the image.`;
 
@@ -163,7 +163,7 @@ Each object must have these fields:
 }
 
 Focus topics for ${categoryLabel}: ${topics}
-Be creative and varied — avoid generic questions that appear in every pub quiz.`;
+Be creative and varied - avoid generic questions that appear in every pub quiz.`;
 }
 
 export const ROUND_SYSTEM_PROMPT = `You are a pub quiz question generator for groups of friends. 

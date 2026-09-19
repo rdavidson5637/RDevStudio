@@ -24,7 +24,7 @@ const CLIENT_WORK: Fixture[] = [
     description:
       "Volunteer rotas, roles, and an admin dashboard for Assisi Animal Sanctuary.",
     tag: "REAL CLIENT · CHARITY",
-    year: "2025–26",
+    year: "2025-26",
     href: "/work/shelterlink",
   },
   {
@@ -141,8 +141,8 @@ export default function WorkPage() {
           <div className="rounded-xl border border-border bg-raised p-6 sm:p-8">
             <p className="shell-label mb-2 text-accent">LOOKING FOR SOMETHING?</p>
             <p className="text-base leading-relaxed text-primary sm:text-lg">
-              This is the highlight reel. If you&apos;re after something specific — a particular
-              stack, a certain type of project, or proof I can actually do what I say —{" "}
+              This is the highlight reel. If you&apos;re after something specific - a particular
+              stack, a certain type of project, or proof I can actually do what I say -{" "}
               <Link href="/contact" className="text-accent hover:underline">
                 just ask
               </Link>

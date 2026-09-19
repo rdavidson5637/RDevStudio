@@ -22,7 +22,7 @@ function formatDelta(pointsDelta: number): { text: string; className: string } {
     return { text: `${pointsDelta}`, className: "text-quiz-danger" };
   }
 
-  return { text: "—", className: "text-quiz-muted" };
+  return { text: "-", className: "text-quiz-muted" };
 }
 
 export function LeaderboardRow({

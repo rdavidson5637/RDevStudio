@@ -75,7 +75,7 @@ export function BuzzerButton({
     return (
       <div className="flex min-h-[120px] w-full items-center justify-center rounded-2xl border border-quiz-border bg-quiz-surface/50 px-6 py-8 text-center opacity-60">
         <p className="text-lg font-medium text-quiz-muted">
-          Wrong buzz — can&apos;t buzz again
+          Wrong buzz - can&apos;t buzz again
         </p>
       </div>
     );

@@ -171,10 +171,10 @@ export default function ShareCard({
                   {position}
                 </span>
                 <span className="text-white/85 flex-1 truncate text-xs">
-                  {player?.name ?? "—"}
+                  {player?.name ?? "-"}
                 </span>
                 <span className="text-white/40 font-black text-xs tabular-nums">
-                  {player?.overall ?? "—"}
+                  {player?.overall ?? "-"}
                 </span>
               </div>
             ))}
@@ -187,7 +187,7 @@ export default function ShareCard({
 
         <ShareCardActions
           shareText={shareText}
-          shareTitle={`Rugby Draft — ${userTeam}`}
+          shareTitle={`Rugby Draft - ${userTeam}`}
           captureId={SHARE_CARD_CAPTURE_ID}
         />
       </div>

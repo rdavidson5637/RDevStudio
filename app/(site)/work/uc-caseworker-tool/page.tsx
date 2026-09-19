@@ -52,7 +52,7 @@ export default function UcCaseworkerToolCaseStudyPage() {
     <div className="section-padding pt-28">
       <article className="container-wide px-6">
         <header className="space-y-6 border-b border-border pb-10">
-          <p className="shell-label text-accent">CASE STUDY — 05</p>
+          <p className="shell-label text-accent">CASE STUDY - 05</p>
           <h1 className="programme-h1">UC CASEWORKER ASSISTANT</h1>
           <p className="max-w-2xl text-lg text-primary">
             An AI assistant for Universal Credit caseworkers, built by a
@@ -60,10 +60,10 @@ export default function UcCaseworkerToolCaseStudyPage() {
           </p>
 
           <div className="grid grid-cols-2 gap-x-4 gap-y-2 border-t border-border pt-5 font-mono text-[11px] uppercase tracking-[0.08em] text-secondary lg:grid-cols-4">
-            <p>ROLE — Design & development (solo)</p>
-            <p>STACK — Node.js · Express · Claude API</p>
-            <p>STATUS — Portfolio prototype</p>
-            <p>YEAR — 2026</p>
+            <p>ROLE - Design & development (solo)</p>
+            <p>STACK - Node.js · Express · Claude API</p>
+            <p>STATUS - Portfolio prototype</p>
+            <p>YEAR - 2026</p>
           </div>
         </header>
 
@@ -95,8 +95,8 @@ export default function UcCaseworkerToolCaseStudyPage() {
             response has to be accurate against policy and right in tone, a
             case note has to be factual for the next person on the case, and
             a letter has to be populated without transposition errors. A
-            message that looks routine can also be a safeguarding risk —
-            suicide, domestic abuse, a child protection concern — and those
+            message that looks routine can also be a safeguarding risk -
+            suicide, domestic abuse, a child protection concern - and those
             can&apos;t be answered with a generic policy reply.
           </p>
         </section>
@@ -110,7 +110,7 @@ export default function UcCaseworkerToolCaseStudyPage() {
               message for safeguarding and topic first, loads only the
               matching GOV.UK guidance, then returns a claimant-facing draft,
               a guidance reference, a review checklist and a suggested case
-              note — grounded only in the guidance it was given, never
+              note - grounded only in the guidance it was given, never
               invented. The letter tool lets a caseworker paste a case to-do
               and has the AI extract values into a form; generating the
               actual letter is deterministic string replacement, not a model
@@ -118,7 +118,7 @@ export default function UcCaseworkerToolCaseStudyPage() {
               situation summary into a factual, third-person internal note.
             </p>
             <p>
-              Every output lands in an editable review area, not an outbox —
+              Every output lands in an editable review area, not an outbox -
               nothing is ever sent or posted automatically. All example data
               shipped with the project, including a labelled safeguarding
               demo, is fabricated for the purpose.
@@ -155,8 +155,8 @@ export default function UcCaseworkerToolCaseStudyPage() {
               <p className="max-w-3xl text-base leading-relaxed text-primary sm:text-lg">
                 This tool never uses, contains or assumes real claimant data.
                 Every example message, name and case detail is fabricated,
-                and operational values — account numbers, sort codes,
-                references — are obvious placeholders. A portfolio project
+                and operational values - account numbers, sort codes,
+                references - are obvious placeholders. A portfolio project
                 that handled real benefit data, even by accident, would be a
                 serious data protection failure. Building the constraint in
                 from the start was the point, not an afterthought.
@@ -186,8 +186,8 @@ export default function UcCaseworkerToolCaseStudyPage() {
                 never drafts the letter itself. Generating the letter is
                 deterministic string replacement, so fixed legal wording and
                 rights information can&apos;t drift between runs. Dates and
-                amounts are formatted in code, and inconsistencies — an end
-                date before a start date, a zero amount — are flagged above
+                amounts are formatted in code, and inconsistencies - an end
+                date before a start date, a zero amount - are flagged above
                 the letter rather than silently written into it.
               </p>
             </section>
@@ -202,7 +202,7 @@ export default function UcCaseworkerToolCaseStudyPage() {
                 banner before any draft is shown, pointing the caseworker to
                 the Six Point Plan or the relevant local procedure. The model
                 is constrained to flag, not to counsel, investigate or invent
-                next steps — that judgement stays with the caseworker.
+                next steps - that judgement stays with the caseworker.
               </p>
             </section>
           </div>
@@ -215,7 +215,7 @@ export default function UcCaseworkerToolCaseStudyPage() {
             understanding of the caseworker workflow it was built for, and
             the discipline to build safe, compliant software around an LLM
             rather than just a wrapper around a chat API. Not an official DWP
-            product — a demonstration of how one would be built responsibly.
+            product - a demonstration of how one would be built responsibly.
           </p>
         </section>
 

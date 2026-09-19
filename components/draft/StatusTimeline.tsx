@@ -25,7 +25,7 @@ export function StatusTimeline({ events }: { events: TimelineEvent[] }) {
             </time>
           </div>
           <p className="mt-1 tabular-nums text-secondary">
-            Availability {event.fromScore ?? "—"} → {event.toScore}
+            Availability {event.fromScore ?? "-"} → {event.toScore}
             {event.status ? ` · ${event.status}` : ""}
           </p>
           {event.news ? <p className="mt-1 text-secondary">{event.news}</p> : null}

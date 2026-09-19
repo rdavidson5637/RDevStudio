@@ -1,4 +1,4 @@
-// CV PDF lives at public/Ryan_Davidson_CV.pdf — replace with updated version as needed.
+// CV PDF lives at public/Ryan_Davidson_CV.pdf - replace with updated version as needed.
 export const HIRE_CV_PATH = "/Ryan_Davidson_CV.pdf";
 
 export const HIRE_CHAOS_TRANSITION = "Still here? Fine. Here's the rest.";
@@ -8,10 +8,10 @@ export const HIRE_MILESTONES_TITLE = "Milestones";
 export const HIRE_TAGLINE = "Software Developer & Product Designer";
 
 export const HIRE_PROFILE =
-  "Software developer graduating Summer 2026 with an MSc in Software Development — and a genuine interest in product design, particularly where technology meets real human behaviour. I've built ShelterLink in close collaboration with Assisi Animal Sanctuary, making every UX decision myself. I also run RDev Studio, serving local NI businesses. I work extensively with AI tools including Cursor and Claude to stay focused on what actually matters: solving the right problem well.";
+  "Software developer graduating Summer 2026 with an MSc in Software Development - and a genuine interest in product design, particularly where technology meets real human behaviour. I've built ShelterLink in close collaboration with Assisi Animal Sanctuary, making every UX decision myself. I also run RDev Studio, serving local NI businesses. I work extensively with AI tools including Cursor and Claude to stay focused on what actually matters: solving the right problem well.";
 
 export const HIRE_STATS = [
-  "Graduating Summer 2026 — MSc, Queen's",
+  "Graduating Summer 2026 - MSc, Queen's",
   "BSc Forensic Science (LJMU)",
   "Full-stack product builder",
   "ShelterLink dissertation project",
@@ -19,7 +19,7 @@ export const HIRE_STATS = [
 ] as const;
 
 export const HIRE_ABOUT_POINTS = [
-  "Completing MSc while working full time — graduating Summer 2026",
+  "Completing MSc while working full time - graduating Summer 2026",
   "End-to-end UX and product ownership",
   "Real client work through RDev Studio",
   "Strong communication under pressure",
@@ -29,14 +29,14 @@ export const HIRE_ABOUT_POINTS = [
 
 export const HIRE_QUALIFICATIONS = [
   {
-    year: "2024 — 2026",
+    year: "2024 - 2026",
     title: "MSc Software Development",
     institution: "Queen's University Belfast",
     detail:
-      "Graduating Summer 2026. Modules in relational databases, web development, cloud computing, Agile, and data analytics. Individual project: ShelterLink — built end-to-end as a real-world product for a Belfast charity.",
+      "Graduating Summer 2026. Modules in relational databases, web development, cloud computing, Agile, and data analytics. Individual project: ShelterLink - built end-to-end as a real-world product for a Belfast charity.",
   },
   {
-    year: "2020 — 2024",
+    year: "2020 - 2024",
     title: "BSc Forensic Science",
     institution: "Liverpool John Moores University",
     detail:
@@ -46,8 +46,8 @@ export const HIRE_QUALIFICATIONS = [
 
 export const HIRE_EXPERIENCE = [
   {
-    title: "Admin Officer — Civil Service (DWP)",
-    period: "August 2025 — Present",
+    title: "Admin Officer - Civil Service (DWP)",
+    period: "August 2025 - Present",
     summary:
       "Manage correspondence and communications across a busy department, balancing accuracy, sensitivity, and speed. Handle sensitive personal data with discretion and support process improvement.",
     skills: [
@@ -59,28 +59,28 @@ export const HIRE_EXPERIENCE = [
   },
   {
     title: "Tesco Colleague",
-    period: "October 2024 — February 2025",
+    period: "October 2024 - February 2025",
     summary:
       "Customer-facing role requiring clear communication and problem-solving under pressure.",
     skills: ["Customer service", "Teamwork", "Problem solving"],
   },
   {
-    title: "Warehouse Operative — Amazon",
-    period: "August 2021 — October 2021",
+    title: "Warehouse Operative - Amazon",
+    period: "August 2021 - October 2021",
     summary:
       "Picked, packed, and processed customer orders accurately and efficiently at pace.",
     skills: ["Accuracy", "Teamwork", "Operational targets"],
   },
   {
-    title: "Poll Clerk — Liverpool City Council",
+    title: "Poll Clerk - Liverpool City Council",
     period: "May 2021",
     summary:
       "Verified voter identification, managed check-in, and guided members of the public.",
     skills: ["Public-facing", "Attention to detail", "Guidance"],
   },
   {
-    title: "Dot Com Department — Tesco Carrickfergus",
-    period: "March 2020 — September 2020",
+    title: "Dot Com Department - Tesco Carrickfergus",
+    period: "March 2020 - September 2020",
     summary:
       "Processed online orders, managed inventory, and coordinated with delivery teams.",
     skills: ["Operations", "Inventory", "Coordination"],
@@ -90,7 +90,7 @@ export const HIRE_EXPERIENCE = [
 export const HIRE_PROJECTS = [
   {
     id: "assisi",
-    tag: "ShelterLink — University Dissertation",
+    tag: "ShelterLink - University Dissertation",
     title: "Assisi Volunteering Platform",
     description:
       "A volunteer management platform with real-world impact. Shift scheduling, role management, and an admin dashboard built for Assisi Animal Sanctuary.",
@@ -107,10 +107,10 @@ export const HIRE_PROJECTS = [
   },
   {
     id: "rvs",
-    tag: "RDev Studio client — Belfast",
+    tag: "RDev Studio client - Belfast",
     title: "RV's Cold Brew",
     description:
-      "Confirmed RDev Studio client. Live site for a Belfast cold brew and matcha counter — menu, hours, and where to find Unit 11.",
+      "Confirmed RDev Studio client. Live site for a Belfast cold brew and matcha counter - menu, hours, and where to find Unit 11.",
     highlight: "Client work",
     highlights: ["Business website", "Design & implementation", "Social media"],
     image: "/images/work/rvs-coldbrew.png",
@@ -158,7 +158,7 @@ export const HIRE_PROJECTS = [
     tag: "Personal Project",
     title: "Rugby Draft",
     description:
-      "A rugby-specific draft game extending the Champions Draft concept — World Cup, Six Nations, and Champions Cup modes. 15 positions, full stats system, bonus point scoring.",
+      "A rugby-specific draft game extending the Champions Draft concept - World Cup, Six Nations, and Champions Cup modes. 15 positions, full stats system, bonus point scoring.",
     highlight: "Live & played",
     highlights: ["World Cup", "Six Nations", "Champions Cup"],
     image: "/images/games/rugby-draft.jpg",

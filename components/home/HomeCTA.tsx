@@ -12,7 +12,7 @@ export function HomeCTA() {
             </h2>
             <p className="mx-auto mt-4 max-w-xl text-lg text-white/75">
               Book a free, no-pressure chat. We&apos;ll talk through what you
-              need and give you a clear quote — usually the same day.
+              need and give you a clear quote - usually the same day.
             </p>
             <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
               <Link href="/contact" className="btn-primary w-full sm:w-auto">

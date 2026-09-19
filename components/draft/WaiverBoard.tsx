@@ -51,7 +51,7 @@ export function WaiverBoard({ board }: Props) {
     <div className="space-y-8">
       {board.trending.availabilityRisers.length > 0 ? (
         <div>
-          <p className="shell-label mb-3 text-accent">Trending — availability up in 72h</p>
+          <p className="shell-label mb-3 text-accent">Trending - availability up in 72h</p>
           <div className="flex flex-wrap gap-2">
             {board.trending.availabilityRisers.map((row) => (
               <Link
@@ -169,7 +169,7 @@ export function WaiverBoard({ board }: Props) {
                     ))}
                   </span>
                 </td>
-                <td className="px-2 py-2 tabular-nums">{player.form?.toFixed(1) ?? "—"}</td>
+                <td className="px-2 py-2 tabular-nums">{player.form?.toFixed(1) ?? "-"}</td>
                 <td className="px-2 py-2 tabular-nums">{player.minutes}</td>
                 <td className="px-2 py-2 tabular-nums">{Math.round(player.defconRate * 100)}%</td>
                 <td className="px-2 py-2 text-secondary">

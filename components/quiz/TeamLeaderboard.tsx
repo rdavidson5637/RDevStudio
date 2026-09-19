@@ -129,7 +129,7 @@ export function TeamLeaderboard({
                     ? `+${pointsDelta}`
                     : pointsDelta < 0
                       ? `${pointsDelta}`
-                      : "—"}
+                      : "-"}
                 </span>
               ) : null}
 

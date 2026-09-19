@@ -1250,7 +1250,7 @@ export default function GameRoomPage() {
                 </button>
                 {players.length < 2 ? (
                   <p className="text-xs text-quiz-muted">
-                    Solo mode — invite friends or start alone to test
+                    Solo mode - invite friends or start alone to test
                   </p>
                 ) : null}
               </div>

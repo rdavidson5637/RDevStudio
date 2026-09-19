@@ -137,7 +137,7 @@ async function fetchSquad(entryId: number, event: number): Promise<SquadPlayer[]
       id: player.id,
       webName: player.web_name,
       teamId: player.team_id,
-      teamShortName: team?.short_name ?? "—",
+      teamShortName: team?.short_name ?? "-",
       position: player.element_type,
       pickPosition: pick.position,
       multiplier: pick.multiplier,

@@ -11,7 +11,7 @@ const DELTA_STYLES = {
   flat: "text-secondary",
 };
 
-const DELTA_ARROW = { up: "▲", down: "▼", flat: "—" };
+const DELTA_ARROW = { up: "▲", down: "▼", flat: "-" };
 
 export function StatTile({ label, value, delta, className }: Props) {
   return (

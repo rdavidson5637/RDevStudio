@@ -75,7 +75,7 @@ export function LogoRoastApp() {
       <ToolkitToolHeader
         category="Creative & brand"
         title="Logo Roast"
-        description="Upload a logo for a blunt-but-fair critique — typography, colour, scalability, memorability, and accessibility. Placeholder AI responses for now."
+        description="Upload a logo for a blunt-but-fair critique - typography, colour, scalability, memorability, and accessibility. Placeholder AI responses for now."
       />
 
       {phase === "input" ? (
@@ -152,7 +152,7 @@ export function LogoRoastApp() {
             </div>
           </div>
 
-          <PlaceholderNotice message="Placeholder roast data shown for preview — AI analysis is not connected yet." />
+          <PlaceholderNotice message="Placeholder roast data shown for preview - AI analysis is not connected yet." />
         </section>
       ) : null}
     </div>

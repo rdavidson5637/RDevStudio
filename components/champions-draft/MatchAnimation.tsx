@@ -53,7 +53,7 @@ export function CompletedMatchCard({
           {result.homeTeam}
         </span>
         <span className="text-white font-black tabular-nums text-base px-1">
-          {result.homeScore}–{result.awayScore}
+          {result.homeScore}-{result.awayScore}
         </span>
         <span
           className={`truncate ${
@@ -197,7 +197,7 @@ export default function MatchAnimation({
           <span className="text-white font-black text-3xl tabular-nums">
             {homeScore}
           </span>
-          <span className="text-white/30 font-black text-xl">–</span>
+          <span className="text-white/30 font-black text-xl">-</span>
           <span className="text-white font-black text-3xl tabular-nums">
             {awayScore}
           </span>

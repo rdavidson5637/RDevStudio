@@ -5,7 +5,7 @@ import { INTERACTIVE_TOOLS } from "@/lib/interactive-tools/catalog";
 export const metadata = createPageMetadata({
   title: "Interactive Tools",
   description:
-    "Free interactive tools for events, debates, and group fun — countdowns, tier lists, brackets, wheels, quizzes, and bingo from RDev Studio.",
+    "Free interactive tools for events, debates, and group fun - countdowns, tier lists, brackets, wheels, quizzes, and bingo from RDev Studio.",
   path: "/interactive",
 });
 
@@ -24,7 +24,7 @@ export default function InteractiveToolsPage() {
           </div>
           <h1 className="programme-h1 mt-3">PLAY</h1>
           <p className="mt-5 max-w-3xl text-base leading-relaxed text-secondary sm:text-lg">
-            Browser tools for parties, pub nights, and group decisions — spin
+            Browser tools for parties, pub nights, and group decisions - spin
             wheels, build brackets, run countdowns, and more. Free, no sign-up.
           </p>
         </header>

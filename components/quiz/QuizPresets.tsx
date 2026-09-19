@@ -14,7 +14,7 @@ export function QuizPresets({ onSelect, activePresetId }: QuizPresetsProps) {
       <div>
         <p className="text-sm font-medium text-quiz-ink">Quiz night presets</p>
         <p className="text-xs text-quiz-muted">
-          One-tap setups — you can still tweak rounds below.
+          One-tap setups - you can still tweak rounds below.
         </p>
       </div>
 

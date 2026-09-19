@@ -23,11 +23,16 @@ const ROUTES = [
   "/draft/live",
   "/draft/how-it-works",
   "/games",
+  "/games/longest-word",
   "/about",
   "/contact",
   "/champions-draft",
   "/rugby-draft",
   "/pub-quiz",
+  // Coming soon. The built Stout Finder routes live in
+  // app/(site)/stout-finder/_wip until it has real pub data.
+  "/stout-finder",
+  "/guitar-lab",
 ] as const;
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -36,7 +41,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return ROUTES.map((path) => ({
     url: `${SITE_URL}${path}`,
     lastModified: now,
-    changeFrequency: "weekly",
+    changeFrequency: "weekly" as const,
     priority: path === "" ? 1 : 0.7,
   }));
 }

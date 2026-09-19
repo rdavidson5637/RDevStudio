@@ -68,7 +68,7 @@ export const ACCESSIBILITY_CHECKER_CONFIG = {
   loadingSubtitle: "Evaluating WCAG-oriented checks across the page.",
   progressLabel: "Accessibility scan progress",
   placeholderNotice:
-    "Sample data shown for preview — deep accessibility checks (contrast, keyboard traps) need a headless browser audit.",
+    "Sample data shown for preview - deep accessibility checks (contrast, keyboard traps) need a headless browser audit.",
   getResult: (url: string): UrlAuditResult =>
     baseResult(
       url,
@@ -147,7 +147,7 @@ export const GBP_AUDIT_CONFIG = {
     "Reviewing listing completeness, photos, reviews, and local signals.",
   progressLabel: "GBP audit progress",
   placeholderNotice:
-    "Sample data shown for preview — Google Places API is not connected yet.",
+    "Sample data shown for preview - Google Places API is not connected yet.",
   getResult: (url: string): UrlAuditResult => {
     const result = baseResult(
       url,
@@ -206,7 +206,7 @@ export const GBP_AUDIT_CONFIG = {
     return {
       ...result,
       recommendations: [
-        "Upload 5–10 fresh photos: team, interior, products, and before/after shots.",
+        "Upload 5-10 fresh photos: team, interior, products, and before/after shots.",
         "Reply to every review from the last 90 days with a personal, on-brand message.",
         "Post weekly updates - offers, events, or tips - to stay visible in local search.",
         "Complete all business hours including holidays and special opening times.",

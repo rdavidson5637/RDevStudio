@@ -12,7 +12,7 @@ export function ServicePreview() {
             Everything you need to get online
           </h2>
           <p className="mt-3 text-slate-text">
-            One clear package — no surprises, no upsells.
+            One clear package - no surprises, no upsells.
           </p>
         </div>
 

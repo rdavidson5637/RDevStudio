@@ -214,7 +214,7 @@ export function QuestionScreen({
       {isRiskRound ? (
         <div className="mb-4 rounded-xl border border-quiz-risk/40 bg-quiz-risk/10 px-4 py-3 text-center">
           <p className="text-sm font-semibold text-quiz-risk sm:text-base">
-            Risk round — wrong answers lose 50 points
+            Risk round - wrong answers lose 50 points
           </p>
         </div>
       ) : null}

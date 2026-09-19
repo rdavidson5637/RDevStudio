@@ -878,7 +878,7 @@ export default function WorldCup({ state, onUpdate, onExit }: Props) {
             </h2>
             {userPoolEliminated && (
               <p className="text-amber-400/80 text-xs mt-2 uppercase tracking-widest">
-                Eliminated from Pool {userPool?.name} — remaining matches
+                Eliminated from Pool {userPool?.name} - remaining matches
                 continue
               </p>
             )}
@@ -1061,7 +1061,7 @@ export default function WorldCup({ state, onUpdate, onExit }: Props) {
             {completedInRound.length > 0 && (
               <div className="space-y-2">
                 <p className="text-white/30 text-xs uppercase tracking-widest">
-                  {activeKnockoutRound.name} — Completed
+                  {activeKnockoutRound.name} - Completed
                 </p>
                 {completedInRound.map((match, i) => (
                   <CompletedMatchCard
@@ -1141,7 +1141,7 @@ export default function WorldCup({ state, onUpdate, onExit }: Props) {
               <LeagueTable
                 table={sortTable(userPool.table)}
                 userTeam={userNation}
-                title={`Your Pool (${userPool.name}) — Final Standings`}
+                title={`Your Pool (${userPool.name}) - Final Standings`}
               />
             </div>
           )}

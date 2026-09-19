@@ -19,21 +19,12 @@ export const CONTACT_SERVICE_OPTIONS = [
 export const SITE_TAGLINE =
   "Websites, social, and content for NI businesses and charities.";
 
-export const NAV_LINKS = [
-  { href: "/work", label: "Work" },
-  { href: "/games", label: "Games", highlight: true },
-  { href: "/champions-draft", label: "Champions Draft", highlight: true },
-  { href: "/rugby-draft", label: "Rugby Draft", highlight: true },
-  { href: "/pub-quiz", label: "Pub Quiz", highlight: true },
-  { href: "/about", label: "About" },
-  { href: "/contact", label: "Contact" },
-] as const;
-
 export const WARDROBE_AI = {
   href: "/wardrobe-ai",
   label: "Wardrobe AI",
   description:
     "Generate outfits from a real wardrobe. AI-tagged clothes, every valid line-up, an honest verdict.",
+  status: "live",
 } as const;
 
 export const DRAFT_ANALYSER = {
@@ -41,19 +32,42 @@ export const DRAFT_ANALYSER = {
   label: "Draft Analyser",
   description:
     "A live FPL Draft analyser: squad board, availability, projected points, and a start/sit optimiser.",
+  status: "live",
+} as const;
+
+export const STOUT_FINDER = {
+  href: "/stout-finder",
+  label: "Stout Finder",
+  description:
+    "Which pubs in Antrim and Down actually have Beamish, Murphy's or Guinness on. Every claim dated, and it goes stale on its own.",
+  status: "soon",
+} as const;
+
+export const GUITAR_LAB = {
+  href: "/guitar-lab",
+  label: "Guitar Lab",
+  description:
+    "Scales, chords and progressions on a real fretboard. Alternate tunings, a capo, and a link that opens on exactly what you were looking at.",
+  status: "soon",
 } as const;
 
 export const SHELL_NAV_LINKS = [
   { href: "/services", label: "Services" },
   { href: "/work", label: "Work" },
+  { href: "/games", label: "Games" },
+  { href: "/toolkit", label: "Tools" },
+  { href: "/interactive", label: "Play" },
   { href: "/about", label: "About" },
-  { href: "/contact", label: "Contact" },
 ] as const;
 
 export const SECONDARY_NAV_LINKS = [
-  { href: "/toolkit", label: "Toolkit" },
-  { href: "/interactive", label: "Interactive" },
-  { href: "/games", label: "Games" },
+  { href: "/champions-draft", label: "Champions Draft" },
+  { href: "/rugby-draft", label: "Rugby Draft" },
+  { href: "/pub-quiz", label: "Pub Quiz" },
+  { href: "/draft", label: "Draft Analyser" },
+  { href: "/wardrobe-ai", label: "Wardrobe AI" },
+  { href: "/stout-finder", label: "Stout Finder" },
+  { href: "/guitar-lab", label: "Guitar Lab" },
 ] as const;
 
 export const SOCIAL_LINKS = [
@@ -73,7 +87,7 @@ export const PORTFOLIO_AREAS = [
   {
     title: "Websites & apps",
     description:
-      "Real projects and concept builds — a university dissertation app, a client site for RV's Cold Brew, and three local-business concepts showing range.",
+      "Real projects and concept builds - a university dissertation app, a client site for RV's Cold Brew, and three local-business concepts showing range.",
     href: "/work",
     cta: "Browse work",
     accent: "amber" as const,
@@ -81,7 +95,7 @@ export const PORTFOLIO_AREAS = [
   {
     title: "Free games",
     description:
-      "Champions Draft, Rugby Draft, and Pub Quiz — squad builders and real-time multiplayer trivia.",
+      "Champions Draft, Rugby Draft, and Pub Quiz - squad builders and real-time multiplayer trivia.",
     href: "/games",
     cta: "Play free",
     accent: "emerald" as const,
@@ -89,7 +103,7 @@ export const PORTFOLIO_AREAS = [
   {
     title: "About me",
     description:
-      "Who I am, what I use, and how I like to work — one person behind everything here.",
+      "Who I am, what I use, and how I like to work - one person behind everything here.",
     href: "/about",
     cta: "Read more",
     accent: "violet" as const,
@@ -97,10 +111,10 @@ export const PORTFOLIO_AREAS = [
 ] as const;
 
 export const STUDIO_STATEMENT =
-  "I like making things that look sharp and work properly — on the web, on mobile, and in the small gaps between projects.";
+  "I like making things that look sharp and work properly - on the web, on mobile, and in the small gaps between projects.";
 
 export const ABOUT_BLURB =
-  "I'm Ryan Davidson — I design and build things for the web. I recently finished my MSc in Software Development at Queen's and this site is my portfolio of case studies, concept builds, and browser games.";
+  "I'm Ryan Davidson - I design and build things for the web. I recently finished my MSc in Software Development at Queen's and this site is my portfolio of case studies, concept builds, and browser games.";
 
 export const SOCIAL_PROOF_ITEMS = [
   {
@@ -118,7 +132,7 @@ export const SOCIAL_PROOF_ITEMS = [
 ] as const;
 
 export const CHARITY_NOTE =
-  "Registered charities get the same packages free — website, social, and content. Say you are registered when you get in touch.";
+  "Registered charities get the same packages free - website, social, and content. Say you are registered when you get in touch.";
 
 export const PROCESS_STEPS = [
   {
@@ -184,7 +198,7 @@ export const HOME_PROJECT_IDS = [
 ] as const;
 
 export const PRICING_FEATURES = [
-  "Up to 5 pages — usually home, about, what you do, a gallery or work list, and contact",
+  "Up to 5 pages - usually home, about, what you do, a gallery or work list, and contact",
   "Built for a phone first, checked on a real handset before launch",
   "Contact form that lands in your inbox",
   "Basic SEO: page titles, descriptions, and a Google Maps embed if you have a premises",
@@ -204,7 +218,7 @@ export const CONTENT_CREATION_FEATURES = [
   "A one-off batch of posts or a small campaign set",
   "Copy written from a brief, in your voice",
   "Graphics that match the brand you already have",
-  "Files delivered ready to post — you hit publish",
+  "Files delivered ready to post - you hit publish",
 ] as const;
 
 export const FAQ_ITEMS = [
@@ -216,7 +230,12 @@ export const FAQ_ITEMS = [
   {
     question: "Who writes the content?",
     answer:
-      "You know the business; I put it into plain English. Send me what you have — prices, hours, a few photos, the sentences you already say to customers. If you are stuck, I will draft the copy and tell you what still needs a photo. I do not invent testimonials or made-up numbers.",
+      "You know the business; I put it into plain English. Send me what you have - prices, hours, a few photos, the sentences you already say to customers. If you are stuck, I will draft the copy and tell you what still needs a photo. I do not invent testimonials or made-up numbers.",
+  },
+  {
+    question: "Do registered charities pay?",
+    answer:
+      "No. Same three packages - website, social, and content - no fee. Mention you are a registered charity when you get in touch.",
   },
   {
     question: "Do registered charities pay?",
@@ -226,12 +245,12 @@ export const FAQ_ITEMS = [
   {
     question: "How do revisions work?",
     answer:
-      "One round is included. You send a list after you have seen the first full draft (or the month's social batch), and I make those changes. Extra rounds are extra — I quote before I start them, so there are no surprises.",
+      "One round is included. You send a list after you have seen the first full draft (or the month's social batch), and I make those changes. Extra rounds are extra - I quote before I start them, so there are no surprises.",
   },
   {
     question: "Who hosts the site, and what does that cost?",
     answer:
-      "I set the site up on Vercel. For a normal small site that stays within the free tier, you are not paying me a monthly hosting fee. Domain names are yours — buy it (or keep the one you have) and I point it. If the site outgrows free hosting, we talk before anything is charged.",
+      "I set the site up on Vercel. For a normal small site that stays within the free tier, you are not paying me a monthly hosting fee. Domain names are yours - buy it (or keep the one you have) and I point it. If the site outgrows free hosting, we talk before anything is charged.",
   },
   {
     question: "Will it work on mobile?",
@@ -288,7 +307,7 @@ export const PROJECTS = [
     href: "/work/rvs-cold-brew",
     image: "/images/work/rvs-coldbrew.png",
     imageAlt:
-      "RV's Cold Brew logo — circular badge with cream typography on dark teal",
+      "RV's Cold Brew logo - circular badge with cream typography on dark teal",
     previewFit: "contain" as const,
     previewBg: "#0a1a1f",
     outcome: "Live site",
@@ -317,13 +336,13 @@ export const PROJECTS = [
     type: "Set of 3",
     summary: "Concept · set of 3",
     description:
-      "Three local-business sites — trades, restaurant, and salon — showing range across different brands and audiences.",
+      "Three local-business sites - trades, restaurant, and salon - showing range across different brands and audiences.",
     highlights: ["Trades firm", "Restaurant", "Salon"],
     tags: ["Next.js", "Tailwind", "Vercel"],
     buttonLabel: "Read the case study",
     href: "/work/concept-builds",
     image: "/images/work/carrick-plumbing.png",
-    imageAlt: "Carrick Plumbing Co homepage — concept trades website",
+    imageAlt: "Carrick Plumbing Co homepage - concept trades website",
     outcome: "Concept builds demonstrating design range",
   },
   {
@@ -333,13 +352,13 @@ export const PROJECTS = [
     type: "AI Assistant",
     summary: "Portfolio · responsible AI",
     description:
-      "An AI assistant for Universal Credit caseworkers — journal responses, letter population, and case notes, built around safeguarding and human-in-the-loop review.",
+      "An AI assistant for Universal Credit caseworkers - journal responses, letter population, and case notes, built around safeguarding and human-in-the-loop review.",
     highlights: ["Safeguarding-first design", "Deterministic letters", "Synthetic data only"],
     tags: ["Node.js", "Express", "Claude API"],
     buttonLabel: "Read the case study",
     href: "/work/uc-caseworker-tool",
     image: "/images/work/uc-caseworker-journal.jpg",
     imageAlt: "UC Caseworker Assistant journal response tool with a synthetic example loaded",
-    outcome: "Portfolio prototype — domain expertise meets responsible AI engineering",
+    outcome: "Portfolio prototype - domain expertise meets responsible AI engineering",
   },
 ] as const;

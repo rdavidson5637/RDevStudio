@@ -31,7 +31,7 @@ export default async function DraftLayout({
             <h1 className="programme-h1 text-[2.5rem] sm:text-[3.5rem]">DRAFT</h1>
             <div className="flex flex-col gap-1 sm:items-end">
               <span className="shell-label text-secondary">
-                {event ? event.name.toUpperCase() : "GAMEWEEK — TBC"}
+                {event ? event.name.toUpperCase() : "GAMEWEEK - TBC"}
               </span>
               <DeadlineCountdown deadline={event?.nextDeadlineTime ?? null} />
               <DataFreshness timestamp={freshness} />

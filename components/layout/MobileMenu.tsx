@@ -60,7 +60,7 @@ export function MobileMenu({ open, onClose, isActive }: MobileMenuProps) {
             href="/"
             onClick={onClose}
             className="text-lg font-semibold tracking-tight text-primary"
-            aria-label="RDev Studio — Home"
+            aria-label="RDev Studio - Home"
           >
             RDev Studio
           </Link>

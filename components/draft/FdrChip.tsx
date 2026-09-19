@@ -22,7 +22,7 @@ export function FdrChip({ opponent, isHome, difficulty, className, postponed }: 
   const style = DIFFICULTY_STYLES[difficulty] ?? DIFFICULTY_STYLES[3];
   return (
     <span
-      title={`${postponed ? "Provisional — " : ""}${isHome ? "Home" : "Away"} vs ${opponent} — difficulty ${difficulty} of 5`}
+      title={`${postponed ? "Provisional - " : ""}${isHome ? "Home" : "Away"} vs ${opponent} - difficulty ${difficulty} of 5`}
       className={`inline-flex items-center gap-1 rounded border bg-raised px-1.5 py-0.5 font-mono text-[10px] uppercase tracking-wider ${style} ${className ?? ""}`}
     >
       <span>{opponent}</span>

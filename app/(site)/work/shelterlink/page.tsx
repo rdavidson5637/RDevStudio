@@ -61,7 +61,7 @@ export default function ShelterLinkCaseStudyPage() {
           className="mb-8"
         />
         <header className="space-y-6 border-b border-border pb-10">
-          <p className="shell-label text-accent">CASE STUDY — 01</p>
+          <p className="shell-label text-accent">CASE STUDY - 01</p>
           <h1 className="programme-h1">SHELTERLINK</h1>
           <p className="max-w-2xl text-lg text-primary">
             Volunteer rotas, roles, and an admin dashboard for Assisi Animal
@@ -69,10 +69,10 @@ export default function ShelterLinkCaseStudyPage() {
           </p>
 
           <div className="grid grid-cols-2 gap-x-4 gap-y-2 border-t border-border pt-5 font-mono text-[11px] uppercase tracking-[0.08em] text-secondary lg:grid-cols-4">
-            <p>ROLE — Design & development (solo)</p>
-            <p>STACK — Node.js · Express · MySQL · Vanilla JS · PicoCSS</p>
-            <p>STATUS — Ready for live use</p>
-            <p>YEAR — 2025–26</p>
+            <p>ROLE - Design & development (solo)</p>
+            <p>STACK - Node.js · Express · MySQL · Vanilla JS · PicoCSS</p>
+            <p>STATUS - Ready for live use</p>
+            <p>YEAR - 2025-26</p>
           </div>
         </header>
 

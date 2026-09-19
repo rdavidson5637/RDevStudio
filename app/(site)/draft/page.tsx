@@ -50,7 +50,7 @@ export default async function DraftOverviewPage() {
   return (
     <div className="space-y-10">
       <p className="max-w-2xl text-base leading-relaxed text-secondary sm:text-lg">
-        A public, read-only draft league analyser — live gameweek tracking, an
+        A public, read-only draft league analyser - live gameweek tracking, an
         availability model, and projected points, all built from data the FPL
         Draft API already publishes. No login, no scraping.
       </p>

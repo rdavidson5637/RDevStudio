@@ -72,7 +72,7 @@ export function BusinessNameGeneratorApp() {
       <ToolkitToolHeader
         category="Creative & brand"
         title="Business Name Generator"
-        description="Brainstorm name ideas by industry and keywords — shuffle until something sticks."
+        description="Brainstorm name ideas by industry and keywords - shuffle until something sticks."
       />
       <div className="grid gap-8 py-10 lg:grid-cols-2">
         <FadeIn className="space-y-4 rounded-[10px] border border-border-strong bg-raised p-5 sm:p-6">

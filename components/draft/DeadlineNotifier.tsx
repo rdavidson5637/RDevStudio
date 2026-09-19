@@ -54,7 +54,7 @@ export function DeadlineNotifier({
   if (permission === "granted") {
     return (
       <p className="mt-2 text-xs text-secondary">
-        Browser alerts on for this tab — they fire about two hours before the deadline if the XI still looks wrong.
+        Browser alerts on for this tab - they fire about two hours before the deadline if the XI still looks wrong.
       </p>
     );
   }

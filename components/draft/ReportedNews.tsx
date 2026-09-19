@@ -25,7 +25,7 @@ function formatWhen(iso: string): string {
 
 export function ReportedNews({
   items,
-  heading = "Reported — not confirmed",
+  heading = "Reported - not confirmed",
 }: {
   items: ReportedNewsItem[];
   heading?: string;

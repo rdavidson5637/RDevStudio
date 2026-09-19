@@ -31,7 +31,7 @@ export async function sendDeadlineAlerts(): Promise<{
 
   const body = {
     title: "FPL Draft deadline",
-    message: `Deadline check: your XI currently has ${flags.join(", ")}. Change it in the FPL app — this site is read-only.`,
+    message: `Deadline check: your XI currently has ${flags.join(", ")}. Change it in the FPL app - this site is read-only.`,
     flags,
     deadline,
     event: event.name,

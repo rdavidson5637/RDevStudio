@@ -6,7 +6,7 @@ export type GameCatalogEntry = {
   meta: string;
   screenshotCaption: string;
   screenshotSrc: string;
-  /** When set, renders "ATTENDANCE — {n} PLAYERS" in Space Mono */
+  /** When set, renders "ATTENDANCE - {n} PLAYERS" in Space Mono */
   attendance?: number;
 };
 

@@ -127,7 +127,7 @@ export function getPlaceholderAuditResult(url: string): LandingPageAuditResult {
       id: "hero",
       title: "Hero Score",
       score: 85,
-      summary: `The hero on ${host} makes a strong first impression — clear headline, relevant imagery, and a visible CTA.`,
+      summary: `The hero on ${host} makes a strong first impression - clear headline, relevant imagery, and a visible CTA.`,
       highlights: [
         "Value proposition visible within 3 seconds",
         "Hero image supports the offer",

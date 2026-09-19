@@ -74,7 +74,7 @@ export function HireRyanPage() {
       <RudiModal open={rudiModalOpen} onClose={() => setRudiModalOpen(false)} />
       <CatModal open={catModalOpen} onClose={() => setCatModalOpen(false)} />
 
-      {/* Section 1 — Hero */}
+      {/* Section 1 - Hero */}
       <section className="relative overflow-hidden border-b border-border bg-base pb-16 pt-28 md:pb-20">
         <div
           className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_15%_0%,rgb(245_158_11/0.1)_0%,transparent_50%)]"
@@ -131,7 +131,7 @@ export function HireRyanPage() {
         </div>
       </section>
 
-      {/* Section 2 — About */}
+      {/* Section 2 - About */}
       <section className="section-padding border-b border-border bg-raised">
         <div className="container-wide max-w-4xl">
           <SectionHeader label="Profile" title="About Me" />
@@ -153,7 +153,7 @@ export function HireRyanPage() {
         </div>
       </section>
 
-      {/* Section 3 — Qualifications */}
+      {/* Section 3 - Qualifications */}
       <section
         ref={registerSection("qualifications")}
         className="section-padding border-b border-border bg-base"
@@ -181,7 +181,7 @@ export function HireRyanPage() {
                 <p className="lead-text mt-3 max-w-2xl">{item.detail}</p>
                 {index === 0 && (
                   <p className="editorial-note mt-3">
-                    Graduating Summer 2026 — completing while working full time
+                    Graduating Summer 2026 - completing while working full time
                     in Belfast.
                   </p>
                 )}
@@ -191,7 +191,7 @@ export function HireRyanPage() {
         </div>
       </section>
 
-      {/* Section 4 — Work Experience */}
+      {/* Section 4 - Work Experience */}
       <section className="section-padding border-b border-border bg-raised">
         <div className="container-wide max-w-4xl">
           <SectionHeader label="Experience" title="Work Experience" />
@@ -229,7 +229,7 @@ export function HireRyanPage() {
         </div>
       </section>
 
-      {/* Section 5 — Projects */}
+      {/* Section 5 - Projects */}
       <section className="section-padding border-b border-border bg-base">
         <div className="container-wide">
           <SectionHeader label="Portfolio" title="Featured Projects" />
@@ -370,7 +370,7 @@ export function HireRyanPage() {
         </div>
       </section>
 
-      {/* Section 6 — Skills */}
+      {/* Section 6 - Skills */}
       <section className="section-padding border-b border-border bg-raised">
         <div className="container-wide max-w-4xl">
           <SectionHeader label="Toolkit" title="Skills" />
@@ -408,7 +408,7 @@ export function HireRyanPage() {
         </section>
       )}
 
-      {/* Section 8 — Achievements (visible once chaos starts) */}
+      {/* Section 8 - Achievements (visible once chaos starts) */}
       {chaosStarted && (
         <section
           className={`section-padding border-b border-border bg-raised ${revealClass}`}
@@ -466,7 +466,7 @@ export function HireRyanPage() {
         </section>
       )}
 
-      {/* Section 12 — Weaknesses */}
+      {/* Section 12 - Weaknesses */}
       {chaosStarted && (
         <section
           className={`section-padding border-b border-border bg-base ${revealClass}`}

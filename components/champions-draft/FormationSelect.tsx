@@ -51,7 +51,7 @@ export default function FormationSelect({
         </h2>
         <p className="text-white/40 text-sm mt-3">
           {isNationalWC
-            ? `National Squad rules — only ${selectedNation} players in your spins`
+            ? `National Squad rules - only ${selectedNation} players in your spins`
             : "This shapes how your XI is laid out on the pitch"}
         </p>
       </div>

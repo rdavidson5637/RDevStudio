@@ -52,7 +52,7 @@ export default function RvsColdBrewCaseStudyPage() {
           className="mb-8"
         />
         <header className="space-y-6 border-b border-border pb-10">
-          <p className="shell-label text-accent">CASE STUDY — 02</p>
+          <p className="shell-label text-accent">CASE STUDY - 02</p>
           <h1 className="programme-h1">RV&apos;S COLD BREW</h1>
           <p className="max-w-2xl text-lg text-primary">
             A live site for a Belfast cold brew and matcha counter at
@@ -60,10 +60,10 @@ export default function RvsColdBrewCaseStudyPage() {
           </p>
 
           <div className="grid grid-cols-2 gap-x-4 gap-y-2 border-t border-border pt-5 font-mono text-[11px] uppercase tracking-[0.08em] text-secondary lg:grid-cols-4">
-            <p>ROLE — Design & development</p>
-            <p>TYPE — Brand site</p>
-            <p>STATUS — Live · still a client</p>
-            <p>YEAR — 2026</p>
+            <p>ROLE - Design & development</p>
+            <p>TYPE - Brand site</p>
+            <p>STATUS - Live · still a client</p>
+            <p>YEAR - 2026</p>
           </div>
         </header>
 

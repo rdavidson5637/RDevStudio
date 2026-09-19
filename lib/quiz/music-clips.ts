@@ -7,7 +7,7 @@ export interface MusicClip {
 
 /**
  * Curated CC / public-domain clips with direct MP3 URLs (Internet Archive).
- * Used to attach audio to music-round questions — AI does not generate audio URLs.
+ * Used to attach audio to music-round questions - AI does not generate audio URLs.
  */
 export const MUSIC_CLIPS: MusicClip[] = [
   {
@@ -54,7 +54,7 @@ export const MUSIC_CLIPS: MusicClip[] = [
   },
   {
     artist: "Antonio Vivaldi",
-    title: "The Four Seasons — Spring",
+    title: "The Four Seasons - Spring",
     audioUrl:
       "https://archive.org/download/VivaldiFourSeasonsSpring/01%20Spring%20-%20Allegro.mp3",
     category: "classical",

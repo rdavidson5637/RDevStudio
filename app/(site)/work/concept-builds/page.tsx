@@ -57,21 +57,21 @@ const BUILDS = [
   {
     title: "Carrick Plumbing Co",
     description:
-      "Homeowners need to know what the firm does, where it covers, and how to get a quote — before anything else. The layout puts services and contact above the fold, with a restrained palette that reads as dependable rather than flashy.",
+      "Homeowners need to know what the firm does, where it covers, and how to get a quote - before anything else. The layout puts services and contact above the fold, with a restrained palette that reads as dependable rather than flashy.",
     href: "https://carrick-plumbing-co.vercel.app/",
     screenshotCaption: "Carrick Plumbing Co homepage",
     screenshotSrc: "/images/work/carrick-plumbing.png",
-    screenshotAlt: "Carrick Plumbing Co homepage — trades firm concept site",
+    screenshotAlt: "Carrick Plumbing Co homepage - trades firm concept site",
   },
   {
     title: "The Anchor Restaurant",
     description:
-      "Diners want the menu, opening hours, and a way to book — fast, on a phone, often one-handed. Photography carries the atmosphere; type stays large and legible so the essentials never compete with the mood.",
+      "Diners want the menu, opening hours, and a way to book - fast, on a phone, often one-handed. Photography carries the atmosphere; type stays large and legible so the essentials never compete with the mood.",
     href: "https://the-anchor-restaurant.vercel.app/",
     screenshotCaption: "The Anchor Restaurant landing page",
     screenshotSrc: "/images/work/anchor-restaurant.png",
     screenshotAlt:
-      "The Anchor Restaurant landing page — restaurant concept site",
+      "The Anchor Restaurant landing page - restaurant concept site",
   },
   {
     title: "Harbour Hair Studio",
@@ -80,7 +80,7 @@ const BUILDS = [
     href: "https://harbour-hair-studio11.vercel.app/",
     screenshotCaption: "Harbour Hair Studio hero and services",
     screenshotSrc: "/images/work/harbour-hair.png",
-    screenshotAlt: "Harbour Hair Studio hero and services — salon concept site",
+    screenshotAlt: "Harbour Hair Studio hero and services - salon concept site",
   },
 ] as const;
 
@@ -89,14 +89,14 @@ export default function ConceptBuildsPage() {
     <div className="section-padding pt-28">
       <article className="container-wide px-6">
         <header className="space-y-6 border-b border-border pb-10">
-          <p className="shell-label text-accent">CASE STUDY — 04</p>
+          <p className="shell-label text-accent">CASE STUDY - 04</p>
           <h1 className="programme-h1">CONCEPT BUILDS</h1>
           <p className="max-w-2xl text-lg text-primary">
             Three sites exploring how local businesses could look online.
           </p>
           <p className="max-w-3xl text-base leading-relaxed text-primary sm:text-lg">
             Not every business I want to design for has hired me yet. These
-            three concept builds — a trades firm, a restaurant, and a salon —
+            three concept builds - a trades firm, a restaurant, and a salon -
             are how I show range: three different brands, three different
             audiences, one standard.
           </p>

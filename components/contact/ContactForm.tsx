@@ -116,7 +116,7 @@ function ContactFormFields({ onReset }: { onReset: () => void }) {
 
       {state.errors ? (
         <p className="text-sm leading-relaxed text-[#d22b2b]">
-          That didn&apos;t send. Try again, or just email me directly — address
+          That didn&apos;t send. Try again, or just email me directly - address
           is right there.
         </p>
       ) : null}

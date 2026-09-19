@@ -188,7 +188,7 @@ function filterPictureQuestions(questions: Question[]): Question[] {
   for (const question of questions) {
     if (!question.imageUrl || !isValidWikimediaImageUrl(question.imageUrl)) {
       console.warn(
-        `Filtered picture question "${question.id}" — invalid imageUrl: ${question.imageUrl ?? "missing"}`,
+        `Filtered picture question "${question.id}" - invalid imageUrl: ${question.imageUrl ?? "missing"}`,
       );
       continue;
     }

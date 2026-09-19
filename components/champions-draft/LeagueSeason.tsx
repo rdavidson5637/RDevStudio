@@ -386,7 +386,7 @@ export default function LeagueSeason({ state, onUpdate, onExit }: Props) {
             goalDifference={userRow?.goalDifference ?? 0}
             topScorer={topScorerData.playerName}
             topScorerGoals={topScorerData.goals}
-            playerOfSeason={playerOfSeason?.name ?? "—"}
+            playerOfSeason={playerOfSeason?.name ?? "-"}
             playerOfSeasonOvr={playerOfSeason?.overall ?? 0}
             formation={state.formation}
             teamRatings={state.teamRatings ?? undefined}

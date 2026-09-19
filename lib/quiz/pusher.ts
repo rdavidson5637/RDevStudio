@@ -40,7 +40,7 @@ export async function triggerGameEvent<E extends GameEventType>(
 
   if (!client) {
     console.warn(
-      `[Pusher] Skipping event "${event}" — Pusher credentials not configured`,
+      `[Pusher] Skipping event "${event}" - Pusher credentials not configured`,
     );
     return;
   }

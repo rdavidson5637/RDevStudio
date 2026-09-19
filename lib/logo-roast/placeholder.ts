@@ -107,7 +107,7 @@ export function getPlaceholderRoastResult(fileName: string): LogoRoastResult {
       id: "overall",
       title: "Overall Score",
       score: average,
-      summary: `A competent logo with solid fundamentals — polish scalability and typographic character to level up.`,
+      summary: `A competent logo with solid fundamentals - polish scalability and typographic character to level up.`,
       highlights: [
         "Clean enough for professional use",
         "Colour system is the strongest element",
