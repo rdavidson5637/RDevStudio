@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { allowRequest, tooManyRequests } from "@/lib/rate-limit";
 
 import {
   MAX_QUESTIONS_PER_ROUND,
@@ -85,6 +86,16 @@ function normalizeRoundConfigs(body: CreateRequestBody): RoundConfig[] {
 }
 
 export async function POST(request: NextRequest) {
+  if (
+    !(await allowRequest(request, {
+      name: "quiz-create",
+      max: 20,
+      windowSeconds: 3600,
+    }))
+  ) {
+    return tooManyRequests();
+  }
+
   try {
     const body = (await request.json()) as CreateRequestBody;
     const { hostName, colour, avatar, teamMode = false } = body;

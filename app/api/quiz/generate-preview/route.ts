@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { allowRequest, tooManyRequests } from "@/lib/rate-limit";
 
 import { generateQuestionsForRound } from "@/lib/quiz/questions";
 import { createDefaultRound } from "@/lib/quiz/rounds";
@@ -17,6 +18,16 @@ function isValidDifficulty(value: string): value is Difficulty {
 }
 
 export async function GET(request: NextRequest) {
+  if (
+    !(await allowRequest(request, {
+      name: "quiz-preview",
+      max: 10,
+      windowSeconds: 600,
+    }))
+  ) {
+    return tooManyRequests();
+  }
+
   const { searchParams } = new URL(request.url);
   const categoryParam = searchParams.get("category");
   const countParam = searchParams.get("count");

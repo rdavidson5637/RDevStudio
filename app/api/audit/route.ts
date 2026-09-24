@@ -5,12 +5,17 @@ import {
   fetchSignals,
   normalizeUrl,
 } from "@/lib/audit-tools/analyze";
+import { allowRequest, tooManyRequests } from "@/lib/rate-limit";
 
 // Node runtime (not edge) so we can fetch arbitrary sites server-side.
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
 export async function GET(request: Request) {
+  if (!(await allowRequest(request, { name: "audit", max: 20, windowSeconds: 600 }))) {
+    return tooManyRequests("That is a lot of checks in a row. Try again in a few minutes.");
+  }
+
   const { searchParams } = new URL(request.url);
   const raw = searchParams.get("url");
 

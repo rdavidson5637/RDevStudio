@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { allowRequest, tooManyRequests } from "@/lib/rate-limit";
 
 import { getGame, setGame } from "@/lib/quiz/game-store";
 import { toPublicGameState } from "@/lib/quiz/public-state";
@@ -15,6 +16,18 @@ interface StartRequestBody {
 }
 
 export async function POST(request: NextRequest) {
+  if (
+    !(await allowRequest(request, {
+      name: "quiz-start",
+      max: 12,
+      windowSeconds: 3600,
+    }))
+  ) {
+    return tooManyRequests(
+      "That is a lot of quizzes. Give it a few minutes before starting another.",
+    );
+  }
+
   try {
     const body = (await request.json()) as StartRequestBody;
     const { gameId, hostId } = body;
