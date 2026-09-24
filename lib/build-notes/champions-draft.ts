@@ -155,6 +155,15 @@ export const championsDraftNote: BuildNote = {
   ],
   incidents: [
     {
+      title: "Champions League clubs came up short of games",
+      symptom:
+        "In most runs at least one club finished the league phase with fewer than eight games, and now and again it was your own side.",
+      cause:
+        "buildCLLeaguePhase filled fixtures greedily with no backtracking. Run 10,000 times with tsx, about 7 in 10 left a club short and about 4 in 100 left the player's XI short.",
+      fix: "Fixtures now come from a shuffled circle: each club is at home to the next four and away at the previous four. Every club gets exactly eight, four at home, no repeats. The game's first tests check it over 2,000 generated league phases.",
+      commit: "8b0c99e",
+    },
+    {
       title: "The fifth draft stalled at six picks",
       symptom:
         "Play a few drafts in a row without quitting or refreshing, and the fifth one got stuck part way: the spin had no squads left to offer.",
@@ -183,14 +192,13 @@ export const championsDraftNote: BuildNote = {
     },
   ],
   testing: [
-    "No automated tests cover either game. Nothing under lib/champions-draft or lib/rugby-draft has a test file.",
-    "The repo already runs Vitest and the engines are pure TypeScript, so they'd slot straight in.",
+    "Vitest covers the Champions League fixture builder: 2,000 generated league phases, every club on exactly eight games with four at home and no repeat pairings.",
+    "The rest of the engines have no tests yet. They are pure TypeScript, so they slot straight into the Vitest setup the repo already runs.",
     "The engines call Math.random directly with no seed, so tests would have to check distributions rather than exact scores.",
-    "The feedback loop is an in-game bug report button (62a9656) that sends the current phase, mode and formation through Formspree. The scheduler numbers below come from running the engine functions directly with tsx, 10,000 times.",
+    "The feedback loop is an in-game bug report button (62a9656) that sends the current phase, mode and formation through Formspree.",
   ],
   gaps: [
-    "No tests. The match model, the Champions League scheduler and the spin logic need them first.",
-    "buildCLLeaguePhase schedules greedily with no backtracking. Over 10,000 runs, about 7 in 10 left at least one club short of 8 games, and about 4 in 100 left your own XI short.",
+    "The match model and the spin logic need tests next.",
     "Goals aren't tracked per player. The top scorer is the first forward or wide player in slot order, credited with 35% of the team's league goals.",
     "League coverage is uneven: 20 modern squads each for the Premier League and La Liga, 4 for Serie A, 3 for the Bundesliga, 2 for Ligue 1. A Ligue 1 season is four matches.",
   ],

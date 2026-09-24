@@ -156,6 +156,15 @@ export const pubQuizNote: BuildNote = {
       commit: "e8f6963",
     },
     {
+      title: "Everyone's answers were in the state poll",
+      symptom:
+        "Nothing on screen, but the state endpoint every phone polls carried each player's answers, so the rest of the table's picks were readable before the reveal.",
+      cause:
+        "toPublicGameState stripped the correct answer from the question but sent the players array as it was stored, answers and all.",
+      fix: "Players go out with an empty answers list. No client read it anyway, so nothing else changed.",
+      commit: "0408cf8",
+    },
+    {
       title: "Games vanished between instances",
       symptom:
         "A game only existed on the instance that created it. Requests landing elsewhere got 'Game not found', and only a lobby could be rescued, via /api/quiz/rehydrate.",
@@ -183,14 +192,15 @@ export const pubQuizNote: BuildNote = {
     },
   ],
   testing: [
-    "No automated tests cover the quiz yet.",
-    "Vitest runs elsewhere in the repo but not on lib/quiz. The quiz relies on runtime checks: every route validates body, game status and membership before changing anything.",
+    "Vitest checks the two things that went wrong in production: 5,000 generated join codes all survive being upper-cased, and players' answers never make it into what other clients see.",
+    "The route handlers themselves have no tests yet. They rely on runtime checks: every route validates body, game status and membership before changing anything.",
   ],
   ai: [
     "ai-generator.ts calls the Messages API with plain fetch, one call per round, all rounds in parallel. The model is hard-coded as claude-sonnet-4-6; the key is ANTHROPIC_API_KEY.",
     "The prompt carries category topics, format rules, difficulty, the game ID as a seed, and the last 40 used questions to avoid.",
     "I strip markdown fences, JSON.parse, and validate each item. Multiple choice needs exactly 4 options including the answer; picture questions need a Wikimedia URL and alt text. Bad items are dropped.",
     "Picture images are fetched with a 2 KB range request before use. Claude never supplies audio; the server attaches Internet Archive clips.",
+    "Creating, starting and previewing a quiz are rate limited per IP, counted in Redis so the limit holds across instances.",
     "If the call fails or comes up short, the round tops up from 47 hardcoded questions across 10 categories, or the picture and music pools.",
   ],
   gaps: [
@@ -198,8 +208,7 @@ export const pubQuizNote: BuildNote = {
     "The trust model is 'everyone is at the same table'. Host actions are checked against a host ID rather than a signed session, and answer timing is reported by the phone. Both need tightening before it's safe for strangers.",
     "Round boundaries use configured counts, not generated ones, so a short fallback round shifts the rounds after it.",
     "A player who closes the tab mid-game can't rejoin: the session is in sessionStorage and join only accepts lobbies.",
-    "The AI routes need rate limiting.",
-    "No automated tests cover the quiz yet.",
+    "No tests on the route handlers or the buzzer ordering yet.",
   ],
   codeLinks: [
     { label: "Cache and Redis write-through", path: "lib/quiz/game-store.ts" },
