@@ -5,7 +5,12 @@ export function Comparison() {
   const ours = COMPARISON.columns.length - 1;
 
   return (
-    <div className="overflow-x-auto rounded-[10px] border border-border bg-raised">
+    <div
+      className="overflow-x-auto rounded-[10px] border border-border bg-raised focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+      role="region"
+      aria-label="Comparison table, scrolls sideways on small screens"
+      tabIndex={0}
+    >
       <table className="w-full min-w-[640px] border-collapse text-left text-sm">
         <caption className="sr-only">
           How RDev Studio compares with a DIY site builder and a typical agency

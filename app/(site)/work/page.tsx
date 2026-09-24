@@ -143,7 +143,7 @@ export default function WorkPage() {
             <p className="text-base leading-relaxed text-primary sm:text-lg">
               This is the highlight reel. If you&apos;re after something specific - a particular
               stack, a certain type of project, or proof I can actually do what I say -{" "}
-              <Link href="/contact" className="text-accent hover:underline">
+              <Link href="/contact" className="text-accent underline underline-offset-4">
                 just ask
               </Link>
               .
