@@ -372,8 +372,11 @@ export function HireRyanPage() {
         </div>
       </section>
 
-      {/* Section 6 - Skills */}
-      <section className="section-padding border-b border-border bg-raised">
+      {/* Section 6 - Skills. Reaching this is what starts the easter eggs. */}
+      <section
+        ref={registerSection("skills")}
+        className="section-padding border-b border-border bg-raised"
+      >
         <div className="container-wide max-w-4xl">
           <SectionHeader label="Toolkit" title="Skills" />
           <div className="mt-10 grid gap-6 sm:grid-cols-2">
@@ -394,11 +397,6 @@ export function HireRyanPage() {
             ))}
           </div>
         </div>
-        <div
-          ref={registerSection("testimonials")}
-          className="h-px"
-          aria-hidden="true"
-        />
       </section>
 
       {chaosStarted && (

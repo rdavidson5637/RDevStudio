@@ -6,8 +6,6 @@ export type GameCatalogEntry = {
   meta: string;
   screenshotCaption: string;
   screenshotSrc: string;
-  /** When set, renders "ATTENDANCE - {n} PLAYERS" in Space Mono */
-  attendance?: number;
 };
 
 export const GAMES_CATALOG: GameCatalogEntry[] = [
@@ -20,7 +18,6 @@ export const GAMES_CATALOG: GameCatalogEntry[] = [
     meta: "FOOTBALL · BROWSER · FREE",
     screenshotCaption: "CHAMPIONS DRAFT SCREENSHOT",
     screenshotSrc: "/images/games/champions-draft.jpg",
-    attendance: 2847,
   },
   {
     id: "rugby-draft",
@@ -31,17 +28,15 @@ export const GAMES_CATALOG: GameCatalogEntry[] = [
     meta: "RUGBY · BROWSER · FREE",
     screenshotCaption: "RUGBY DRAFT SCREENSHOT",
     screenshotSrc: "/images/games/rugby-draft.jpg",
-    attendance: 1253,
   },
   {
     id: "pub-quiz",
     title: "PUB QUIZ",
     href: "/pub-quiz",
     description:
-      "A quiz you can run from one phone. Settles arguments, starts new ones.",
-    meta: "TRIVIA · PASS-AND-PLAY · FREE",
+      "One person hosts, everyone else joins with a code. Settles arguments, starts new ones.",
+    meta: "TRIVIA · HOST + JOIN CODE · FREE",
     screenshotCaption: "PUB QUIZ SCREENSHOT",
     screenshotSrc: "/images/games/pub-quiz.jpg",
-    attendance: 892,
   },
 ];

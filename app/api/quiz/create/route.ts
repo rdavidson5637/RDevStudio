@@ -16,7 +16,8 @@ import {
 import { createDefaultTeams } from "@/lib/quiz/teams";
 import type { GameState, Player, RoundConfig } from "@/lib/quiz/types";
 import { Difficulty, QuizCategory } from "@/lib/quiz/types";
-import { generateGameId, generatePlayerId } from "@/lib/quiz/utils";
+import { withoutHostSecret } from "@/lib/quiz/host-auth";
+import { generateGameId, generateHostSecret, generatePlayerId } from "@/lib/quiz/utils";
 
 interface CreateRequestBody {
   hostName: string;
@@ -146,6 +147,7 @@ export async function POST(request: NextRequest) {
     }
 
     const playerId = generatePlayerId();
+    const hostSecret = generateHostSecret();
     const host: Player = {
       id: playerId,
       name: hostName.trim(),
@@ -158,6 +160,7 @@ export async function POST(request: NextRequest) {
     const gameState: GameState = {
       id: gameId,
       hostId: playerId,
+      hostSecret,
       players: [host],
       questions: [],
       currentQuestionIndex: 0,
@@ -180,7 +183,12 @@ export async function POST(request: NextRequest) {
 
     await setGame(gameId, gameState);
 
-    return NextResponse.json({ gameId, playerId, gameState });
+    return NextResponse.json({
+      gameId,
+      playerId,
+      hostSecret,
+      gameState: withoutHostSecret(gameState),
+    });
   } catch {
     return NextResponse.json(
       { error: "Invalid request body" },

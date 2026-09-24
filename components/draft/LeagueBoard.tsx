@@ -129,8 +129,11 @@ function PostList({ rows }: { rows: LeagueBoardData["postMortem"]["best"] }) {
 function TradeAnalyser({ pool, myEntryId }: { pool: TradePiece[]; myEntryId: number }) {
   const mine = pool.filter((p) => p.entryId === myEntryId);
   const theirs = pool.filter((p) => p.entryId !== myEntryId);
-  const [outId, setOutId] = useState(mine[0]?.id ?? 0);
-  const [inId, setInId] = useState(theirs[0]?.id ?? 0);
+  const defaultOut = mine[0];
+  const defaultIn =
+    theirs.find((player) => player.position === defaultOut?.position) ?? theirs[0];
+  const [outId, setOutId] = useState(defaultOut?.id ?? 0);
+  const [inId, setInId] = useState(defaultIn?.id ?? 0);
 
   const verdict = useMemo(() => {
     const send = mine.find((p) => p.id === outId);
@@ -150,7 +153,16 @@ function TradeAnalyser({ pool, myEntryId }: { pool: TradePiece[]; myEntryId: num
           You send
           <select
             value={outId}
-            onChange={(e) => setOutId(Number(e.target.value))}
+            onChange={(e) => {
+              const nextId = Number(e.target.value);
+              setOutId(nextId);
+              const next = mine.find((player) => player.id === nextId);
+              const currentIn = theirs.find((player) => player.id === inId);
+              if (next && currentIn && currentIn.position !== next.position) {
+                const match = theirs.find((player) => player.position === next.position);
+                if (match) setInId(match.id);
+              }
+            }}
             className="mt-1 w-full rounded-md border border-border bg-raised px-3 py-2 text-primary"
           >
             {mine.map((p) => (

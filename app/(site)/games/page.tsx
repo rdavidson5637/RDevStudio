@@ -64,11 +64,6 @@ function GameCard({ game, index }: { game: GameCatalogEntry; index: number }) {
             {game.description}
           </p>
           <p className="shell-label mt-5 text-accent">{game.meta}</p>
-          {game.attendance != null ? (
-            <p className="shell-label mt-2 text-secondary">
-              ATTENDANCE - {game.attendance.toLocaleString("en-GB")} PLAYERS
-            </p>
-          ) : null}
           <Link
             href={game.href}
             className="mt-8 inline-flex w-fit rounded-md bg-primary px-6 py-3 text-sm font-semibold text-paper transition-colors hover:bg-[#d22b2b]"

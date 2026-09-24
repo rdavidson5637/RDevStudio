@@ -37,7 +37,7 @@ export const WARDROBE_AI = {
   label: "Wardrobe AI",
   description:
     "Generate outfits from a real wardrobe. AI-tagged clothes, every valid line-up, an honest verdict.",
-  status: "live",
+  status: "soon",
 } as const;
 
 export const DRAFT_ANALYSER = {

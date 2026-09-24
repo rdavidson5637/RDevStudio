@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 
 import { getGame, setGame } from "@/lib/quiz/game-store";
+import { hostAuthorised } from "@/lib/quiz/host-auth";
 import { toPublicGameState } from "@/lib/quiz/public-state";
 import { broadcastQuestion } from "@/lib/quiz/question-events";
 import {
@@ -18,12 +19,13 @@ import { Difficulty, RoundFormat } from "@/lib/quiz/types";
 interface NextRequestBody {
   gameId: string;
   hostId: string;
+  hostSecret?: string;
 }
 
 export async function POST(request: NextRequest) {
   try {
     const body = (await request.json()) as NextRequestBody;
-    const { gameId, hostId } = body;
+    const { gameId, hostId, hostSecret } = body;
 
     if (!gameId?.trim()) {
       return NextResponse.json(
@@ -44,7 +46,7 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: "Game not found" }, { status: 404 });
     }
 
-    if (game.hostId !== hostId) {
+    if (!hostAuthorised(game, hostId, hostSecret)) {
       return NextResponse.json(
         { error: "Only the host can advance the game" },
         { status: 403 },

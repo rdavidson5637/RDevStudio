@@ -11,6 +11,17 @@ export type TimelineEvent = {
   news: string | null;
 };
 
+/** A first sighting (no previous score) is not a change. */
+export function isStatusChange(
+  prev: { availability_score: number | null; status: string | null } | undefined,
+  curr: { availability_score: number | null; status: string | null },
+): boolean {
+  if (!prev || prev.availability_score == null) return false;
+  return (
+    prev.availability_score !== curr.availability_score || prev.status !== curr.status
+  );
+}
+
 async function fetchTimeline(limit = 40): Promise<TimelineEvent[]> {
   const { data: snaps } = await supabasePublic
     .from("fpl_player_snapshots")
@@ -32,16 +43,14 @@ async function fetchTimeline(limit = 40): Promise<TimelineEvent[]> {
     const chronological = [...list].sort(
       (a, b) => new Date(a.captured_at).getTime() - new Date(b.captured_at).getTime(),
     );
-    for (let i = 0; i < chronological.length; i++) {
+    for (let i = 1; i < chronological.length; i++) {
       const prev = chronological[i - 1];
       const curr = chronological[i];
-      if (prev && prev.availability_score === curr.availability_score && prev.status === curr.status) {
-        continue;
-      }
+      if (!isStatusChange(prev, curr)) continue;
       changes.push({
         playerId,
         capturedAt: curr.captured_at,
-        fromScore: prev?.availability_score ?? null,
+        fromScore: prev.availability_score,
         toScore: curr.availability_score ?? 0,
         status: curr.status,
         news: curr.news,

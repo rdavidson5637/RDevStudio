@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 
 import { getGame, setGame } from "@/lib/quiz/game-store";
+import { hostAuthorised } from "@/lib/quiz/host-auth";
 import { triggerGameEvent } from "@/lib/quiz/pusher";
 import { isValidTeamColour, preserveTeamScores } from "@/lib/quiz/teams";
 import type { Team } from "@/lib/quiz/types";
@@ -8,13 +9,14 @@ import type { Team } from "@/lib/quiz/types";
 interface TeamsRequestBody {
   gameId: string;
   hostId: string;
+  hostSecret?: string;
   teams: Array<{ name: string; colour: string; playerIds: string[] }>;
 }
 
 export async function POST(request: NextRequest) {
   try {
     const body = (await request.json()) as TeamsRequestBody;
-    const { gameId, hostId, teams } = body;
+    const { gameId, hostId, hostSecret, teams } = body;
 
     if (!gameId?.trim() || !hostId?.trim()) {
       return NextResponse.json(
@@ -36,7 +38,7 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: "Game not found" }, { status: 404 });
     }
 
-    if (game.hostId !== hostId) {
+    if (!hostAuthorised(game, hostId, hostSecret)) {
       return NextResponse.json(
         { error: "Only the host can update teams" },
         { status: 403 },

@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 
 import { resetBuzzerState, resumeGameTimer } from "@/lib/quiz/buzzer";
 import { getGame, setGame } from "@/lib/quiz/game-store";
+import { hostAuthorised } from "@/lib/quiz/host-auth";
 import { toPublicGameState } from "@/lib/quiz/public-state";
 import { getRoundForQuestionIndex } from "@/lib/quiz/rounds";
 import {
@@ -18,6 +19,7 @@ import { QUESTION_TIME_LIMIT_MS } from "@/lib/quiz/utils";
 interface BuzzAnswerRequestBody {
   gameId: string;
   hostId: string;
+  hostSecret?: string;
   answer?: string;
   correct: boolean;
 }
@@ -25,7 +27,7 @@ interface BuzzAnswerRequestBody {
 export async function POST(request: NextRequest) {
   try {
     const body = (await request.json()) as BuzzAnswerRequestBody;
-    const { gameId, hostId, answer, correct } = body;
+    const { gameId, hostId, hostSecret, answer, correct } = body;
 
     if (!gameId?.trim() || !hostId?.trim()) {
       return NextResponse.json(
@@ -47,7 +49,7 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: "Game not found" }, { status: 404 });
     }
 
-    if (game.hostId !== hostId) {
+    if (!hostAuthorised(game, hostId, hostSecret)) {
       return NextResponse.json(
         { error: "Only the host can judge buzzer answers" },
         { status: 403 },

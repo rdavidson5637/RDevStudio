@@ -495,6 +495,7 @@ export async function GET(request: NextRequest) {
             xA90: parseNum(player.expected_assists_per_90) ?? 0,
             defconPer90: parseNum(player.defensive_contribution_per_90) ?? 0,
             bpsPer90,
+            minutes: player.minutes ?? 0,
             fixtureDifficulty: fixture.difficulty,
             isHome: fixture.isHome,
             settings: scoring,

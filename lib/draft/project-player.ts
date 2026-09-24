@@ -57,6 +57,7 @@ export function projectionBase(
     xA90: num(player.expected_assists_per_90),
     defconPer90: num(player.defensive_contribution_per_90),
     bpsPer90: minutes > 0 ? (num(player.bps) / minutes) * 90 : 0,
+    minutes,
     settings,
   };
 }

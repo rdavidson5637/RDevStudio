@@ -6,7 +6,7 @@ import { ACHIEVEMENTS } from "@/lib/hire-data";
 type SectionKey =
   | "qualifications"
   | "experience"
-  | "testimonials"
+  | "skills"
   | "final-cta";
 
 export function useHireExperience() {
@@ -28,7 +28,7 @@ export function useHireExperience() {
   const sectionRefs = useRef<Record<SectionKey, HTMLElement | null>>({
     qualifications: null,
     experience: null,
-    testimonials: null,
+    skills: null,
     "final-cta": null,
   });
   const unlockedRef = useRef<Set<string>>(new Set());
@@ -104,7 +104,7 @@ export function useHireExperience() {
       );
 
       observe(
-        "testimonials",
+        "skills",
         () => {
           setChaosStarted(true);
           setCelebrationKey((value) => value + 1);

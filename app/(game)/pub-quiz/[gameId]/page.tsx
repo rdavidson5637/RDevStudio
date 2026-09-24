@@ -58,6 +58,7 @@ type ConnectionStatus = "connected" | "disconnected" | "unavailable";
 async function fetchGameState(
   gameId: string,
   playerId: string,
+  hostSecret?: string,
 ): Promise<PublicGameState | null> {
   const response = await fetch(
     `/api/quiz/state?gameId=${encodeURIComponent(gameId)}&playerId=${encodeURIComponent(playerId)}`,
@@ -68,13 +69,13 @@ async function fetchGameState(
     return data.state as PublicGameState;
   }
 
-  if (response.status === 404) {
+  if (response.status === 404 && hostSecret) {
     const lobby = loadLobbyCache();
     if (lobby?.id === gameId) {
       await fetch("/api/quiz/rehydrate", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ gameState: lobby }),
+        body: JSON.stringify({ gameState: lobby, hostSecret }),
       });
 
       const retry = await fetch(
@@ -151,6 +152,7 @@ export default function GameRoomPage() {
   const [teams, setTeams] = useState<Team[]>([]);
   const [teamWarning, setTeamWarning] = useState<string | null>(null);
   const chatOpenRef = useRef(false);
+  const hostSecretRef = useRef("");
 
   const applyPublicState = useCallback(
     (state: PublicGameState, currentPlayerId: string) => {
@@ -232,9 +234,14 @@ export default function GameRoomPage() {
     setPlayerColour(session.colour);
     setPlayerAvatar(session.avatar);
     setIsHost(session.isHost);
+    hostSecretRef.current = session.hostSecret ?? "";
 
     void (async () => {
-      const state = await fetchGameState(gameId, session.playerId);
+      const state = await fetchGameState(
+        gameId,
+        session.playerId,
+        session.hostSecret,
+      );
 
       if (state) {
         applyPublicState(state, session.playerId);
@@ -515,7 +522,11 @@ export default function GameRoomPage() {
     }
 
     const syncState = async () => {
-      const state = await fetchGameState(gameId, playerId);
+      const state = await fetchGameState(
+        gameId,
+        playerId,
+        hostSecretRef.current,
+      );
       if (state) {
         applyPublicState(state, playerId);
       }
@@ -579,6 +590,7 @@ export default function GameRoomPage() {
         body: JSON.stringify({
           gameId,
           hostId: playerId,
+          hostSecret: hostSecretRef.current,
           teams: nextTeams.map((team) => ({
             name: team.name,
             colour: team.colour,
@@ -674,6 +686,7 @@ export default function GameRoomPage() {
           body: JSON.stringify({
             gameId,
             hostId: playerId,
+            hostSecret: hostSecretRef.current,
             correct,
           }),
         });
@@ -713,6 +726,7 @@ export default function GameRoomPage() {
           body: JSON.stringify({
             gameId,
             hostId: playerId,
+            hostSecret: hostSecretRef.current,
             targetPlayerId,
           }),
         });
@@ -746,7 +760,11 @@ export default function GameRoomPage() {
       const response = await fetch("/api/quiz/skip", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ gameId, hostId: playerId }),
+        body: JSON.stringify({
+          gameId,
+          hostId: playerId,
+          hostSecret: hostSecretRef.current,
+        }),
       });
 
       const data = await response.json();
@@ -777,7 +795,11 @@ export default function GameRoomPage() {
       const response = await fetch("/api/quiz/skip-waiting", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ gameId, hostId: playerId }),
+        body: JSON.stringify({
+          gameId,
+          hostId: playerId,
+          hostSecret: hostSecretRef.current,
+        }),
       });
 
       const data = await response.json();
@@ -812,7 +834,11 @@ export default function GameRoomPage() {
       const response = await fetch("/api/quiz/next", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ gameId, hostId: playerId }),
+        body: JSON.stringify({
+          gameId,
+          hostId: playerId,
+          hostSecret: hostSecretRef.current,
+        }),
       });
 
       const data = await response.json();
@@ -858,7 +884,11 @@ export default function GameRoomPage() {
       let response = await fetch("/api/quiz/start", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ gameId, hostId: playerId }),
+        body: JSON.stringify({
+          gameId,
+          hostId: playerId,
+          hostSecret: hostSecretRef.current,
+        }),
       });
 
       let data = await response.json();
@@ -869,13 +899,20 @@ export default function GameRoomPage() {
           await fetch("/api/quiz/rehydrate", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ gameState: lobby }),
+            body: JSON.stringify({
+              gameState: lobby,
+              hostSecret: hostSecretRef.current,
+            }),
           });
 
           response = await fetch("/api/quiz/start", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ gameId, hostId: playerId }),
+            body: JSON.stringify({
+              gameId,
+              hostId: playerId,
+              hostSecret: hostSecretRef.current,
+            }),
           });
           data = await response.json();
         }

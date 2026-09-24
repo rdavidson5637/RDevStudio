@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 
 import { getGame, setGame } from "@/lib/quiz/game-store";
+import { withoutHostSecret } from "@/lib/quiz/host-auth";
 import { resolvePlayerIdentity } from "@/lib/quiz/player-identity";
 import { triggerGameEvent } from "@/lib/quiz/pusher";
 import type { Player } from "@/lib/quiz/types";
@@ -75,12 +76,14 @@ export async function POST(request: NextRequest) {
     game.players.push(player);
     await setGame(gameId, game);
 
+    const visible = withoutHostSecret(game);
+
     await triggerGameEvent(gameId, "game:player-joined", {
       player,
-      gameState: game,
+      gameState: visible,
     });
 
-    return NextResponse.json({ playerId, gameState: game });
+    return NextResponse.json({ playerId, gameState: visible });
   } catch {
     return NextResponse.json(
       { error: "Invalid request body" },

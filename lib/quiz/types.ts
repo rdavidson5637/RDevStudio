@@ -159,6 +159,8 @@ export type GameStatus =
 export interface GameState {
   id: string;
   hostId: string;
+  /** Server-side only. Omitted from every payload a player can read. */
+  hostSecret?: string;
   players: Player[];
   questions: Question[];
   currentQuestionIndex: number;

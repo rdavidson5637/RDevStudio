@@ -1,5 +1,9 @@
 # RDev Studio - Cursor prompt pack
 
+These prompts were written for an older version of the site (dark `#0A0A0F`,
+amber, DM Serif, Next 14). Do not follow their visual direction. The live
+design is in `DESIGN.md`: paper, pitch green, Anton, Next 15.
+
 Sequenced prompts to fix issues and add features. Run in order in Cursor.
 
 ## Analysis summary

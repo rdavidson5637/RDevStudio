@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { allowRequest, tooManyRequests } from "@/lib/rate-limit";
 
 import { getGame, setGame } from "@/lib/quiz/game-store";
+import { hostAuthorised, withoutHostSecret } from "@/lib/quiz/host-auth";
 import { toPublicGameState } from "@/lib/quiz/public-state";
 import { generateQuestionsForGame } from "@/lib/quiz/questions";
 import { broadcastQuestion } from "@/lib/quiz/question-events";
@@ -13,6 +14,7 @@ import { QUESTION_TIME_LIMIT_MS, stripCorrectAnswer } from "@/lib/quiz/utils";
 interface StartRequestBody {
   gameId: string;
   hostId: string;
+  hostSecret?: string;
 }
 
 export async function POST(request: NextRequest) {
@@ -30,7 +32,7 @@ export async function POST(request: NextRequest) {
 
   try {
     const body = (await request.json()) as StartRequestBody;
-    const { gameId, hostId } = body;
+    const { gameId, hostId, hostSecret } = body;
 
     if (!gameId?.trim()) {
       return NextResponse.json(
@@ -51,7 +53,7 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: "Game not found" }, { status: 404 });
     }
 
-    if (game.hostId !== hostId) {
+    if (!hostAuthorised(game, hostId, hostSecret)) {
       return NextResponse.json(
         { error: "Only the host can start the game" },
         { status: 403 },
@@ -107,7 +109,7 @@ export async function POST(request: NextRequest) {
     const firstQuestion = game.questions[0];
 
     await triggerGameEvent(gameId, "game:started", {
-      gameState: { ...game, questions: [] },
+      gameState: withoutHostSecret({ ...game, questions: [] }),
     });
 
     if (firstRound) {

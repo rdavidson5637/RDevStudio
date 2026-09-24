@@ -91,6 +91,7 @@ export function PubQuizLanding() {
         playerName: hostName.trim(),
         colour: hostPlayer?.colour ?? hostColour,
         avatar: hostPlayer?.avatar ?? hostAvatar,
+        hostSecret: data.hostSecret,
       });
       saveLobbyCache(data.gameState);
 

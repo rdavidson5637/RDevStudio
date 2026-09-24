@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 
 import { getGame, setGame } from "@/lib/quiz/game-store";
+import { hostAuthorised } from "@/lib/quiz/host-auth";
 import { toPublicGameState } from "@/lib/quiz/public-state";
 import {
   getAnsweredPlayerIds,
@@ -11,12 +12,13 @@ import {
 interface SkipWaitingRequestBody {
   gameId: string;
   hostId: string;
+  hostSecret?: string;
 }
 
 export async function POST(request: NextRequest) {
   try {
     const body = (await request.json()) as SkipWaitingRequestBody;
-    const { gameId, hostId } = body;
+    const { gameId, hostId, hostSecret } = body;
 
     if (!gameId?.trim() || !hostId?.trim()) {
       return NextResponse.json(
@@ -31,7 +33,7 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: "Game not found" }, { status: 404 });
     }
 
-    if (game.hostId !== hostId) {
+    if (!hostAuthorised(game, hostId, hostSecret)) {
       return NextResponse.json(
         { error: "Only the host can skip waiting" },
         { status: 403 },

@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 
 import { getGame, setGame } from "@/lib/quiz/game-store";
+import { hostAuthorised } from "@/lib/quiz/host-auth";
 import { broadcastQuestion } from "@/lib/quiz/question-events";
 import { triggerGameEvent } from "@/lib/quiz/pusher";
 import {
@@ -16,12 +17,13 @@ import { getSortedPlayers } from "@/lib/quiz/utils";
 interface SkipRequestBody {
   gameId: string;
   hostId: string;
+  hostSecret?: string;
 }
 
 export async function POST(request: NextRequest) {
   try {
     const body = (await request.json()) as SkipRequestBody;
-    const { gameId, hostId } = body;
+    const { gameId, hostId, hostSecret } = body;
 
     if (!gameId?.trim() || !hostId?.trim()) {
       return NextResponse.json(
@@ -35,7 +37,7 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: "Game not found" }, { status: 404 });
     }
 
-    if (game.hostId !== hostId) {
+    if (!hostAuthorised(game, hostId, hostSecret)) {
       return NextResponse.json(
         { error: "Only the host can skip questions" },
         { status: 403 },

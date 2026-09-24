@@ -195,7 +195,7 @@ export const draftAnalyserNote: BuildNote = {
     "Rows are dropped if the signal isn't in the enum or sourceUrl isn't a link I sent. Confidence is clamped, quotes are cut to 280 characters, and names match within that club. With no ANTHROPIC_API_KEY it stores nothing and availability runs on official fields alone.",
   ],
   gaps: [
-    "No per-match minutes history, so the availability minutes-trend term is always zero.",
+    "No per-match minutes history, so the availability minutes-trend term is always zero. Per-90 rates do shrink toward a position prior (450 minutes) so a three-minute cameo cannot project like a starter.",
     "No five-minute in-play cron on Hobby.",
     "fpl_projections only covers my squad. Waiver and league projections are worked out at read time on the fallback scoring table, not the bootstrap's.",
     "Clean-sheet odds are a lookup on fixture difficulty, not a team xGC model.",

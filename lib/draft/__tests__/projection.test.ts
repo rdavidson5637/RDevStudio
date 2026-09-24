@@ -56,6 +56,32 @@ describe("projectPoints", () => {
     expect(Math.abs(sum - result.xP)).toBeLessThan(0.02);
   });
 
+  it("pulls a tiny minutes sample back toward a normal forward, not a 20-point cameo", () => {
+    const freak = projectPoints(
+      baseInput({
+        minutes: 3,
+        xG90: 12,
+        xA90: 6,
+        bpsPer90: 180,
+        startsPer90: 30,
+        defconPer90: 40,
+      }),
+    );
+    const season = projectPoints(
+      baseInput({
+        minutes: 1800,
+        xG90: 0.45,
+        xA90: 0.15,
+        bpsPer90: 28,
+        startsPer90: 0.85,
+      }),
+    );
+
+    expect(freak.xP).toBeLessThan(8);
+    expect(freak.confidence).toBe("low");
+    expect(season.xP).toBeGreaterThan(freak.xP);
+  });
+
   it("never produces NaN or Infinity across randomised inputs", () => {
     for (let i = 0; i < 1000; i++) {
       const input = baseInput({

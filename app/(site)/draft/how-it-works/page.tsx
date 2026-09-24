@@ -43,6 +43,8 @@ green >= 75   amber 40-74   red < 40`}
 xP = pStart * (appearance + xG * goalPts + xA * 3
      + CS_prob * csPts + defconProb * 2 + bonus)
 fixMult = {1:1.25, 2:1.12, 3:1.00, 4:0.88, 5:0.75}[FDR]
+Per-90 rates shrink toward a position prior:
+  weight = minutes / (minutes + 450)
 Scoring values come from bootstrap settings, not hardcoded 10s.`}
         </pre>
       </section>

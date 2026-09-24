@@ -24,7 +24,7 @@ Type scale: h1 clamp(3rem, 8vw, 6.5rem); h2 clamp(1.75rem, 4vw, 3rem); h3 1.25re
 - Pitch-marking motif: occasional thin 2px Pitch-colour rules and a subtle centre-circle arc may be used as section dividers - sparingly, max one decorative use per page.
 
 ## Signature element
-The scoreboard: a Space Mono strip that appears in the hero styled like a stadium scoreboard, showing real numbers (projects shipped, games built, years, current status). This is the one loud design moment - everything else stays quiet.
+The scoreboard: a Space Mono strip that appears in the hero styled like a stadium scoreboard. The facts on it are From £650, live in about a week, a reply within one working day, and Carrickfergus. This is the one loud design moment - everything else stays quiet.
 
 ## Voice & microcopy
 - Sentence case everywhere except Anton headings (uppercase) and Space Mono labels (uppercase).

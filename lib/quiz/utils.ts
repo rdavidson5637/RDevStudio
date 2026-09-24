@@ -32,6 +32,11 @@ export function generatePlayerId(): string {
   return randomUUID();
 }
 
+/** Known only to the host's browser. Not a player id, and not in public state. */
+export function generateHostSecret(): string {
+  return randomBytes(32).toString("base64url");
+}
+
 export function normalizeAnswer(answer: string): string {
   return answer
     .trim()

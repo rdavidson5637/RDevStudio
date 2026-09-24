@@ -12,6 +12,8 @@ export interface QuizSession {
   playerName: string;
   colour: string;
   avatar: string;
+  /** Present only for the host. Never written into the shared lobby cache. */
+  hostSecret?: string;
 }
 
 interface LegacyQuizSession {

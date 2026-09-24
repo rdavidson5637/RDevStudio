@@ -113,9 +113,12 @@ export const HIRE_PROJECTS = [
       "Platform development",
     ],
     image: "/images/work/shelterlink.png",
-    href: "https://github.com/rdavidson19/ShelterLink",
-    external: true,
-    github: "https://github.com/rdavidson19/ShelterLink",
+    href: "/work/shelterlink",
+    external: false,
+    links: [
+      { label: "Case study", href: "/work/shelterlink", external: false },
+      { label: "Live site", href: "https://shelterlink.online", external: true },
+    ],
   },
   {
     id: "rvs",
@@ -225,7 +228,7 @@ export const ACHIEVEMENTS = [
     id: "full-cv",
     title: "Actually Read the Entire CV",
     description: "You are now legally obligated to consider hiring Ryan.",
-    sectionId: "testimonials",
+    sectionId: "skills",
   },
   {
     id: "the-end",

@@ -1,16 +1,18 @@
 import { NextRequest, NextResponse } from "next/server";
 
 import { getGame, setGame } from "@/lib/quiz/game-store";
+import { withoutHostSecret } from "@/lib/quiz/host-auth";
 import type { GameState } from "@/lib/quiz/types";
 
 interface RehydrateRequestBody {
   gameState: GameState;
+  hostSecret?: string;
 }
 
 export async function POST(request: NextRequest) {
   try {
     const body = (await request.json()) as RehydrateRequestBody;
-    const { gameState } = body;
+    const { gameState, hostSecret } = body;
 
     if (!gameState?.id) {
       return NextResponse.json(
@@ -21,6 +23,13 @@ export async function POST(request: NextRequest) {
 
     if (await getGame(gameState.id)) {
       return NextResponse.json({ ok: true, restored: false });
+    }
+
+    if (!hostSecret?.trim()) {
+      return NextResponse.json(
+        { error: "hostSecret is required to restore a lobby" },
+        { status: 403 },
+      );
     }
 
     if (gameState.status !== "lobby") {
@@ -43,8 +52,10 @@ export async function POST(request: NextRequest) {
       );
     }
 
+    const lobby = withoutHostSecret(gameState);
     const restored: GameState = {
-      ...gameState,
+      ...lobby,
+      hostSecret: hostSecret || undefined,
       roundConfigs: gameState.roundConfigs ?? [],
       rounds: [],
       currentRoundIndex: 0,

@@ -79,7 +79,7 @@ export const pubQuizNote: BuildNote = {
       {
         from: "Host",
         to: "/api/quiz/next",
-        action: "Checks hostId, advances the question, saves to Redis.",
+        action: "Checks the host secret, advances the question, saves to Redis.",
       },
       {
         from: "/api/quiz/next",
@@ -132,6 +132,17 @@ export const pubQuizNote: BuildNote = {
         "Postgres tables, a lot of schema for something that lives one evening. A Redis hash per game, more commands per request.",
       consequences:
         "One GET or SET per request. No version check, so the last write wins and a warm instance trusts its cache. Fine on one instance, not on two.",
+    },
+    {
+      title: "The host proves it with a secret, not the public player id",
+      context:
+        "hostId is on every state poll, so any phone in the room could call the host routes and skip, kick, or advance the quiz.",
+      decision:
+        "Create issues a random host secret, stored on the game and in the host's session only. Host routes check that secret. Public state, the lobby cache, and Pusher payloads leave it out.",
+      alternatives:
+        "Trust hostId, which is what made the hole. A login, which a pub quiz does not need.",
+      consequences:
+        "A quiz created before secrets existed cannot be hosted until it is started again. Rehydrate sends the secret back with the lobby snapshot so a refresh still works.",
     },
     {
       title: "Buzz order by arrival, clocks as timestamps",

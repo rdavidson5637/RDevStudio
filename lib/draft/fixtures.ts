@@ -6,7 +6,17 @@ export type TeamInfo = { id: number; name: string; short_name: string };
 
 export type UpcomingFixture = TickerFixture & { opponentId: number };
 
-async function fetchTeamsAndFixtures(fromEvent: number, window: number) {
+/**
+ * Plain objects only. `unstable_cache` JSON-serialises the return value, and a
+ * Map survives that as `{}`, so the next request throws on `.get`. That was
+ * the player-page 500: metadata never touched the maps, the body did.
+ */
+type CachedFixtures = {
+  teams: TeamInfo[];
+  byTeam: Record<string, UpcomingFixture[]>;
+};
+
+async function fetchTeamsAndFixtures(fromEvent: number, window: number): Promise<CachedFixtures> {
   const [{ data: teams }, { data: fixtures }] = await Promise.all([
     supabasePublic.from("fpl_teams").select("id, name, short_name"),
     supabasePublic
@@ -51,9 +61,22 @@ async function fetchTeamsAndFixtures(fromEvent: number, window: number) {
     list.sort((a, b) => a.event - b.event || Number(a.isHome) - Number(b.isHome));
   }
 
-  return { teamById, byTeam };
+  const byTeamRecord: Record<string, UpcomingFixture[]> = {};
+  for (const [id, list] of byTeam) byTeamRecord[String(id)] = list;
+
+  return { teams: teams ?? [], byTeam: byTeamRecord };
 }
 
-export const getTeamsAndFixtures = unstable_cache(fetchTeamsAndFixtures, ["draft-fixtures"], {
+const readFixtures = unstable_cache(fetchTeamsAndFixtures, ["draft-fixtures-v2"], {
   tags: ["fpl-fixtures", "fpl-players"],
 });
+
+export async function getTeamsAndFixtures(fromEvent: number, window: number) {
+  const data = await readFixtures(fromEvent, window);
+  return {
+    teamById: new Map(data.teams.map((team) => [team.id, team])),
+    byTeam: new Map(
+      Object.entries(data.byTeam).map(([id, fixtures]) => [Number(id), fixtures]),
+    ),
+  };
+}

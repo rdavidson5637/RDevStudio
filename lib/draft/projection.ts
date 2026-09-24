@@ -70,7 +70,66 @@ export type ProjectionInput = {
   fixtureDifficulty: number; // 1..5, from the player's own side
   isHome: boolean;
   settings: ScoringSettings;
+  /**
+   * Season minutes behind the per-90 rates. When set, those rates are pulled
+   * toward a position prior. Omit it only in tests that want the raw rates.
+   */
+  minutes?: number;
 };
+
+/** Five full matches. A 3-minute cameo barely moves the rate off the prior. */
+export const SHRINKAGE_PRIOR_MINUTES = 450;
+
+/**
+ * Rough league-average per-90 rates. They are the centre a tiny sample
+ * shrinks toward, not a claim about any one player.
+ */
+const POSITION_RATE_PRIOR: Record<
+  Position,
+  { startsPer90: number; xG90: number; xA90: number; defconPer90: number; bpsPer90: number }
+> = {
+  1: { startsPer90: 0.15, xG90: 0, xA90: 0.01, defconPer90: 0, bpsPer90: 14 },
+  2: { startsPer90: 0.45, xG90: 0.05, xA90: 0.07, defconPer90: 7, bpsPer90: 16 },
+  3: { startsPer90: 0.4, xG90: 0.15, xA90: 0.13, defconPer90: 4, bpsPer90: 17 },
+  4: { startsPer90: 0.35, xG90: 0.4, xA90: 0.12, defconPer90: 2, bpsPer90: 18 },
+};
+
+/** weight = minutes / (minutes + prior). Zero minutes returns the prior. */
+export function shrinkRate(
+  observed: number,
+  minutes: number,
+  prior: number,
+  priorMinutes = SHRINKAGE_PRIOR_MINUTES,
+): number {
+  const sample = Math.max(0, minutes);
+  const weight = sample / (sample + priorMinutes);
+  return weight * observed + (1 - weight) * prior;
+}
+
+function shrunkRates(input: ProjectionInput): Pick<
+  ProjectionInput,
+  "startsPer90" | "xG90" | "xA90" | "defconPer90" | "bpsPer90"
+> {
+  if (input.minutes == null) {
+    return {
+      startsPer90: input.startsPer90,
+      xG90: input.xG90,
+      xA90: input.xA90,
+      defconPer90: input.defconPer90,
+      bpsPer90: input.bpsPer90,
+    };
+  }
+
+  const prior = POSITION_RATE_PRIOR[input.position];
+  const minutes = input.minutes;
+  return {
+    startsPer90: shrinkRate(input.startsPer90, minutes, prior.startsPer90),
+    xG90: shrinkRate(input.xG90, minutes, prior.xG90),
+    xA90: shrinkRate(input.xA90, minutes, prior.xA90),
+    defconPer90: shrinkRate(input.defconPer90, minutes, prior.defconPer90),
+    bpsPer90: shrinkRate(input.bpsPer90, minutes, prior.bpsPer90),
+  };
+}
 
 export type ProjectionResult = {
   xP: number;
@@ -101,9 +160,10 @@ function bonusCurve(bpsPer90: number): number {
 export function projectPoints(input: ProjectionInput): ProjectionResult {
   const suffix = POSITION_SUFFIX[input.position];
   const settings = input.settings;
+  const rates = shrunkRates(input);
 
   const pStart = clamp(
-    0.55 * (input.availabilityScore / 100) + 0.45 * clamp(input.startsPer90, 0, 1),
+    0.55 * (input.availabilityScore / 100) + 0.45 * clamp(rates.startsPer90, 0, 1),
     0,
     1,
   );
@@ -125,12 +185,12 @@ export function projectPoints(input: ProjectionInput): ProjectionResult {
   const defconLimit = suffix === "GKP" ? 0 : settings[defconLimitKey];
   const defconPts = suffix === "GKP" ? 0 : settings[defconPtsKey];
 
-  const goals = input.xG90 * expMinsRatio * fixMult * homeMult;
-  const assists = input.xA90 * expMinsRatio * fixMult * homeMult;
+  const goals = rates.xG90 * expMinsRatio * fixMult * homeMult;
+  const assists = rates.xA90 * expMinsRatio * fixMult * homeMult;
   const cleanSheetProb = suffix === "GKP" || suffix === "DEF" ? (CLEAN_SHEET_PROB_BY_FDR[input.fixtureDifficulty] ?? 0.25) : 0;
-  const defconProb = defconLimit > 0 ? clamp(input.defconPer90 / defconLimit, 0, 1) * pStart : 0;
+  const defconProb = defconLimit > 0 ? clamp(rates.defconPer90 / defconLimit, 0, 1) * pStart : 0;
   const appearancePoints = expMinsRatio >= 0.6 ? settings.long_play : settings.short_play;
-  const expectedBonus = bonusCurve(input.bpsPer90) * settings.bonus;
+  const expectedBonus = bonusCurve(rates.bpsPer90) * settings.bonus;
 
   const components = {
     appearancePoints: pStart * appearancePoints,
@@ -143,8 +203,18 @@ export function projectPoints(input: ProjectionInput): ProjectionResult {
 
   const xP = Object.values(components).reduce((sum, v) => sum + v, 0);
 
+  const fromStarts: ProjectionResult["confidence"] =
+    rates.startsPer90 >= 0.6 ? "high" : rates.startsPer90 >= 0.25 ? "medium" : "low";
+  // A handful of minutes cannot support a confident start rate, even after
+  // the rate itself has been pulled back to the prior.
   const confidence: ProjectionResult["confidence"] =
-    input.startsPer90 >= 0.6 ? "high" : input.startsPer90 >= 0.25 ? "medium" : "low";
+    input.minutes == null
+      ? fromStarts
+      : input.minutes < 180
+        ? "low"
+        : input.minutes < SHRINKAGE_PRIOR_MINUTES && fromStarts === "high"
+          ? "medium"
+          : fromStarts;
 
   return { xP: Number(xP.toFixed(2)), pStart, components, confidence };
 }
