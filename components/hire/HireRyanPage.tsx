@@ -10,6 +10,7 @@ import { CatModal } from "@/components/hire/CatModal";
 import { RudiModal } from "@/components/hire/RudiModal";
 import { useHireExperience } from "@/components/hire/useHireExperience";
 import { SectionHeader } from "@/components/ui/SectionHeader";
+import { RecruiterSummary } from "@/components/hire/RecruiterSummary";
 import {
   ACHIEVEMENTS,
   HIRE_ABOUT_POINTS,
@@ -110,6 +111,8 @@ export function HireRyanPage() {
               </a>
             </div>
 
+            <RecruiterSummary />
+
             <dl className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {HIRE_STATS.map((stat) => (
                 <div key={stat} className="interactive-surface px-5 py-4">
@@ -181,8 +184,7 @@ export function HireRyanPage() {
                 <p className="lead-text mt-3 max-w-2xl">{item.detail}</p>
                 {index === 0 && (
                   <p className="editorial-note mt-3">
-                    Graduating Summer 2026 - completing while working full time
-                    in Belfast.
+                    Completed while working full time in Belfast.
                   </p>
                 )}
               </li>
