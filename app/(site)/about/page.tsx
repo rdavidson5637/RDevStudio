@@ -1,6 +1,5 @@
 import Link from "next/link";
 import Image from "next/image";
-import { SITE_URL } from "@/lib/constants";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata = createPageMetadata({
@@ -37,51 +36,9 @@ const OFF_THE_PITCH = [
   },
 ] as const;
 
-const personJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "Person",
-  name: "Ryan Davidson",
-  jobTitle: "Designer and developer",
-  url: SITE_URL,
-  email: "mailto:ryan@rdevstudio.co.uk",
-  sameAs: [
-    "https://www.linkedin.com/in/ryan-davidson-462bb221b",
-    "https://github.com/rdavidson5637",
-  ],
-  worksFor: {
-    "@type": "Organization",
-    name: "RDev Studio",
-    url: SITE_URL,
-  },
-  alumniOf: [
-    {
-      "@type": "CollegeOrUniversity",
-      name: "Queen's University Belfast",
-    },
-    {
-      "@type": "CollegeOrUniversity",
-      name: "Liverpool John Moores University",
-    },
-  ],
-  homeLocation: {
-    "@type": "Place",
-    name: "Carrickfergus, Northern Ireland",
-    address: {
-      "@type": "PostalAddress",
-      addressLocality: "Carrickfergus",
-      addressRegion: "Northern Ireland",
-      addressCountry: "GB",
-    },
-  },
-};
-
 export default function AboutPage() {
   return (
     <div className="section-padding pt-28">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
-      />
       <article className="container-wide px-6">
         <header className="border-b border-border pb-10">
           <div className="grid gap-8 lg:grid-cols-[1fr,280px] lg:items-end">

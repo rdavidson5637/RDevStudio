@@ -32,6 +32,7 @@ export default function ProjectsPage() {
               experiment={project}
               animated={false}
               kicker="Project"
+              headingLevel={2}
             />
           ))}
         </section>

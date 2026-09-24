@@ -1,6 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   outputFileTracingRoot: import.meta.dirname,
+  // Link preview images read their fonts from lib/og at runtime
+  // (lib/og-image.tsx), so make sure those files ship with the functions.
+  outputFileTracingIncludes: {
+    "/og": ["./lib/og/**/*"],
+    "/**/opengraph-image*": ["./lib/og/**/*"],
+  },
   async redirects() {
     return [
       {

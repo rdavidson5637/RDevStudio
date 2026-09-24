@@ -12,9 +12,9 @@ export function GameCard({ game }: GameCardProps) {
       className="work-card-lift group flex flex-col overflow-hidden rounded-[10px] border border-border bg-raised p-6 sm:p-8"
     >
       <div className="flex items-start justify-between gap-4">
-        <h2 className="font-display text-xl uppercase leading-tight text-primary sm:text-2xl">
+        <h3 className="font-display text-xl uppercase leading-tight text-primary sm:text-2xl">
           {game.title}
-        </h2>
+        </h3>
         <span className="shrink-0 rounded-full border border-border-strong bg-base px-2.5 py-0.5 text-xs font-semibold text-primary">
           {game.tag}
         </span>

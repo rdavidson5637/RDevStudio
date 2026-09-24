@@ -13,6 +13,8 @@ type ExperimentSpotlightProps = {
   compact?: boolean;
   animated?: boolean;
   kicker?: string;
+  /** h3 under a section h2 (default). Use 2 when the cards sit straight under the page h1. */
+  headingLevel?: 2 | 3;
 };
 
 export function ExperimentSpotlight({
@@ -21,8 +23,10 @@ export function ExperimentSpotlight({
   compact = false,
   animated = true,
   kicker = "Experiment",
+  headingLevel = 3,
 }: ExperimentSpotlightProps) {
   const soon = experiment.status === "soon";
+  const Heading = headingLevel === 2 ? "h2" : "h3";
 
   return (
     <article
@@ -36,13 +40,13 @@ export function ExperimentSpotlight({
         className="flex flex-1 flex-col focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-base"
       >
         <div className="flex items-start justify-between gap-3">
-          <h2
+          <Heading
             className={`font-display uppercase leading-tight text-primary ${
               compact ? "text-lg sm:text-xl" : "text-xl sm:text-2xl"
             }`}
           >
             {experiment.label}
-          </h2>
+          </Heading>
           <span
             className={`shrink-0 rounded-full border border-border-strong bg-base px-2.5 py-0.5 text-xs font-semibold ${
               soon ? "text-tertiary" : "text-accent"

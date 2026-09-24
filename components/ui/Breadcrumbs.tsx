@@ -1,4 +1,6 @@
 import Link from "next/link";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { breadcrumbJsonLd } from "@/lib/seo";
 
 export type BreadcrumbItem = {
   label: string;
@@ -13,23 +15,13 @@ type BreadcrumbsProps = {
 export function Breadcrumbs({ items, className = "" }: BreadcrumbsProps) {
   if (items.length === 0) return null;
 
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: items.map((item, index) => ({
-      "@type": "ListItem",
-      position: index + 1,
-      name: item.label,
-      ...(item.href && { item: `https://rdevstudio.co.uk${item.href}` }),
-    })),
-  };
+  const jsonLd = breadcrumbJsonLd(
+    items.map((item) => ({ name: item.label, href: item.href })),
+  );
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
+      <JsonLd data={jsonLd} />
       <nav aria-label="Breadcrumb" className={className}>
         <ol className="flex flex-wrap items-center gap-1.5 text-sm">
           {items.map((item, index) => {

@@ -119,9 +119,9 @@ export function ProjectCard({
           )}
         </div>
 
-        <h2 className="mt-3 font-display text-xl font-bold text-primary sm:text-2xl">
+        <h3 className="mt-3 font-display text-xl font-bold text-primary sm:text-2xl">
           {project.title}
-        </h2>
+        </h3>
 
         {!compact ? (
           <p className="mt-1 text-sm text-secondary">{project.summary}</p>

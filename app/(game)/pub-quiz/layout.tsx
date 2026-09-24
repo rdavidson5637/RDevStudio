@@ -1,12 +1,15 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 
+import { createPageMetadata } from "@/lib/metadata";
 import { PUB_QUIZ } from "@/lib/pub-quiz-feature";
 
-export const metadata: Metadata = {
-  title: `${PUB_QUIZ.title} | RDev Studio`,
+// The landing page is a client component, so its metadata lives here. Game
+// rooms override robots and canonical in [gameId]/layout.tsx.
+export const metadata = createPageMetadata({
+  title: PUB_QUIZ.title,
   description: PUB_QUIZ.description,
-};
+  path: PUB_QUIZ.href,
+});
 
 export default function PubQuizLayout({
   children,

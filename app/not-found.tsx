@@ -4,7 +4,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 
 export const metadata: Metadata = {
-  title: "Page Not Found - RDev Studio",
+  title: { absolute: "Page not found | RDev Studio" },
   description: "The page you're looking for doesn't exist or has been moved.",
 };
 

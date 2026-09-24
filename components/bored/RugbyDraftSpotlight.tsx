@@ -63,7 +63,7 @@ export function RugbyDraftSpotlight({
           </div>
 
           <p className="shell-label text-secondary">Featured game</p>
-          <h2
+          <h3
             className={`mt-2 font-display font-bold tracking-tight text-primary ${
               isHero
                 ? "text-3xl sm:text-4xl lg:text-5xl"
@@ -71,7 +71,7 @@ export function RugbyDraftSpotlight({
             }`}
           >
             {RUGBY_DRAFT.title}
-          </h2>
+          </h3>
           <p
             className={`mt-3 font-medium text-primary ${
               isHero ? "text-base sm:text-lg" : "text-sm sm:text-base"
