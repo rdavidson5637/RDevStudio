@@ -237,14 +237,41 @@ export interface CLLeaguePhase {
   userFixtures: Array<{ home: string; away: string }>;
 }
 
-function fixtureExists(
-  fixtures: Array<{ home: string; away: string }>,
-  a: string,
-  b: string,
-): boolean {
-  return fixtures.some(
-    (f) => (f.home === a && f.away === b) || (f.home === b && f.away === a),
-  );
+/**
+ * Every team plays CL_LEAGUE_MATCHES_PER_TEAM games, half at home and half
+ * away, with no repeat pairings. Teams sit in a shuffled circle; each one is
+ * at home to the next four clockwise and away at the previous four. The old
+ * greedy picker had no backtracking and left at least one club short of
+ * eight games in roughly 7 runs out of 10.
+ */
+export function buildLeaguePhaseFixtures(
+  teams: string[],
+): Array<{ home: string; away: string }> {
+  const perSide = Math.floor(CL_LEAGUE_MATCHES_PER_TEAM / 2);
+  const order = shuffleArray([...teams]);
+  const n = order.length;
+  const fixtures: Array<{ home: string; away: string }> = [];
+
+  if (n <= perSide * 2) {
+    // Too few teams for the circle: everyone plays everyone once.
+    for (let i = 0; i < n; i++) {
+      for (let j = i + 1; j < n; j++) {
+        fixtures.push(
+          Math.random() < 0.5
+            ? { home: order[i], away: order[j] }
+            : { home: order[j], away: order[i] },
+        );
+      }
+    }
+    return shuffleArray(fixtures);
+  }
+
+  for (let i = 0; i < n; i++) {
+    for (let offset = 1; offset <= perSide; offset++) {
+      fixtures.push({ home: order[i], away: order[(i + offset) % n] });
+    }
+  }
+  return shuffleArray(fixtures);
 }
 
 export function buildCLLeaguePhase(
@@ -258,43 +285,7 @@ export function buildCLLeaguePhase(
   );
   const teams = [userTeam, ...clubs];
 
-  const fixtures: Array<{ home: string; away: string }> = [];
-  const gamesPlayed: Record<string, number> = {};
-  const homeGames: Record<string, number> = {};
-  const awayGames: Record<string, number> = {};
-
-  teams.forEach((t) => {
-    gamesPlayed[t] = 0;
-    homeGames[t] = 0;
-    awayGames[t] = 0;
-  });
-
-  for (const team of shuffleArray([...teams])) {
-    const candidates = shuffleArray(teams.filter((t) => t !== team));
-    for (const opp of candidates) {
-      if (gamesPlayed[team] >= CL_LEAGUE_MATCHES_PER_TEAM) break;
-      if (gamesPlayed[opp] >= CL_LEAGUE_MATCHES_PER_TEAM) continue;
-      if (fixtureExists(fixtures, team, opp)) continue;
-
-      let home: string;
-      let away: string;
-      if (homeGames[team] < 4 && awayGames[opp] < 4) {
-        home = team;
-        away = opp;
-      } else if (homeGames[opp] < 4 && awayGames[team] < 4) {
-        home = opp;
-        away = team;
-      } else {
-        continue;
-      }
-
-      fixtures.push({ home, away });
-      gamesPlayed[team]++;
-      gamesPlayed[opp]++;
-      homeGames[home]++;
-      awayGames[away]++;
-    }
-  }
+  const fixtures = buildLeaguePhaseFixtures(teams);
 
   const userFixtures = fixtures.filter(
     (f) => f.home === userTeam || f.away === userTeam,
