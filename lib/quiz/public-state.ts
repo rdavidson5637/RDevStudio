@@ -41,6 +41,15 @@ export interface PublicGameState {
   teamCount: number;
 }
 
+/**
+ * Players as everyone else sees them. Answers stay on the server: no client
+ * reads them, and sending them meant anyone watching the state poll could see
+ * what the rest of the table had answered before the reveal.
+ */
+export function toPublicPlayer(player: Player): Player {
+  return { ...player, answers: [] };
+}
+
 export function toPublicGameState(game: GameState): PublicGameState {
   const currentQuestion = game.questions[game.currentQuestionIndex];
   const questionId = currentQuestion?.id;
@@ -61,7 +70,7 @@ export function toPublicGameState(game: GameState): PublicGameState {
     id: game.id,
     hostId: game.hostId,
     status: game.status,
-    players: game.players,
+    players: game.players.map(toPublicPlayer),
     totalQuestions: game.totalQuestions,
     currentQuestionIndex: game.currentQuestionIndex,
     answeredCount: answeredPlayerIds.length,
@@ -109,7 +118,7 @@ export function toPublicGameState(game: GameState): PublicGameState {
       publicState.roundBreak = {
         completedRound,
         roundNumber: getRoundNumber(game, completedRound) ?? 1,
-        leaderboard: getSortedPlayers(game.players),
+        leaderboard: getSortedPlayers(game.players).map(toPublicPlayer),
         nextRound,
       };
     }
