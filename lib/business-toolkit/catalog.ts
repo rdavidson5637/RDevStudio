@@ -25,7 +25,11 @@ export const TOOL_CATEGORIES: ToolCategoryMeta[] = [
   },
 ];
 
-export const BUSINESS_TOOLS: BusinessTool[] = [
+/**
+ * Every tool, including hidden ones. Pages look tools up here so a hidden
+ * tool's URL still resolves; listings and the sitemap use BUSINESS_TOOLS.
+ */
+export const ALL_BUSINESS_TOOLS: BusinessTool[] = [
   {
     id: "website-grader",
     slug: "website-grader",
@@ -35,7 +39,6 @@ export const BUSINESS_TOOLS: BusinessTool[] = [
     category: "audit",
     href: `${TOOLKIT_BASE_PATH}/website-grader`,
     featured: true,
-    badge: "new",
     keywords: ["website", "grader", "score", "audit", "performance", "mobile"],
   },
   {
@@ -47,7 +50,6 @@ export const BUSINESS_TOOLS: BusinessTool[] = [
     category: "audit",
     href: `${TOOLKIT_BASE_PATH}/ai-landing-page-auditor`,
     featured: true,
-    badge: "new",
     keywords: ["ai", "landing page", "auditor", "conversion", "copy"],
   },
   {
@@ -59,7 +61,6 @@ export const BUSINESS_TOOLS: BusinessTool[] = [
     category: "audit",
     href: `${TOOLKIT_BASE_PATH}/seo-checker`,
     featured: true,
-    badge: "new",
     keywords: ["seo", "meta", "titles", "headings", "search"],
   },
   {
@@ -70,8 +71,10 @@ export const BUSINESS_TOOLS: BusinessTool[] = [
       "Spot common a11y issues - contrast, alt text, labels, and keyboard traps - before your users do.",
     category: "audit",
     href: `${TOOLKIT_BASE_PATH}/accessibility-checker`,
+    // Returns sample results until it is wired to a real model. Hidden from
+    // listings and search so nobody mistakes the sample for their own result.
+    hidden: true,
     featured: false,
-    badge: "new",
     keywords: ["accessibility", "a11y", "wcag", "contrast", "alt text"],
   },
   {
@@ -83,7 +86,6 @@ export const BUSINESS_TOOLS: BusinessTool[] = [
     category: "audit",
     href: `${TOOLKIT_BASE_PATH}/google-business-profile-audit`,
     featured: false,
-    badge: "new",
     keywords: ["google", "business profile", "gbp", "local", "listings"],
   },
   {
@@ -95,7 +97,6 @@ export const BUSINESS_TOOLS: BusinessTool[] = [
     category: "generator",
     href: `${TOOLKIT_BASE_PATH}/qr-code-generator`,
     featured: true,
-    badge: "new",
     keywords: ["qr", "code", "generator", "download", "wifi"],
   },
   {
@@ -107,7 +108,6 @@ export const BUSINESS_TOOLS: BusinessTool[] = [
     category: "generator",
     href: `${TOOLKIT_BASE_PATH}/invoice-generator`,
     featured: false,
-    badge: "new",
     keywords: ["invoice", "pdf", "billing", "freelance", "payment"],
   },
   {
@@ -119,7 +119,6 @@ export const BUSINESS_TOOLS: BusinessTool[] = [
     category: "generator",
     href: `${TOOLKIT_BASE_PATH}/review-response-generator`,
     featured: false,
-    badge: "new",
     keywords: ["review", "response", "google", "reputation", "reply"],
   },
   {
@@ -131,7 +130,6 @@ export const BUSINESS_TOOLS: BusinessTool[] = [
     category: "creative",
     href: `${TOOLKIT_BASE_PATH}/business-name-generator`,
     featured: false,
-    badge: "new",
     keywords: ["business", "name", "brand", "startup", "naming"],
   },
   {
@@ -142,8 +140,10 @@ export const BUSINESS_TOOLS: BusinessTool[] = [
       "Upload a logo for a blunt-but-fair critique - typography, colour, scalability, and first impressions.",
     category: "creative",
     href: `${TOOLKIT_BASE_PATH}/logo-roast`,
+    // Returns sample results until it is wired to a real model. Hidden from
+    // listings and search so nobody mistakes the sample for their own result.
+    hidden: true,
     featured: false,
-    badge: "new",
     keywords: ["logo", "roast", "critique", "brand", "design"],
   },
   {
@@ -155,7 +155,6 @@ export const BUSINESS_TOOLS: BusinessTool[] = [
     category: "generator",
     href: `${TOOLKIT_BASE_PATH}/sitemap-generator`,
     featured: false,
-    badge: "new",
     keywords: ["sitemap", "xml", "seo", "crawl", "urls"],
   },
   {
@@ -167,7 +166,6 @@ export const BUSINESS_TOOLS: BusinessTool[] = [
     category: "generator",
     href: `${TOOLKIT_BASE_PATH}/robots-txt-generator`,
     featured: false,
-    badge: "new",
     keywords: ["robots", "txt", "crawler", "seo", "disallow"],
   },
   {
@@ -179,7 +177,6 @@ export const BUSINESS_TOOLS: BusinessTool[] = [
     category: "generator",
     href: `${TOOLKIT_BASE_PATH}/favicon-generator`,
     featured: false,
-    badge: "new",
     keywords: ["favicon", "icon", "manifest", "pwa", "brand"],
   },
   {
@@ -191,7 +188,6 @@ export const BUSINESS_TOOLS: BusinessTool[] = [
     category: "generator",
     href: `${TOOLKIT_BASE_PATH}/colour-palette-generator`,
     featured: false,
-    badge: "new",
     keywords: ["colour", "palette", "hex", "design", "harmony"],
   },
   {
@@ -203,13 +199,17 @@ export const BUSINESS_TOOLS: BusinessTool[] = [
     category: "generator",
     href: `${TOOLKIT_BASE_PATH}/gradient-generator`,
     featured: false,
-    badge: "new",
     keywords: ["gradient", "css", "tailwind", "linear", "radial"],
   },
 ];
 
+/** Tools shown in listings and the sitemap. */
+export const BUSINESS_TOOLS: BusinessTool[] = ALL_BUSINESS_TOOLS.filter(
+  (tool) => !tool.hidden,
+);
+
 export function getToolBySlug(slug: string): BusinessTool | undefined {
-  return BUSINESS_TOOLS.find((tool) => tool.slug === slug);
+  return ALL_BUSINESS_TOOLS.find((tool) => tool.slug === slug);
 }
 
 export function isToolSoon(tool: BusinessTool): boolean {

@@ -19,6 +19,8 @@ export type BusinessTool = {
   featured: boolean;
   badge?: ToolBadge;
   status?: ToolStatus;
+  /** Kept off listings and the sitemap, and noindexed. The page still works. */
+  hidden?: boolean;
   keywords: string[];
 };
 

@@ -1,12 +1,16 @@
 import { LandingPageAuditorApp } from "@/components/landing-page-auditor/LandingPageAuditorApp";
 import { createPageMetadata } from "@/lib/metadata";
 
-export const metadata = createPageMetadata({
-  title: "AI Landing Page Auditor",
-  description:
-    "AI-powered landing page audit - hero score, CTA analysis, copywriting, trust signals, and conversion recommendations from RDev Studio.",
-  path: "/toolkit/ai-landing-page-auditor",
-});
+export const metadata = {
+  ...createPageMetadata({
+    title: "AI Landing Page Auditor",
+    description:
+      "AI-powered landing page audit - hero score, CTA analysis, copywriting, trust signals, and conversion recommendations from RDev Studio.",
+    path: "/toolkit/ai-landing-page-auditor",
+  }),
+  // Sample results only for now: keep it out of search.
+  robots: { index: false, follow: true },
+};
 
 export default function LandingPageAuditorPage() {
   return (
