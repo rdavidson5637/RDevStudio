@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useEffect } from "react";
 import { createPortal } from "react-dom";
 import { SECONDARY_NAV_HUBS, SHELL_NAV_LINKS } from "@/lib/constants";
+import { WhatsAppLink } from "@/components/ui/WhatsAppLink";
 
 type MobileMenuProps = {
   open: boolean;
@@ -108,13 +109,16 @@ export function MobileMenu({ open, onClose, isActive }: MobileMenuProps) {
               </Link>
             );
           })}
-          <Link
-            href="/contact"
-            onClick={onClose}
-            className="mt-2 inline-flex w-fit rounded-md bg-primary px-4 py-2 text-sm font-semibold text-paper transition-colors hover:bg-[#d22b2b]"
-          >
-            Start a project
-          </Link>
+          <div className="mt-2 flex flex-wrap items-center gap-3">
+            <Link
+              href="/contact"
+              onClick={onClose}
+              className="inline-flex w-fit rounded-md bg-primary px-4 py-2 text-sm font-semibold text-paper transition-colors hover:bg-[#d22b2b]"
+            >
+              Start a project
+            </Link>
+            <WhatsAppLink variant="compact" label="WhatsApp" />
+          </div>
         </div>
         <div>
           <p className="shell-label mb-3 text-accent">Also on the site</p>

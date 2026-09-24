@@ -9,6 +9,19 @@ export const CONTACT_EMAIL = "ryan@rdevstudio.co.uk";
 export const GITHUB_URL = "https://github.com/rdavidson5637";
 export const FORMSPREE_FORM_ID = "mgoqjqve";
 
+/** WhatsApp, in the international format wa.me wants (no +, no spaces). */
+export const WHATSAPP_NUMBER = "447378420418";
+export const WHATSAPP_DISPLAY = "07378 420418";
+export const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
+  "Hi Ryan, I found you on rdevstudio.co.uk. ",
+)}`;
+
+/** One line, used wherever the site says how fast replies come back. */
+export const REPLY_PROMISE = "I reply within one working day.";
+
+/** Honest availability line. Update it when the diary fills up. */
+export const AVAILABILITY = "Taking on new projects";
+
 export const CONTACT_SERVICE_OPTIONS = [
   "Website",
   "Social media",
@@ -86,9 +99,6 @@ export const SECONDARY_NAV_LINKS = [
   { href: "/pub-quiz", label: "Pub Quiz" },
   { href: "/draft", label: "Draft Analyser" },
   { href: "/wardrobe-ai", label: "Wardrobe AI" },
-  { href: "/stout-finder", label: "Stout Finder" },
-  { href: "/guitar-lab", label: "Guitar Lab" },
-  { href: "/gig-radar", label: "Gig Radar" },
 ] as const;
 
 export const SOCIAL_LINKS = [
@@ -186,6 +196,7 @@ export const SERVICES = [
   {
     number: "01",
     slug: "websites",
+    href: "/services/websites",
     title: "Websites",
     price: "from £650",
     priceNote: "one-off",
@@ -194,7 +205,8 @@ export const SERVICES = [
   },
   {
     number: "02",
-    slug: "social",
+    slug: "social-media",
+    href: "/services/social-media",
     title: "Social media",
     price: "from £150/mo",
     priceNote: "",
@@ -204,6 +216,7 @@ export const SERVICES = [
   {
     number: "03",
     slug: "content",
+    href: "/services/content",
     title: "Content",
     price: "from £200/project",
     priceNote: "",
@@ -213,18 +226,19 @@ export const SERVICES = [
 ] as const;
 
 export const HOME_PROJECT_IDS = [
-  "shelterlink",
-  "rvs-coldbrew",
   "paintball-wales",
+  "rvs-coldbrew",
+  "shelterlink",
 ] as const;
 
 export const PRICING_FEATURES = [
   "Up to 5 pages - usually home, about, what you do, a gallery or work list, and contact",
   "Built for a phone first, checked on a real handset before launch",
   "Contact form that lands in your inbox",
-  "Basic SEO: page titles, descriptions, and a Google Maps embed if you have a premises",
-  "Hosting set up on Vercel. If you already own a domain, I point it",
+  "Basic SEO: page titles, descriptions, link previews, and a Google Maps embed if you have a premises",
+  "Launched on your domain. If you already own one, I point it; if not, I help you buy it in your name",
   "One round of revisions after you see the first full draft",
+  "You own it: the domain, the content, and the code",
 ] as const;
 
 export const SOCIAL_MEDIA_FEATURES = [
@@ -249,9 +263,29 @@ export const FAQ_ITEMS = [
       "Most five-page sites go live in about a week once I have your text, photos, and contact details. If those arrive late, the date moves. Social and content jobs are usually a few days to a week, depending on the size of the batch.",
   },
   {
+    question: "How do I pay?",
+    answer:
+      "Half up front to book the build in, half when the site goes live. The care plan, if you want it, is £30 a month after launch.",
+  },
+  {
+    question: "Who owns the site?",
+    answer:
+      "You do. The domain is registered in your name, and the content and the code are yours. If you ever want to move it somewhere else, I hand it all over.",
+  },
+  {
+    question: "What does the care plan cover?",
+    answer:
+      "Hosting, security updates, and small changes like new prices, opening hours, or swapping a photo, for £30 a month. It is optional. Without it, I move the site onto a hosting account in your name and quote any changes as they come up.",
+  },
+  {
     question: "Who writes the content?",
     answer:
       "You know the business; I put it into plain English. Send me what you have - prices, hours, a few photos, the sentences you already say to customers. If you are stuck, I will draft the copy and tell you what still needs a photo. I do not invent testimonials or made-up numbers.",
+  },
+  {
+    question: "Why £650 when I have seen sites for £300?",
+    answer:
+      "A lot of cheaper sites are a template with your logo dropped in. Mine are built for your business, checked on a real phone, and fast. You also deal with the person doing the work, and you own the result.",
   },
   {
     question: "Do registered charities pay?",
@@ -264,11 +298,6 @@ export const FAQ_ITEMS = [
       "One round is included. You send a list after you have seen the first full draft (or the month's social batch), and I make those changes. Extra rounds are extra - I quote before I start them, so there are no surprises.",
   },
   {
-    question: "Who hosts the site, and what does that cost?",
-    answer:
-      "I set the site up on Vercel. For a normal small site that stays within the free tier, you are not paying me a monthly hosting fee. Domain names are yours - buy it (or keep the one you have) and I point it. If the site outgrows free hosting, we talk before anything is charged.",
-  },
-  {
     question: "Will it work on mobile?",
     answer:
       "Yes. I build for a phone first and check it on a real handset before launch.",
@@ -276,7 +305,7 @@ export const FAQ_ITEMS = [
   {
     question: "Can I update it myself?",
     answer:
-      "Yes. I can show you the simple edits, or do them for you if you would rather not.",
+      "Yes. I can show you the simple edits, or do them for you on the care plan if you would rather not.",
   },
 ] as const;
 
@@ -321,11 +350,9 @@ export const PROJECTS = [
     tags: ["Next.js", "Tailwind", "Vercel"],
     buttonLabel: "Read the case study",
     href: "/work/rvs-cold-brew",
-    image: "/images/work/rvs-coldbrew.png",
+    image: "/images/work/rvs-coldbrew-hero.jpg",
     imageAlt:
-      "RV's Cold Brew logo - circular badge with cream typography on dark teal",
-    previewFit: "contain" as const,
-    previewBg: "#0a1a1f",
+      "RV's Cold Brew homepage: Smooth craft cold brew and premium matcha, born in Belfast",
     outcome: "Live site",
   },
   {

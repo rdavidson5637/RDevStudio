@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 import { useForm, ValidationError } from "@formspree/react";
 import { FormSuccess } from "@/components/contact/FormSuccess";
@@ -20,10 +21,12 @@ function ContactFormFields({ onReset }: { onReset: () => void }) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [enquiryType, setEnquiryType] = useState("");
 
   const canSubmit =
     name.trim().length > 0 &&
     isValidEmail(email.trim()) &&
+    enquiryType.length > 0 &&
     message.trim().length > 0 &&
     !state.submitting;
 
@@ -79,7 +82,8 @@ function ContactFormFields({ onReset }: { onReset: () => void }) {
           id="enquiryType"
           name="enquiryType"
           required
-          defaultValue=""
+          value={enquiryType}
+          onChange={(event) => setEnquiryType(event.target.value)}
           className={selectClassName}
         >
           <option value="" disabled>
@@ -130,7 +134,11 @@ function ContactFormFields({ onReset }: { onReset: () => void }) {
       </button>
 
       <p className="text-sm leading-relaxed text-secondary">
-        Usually within one working day. I only use these details to reply.
+        I reply within one working day. I only use these details to reply -{" "}
+        <Link href="/privacy" className="underline underline-offset-4 hover:text-accent">
+          privacy
+        </Link>
+        .
       </p>
     </form>
   );

@@ -56,7 +56,7 @@ export function ServicesTrio() {
               </p>
 
               <Link
-                href={`/services#${service.slug}`}
+                href={service.href}
                 className="link-editorial mt-5 inline-flex items-center gap-2 sm:mt-6"
               >
                 See the package
@@ -66,9 +66,25 @@ export function ServicesTrio() {
           ))}
         </div>
 
-        <p className="mt-6 max-w-2xl text-sm leading-relaxed text-primary">
-          {CHARITY_NOTE}
-        </p>
+        <div className="mt-6 grid gap-4 rounded-[10px] border border-border bg-raised p-5 text-sm leading-relaxed text-primary sm:p-6 md:grid-cols-3">
+          <p>
+            <span className="shell-label mb-1 block text-accent">Terms</span>
+            Half to book the build in, half when it goes live. You own the
+            domain, the content, and the code.
+          </p>
+          <p>
+            <span className="shell-label mb-1 block text-accent">After launch</span>
+            Optional{" "}
+            <Link href="/services#care-plan" className="link-editorial">
+              care plan
+            </Link>{" "}
+            for £30 a month: hosting, updates, and small changes.
+          </p>
+          <p>
+            <span className="shell-label mb-1 block text-accent">Charities</span>
+            {CHARITY_NOTE}
+          </p>
+        </div>
       </div>
     </section>
   );

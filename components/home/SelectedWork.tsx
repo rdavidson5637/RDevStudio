@@ -30,7 +30,7 @@ export function SelectedWork() {
         </div>
 
         <p className="lead-text -mt-6 mb-10 max-w-2xl sm:-mt-4">
-          Real clients only. Assisi, RV&apos;s Cold Brew, and Paintball Wales.
+          Real clients only. A Snowdonia paintball park, a Belfast cold brew counter, and an animal sanctuary.
         </p>
 
         <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
