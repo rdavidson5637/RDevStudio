@@ -14,7 +14,12 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        base: "var(--color-bg-base)",
+        /*
+         * "base" is deliberately NOT a colour key. As a colour it generated a
+         * text-base colour utility that collided with the text-base font size,
+         * so every sm:text-base paragraph turned paper-coloured (invisible) on
+         * desktop. The page background lives in backgroundColor below instead.
+         */
         raised: "var(--color-bg-raised)",
         overlay: "var(--color-bg-overlay)",
         inverse: "var(--color-bg-inverse)",
@@ -138,6 +143,12 @@ const config: Config = {
       },
       transitionTimingFunction: {
         out: "var(--ease-out)",
+      },
+      backgroundColor: {
+        base: "rgb(var(--color-bg-base-rgb) / <alpha-value>)",
+      },
+      gradientColorStops: {
+        base: "var(--color-bg-base)",
       },
       ringOffsetColor: {
         base: "var(--color-bg-base)",
