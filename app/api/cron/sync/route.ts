@@ -19,6 +19,7 @@ import { ingestNewsLayer } from "@/lib/draft/news/ingest";
 import { getLatestSignalsForPlayers } from "@/lib/draft/news/queries";
 import { refreshLiveBoard } from "@/lib/draft/live";
 import { sendDeadlineAlerts } from "@/lib/draft/alerts";
+import { unauthorized } from "@/lib/draft/cron-auth";
 import type { DraftElement } from "@/lib/fpl/types";
 
 export const runtime = "nodejs";
@@ -106,8 +107,9 @@ function mapDraftElementToPlayerRow(el: DraftElement, updatedAt: string) {
 
 export async function GET(request: NextRequest) {
   const started = Date.now();
-  const auth = request.headers.get("authorization");
-  if (auth !== `Bearer ${process.env.CRON_SECRET}`) {
+  // Shared helper: refuses everything when CRON_SECRET is unset, instead of
+  // accepting the literal header "Bearer undefined".
+  if (unauthorized(request.headers.get("authorization"))) {
     return NextResponse.json({ ok: false, error: "Unauthorized" }, { status: 401 });
   }
 

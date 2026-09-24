@@ -40,6 +40,13 @@ export default function GameShell() {
 
   const update = useCallback((updates: Partial<GameState>) => {
     setState((prev) => {
+      // Every "New Draft" button sends phase "mode-select". Start clean so the
+      // squads and players used last run don't carry over: each draft uses 11
+      // of the 50 squads, so by the fifth draft in a session there weren't
+      // enough left to finish.
+      if (updates.phase === "mode-select") {
+        return { ...initialState, speedMode: prev.speedMode };
+      }
       const next = { ...prev, ...updates };
       if (updates.formation && !prev.formation) {
         next.draftSlots = buildDraftSlots(updates.formation);

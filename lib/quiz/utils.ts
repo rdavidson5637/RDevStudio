@@ -6,8 +6,11 @@ import { RoundFormat } from "./types";
 
 export const QUESTION_TIME_LIMIT_MS = DEFAULT_TIME_LIMIT_SECONDS * 1000;
 
-const GAME_ID_CHARS =
-  "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+// Upper case and digits only. The join form, the ?join= invite link and the
+// presenter route all upper-case the code, and Redis keys are case-sensitive,
+// so a lower-case letter in here meant most codes could never be joined.
+// 0/O and 1/I are left out so a code read off a pub TV can't be misread.
+const GAME_ID_CHARS = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
 
 const DEFAULT_TIME_BY_FORMAT: Record<RoundFormat, number> = {
   [RoundFormat.STANDARD]: 30,
