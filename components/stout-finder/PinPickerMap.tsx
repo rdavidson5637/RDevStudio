@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { Marker, TileLayer, useMapEvents } from "react-leaflet";
 import { MapShell } from "./MapShell";
+import { MAP_TILE_ATTRIBUTION, MAP_TILE_URL } from "./mapTiles";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 
@@ -57,10 +58,7 @@ export default function PinPickerMap({
   return (
     <div className="h-64 overflow-hidden rounded-[10px] border border-border">
       <MapShell center={value} zoom={14} className="h-full w-full">
-        <TileLayer
-          url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png"
-          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
-        />
+        <TileLayer url={MAP_TILE_URL} attribution={MAP_TILE_ATTRIBUTION} />
         <DragPin value={value} onChange={onChange} />
       </MapShell>
     </div>

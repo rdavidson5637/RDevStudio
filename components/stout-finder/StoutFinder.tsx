@@ -7,7 +7,6 @@ import { DrinkFilter } from "./DrinkFilter";
 import { PubList } from "./PubList";
 import {
   BELFAST_CITY_HALL,
-  DEFAULT_RADIUS_M,
   MAX_RADIUS_M,
   MIN_CONFIDENCE_OPTIONS,
   type Drink,
@@ -34,7 +33,7 @@ export function StoutFinder({ defaultDrinks = ["beamish"] }: Props) {
   const [selectedDrinks, setSelectedDrinks] = useState<Drink[]>(defaultDrinks);
   const [matchAll, setMatchAll] = useState(false);
   const [minConfidence, setMinConfidence] = useState<MinConfidence>("any");
-  const [radius, setRadius] = useState(DEFAULT_RADIUS_M);
+  const [radius, setRadius] = useState<number | null>(null);
   const [center, setCenter] = useState<{ lat: number; lng: number }>(BELFAST_CITY_HALL);
   const [usingFallback, setUsingFallback] = useState(true);
   const [fallbackNote, setFallbackNote] = useState(true);
@@ -46,16 +45,16 @@ export function StoutFinder({ defaultDrinks = ["beamish"] }: Props) {
   const [rangeCount, setRangeCount] = useState<number | null>(null);
 
   const fetchPubs = useCallback(
-    async (nextCenter: { lat: number; lng: number }, nextRadius: number) => {
+    async (nextCenter: { lat: number; lng: number }, nextRadius: number | null) => {
       setLoading(true);
       setError(null);
       const params = new URLSearchParams({
         lat: String(nextCenter.lat),
         lng: String(nextCenter.lng),
-        radius: String(nextRadius),
         matchAll: String(matchAll),
         minConfidence,
       });
+      if (nextRadius != null) params.set("radius", String(nextRadius));
       if (selectedDrinks.length > 0) {
         params.set("drinks", selectedDrinks.join(","));
       }
@@ -128,8 +127,8 @@ export function StoutFinder({ defaultDrinks = ["beamish"] }: Props) {
     const params = new URLSearchParams({
       lat: String(center.lat),
       lng: String(center.lng),
-      radius: String(radius),
     });
+    if (radius != null) params.set("radius", String(radius));
     void fetch(`/api/stout-finder/nearby?${params}`)
       .then((response) => response.json())
       .then((payload: NearbyResponse) => {
@@ -176,11 +175,17 @@ export function StoutFinder({ defaultDrinks = ["beamish"] }: Props) {
             : "No matches for these filters."}
         </p>
         <div className="flex flex-wrap gap-2">
-          {radius < MAX_RADIUS_M ? (
+          {radius != null && radius < MAX_RADIUS_M ? (
             <button
               type="button"
               className="btn-secondary !w-auto !px-3 !py-2 text-xs"
-              onClick={() => setRadius((current) => Math.min(current * 2, MAX_RADIUS_M))}
+              onClick={() =>
+                setRadius((current) => {
+                  if (current == null) return null;
+                  const steps = [5000, 15000, 30000, MAX_RADIUS_M];
+                  return steps.find((step) => step > current) ?? MAX_RADIUS_M;
+                })
+              }
             >
               Widen the search
             </button>
@@ -256,10 +261,14 @@ export function StoutFinder({ defaultDrinks = ["beamish"] }: Props) {
         <label className="text-sm text-secondary">
           Radius
           <select
-            className="ml-2 rounded-md border border-border bg-raised px-2 py-1 text-primary"
-            value={radius}
-            onChange={(event) => setRadius(Number(event.target.value))}
+            className="ml-2 rounded-md border border-border bg-raised px-2 py-1 text-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink"
+            value={radius ?? ""}
+            onChange={(event) => {
+              const next = event.target.value;
+              setRadius(next === "" ? null : Number(next));
+            }}
           >
+            <option value="">Off</option>
             <option value={5000}>5 km</option>
             <option value={15000}>15 km</option>
             <option value={30000}>30 km</option>

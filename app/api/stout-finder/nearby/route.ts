@@ -40,10 +40,15 @@ export async function GET(request: Request) {
     return NextResponse.json({ error: "lat and lng are required." }, { status: 400 });
   }
 
-  const radiusRaw = Number(url.searchParams.get("radius") ?? 15000);
-  const radiusM = Number.isFinite(radiusRaw)
-    ? Math.min(Math.max(Math.round(radiusRaw), 1), MAX_RADIUS_M)
-    : 15000;
+  const radiusParam = url.searchParams.get("radius");
+  let radiusM: number | null = null;
+  if (radiusParam != null && radiusParam !== "" && radiusParam !== "off") {
+    const radiusRaw = Number(radiusParam);
+    if (!Number.isFinite(radiusRaw) || radiusRaw < 1) {
+      return NextResponse.json({ error: "Radius must be a distance in metres." }, { status: 400 });
+    }
+    radiusM = Math.min(Math.round(radiusRaw), MAX_RADIUS_M);
+  }
 
   const limitRaw = Number(url.searchParams.get("limit") ?? MAX_NEARBY);
   const limit = Number.isFinite(limitRaw)

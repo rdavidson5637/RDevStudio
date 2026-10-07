@@ -95,18 +95,89 @@ function mapRowDrinks(rows: PubRow["pub_drinks"]): Record<Drink, DrinkStatus> {
 export type NearbyParams = {
   lat: number;
   lng: number;
-  radiusM?: number;
+  /** Null means no distance limit. A number is metres. */
+  radiusM?: number | null;
   drinks?: Drink[] | null;
   matchAll?: boolean;
   minConfidence?: MinConfidence;
   limit?: number;
 };
 
+function distanceMetres(
+  fromLat: number,
+  fromLng: number,
+  toLat: number,
+  toLng: number,
+): number {
+  const earth = 6371000;
+  const lat1 = (fromLat * Math.PI) / 180;
+  const lat2 = (toLat * Math.PI) / 180;
+  const dLat = ((toLat - fromLat) * Math.PI) / 180;
+  const dLng = ((toLng - fromLng) * Math.PI) / 180;
+  const a =
+    Math.sin(dLat / 2) ** 2 +
+    Math.cos(lat1) * Math.cos(lat2) * Math.sin(dLng / 2) ** 2;
+  return 2 * earth * Math.asin(Math.min(1, Math.sqrt(a)));
+}
+
+function meetsConfidence(confidence: Confidence, min: MinConfidence): boolean {
+  if (min === "any") return true;
+  if (min === "known") return confidence !== "unknown";
+  if (min === "plausible") return confidence === "confirmed" || confidence === "likely";
+  return confidence === "confirmed";
+}
+
+async function listPubsWithoutRadius(params: NearbyParams): Promise<NearbyPub[]> {
+  const { data, error } = await supabasePublic
+    .from("pubs")
+    .select(
+      "id, slug, name, town, county, lat, lng, pub_drinks(drink, yes_count, no_count, last_confirmed_at, last_denied_at)",
+    )
+    .eq("status", "active");
+
+  if (error) throw new Error(error.message);
+
+  const drinks = params.drinks && params.drinks.length > 0 ? params.drinks : null;
+  const matchAll = params.matchAll ?? false;
+  const minConfidence = params.minConfidence ?? "any";
+  const limit = params.limit ?? 200;
+
+  const pubs = ((data ?? []) as PubRow[])
+    .map((row) => {
+      const drinkStatus = mapRowDrinks(row.pub_drinks);
+      return {
+        id: row.id,
+        slug: row.slug,
+        name: row.name,
+        town: row.town,
+        county: row.county,
+        lat: row.lat,
+        lng: row.lng,
+        distanceM: distanceMetres(params.lat, params.lng, row.lat, row.lng),
+        drinks: drinkStatus,
+      } satisfies NearbyPub;
+    })
+    .filter((pub) => {
+      if (!drinks) return true;
+      const hits = drinks.filter((drink) =>
+        meetsConfidence(pub.drinks[drink].confidence, minConfidence),
+      );
+      return matchAll ? hits.length === drinks.length : hits.length > 0;
+    })
+    .sort((a, b) => a.distanceM - b.distanceM);
+
+  return pubs.slice(0, limit);
+}
+
 export async function getNearbyPubs(params: NearbyParams): Promise<NearbyPub[]> {
+  if (params.radiusM == null) {
+    return listPubsWithoutRadius(params);
+  }
+
   const { data, error } = await supabasePublic.rpc("nearby_pubs", {
     in_lat: params.lat,
     in_lng: params.lng,
-    in_radius_m: params.radiusM ?? 15000,
+    in_radius_m: params.radiusM,
     in_drinks: params.drinks && params.drinks.length > 0 ? params.drinks : null,
     in_match_all: params.matchAll ?? false,
     in_min_confidence: params.minConfidence ?? "any",

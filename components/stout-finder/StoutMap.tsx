@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { TileLayer, useMap, useMapEvents } from "react-leaflet";
 import { MapShell } from "./MapShell";
+import { MAP_TILE_ATTRIBUTION, MAP_TILE_URL } from "./mapTiles";
 import L, { type LatLngBounds } from "leaflet";
 import "leaflet/dist/leaflet.css";
 import { PubMarkers } from "./PubMarkers";
@@ -26,11 +27,27 @@ type Props = {
   showEmpty?: boolean;
 };
 
-function Recenter({ center }: { center: Center }) {
+function FrameResults({
+  pubs,
+}: {
+  pubs: { lat: number; lng: number }[];
+}) {
   const map = useMap();
+  const signature = pubs.map((pub) => `${pub.lat},${pub.lng}`).join("|");
   useEffect(() => {
-    map.setView([center.lat, center.lng]);
-  }, [center.lat, center.lng, map]);
+    if (pubs.length === 0) return;
+    const frame = () => {
+      map.invalidateSize();
+      const bounds = L.latLngBounds(
+        pubs.map((pub) => [pub.lat, pub.lng] as [number, number]),
+      );
+      if (!bounds.isValid()) return;
+      map.fitBounds(bounds, { padding: [32, 32], maxZoom: 14 });
+    };
+    frame();
+    const timer = window.setTimeout(frame, 150);
+    return () => window.clearTimeout(timer);
+  }, [map, signature, pubs]);
   return null;
 }
 
@@ -83,13 +100,8 @@ export default function StoutMap({
         zoom={12}
         className="h-full w-full bg-overlay"
       >
-        <TileLayer
-          // Light CARTO tiles so the map sits on the paper programme palette
-          // rather than the old dark #0A0A0F shell this prompt pack assumed.
-          url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png"
-          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
-        />
-        <Recenter center={center} />
+        <TileLayer url={MAP_TILE_URL} attribution={MAP_TILE_ATTRIBUTION} />
+        <FrameResults pubs={pubs} />
         <InvalidateSize />
         <ViewportSync
           onChange={(zoom, bounds) => setViewport({ zoom, bounds })}
