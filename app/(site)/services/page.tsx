@@ -11,7 +11,7 @@ import {
 import { FAQ } from "@/components/services/FAQ";
 
 export const metadata = createPageMetadata({
-  title: "Services",
+  title: "Work with me",
   description:
     "Website design, social media management, and content creation for Northern Ireland small businesses and charities. Clear pricing, no nonsense.",
   path: "/services",
@@ -92,11 +92,11 @@ const SERVICE_DETAILS = [
 
 export default function ServicesPage() {
   return (
-    <div className="section-padding pt-28">
+    <div className="studio-page bg-grid px-4 py-20 sm:px-6 md:py-28">
       <div className="container-wide px-6">
         <header className="border-b border-border pb-10">
           <p className="shell-label mb-3 text-accent">The offer</p>
-          <h1 className="programme-h1">SERVICES</h1>
+          <h1 className="display-lg text-studio-text">Work with me</h1>
           <p className="mt-5 max-w-3xl text-base leading-relaxed text-primary sm:text-lg">
             Websites, social media, and content for Northern Ireland small
             businesses and charities. Clear prices. One person from start to
@@ -146,13 +146,13 @@ export default function ServicesPage() {
                   <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
                     <div className="max-w-2xl">
                       <p className="shell-label text-accent">{service.number}</p>
-                      <h2 className="mt-2 font-display text-2xl uppercase tracking-tight text-primary sm:text-3xl">
+                      <h2 className="type-h2 mt-2 text-studio-text">
                         {service.title}
                       </h2>
                       <p className="mt-3 text-primary">{service.description}</p>
                     </div>
                     <div className="shrink-0 sm:text-right">
-                      <p className="font-display text-2xl uppercase text-primary sm:text-3xl">
+                      <p className="font-studio-display text-3xl text-studio-text">
                         {service.price}
                       </p>
                       {service.priceNote ? (
@@ -257,7 +257,7 @@ export default function ServicesPage() {
 
         <section className="border-t border-border py-12">
           <p className="shell-label mb-3 text-accent">Game plan</p>
-          <h2 className="font-display text-2xl uppercase tracking-tight text-primary sm:text-3xl">
+          <h2 className="type-h2 text-studio-text">
             How it works
           </h2>
           <p className="mt-4 max-w-2xl text-primary">
@@ -287,7 +287,7 @@ export default function ServicesPage() {
         <section className="border-t border-border py-12">
           <div className="mx-auto max-w-2xl text-center">
             <p className="shell-label mb-3 text-accent">Full time</p>
-            <h2 className="font-display text-2xl uppercase tracking-tight text-primary sm:text-3xl">
+            <h2 className="type-h2 text-studio-text">
               Tell me what you need
             </h2>
             <p className="mt-4 text-primary">

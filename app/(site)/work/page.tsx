@@ -1,183 +1,112 @@
 import Link from "next/link";
+import { StudioPage } from "@/components/ui/StudioPage";
 import { createPageMetadata } from "@/lib/metadata";
-import { BORED_GAMES } from "@/lib/bored-games";
 
 export const metadata = createPageMetadata({
-  title: "Projects",
-  description:
-    "Client work, experiments, and free browser games by Ryan Davidson.",
+  title: "Work",
+  description: "Client work, experiments, and free browser games by Ryan Davidson.",
   path: "/work",
 });
 
-type Fixture = {
-  index: string;
-  title: string;
-  description: string;
-  tag: string;
-  year: string;
-  href: string;
-};
-
-const CLIENT_WORK: Fixture[] = [
+const SECTIONS = [
   {
-    index: "01",
-    title: "ShelterLink",
-    description:
-      "Volunteer rotas, roles, and an admin dashboard for Assisi Animal Sanctuary.",
-    tag: "REAL CLIENT · CHARITY",
-    year: "2025-26",
-    href: "/work/shelterlink",
+    title: "Client work",
+    intro: "Jobs for real organisations.",
+    items: [
+      {
+        title: "ShelterLink",
+        description: "Volunteer rotas, roles, and an admin dashboard for Assisi Animal Sanctuary.",
+        href: "/work/shelterlink",
+      },
+      {
+        title: "RV's Cold Brew",
+        description: "A Belfast cold brew and matcha counter. Menu, hours, and directions.",
+        href: "/work/rvs-cold-brew",
+      },
+      {
+        title: "Paintball Wales",
+        description: "Phone-first site for a Snowdonia paintball park, built to replace a cluttered banner.",
+        href: "/work/paintball-wales",
+      },
+    ],
   },
   {
-    index: "02",
-    title: "RV's Cold Brew",
-    description:
-      "Live site for a Belfast cold brew and matcha counter. Menu, hours, and directions.",
-    tag: "CLIENT · BRAND SITE",
-    year: "2026",
-    href: "/work/rvs-cold-brew",
+    title: "Other work",
+    intro: "Concept builds and a personal experiment. Not client jobs.",
+    items: [
+      {
+        title: "Concept builds",
+        description: "Three local-business sites: trades, restaurant, salon.",
+        href: "/work/concept-builds",
+      },
+      {
+        title: "UC Caseworker Assistant",
+        description: "AI assistant for Universal Credit caseworkers, built around safeguarding.",
+        href: "/work/uc-caseworker-tool",
+      },
+    ],
   },
   {
-    index: "03",
-    title: "Paintball Wales",
-    description:
-      "Phone-first site for a Snowdonia paintball park, built to replace a cluttered banner.",
-    tag: "CLIENT · MARKETING SITE",
-    year: "2026",
-    href: "/work/paintball-wales",
+    title: "Games",
+    intro: "Free in the browser.",
+    items: [
+      {
+        title: "Champions Draft",
+        description: "Spin iconic squads, draft your ultimate XI, and compete.",
+        href: "/champions-draft",
+      },
+      {
+        title: "Rugby Draft",
+        description: "Spin nation and club squads, draft your XV, and compete.",
+        href: "/rugby-draft",
+      },
+      {
+        title: "Longest Word",
+        description: "Spell the longest word you can from today's 4x4 letter grid.",
+        href: "/games/longest-word",
+      },
+      {
+        title: "Pub Quiz",
+        description: "Host a quiz night or join with a code.",
+        href: "/pub-quiz",
+      },
+    ],
   },
-];
-
-const GAME_TAGS: Record<string, string> = {
-  "champions-draft": "FOOTBALL · BROWSER",
-  "rugby-draft": "RUGBY · BROWSER",
-  "longest-word": "DAILY · BROWSER",
-  "pub-quiz": "TRIVIA · PASS-AND-PLAY",
-};
-
-const GAMES: Fixture[] = BORED_GAMES.map((game, index) => ({
-  index: String(index + 6).padStart(2, "0"),
-  title: game.title,
-  description: game.description,
-  tag: GAME_TAGS[game.slug] ?? game.tag.toUpperCase(),
-  year: "FREE",
-  href: game.href,
-}));
-
-const OTHER_WORK: Fixture[] = [
-  {
-    index: "04",
-    title: "Concept builds",
-    description: "Three local-business sites: trades, restaurant, salon.",
-    tag: "CONCEPT · SET OF 3",
-    year: "2025",
-    href: "/work/concept-builds",
-  },
-  {
-    index: "05",
-    title: "UC Caseworker Assistant",
-    description: "AI assistant for Universal Credit caseworkers, built around safeguarding.",
-    tag: "PERSONAL · AI ASSISTANT",
-    year: "2026",
-    href: "/work/uc-caseworker-tool",
-  },
-];
-
-function FixtureList({ fixtures }: { fixtures: Fixture[] }) {
-  return (
-    <div className="border-b border-border">
-      {fixtures.map((fixture, index) => (
-        <Link
-          key={fixture.href}
-          href={fixture.href}
-          className="group relative block border-t border-border px-1 py-6 transition-all hover:bg-accent-light hover:pl-3"
-          style={{ animationDelay: `${index * 50}ms` }}
-        >
-          <div className="absolute left-0 top-0 h-full w-0.5 origin-top scale-y-0 bg-accent transition-transform duration-200 group-hover:scale-y-100" />
-          <div className="grid gap-3 sm:grid-cols-[72px,1fr,auto,auto] sm:items-center sm:gap-5">
-            <p className="shell-label text-accent transition-transform duration-200 group-hover:translate-x-1">
-              {fixture.index}
-            </p>
-            <div>
-              <h3 className="text-xl font-semibold text-primary transition-colors group-hover:text-accent">
-                {fixture.title}
-                <span className="ml-2 inline-block opacity-0 transition-opacity duration-200 group-hover:opacity-100" aria-hidden="true">
-                  →
-                </span>
-              </h3>
-              <p className="mt-1 text-sm text-primary">
-                {fixture.description}
-              </p>
-            </div>
-            <p className="shell-label text-secondary">{fixture.tag}</p>
-            <p className="shell-label text-secondary">{fixture.year}</p>
-          </div>
-        </Link>
-      ))}
-    </div>
-  );
-}
+] as const;
 
 export default function WorkPage() {
-  const projectCount = CLIENT_WORK.length + OTHER_WORK.length + GAMES.length;
-
   return (
-    <div className="section-padding pt-28">
-      <div className="container-wide px-6">
-        <header className="border-b border-border pb-8">
-          <div className="flex flex-wrap items-center gap-3">
-            <p className="shell-label text-accent">THE SEASON SO FAR</p>
-            <span className="rounded-full bg-accent/10 px-2.5 py-0.5 text-xs font-semibold text-accent">
-              {projectCount} projects
-            </span>
-          </div>
-          <h1 className="programme-h1 mt-3">PROJECTS</h1>
-          <p className="mt-5 max-w-2xl text-base leading-relaxed text-primary sm:text-lg">
-            Client jobs first. Experiments and games further down.
-          </p>
-        </header>
-
-        <section className="pt-10" aria-labelledby="client-work-heading">
-          <h2 id="client-work-heading" className="shell-label mb-4 text-accent">
-            CLIENT WORK
-          </h2>
-          <FixtureList fixtures={CLIENT_WORK} />
-        </section>
-
-        <section className="pt-12" aria-labelledby="other-work-heading">
-          <h2 id="other-work-heading" className="shell-label mb-4 text-accent">
-            OTHER / EXPERIMENTS
-          </h2>
-          <p className="mb-4 max-w-2xl text-sm leading-relaxed text-primary">
-            Concept builds and personal experiments. Not client jobs.
-          </p>
-          <FixtureList fixtures={OTHER_WORK} />
-        </section>
-
-        <section className="pt-12" aria-labelledby="games-heading">
-          <h2 id="games-heading" className="shell-label mb-4 text-accent">
-            GAMES
-          </h2>
-          <p className="mb-4 max-w-2xl text-sm leading-relaxed text-primary">
-            Free browser games. No ads, no sign-up, no mercy.
-          </p>
-          <FixtureList fixtures={GAMES} />
-        </section>
-
-        <section className="py-12">
-          <div className="rounded-xl border border-border bg-raised p-6 sm:p-8">
-            <p className="shell-label mb-2 text-accent">LOOKING FOR SOMETHING?</p>
-            <p className="text-base leading-relaxed text-primary sm:text-lg">
-              This is the highlight reel. If you&apos;re after something specific - a particular
-              stack, a certain type of project, or proof I can actually do what I say -{" "}
-              <Link href="/contact" className="text-accent hover:underline">
-                just ask
-              </Link>
-              .
-            </p>
-          </div>
-        </section>
+    <StudioPage
+      label="Work"
+      title="Work"
+      intro="Client jobs first. Experiments and games further down."
+    >
+      <div className="space-y-14">
+        {SECTIONS.map((section) => (
+          <section key={section.title}>
+            <h2 className="type-h2 text-studio-text">{section.title}</h2>
+            <p className="type-body mt-2 text-studio-muted">{section.intro}</p>
+            <ul className="mt-6 border-t border-studio-border">
+              {section.items.map((item) => (
+                <li key={item.href} className="border-b border-studio-border">
+                  <Link
+                    href={item.href}
+                    className="group flex min-h-16 flex-col justify-center gap-1 py-4 sm:flex-row sm:items-baseline sm:justify-between"
+                  >
+                    <span className="type-h3 text-studio-text group-hover:text-amber">
+                      {item.title}
+                      <span className="ml-2 text-studio-muted transition-transform group-hover:translate-x-1" aria-hidden="true">
+                        →
+                      </span>
+                    </span>
+                    <span className="type-body text-studio-muted sm:max-w-md sm:text-right">{item.description}</span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </section>
+        ))}
       </div>
-    </div>
+    </StudioPage>
   );
 }

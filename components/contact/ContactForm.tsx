@@ -67,7 +67,7 @@ function ContactFormFields({ onReset }: { onReset: () => void }) {
           prefix="Email"
           field="email"
           errors={state.errors}
-          className="mt-1.5 text-sm text-[#d22b2b]"
+          className="mt-1.5 text-sm text-amber"
         />
       </div>
 
@@ -110,12 +110,12 @@ function ContactFormFields({ onReset }: { onReset: () => void }) {
           prefix="Message"
           field="message"
           errors={state.errors}
-          className="mt-1.5 text-sm text-[#d22b2b]"
+          className="mt-1.5 text-sm text-amber"
         />
       </div>
 
       {state.errors ? (
-        <p className="text-sm leading-relaxed text-[#d22b2b]">
+        <p className="text-sm leading-relaxed text-amber">
           That didn&apos;t send. Try again, or just email me directly - address
           is right there.
         </p>

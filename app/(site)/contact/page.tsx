@@ -1,4 +1,6 @@
 import { ContactForm } from "@/components/contact/ContactForm";
+import { Button } from "@/components/ui/Button";
+import { Container } from "@/components/ui/Container";
 import { CHARITY_NOTE, CONTACT_EMAIL, GITHUB_URL } from "@/lib/constants";
 import { createPageMetadata } from "@/lib/metadata";
 
@@ -10,68 +12,50 @@ export const metadata = createPageMetadata({
 });
 
 const LINKEDIN_URL = "https://www.linkedin.com/in/ryan-davidson-462bb221b";
+const WHATSAPP_URL = "https://wa.me/447378420418";
 
 export default function ContactPage() {
   return (
-    <div className="section-padding pt-28">
-      <div className="container-wide px-6">
-        <header className="border-b border-border pb-10">
-          <p className="shell-label mb-3 text-accent">FULL TIME</p>
-          <h1 className="programme-h1">GET IN TOUCH</h1>
-          <p className="mt-5 max-w-3xl text-base leading-relaxed text-primary sm:text-lg">
-            Need a site, help with posting, or something that does not fit a
-            package. Form or email. I read both. I usually reply within one
-            working day.
-          </p>
-          <p className="mt-4 max-w-3xl text-base leading-relaxed text-primary sm:text-lg">
-            {CHARITY_NOTE}
-          </p>
-        </header>
+    <div className="bg-grid bg-bg text-studio-text">
+      <Container className="py-20 md:py-28">
+        <p className="type-label text-studio-muted">Contact</p>
+        <h1 className="display-lg mt-4 max-w-3xl text-balance">Start a project</h1>
+        <p className="type-body mt-5 max-w-xl text-studio-muted">
+          Need a site, help with posting, or something that does not fit a package. Form or email. I read both. I usually reply within one working day.
+        </p>
+        <p className="type-body mt-4 max-w-xl text-studio-muted">{CHARITY_NOTE}</p>
 
-        <div className="grid gap-10 py-12 lg:grid-cols-[1.35fr,1fr] lg:items-start">
-          <div className="rounded-[10px] border border-border bg-raised p-6 sm:p-8">
+        <div className="mt-12 grid gap-10 lg:grid-cols-[1.4fr_0.8fr] lg:items-start">
+          <div className="rounded-studio border border-studio-border bg-studio-surface p-6 md:p-8">
             <ContactForm />
           </div>
-
-          <aside className="lg:pt-2">
+          <aside>
             <a
               href={`mailto:${CONTACT_EMAIL}`}
-              className="block text-2xl font-semibold leading-tight text-primary transition-colors hover:text-accent sm:text-3xl"
+              className="font-studio-display text-2xl text-studio-text underline-offset-4 hover:text-amber hover:underline"
             >
               {CONTACT_EMAIL}
             </a>
-
-            <div className="mt-7 flex flex-wrap items-center gap-x-3 gap-y-2">
-              <a
-                href={LINKEDIN_URL}
-                className="shell-label transition-colors hover:text-accent"
-              >
+            <div className="mt-6">
+              <Button href={WHATSAPP_URL} variant="secondary">
+                WhatsApp
+              </Button>
+            </div>
+            <div className="mt-6 flex gap-4">
+              <a href={LINKEDIN_URL} className="text-sm text-studio-muted hover:text-amber" target="_blank" rel="noopener noreferrer">
                 LinkedIn
               </a>
-              <span
-                className="shell-label text-border-strong"
-                aria-hidden="true"
-              >
-                ·
-              </span>
-              <a
-                href={GITHUB_URL}
-                className="shell-label transition-colors hover:text-accent"
-              >
+              <a href={GITHUB_URL} className="text-sm text-studio-muted hover:text-amber" target="_blank" rel="noopener noreferrer">
                 GitHub
               </a>
             </div>
-
-            <p className="mt-7 text-sm leading-relaxed text-primary">
-              Based in Carrickfergus. Working anywhere.
-            </p>
-            <p className="mt-4 text-sm leading-relaxed text-secondary">
-              I only use your name and email to reply to this enquiry. I do not
-              pass them on.
+            <p className="type-body mt-8 text-studio-muted">Based in Carrickfergus. Working anywhere.</p>
+            <p className="type-body mt-3 text-studio-muted">
+              I only use your name and email to reply to this enquiry. I do not pass them on.
             </p>
           </aside>
         </div>
-      </div>
+      </Container>
     </div>
   );
 }

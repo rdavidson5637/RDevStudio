@@ -41,7 +41,7 @@ function ScreenshotSlot({
 
 export default function RvsColdBrewCaseStudyPage() {
   return (
-    <div className="section-padding pt-28">
+    <div className="studio-page bg-grid px-4 py-20 sm:px-6 md:py-28">
       <article className="container-wide px-6">
         <Breadcrumbs
           items={[
@@ -53,7 +53,7 @@ export default function RvsColdBrewCaseStudyPage() {
         />
         <header className="space-y-6 border-b border-border pb-10">
           <p className="shell-label text-accent">CASE STUDY - 02</p>
-          <h1 className="programme-h1">RV&apos;S COLD BREW</h1>
+          <h1 className="display-lg text-studio-text">RV&apos;s Cold Brew</h1>
           <p className="max-w-2xl text-lg text-primary">
             A live site for a Belfast cold brew and matcha counter at
             Great Northern Mall.

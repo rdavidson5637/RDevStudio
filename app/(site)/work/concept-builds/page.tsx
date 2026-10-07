@@ -86,11 +86,11 @@ const BUILDS = [
 
 export default function ConceptBuildsPage() {
   return (
-    <div className="section-padding pt-28">
+    <div className="studio-page bg-grid px-4 py-20 sm:px-6 md:py-28">
       <article className="container-wide px-6">
         <header className="space-y-6 border-b border-border pb-10">
           <p className="shell-label text-accent">CASE STUDY - 04</p>
-          <h1 className="programme-h1">CONCEPT BUILDS</h1>
+          <h1 className="display-lg text-studio-text">Concept builds</h1>
           <p className="max-w-2xl text-lg text-primary">
             Three sites exploring how local businesses could look online.
           </p>

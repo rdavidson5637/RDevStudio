@@ -632,6 +632,72 @@ body {
     background: var(--color-studio-amber);
   }
 
+  .studio-page {
+    background-color: var(--color-studio-bg);
+    color: var(--color-studio-text);
+    font-family: var(--font-studio-sans), system-ui, sans-serif;
+  }
+
+  .studio-page .programme-h1,
+  .studio-page .heading-display,
+  .studio-page .section-heading {
+    font-family: var(--font-studio-display), Georgia, serif;
+    text-transform: none;
+    letter-spacing: -0.02em;
+    color: var(--color-studio-text);
+    line-height: 1.08;
+  }
+
+  .studio-page .text-primary,
+  .studio-page .text-on-accent {
+    color: var(--color-studio-text);
+  }
+
+  .studio-page .text-secondary,
+  .studio-page .text-tertiary {
+    color: var(--color-studio-muted);
+  }
+
+  .studio-page .text-accent,
+  .studio-page .shell-label,
+  .studio-page .section-label {
+    color: var(--color-studio-amber);
+  }
+
+  .studio-page .shell-label,
+  .studio-page .section-label,
+  .studio-page .label-caps {
+    font-family: var(--font-studio-mono), ui-monospace, monospace;
+  }
+
+  .studio-page .bg-raised,
+  .studio-page .bg-paper,
+  .studio-page .bg-overlay {
+    background-color: var(--color-studio-surface);
+  }
+
+  .studio-page .border-border,
+  .studio-page .border-border-strong {
+    border-color: var(--color-studio-border);
+  }
+
+  .studio-page .btn-primary {
+    background-color: var(--color-studio-amber);
+    border-color: var(--color-studio-amber);
+    color: var(--color-studio-bg);
+  }
+
+  .studio-page .btn-primary:hover {
+    background-color: var(--color-studio-amber);
+    border-color: var(--color-studio-amber);
+  }
+
+  .studio-page .btn-secondary {
+    background-color: transparent;
+    border-color: var(--color-studio-border-strong);
+    color: var(--color-studio-text);
+  }
+
   .noise::before {
     content: "";
     position: absolute;
