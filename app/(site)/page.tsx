@@ -4,8 +4,8 @@ import { ClientWork } from "@/components/home/ClientWork";
 import { WorkWithMe } from "@/components/home/WorkWithMe";
 import { HomeProcess } from "@/components/home/HomeProcess";
 import { HomeFaq } from "@/components/home/HomeFaq";
-import { PortfolioPlay } from "@/components/home/PortfolioPlay";
-import { HomeContact } from "@/components/home/HomeContact";
+import { Workshop } from "@/components/home/Workshop";
+import { ClosingCta } from "@/components/home/ClosingCta";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata = createPageMetadata({
@@ -17,15 +17,15 @@ export const metadata = createPageMetadata({
 
 export default function HomePage() {
   return (
-    <>
+    <div className="bg-bg">
       <Hero />
       <LiveStrip />
       <ClientWork />
       <WorkWithMe />
       <HomeProcess />
       <HomeFaq />
-      <PortfolioPlay />
-      <HomeContact />
-    </>
+      <Workshop />
+      <ClosingCta />
+    </div>
   );
 }
