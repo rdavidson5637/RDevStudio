@@ -6,6 +6,7 @@ type ComingSoonProps = {
   blurb: string;
   points?: readonly string[];
   note?: string;
+  link?: { href: string; label: string };
 };
 
 export function ComingSoon({
@@ -14,6 +15,7 @@ export function ComingSoon({
   blurb,
   points = [],
   note,
+  link,
 }: ComingSoonProps) {
   return (
     <div className="section-padding pt-28">
@@ -51,6 +53,17 @@ export function ComingSoon({
         {note ? (
           <p className="mt-8 max-w-3xl text-sm leading-relaxed text-tertiary">
             {note}
+          </p>
+        ) : null}
+
+        {link ? (
+          <p className="mt-4">
+            <Link
+              href={link.href}
+              className="text-sm font-semibold text-accent underline underline-offset-2 hover:text-primary"
+            >
+              {link.label}
+            </Link>
           </p>
         ) : null}
 

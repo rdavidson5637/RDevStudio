@@ -287,6 +287,7 @@ export function StoutFinder({ defaultDrinks = ["beamish"] }: Props) {
             center={center}
             selectedPubId={selectedPubId}
             onSelectPub={setSelectedPubId}
+            showEmpty={!loading && !error}
           />
         </div>
         <div className="md:max-h-[70vh] md:overflow-y-auto">
@@ -294,7 +295,7 @@ export function StoutFinder({ defaultDrinks = ["beamish"] }: Props) {
             <p className="text-sm text-secondary">Loading pubs.</p>
           ) : null}
           {error ? <p className="text-sm text-destructive">{error}</p> : null}
-          {!loading && pubs.length === 0 ? emptyActions : null}
+          {!loading && !error && pubs.length === 0 ? emptyActions : null}
           {!loading && pubs.length > 0 ? (
             <PubList
               pubs={pubs}

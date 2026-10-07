@@ -1,4 +1,4 @@
-export type Drink = "beamish" | "murphys" | "guinness";
+export type Drink = "beamish" | "kilkenny" | "murphys" | "guinness";
 
 export type Confidence =
   | "confirmed"
@@ -38,6 +38,7 @@ export const DRINKS: {
   label: string;
 }[] = [
   { id: "beamish", label: "Beamish" },
+  { id: "kilkenny", label: "Kilkenny" },
   { id: "murphys", label: "Murphy's" },
   { id: "guinness", label: "Guinness" },
 ];
@@ -91,6 +92,7 @@ export const EMPTY_DRINK_STATUS: DrinkStatus = {
 export function emptyDrinks(): Record<Drink, DrinkStatus> {
   return {
     beamish: { ...EMPTY_DRINK_STATUS },
+    kilkenny: { ...EMPTY_DRINK_STATUS },
     murphys: { ...EMPTY_DRINK_STATUS },
     guinness: { ...EMPTY_DRINK_STATUS },
   };

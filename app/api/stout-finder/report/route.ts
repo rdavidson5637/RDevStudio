@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { createSupabaseServerClient } from "@/lib/supabase/server";
+import { createStoutServerClient } from "@/lib/supabase/stout-server";
 import { isDrink } from "@/lib/stout-finder/types";
 
 export const runtime = "nodejs";
@@ -9,7 +9,7 @@ const UUID_RE =
   /^[0-9a-f]{8}-[0-9a-f]{4}-[1-8][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
 
 export async function POST(request: Request) {
-  const supabase = await createSupabaseServerClient();
+  const supabase = await createStoutServerClient();
   const {
     data: { user },
   } = await supabase.auth.getUser();

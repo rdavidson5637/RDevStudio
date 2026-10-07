@@ -1,7 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { MapContainer, Marker, TileLayer, useMapEvents } from "react-leaflet";
+import { Marker, TileLayer, useMapEvents } from "react-leaflet";
+import { MapShell } from "./MapShell";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 
@@ -55,18 +56,13 @@ export default function PinPickerMap({
 
   return (
     <div className="h-64 overflow-hidden rounded-[10px] border border-border">
-      <MapContainer
-        center={[value.lat, value.lng]}
-        zoom={14}
-        className="h-full w-full"
-        scrollWheelZoom
-      >
+      <MapShell center={value} zoom={14} className="h-full w-full">
         <TileLayer
           url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png"
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
         />
         <DragPin value={value} onChange={onChange} />
-      </MapContainer>
+      </MapShell>
     </div>
   );
 }

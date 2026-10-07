@@ -1,6 +1,6 @@
 import { createHash } from "node:crypto";
 import { NextResponse } from "next/server";
-import { createSupabaseServerClient } from "@/lib/supabase/server";
+import { createStoutServerClient } from "@/lib/supabase/stout-server";
 import { getNearbyPubs } from "@/lib/stout-finder/queries";
 
 export const runtime = "nodejs";
@@ -30,7 +30,7 @@ function namesSimilar(a: string, b: string): boolean {
 }
 
 export async function POST(request: Request) {
-  const supabase = await createSupabaseServerClient();
+  const supabase = await createStoutServerClient();
   const {
     data: { user },
   } = await supabase.auth.getUser();

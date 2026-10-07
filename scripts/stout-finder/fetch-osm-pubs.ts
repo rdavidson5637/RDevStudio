@@ -8,7 +8,8 @@ import { mkdir, writeFile } from "node:fs/promises";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
-const OVERPASS_URL = "https://overpass-api.de/api/interpreter";
+const OVERPASS_URL =
+  process.env.OVERPASS_URL ?? "https://overpass-api.de/api/interpreter";
 const USER_AGENT =
   "StoutFinder/1.0 (https://rdevstudio.co.uk; ryan@rdevstudio.co.uk)";
 

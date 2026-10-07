@@ -8,7 +8,7 @@ import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { createClient } from "@supabase/supabase-js";
 
-type Drink = "beamish" | "murphys" | "guinness";
+type Drink = "beamish" | "kilkenny" | "murphys" | "guinness";
 
 type KnownStockEntry = {
   slug: string;
@@ -42,15 +42,20 @@ function loadEnvLocal() {
 async function main() {
   loadEnvLocal();
 
-  const url = process.env.NEXT_PUBLIC_SUPABASE_URL || process.env.SUPABASE_URL;
-  const key = process.env.SUPABASE_SERVICE_ROLE_KEY;
+  const url =
+    process.env.NEXT_PUBLIC_STOUT_SUPABASE_URL ||
+    process.env.NEXT_PUBLIC_SUPABASE_URL ||
+    process.env.SUPABASE_URL;
+  const key =
+    process.env.STOUT_SUPABASE_SERVICE_ROLE_KEY ||
+    process.env.SUPABASE_SERVICE_ROLE_KEY;
   const reporterId = process.env.SEED_REPORTER_ID;
 
   if (!key) {
-    throw new Error("SUPABASE_SERVICE_ROLE_KEY is missing.");
+    throw new Error("STOUT_SUPABASE_SERVICE_ROLE_KEY is missing.");
   }
   if (!url) {
-    throw new Error("NEXT_PUBLIC_SUPABASE_URL is missing.");
+    throw new Error("NEXT_PUBLIC_STOUT_SUPABASE_URL is missing.");
   }
   if (!reporterId) {
     throw new Error(

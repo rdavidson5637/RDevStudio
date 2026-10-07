@@ -82,6 +82,16 @@ export async function GET(request: Request) {
     return NextResponse.json({ pubs });
   } catch (error) {
     const message = error instanceof Error ? error.message : "Could not load pubs.";
+    if (
+      message.includes("schema cache") ||
+      message.includes("Could not find the table") ||
+      message.includes("Could not find the function")
+    ) {
+      return NextResponse.json(
+        { error: "The pub list is not loaded yet." },
+        { status: 503 },
+      );
+    }
     return NextResponse.json({ error: message }, { status: 500 });
   }
 }

@@ -1,5 +1,5 @@
 import "server-only";
-import { supabasePublic } from "@/lib/supabase/public";
+import { supabaseStout as supabasePublic } from "@/lib/supabase/stout-public";
 import { deriveConfidence } from "./confidence";
 import {
   DRINK_IDS,
@@ -176,10 +176,29 @@ export async function getAllPubSlugs(): Promise<string[]> {
   return (data ?? []).map((row) => row.slug as string);
 }
 
+function schemaMissing(message: string): boolean {
+  return (
+    message.includes("schema cache") ||
+    message.includes("Could not find the table") ||
+    message.includes("Could not find the function")
+  );
+}
+
 export async function getStoutFinderStats(): Promise<{
+  ready: boolean;
   pubCount: number;
   confirmedBeamish: number;
 }> {
+  // A head/count request returns 204 with no error when the table is missing,
+  // so probe with a normal select before trusting the count.
+  const probe = await supabasePublic.from("pubs").select("id").limit(1);
+  if (probe.error) {
+    console.warn("[stout-finder] pub probe failed:", probe.error.message);
+    if (schemaMissing(probe.error.message)) {
+      return { ready: false, pubCount: 0, confirmedBeamish: 0 };
+    }
+  }
+
   const { count: pubCount, error: pubError } = await supabasePublic
     .from("pubs")
     .select("id", { count: "exact", head: true })
@@ -187,6 +206,9 @@ export async function getStoutFinderStats(): Promise<{
 
   if (pubError) {
     console.warn("[stout-finder] pub count failed:", pubError.message);
+    if (schemaMissing(pubError.message)) {
+      return { ready: false, pubCount: 0, confirmedBeamish: 0 };
+    }
   }
 
   const since = new Date(Date.now() - 90 * 24 * 60 * 60 * 1000).toISOString();
@@ -199,6 +221,9 @@ export async function getStoutFinderStats(): Promise<{
 
   if (beamishError) {
     console.warn("[stout-finder] beamish count failed:", beamishError.message);
+    if (schemaMissing(beamishError.message)) {
+      return { ready: false, pubCount: 0, confirmedBeamish: 0 };
+    }
   }
 
   const confirmedBeamish = (beamishRows ?? []).filter((row) => {
@@ -210,6 +235,7 @@ export async function getStoutFinderStats(): Promise<{
   }).length;
 
   return {
+    ready: true,
     pubCount: pubCount ?? 0,
     confirmedBeamish,
   };

@@ -70,7 +70,7 @@ export function DrinkFilter({
           </button>
         </div>
         <p className="text-xs text-secondary">
-          ALL shows pubs that carry every drink you picked. Use it when one of you wants Beamish and the other wants Guinness.
+          ALL shows pubs that carry every drink you picked. Use it when one of you wants Beamish and the other wants Kilkenny.
         </p>
       </div>
     </div>

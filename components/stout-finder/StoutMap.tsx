@@ -1,7 +1,8 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { MapContainer, TileLayer, useMap, useMapEvents } from "react-leaflet";
+import { TileLayer, useMap, useMapEvents } from "react-leaflet";
+import { MapShell } from "./MapShell";
 import L, { type LatLngBounds } from "leaflet";
 import "leaflet/dist/leaflet.css";
 import { PubMarkers } from "./PubMarkers";
@@ -22,6 +23,7 @@ type Props = {
   center: Center;
   onSelectPub: (id: string) => void;
   selectedPubId: string | null;
+  showEmpty?: boolean;
 };
 
 function Recenter({ center }: { center: Center }) {
@@ -67,6 +69,7 @@ export default function StoutMap({
   center,
   onSelectPub,
   selectedPubId,
+  showEmpty = true,
 }: Props) {
   const [viewport, setViewport] = useState<{
     zoom: number;
@@ -75,12 +78,10 @@ export default function StoutMap({
 
   return (
     <div className="relative h-full min-h-[16rem] overflow-hidden rounded-[10px] border border-border">
-      <MapContainer
-        center={[center.lat, center.lng]}
+      <MapShell
+        center={center}
         zoom={12}
         className="h-full w-full bg-overlay"
-        scrollWheelZoom
-        attributionControl
       >
         <TileLayer
           // Light CARTO tiles so the map sits on the paper programme palette
@@ -101,8 +102,8 @@ export default function StoutMap({
           zoom={viewport.zoom}
           bounds={viewport.bounds}
         />
-      </MapContainer>
-      {pubs.length === 0 ? (
+      </MapShell>
+      {showEmpty && pubs.length === 0 ? (
         <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-paper/70">
           <p className="px-4 text-center text-sm text-secondary">
             No pubs match these filters in this view.

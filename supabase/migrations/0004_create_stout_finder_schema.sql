@@ -16,7 +16,7 @@ create extension if not exists postgis;
 do $$
 begin
   if not exists (select 1 from pg_type where typname = 'stout_drink') then
-    create type public.stout_drink as enum ('beamish', 'murphys', 'guinness');
+    execute 'create type public.stout_drink as enum (''beamish'', ''kilkenny'', ''murphys'', ''guinness'')';
   end if;
 end
 $$;
@@ -82,5 +82,15 @@ comment on table public.reports is
 create index reports_pub_drink_created_idx
   on public.reports (pub_id, drink, created_at desc);
 
+-- timestamptz::date follows the session timezone, so Postgres marks that
+-- cast stable and rejects it in an index. The day boundary is UTC.
+create or replace function public.report_day(ts timestamptz)
+returns date
+language sql
+immutable
+as $$
+  select (ts at time zone 'UTC')::date;
+$$;
+
 create unique index reports_one_per_day
-  on public.reports (pub_id, drink, reporter_id, (created_at::date));
+  on public.reports (pub_id, drink, reporter_id, public.report_day(created_at));

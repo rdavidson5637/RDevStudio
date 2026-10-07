@@ -104,7 +104,7 @@ export default async function PubDetailPage({
             .join(", ")}
         </p>
 
-        <div className="mt-8 grid gap-4 sm:grid-cols-3">
+        <div className="mt-8 grid gap-4 sm:grid-cols-2">
           {DRINKS.map((drink) => {
             const status = pub.drinks[drink.id];
             return (

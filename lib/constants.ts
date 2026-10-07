@@ -39,8 +39,8 @@ export const STOUT_FINDER = {
   href: "/stout-finder",
   label: "Stout Finder",
   description:
-    "Which pubs in Antrim and Down actually have Beamish, Murphy's or Guinness on. Every claim dated, and it goes stale on its own.",
-  status: "soon",
+    "Which pubs in Antrim and Down actually have Beamish, Kilkenny, Murphy's or Guinness on. Every claim dated, and it goes stale on its own.",
+  status: "live",
 } as const;
 
 export const GUITAR_LAB = {

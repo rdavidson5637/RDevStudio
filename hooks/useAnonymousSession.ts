@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useRef, useState } from "react";
-import { createSupabaseBrowserClient } from "@/lib/supabase/client";
+import { createStoutBrowserClient } from "@/lib/supabase/client";
 
 type AnonymousSession = {
   userId: string | null;
@@ -22,7 +22,7 @@ export function useAnonymousSession(): AnonymousSession {
 
     inflight.current = (async () => {
       try {
-        const supabase = createSupabaseBrowserClient();
+        const supabase = createStoutBrowserClient();
         const { data: existing } = await supabase.auth.getSession();
         if (existing.session?.user.id) {
           setUserId(existing.session.user.id);
