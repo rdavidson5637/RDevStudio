@@ -181,8 +181,8 @@ export default function AboutPage() {
               Want the formal version?
             </p>
             <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
-              <Link href="/hire" className="btn-secondary">
-                Read the CV
+              <Link href="/contact" className="btn-secondary">
+                CV on request
               </Link>
               <Link
                 href="/contact"

@@ -1,100 +1,115 @@
 import Link from "next/link";
-import {
-  CONTACT_EMAIL,
-  GITHUB_URL,
-  SECONDARY_NAV_HUBS,
-  SECONDARY_NAV_LINKS,
-  SHELL_NAV_LINKS,
-} from "@/lib/constants";
+import { CONTACT_EMAIL, GITHUB_URL } from "@/lib/constants";
 
-const CURRENT_YEAR = new Date().getFullYear();
+const LINKEDIN_URL = "https://www.linkedin.com/in/ryan-davidson-462bb221b";
+const WHATSAPP_URL = "https://wa.me/447378420418";
+
+const COLUMNS = [
+  {
+    title: "Studio",
+    links: [
+      { href: "/work", label: "Work" },
+      { href: "/about", label: "About" },
+      { href: "/contact", label: "Contact" },
+      { href: "/contact", label: "CV on request" },
+    ],
+  },
+  {
+    title: "Play",
+    links: [
+      { href: "/games", label: "Games" },
+      { href: "/champions-draft", label: "Champions Draft" },
+      { href: "/rugby-draft", label: "Rugby Draft" },
+      { href: "/pub-quiz", label: "Pub Quiz" },
+      { href: "/games/longest-word", label: "Longest Word" },
+    ],
+  },
+  {
+    title: "Projects",
+    links: [
+      { href: "/draft", label: "Draft Analyser" },
+      { href: "/wardrobe-ai", label: "Wardrobe AI" },
+      { href: "/stout-finder", label: "Stout Finder" },
+      { href: "/guitar-lab", label: "Guitar Lab" },
+      { href: "/gig-radar", label: "Gig Radar" },
+    ],
+  },
+] as const;
 
 export function Footer() {
   return (
-    <footer className="border-t border-border bg-paper" role="contentinfo">
-      <div className="container-wide px-6 pb-8 pt-12">
-        <div className="grid gap-10 md:grid-cols-3">
-          <div className="space-y-3">
-            <p className="text-sm leading-relaxed text-primary">
-              RDev Studio - designed and built in Carrickfergus. No template, no
-              page builder, occasional dog supervision.
-            </p>
-            <p className="shell-label text-secondary">
-              © {CURRENT_YEAR} Ryan Davidson
-            </p>
-          </div>
+    <footer className="border-t border-studio-border bg-bg text-studio-text" role="contentinfo">
+      <div className="mx-auto max-w-studio px-6 py-16 md:px-8">
+        <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-4">
+          {COLUMNS.map((column) => (
+            <nav key={column.title} aria-label={column.title}>
+              <p className="type-label text-studio-muted">{column.title}</p>
+              <ul className="mt-4 space-y-3">
+                {column.links.map((link) => (
+                  <li key={`${column.title}-${link.label}`}>
+                    <Link
+                      href={link.href}
+                      className="text-sm text-studio-muted transition-colors hover:text-studio-text focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-amber"
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          ))}
 
-          <nav className="flex flex-col gap-3" aria-label="Footer navigation">
-            {SHELL_NAV_LINKS.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="shell-label text-primary transition-colors hover:text-accent"
-              >
-                {link.label}
-              </Link>
-            ))}
-            <p className="shell-label mt-4 text-accent">Also on the site</p>
-            {SECONDARY_NAV_HUBS.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="shell-label text-primary transition-colors hover:text-accent"
-              >
-                {link.label}
-              </Link>
-            ))}
-            <div className="h-1" aria-hidden="true" />
-            {SECONDARY_NAV_LINKS.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="shell-label text-primary transition-colors hover:text-accent"
-              >
-                {link.label}
-              </Link>
-            ))}
-            <Link
-              href="/hire"
-              className="shell-label text-primary transition-colors hover:text-accent"
-            >
-              CV
-            </Link>
-          </nav>
-
-          <div className="flex flex-col gap-3 text-sm" aria-label="Contact and social links">
-            <a
-              href={`mailto:${CONTACT_EMAIL}`}
-              className="text-primary transition-colors hover:text-accent"
-              aria-label={`Email Ryan at ${CONTACT_EMAIL}`}
-            >
-              {CONTACT_EMAIL}
-            </a>
-            <a
-              href="https://www.linkedin.com/in/ryan-davidson-462bb221b"
-              className="text-primary transition-colors hover:text-accent"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Ryan Davidson on LinkedIn (opens in new tab)"
-            >
-              LinkedIn
-            </a>
-            <a
-              href={GITHUB_URL}
-              className="text-primary transition-colors hover:text-accent"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Ryan Davidson on GitHub (opens in new tab)"
-            >
-              GitHub
-            </a>
+          <div>
+            <p className="type-label text-studio-muted">Contact</p>
+            <ul className="mt-4 space-y-3 text-sm">
+              <li>
+                <a
+                  href={`mailto:${CONTACT_EMAIL}`}
+                  className="text-studio-muted transition-colors hover:text-studio-text"
+                >
+                  {CONTACT_EMAIL}
+                </a>
+              </li>
+              <li>
+                <a
+                  href={WHATSAPP_URL}
+                  className="text-studio-muted transition-colors hover:text-studio-text"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  WhatsApp
+                </a>
+              </li>
+              <li>
+                <a
+                  href={LINKEDIN_URL}
+                  className="text-studio-muted transition-colors hover:text-studio-text"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  LinkedIn
+                </a>
+              </li>
+              <li>
+                <a
+                  href={GITHUB_URL}
+                  className="text-studio-muted transition-colors hover:text-studio-text"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  GitHub
+                </a>
+              </li>
+            </ul>
           </div>
         </div>
 
-        <div className="programme-rule mt-10" />
-        <p className="shell-label pt-6 text-center text-accent">
-          FULL TIME - thanks for reading the programme.
-        </p>
+        <div className="mt-16 border-t border-studio-border pt-6">
+          <p className="max-w-xl text-sm leading-relaxed text-studio-muted">
+            RDev Studio - designed and built in Carrickfergus. No template, no page builder, occasional dog supervision.
+          </p>
+          <p className="type-label mt-4 text-studio-muted">© 2026 Ryan Davidson</p>
+        </div>
       </div>
     </footer>
   );

@@ -1,6 +1,3 @@
-// CV PDF lives at public/Ryan_Davidson_CV.pdf - replace with updated version as needed.
-export const HIRE_CV_PATH = "/Ryan_Davidson_CV.pdf";
-
 export const HIRE_CHAOS_TRANSITION = "Still here? Fine. Here's the rest.";
 
 export const HIRE_MILESTONES_TITLE = "Milestones";

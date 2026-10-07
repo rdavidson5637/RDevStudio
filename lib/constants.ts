@@ -68,10 +68,10 @@ export const STUDIO_PROJECTS = [
 ] as const;
 
 export const SHELL_NAV_LINKS = [
-  { href: "/services", label: "Services" },
-  { href: "/work", label: "Work" },
+  { href: "/games", label: "Games" },
   { href: "/projects", label: "Projects" },
-  { href: "/about", label: "About" },
+  { href: "/toolkit", label: "Tools" },
+  { href: "/services", label: "Work with me" },
 ] as const;
 
 export const SECONDARY_NAV_HUBS = [

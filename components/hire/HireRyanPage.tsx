@@ -14,7 +14,6 @@ import {
   ACHIEVEMENTS,
   HIRE_ABOUT_POINTS,
   HIRE_CHAOS_TRANSITION,
-  HIRE_CV_PATH,
   HIRE_MILESTONES_TITLE,
   HIRE_EXPERIENCE,
   HIRE_PROFILE,
@@ -105,9 +104,9 @@ export function HireRyanPage() {
               <Link href="/contact" className="btn-primary">
                 Get in touch
               </Link>
-              <a href={HIRE_CV_PATH} download className="btn-secondary">
-                Download CV
-              </a>
+              <Link href="/contact" className="btn-secondary">
+                CV on request
+              </Link>
             </div>
 
             <dl className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">

@@ -32,6 +32,7 @@ type LinkProps = Common & {
   href: string;
   target?: string;
   rel?: string;
+  onClick?: () => void;
 };
 
 function classes(variant: Variant, size: Size, className?: string) {
@@ -59,6 +60,7 @@ export function Button(props: ButtonProps | LinkProps) {
         className={className}
         target={props.target ?? (external ? "_blank" : undefined)}
         rel={props.rel ?? (external ? "noopener noreferrer" : undefined)}
+        onClick={props.onClick}
       >
         {props.children}
       </Link>
