@@ -17,8 +17,8 @@ export default function KilkennyPage() {
           <p className="shell-label mb-3 text-accent">STOUT FINDER</p>
           <h1 className="programme-h1">KILKENNY</h1>
           <p className="mt-5 max-w-3xl text-base leading-relaxed text-secondary sm:text-lg">
-            Where to get Kilkenny in Antrim and Down, nearest first. Each pub
-            shows when it was last confirmed, or that nobody has checked yet.
+            Where to get Kilkenny in Antrim and Down, nearest first. Only pubs
+            with a Kilkenny report are listed.
           </p>
         </header>
         <div className="mt-10">

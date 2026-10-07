@@ -190,13 +190,13 @@ export function StoutFinder({ defaultDrinks = ["beamish"] }: Props) {
               Widen the search
             </button>
           ) : null}
-          {minConfidence !== "any" ? (
+          {minConfidence === "confirmed" || minConfidence === "plausible" ? (
             <button
               type="button"
               className="btn-secondary !w-auto !px-3 !py-2 text-xs"
               onClick={() => setMinConfidence("any")}
             >
-              Include unchecked pubs
+              Show every report
             </button>
           ) : null}
           {beamishOnly ? (

@@ -121,10 +121,24 @@ function distanceMetres(
 }
 
 function meetsConfidence(confidence: Confidence, min: MinConfidence): boolean {
-  if (min === "any") return true;
-  if (min === "known") return confidence !== "unknown";
+  // A chosen drink means the pub has a report for it. "Any" is any report,
+  // not an empty row.
+  if (min === "any" || min === "known") return confidence !== "unknown";
   if (min === "plausible") return confidence === "confirmed" || confidence === "likely";
   return confidence === "confirmed";
+}
+
+function matchesSelectedDrinks(
+  pub: NearbyPub,
+  drinks: Drink[] | null,
+  matchAll: boolean,
+  minConfidence: MinConfidence,
+): boolean {
+  if (!drinks) return true;
+  const hits = drinks.filter((drink) =>
+    meetsConfidence(pub.drinks[drink].confidence, minConfidence),
+  );
+  return matchAll ? hits.length === drinks.length : hits.length > 0;
 }
 
 async function listPubsWithoutRadius(params: NearbyParams): Promise<NearbyPub[]> {
@@ -157,13 +171,7 @@ async function listPubsWithoutRadius(params: NearbyParams): Promise<NearbyPub[]>
         drinks: drinkStatus,
       } satisfies NearbyPub;
     })
-    .filter((pub) => {
-      if (!drinks) return true;
-      const hits = drinks.filter((drink) =>
-        meetsConfidence(pub.drinks[drink].confidence, minConfidence),
-      );
-      return matchAll ? hits.length === drinks.length : hits.length > 0;
-    })
+    .filter((pub) => matchesSelectedDrinks(pub, drinks, matchAll, minConfidence))
     .sort((a, b) => a.distanceM - b.distanceM);
 
   return pubs.slice(0, limit);
@@ -188,17 +196,23 @@ export async function getNearbyPubs(params: NearbyParams): Promise<NearbyPub[]> 
     throw new Error(error.message);
   }
 
-  return ((data ?? []) as RpcPub[]).map((row) => ({
-    id: row.id,
-    slug: row.slug,
-    name: row.name,
-    town: row.town,
-    county: row.county,
-    lat: row.lat,
-    lng: row.lng,
-    distanceM: row.distance_m,
-    drinks: mapDrinks(row.drinks),
-  }));
+  const drinks = params.drinks && params.drinks.length > 0 ? params.drinks : null;
+  const matchAll = params.matchAll ?? false;
+  const minConfidence = params.minConfidence ?? "any";
+
+  return ((data ?? []) as RpcPub[])
+    .map((row) => ({
+      id: row.id,
+      slug: row.slug,
+      name: row.name,
+      town: row.town,
+      county: row.county,
+      lat: row.lat,
+      lng: row.lng,
+      distanceM: row.distance_m,
+      drinks: mapDrinks(row.drinks),
+    }))
+    .filter((pub) => matchesSelectedDrinks(pub, drinks, matchAll, minConfidence));
 }
 
 export async function getPubBySlug(slug: string): Promise<PubDetail | null> {
