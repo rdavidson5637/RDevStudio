@@ -1,67 +1,44 @@
-import Link from "next/link";
+import { Button } from "@/components/ui/Button";
+import { Container } from "@/components/ui/Container";
+import { Reveal } from "@/components/ui/Reveal";
 
-const SCOREBOARD = [
-  { label: "Based", value: "NI" },
-  { label: "Packages", value: "3" },
-  { label: "Status", value: "OPEN" },
-  { label: "Years", value: "2" },
-] as const;
+function Underline({ children }: { children: string }) {
+  return <span className="border-b border-amber">{children}</span>;
+}
 
 export function Hero() {
   return (
-    <section className="relative overflow-x-hidden bg-paper pb-20 pt-28 md:pb-28 md:pt-36">
-      <span className="hero-bg-type hidden md:block" aria-hidden="true">
-        RDEV
-      </span>
-
-      <div className="container-wide relative z-10 w-full px-4 sm:px-6 lg:px-8">
-        <div className="max-w-3xl">
-          <p className="section-label mb-4 font-medium">Kick-off</p>
-
-          <h1 className="programme-h1 mb-6 text-balance md:text-7xl lg:text-8xl">
-            <span className="hero-line block [animation-delay:0ms]">
-              Websites for
-            </span>
-            <span className="hero-line block [animation-delay:60ms]">
-              local
-            </span>
-            <span className="hero-line block [animation-delay:120ms]">
-              businesses
-            </span>
-            <span className="hero-line block [animation-delay:180ms]">
-              and charities.
-            </span>
-          </h1>
-
-          <p className="lead-text mb-10 max-w-xl">
-            Sites for Northern Ireland small businesses and charities. Clear
-            packages, straight prices, one person from first message to launch.
+    <section className="relative overflow-hidden bg-bg text-studio-text">
+      <div className="bg-grid absolute inset-0" aria-hidden="true" />
+      <div
+        className="glow-amber pointer-events-none absolute left-1/2 top-0 h-[28rem] w-[40rem] -translate-x-1/2 opacity-70"
+        aria-hidden="true"
+      />
+      <Container className="relative py-24 md:py-32">
+        <p className="type-label text-studio-muted">
+          <span className="mr-2 inline-block h-1.5 w-1.5 rounded-full bg-status-live align-middle" aria-hidden="true" />
+          RDev Studio - Carrickfergus, Northern Ireland
+        </p>
+        <h1 className="display-xl mt-6 max-w-4xl text-balance text-studio-text">
+          <Reveal as="span" className="block">
+            <Underline>Websites</Underline> for local businesses.
+          </Reveal>
+          <Reveal as="span" delay={80} className="mt-2 block">
+            <Underline>Games</Underline> for everyone else.
+          </Reveal>
+        </h1>
+        <Reveal delay={160}>
+          <p className="type-body mt-8 max-w-xl text-studio-muted">
+            I design and build websites for Northern Ireland small businesses and charities. I also make the games and apps below, and they are all live.
           </p>
-
-          <dl
-            className="mb-10 grid min-h-[120px] grid-cols-2 gap-px overflow-hidden rounded-md border border-border bg-border md:grid-cols-4"
-            aria-label="Studio scoreboard"
-          >
-            {SCOREBOARD.map((item) => (
-              <div key={item.label} className="bg-paper px-4 py-3">
-                <dt className="shell-label text-secondary">{item.label}</dt>
-                <dd className="mt-1 text-2xl font-display text-primary sm:text-3xl">
-                  {item.value}
-                </dd>
-              </div>
-            ))}
-          </dl>
-
-          <div className="flex flex-wrap gap-4">
-            <Link href="/contact" className="btn-primary">
-              Start a project
-            </Link>
-            <Link href="/work" className="btn-secondary">
-              See the work
-            </Link>
+          <div className="mt-8 flex flex-wrap gap-3">
+            <Button href="/contact">Start a project</Button>
+            <Button href="#live" variant="secondary">
+              Play something
+            </Button>
           </div>
-        </div>
-      </div>
+        </Reveal>
+      </Container>
     </section>
   );
 }

@@ -1,4 +1,5 @@
 import { Hero } from "@/components/home/Hero";
+import { LiveStrip } from "@/components/home/LiveStrip";
 import { ServicesTrio } from "@/components/home/ServicesTrio";
 import { SelectedWork } from "@/components/home/SelectedWork";
 import { HowItWorks } from "@/components/home/HowItWorks";
@@ -18,6 +19,7 @@ export default function HomePage() {
   return (
     <>
       <Hero />
+      <LiveStrip />
       <ServicesTrio />
       <SelectedWork />
       <HowItWorks />

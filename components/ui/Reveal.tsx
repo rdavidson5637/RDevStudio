@@ -6,10 +6,12 @@ type RevealProps = {
   children: ReactNode;
   className?: string;
   delay?: number;
+  as?: "div" | "span";
 };
 
-export function Reveal({ children, className = "", delay = 0 }: RevealProps) {
+export function Reveal({ children, className = "", delay = 0, as = "div" }: RevealProps) {
   const ref = useRef<HTMLDivElement>(null);
+  const Tag = as;
   const [ready, setReady] = useState(false);
   const [shown, setShown] = useState(false);
 
@@ -37,8 +39,8 @@ export function Reveal({ children, className = "", delay = 0 }: RevealProps) {
   const hidden = ready && !shown;
 
   return (
-    <div
-      ref={ref}
+    <Tag
+      ref={ref as never}
       className={className}
       style={{
         opacity: hidden ? 0 : 1,
@@ -49,6 +51,6 @@ export function Reveal({ children, className = "", delay = 0 }: RevealProps) {
       }}
     >
       {children}
-    </div>
+    </Tag>
   );
 }
