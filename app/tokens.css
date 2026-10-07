@@ -98,6 +98,8 @@
   --radius-md: 6px;
   --radius-lg: 10px;
   --radius-full: 9999px;
+  --radius-studio: 1rem;
+  --container-studio: 75rem;
 
   /* ── Motion ──────────────────────────────────────────────── */
   --duration-fast: 150ms;

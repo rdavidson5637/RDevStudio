@@ -147,10 +147,12 @@ const config: Config = {
         md: "var(--radius-md)",
         lg: "var(--radius-lg)",
         full: "var(--radius-full)",
+        studio: "var(--radius-studio)",
       },
       maxWidth: {
         narrow: "var(--container-narrow)",
         wide: "var(--container-wide)",
+        studio: "var(--container-studio)",
       },
       letterSpacing: {
         tight: "var(--tracking-tight)",
@@ -176,6 +178,7 @@ const config: Config = {
         glow: "0 0 60px -12px rgb(59 130 246 / 0.2)",
         "quiz-card": "0 4px 24px -4px rgba(0, 0, 0, 0.45)",
         "quiz-glow": "0 0 48px -8px rgba(232, 163, 23, 0.35)",
+        "amber-glow": "0 0 24px var(--color-studio-amber-glow)",
       },
       animation: {
         "fade-in": "fadeIn 0.5s ease-out forwards",

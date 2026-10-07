@@ -282,6 +282,16 @@ body {
 
 }
 
+@keyframes studio-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.35;
+  }
+}
+
 @keyframes heroLineIn {
   from {
     transform: translateY(12px);
@@ -597,6 +607,29 @@ body {
 
   .noise {
     position: relative;
+  }
+
+  .studio-pulse {
+    animation: studio-pulse 2.4s ease-in-out infinite;
+  }
+
+  .studio-card {
+    position: relative;
+  }
+
+  .studio-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 1rem;
+    right: 1rem;
+    height: 1px;
+    background: transparent;
+    transition: background-color 200ms ease;
+  }
+
+  .studio-card:hover::before {
+    background: var(--color-studio-amber);
   }
 
   .noise::before {
