@@ -1,4 +1,4 @@
-import { ProjectCard } from "@/components/home/ProjectCard";
+import { ProjectRow } from "@/components/home/ProjectCard";
 import { StudioPage } from "@/components/ui/StudioPage";
 import { createPageMetadata } from "@/lib/metadata";
 import { games } from "@/lib/projects";
@@ -17,11 +17,11 @@ export default function GamesPage() {
       title="Play something."
       intro="Free in the browser. No ads, no sign-up."
     >
-      <div className="grid gap-4 md:grid-cols-2">
+      <ul className="border-t border-studio-border">
         {games.map((game) => (
-          <ProjectCard key={game.slug} project={game} />
+          <ProjectRow key={game.slug} project={game} />
         ))}
-      </div>
+      </ul>
     </StudioPage>
   );
 }

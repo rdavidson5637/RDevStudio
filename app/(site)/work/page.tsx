@@ -93,11 +93,8 @@ export default function WorkPage() {
                     href={item.href}
                     className="group flex min-h-16 flex-col justify-center gap-1 py-4 sm:flex-row sm:items-baseline sm:justify-between"
                   >
-                    <span className="type-h3 text-studio-text group-hover:text-amber">
+                    <span className="type-h3 text-studio-text transition-colors duration-200 group-hover:text-amber">
                       {item.title}
-                      <span className="ml-2 text-studio-muted transition-transform group-hover:translate-x-1" aria-hidden="true">
-                        →
-                      </span>
                     </span>
                     <span className="type-body text-studio-muted sm:max-w-md sm:text-right">{item.description}</span>
                   </Link>

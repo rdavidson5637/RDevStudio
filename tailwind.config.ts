@@ -70,6 +70,7 @@ const config: Config = {
         faint: "var(--color-studio-faint)",
         amber: {
           DEFAULT: "var(--color-studio-amber)",
+          hover: "var(--color-studio-amber-hover)",
           soft: "var(--color-studio-amber-soft)",
           glow: "var(--color-studio-amber-glow)",
         },

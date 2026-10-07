@@ -16,7 +16,7 @@ const WHATSAPP_URL = "https://wa.me/447378420418";
 
 export default function ContactPage() {
   return (
-    <div className="bg-grid bg-bg text-studio-text">
+    <div className="bg-bg text-studio-text">
       <Container className="py-20 md:py-28">
         <p className="type-label text-studio-muted">Contact</p>
         <h1 className="display-lg mt-4 max-w-3xl text-balance">Start a project</h1>
@@ -26,7 +26,7 @@ export default function ContactPage() {
         <p className="type-body mt-4 max-w-xl text-studio-muted">{CHARITY_NOTE}</p>
 
         <div className="mt-12 grid gap-10 lg:grid-cols-[1.4fr_0.8fr] lg:items-start">
-          <div className="rounded-studio border border-studio-border bg-studio-surface p-6 md:p-8">
+          <div className="border-t border-studio-border pt-8">
             <ContactForm />
           </div>
           <aside>

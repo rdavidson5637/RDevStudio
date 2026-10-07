@@ -5,10 +5,10 @@ type Variant = "primary" | "secondary" | "ghost";
 type Size = "sm" | "md";
 
 const variants: Record<Variant, string> = {
-  primary: "bg-amber text-bg hover:shadow-amber-glow",
+  primary: "rounded-sm bg-amber text-bg hover:bg-amber-hover",
   secondary:
-    "border border-studio-border-strong bg-studio-surface text-studio-text hover:border-amber",
-  ghost: "bg-transparent text-studio-muted hover:text-amber",
+    "bg-transparent px-0 text-studio-text underline decoration-studio-border-strong underline-offset-4 hover:text-amber hover:decoration-amber",
+  ghost: "bg-transparent px-0 text-studio-muted hover:text-amber",
 };
 
 const sizes: Record<Size, string> = {
@@ -37,7 +37,7 @@ type LinkProps = Common & {
 
 function classes(variant: Variant, size: Size, className?: string) {
   return [
-    "inline-flex items-center justify-center gap-2 rounded-studio font-studio-sans font-medium transition-shadow duration-200",
+    "inline-flex items-center justify-center gap-2 font-studio-sans font-medium transition-colors duration-200",
     "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber",
     variants[variant],
     sizes[size],

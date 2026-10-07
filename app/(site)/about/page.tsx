@@ -77,7 +77,7 @@ const personJsonLd = {
 
 export default function AboutPage() {
   return (
-    <div className="studio-page bg-grid px-4 py-20 sm:px-6 md:py-28">
+    <div className="studio-page px-4 py-20 sm:px-6 md:py-28">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
@@ -90,7 +90,7 @@ export default function AboutPage() {
               <h1 className="display-lg text-studio-text">Ryan Davidson</h1>
             </div>
             <figure>
-              <div className="relative aspect-[3/4] w-full overflow-hidden rounded-[10px] border border-border bg-raised">
+              <div className="relative aspect-[3/4] w-full overflow-hidden bg-raised">
                 <Image
                   src="/images/ryan-davidson.jpg"
                   alt="Ryan Davidson in graduation gown outside Queen's University Belfast"

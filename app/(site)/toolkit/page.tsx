@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { Card } from "@/components/ui/Card";
 import { StudioPage } from "@/components/ui/StudioPage";
 import { BUSINESS_TOOLS } from "@/lib/business-toolkit/catalog";
 import { createPageMetadata } from "@/lib/metadata";
@@ -63,20 +62,21 @@ export default function ToolkitPage() {
         {groups.map((group) => (
           <section key={group.title}>
             <h2 className="type-h2 text-studio-text">{group.title}</h2>
-            <div className="mt-6 grid gap-4 md:grid-cols-2">
+            <ul className="mt-6 border-t border-studio-border">
               {group.tools.map((tool) => (
-                <Card key={tool.slug} as="article" className="flex h-full flex-col">
-                  <h3 className="type-h3 text-studio-text">{tool.title}</h3>
-                  <p className="type-body mt-2 flex-1 text-studio-muted">{tool.description}</p>
+                <li key={tool.slug} className="border-b border-studio-border">
                   <Link
                     href={tool.href}
-                    className="mt-5 inline-flex min-h-11 items-center text-sm text-studio-text underline-offset-4 hover:text-amber hover:underline"
+                    className="group block py-5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-amber"
                   >
-                    Open
+                    <span className="block font-studio-display text-2xl text-studio-text transition-colors duration-200 group-hover:text-amber">
+                      {tool.title}
+                    </span>
+                    <span className="type-body mt-1 block max-w-2xl text-studio-muted">{tool.description}</span>
                   </Link>
-                </Card>
+                </li>
               ))}
-            </div>
+            </ul>
           </section>
         ))}
       </div>

@@ -1,5 +1,4 @@
 import { Button } from "@/components/ui/Button";
-import { Card } from "@/components/ui/Card";
 import { Container } from "@/components/ui/Container";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 
@@ -10,7 +9,6 @@ const PACKAGES = [
     note: "one-off",
     copy: "A site that says who you are, what you do, and how to get in touch. Phone first. No template.",
     href: "/services#websites",
-    lead: true,
   },
   {
     title: "Social media",
@@ -18,19 +16,22 @@ const PACKAGES = [
     note: "",
     copy: "A plan, captions and graphics so you are not making it up every Monday.",
     href: "/services#social",
-    lead: false,
   },
   {
     title: "Content",
-    price: "from £200/project",
-    note: "",
+    price: "from £200",
+    note: "a project",
     copy: "A batch of posts or a one-off set. Written to sound like you, not like an agency.",
     href: "/services#content",
-    lead: false,
+  },
+  {
+    title: "Care plan",
+    price: "£30/month",
+    note: "optional",
+    copy: "Hosting, security updates and small changes, so the site stays up and stays current.",
+    href: "/services",
   },
 ] as const;
-
-const TERMS = ["50% upfront, 50% at launch", "You own the domain, content and code", "No lock-in"] as const;
 
 export function WorkWithMe() {
   return (
@@ -41,59 +42,36 @@ export function WorkWithMe() {
           label="Work with me"
           heading="Straight prices. One person, start to finish."
         />
-        <div className="mt-10 grid gap-4 md:grid-cols-3">
+        <ul className="mt-10 border-t border-studio-border">
           {PACKAGES.map((item) => (
-            <Card
-              key={item.title}
-              className={`flex h-full flex-col ${item.lead ? "border-t-2 border-t-amber" : ""}`}
-            >
-              <p className={`type-label ${item.lead ? "text-amber" : "invisible"}`} aria-hidden={item.lead ? undefined : true}>
-                Start here
-              </p>
-              <h3 className="type-h3 mt-3 text-studio-text">{item.title}</h3>
-              <p className="mt-3 font-studio-display text-3xl text-studio-text">
-                {item.price}{" "}
-                {item.note ? <span className="type-label text-studio-muted">{item.note}</span> : null}
-              </p>
-              <p className="type-body mt-4 flex-1 text-studio-muted">{item.copy}</p>
+            <li key={item.title} className="border-b border-studio-border">
               <a
                 href={item.href}
-                className="mt-6 inline-flex min-h-11 items-center text-sm text-studio-text underline-offset-4 hover:text-amber hover:underline"
+                className="group grid gap-2 py-6 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-amber md:grid-cols-[1fr_11rem] md:items-baseline md:gap-10"
               >
-                See what is included
+                <span>
+                  <span className="block font-studio-display text-3xl text-studio-text transition-colors duration-200 group-hover:text-amber">
+                    {item.title}
+                  </span>
+                  <span className="type-body mt-2 block max-w-xl text-studio-muted">{item.copy}</span>
+                </span>
+                <span className="font-studio-display text-2xl text-studio-text md:text-right">
+                  {item.price}
+                  {item.note ? (
+                    <span className="type-label mt-1 block text-studio-muted md:text-right">{item.note}</span>
+                  ) : null}
+                </span>
               </a>
-            </Card>
-          ))}
-        </div>
-
-        <Card className="mt-4">
-          <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
-            <div>
-              <p className="type-label text-studio-muted">Care plan</p>
-              <p className="mt-2 font-studio-display text-3xl text-studio-text">£30/month</p>
-              <p className="type-body mt-3 max-w-xl text-studio-muted">
-                Hosting, security updates and small changes, so the site stays up and stays current. Optional.
-              </p>
-            </div>
-            <a href="/services" className="inline-flex min-h-11 items-center text-sm text-studio-text underline-offset-4 hover:text-amber hover:underline">
-              Read the care plan
-            </a>
-          </div>
-        </Card>
-
-        <p className="type-body mt-6 border border-studio-border bg-studio-amber-soft px-5 py-4 text-studio-text">
-          Registered charities get the same packages free - website, social and content. Say you are registered when you get in touch.
-        </p>
-
-        <ul className="mt-6 grid gap-3 md:grid-cols-3">
-          {TERMS.map((term) => (
-            <li key={term} className="type-label text-studio-muted">
-              {term}
             </li>
           ))}
         </ul>
-
-        <div className="mt-8 flex flex-wrap gap-3">
+        <p className="type-body mt-8 max-w-2xl text-studio-muted">
+          Registered charities get the same packages free - website, social and content. Say you are registered when you get in touch.
+        </p>
+        <p className="type-body mt-3 max-w-2xl text-studio-muted">
+          50% upfront, 50% at launch. You own the domain, content and code. No lock-in.
+        </p>
+        <div className="mt-8 flex flex-wrap items-center gap-6">
           <Button href="/contact">Start a project</Button>
           <Button href="https://wa.me/447378420418" variant="secondary">
             Message on WhatsApp

@@ -86,7 +86,7 @@ const BUILDS = [
 
 export default function ConceptBuildsPage() {
   return (
-    <div className="studio-page bg-grid px-4 py-20 sm:px-6 md:py-28">
+    <div className="studio-page px-4 py-20 sm:px-6 md:py-28">
       <article className="container-wide px-6">
         <header className="space-y-6 border-b border-border pb-10">
           <p className="shell-label text-accent">CASE STUDY - 04</p>

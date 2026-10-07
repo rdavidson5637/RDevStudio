@@ -54,7 +54,7 @@ export function HomeFaq() {
             <details key={item.question} className="group border-b border-studio-border">
               <summary className="flex min-h-14 cursor-pointer list-none items-center justify-between gap-4 py-4 text-left type-h3 text-studio-text focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-amber [&::-webkit-details-marker]:hidden">
                 {item.question}
-                <span className="type-label text-amber transition-transform duration-200 group-open:rotate-45" aria-hidden="true">
+                <span className="type-label text-studio-muted" aria-hidden="true">
                   +
                 </span>
               </summary>

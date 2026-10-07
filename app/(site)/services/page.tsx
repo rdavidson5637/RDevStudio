@@ -92,7 +92,7 @@ const SERVICE_DETAILS = [
 
 export default function ServicesPage() {
   return (
-    <div className="studio-page bg-grid px-4 py-20 sm:px-6 md:py-28">
+    <div className="studio-page px-4 py-20 sm:px-6 md:py-28">
       <div className="container-wide px-6">
         <header className="border-b border-border pb-10">
           <p className="shell-label mb-3 text-accent">The offer</p>
@@ -103,22 +103,19 @@ export default function ServicesPage() {
             finish.
           </p>
 
-          <aside className="mt-8 max-w-3xl rounded-[10px] border border-border bg-raised p-5 sm:p-6">
-            <p className="shell-label mb-2 text-accent">Charities</p>
-            <p className="text-sm leading-relaxed text-primary">
-              {CHARITY_NOTE}
-            </p>
-          </aside>
+          <p className="mt-8 max-w-3xl text-base leading-relaxed text-primary">
+            {CHARITY_NOTE}
+          </p>
 
           <nav
-            className="mt-8 flex flex-wrap gap-3"
+            className="mt-6 flex flex-wrap gap-x-6"
             aria-label="Jump to service"
           >
             {SERVICES.map((service) => (
               <a
                 key={service.slug}
                 href={`#${service.slug}`}
-                className="rounded-md border border-border-strong bg-paper px-4 py-2 text-sm font-medium text-primary transition-colors hover:border-accent hover:text-accent"
+                className="inline-flex min-h-11 items-center text-sm text-primary underline decoration-border-strong underline-offset-4 hover:text-accent"
               >
                 {service.title}
               </a>
@@ -126,7 +123,7 @@ export default function ServicesPage() {
           </nav>
         </header>
 
-        <section className="space-y-8 py-12">
+        <section className="py-4">
           {SERVICES.map((service) => {
             const details = SERVICE_DETAILS.find(
               (item) => item.slug === service.slug,
@@ -140,7 +137,7 @@ export default function ServicesPage() {
               <article
                 key={service.slug}
                 id={service.slug}
-                className="scroll-mt-24 rounded-[10px] border border-border-strong bg-raised"
+                className="scroll-mt-24 border-t border-border py-12"
               >
                 <div className="border-b border-border p-6 sm:p-8">
                   <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
@@ -166,18 +163,12 @@ export default function ServicesPage() {
 
                 <div className="grid gap-6 p-6 sm:p-8 lg:grid-cols-2">
                   <div>
-                    <h3 className="shell-label mb-4 text-accent">
+                    <h3 className="shell-label mb-4 text-secondary">
                       What&apos;s included
                     </h3>
                     <ul className="space-y-2">
                       {details.features.map((feature) => (
-                        <li
-                          key={feature}
-                          className="flex items-start gap-3 text-primary"
-                        >
-                          <span className="mt-1 text-accent" aria-hidden="true">
-                            ✓
-                          </span>
+                        <li key={feature} className="text-primary">
                           {feature}
                         </li>
                       ))}
@@ -185,19 +176,10 @@ export default function ServicesPage() {
                   </div>
 
                   <div>
-                    <h3 className="shell-label mb-4 text-accent">What is not</h3>
+                    <h3 className="shell-label mb-4 text-secondary">What is not</h3>
                     <ul className="space-y-2">
                       {details.notIncluded.map((item) => (
-                        <li
-                          key={item}
-                          className="flex items-start gap-3 text-primary"
-                        >
-                          <span
-                            className="mt-1 text-secondary"
-                            aria-hidden="true"
-                          >
-                            -
-                          </span>
+                        <li key={item} className="text-primary">
                           {item}
                         </li>
                       ))}
@@ -207,11 +189,11 @@ export default function ServicesPage() {
 
                 <div className="grid gap-6 border-t border-border p-6 sm:p-8 lg:grid-cols-2">
                   <div>
-                    <h3 className="shell-label mb-3 text-accent">Timeline</h3>
+                    <h3 className="shell-label mb-3 text-secondary">Timeline</h3>
                     <p className="text-sm leading-relaxed text-primary sm:text-base">
                       {details.timeline}
                     </p>
-                    <h3 className="shell-label mb-3 mt-6 text-accent">
+                    <h3 className="shell-label mb-3 mt-6 text-secondary">
                       Revisions
                     </h3>
                     <p className="text-sm leading-relaxed text-primary sm:text-base">
@@ -220,17 +202,11 @@ export default function ServicesPage() {
                   </div>
 
                   <div>
-                    <h3 className="shell-label mb-4 text-accent">The process</h3>
+                    <h3 className="shell-label mb-4 text-secondary">The process</h3>
                     <ol className="space-y-2">
                       {details.process.map((step, stepIndex) => (
-                        <li
-                          key={step}
-                          className="flex items-start gap-3 text-primary"
-                        >
-                          <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-accent/10 text-xs font-bold text-accent">
-                            {stepIndex + 1}
-                          </span>
-                          {step}
+                        <li key={step} className="text-primary">
+                          {stepIndex + 1}. {step}
                         </li>
                       ))}
                     </ol>
@@ -264,17 +240,19 @@ export default function ServicesPage() {
             No committees. Here is what working together looks like.
           </p>
 
-          <ol className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          <ol className="mt-10 border-t border-border">
             {PROCESS_STEPS.map((step) => (
               <li
                 key={step.number}
-                className="rounded-[10px] border border-border bg-paper p-5"
+                className="grid grid-cols-[3rem_1fr] gap-4 border-b border-border py-6"
               >
-                <p className="shell-label text-accent">{step.number}</p>
-                <h3 className="mt-3 font-semibold text-primary">{step.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-primary">
-                  {step.description}
-                </p>
+                <p className="shell-label text-secondary">{step.number}</p>
+                <div>
+                  <h3 className="font-semibold text-primary">{step.title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-primary">
+                    {step.description}
+                  </p>
+                </div>
               </li>
             ))}
           </ol>
@@ -285,19 +263,18 @@ export default function ServicesPage() {
         </section>
 
         <section className="border-t border-border py-12">
-          <div className="mx-auto max-w-2xl text-center">
-            <p className="shell-label mb-3 text-accent">Full time</p>
+          <div className="max-w-2xl">
             <h2 className="type-h2 text-studio-text">
               Tell me what you need
             </h2>
             <p className="mt-4 text-primary">
               Send a note. I will come back with next steps.
             </p>
-            <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
+            <div className="mt-8 flex flex-wrap items-center gap-6">
               <Link href="/contact" className="btn-primary">
                 Start a project
               </Link>
-              <Link href="/work" className="btn-secondary">
+              <Link href="/work" className="text-sm text-primary underline underline-offset-4 hover:text-accent">
                 See the work
               </Link>
             </div>
