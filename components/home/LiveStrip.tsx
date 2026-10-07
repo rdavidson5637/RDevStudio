@@ -24,13 +24,13 @@ export function LiveStrip() {
         <div className="mt-8 flex flex-wrap gap-6">
           <Link
             href="/games"
-            className="text-sm text-studio-muted underline-offset-4 transition-colors hover:text-amber hover:underline"
+            className="inline-flex min-h-11 items-center text-sm text-studio-muted underline-offset-4 transition-colors hover:text-amber hover:underline"
           >
             All games
           </Link>
           <Link
             href="/projects"
-            className="text-sm text-studio-muted underline-offset-4 transition-colors hover:text-amber hover:underline"
+            className="inline-flex min-h-11 items-center text-sm text-studio-muted underline-offset-4 transition-colors hover:text-amber hover:underline"
           >
             All projects
           </Link>

@@ -76,7 +76,7 @@ function JobCard({ job }: { job: (typeof JOBS)[number] }) {
         <p className="type-body mt-2 text-studio-muted">{job.copy}</p>
         <ul className="mt-4 flex flex-wrap gap-2">
           {job.tags.map((tag) => (
-            <li key={tag} className="type-label text-studio-faint">
+            <li key={tag} className="type-label text-studio-muted">
               {tag}
             </li>
           ))}

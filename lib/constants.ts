@@ -260,11 +260,6 @@ export const FAQ_ITEMS = [
       "No. Same three packages - website, social, and content - no fee. Mention you are a registered charity when you get in touch.",
   },
   {
-    question: "Do registered charities pay?",
-    answer:
-      "No. Same three packages — website, social, and content — no fee. Mention you are a registered charity when you get in touch.",
-  },
-  {
     question: "How do revisions work?",
     answer:
       "One round is included. You send a list after you have seen the first full draft (or the month's social batch), and I make those changes. Extra rounds are extra - I quote before I start them, so there are no surprises.",

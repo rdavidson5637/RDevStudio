@@ -37,7 +37,7 @@ export function ProjectCard({ project, priority = false }: ProjectCardProps) {
             <span className="display-lg relative text-studio-text">{project.name.slice(0, 1)}</span>
           </div>
         )}
-        <span className="absolute inset-0 bg-gradient-to-t from-bg via-bg/20 to-transparent" aria-hidden="true" />
+        <span className="studio-scrim absolute inset-0" aria-hidden="true" />
         <span className="absolute bottom-3 left-3">{badge}</span>
       </div>
       <div className="flex flex-1 flex-col p-5">

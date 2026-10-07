@@ -44,12 +44,12 @@ export function Footer() {
           {COLUMNS.map((column) => (
             <nav key={column.title} aria-label={column.title}>
               <p className="type-label text-studio-muted">{column.title}</p>
-              <ul className="mt-4 space-y-3">
+              <ul className="mt-4">
                 {column.links.map((link) => (
                   <li key={`${column.title}-${link.label}`}>
                     <Link
                       href={link.href}
-                      className="text-sm text-studio-muted transition-colors hover:text-studio-text focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-amber"
+                      className="inline-flex min-h-11 items-center text-sm text-studio-muted transition-colors hover:text-studio-text focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-amber"
                     >
                       {link.label}
                     </Link>
@@ -61,11 +61,11 @@ export function Footer() {
 
           <div>
             <p className="type-label text-studio-muted">Contact</p>
-            <ul className="mt-4 space-y-3 text-sm">
+            <ul className="mt-4 text-sm">
               <li>
                 <a
                   href={`mailto:${CONTACT_EMAIL}`}
-                  className="text-studio-muted transition-colors hover:text-studio-text"
+                  className="inline-flex min-h-11 items-center text-studio-muted transition-colors hover:text-studio-text"
                 >
                   {CONTACT_EMAIL}
                 </a>
@@ -73,7 +73,7 @@ export function Footer() {
               <li>
                 <a
                   href={WHATSAPP_URL}
-                  className="text-studio-muted transition-colors hover:text-studio-text"
+                  className="inline-flex min-h-11 items-center text-studio-muted transition-colors hover:text-studio-text"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -83,7 +83,7 @@ export function Footer() {
               <li>
                 <a
                   href={LINKEDIN_URL}
-                  className="text-studio-muted transition-colors hover:text-studio-text"
+                  className="inline-flex min-h-11 items-center text-studio-muted transition-colors hover:text-studio-text"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -93,7 +93,7 @@ export function Footer() {
               <li>
                 <a
                   href={GITHUB_URL}
-                  className="text-studio-muted transition-colors hover:text-studio-text"
+                  className="inline-flex min-h-11 items-center text-studio-muted transition-colors hover:text-studio-text"
                   target="_blank"
                   rel="noopener noreferrer"
                 >

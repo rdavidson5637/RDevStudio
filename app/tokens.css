@@ -109,6 +109,8 @@
 
   /* ── Studio palette (redesign/v2). Existing paper tokens stay. ─ */
   --color-studio-bg: #0a0a0f;
+  --color-studio-bg-80: rgba(10, 10, 15, 0.8);
+  --color-studio-bg-20: rgba(10, 10, 15, 0.2);
   --color-studio-surface: #101018;
   --color-studio-surface-2: #15151f;
   --color-studio-border: rgba(255, 255, 255, 0.08);

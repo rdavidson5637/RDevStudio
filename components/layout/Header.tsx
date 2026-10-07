@@ -28,14 +28,14 @@ export function Header() {
   return (
     <>
       <header
-        className={`sticky top-0 z-[100] bg-bg/80 text-studio-text backdrop-blur-md ${
+        className={`studio-header sticky top-0 z-[100] text-studio-text backdrop-blur-md ${
           scrolled ? "border-b border-studio-border" : "border-b border-transparent"
         }`}
       >
         <div className="mx-auto flex h-20 max-w-studio items-center justify-between gap-4 px-6 md:px-8">
           <Link
             href="/"
-            className="font-studio-display text-xl tracking-tight text-studio-text focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-amber"
+            className="inline-flex h-11 items-center font-studio-display text-xl tracking-tight text-studio-text focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-amber"
             aria-label="RDev Studio - Home"
           >
             RDev Studio
@@ -49,7 +49,7 @@ export function Header() {
                   key={link.href}
                   href={link.href}
                   aria-current={active ? "page" : undefined}
-                  className={`type-label relative py-2 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-amber ${
+                  className={`type-label relative inline-flex min-h-11 items-center transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-amber ${
                     active ? "text-studio-text" : "text-studio-muted hover:text-studio-text"
                   }`}
                 >
