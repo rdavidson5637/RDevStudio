@@ -1,0 +1,35 @@
+---
+description: Standing rules for the redesign/v2 branch. On this branch these override design-standards.mdc where they conflict.
+alwaysApply: true
+---
+
+# Redesign v2
+
+Direction: product-studio, dark base, one amber highlight. On this branch this file wins over design-standards.mdc where they disagree.
+
+## Stack
+- Next.js App Router (this repo is on 15, do not downgrade), TypeScript, Tailwind, React.
+- Server components by default. "use client" only where interactivity needs it.
+- No new dependencies unless a prompt approves them.
+
+## Do not touch
+- Game and live-product routes and their data: `/champions-draft`, `/rugby-draft`, `/pub-quiz`, `/games/longest-word`, `/draft`, `/wardrobe-ai`, `/stout-finder`. No edits to their pages, API routes, Supabase queries, Pusher code, or RLS policies. Linking to them is fine.
+- Anything under `/hire` except where a prompt says so. The hire-meter finale, the Rudi easter egg, and the FELINE_DISTRACTION_DETECTED cat easter egg are intentional.
+- Contact form handlers. All contact forms stay on Formspree.
+- Secrets and Supabase keys. Never put them in client code.
+
+## Routes
+- Keep every existing route working. Change nav labels, not URLs.
+
+## Copy
+- No em dashes anywhere. Plain hyphens only.
+- Banned words: passionate, journey, seamless, leverage, synergy, "crafting digital experiences", "I'd love to", "reaching out", "circling back".
+- Plain, dry NI English.
+- No invented testimonials, metrics, or client claims.
+- Assisi rebrand: built, awaiting their sign-off. Never say they have adopted it.
+- ShelterLink: ready for live use. Never say Assisi is using it.
+- RV's Cold Brew: Square is linked, a few details left. Never claim working online ordering or payments.
+
+## Design
+- Tokens: base `#0A0A0F`, amber `#F59E0B`, DM Serif Display for display headings.
+- Respect `prefers-reduced-motion` everywhere.
