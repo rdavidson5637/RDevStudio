@@ -56,7 +56,7 @@ export function ReviewResponseGeneratorApp() {
             <input
               value={business}
               onChange={(e) => setBusiness(e.target.value)}
-              className="mt-2 w-full rounded-md border border-border-strong bg-base px-4 py-3 text-primary"
+              className="mt-2 w-full rounded-md border border-border-strong bg-paper px-4 py-3 text-primary"
             />
           </label>
           <label className="block">
@@ -77,7 +77,7 @@ export function ReviewResponseGeneratorApp() {
             <select
               value={tone}
               onChange={(e) => setTone(e.target.value as typeof tone)}
-              className="mt-2 w-full rounded-md border border-border-strong bg-base px-4 py-3 text-primary"
+              className="mt-2 w-full rounded-md border border-border-strong bg-paper px-4 py-3 text-primary"
             >
               {TONES.map((t) => (
                 <option key={t} value={t}>
@@ -94,7 +94,7 @@ export function ReviewResponseGeneratorApp() {
               value={review}
               onChange={(e) => setReview(e.target.value)}
               rows={4}
-              className="mt-2 w-full rounded-md border border-border-strong bg-base px-4 py-3 text-primary"
+              className="mt-2 w-full rounded-md border border-border-strong bg-paper px-4 py-3 text-primary"
             />
           </label>
           <button

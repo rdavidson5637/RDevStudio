@@ -62,7 +62,7 @@ export function RobotsTxtGeneratorApp() {
             <input
               value={userAgent}
               onChange={(e) => setUserAgent(e.target.value)}
-              className="mt-2 w-full rounded-md border border-border-strong bg-base px-4 py-3 text-primary focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/30"
+              className="mt-2 w-full rounded-md border border-border-strong bg-paper px-4 py-3 text-primary focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/30"
             />
           </label>
           <label className="flex items-center gap-3 text-sm text-primary">
@@ -82,7 +82,7 @@ export function RobotsTxtGeneratorApp() {
               value={disallowPaths}
               onChange={(e) => setDisallowPaths(e.target.value)}
               rows={5}
-              className="mt-2 w-full rounded-md border border-border-strong bg-base px-4 py-3 font-mono text-sm text-primary focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/30"
+              className="mt-2 w-full rounded-md border border-border-strong bg-paper px-4 py-3 font-mono text-sm text-primary focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/30"
             />
           </label>
           <label className="block">
@@ -90,7 +90,7 @@ export function RobotsTxtGeneratorApp() {
             <input
               value={sitemapUrl}
               onChange={(e) => setSitemapUrl(e.target.value)}
-              className="mt-2 w-full rounded-md border border-border-strong bg-base px-4 py-3 text-primary focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/30"
+              className="mt-2 w-full rounded-md border border-border-strong bg-paper px-4 py-3 text-primary focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/30"
             />
           </label>
           <label className="block">
@@ -101,7 +101,7 @@ export function RobotsTxtGeneratorApp() {
               value={crawlDelay}
               onChange={(e) => setCrawlDelay(e.target.value)}
               placeholder="10"
-              className="mt-2 w-full rounded-md border border-border-strong bg-base px-4 py-3 text-primary focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/30"
+              className="mt-2 w-full rounded-md border border-border-strong bg-paper px-4 py-3 text-primary focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/30"
             />
           </label>
         </FadeIn>
@@ -110,7 +110,7 @@ export function RobotsTxtGeneratorApp() {
           className="rounded-[10px] border border-border-strong bg-raised p-5 sm:p-6"
         >
           <p className="shell-label text-accent">Preview</p>
-          <pre className="mt-3 max-h-80 overflow-auto rounded-md border border-border bg-base p-4 font-mono text-sm text-primary whitespace-pre-wrap">
+          <pre className="mt-3 max-h-80 overflow-auto rounded-md border border-border bg-paper p-4 font-mono text-sm text-primary whitespace-pre-wrap">
             {output}
           </pre>
           <div className="mt-4 flex flex-wrap gap-3">

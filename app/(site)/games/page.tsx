@@ -33,7 +33,7 @@ function GameCard({ game, index }: { game: GameCatalogEntry; index: number }) {
               : "border-b lg:order-2 lg:border-b-0 lg:border-l"
           }`}
         >
-          <div className="relative h-56 w-full overflow-hidden rounded-md border border-border bg-base sm:h-72">
+          <div className="relative h-56 w-full overflow-hidden rounded-md border border-border bg-paper sm:h-72">
             <Image
               src={game.screenshotSrc}
               alt={`${game.title} game preview`}
@@ -110,7 +110,7 @@ export default function GamesPage() {
                 <div className="flex items-start justify-between gap-3">
                   <p className="font-semibold text-primary">{item.label}</p>
                   <span
-                    className={`shrink-0 rounded-full border border-border-strong bg-base px-2.5 py-0.5 text-xs font-semibold ${
+                    className={`shrink-0 rounded-full border border-border-strong bg-paper px-2.5 py-0.5 text-xs font-semibold ${
                       item.soon ? "text-tertiary" : "text-accent"
                     }`}
                   >

@@ -21,7 +21,7 @@ export function ServicePricingCard({
 }: ServicePricingCardProps) {
   return (
     <article className="card-hover flex h-full flex-col overflow-hidden rounded-md border border-border bg-raised">
-      <div className="border-b border-border bg-base px-6 py-8 text-center sm:px-8 sm:py-10">
+      <div className="border-b border-border bg-paper px-6 py-8 text-center sm:px-8 sm:py-10">
         <p className="label-caps text-tertiary">{label}</p>
         <p className="mt-2 font-display text-4xl font-extrabold text-primary sm:text-5xl">
           {price}

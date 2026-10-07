@@ -77,7 +77,7 @@ export function BracketBuilderApp() {
               value={teamsInput}
               onChange={(e) => setTeamsInput(e.target.value)}
               rows={8}
-              className="mt-2 w-full rounded-md border border-border-strong bg-base px-4 py-3 text-primary"
+              className="mt-2 w-full rounded-md border border-border-strong bg-paper px-4 py-3 text-primary"
             />
           </label>
           <button type="button" onClick={init} className="btn-primary">
@@ -100,7 +100,7 @@ export function BracketBuilderApp() {
                         type="button"
                         disabled={team === "BYE" || team === "?"}
                         onClick={() => pickWinner(i, team)}
-                        className={`block w-full rounded px-3 py-2 text-left text-sm ${m.winner === team ? "bg-accent text-on-accent" : "bg-base text-primary hover:bg-accent/10"}`}
+                        className={`block w-full rounded px-3 py-2 text-left text-sm ${m.winner === team ? "bg-accent text-on-accent" : "bg-paper text-primary hover:bg-accent/10"}`}
                       >
                         {team}
                       </button>
@@ -121,7 +121,7 @@ export function BracketBuilderApp() {
                         type="button"
                         disabled={team === "?"}
                         onClick={() => pickWinner(i + 4, team)}
-                        className={`block w-full rounded px-3 py-2 text-left text-sm ${m.winner === team ? "bg-accent text-on-accent" : "bg-base text-primary"}`}
+                        className={`block w-full rounded px-3 py-2 text-left text-sm ${m.winner === team ? "bg-accent text-on-accent" : "bg-paper text-primary"}`}
                       >
                         {team}
                       </button>
@@ -139,7 +139,7 @@ export function BracketBuilderApp() {
                           type="button"
                           disabled={team === "?"}
                           onClick={() => pickWinner(6, team)}
-                          className={`block w-full rounded px-3 py-2 text-left text-sm ${matches[6].winner === team ? "bg-accent text-on-accent font-bold" : "bg-base text-primary"}`}
+                          className={`block w-full rounded px-3 py-2 text-left text-sm ${matches[6].winner === team ? "bg-accent text-on-accent font-bold" : "bg-paper text-primary"}`}
                         >
                           {team}
                         </button>

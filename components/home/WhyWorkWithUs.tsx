@@ -165,7 +165,7 @@ const FEATURES = [
 
 export function WhyWorkWithUs() {
   return (
-    <section className="section-padding border-t border-border bg-base">
+    <section className="section-padding border-t border-border bg-paper">
       <div className="container-wide">
         <SectionHeader
           className="section-heading-gap max-w-2xl"

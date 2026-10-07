@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export function HomeContact() {
   return (
-    <section className="section-padding border-t border-border bg-base">
+    <section className="section-padding border-t border-border bg-paper">
       <div className="container-wide px-6">
         <p className="shell-label mb-3 text-accent">Full time</p>
         <div className="flex flex-col gap-6 border-t border-border pt-8 sm:flex-row sm:items-center sm:justify-between">

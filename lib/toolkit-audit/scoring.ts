@@ -32,7 +32,7 @@ export function getScoreStyle(score: number): ScoreStyle {
       textClass: "text-primary",
       ringClass: "stroke-primary",
       barClass: "bg-primary",
-      badgeClass: "border-border-strong bg-base text-primary",
+      badgeClass: "border-border-strong bg-paper text-primary",
     },
     fair: {
       label: "Needs work",

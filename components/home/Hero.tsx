@@ -9,7 +9,7 @@ const SCOREBOARD = [
 
 export function Hero() {
   return (
-    <section className="relative overflow-x-hidden bg-base pb-20 pt-28 md:pb-28 md:pt-36">
+    <section className="relative overflow-x-hidden bg-paper pb-20 pt-28 md:pb-28 md:pt-36">
       <span className="hero-bg-type hidden md:block" aria-hidden="true">
         RDEV
       </span>
@@ -43,7 +43,7 @@ export function Hero() {
             aria-label="Studio scoreboard"
           >
             {SCOREBOARD.map((item) => (
-              <div key={item.label} className="bg-base px-4 py-3">
+              <div key={item.label} className="bg-paper px-4 py-3">
                 <dt className="shell-label text-secondary">{item.label}</dt>
                 <dd className="mt-1 text-2xl font-display text-primary sm:text-3xl">
                   {item.value}

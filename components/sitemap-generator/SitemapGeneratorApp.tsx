@@ -67,7 +67,7 @@ export function SitemapGeneratorApp() {
             <input
               value={baseUrl}
               onChange={(e) => setBaseUrl(e.target.value)}
-              className="mt-2 w-full rounded-md border border-border-strong bg-base px-4 py-3 text-primary focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/30"
+              className="mt-2 w-full rounded-md border border-border-strong bg-paper px-4 py-3 text-primary focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/30"
             />
           </label>
           <label className="block">
@@ -78,7 +78,7 @@ export function SitemapGeneratorApp() {
               value={urlList}
               onChange={(e) => setUrlList(e.target.value)}
               rows={12}
-              className="mt-2 w-full rounded-md border border-border-strong bg-base px-4 py-3 font-mono text-sm text-primary focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/30"
+              className="mt-2 w-full rounded-md border border-border-strong bg-paper px-4 py-3 font-mono text-sm text-primary focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/30"
             />
           </label>
           <p className="text-sm text-tertiary">
@@ -90,7 +90,7 @@ export function SitemapGeneratorApp() {
           className="rounded-[10px] border border-border-strong bg-raised p-5 sm:p-6"
         >
           <p className="shell-label text-accent">XML output</p>
-          <pre className="mt-3 max-h-96 overflow-auto rounded-md border border-border bg-base p-4 font-mono text-xs text-primary whitespace-pre-wrap">
+          <pre className="mt-3 max-h-96 overflow-auto rounded-md border border-border bg-paper p-4 font-mono text-xs text-primary whitespace-pre-wrap">
             {xml}
           </pre>
           <div className="mt-4 flex flex-wrap gap-3">

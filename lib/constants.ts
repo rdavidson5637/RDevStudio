@@ -81,6 +81,7 @@ export const SECONDARY_NAV_HUBS = [
 ] as const;
 
 export const SECONDARY_NAV_LINKS = [
+  { href: "/games", label: "Games" },
   { href: "/champions-draft", label: "Champions Draft" },
   { href: "/rugby-draft", label: "Rugby Draft" },
   { href: "/pub-quiz", label: "Pub Quiz" },

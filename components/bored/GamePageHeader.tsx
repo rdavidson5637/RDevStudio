@@ -7,7 +7,7 @@ type GamePageHeaderProps = {
 
 export function GamePageHeader({ game }: GamePageHeaderProps) {
   return (
-    <section className="relative overflow-hidden border-b border-border bg-base pt-28">
+    <section className="relative overflow-hidden border-b border-border bg-paper pt-28">
       <div
         className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_70%_0%,rgb(245_158_11/0.06)_0%,transparent_55%)]"
         aria-hidden="true"

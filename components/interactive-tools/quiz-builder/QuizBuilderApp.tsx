@@ -63,7 +63,7 @@ export function QuizBuilderApp() {
           <input
             value={title}
             onChange={(e) => setTitle(e.target.value)}
-            className="mt-2 w-full rounded-md border border-border-strong bg-base px-4 py-3 text-primary"
+            className="mt-2 w-full rounded-md border border-border-strong bg-paper px-4 py-3 text-primary"
           />
         </label>
         {questions.map((q, qi) => (
@@ -82,7 +82,7 @@ export function QuizBuilderApp() {
                     ),
                   )
                 }
-                className="mt-2 w-full rounded-md border border-border-strong bg-base px-4 py-2 text-primary"
+                className="mt-2 w-full rounded-md border border-border-strong bg-paper px-4 py-2 text-primary"
               />
             </label>
             <div className="mt-3 grid gap-2 sm:grid-cols-2">
@@ -105,7 +105,7 @@ export function QuizBuilderApp() {
                     )
                   }
                   placeholder={`Answer ${ai + 1}`}
-                  className="rounded-md border border-border-strong bg-base px-3 py-2 text-sm text-primary"
+                  className="rounded-md border border-border-strong bg-paper px-3 py-2 text-sm text-primary"
                 />
               ))}
             </div>

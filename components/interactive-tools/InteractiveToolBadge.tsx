@@ -6,7 +6,7 @@ type InteractiveToolBadgeProps = {
 
 const BADGE_STYLES: Record<InteractiveToolBadge, string> = {
   new: "border-accent/40 bg-accent/10 text-accent",
-  "coming-soon": "border-border-strong bg-base text-secondary",
+  "coming-soon": "border-border-strong bg-paper text-secondary",
 };
 
 const BADGE_LABELS: Record<InteractiveToolBadge, string> = {

@@ -118,7 +118,7 @@ export default function ServicesPage() {
               <a
                 key={service.slug}
                 href={`#${service.slug}`}
-                className="rounded-md border border-border-strong bg-base px-4 py-2 text-sm font-medium text-primary transition-colors hover:border-accent hover:text-accent"
+                className="rounded-md border border-border-strong bg-paper px-4 py-2 text-sm font-medium text-primary transition-colors hover:border-accent hover:text-accent"
               >
                 {service.title}
               </a>
@@ -268,7 +268,7 @@ export default function ServicesPage() {
             {PROCESS_STEPS.map((step) => (
               <li
                 key={step.number}
-                className="rounded-[10px] border border-border bg-base p-5"
+                className="rounded-[10px] border border-border bg-paper p-5"
               >
                 <p className="shell-label text-accent">{step.number}</p>
                 <h3 className="mt-3 font-semibold text-primary">{step.title}</h3>

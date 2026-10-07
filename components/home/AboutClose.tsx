@@ -38,7 +38,7 @@ export function AboutClose() {
             {VALUE_PROPS.map((prop) => (
               <div
                 key={prop.title}
-                className="rounded-xl border border-border bg-base p-5"
+                className="rounded-xl border border-border bg-paper p-5"
               >
                 <span className="text-2xl" aria-hidden="true">
                   {prop.icon}

@@ -80,7 +80,7 @@ export function CountdownApp() {
               <input
                 value={label}
                 onChange={(e) => setLabel(e.target.value)}
-                className="mt-2 w-full rounded-md border border-border-strong bg-base px-4 py-3 text-primary"
+                className="mt-2 w-full rounded-md border border-border-strong bg-paper px-4 py-3 text-primary"
               />
             </label>
             <label className="block">
@@ -91,7 +91,7 @@ export function CountdownApp() {
                 type="datetime-local"
                 value={targetInput}
                 onChange={(e) => setTargetInput(e.target.value)}
-                className="mt-2 w-full rounded-md border border-border-strong bg-base px-4 py-3 text-primary"
+                className="mt-2 w-full rounded-md border border-border-strong bg-paper px-4 py-3 text-primary"
               />
             </label>
             <button

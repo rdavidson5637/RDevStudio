@@ -14,7 +14,7 @@ export function AchievementNotification({
   return (
     <div
       role="status"
-      className={`fixed right-4 top-24 z-[85] w-[min(20rem,calc(100vw-2rem))] rounded-xl border border-emerald-500/30 bg-base/95 p-4 shadow-lg backdrop-blur-md sm:right-6 ${
+      className={`fixed right-4 top-24 z-[85] w-[min(20rem,calc(100vw-2rem))] rounded-xl border border-emerald-500/30 bg-paper/95 p-4 shadow-lg backdrop-blur-md sm:right-6 ${
         prefersReducedMotion ? "" : "animate-slide-in-right"
       }`}
     >

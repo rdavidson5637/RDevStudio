@@ -15,7 +15,7 @@ export function GameCard({ game }: GameCardProps) {
         <h2 className="font-display text-xl uppercase leading-tight text-primary sm:text-2xl">
           {game.title}
         </h2>
-        <span className="shrink-0 rounded-full border border-border-strong bg-base px-2.5 py-0.5 text-xs font-semibold text-primary">
+        <span className="shrink-0 rounded-full border border-border-strong bg-paper px-2.5 py-0.5 text-xs font-semibold text-primary">
           {game.tag}
         </span>
       </div>

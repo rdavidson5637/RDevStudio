@@ -31,7 +31,7 @@ const ACCENT_STYLES = {
 
 export function WhatIMake() {
   return (
-    <section className="section-padding relative overflow-hidden border-t border-border bg-base">
+    <section className="section-padding relative overflow-hidden border-t border-border bg-paper">
       <div
         className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_50%_0%,rgb(245_158_11/0.04)_0%,transparent_50%)]"
         aria-hidden="true"

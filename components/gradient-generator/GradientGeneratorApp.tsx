@@ -46,7 +46,7 @@ export function GradientGeneratorApp() {
                 type="button"
                 onClick={() => setType(t)}
                 aria-pressed={type === t}
-                className={`rounded-md border px-4 py-2 text-sm font-semibold capitalize ${type === t ? "border-accent bg-accent text-on-accent" : "border-border-strong bg-base text-primary"}`}
+                className={`rounded-md border px-4 py-2 text-sm font-semibold capitalize ${type === t ? "border-accent bg-accent text-on-accent" : "border-border-strong bg-paper text-primary"}`}
               >
                 {t}
               </button>

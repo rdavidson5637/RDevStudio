@@ -10,7 +10,7 @@ export function PortfolioPlay() {
   const otherGames = getOtherBoredGames();
 
   return (
-    <section className="section-padding border-t border-border bg-base">
+    <section className="section-padding border-t border-border bg-paper">
       <div className="container-wide px-4 sm:px-6 lg:px-8">
         <div className="section-heading-gap flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
           <SectionHeader

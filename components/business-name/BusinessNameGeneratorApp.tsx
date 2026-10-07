@@ -81,7 +81,7 @@ export function BusinessNameGeneratorApp() {
             <input
               value={industry}
               onChange={(e) => setIndustry(e.target.value)}
-              className="mt-2 w-full rounded-md border border-border-strong bg-base px-4 py-3 text-primary"
+              className="mt-2 w-full rounded-md border border-border-strong bg-paper px-4 py-3 text-primary"
             />
           </label>
           <label className="block">
@@ -91,7 +91,7 @@ export function BusinessNameGeneratorApp() {
             <input
               value={keywords}
               onChange={(e) => setKeywords(e.target.value)}
-              className="mt-2 w-full rounded-md border border-border-strong bg-base px-4 py-3 text-primary"
+              className="mt-2 w-full rounded-md border border-border-strong bg-paper px-4 py-3 text-primary"
             />
           </label>
           <button type="button" onClick={generate} className="btn-primary">
@@ -110,7 +110,7 @@ export function BusinessNameGeneratorApp() {
                   <button
                     type="button"
                     onClick={() => navigator.clipboard.writeText(name)}
-                    className="w-full rounded-md border border-border-strong bg-base px-4 py-3 text-left text-primary transition-colors hover:border-accent hover:text-accent"
+                    className="w-full rounded-md border border-border-strong bg-paper px-4 py-3 text-left text-primary transition-colors hover:border-accent hover:text-accent"
                   >
                     {name}
                   </button>

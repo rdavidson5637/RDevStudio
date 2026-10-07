@@ -66,7 +66,7 @@ export function BingoCardGeneratorApp() {
               value={words}
               onChange={(e) => setWords(e.target.value)}
               rows={10}
-              className="mt-2 w-full rounded-md border border-border-strong bg-base px-4 py-3 text-primary"
+              className="mt-2 w-full rounded-md border border-border-strong bg-paper px-4 py-3 text-primary"
             />
           </label>
           <label className="block">
@@ -104,7 +104,7 @@ export function BingoCardGeneratorApp() {
                 {card.flat().map((cell, i) => (
                   <div
                     key={i}
-                    className={`flex aspect-square items-center justify-center rounded border p-0.5 text-center text-[9px] font-semibold leading-tight sm:text-[10px] ${cell === "FREE" ? "border-accent bg-accent/10 text-accent" : "border-border bg-base text-primary"}`}
+                    className={`flex aspect-square items-center justify-center rounded border p-0.5 text-center text-[9px] font-semibold leading-tight sm:text-[10px] ${cell === "FREE" ? "border-accent bg-accent/10 text-accent" : "border-border bg-paper text-primary"}`}
                   >
                     {cell}
                   </div>

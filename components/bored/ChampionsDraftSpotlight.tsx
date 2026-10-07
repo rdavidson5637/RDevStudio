@@ -36,7 +36,7 @@ export function ChampionsDraftSpotlight({
           }`}
         >
           <div
-            className={`relative rounded-2xl border border-border-strong bg-base p-3 ${
+            className={`relative rounded-2xl border border-border-strong bg-paper p-3 ${
               isHero
                 ? "h-40 w-40 sm:h-48 sm:w-48 lg:h-52 lg:w-52"
                 : "h-28 w-28 sm:h-32 sm:w-32"
@@ -54,10 +54,10 @@ export function ChampionsDraftSpotlight({
 
         <div className="min-w-0 flex-1 text-center sm:text-left">
           <div className="mb-4 flex flex-wrap items-center justify-center gap-2 sm:justify-start">
-            <span className="rounded-full border border-emerald-800/25 bg-base px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-emerald-900">
+            <span className="rounded-full border border-emerald-800/25 bg-paper px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-emerald-900">
               {CHAMPIONS_DRAFT.badge}
             </span>
-            <span className="rounded-full border border-border-strong bg-base px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-primary">
+            <span className="rounded-full border border-border-strong bg-paper px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-primary">
               New
             </span>
           </div>

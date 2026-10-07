@@ -41,7 +41,7 @@ export function TournamentBuilderApp() {
               value={teamsInput}
               onChange={(e) => setTeamsInput(e.target.value)}
               rows={8}
-              className="mt-2 w-full rounded-md border border-border-strong bg-base px-4 py-3 text-primary"
+              className="mt-2 w-full rounded-md border border-border-strong bg-paper px-4 py-3 text-primary"
             />
           </label>
           <button type="button" onClick={generate} className="btn-primary">
@@ -61,7 +61,7 @@ export function TournamentBuilderApp() {
                   {group.map((team, ti) => (
                     <li
                       key={team}
-                      className="rounded-md border border-border bg-base px-4 py-2 text-primary"
+                      className="rounded-md border border-border bg-paper px-4 py-2 text-primary"
                     >
                       {ti + 1}. {team}
                     </li>

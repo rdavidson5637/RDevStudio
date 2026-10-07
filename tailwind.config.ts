@@ -14,7 +14,6 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        base: "var(--color-bg-base)",
         raised: "var(--color-bg-raised)",
         overlay: "var(--color-bg-overlay)",
         inverse: "var(--color-bg-inverse)",
@@ -36,7 +35,7 @@ const config: Config = {
         },
         /* Legacy aliases — semantic names kept for older components */
         ink: "var(--color-ink)",
-        paper: "var(--color-paper)",
+        paper: "rgb(var(--color-bg-base-rgb) / <alpha-value>)",
         surface: "var(--color-bg-raised)",
         "surface-raised": "var(--color-bg-overlay)",
         cream: "var(--color-paper)",

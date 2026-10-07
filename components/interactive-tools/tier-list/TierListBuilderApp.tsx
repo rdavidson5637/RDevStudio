@@ -82,7 +82,7 @@ export function TierListBuilderApp() {
             value={pool}
             onChange={(e) => setPool(e.target.value)}
             rows={4}
-            className="mt-2 w-full rounded-md border border-border-strong bg-base px-4 py-3 text-primary"
+            className="mt-2 w-full rounded-md border border-border-strong bg-paper px-4 py-3 text-primary"
           />
         </label>
 
@@ -103,7 +103,7 @@ export function TierListBuilderApp() {
                   onDragStart={() => setDragItem(item)}
                   onDragEnd={() => setDragItem(null)}
                   onClick={() => handleItemTap(item)}
-                  className={`rounded-md border bg-base px-3 py-2 text-sm font-medium text-primary touch-manipulation ${
+                  className={`rounded-md border bg-paper px-3 py-2 text-sm font-medium text-primary touch-manipulation ${
                     selectedItem === item
                       ? "border-accent ring-2 ring-accent/30"
                       : "border-border-strong cursor-grab active:cursor-grabbing"
@@ -167,7 +167,7 @@ export function TierListBuilderApp() {
                     event.stopPropagation();
                     removeFromTiers(item);
                   }}
-                  className={`rounded-md border bg-base px-3 py-1.5 text-sm text-primary touch-manipulation ${
+                  className={`rounded-md border bg-paper px-3 py-1.5 text-sm text-primary touch-manipulation ${
                     selectedItem === item
                       ? "border-accent ring-2 ring-accent/30"
                       : "border-border"

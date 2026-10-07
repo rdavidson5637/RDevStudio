@@ -87,13 +87,13 @@ export function ColourPaletteGeneratorApp() {
               type="color"
               value={base}
               onChange={(e) => setBase(e.target.value)}
-              className="h-12 w-16 cursor-pointer rounded-md border border-border-strong bg-base"
+              className="h-12 w-16 cursor-pointer rounded-md border border-border-strong bg-paper"
               aria-label="Pick base colour"
             />
             <input
               value={base}
               onChange={(e) => setBase(e.target.value)}
-              className="w-32 rounded-md border border-border-strong bg-base px-3 py-2 font-mono text-sm uppercase text-primary focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/30"
+              className="w-32 rounded-md border border-border-strong bg-paper px-3 py-2 font-mono text-sm uppercase text-primary focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/30"
             />
           </label>
           <div className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">

@@ -3,7 +3,7 @@ import { SectionHeader } from "@/components/ui/SectionHeader";
 
 export function HowItWorks() {
   return (
-    <section className="section-padding border-t border-border bg-base">
+    <section className="section-padding border-t border-border bg-paper">
       <div className="container-wide px-4 sm:px-6 lg:px-8">
         <SectionHeader
           className="section-heading-gap max-w-2xl"

@@ -76,7 +76,7 @@ export function FixtureTicker({ players, mode }: Props) {
         <table className="min-w-full border-separate border-spacing-0 text-sm">
           <thead>
             <tr>
-              <th className="sticky left-0 z-10 bg-base px-2 py-2 text-left font-medium text-secondary">
+              <th className="sticky left-0 z-10 bg-paper px-2 py-2 text-left font-medium text-secondary">
                 {byClub ? "Club" : "Player"}
               </th>
               {gameweeks.map((gw) => (
@@ -90,7 +90,7 @@ export function FixtureTicker({ players, mode }: Props) {
           <tbody>
             {rows.map((row) => (
               <tr key={row.key} className="border-t border-border">
-                <td className="sticky left-0 z-10 bg-base px-2 py-2">
+                <td className="sticky left-0 z-10 bg-paper px-2 py-2">
                   <p className="font-medium text-primary">{row.label}</p>
                   <p className="shell-label text-secondary">{row.meta}</p>
                 </td>

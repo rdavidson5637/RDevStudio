@@ -52,7 +52,7 @@ export function MobileMenu({ open, onClose, isActive }: MobileMenuProps) {
       />
 
       <nav
-        className="fixed inset-0 z-[201] flex flex-col bg-base px-6 pb-8 pt-6"
+        className="fixed inset-0 z-[201] flex flex-col bg-paper px-6 pb-8 pt-6"
         aria-label="Mobile navigation"
       >
         <div className="flex items-center justify-between">

@@ -10,14 +10,19 @@ export function Header() {
   const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
 
-  const isActive = (href: string) =>
-    href === "/" ? pathname === "/" : pathname.startsWith(href);
+  const isActive = (href: string) => {
+    if (href === "/") return pathname === "/";
+    if (href === "/work") {
+      return pathname.startsWith("/work") || pathname.startsWith("/games");
+    }
+    return pathname.startsWith(href);
+  };
 
   const closeMobile = () => setMobileOpen(false);
 
   return (
     <>
-      <header className="sticky top-0 z-[100] min-h-20 border-b border-border bg-base/95 backdrop-blur-sm">
+      <header className="sticky top-0 z-[100] min-h-20 border-b border-border bg-paper/95 backdrop-blur-sm">
         <div className="container-wide flex h-20 items-center justify-between gap-4 px-6">
           <Link
             href="/"

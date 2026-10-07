@@ -85,7 +85,7 @@ export function QrCodeGeneratorApp() {
                   className={`rounded-md border px-4 py-2 text-sm font-semibold transition-colors ${
                     qrType === type
                       ? "border-accent bg-accent text-on-accent"
-                      : "border-border-strong bg-base text-primary hover:border-accent"
+                      : "border-border-strong bg-paper text-primary hover:border-accent"
                   }`}
                 >
                   {type === "url" ? "URL" : type === "wifi" ? "Wi-Fi" : "Text"}
@@ -101,7 +101,7 @@ export function QrCodeGeneratorApp() {
                 type="url"
                 value={url}
                 onChange={(e) => setUrl(e.target.value)}
-                className="mt-2 w-full rounded-md border border-border-strong bg-base px-4 py-3 text-primary focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/30"
+                className="mt-2 w-full rounded-md border border-border-strong bg-paper px-4 py-3 text-primary focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/30"
               />
             </label>
           ) : null}
@@ -115,7 +115,7 @@ export function QrCodeGeneratorApp() {
                 <input
                   value={ssid}
                   onChange={(e) => setSsid(e.target.value)}
-                  className="mt-2 w-full rounded-md border border-border-strong bg-base px-4 py-3 text-primary focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/30"
+                  className="mt-2 w-full rounded-md border border-border-strong bg-paper px-4 py-3 text-primary focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/30"
                 />
               </label>
               <label className="block">
@@ -124,7 +124,7 @@ export function QrCodeGeneratorApp() {
                   type="password"
                   value={wifiPassword}
                   onChange={(e) => setWifiPassword(e.target.value)}
-                  className="mt-2 w-full rounded-md border border-border-strong bg-base px-4 py-3 text-primary focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/30"
+                  className="mt-2 w-full rounded-md border border-border-strong bg-paper px-4 py-3 text-primary focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/30"
                 />
               </label>
             </div>
@@ -137,7 +137,7 @@ export function QrCodeGeneratorApp() {
                 value={text}
                 onChange={(e) => setText(e.target.value)}
                 rows={4}
-                className="mt-2 w-full rounded-md border border-border-strong bg-base px-4 py-3 text-primary focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/30"
+                className="mt-2 w-full rounded-md border border-border-strong bg-paper px-4 py-3 text-primary focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/30"
               />
             </label>
           ) : null}

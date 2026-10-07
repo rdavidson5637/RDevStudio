@@ -89,7 +89,7 @@ export function UrlAuditForm({
                 }}
                 aria-invalid={error ? true : undefined}
                 aria-describedby={describedBy}
-                className={`w-full rounded-md border bg-base px-4 py-3 text-base text-primary placeholder:text-tertiary transition-colors focus:outline-none focus:ring-2 focus:ring-accent/30 disabled:cursor-not-allowed disabled:opacity-60 ${
+                className={`w-full rounded-md border bg-paper px-4 py-3 text-base text-primary placeholder:text-tertiary transition-colors focus:outline-none focus:ring-2 focus:ring-accent/30 disabled:cursor-not-allowed disabled:opacity-60 ${
                   error
                     ? "border-destructive focus:border-destructive"
                     : "border-border-strong focus:border-accent"
@@ -129,7 +129,7 @@ export function UrlAuditForm({
               type="button"
               disabled={disabled}
               onClick={() => handleExampleSelect(example.url)}
-              className="rounded-md border border-border-strong bg-base px-3 py-2 text-sm font-medium text-primary transition-colors hover:border-accent hover:text-accent focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-base disabled:cursor-not-allowed disabled:opacity-50"
+              className="rounded-md border border-border-strong bg-paper px-3 py-2 text-sm font-medium text-primary transition-colors hover:border-accent hover:text-accent focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-base disabled:cursor-not-allowed disabled:opacity-50"
             >
               {example.label}
             </button>

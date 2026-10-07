@@ -23,7 +23,7 @@ export function FeaturedGamesSection({
 }) {
   return (
     <section
-      className="section-padding border-b border-border bg-base"
+      className="section-padding border-b border-border bg-paper"
       aria-labelledby={labelledBy}
     >
       <div className="container-wide px-4 sm:px-6 lg:px-8">

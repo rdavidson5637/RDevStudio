@@ -38,7 +38,7 @@ export function ProjectPreview({
 
   return (
     <div
-      className={`relative aspect-[16/10] overflow-hidden bg-base ${className}`}
+      className={`relative aspect-[16/10] overflow-hidden bg-paper ${className}`}
       style={previewBg ? { backgroundColor: previewBg } : undefined}
     >
       {showVideo ? (
@@ -86,7 +86,7 @@ export function ProjectPreview({
       )}
 
       {category && !simple && (
-        <span className="absolute bottom-3 right-3 z-10 rounded-full border border-white/30 bg-base/90 px-2 py-0.5 text-xs font-medium text-primary backdrop-blur-sm">
+        <span className="absolute bottom-3 right-3 z-10 rounded-full border border-white/30 bg-paper/90 px-2 py-0.5 text-xs font-medium text-primary backdrop-blur-sm">
           {category}
         </span>
       )}

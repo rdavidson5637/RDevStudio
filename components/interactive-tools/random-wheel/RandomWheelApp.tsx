@@ -107,7 +107,7 @@ export function RandomWheelApp() {
               value={options}
               onChange={(e) => setOptions(e.target.value)}
               rows={8}
-              className="mt-2 w-full rounded-md border border-border-strong bg-base px-4 py-3 text-primary"
+              className="mt-2 w-full rounded-md border border-border-strong bg-paper px-4 py-3 text-primary"
             />
           </label>
           <button

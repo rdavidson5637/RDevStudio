@@ -73,7 +73,7 @@ export function FaviconGeneratorApp() {
             <p className="mt-3 shell-label text-secondary">{fileName}</p>
           ) : null}
           {preview ? (
-            <div className="mt-6 flex justify-center rounded-md border border-border bg-base p-6">
+            <div className="mt-6 flex justify-center rounded-md border border-border bg-paper p-6">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={preview}

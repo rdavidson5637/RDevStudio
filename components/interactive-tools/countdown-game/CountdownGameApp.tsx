@@ -122,7 +122,7 @@ function LettersRound() {
               {rack.toUpperCase().split("").map((ch, i) => (
                 <span
                   key={`${ch}-${i}`}
-                  className="flex h-12 w-10 items-center justify-center rounded-md border border-border-strong bg-base font-display text-2xl text-primary"
+                  className="flex h-12 w-10 items-center justify-center rounded-md border border-border-strong bg-paper font-display text-2xl text-primary"
                 >
                   {ch}
                 </span>
@@ -140,7 +140,7 @@ function LettersRound() {
               value={guess}
               disabled={revealed}
               onChange={(e) => setGuess(e.target.value.replace(/[^a-zA-Z]/g, ""))}
-              className="mt-2 w-full rounded-md border border-border-strong bg-base px-4 py-3 text-primary disabled:opacity-60"
+              className="mt-2 w-full rounded-md border border-border-strong bg-paper px-4 py-3 text-primary disabled:opacity-60"
             />
             {guess.length > 0 && (
               <p className="mt-2 text-sm text-secondary">
@@ -161,7 +161,7 @@ function LettersRound() {
           </div>
 
           {revealed && (
-            <div className="rounded-md border border-accent/40 bg-base p-4">
+            <div className="rounded-md border border-accent/40 bg-paper p-4">
               <p className="shell-label text-accent">Best words the solver found</p>
               <p className="mt-2 text-primary">
                 {solverBest.length ? solverBest.join(", ") : "No words found in the starter list."}
@@ -230,7 +230,7 @@ function NumbersRound() {
               {numbers.map((n, i) => (
                 <span
                   key={`${n}-${i}`}
-                  className="flex h-12 w-14 items-center justify-center rounded-md border border-border-strong bg-base font-display text-2xl text-primary"
+                  className="flex h-12 w-14 items-center justify-center rounded-md border border-border-strong bg-paper font-display text-2xl text-primary"
                 >
                   {n}
                 </span>
@@ -251,7 +251,7 @@ function NumbersRound() {
               value={answer}
               disabled={revealed}
               onChange={(e) => setAnswer(e.target.value.replace(/[^0-9]/g, ""))}
-              className="mt-2 w-full rounded-md border border-border-strong bg-base px-4 py-3 text-primary disabled:opacity-60"
+              className="mt-2 w-full rounded-md border border-border-strong bg-paper px-4 py-3 text-primary disabled:opacity-60"
             />
             {yourOffBy !== null && (
               <p className="mt-2 text-sm text-secondary">
@@ -270,7 +270,7 @@ function NumbersRound() {
           </div>
 
           {revealed && solution && (
-            <div className="rounded-md border border-accent/40 bg-base p-4">
+            <div className="rounded-md border border-accent/40 bg-paper p-4">
               <p className="shell-label text-accent">
                 {solution.exact ? "Solved exactly" : `Closest possible (off by ${solution.offBy})`}
               </p>

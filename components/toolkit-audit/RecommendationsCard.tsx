@@ -28,7 +28,7 @@ export function RecommendationsCard({
         {recommendations.map((item, index) => (
           <li
             key={item}
-            className="flex gap-4 rounded-md border border-border-strong bg-base p-4"
+            className="flex gap-4 rounded-md border border-border-strong bg-paper p-4"
           >
             <span
               className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-accent/40 bg-accent/10 font-mono text-sm font-bold text-accent"

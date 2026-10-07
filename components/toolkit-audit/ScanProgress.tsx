@@ -58,7 +58,7 @@ export function ScanProgress({
                 isActive
                   ? "border-accent/40 bg-accent/5"
                   : isComplete
-                    ? "border-border bg-base"
+                    ? "border-border bg-paper"
                     : "border-border-strong bg-raised"
               }`}
             >

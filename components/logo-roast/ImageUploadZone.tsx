@@ -80,7 +80,7 @@ export function ImageUploadZone({
 
           {previewUrl ? (
             <div className="flex flex-col items-center gap-4">
-              <div className="flex h-40 w-full max-w-xs items-center justify-center rounded-md border border-border bg-base p-4 sm:h-48">
+              <div className="flex h-40 w-full max-w-xs items-center justify-center rounded-md border border-border bg-paper p-4 sm:h-48">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={previewUrl}

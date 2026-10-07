@@ -48,7 +48,7 @@ export function InvoiceGeneratorApp() {
               <input
                 value={fromName}
                 onChange={(e) => setFromName(e.target.value)}
-                className="mt-1 w-full rounded-md border border-border-strong bg-base px-3 py-2 text-sm text-primary"
+                className="mt-1 w-full rounded-md border border-border-strong bg-paper px-3 py-2 text-sm text-primary"
               />
             </label>
             <label className="block">
@@ -56,7 +56,7 @@ export function InvoiceGeneratorApp() {
               <input
                 value={fromEmail}
                 onChange={(e) => setFromEmail(e.target.value)}
-                className="mt-1 w-full rounded-md border border-border-strong bg-base px-3 py-2 text-sm text-primary"
+                className="mt-1 w-full rounded-md border border-border-strong bg-paper px-3 py-2 text-sm text-primary"
               />
             </label>
             <label className="block">
@@ -64,7 +64,7 @@ export function InvoiceGeneratorApp() {
               <input
                 value={toName}
                 onChange={(e) => setToName(e.target.value)}
-                className="mt-1 w-full rounded-md border border-border-strong bg-base px-3 py-2 text-sm text-primary"
+                className="mt-1 w-full rounded-md border border-border-strong bg-paper px-3 py-2 text-sm text-primary"
               />
             </label>
             <label className="block">
@@ -72,7 +72,7 @@ export function InvoiceGeneratorApp() {
               <input
                 value={invoiceNo}
                 onChange={(e) => setInvoiceNo(e.target.value)}
-                className="mt-1 w-full rounded-md border border-border-strong bg-base px-3 py-2 text-sm text-primary"
+                className="mt-1 w-full rounded-md border border-border-strong bg-paper px-3 py-2 text-sm text-primary"
               />
             </label>
           </div>
@@ -85,7 +85,7 @@ export function InvoiceGeneratorApp() {
                   updateItem(item.id, { description: e.target.value })
                 }
                 placeholder="Description"
-                className="sm:col-span-6 rounded-md border border-border-strong bg-base px-3 py-2 text-sm text-primary"
+                className="sm:col-span-6 rounded-md border border-border-strong bg-paper px-3 py-2 text-sm text-primary"
               />
               <input
                 type="number"
@@ -94,7 +94,7 @@ export function InvoiceGeneratorApp() {
                 onChange={(e) =>
                   updateItem(item.id, { qty: Number(e.target.value) })
                 }
-                className="sm:col-span-2 rounded-md border border-border-strong bg-base px-3 py-2 text-sm text-primary"
+                className="sm:col-span-2 rounded-md border border-border-strong bg-paper px-3 py-2 text-sm text-primary"
                 aria-label="Quantity"
               />
               <input
@@ -105,7 +105,7 @@ export function InvoiceGeneratorApp() {
                 onChange={(e) =>
                   updateItem(item.id, { rate: Number(e.target.value) })
                 }
-                className="sm:col-span-3 rounded-md border border-border-strong bg-base px-3 py-2 text-sm text-primary"
+                className="sm:col-span-3 rounded-md border border-border-strong bg-paper px-3 py-2 text-sm text-primary"
                 aria-label="Rate"
               />
             </div>

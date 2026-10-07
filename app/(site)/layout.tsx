@@ -10,7 +10,7 @@ export default function SiteLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <div className="min-h-screen bg-base text-primary">
+    <div className="min-h-screen bg-paper text-primary">
       <SkipToContent />
       <ChunkLoadRecovery />
       <Header />

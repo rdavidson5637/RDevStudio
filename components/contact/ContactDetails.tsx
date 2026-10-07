@@ -32,7 +32,7 @@ export function ContactDetails() {
         </li>
       </ul>
 
-      <div className="mt-8 rounded-lg border border-border bg-base p-6">
+      <div className="mt-8 rounded-lg border border-border bg-paper p-6">
         <p className="font-display text-xs font-semibold uppercase tracking-widest text-secondary">
           Freelance work
         </p>

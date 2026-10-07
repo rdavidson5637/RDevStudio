@@ -72,7 +72,7 @@ export function ToolCard({
             event.stopPropagation();
             onToggleFavourite(tool.slug);
           }}
-          className="absolute right-4 top-4 z-10 flex h-9 w-9 items-center justify-center rounded-md border border-border-strong bg-base text-secondary transition-colors hover:border-accent hover:text-accent focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-raised"
+          className="absolute right-4 top-4 z-10 flex h-9 w-9 items-center justify-center rounded-md border border-border-strong bg-paper text-secondary transition-colors hover:border-accent hover:text-accent focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-raised"
           aria-label={
             isFavourite
               ? `Remove ${tool.title} from favourites`

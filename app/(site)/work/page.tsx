@@ -1,10 +1,11 @@
 import Link from "next/link";
 import { createPageMetadata } from "@/lib/metadata";
+import { BORED_GAMES } from "@/lib/bored-games";
 
 export const metadata = createPageMetadata({
-  title: "Work",
+  title: "Projects",
   description:
-    "Case studies and concept builds by Ryan Davidson, presented as fixture-style project rows.",
+    "Client work, experiments, and free browser games by Ryan Davidson.",
   path: "/work",
 });
 
@@ -46,6 +47,22 @@ const CLIENT_WORK: Fixture[] = [
     href: "/work/paintball-wales",
   },
 ];
+
+const GAME_TAGS: Record<string, string> = {
+  "champions-draft": "FOOTBALL · BROWSER",
+  "rugby-draft": "RUGBY · BROWSER",
+  "longest-word": "DAILY · BROWSER",
+  "pub-quiz": "TRIVIA · PASS-AND-PLAY",
+};
+
+const GAMES: Fixture[] = BORED_GAMES.map((game, index) => ({
+  index: String(index + 6).padStart(2, "0"),
+  title: game.title,
+  description: game.description,
+  tag: GAME_TAGS[game.slug] ?? game.tag.toUpperCase(),
+  year: "FREE",
+  href: game.href,
+}));
 
 const OTHER_WORK: Fixture[] = [
   {
@@ -102,7 +119,7 @@ function FixtureList({ fixtures }: { fixtures: Fixture[] }) {
 }
 
 export default function WorkPage() {
-  const projectCount = CLIENT_WORK.length + OTHER_WORK.length;
+  const projectCount = CLIENT_WORK.length + OTHER_WORK.length + GAMES.length;
 
   return (
     <div className="section-padding pt-28">
@@ -114,9 +131,9 @@ export default function WorkPage() {
               {projectCount} projects
             </span>
           </div>
-          <h1 className="programme-h1 mt-3">WORK</h1>
+          <h1 className="programme-h1 mt-3">PROJECTS</h1>
           <p className="mt-5 max-w-2xl text-base leading-relaxed text-primary sm:text-lg">
-            Client jobs first. Experiments and concept builds further down.
+            Client jobs first. Experiments and games further down.
           </p>
         </header>
 
@@ -135,6 +152,16 @@ export default function WorkPage() {
             Concept builds and personal experiments. Not client jobs.
           </p>
           <FixtureList fixtures={OTHER_WORK} />
+        </section>
+
+        <section className="pt-12" aria-labelledby="games-heading">
+          <h2 id="games-heading" className="shell-label mb-4 text-accent">
+            GAMES
+          </h2>
+          <p className="mb-4 max-w-2xl text-sm leading-relaxed text-primary">
+            Free browser games. No ads, no sign-up, no mercy.
+          </p>
+          <FixtureList fixtures={GAMES} />
         </section>
 
         <section className="py-12">

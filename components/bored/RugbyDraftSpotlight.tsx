@@ -35,7 +35,7 @@ export function RugbyDraftSpotlight({
           }`}
         >
           <div
-            className={`relative flex items-center justify-center rounded-2xl border border-border-strong bg-base ${
+            className={`relative flex items-center justify-center rounded-2xl border border-border-strong bg-paper ${
               isHero
                 ? "h-40 w-40 sm:h-48 sm:w-48 lg:h-52 lg:w-52"
                 : "h-28 w-28 sm:h-32 sm:w-32"
@@ -54,10 +54,10 @@ export function RugbyDraftSpotlight({
 
         <div className="min-w-0 flex-1 text-center sm:text-left">
           <div className="mb-4 flex flex-wrap items-center justify-center gap-2 sm:justify-start">
-            <span className="rounded-full border border-sky-800/25 bg-base px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-sky-900">
+            <span className="rounded-full border border-sky-800/25 bg-paper px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-sky-900">
               {RUGBY_DRAFT.badge}
             </span>
-            <span className="rounded-full border border-border-strong bg-base px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-primary">
+            <span className="rounded-full border border-border-strong bg-paper px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-primary">
               New
             </span>
           </div>

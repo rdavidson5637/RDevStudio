@@ -4,7 +4,7 @@ import { SectionHeader } from "@/components/ui/SectionHeader";
 export function SocialProofBar() {
   return (
     <section
-      className="section-padding border-t border-border bg-base"
+      className="section-padding border-t border-border bg-paper"
       aria-label="Recent work"
     >
       <div className="container-wide px-4 sm:px-6 lg:px-8">

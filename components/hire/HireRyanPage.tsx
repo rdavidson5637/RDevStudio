@@ -75,7 +75,7 @@ export function HireRyanPage() {
       <CatModal open={catModalOpen} onClose={() => setCatModalOpen(false)} />
 
       {/* Section 1 - Hero */}
-      <section className="relative overflow-hidden border-b border-border bg-base pb-16 pt-28 md:pb-20">
+      <section className="relative overflow-hidden border-b border-border bg-paper pb-16 pt-28 md:pb-20">
         <div
           className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_15%_0%,rgb(245_158_11/0.1)_0%,transparent_50%)]"
           aria-hidden="true"
@@ -140,7 +140,7 @@ export function HireRyanPage() {
             {HIRE_ABOUT_POINTS.map((point) => (
               <li
                 key={point}
-                className="flex items-start gap-3 rounded-xl border border-border bg-base/60 px-5 py-4"
+                className="flex items-start gap-3 rounded-xl border border-border bg-paper/60 px-5 py-4"
               >
                 <span
                   className="mt-2 h-2 w-2 shrink-0 rounded-full bg-blue-500"
@@ -156,7 +156,7 @@ export function HireRyanPage() {
       {/* Section 3 - Qualifications */}
       <section
         ref={registerSection("qualifications")}
-        className="section-padding border-b border-border bg-base"
+        className="section-padding border-b border-border bg-paper"
       >
         <div className="container-wide max-w-4xl">
           <SectionHeader label="Education" title="Qualifications" />
@@ -164,7 +164,7 @@ export function HireRyanPage() {
             {HIRE_QUALIFICATIONS.map((item, index) => (
               <li key={item.title} className="relative pb-12 last:pb-0">
                 <span
-                  className="absolute -left-[2.05rem] top-1 flex h-4 w-4 items-center justify-center rounded-full border-2 border-blue-500 bg-base sm:-left-[2.35rem]"
+                  className="absolute -left-[2.05rem] top-1 flex h-4 w-4 items-center justify-center rounded-full border-2 border-blue-500 bg-paper sm:-left-[2.35rem]"
                   aria-hidden="true"
                 >
                   <span className="h-1.5 w-1.5 rounded-full bg-blue-500" />
@@ -230,7 +230,7 @@ export function HireRyanPage() {
       </section>
 
       {/* Section 5 - Projects */}
-      <section className="section-padding border-b border-border bg-base">
+      <section className="section-padding border-b border-border bg-paper">
         <div className="container-wide">
           <SectionHeader label="Portfolio" title="Featured Projects" />
           <div className="mt-10 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
@@ -382,7 +382,7 @@ export function HireRyanPage() {
                   {skills.map((skill) => (
                     <li
                       key={skill}
-                      className="rounded-lg border border-border bg-base/70 px-3 py-2 text-sm font-medium text-primary"
+                      className="rounded-lg border border-border bg-paper/70 px-3 py-2 text-sm font-medium text-primary"
                     >
                       {skill}
                     </li>
@@ -400,7 +400,7 @@ export function HireRyanPage() {
       </section>
 
       {chaosStarted && (
-        <section className="section-padding border-b border-border bg-base text-center">
+        <section className="section-padding border-b border-border bg-paper text-center">
           <p className="font-display text-3xl text-primary md:text-4xl">
             {HIRE_CHAOS_TRANSITION}
           </p>
@@ -469,7 +469,7 @@ export function HireRyanPage() {
       {/* Section 12 - Weaknesses */}
       {chaosStarted && (
         <section
-          className={`section-padding border-b border-border bg-base ${revealClass}`}
+          className={`section-padding border-b border-border bg-paper ${revealClass}`}
         >
           <div className="container-wide max-w-4xl">
             <SectionHeader
@@ -555,7 +555,7 @@ export function HireRyanPage() {
                 {HIRE_FINAL_REASONS.map((reason) => (
                   <li
                     key={reason}
-                    className="flex items-center gap-3 rounded-lg border border-border bg-base/60 px-4 py-3 text-primary"
+                    className="flex items-center gap-3 rounded-lg border border-border bg-paper/60 px-4 py-3 text-primary"
                   >
                     <span className="text-accent" aria-hidden="true">
                       →
