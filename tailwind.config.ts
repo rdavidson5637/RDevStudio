@@ -90,6 +90,10 @@ const config: Config = {
           live: "var(--color-studio-live)",
           soon: "var(--color-studio-soon)",
         },
+        rvs: {
+          teal: "var(--color-rvs-teal)",
+          cream: "var(--color-rvs-cream)",
+        },
       },
       fontFamily: {
         display: ["var(--font-display)", "Impact", "sans-serif"],

@@ -121,6 +121,8 @@
   --color-studio-amber-glow: rgba(245, 158, 11, 0.35);
   --color-studio-live: #22c55e;
   --color-studio-soon: #f59e0b;
+  --color-rvs-teal: #143944;
+  --color-rvs-cream: #f4ead4;
 
   --text-display-xl: clamp(2.75rem, 6vw + 1rem, 5.5rem);
   --text-display-lg: clamp(2.25rem, 4vw + 0.75rem, 3.75rem);
