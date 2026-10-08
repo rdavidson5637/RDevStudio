@@ -14,6 +14,7 @@ type Job = {
   tags: readonly string[];
   image?: { src: string; alt: string; position?: string };
   wide?: boolean;
+  external?: boolean;
 };
 
 const JOBS: readonly Job[] = [
@@ -22,8 +23,14 @@ const JOBS: readonly Job[] = [
     badge: "Built - awaiting sign-off",
     badgeVariant: "note",
     copy: "A rebuilt site and brand for Assisi Animal Sanctuary in Belfast. Built and ready for their feedback.",
-    href: "/work",
-    tags: ["Charity", "Rebrand", "Next.js"],
+    href: "https://assisi-new.vercel.app",
+    external: true,
+    tags: ["Charity", "Rebrand", "Live preview"],
+    image: {
+      src: "/images/work/assisi-rebrand.jpg",
+      alt: "Preview of the rebuilt Assisi Animal Sanctuary homepage with a collie and the headline Every animal deserves a second chance",
+      position: "object-left-top",
+    },
   },
   {
     title: "ShelterLink",
@@ -59,6 +66,7 @@ function JobCard({ job, delay }: { job: Job; delay: number }) {
     <Reveal delay={delay} className={`h-full ${job.wide ? "lg:col-span-2" : ""}`}>
       <Link
         href={job.href}
+        {...(job.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
         className={`studio-card group flex h-full flex-col overflow-hidden rounded-studio border border-studio-border bg-studio-surface transition duration-200 hover:-translate-y-0.5 hover:border-amber/50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-amber ${
           job.wide ? "lg:flex-row" : ""
         }`}
