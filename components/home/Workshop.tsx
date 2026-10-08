@@ -5,7 +5,7 @@ import { ProjectRow } from "./ProjectCard";
 
 export function Workshop() {
   return (
-    <section className="bg-bg py-20 text-studio-text md:py-28">
+    <section className="bg-bg py-14 text-studio-text md:py-20">
       <Container>
         <SectionHeader tone="studio" label="Coming soon" heading="Still being built." />
         <ul className="mt-10 border-t border-studio-border">

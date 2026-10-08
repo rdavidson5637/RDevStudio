@@ -2,7 +2,7 @@ import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { liveProjects } from "@/lib/projects";
-import { ProjectRow } from "./ProjectCard";
+import { ProjectCard } from "./ProjectCard";
 
 const HOME_FIRST = ["stout-finder", "draft-analyser"];
 
@@ -19,18 +19,23 @@ const prioritySlugs = new Set(
 
 export function LiveStrip() {
   return (
-    <section id="live" className="bg-bg pb-20 text-studio-text md:pb-28">
+    <section id="live" className="bg-bg pb-14 text-studio-text md:pb-20">
       <Container>
         <SectionHeader tone="studio" label="Live now" heading="On the site, and open." />
-        <ul className="mt-10 border-t border-studio-border">
-          {homeProjects.map((project) => (
-            <ProjectRow
+        <div className="-mx-6 mt-10 flex snap-x snap-mandatory gap-4 overflow-x-auto px-6 pb-4 sm:mx-0 sm:grid sm:grid-cols-2 sm:overflow-visible sm:px-0 sm:pb-0 lg:grid-cols-3 lg:gap-5">
+          {homeProjects.map((project, index) => (
+            <div
               key={project.slug}
-              project={project}
-              priority={prioritySlugs.has(project.slug)}
-            />
+              className="w-[80%] shrink-0 snap-start sm:w-auto sm:shrink"
+            >
+              <ProjectCard
+                project={project}
+                priority={prioritySlugs.has(project.slug)}
+                delay={Math.min(index, 5) * 60}
+              />
+            </div>
           ))}
-        </ul>
+        </div>
         <div className="mt-6 flex flex-wrap gap-8">
           <Link
             href="/games"

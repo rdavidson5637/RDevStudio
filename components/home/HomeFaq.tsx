@@ -45,7 +45,7 @@ const faqJsonLd = {
 
 export function HomeFaq() {
   return (
-    <section className="bg-bg py-20 text-studio-text md:py-28">
+    <section className="bg-bg py-14 text-studio-text md:py-20">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
       <Container>
         <SectionHeader tone="studio" label="Questions" heading="The usual ones." />

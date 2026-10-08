@@ -1,38 +1,42 @@
 # DESIGN.md
 
 ## Concept
-This portfolio is styled like a modern matchday programme. Ryan Davidson is a designer/developer in Belfast with a background in football and rugby who builds web apps and free football games. Sports vernacular appears in labels, section headers, and microcopy - but case study content itself stays clean and professional. The tone is dry, plain-spoken Northern Irish humour: confident, never boastful, zero corporate filler, zero hedging ("work in progress", "not finished yet" and similar are banned sitewide).
+rdevstudio.co.uk is a dark, product-studio style site (Linear/Vercel feel). It sells websites to NI small businesses and charities, shows the live games and apps, and carries a bit of dry NI personality in small places. Sports vernacular survives in section labels ("Kick-off", "Fixtures", "Full time") and the footer. Case study copy stays clean and plain.
 
-## Palette
-- Paper: #F7F5F0 (page background)
-- Ink: #16150F (text, solid fills — long body copy always uses Ink)
-- Pitch: #1E5C3A (structural colour - rules, labels, section markers, hover states — never paragraphs)
-- Card red: #D22B2B (used extremely sparingly - one or two moments per page max: the "Start a project" button hover, a single highlight)
-- Line: #E3DFD4 (hairline borders)
-- Muted: #3D3B35 (captions, meta, idle states — not long body copy)
+## Palette (CSS variables in app/tokens.css, Tailwind `studio-*` tokens)
+- Background: #0A0A0F (`bg-bg`)
+- Surface: #101018, Surface 2: #15151F
+- Border: rgba(255,255,255,0.08), Border strong: rgba(255,255,255,0.14)
+- Text: #F4F4F5, Muted: #A1A1AA, Faint: #71717A
+- Amber: #F59E0B - the single strong accent. Used for primary buttons, underlines, hover states and one highlight per section. Not for paragraphs.
+- Status: live #22C55E, soon #F59E0B
+- Client accents (RV's teal and cream and similar) only inside that client's card, and lightly.
 
-## Typography (all free)
-- Display: Anton (Google Fonts) - for h1/h2 and jersey-style numbers. Uppercase, tight leading (1.0-1.05), used with restraint.
-- Body: Archivo (Google Fonts) - 16-18px, line-height 1.65, weights 400/600 only.
-- Data/labels: Space Mono (Google Fonts) - 11-12px uppercase with 0.08em letter-spacing, for eyebrows, tags, stats, timestamps, section markers.
-Type scale: h1 clamp(3rem, 8vw, 6.5rem); h2 clamp(1.75rem, 4vw, 3rem); h3 1.25rem Archivo 600 (not Anton).
+## Typography
+- Display: DM Serif Display (`font-studio-display`) for headings and brand.
+- Body and UI: Geist Sans.
+- Labels and status: Geist Mono, 11px, uppercase, wide tracking (`type-label`).
+- Type utilities: `display-xl`, `display-lg`, `type-body`, `type-label`.
 
-## Layout rules
-- Max content width 1120px, generous padding (min 24px mobile).
-- Sections divided by 1px Line-colour rules, each opening with a Space Mono label styled like a programme section ("KICK-OFF", "FIXTURES", "SQUAD", "FULL TIME").
-- Cards: white (#FFFFFF) background, 1px Line border, 10px radius, no shadows.
-- Pitch-marking motif: occasional thin 2px Pitch-colour rules and a subtle centre-circle arc may be used as section dividers - sparingly, max one decorative use per page.
+## Layout
+- Max width via `Container` (`max-w-studio`), 24px mobile padding.
+- Homepage sections use `py-14 md:py-20`. No big dead bands between sections.
+- Cards: `Card` primitive, surface background, 1px border, `rounded-studio`, no heavy shadows. Image-led cards use a 16/10 image with a dark bottom gradient.
+- Backdrops: `bg-grid` and `glow-amber` (app/globals.css) behind the hero only. Subtle, faded at the edges.
+- Fallback card when a project has no image: dark surface, big initial in DM Serif Display, soft amber glow.
 
-## Signature element
-The scoreboard: a Space Mono strip that appears in the hero styled like a stadium scoreboard, showing real numbers (projects shipped, games built, years, current status). This is the one loud design moment - everything else stays quiet.
+## Motion
+- `Reveal` for scroll fade-up, once, staggered. Hover lifts of 2px and image scale 1.03 on cards.
+- Everything respects prefers-reduced-motion.
 
-## Voice & microcopy
-- Sentence case everywhere except Anton headings (uppercase) and Space Mono labels (uppercase).
-- Buttons are verbs: "See the work", "Read the case study", "Get in touch".
-- Dry humour lives in small places: footer, 404, image captions, one-liners under section labels. Never in case study body copy.
-- Banned words: passionate, journey, seamless, leverage, crafting digital experiences.
+## Homepage order
+Hero, Live now, Client work, Work with me, How it works, Questions, Coming soon, Closing CTA.
 
-## Global shell to build now
-- Nav: "RDev Studio" wordmark left (Archivo 600). Right: Services, Work, About, Contact in Space Mono uppercase, plus a solid Ink "Start a project" button (red on hover) to /contact. Sticky, Paper background with bottom hairline. Mobile: hamburger -> full-screen Paper overlay with oversized Anton links. Toolkit, Interactive, and Games stay on their routes and live in the footer, not the sales nav. /hire (CV) lives in the footer and About, not the primary nav.
-- Footer: three columns - (1) "RDev Studio - designed and built in Carrickfergus. No template, no page builder, occasional dog supervision." (2) primary nav plus Toolkit / Interactive / Games, (3) email + LinkedIn + GitHub. Below, a full-width Space Mono line: "FULL TIME - thanks for reading the programme."
-- Load fonts via next/font. Define all colours as CSS variables. Respect prefers-reduced-motion globally.
+## Voice
+- Sentence case. Plain, dry NI English. Buttons are verbs.
+- No em dashes. Banned words: passionate, journey, seamless, leverage, synergy, "crafting digital experiences".
+- Never claim more than is true: Assisi rebrand is "Built - awaiting sign-off", ShelterLink is "Ready for live use", RV's Cold Brew is "Live site - nearly finished". No invented numbers, quotes or results. No numbers in the live strip.
+
+## Nav and footer
+- Nav tabs: Games, Projects, Tools, Work with me, plus an amber "Start a project" button. /hire and /work and /about live in the footer.
+- Footer keeps "RDev Studio - designed and built in Carrickfergus. No template, no page builder, occasional dog supervision." and the "FULL TIME" line.
