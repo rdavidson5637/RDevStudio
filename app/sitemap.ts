@@ -2,7 +2,6 @@ import type { MetadataRoute } from "next";
 import { BUSINESS_TOOLS } from "@/lib/business-toolkit/catalog";
 import { INTERACTIVE_TOOLS } from "@/lib/interactive-tools/catalog";
 import { SITE_URL } from "@/lib/constants";
-import { getAllPubSlugs, getStoutFinderStats } from "@/lib/stout-finder/queries";
 
 const ROUTES = [
   "",
@@ -31,30 +30,14 @@ const ROUTES = [
   "/champions-draft",
   "/rugby-draft",
   "/pub-quiz",
-  "/stout-finder",
   "/guitar-lab",
   "/gig-radar",
 ] as const;
 
-const STOUT_ROUTES = [
-  "/stout-finder/beamish",
-  "/stout-finder/kilkenny",
-  "/stout-finder/murphys",
-  "/stout-finder/guinness",
-  "/stout-finder/add",
-] as const;
-
-export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
-  const stats = await getStoutFinderStats();
-  const pubPaths = stats.ready
-    ? [
-        ...STOUT_ROUTES,
-        ...(await getAllPubSlugs()).map((slug) => `/stout-finder/${slug}`),
-      ]
-    : [];
 
-  return [...ROUTES, ...pubPaths].map((path) => ({
+  return ROUTES.map((path) => ({
     url: `${SITE_URL}${path}`,
     lastModified: now,
     changeFrequency: "weekly" as const,
