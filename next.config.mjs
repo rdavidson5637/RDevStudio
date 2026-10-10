@@ -4,6 +4,41 @@ const nextConfig = {
   async redirects() {
     return [
       {
+        source: "/stout-finder",
+        destination: "https://stoutfinder.com",
+        permanent: true,
+      },
+      {
+        source: "/stout-finder/beamish",
+        destination: "https://stoutfinder.com/beamish",
+        permanent: true,
+      },
+      {
+        source: "/stout-finder/guinness",
+        destination: "https://stoutfinder.com/guinness",
+        permanent: true,
+      },
+      {
+        source: "/stout-finder/murphys",
+        destination: "https://stoutfinder.com/murphys",
+        permanent: true,
+      },
+      {
+        source: "/stout-finder/kilkenny",
+        destination: "https://stoutfinder.com/kilkenny",
+        permanent: true,
+      },
+      {
+        source: "/stout-finder/add",
+        destination: "https://stoutfinder.com/add",
+        permanent: true,
+      },
+      {
+        source: "/stout-finder/:slug",
+        destination: "https://stoutfinder.com/pub/:slug",
+        permanent: true,
+      },
+      {
         source: "/coming-soon",
         destination: "/projects",
         permanent: true,

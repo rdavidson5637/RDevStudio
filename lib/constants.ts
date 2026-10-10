@@ -36,7 +36,7 @@ export const DRAFT_ANALYSER = {
 } as const;
 
 export const STOUT_FINDER = {
-  href: "/stout-finder",
+  href: "https://stoutfinder.com",
   label: "Stout Finder",
   description:
     "Which pubs in Antrim and Down actually have Beamish, Kilkenny, Murphy's or Guinness on. Every claim dated, and it goes stale on its own.",
@@ -87,7 +87,7 @@ export const SECONDARY_NAV_LINKS = [
   { href: "/pub-quiz", label: "Pub Quiz" },
   { href: "/draft", label: "Draft Analyser" },
   { href: "/wardrobe-ai", label: "Wardrobe AI" },
-  { href: "/stout-finder", label: "Stout Finder" },
+  { href: "https://stoutfinder.com", label: "Stout Finder" },
   { href: "/guitar-lab", label: "Guitar Lab" },
   { href: "/gig-radar", label: "Gig Radar" },
 ] as const;

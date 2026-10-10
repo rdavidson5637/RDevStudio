@@ -29,7 +29,7 @@ const COLUMNS = [
     links: [
       { href: "/draft", label: "Draft Analyser" },
       { href: "/wardrobe-ai", label: "Wardrobe AI" },
-      { href: "/stout-finder", label: "Stout Finder" },
+      { href: "https://stoutfinder.com", label: "Stout Finder" },
       { href: "/guitar-lab", label: "Guitar Lab" },
       { href: "/gig-radar", label: "Gig Radar" },
     ],
