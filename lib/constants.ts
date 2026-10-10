@@ -39,7 +39,7 @@ export const STOUT_FINDER = {
   href: "https://stoutfinder.com",
   label: "Stout Finder",
   description:
-    "Which pubs in Antrim and Down actually have Beamish, Kilkenny, Murphy's or Guinness on. Every claim dated, and it goes stale on its own.",
+    "Which pubs have Beamish, Guinness, Murphy's and the rest on, and when someone last checked. It lives at stoutfinder.com.",
   status: "live",
 } as const;
 

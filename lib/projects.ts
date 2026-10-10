@@ -64,7 +64,7 @@ export const PROJECTS: Project[] = [
   {
     slug: "stout-finder",
     name: "Stout Finder",
-    tagline: "Which pubs in Antrim and Down actually have it on. Every claim dated.",
+    tagline: "Which pubs have stout on, and when someone last checked. Lives at stoutfinder.com.",
     href: "https://stoutfinder.com",
     kind: "app",
     status: "live",

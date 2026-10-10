@@ -10,11 +10,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "test": "vitest run",
-    "osm:fetch": "tsx scripts/stout-finder/fetch-osm-pubs.ts",
-    "osm:import": "tsx --env-file=.env.local scripts/stout-finder/import-pubs.ts",
-    "stout:seed": "tsx --env-file=.env.local scripts/stout-finder/seed-known.ts",
-    "stout:apply-data": "tsx --env-file=.env.local scripts/stout-finder/apply-finder-data.ts"
+    "test": "vitest run"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.30.1",
