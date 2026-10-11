@@ -1,10 +1,10 @@
 import { Hero } from "@/components/home/Hero";
 import { LiveStrip } from "@/components/home/LiveStrip";
 import { ClientWork } from "@/components/home/ClientWork";
+import { UnderTheHood } from "@/components/home/UnderTheHood";
 import { WorkWithMe } from "@/components/home/WorkWithMe";
 import { HomeProcess } from "@/components/home/HomeProcess";
 import { HomeFaq } from "@/components/home/HomeFaq";
-import { Workshop } from "@/components/home/Workshop";
 import { ClosingCta } from "@/components/home/ClosingCta";
 import { createPageMetadata } from "@/lib/metadata";
 
@@ -21,10 +21,10 @@ export default function HomePage() {
       <Hero />
       <LiveStrip />
       <ClientWork />
+      <UnderTheHood />
       <WorkWithMe />
       <HomeProcess />
       <HomeFaq />
-      <Workshop />
       <ClosingCta />
     </div>
   );

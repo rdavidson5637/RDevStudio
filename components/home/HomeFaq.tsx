@@ -1,5 +1,4 @@
-import { Container } from "@/components/ui/Container";
-import { SectionHeader } from "@/components/ui/SectionHeader";
+import { Section } from "@/components/ui/Section";
 
 const FAQ = [
   {
@@ -45,24 +44,41 @@ const faqJsonLd = {
 
 export function HomeFaq() {
   return (
-    <section className="bg-bg py-20 text-studio-text md:py-28">
+    <Section>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
-      <Container>
-        <SectionHeader tone="studio" label="Questions" heading="The usual ones." />
-        <div className="mt-10 border-t border-studio-border">
+      <div className="grid gap-10 lg:grid-cols-[minmax(0,18rem)_1fr] lg:items-start">
+        <div className="lg:sticky lg:top-28">
+          <p className="eyebrow text-studio-muted">Questions</p>
+          <h2 className="display-lg mt-3 text-balance text-studio-text">The usual ones.</h2>
+          <a
+            href="https://wa.me/447378420418"
+            className="inline-flex min-h-11 items-center text-sm text-studio-text underline decoration-studio-line-strong underline-offset-4 hover:text-amber"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Still stuck? WhatsApp me
+          </a>
+        </div>
+        <div className="border-t border-studio-line">
           {FAQ.map((item) => (
-            <details key={item.question} className="group border-b border-studio-border">
-              <summary className="flex min-h-14 cursor-pointer list-none items-center justify-between gap-4 py-4 text-left type-h3 text-studio-text focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-amber [&::-webkit-details-marker]:hidden">
+            <details key={item.question} className="group border-b border-studio-line">
+              <summary className="flex min-h-14 cursor-pointer list-none items-center justify-between gap-4 py-4 text-left font-studio-sans text-lg text-studio-text focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-amber [&::-webkit-details-marker]:hidden">
                 {item.question}
-                <span className="type-label text-studio-muted" aria-hidden="true">
-                  +
+                <span className="faq-plus inline-flex h-5 w-5 shrink-0 items-center justify-center text-studio-muted" aria-hidden="true">
+                  <svg viewBox="0 0 20 20" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="1.5">
+                    <path d="M10 4v12M4 10h12" strokeLinecap="round" />
+                  </svg>
                 </span>
               </summary>
-              <p className="type-body max-w-2xl pb-5 text-studio-muted">{item.answer}</p>
+              <div className="faq-panel">
+                <div className="overflow-hidden">
+                  <p className="type-body max-w-2xl pb-5 text-studio-muted">{item.answer}</p>
+                </div>
+              </div>
             </details>
           ))}
         </div>
-      </Container>
-    </section>
+      </div>
+    </Section>
   );
 }

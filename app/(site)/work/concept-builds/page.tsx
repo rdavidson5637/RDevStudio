@@ -7,6 +7,7 @@ export const metadata = createPageMetadata({
   description:
     "Three concept builds showing range across trades, restaurant, and salon website design.",
   path: "/work/concept-builds",
+  ogImage: "/work/concept-builds/opengraph-image",
 });
 
 function BuildSection({
@@ -86,7 +87,7 @@ const BUILDS = [
 
 export default function ConceptBuildsPage() {
   return (
-    <div className="studio-page px-4 py-20 sm:px-6 md:py-28">
+    <div className="studio-page px-4 py-16 sm:px-6 md:py-24 lg:py-32">
       <article className="container-wide px-6">
         <header className="space-y-6 border-b border-border pb-10">
           <p className="shell-label text-accent">CASE STUDY - 04</p>

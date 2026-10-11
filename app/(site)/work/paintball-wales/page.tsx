@@ -8,6 +8,7 @@ export const metadata = createPageMetadata({
   description:
     "Phone-first site for a Snowdonia paintball park, built to replace a cluttered banner.",
   path: "/work/paintball-wales",
+  ogImage: "/work/paintball-wales/opengraph-image",
 });
 
 function SectionHeading({ children }: { children: React.ReactNode }) {
@@ -50,7 +51,7 @@ const BUILD_FEATURES = [
 
 export default function PaintballWalesCaseStudyPage() {
   return (
-    <div className="studio-page px-4 py-20 sm:px-6 md:py-28">
+    <div className="studio-page px-4 py-16 sm:px-6 md:py-24 lg:py-32">
       <article className="container-wide px-6">
         <Breadcrumbs
           items={[

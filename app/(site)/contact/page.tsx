@@ -26,31 +26,31 @@ export default function ContactPage() {
         <p className="type-body mt-4 max-w-xl text-studio-muted">{CHARITY_NOTE}</p>
 
         <div className="mt-12 grid gap-10 lg:grid-cols-[1.4fr_0.8fr] lg:items-start">
-          <div className="border-t border-studio-border pt-8">
+          <div className="card p-6 md:p-8">
             <ContactForm />
           </div>
-          <aside>
+          <aside className="flex flex-col gap-6">
             <a
               href={`mailto:${CONTACT_EMAIL}`}
               className="font-studio-display text-2xl text-studio-text underline-offset-4 hover:text-amber hover:underline"
             >
               {CONTACT_EMAIL}
             </a>
-            <div className="mt-6">
-              <Button href={WHATSAPP_URL} variant="secondary">
-                WhatsApp
-              </Button>
-            </div>
-            <div className="mt-6 flex gap-4">
-              <a href={LINKEDIN_URL} className="text-sm text-studio-muted hover:text-amber" target="_blank" rel="noopener noreferrer">
+            <Button href={WHATSAPP_URL} variant="secondary">
+              WhatsApp
+            </Button>
+            <p className="type-body text-studio-muted">I usually reply within one working day.</p>
+            <p className="type-body text-studio-muted">{CHARITY_NOTE}</p>
+            <div className="flex gap-4">
+              <a href={LINKEDIN_URL} className="inline-flex min-h-11 items-center text-sm text-studio-muted hover:text-amber" target="_blank" rel="noopener noreferrer">
                 LinkedIn
               </a>
-              <a href={GITHUB_URL} className="text-sm text-studio-muted hover:text-amber" target="_blank" rel="noopener noreferrer">
+              <a href={GITHUB_URL} className="inline-flex min-h-11 items-center text-sm text-studio-muted hover:text-amber" target="_blank" rel="noopener noreferrer">
                 GitHub
               </a>
             </div>
-            <p className="type-body mt-8 text-studio-muted">Based in Carrickfergus. Working anywhere.</p>
-            <p className="type-body mt-3 text-studio-muted">
+            <p className="type-body text-studio-muted">Based in Carrickfergus. Working anywhere.</p>
+            <p className="type-body text-studio-muted">
               I only use your name and email to reply to this enquiry. I do not pass them on.
             </p>
           </aside>

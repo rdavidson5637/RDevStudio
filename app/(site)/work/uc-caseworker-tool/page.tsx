@@ -7,6 +7,7 @@ export const metadata = createPageMetadata({
   description:
     "Case study: an AI assistant for Universal Credit caseworkers, built around safeguarding and human-in-the-loop review.",
   path: "/work/uc-caseworker-tool",
+  ogImage: "/work/uc-caseworker-tool/opengraph-image",
 });
 
 function SectionHeading({ children }: { children: React.ReactNode }) {
@@ -49,7 +50,7 @@ const BUILD_FEATURES = [
 
 export default function UcCaseworkerToolCaseStudyPage() {
   return (
-    <div className="studio-page px-4 py-20 sm:px-6 md:py-28">
+    <div className="studio-page px-4 py-16 sm:px-6 md:py-24 lg:py-32">
       <article className="container-wide px-6">
         <header className="space-y-6 border-b border-border pb-10">
           <p className="shell-label text-accent">CASE STUDY - 05</p>

@@ -327,6 +327,45 @@ body {
     transform: rotate(calc((var(--i) - 1) * 7deg)) translateY(calc(var(--i) * 36px));
   }
 
+  .process-line {
+    position: absolute;
+    left: 15px;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: var(--color-studio-line-strong);
+    transform-origin: top;
+    transform: scaleY(0);
+    transition: transform 800ms ease;
+  }
+
+  .process-line.is-drawn {
+    transform: scaleY(1);
+  }
+
+  .faq-plus {
+    transition: transform 200ms ease;
+  }
+
+  details[open] .faq-plus {
+    transform: rotate(45deg);
+  }
+
+  .faq-panel {
+    display: grid;
+    grid-template-rows: 0fr;
+  }
+
+  details[open] .faq-panel {
+    grid-template-rows: 1fr;
+  }
+
+  @supports (interpolate-size: allow-keywords) {
+    .faq-panel {
+      transition: grid-template-rows 200ms ease;
+    }
+  }
+
   .interactive-surface {
     @apply rounded-xl border border-border-strong bg-overlay transition-colors duration-normal ease-out hover:border-border-accent;
   }
@@ -496,6 +535,31 @@ body {
 
   .group:hover .fan-card {
     transform: rotate(calc((var(--i) - 1) * 12deg)) translate(calc((var(--i) - 1) * 42px), calc(var(--i) * 18px));
+  }
+}
+
+@media (min-width: 768px) {
+  .process-line {
+    top: 16px;
+    right: 0;
+    bottom: auto;
+    left: 0;
+    width: auto;
+    height: 1px;
+    transform-origin: left center;
+    transform: scaleX(0);
+  }
+
+  .process-line.is-drawn {
+    transform: scaleX(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .process-line,
+  .process-line.is-drawn {
+    transform: none;
+    transition: none;
   }
 }
 

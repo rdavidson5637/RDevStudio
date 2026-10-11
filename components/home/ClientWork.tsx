@@ -1,56 +1,124 @@
-import Image from "next/image";
 import Link from "next/link";
-import { Container } from "@/components/ui/Container";
-import { SectionHeader } from "@/components/ui/SectionHeader";
-import { clientBySlug } from "@/lib/content/products";
+import { Reveal } from "@/components/motion/Reveal";
+import { Section } from "@/components/ui/Section";
+import { BrowserFrame, PhoneFrame } from "@/components/work/BrowserFrame";
+import { clientBySlug, type ClientWork as ClientJob } from "@/lib/content/products";
 
-const HOME_JOBS = ["assisi", "shelterlink", "rvs-cold-brew"] as const;
-const JOBS = HOME_JOBS.map((slug) => clientBySlug(slug)).filter((job) => job !== undefined);
+function domainOf(url?: string) {
+  if (!url) return undefined;
+  try {
+    return new URL(url).host;
+  } catch {
+    return undefined;
+  }
+}
 
-export function ClientWork() {
+function JobCard({ job }: { job: ClientJob }) {
+  const domain = domainOf(job.siteUrl);
   return (
-    <section className="bg-bg py-20 text-studio-text md:py-28">
-      <Container>
-        <SectionHeader
-          tone="studio"
-          label="Client work"
-          heading="Real clients. Real sites."
-          href="/work"
-          linkLabel="All work"
-        />
-        <div className="mt-12 grid items-start gap-12 md:grid-cols-12">
-          <figure className="md:col-span-5">
-            <div className="relative aspect-[16/10] bg-studio-surface">
-              <Image
-                src="/images/work/rvs-coldbrew-hero.jpg"
-                alt="RV's Cold Brew website, with the counter behind the headline"
-                fill
-                sizes="(max-width: 768px) 100vw, 40vw"
-                className="object-cover object-top"
-              />
-            </div>
-            <figcaption className="type-body mt-3 text-studio-muted">
-              RV&apos;s Cold Brew, Unit 11, Great Northern Mall.
-            </figcaption>
-          </figure>
-          <ul className="border-t border-studio-border md:col-span-7">
-            {JOBS.map((job) => (
-              <li key={job.slug} className="border-b border-studio-border">
-                <Link
-                  href={job.href ?? "/work"}
-                  className="group block py-6 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-amber"
-                >
-                  <span className="type-label text-studio-muted">{job.statusLabel}</span>
-                  <span className="mt-2 block font-studio-display text-3xl text-studio-text transition-colors duration-200 group-hover:text-amber">
-                    {job.name}
-                  </span>
-                  <span className="type-body mt-2 block max-w-xl text-studio-muted">{job.summary}</span>
-                </Link>
+    <article className="card flex h-full flex-col overflow-hidden">
+      <BrowserFrame
+        src={job.image}
+        alt={job.image ? `${job.name} website` : ""}
+        domain={domain}
+        sizes="(max-width: 768px) 100vw, 30vw"
+        mutedLabel={job.slug === "assisi" ? "Preview after sign-off" : "Preview after sign-off"}
+      />
+      <div className="flex flex-1 flex-col p-5">
+        <p className="type-label text-studio-muted">{job.statusLabel}</p>
+        <h3 className="mt-2 font-studio-display text-2xl text-studio-text">{job.name}</h3>
+        <p className="type-body mt-2 text-studio-muted">{job.summary}</p>
+        {job.stack && job.stack.length > 0 ? (
+          <ul className="mt-4 flex flex-wrap gap-2">
+            {job.stack.slice(0, 3).map((chip) => (
+              <li key={chip} className="rounded-full border border-studio-line px-2.5 py-1 font-studio-mono text-xs text-studio-muted">
+                {chip}
               </li>
             ))}
           </ul>
-        </div>
-      </Container>
-    </section>
+        ) : null}
+        {job.href && job.href !== "/work" ? (
+          <Link
+            href={job.href}
+            className="mt-4 inline-flex min-h-11 items-center text-sm text-studio-text underline decoration-studio-line-strong underline-offset-4 hover:text-amber"
+          >
+            Read the case study
+          </Link>
+        ) : null}
+      </div>
+    </article>
+  );
+}
+
+export function ClientWork() {
+  const feature = clientBySlug("rvs-cold-brew");
+  const rest = ["shelterlink", "paintball-wales", "assisi"]
+    .map((slug) => clientBySlug(slug))
+    .filter((job) => job !== undefined);
+
+  if (!feature) return null;
+
+  return (
+    <Section eyebrow="CLIENT WORK" heading="Real clients. Real sites.">
+      <div className="mt-4 flex justify-end">
+        <Link
+          href="/work"
+          className="type-label inline-flex min-h-11 items-center text-studio-muted underline-offset-4 hover:text-amber hover:underline"
+        >
+          All work
+        </Link>
+      </div>
+      <Reveal>
+        <article className="card relative mt-6 overflow-hidden p-4 md:p-6">
+          <div className="grid items-start gap-6 lg:grid-cols-[minmax(0,1.4fr)_minmax(0,0.8fr)]">
+            <div className="relative">
+              <BrowserFrame
+                src={feature.image}
+                alt="RV's Cold Brew website, with the counter behind the headline"
+                domain={domainOf(feature.siteUrl)}
+                sizes="(max-width: 1024px) 100vw, 60vw"
+                priority
+              />
+              <div className="absolute -bottom-2 -right-2 hidden md:block">
+                <PhoneFrame
+                  src={feature.mobileImage ?? feature.image}
+                  alt="RV's Cold Brew website on a phone"
+                  sizes="9rem"
+                />
+              </div>
+            </div>
+            <div className="pb-4 md:pb-16">
+              <p className="type-label text-studio-muted">{feature.statusLabel}</p>
+              <h3 className="mt-2 font-studio-display text-4xl text-studio-text">{feature.name}</h3>
+              <p className="type-body mt-3 max-w-md text-studio-muted">{feature.summary}</p>
+              {feature.stack ? (
+                <ul className="mt-4 flex flex-wrap gap-2">
+                  {feature.stack.map((chip) => (
+                    <li key={chip} className="rounded-full border border-studio-line px-2.5 py-1 font-studio-mono text-xs text-studio-muted">
+                      {chip}
+                    </li>
+                  ))}
+                </ul>
+              ) : null}
+              {feature.href ? (
+                <Link
+                  href={feature.href}
+                  className="mt-5 inline-flex min-h-11 items-center text-sm text-studio-text underline decoration-studio-line-strong underline-offset-4 hover:text-amber"
+                >
+                  Read the case study
+                </Link>
+              ) : null}
+            </div>
+          </div>
+        </article>
+      </Reveal>
+      <div className="mt-4 grid gap-4 md:grid-cols-3">
+        {rest.map((job, index) => (
+          <Reveal key={job.slug} delay={index * 60}>
+            <JobCard job={job} />
+          </Reveal>
+        ))}
+      </div>
+    </Section>
   );
 }

@@ -23,6 +23,7 @@ export type ClientWork = {
   statusLabel: string;
   summary: string;
   image?: string;
+  mobileImage?: string;
   stack?: string[];
 };
 
@@ -152,7 +153,8 @@ export const clientWork: ClientWork[] = [
     statusLabel: "Live site - nearly finished",
     summary:
       "A Belfast cold brew and matcha counter. Menu, hours and where to find Unit 11. Square is linked and the last details are being finished.",
-    image: "/images/work/rvs-coldbrew-hero.jpg",
+    image: "/work/rvs-cold-brew-desktop.webp",
+    mobileImage: "/work/rvs-cold-brew-mobile.webp",
     stack: ["Next.js", "Tailwind", "Vercel"],
   },
   {
@@ -162,7 +164,8 @@ export const clientWork: ClientWork[] = [
     siteUrl: "https://paintball-wales.vercel.app",
     statusLabel: "Live park site",
     summary: "Phone-first site for a Snowdonia paintball park, built to replace a cluttered banner.",
-    image: "/images/work/paintball-wales-hero.jpg",
+    image: "/work/paintball-wales-desktop.webp",
+    mobileImage: "/work/paintball-wales-mobile.webp",
     stack: ["Next.js", "Tailwind", "Vercel"],
   },
 ];

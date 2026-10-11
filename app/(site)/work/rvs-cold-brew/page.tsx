@@ -8,6 +8,7 @@ export const metadata = createPageMetadata({
   description:
     "Live site for a Belfast cold brew and matcha counter at Great Northern Mall. Menu, hours, and directions.",
   path: "/work/rvs-cold-brew",
+  ogImage: "/work/rvs-cold-brew/opengraph-image",
 });
 
 function SectionHeading({ children }: { children: React.ReactNode }) {
@@ -41,7 +42,7 @@ function ScreenshotSlot({
 
 export default function RvsColdBrewCaseStudyPage() {
   return (
-    <div className="studio-page px-4 py-20 sm:px-6 md:py-28">
+    <div className="studio-page px-4 py-16 sm:px-6 md:py-24 lg:py-32">
       <article className="container-wide px-6">
         <Breadcrumbs
           items={[

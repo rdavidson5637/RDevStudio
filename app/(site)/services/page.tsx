@@ -92,7 +92,7 @@ const SERVICE_DETAILS = [
 
 export default function ServicesPage() {
   return (
-    <div className="studio-page px-4 py-20 sm:px-6 md:py-28">
+    <div className="studio-page px-4 py-16 sm:px-6 md:py-24 lg:py-32">
       <div className="container-wide px-6">
         <header className="border-b border-border pb-10">
           <p className="shell-label mb-3 text-accent">The offer</p>
@@ -137,7 +137,7 @@ export default function ServicesPage() {
               <article
                 key={service.slug}
                 id={service.slug}
-                className="scroll-mt-24 border-t border-border py-12"
+                className="card scroll-mt-24 my-6 p-2 sm:p-4"
               >
                 <div className="border-b border-border p-6 sm:p-8">
                   <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">

@@ -46,7 +46,7 @@ export function Reveal({ children, delay = 0, as: Tag = "div", className = "", i
     );
     observer.observe(node);
     return () => observer.disconnect();
-  }, []);
+  }, [immediate]);
 
   const motionClass = mode === "hidden" ? "reveal-hidden" : mode === "shown" ? "reveal-shown" : "";
 

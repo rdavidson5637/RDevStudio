@@ -1,83 +1,101 @@
+import { Reveal } from "@/components/motion/Reveal";
 import { Button } from "@/components/ui/Button";
-import { Container } from "@/components/ui/Container";
-import { SectionHeader } from "@/components/ui/SectionHeader";
+import { Section } from "@/components/ui/Section";
+import { CONTENT_CREATION_FEATURES, PRICING_FEATURES, SOCIAL_MEDIA_FEATURES } from "@/lib/constants";
 
 const PACKAGES = [
   {
     title: "Websites",
-    price: "from £650",
+    price: "£650",
+    from: true,
     note: "one-off",
     copy: "A site that says who you are, what you do, and how to get in touch. Phone first. No template.",
     href: "/services#websites",
+    bullets: PRICING_FEATURES.slice(0, 4),
+    anchor: true,
   },
   {
     title: "Social media",
-    price: "from £150/mo",
-    note: "",
+    price: "£150",
+    from: true,
+    note: "/mo",
     copy: "A plan, captions and graphics so you are not making it up every Monday.",
     href: "/services#social",
+    bullets: SOCIAL_MEDIA_FEATURES.slice(0, 4),
+    anchor: false,
   },
   {
     title: "Content",
-    price: "from £200",
+    price: "£200",
+    from: true,
     note: "a project",
     copy: "A batch of posts or a one-off set. Written to sound like you, not like an agency.",
     href: "/services#content",
+    bullets: CONTENT_CREATION_FEATURES.slice(0, 4),
+    anchor: false,
   },
   {
     title: "Care plan",
-    price: "£30/month",
-    note: "optional",
+    price: "£30",
+    from: false,
+    note: "/month, optional",
     copy: "Hosting, security updates and small changes, so the site stays up and stays current.",
     href: "/services",
+    bullets: [] as readonly string[],
+    anchor: false,
   },
 ] as const;
 
 export function WorkWithMe() {
   return (
-    <section id="work-with-me" className="bg-bg py-20 text-studio-text md:py-28">
-      <Container>
-        <SectionHeader
-          tone="studio"
-          label="Work with me"
-          heading="Straight prices. One person, start to finish."
-        />
-        <ul className="mt-10 border-t border-studio-border">
-          {PACKAGES.map((item) => (
-            <li key={item.title} className="border-b border-studio-border">
-              <a
-                href={item.href}
-                className="group grid gap-2 py-6 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-amber md:grid-cols-[1fr_11rem] md:items-baseline md:gap-10"
-              >
-                <span>
-                  <span className="block font-studio-display text-3xl text-studio-text transition-colors duration-200 group-hover:text-amber">
-                    {item.title}
-                  </span>
-                  <span className="type-body mt-2 block max-w-xl text-studio-muted">{item.copy}</span>
-                </span>
-                <span className="font-studio-display text-2xl text-studio-text md:text-right">
-                  {item.price}
-                  {item.note ? (
-                    <span className="type-label mt-1 block text-studio-muted md:text-right">{item.note}</span>
-                  ) : null}
-                </span>
-              </a>
-            </li>
-          ))}
-        </ul>
-        <p className="type-body mt-8 max-w-2xl text-studio-muted">
+    <Section id="work-with-me" eyebrow="WORK WITH ME" heading="Straight prices. One person, start to finish.">
+      <div className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+        {PACKAGES.map((item, index) => (
+          <Reveal key={item.title} delay={index * 60}>
+            <a
+              href={item.href}
+              className={`card relative flex h-full flex-col p-5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-amber ${
+                item.anchor ? "border-amber" : ""
+              }`}
+            >
+              {item.anchor ? <span className="glow-amber pointer-events-none absolute inset-0 -z-10" aria-hidden="true" /> : null}
+              {item.anchor ? <p className="type-label text-amber">Start here</p> : null}
+              <h3 className="mt-2 font-studio-display text-2xl text-studio-text">{item.title}</h3>
+              <p className="mt-4 text-studio-text">
+                {item.from ? <span className="mr-1 text-sm text-studio-muted">from</span> : null}
+                <span className="font-studio-display text-4xl">{item.price}</span>
+                <span className="ml-1 text-sm text-studio-muted">{item.note}</span>
+              </p>
+              <p className="type-body mt-3 text-studio-muted">{item.copy}</p>
+              {item.bullets.length > 0 ? (
+                <ul className="mt-4 space-y-2 text-sm text-studio-text">
+                  {item.bullets.map((bullet) => (
+                    <li key={bullet}>{bullet}</li>
+                  ))}
+                </ul>
+              ) : null}
+            </a>
+          </Reveal>
+        ))}
+      </div>
+      <div className="mt-6 border-l-2 border-amber bg-studio-surface px-5 py-4">
+        <p className="type-body max-w-2xl text-studio-muted">
           Registered charities get the same packages free - website, social and content. Say you are registered when you get in touch.
         </p>
-        <p className="type-body mt-3 max-w-2xl text-studio-muted">
-          50% upfront, 50% at launch. You own the domain, content and code. No lock-in.
-        </p>
-        <div className="mt-8 flex flex-wrap items-center gap-6">
-          <Button href="/contact">Start a project</Button>
-          <Button href="https://wa.me/447378420418" variant="secondary">
-            Message on WhatsApp
-          </Button>
-        </div>
-      </Container>
-    </section>
+      </div>
+      <ul className="mt-6 flex flex-wrap gap-2">
+        {["50% upfront", "50% at launch", "You own the domain, content and code", "No lock-in"].map((term) => (
+          <li key={term} className="rounded-full border border-studio-line px-3 py-2 font-studio-mono text-xs text-studio-muted">
+            {term}
+          </li>
+        ))}
+      </ul>
+      <div className="mt-8 flex flex-wrap items-center gap-6">
+        <Button href="/contact">Start a project</Button>
+        <Button href="https://wa.me/447378420418" variant="secondary">
+          Message on WhatsApp
+        </Button>
+      </div>
+    </Section>
   );
 }

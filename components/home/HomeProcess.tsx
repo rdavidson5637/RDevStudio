@@ -1,5 +1,5 @@
-import { Container } from "@/components/ui/Container";
-import { SectionHeader } from "@/components/ui/SectionHeader";
+import { Section } from "@/components/ui/Section";
+import { ProcessTrack } from "./ProcessTrack";
 
 const STEPS = [
   {
@@ -26,22 +26,21 @@ const STEPS = [
 
 export function HomeProcess() {
   return (
-    <section className="bg-bg py-20 text-studio-text md:py-28">
-      <Container>
-        <SectionHeader tone="studio" label="How it works" heading="Four steps, no surprises." />
-        <ol className="mt-10 border-t border-studio-border">
+    <Section eyebrow="HOW IT WORKS" heading="Four steps, no surprises.">
+      <div className="relative mt-10">
+        <ProcessTrack />
+        <ol className="relative grid gap-8 md:grid-cols-4">
           {STEPS.map((step) => (
-            <li
-              key={step.number}
-              className="grid grid-cols-[3rem_1fr] gap-4 border-b border-studio-border py-6 md:grid-cols-[4rem_14rem_1fr] md:items-baseline"
-            >
-              <span className="type-label text-studio-muted">{step.number}</span>
-              <h3 className="font-studio-display text-2xl text-studio-text">{step.title}</h3>
-              <p className="type-body col-start-2 text-studio-muted md:col-start-auto">{step.copy}</p>
+            <li key={step.number} className="relative pl-10 md:pl-0">
+              <span className="absolute left-0 top-0 flex h-8 w-8 items-center justify-center rounded-full border border-studio-line bg-studio-bg font-studio-mono text-xs text-amber md:static">
+                {step.number}
+              </span>
+              <h3 className="mt-3 font-studio-display text-2xl text-studio-text">{step.title}</h3>
+              <p className="type-body mt-2 text-studio-muted">{step.copy}</p>
             </li>
           ))}
         </ol>
-      </Container>
-    </section>
+      </div>
+    </Section>
   );
 }
