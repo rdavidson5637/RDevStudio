@@ -7,15 +7,16 @@ type StaggerProps = {
   children: ReactNode;
   as?: ElementType;
   className?: string;
+  immediate?: boolean;
 };
 
-export function Stagger({ children, as: Tag = "div", className = "" }: StaggerProps) {
+export function Stagger({ children, as: Tag = "div", className = "", immediate = false }: StaggerProps) {
   return (
     <Tag className={className}>
       {Children.map(children, (child, index) => {
         if (!isValidElement(child)) return child;
         return (
-          <Reveal key={child.key ?? index} delay={index * 60} className="min-w-0">
+          <Reveal key={child.key ?? index} delay={index * 60} immediate={immediate} className="min-w-0">
             {child}
           </Reveal>
         );

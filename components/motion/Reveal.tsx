@@ -1,19 +1,30 @@
 "use client";
 
-import { useEffect, useRef, useState, type ElementType, type ReactNode } from "react";
+import { useEffect, useLayoutEffect, useRef, useState, type ElementType, type ReactNode } from "react";
 
 type RevealProps = {
   children: ReactNode;
   delay?: number;
   as?: ElementType;
   className?: string;
+  immediate?: boolean;
 };
 
-export function Reveal({ children, delay = 0, as: Tag = "div", className = "" }: RevealProps) {
+export function Reveal({ children, delay = 0, as: Tag = "div", className = "", immediate = false }: RevealProps) {
   const ref = useRef<HTMLElement | null>(null);
   const [mode, setMode] = useState<"plain" | "hidden" | "shown">("plain");
 
+  useLayoutEffect(() => {
+    if (!immediate) return;
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduce) return;
+    setMode("hidden");
+    const id = requestAnimationFrame(() => setMode("shown"));
+    return () => cancelAnimationFrame(id);
+  }, [immediate]);
+
   useEffect(() => {
+    if (immediate) return;
     const node = ref.current;
     if (!node) return;
 
