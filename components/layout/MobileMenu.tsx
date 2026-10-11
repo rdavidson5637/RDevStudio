@@ -6,6 +6,8 @@ import { createPortal } from "react-dom";
 import { SHELL_NAV_LINKS } from "@/lib/constants";
 import { Button } from "@/components/ui/Button";
 
+const WHATSAPP_URL = "https://wa.me/447378420418";
+
 type MobileMenuProps = {
   open: boolean;
   onClose: () => void;
@@ -58,7 +60,7 @@ export function MobileMenu({ open, onClose, isActive }: MobileMenuProps) {
       role="dialog"
       aria-modal="true"
       aria-label="Navigation menu"
-      className="fixed inset-0 z-[200] flex flex-col bg-bg px-6 pb-8 pt-6 text-studio-text md:hidden"
+      className="fixed inset-0 z-[200] flex flex-col bg-studio-bg px-6 pb-8 pt-6 text-studio-text md:hidden"
     >
       <div className="flex items-center justify-between">
         <Link
@@ -81,8 +83,8 @@ export function MobileMenu({ open, onClose, isActive }: MobileMenuProps) {
         </button>
       </div>
 
-      <nav className="flex flex-1 flex-col justify-center gap-6" aria-label="Mobile navigation">
-        {SHELL_NAV_LINKS.map((link) => {
+      <nav className="flex flex-1 flex-col justify-center gap-5" aria-label="Mobile navigation">
+        {SHELL_NAV_LINKS.map((link, index) => {
           const active = isActive(link.href);
           return (
             <Link
@@ -90,9 +92,10 @@ export function MobileMenu({ open, onClose, isActive }: MobileMenuProps) {
               href={link.href}
               onClick={onClose}
               aria-current={active ? "page" : undefined}
-              className={`font-studio-display text-4xl tracking-tight ${
+              className={`menu-item font-studio-display text-3xl tracking-tight ${
                 active ? "text-amber" : "text-studio-text"
               }`}
+              style={{ animationDelay: `${index * 60}ms` }}
             >
               {link.label}
             </Link>
@@ -100,9 +103,19 @@ export function MobileMenu({ open, onClose, isActive }: MobileMenuProps) {
         })}
       </nav>
 
-      <Button href="/contact" className="w-full" onClick={onClose}>
-        Start a project
-      </Button>
+      <div className="menu-item" style={{ animationDelay: `${SHELL_NAV_LINKS.length * 60}ms` }}>
+        <Button href="/contact" className="w-full" onClick={onClose}>
+          Start a project
+        </Button>
+        <a
+          href={WHATSAPP_URL}
+          className="mt-3 inline-flex min-h-11 w-full items-center justify-center text-sm text-studio-muted underline decoration-studio-line-strong underline-offset-4 hover:text-amber"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          WhatsApp
+        </a>
+      </div>
     </div>,
     document.body,
   );
