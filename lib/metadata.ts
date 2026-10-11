@@ -5,19 +5,21 @@ type PageMeta = {
   title: string;
   description?: string;
   path: string;
+  ogImage?: string;
 };
 
 export function createPageMetadata({
   title,
   description = SITE_DESCRIPTION,
   path,
+  ogImage = "/opengraph-image",
 }: PageMeta): Metadata {
   const isHome = path === "/";
-  const pageTitle = isHome ? SITE_TITLE : `${title} - ${SITE_TITLE}`;
+  const pageTitle = isHome ? SITE_TITLE : title;
   const url = `${SITE_URL}${path === "/" ? "" : path}`;
 
   return {
-    title: { absolute: isHome ? SITE_TITLE : pageTitle },
+    title: isHome ? { absolute: SITE_TITLE } : title,
     description,
     alternates: {
       canonical: path,
@@ -29,13 +31,13 @@ export function createPageMetadata({
       siteName: SITE_NAME,
       locale: "en_GB",
       type: "website",
-      // OG image is provided site-wide by app/opengraph-image.tsx
+      images: [{ url: ogImage, width: 1200, height: 630 }],
     },
     twitter: {
       card: "summary_large_image",
       title: pageTitle,
       description,
-      // Twitter image falls back to app/opengraph-image.tsx
+      images: [ogImage],
     },
   };
 }
@@ -43,7 +45,7 @@ export function createPageMetadata({
 export const rootMetadata: Metadata = {
   title: {
     default: SITE_TITLE,
-    template: `%s - ${SITE_TITLE}`,
+    template: "%s | RDev Studio",
   },
   description: SITE_DESCRIPTION,
   metadataBase: new URL(SITE_URL),
@@ -57,16 +59,19 @@ export const rootMetadata: Metadata = {
     siteName: SITE_NAME,
     locale: "en_GB",
     type: "website",
-    // OG image is provided site-wide by app/opengraph-image.tsx
+    images: [{ url: "/opengraph-image", width: 1200, height: 630 }],
   },
   twitter: {
     card: "summary_large_image",
     title: SITE_TITLE,
     description: SITE_DESCRIPTION,
-    // Twitter image falls back to app/opengraph-image.tsx
+    images: ["/opengraph-image"],
   },
   icons: {
-    icon: "/favicon.svg",
-    apple: "/favicon.svg",
+    icon: [
+      { url: "/icon.svg", type: "image/svg+xml" },
+      { url: "/favicon.ico", sizes: "32x32" },
+    ],
+    apple: [{ url: "/apple-icon.png", sizes: "180x180" }],
   },
 };

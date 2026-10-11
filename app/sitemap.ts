@@ -27,6 +27,7 @@ const ROUTES = [
   "/projects",
   "/about",
   "/contact",
+  "/hire",
   "/champions-draft",
   "/rugby-draft",
   "/pub-quiz",

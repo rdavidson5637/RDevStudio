@@ -8,7 +8,7 @@ export const HIRE_PROFILE =
   "Software developer graduating Summer 2026 with an MSc in Software Development - and a genuine interest in product design, particularly where technology meets real human behaviour. I've built ShelterLink in close collaboration with Assisi Animal Sanctuary, making every UX decision myself. I also run RDev Studio, serving local NI businesses. I work extensively with AI tools including Cursor and Claude to stay focused on what actually matters: solving the right problem well.";
 
 export const HIRE_STATS = [
-  "Graduating Summer 2026 - MSc, Queen's",
+  "MSc Software Development, Queen's University Belfast - Commendation",
   "BSc Forensic Science (LJMU)",
   "Full-stack product builder",
   "ShelterLink dissertation project",

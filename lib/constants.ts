@@ -191,7 +191,7 @@ export const SERVICES = [
     price: "from £650",
     priceNote: "one-off",
     description:
-      "A site that says who you are, what you do, and how to get in touch. Phones first. No template.",
+      "A site that says who you are, what you do, and how to get in touch. Phone first. No template.",
   },
   {
     number: "02",

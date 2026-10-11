@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { SITE_URL } from "@/lib/constants";
+import { Reveal } from "@/components/motion/Reveal";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata = createPageMetadata({
@@ -37,56 +37,14 @@ const OFF_THE_PITCH = [
   },
 ] as const;
 
-const personJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "Person",
-  name: "Ryan Davidson",
-  jobTitle: "Designer and developer",
-  url: SITE_URL,
-  email: "mailto:ryan@rdevstudio.co.uk",
-  sameAs: [
-    "https://www.linkedin.com/in/ryan-davidson-462bb221b",
-    "https://github.com/rdavidson5637",
-  ],
-  worksFor: {
-    "@type": "Organization",
-    name: "RDev Studio",
-    url: SITE_URL,
-  },
-  alumniOf: [
-    {
-      "@type": "CollegeOrUniversity",
-      name: "Queen's University Belfast",
-    },
-    {
-      "@type": "CollegeOrUniversity",
-      name: "Liverpool John Moores University",
-    },
-  ],
-  homeLocation: {
-    "@type": "Place",
-    name: "Carrickfergus, Northern Ireland",
-    address: {
-      "@type": "PostalAddress",
-      addressLocality: "Carrickfergus",
-      addressRegion: "Northern Ireland",
-      addressCountry: "GB",
-    },
-  },
-};
-
 export default function AboutPage() {
   return (
-    <div className="studio-page px-4 py-20 sm:px-6 md:py-28">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
-      />
+    <div className="studio-page px-4 py-16 sm:px-6 md:py-24 lg:py-32">
       <article className="container-wide px-6">
-        <header className="border-b border-border pb-10">
+        <Reveal as="header" className="border-b border-border pb-10">
           <div className="grid gap-8 lg:grid-cols-[1fr,280px] lg:items-end">
             <div>
-              <p className="shell-label mb-3 text-accent">SQUAD - No. 10</p>
+              <p className="eyebrow mb-3 text-amber">Squad - No. 10</p>
               <h1 className="display-lg text-studio-text">Ryan Davidson</h1>
             </div>
             <figure>
@@ -105,7 +63,7 @@ export default function AboutPage() {
               </figcaption>
             </figure>
           </div>
-        </header>
+        </Reveal>
 
         <section
           className="border-b border-border py-12"
@@ -131,7 +89,7 @@ export default function AboutPage() {
           <div className="max-w-3xl space-y-5 text-base leading-relaxed text-primary sm:text-lg">
             <p>
               I didn&apos;t take the usual route in. Forensic science degree,
-              then into the civil service last August - handling casework and
+              then into the civil service in August 2025 - handling casework and
               talking to claimants for most of the day. Real problems, real
               people, lots of process. You learn to read a file properly, spot
               what&apos;s missing, and explain yourself clearly when
