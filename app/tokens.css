@@ -113,6 +113,8 @@
   --color-studio-bg-20: rgba(10, 10, 15, 0.2);
   --color-studio-surface: #101018;
   --color-studio-surface-2: #15151f;
+  --color-studio-line: rgba(255, 255, 255, 0.06);
+  --color-studio-line-strong: rgba(255, 255, 255, 0.12);
   --color-studio-border: rgba(255, 255, 255, 0.08);
   --color-studio-border-strong: rgba(255, 255, 255, 0.14);
   --color-studio-text: #f4f4f5;

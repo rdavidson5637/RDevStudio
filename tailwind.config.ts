@@ -80,6 +80,8 @@ const config: Config = {
           bg: "var(--color-studio-bg)",
           surface: "var(--color-studio-surface)",
           "surface-2": "var(--color-studio-surface-2)",
+          line: "var(--color-studio-line)",
+          "line-strong": "var(--color-studio-line-strong)",
           border: "var(--color-studio-border)",
           "border-strong": "var(--color-studio-border-strong)",
           text: "var(--color-studio-text)",

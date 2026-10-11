@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Analytics } from "@vercel/analytics/next";
-import { Anton, Archivo, DM_Serif_Display, Geist, Geist_Mono, Space_Mono } from "next/font/google";
+import { Anton, DM_Serif_Display, Geist, Geist_Mono, Space_Mono } from "next/font/google";
 import { rootMetadata } from "@/lib/metadata";
 import { StructuredData } from "@/components/StructuredData";
 import "./globals.css";
@@ -9,13 +9,6 @@ const anton = Anton({
   weight: "400",
   subsets: ["latin"],
   variable: "--font-display",
-  display: "swap",
-});
-
-const archivo = Archivo({
-  weight: ["400", "600"],
-  subsets: ["latin"],
-  variable: "--font-body",
   display: "swap",
 });
 
@@ -50,6 +43,7 @@ export const metadata: Metadata = rootMetadata;
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
+  themeColor: "#0A0A0F",
 };
 
 export default function RootLayout({
@@ -60,7 +54,7 @@ export default function RootLayout({
   return (
     <html
       lang="en-GB"
-      className={`${anton.variable} ${archivo.variable} ${spaceMono.variable} ${dmSerif.variable} ${geist.variable} ${geistMono.variable}`}
+      className={`${anton.variable} ${spaceMono.variable} ${dmSerif.variable} ${geist.variable} ${geistMono.variable}`}
     >
       <body className="font-sans antialiased">
         <StructuredData />
