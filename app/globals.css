@@ -281,6 +281,52 @@ body {
     transition: transform 200ms ease;
   }
 
+  .cover-shift,
+  .cover-pass,
+  .cover-garment {
+    transition: transform 500ms ease, opacity 300ms ease;
+    transform-box: fill-box;
+    transform-origin: center;
+  }
+
+  .cover-draw {
+    stroke-dasharray: 420;
+    stroke-dashoffset: 420;
+    transition: stroke-dashoffset 700ms ease;
+  }
+
+  .cover-garment-b {
+    opacity: 0;
+  }
+
+  .cover-sweep {
+    transform-box: view-box;
+    transform-origin: 160px 100px;
+  }
+
+  .cover-ripple {
+    transform-box: fill-box;
+    transform-origin: center;
+  }
+
+  .hero-glow {
+    background: radial-gradient(circle, rgba(245, 158, 11, 0.1), transparent 68%);
+    filter: blur(48px);
+  }
+
+  .hero-grid {
+    background-image:
+      linear-gradient(var(--color-studio-line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--color-studio-line) 1px, transparent 1px);
+    background-size: 48px 48px;
+    -webkit-mask-image: linear-gradient(to bottom, #000 15%, transparent 80%);
+    mask-image: linear-gradient(to bottom, #000 15%, transparent 80%);
+  }
+
+  .fan-card {
+    transform: rotate(calc((var(--i) - 1) * 7deg)) translateY(calc(var(--i) * 36px));
+  }
+
   .interactive-surface {
     @apply rounded-xl border border-border-strong bg-overlay transition-colors duration-normal ease-out hover:border-border-accent;
   }
@@ -407,6 +453,50 @@ body {
     animation: status-ping 2.4s cubic-bezier(0, 0, 0.2, 1) infinite;
     opacity: 0.35;
   }
+
+  .group:hover .cover-shift {
+    transform: translate(var(--dx), var(--dy));
+  }
+
+  .group:hover .cover-pass {
+    transform: translate(150px, -16px);
+  }
+
+  .group:hover .cover-pulse {
+    animation: cover-pulse 1s ease-in-out infinite;
+  }
+
+  .group:hover .cover-draw {
+    stroke-dashoffset: 0;
+  }
+
+  .group:hover .cover-ripple {
+    animation: cover-ripple 1.2s ease-out infinite;
+  }
+
+  .group:hover .cover-garment-a {
+    opacity: 0;
+  }
+
+  .group:hover .cover-garment-b {
+    opacity: 1;
+  }
+
+  .group:hover .cover-sweep {
+    animation: cover-spin 2.8s linear infinite;
+  }
+
+  .group:hover .cover-note {
+    animation: cover-note 700ms ease both;
+  }
+
+  .fan-card {
+    transition: transform 300ms ease;
+  }
+
+  .group:hover .fan-card {
+    transform: rotate(calc((var(--i) - 1) * 12deg)) translate(calc((var(--i) - 1) * 42px), calc(var(--i) * 18px));
+  }
 }
 
 @keyframes reveal-in {
@@ -429,6 +519,45 @@ body {
   100% {
     transform: scale(2.4);
     opacity: 0;
+  }
+}
+
+@keyframes cover-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.45;
+  }
+}
+
+@keyframes cover-ripple {
+  0% {
+    transform: scale(0.6);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1.8);
+    opacity: 0;
+  }
+}
+
+@keyframes cover-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes cover-note {
+  0% {
+    opacity: 0.2;
+  }
+  40% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
   }
 }
 
@@ -653,6 +782,10 @@ body {
   .pitch-link::after {
     transition: none;
     transform: scaleX(1);
+  }
+
+  .cover-draw {
+    stroke-dashoffset: 0;
   }
 }
 
