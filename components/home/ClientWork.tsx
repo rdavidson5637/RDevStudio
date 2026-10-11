@@ -2,27 +2,10 @@ import Image from "next/image";
 import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 import { SectionHeader } from "@/components/ui/SectionHeader";
+import { clientBySlug } from "@/lib/content/products";
 
-const JOBS = [
-  {
-    title: "Assisi Animal Sanctuary",
-    badge: "Built - awaiting sign-off",
-    copy: "A rebuilt site and brand for Assisi Animal Sanctuary in Belfast. Built and ready for their feedback.",
-    href: "/work",
-  },
-  {
-    title: "ShelterLink",
-    badge: "Ready for live use",
-    copy: "Volunteer rotas, roles and an admin dashboard for Assisi Animal Sanctuary.",
-    href: "/work/shelterlink",
-  },
-  {
-    title: "RV's Cold Brew",
-    badge: "Live site - nearly finished",
-    copy: "A Belfast cold brew and matcha counter. Menu, hours and where to find Unit 11. Square is linked and the last details are being finished.",
-    href: "/work/rvs-cold-brew",
-  },
-] as const;
+const HOME_JOBS = ["assisi", "shelterlink", "rvs-cold-brew"] as const;
+const JOBS = HOME_JOBS.map((slug) => clientBySlug(slug)).filter((job) => job !== undefined);
 
 export function ClientWork() {
   return (
@@ -52,16 +35,16 @@ export function ClientWork() {
           </figure>
           <ul className="border-t border-studio-border md:col-span-7">
             {JOBS.map((job) => (
-              <li key={job.href} className="border-b border-studio-border">
+              <li key={job.slug} className="border-b border-studio-border">
                 <Link
-                  href={job.href}
+                  href={job.href ?? "/work"}
                   className="group block py-6 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-amber"
                 >
-                  <span className="type-label text-studio-muted">{job.badge}</span>
+                  <span className="type-label text-studio-muted">{job.statusLabel}</span>
                   <span className="mt-2 block font-studio-display text-3xl text-studio-text transition-colors duration-200 group-hover:text-amber">
-                    {job.title}
+                    {job.name}
                   </span>
-                  <span className="type-body mt-2 block max-w-xl text-studio-muted">{job.copy}</span>
+                  <span className="type-body mt-2 block max-w-xl text-studio-muted">{job.summary}</span>
                 </Link>
               </li>
             ))}

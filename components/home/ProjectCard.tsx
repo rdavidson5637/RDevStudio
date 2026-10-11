@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import type { Project } from "@/lib/projects";
+import type { Product as Project } from "@/lib/content/products";
 
 type ProjectRowProps = {
   project: Project;

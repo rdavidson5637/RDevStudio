@@ -1,16 +1,16 @@
 import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 import { SectionHeader } from "@/components/ui/SectionHeader";
-import { liveProjects } from "@/lib/projects";
+import { liveProducts } from "@/lib/content/products";
 import { ProjectRow } from "./ProjectCard";
 
 const HOME_FIRST = ["stout-finder", "draft-analyser"];
 
 const homeProjects = [
-  ...HOME_FIRST.map((slug) => liveProjects.find((project) => project.slug === slug)).filter(
+  ...HOME_FIRST.map((slug) => liveProducts.find((project) => project.slug === slug)).filter(
     (project) => project !== undefined,
   ),
-  ...liveProjects.filter((project) => !HOME_FIRST.includes(project.slug)),
+  ...liveProducts.filter((project) => !HOME_FIRST.includes(project.slug)),
 ];
 
 const prioritySlugs = new Set(

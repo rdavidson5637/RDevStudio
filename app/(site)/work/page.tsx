@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { StudioPage } from "@/components/ui/StudioPage";
+import { clientBySlug, productBySlug } from "@/lib/content/products";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata = createPageMetadata({
@@ -12,23 +13,14 @@ const SECTIONS = [
   {
     title: "Client work",
     intro: "Jobs for real organisations.",
-    items: [
-      {
-        title: "ShelterLink",
-        description: "Volunteer rotas, roles, and an admin dashboard for Assisi Animal Sanctuary.",
-        href: "/work/shelterlink",
-      },
-      {
-        title: "RV's Cold Brew",
-        description: "A Belfast cold brew and matcha counter. Menu, hours, and directions.",
-        href: "/work/rvs-cold-brew",
-      },
-      {
-        title: "Paintball Wales",
-        description: "Phone-first site for a Snowdonia paintball park, built to replace a cluttered banner.",
-        href: "/work/paintball-wales",
-      },
-    ],
+    items: ["shelterlink", "rvs-cold-brew", "paintball-wales"].map((slug) => {
+      const job = clientBySlug(slug);
+      return {
+        title: job?.name ?? slug,
+        description: job?.summary ?? "",
+        href: job?.href ?? "/work",
+      };
+    }),
   },
   {
     title: "Other work",
@@ -49,28 +41,14 @@ const SECTIONS = [
   {
     title: "Games",
     intro: "Free in the browser.",
-    items: [
-      {
-        title: "Champions Draft",
-        description: "Spin iconic squads, draft your ultimate XI, and compete.",
-        href: "/champions-draft",
-      },
-      {
-        title: "Rugby Draft",
-        description: "Spin nation and club squads, draft your XV, and compete.",
-        href: "/rugby-draft",
-      },
-      {
-        title: "Longest Word",
-        description: "Spell the longest word you can from today's 4x4 letter grid.",
-        href: "/games/longest-word",
-      },
-      {
-        title: "Pub Quiz",
-        description: "Host a quiz night or join with a code.",
-        href: "/pub-quiz",
-      },
-    ],
+    items: ["champions-draft", "rugby-draft", "longest-word", "pub-quiz"].map((slug) => {
+      const product = productBySlug(slug);
+      return {
+        title: product?.name ?? slug,
+        description: product?.tagline ?? "",
+        href: product?.href ?? "/",
+      };
+    }),
   },
 ] as const;
 

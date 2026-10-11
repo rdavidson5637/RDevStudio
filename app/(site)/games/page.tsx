@@ -1,7 +1,7 @@
 import { ProjectRow } from "@/components/home/ProjectCard";
 import { StudioPage } from "@/components/ui/StudioPage";
 import { createPageMetadata } from "@/lib/metadata";
-import { games } from "@/lib/projects";
+import { games } from "@/lib/content/products";
 
 export const metadata = createPageMetadata({
   title: "Games",
