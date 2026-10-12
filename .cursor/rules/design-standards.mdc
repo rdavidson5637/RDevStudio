@@ -1,0 +1,75 @@
+---
+description: Design and copy standards for this site. Applies to every UI, layout and copy change.
+alwaysApply: true
+---
+
+# DESIGN STANDARDS
+
+Goal: this site must look like a designer built it for this one business. It must not look like a template or AI output. If a choice is the default choice, stop and make a deliberate one instead.
+
+## Before you change any UI
+1. Read `.design/brief.md` if it exists. It holds the direction, tokens and page jobs. Follow it over anything in this file.
+2. Use only tokens defined in the tailwind config or CSS variables. No hardcoded hex values, no arbitrary px values in components.
+3. If a value is missing from the tokens, add it to the tokens first, then use it.
+
+## Type
+- Never use Inter, Roboto, Arial, Open Sans or the system default as display or body font.
+- One display font with character, one quiet body font. Two families maximum.
+- Load through `next/font`. No external font links.
+- Fixed type scale, six sizes maximum. Do not invent extra label or caption styles.
+- Body copy 65 to 75 characters per line. Body line height 1.5 to 1.7. Headings tight (1.05 to 1.2).
+- Headings are sentence case unless the brand is deliberately all caps.
+
+## Colour
+- One background, one ink, one brand colour, one accent. Everything else is a tint of these.
+- No purple or blue gradients. No gradient text. No glow blobs. No frosted glass panels.
+- Contrast AA minimum on all text, including text over photos (use a real scrim, not a faint overlay).
+- The accent colour is used sparingly: primary button, one highlight block, links. Not on every heading.
+
+## Layout
+- Do not use the default pattern of: hero, stat strip, three-up cards, six-tile grid, testimonials, CTA banner.
+- No three-icon feature row. Maximum one equal-width card grid per page.
+- No rounded-2xl card with soft shadow as the default container. Pick one container style for the whole site (flat block, ruled row, or bordered panel) and use it everywhere.
+- Vary rhythm: at least one full-bleed image section and one type-led section per page. Alternate layout direction between sections.
+- One section spacing token. Generous and consistent.
+- Lists of options (ways to help, services, menu) are ruled rows with a title, one line and an arrow, not tiles.
+
+## Imagery
+- Use real photos supplied by the client. Crop deliberately and consistently (one aspect ratio per set).
+- No stock-looking illustrations. No emoji or generic icon packs as decoration.
+- If a photo does not exist, use a clearly labelled placeholder and list it in your reply. Do not invent one.
+- Always `next/image` with correct `sizes`, alt text that describes the photo, and no layout shift.
+
+## Motion
+- Motion only where it explains or rewards something. One entrance style across the whole site.
+- No fade-up on every section. No parallax for its own sake. No bouncing or looping decoration.
+- Always respect `prefers-reduced-motion`.
+- Hover states change one property (colour or underline), not scale plus shadow plus glow.
+
+## Buttons and links
+- One primary button style. One secondary style, which is a text link with underline.
+- Never two competing calls to action side by side in the header or hero.
+- Primary action visible above the fold on every page. Phone, WhatsApp or email visible in header or footer.
+- Every interactive element has a visible focus state.
+
+## Copy
+- Plain, specific, human. Say what the business does, where, and what to do next.
+- No em dashes anywhere. Use a hyphen or rewrite the sentence.
+- Banned words: seamless, elevate, unlock, passionate, journey, crafting experiences, leverage, synergy, "we take pride", "look no further", "second to none", "welcome to".
+- No invented testimonials, reviews, stats, awards, client names, prices, opening hours or claims. If the content does not exist, leave it out and list it as a TODO in your reply.
+- Do not claim a feature works (online ordering, booking, payments) unless it is live and tested.
+- Headlines are not slogans. Prefer "Cold brew and matcha, Great Northern Mall" over "Elevate your coffee moment".
+
+## Structure and code
+- Next.js App Router, TypeScript, Tailwind. Server components by default, client components only for interactivity.
+- Do not touch forms, routes, data fetching, env vars, auth or payment code during a design task unless the prompt says so.
+- Contact forms go through Formspree. Do not swap the handler.
+- Semantic HTML: one h1 per page, headings in order, landmarks, buttons are buttons, links are links.
+- Page titles and meta descriptions written per page. Open Graph image set.
+
+## Quality bar (check before finishing any task)
+- Looks right at 375px, 768px and 1280px. No horizontal scroll, tap targets at least 44px.
+- Lighthouse accessibility 95 or higher. Performance 90 or higher on mobile.
+- No layout shift on image load. Fonts do not flash.
+- No console errors.
+- Final reply lists: files changed, anything left as TODO, anything you were unsure about.
