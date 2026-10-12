@@ -1,8 +1,8 @@
 import type { Metadata, Viewport } from "next";
-import { Analytics } from "@vercel/analytics/next";
 import { Anton, DM_Serif_Display, Geist, Geist_Mono, Space_Mono } from "next/font/google";
 import { rootMetadata } from "@/lib/metadata";
 import { StructuredData } from "@/components/StructuredData";
+import { SiteMetrics } from "@/components/layout/SiteMetrics";
 import "./globals.css";
 
 const anton = Anton({
@@ -59,7 +59,7 @@ export default function RootLayout({
       <body className="font-sans antialiased">
         <StructuredData />
         {children}
-        <Analytics />
+        <SiteMetrics />
       </body>
     </html>
   );

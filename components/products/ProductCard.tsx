@@ -15,7 +15,7 @@ export function ProductCard({ product }: { product: Product }) {
       </div>
       <div className="flex flex-1 flex-col p-5">
         <div className="flex items-start justify-between gap-3">
-          <h3 className="font-studio-display text-2xl leading-tight text-studio-text">{product.name}</h3>
+          <h2 className="font-studio-display text-2xl leading-tight text-studio-text">{product.name}</h2>
           <span className="arrow-nudge mt-1 inline-flex text-studio-muted" aria-hidden="true">
             {product.external ? (
               <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">

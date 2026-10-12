@@ -44,7 +44,7 @@ on Hobby.
 If the next deadline is between 1.5 and 24 hours away and the XI still has
 flags, POSTs `DRAFT_ALERT_WEBHOOK` and/or emails via Resend
 (`RESEND_API_KEY`, `DRAFT_ALERT_EMAIL`, `DRAFT_ALERT_FROM`). Browser
-notifications are a separate in-tab `Notification` — not Web Push.
+notifications are a separate in-tab `Notification` - not Web Push.
 
 ## Env extras
 

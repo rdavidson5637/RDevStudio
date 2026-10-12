@@ -21,7 +21,7 @@ export function Hero() {
       <div className="hero-grid pointer-events-none absolute inset-0" aria-hidden="true" />
       <Container className="relative pt-8 pb-16 md:pt-20 md:pb-24 lg:pt-24 lg:pb-28">
         <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,28rem)] lg:gap-8">
-          <Stagger immediate>
+          <Stagger>
             <p className="type-label text-studio-muted">Carrickfergus, Northern Ireland</p>
             <h1 className="display-xl mt-6 max-w-4xl text-balance text-studio-text">
               <span className="block">

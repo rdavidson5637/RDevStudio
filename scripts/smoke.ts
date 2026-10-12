@@ -9,6 +9,9 @@ const ROUTES = [
   "/work",
   "/work/shelterlink",
   "/work/rvs-cold-brew",
+  "/work/paintball-wales",
+  "/work/concept-builds",
+  "/work/uc-caseworker-tool",
   "/services",
   "/toolkit",
   "/contact",
@@ -52,15 +55,65 @@ async function check(page: Page, route: string) {
   if (status !== 200) {
     throw new Error(`${route} returned ${status}`);
   }
+  if (route === "/contact") {
+    await assertFormspreeAllowed(page);
+  }
   if (errors.length > 0) {
     throw new Error(`${route} console errors:\n${errors.join("\n")}`);
   }
   console.log(`200 ${route} ${heading?.trim() ?? ""}`);
 }
 
+async function assertFormspreeAllowed(page: Page) {
+  // Passed as a string so tsx does not inject its __name helper into the page.
+  const result = await page.evaluate<{ violation: string | null; timedOut: boolean }>(`
+    new Promise((resolve) => {
+      let violation = null;
+      let settled = false;
+      document.addEventListener("securitypolicyviolation", (event) => {
+        if (String(event.blockedURI).includes("formspree.io")) {
+          violation = event.violatedDirective || "connect-src";
+        }
+      });
+      const finish = (timedOut) => {
+        if (settled) return;
+        settled = true;
+        resolve({ violation, timedOut });
+      };
+      const timer = window.setTimeout(() => finish(true), 8000);
+      fetch("https://formspree.io", { method: "HEAD", mode: "no-cors" }).then(
+        () => window.setTimeout(() => { window.clearTimeout(timer); finish(false); }, 500),
+        () => window.setTimeout(() => { window.clearTimeout(timer); finish(false); }, 500),
+      );
+    })
+  `);
+
+  if (result.violation) {
+    throw new Error(`/contact blocked Formspree (${result.violation})`);
+  }
+  if (result.timedOut) {
+    throw new Error("/contact Formspree check timed out");
+  }
+}
+
+async function checkStoutFinderRedirect(page: Page) {
+  const response = await page.request.get(`${BASE}/stout-finder`, { maxRedirects: 0 });
+  const status = response.status();
+  const location = response.headers()["location"] ?? "";
+  const target = new URL(location, BASE).href.replace(/\/$/, "");
+  if (status !== 301 && status !== 308) {
+    throw new Error(`/stout-finder returned ${status}, expected 301 or 308`);
+  }
+  if (target !== "https://stoutfinder.com") {
+    throw new Error(`/stout-finder redirected to ${location || "(no Location header)"}`);
+  }
+  console.log(`${status} /stout-finder -> ${location}`);
+}
+
 async function main() {
   const browser = await chromium.launch();
   const page = await browser.newPage();
+  await checkStoutFinderRedirect(page);
   for (const route of ROUTES) {
     await check(page, route);
   }

@@ -121,7 +121,7 @@ const nextConfig = {
               "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
               "font-src 'self' https://fonts.gstatic.com data:",
               "img-src 'self' data: blob: https:",
-              "connect-src 'self' https://*.supabase.co wss://*.supabase.co https://*.pusher.com wss://*.pusher.com https://va.vercel-scripts.com https://vitals.vercel-insights.com",
+              "connect-src 'self' https://*.supabase.co wss://*.supabase.co https://*.pusher.com wss://*.pusher.com https://va.vercel-scripts.com https://vitals.vercel-insights.com https://formspree.io https://api.dictionaryapi.dev",
               "frame-ancestors 'none'",
               "base-uri 'self'",
               "form-action 'self' https://formspree.io",

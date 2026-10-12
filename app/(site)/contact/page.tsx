@@ -32,7 +32,7 @@ export default function ContactPage() {
           <aside className="flex flex-col gap-6">
             <a
               href={`mailto:${CONTACT_EMAIL}`}
-              className="font-studio-display text-2xl text-studio-text underline-offset-4 hover:text-amber hover:underline"
+              className="inline-flex min-h-11 items-center font-studio-display text-2xl text-studio-text underline-offset-4 hover:text-amber hover:underline"
             >
               {CONTACT_EMAIL}
             </a>
