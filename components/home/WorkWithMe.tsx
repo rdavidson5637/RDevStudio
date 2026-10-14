@@ -60,14 +60,17 @@ export function WorkWithMe() {
     <Section id="work-with-me" eyebrow="WORK WITH ME" heading="Straight prices. One person, start to finish.">
       <div className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
         {PACKAGES.map((item, index) => (
-          <Reveal key={item.title} delay={index * 60}>
-            <a
+          <Reveal key={item.title} delay={index * 60} className="h-full">
+            <div className="relative isolate h-full">
+              {item.anchor ? (
+                <span className="glow-amber pointer-events-none absolute -inset-6" aria-hidden="true" />
+              ) : null}
+              <a
               href={item.href}
               className={`card relative flex h-full flex-col p-5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-amber ${
                 item.anchor ? "border-amber" : ""
               }`}
             >
-              {item.anchor ? <span className="glow-amber pointer-events-none absolute inset-0 -z-10" aria-hidden="true" /> : null}
               {item.anchor ? <p className="type-label text-amber">Start here</p> : null}
               <h3 className="mt-2 font-studio-display text-2xl text-studio-text">{item.title}</h3>
               <p className="mt-4 text-studio-text">
@@ -83,7 +86,8 @@ export function WorkWithMe() {
                   ))}
                 </ul>
               ) : null}
-            </a>
+              </a>
+            </div>
           </Reveal>
         ))}
       </div>
