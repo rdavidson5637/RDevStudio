@@ -97,9 +97,7 @@ export default function WorkPage() {
       <p className="type-body mt-2 text-studio-muted">Free in the browser.</p>
       <div className="mt-6 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
         {games.map((game) => (
-          <div key={game.slug} className={game.featured ? "lg:col-span-2" : undefined}>
-            <ProductCard product={game} />
-          </div>
+          <ProductCard key={game.slug} product={game} />
         ))}
       </div>
     </Section>

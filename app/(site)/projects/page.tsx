@@ -1,4 +1,3 @@
-import { Reveal } from "@/components/motion/Reveal";
 import { ProductCard } from "@/components/products/ProductCard";
 import { Section } from "@/components/ui/Section";
 import { products } from "@/lib/content/products";
@@ -24,10 +23,8 @@ export default function ProjectsPage() {
         Not client work, and not the games. Some are live. The rest are still being built.
       </p>
       <div className="mt-14 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
-        {apps.map((project, index) => (
-          <Reveal key={project.slug} delay={index * 60} className={project.featured ? "lg:col-span-2" : undefined}>
-            <ProductCard product={project} />
-          </Reveal>
+        {apps.map((project) => (
+          <ProductCard key={project.slug} product={project} />
         ))}
       </div>
     </Section>

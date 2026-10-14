@@ -17,15 +17,14 @@ export default function ContactPage() {
   return (
     <div className="bg-bg text-studio-text">
       <Container className="py-20 md:py-28">
-        <p className="type-label text-studio-muted">Contact</p>
-        <h1 className="display-lg mt-4 max-w-3xl text-balance">Start a project</h1>
+        <h1 className="display-lg max-w-3xl text-balance">Start a project</h1>
         <p className="type-body mt-5 max-w-xl text-studio-muted">
           Need a site, help with posting, or something that does not fit a package. Form or email. I read both. I usually reply within one working day.
         </p>
         <p className="type-body mt-4 max-w-xl text-studio-muted">{CHARITY_NOTE}</p>
 
         <div className="mt-12 grid gap-10 lg:grid-cols-[1.4fr_0.8fr] lg:items-start">
-          <div className="card p-6 md:p-8">
+          <div className="bg-studio-surface p-6 md:p-8">
             <ContactForm />
           </div>
           <aside className="flex flex-col gap-6">

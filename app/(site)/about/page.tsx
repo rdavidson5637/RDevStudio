@@ -68,20 +68,14 @@ export default function AboutPage() {
           className="border-b border-border py-12"
           aria-label="Profile stats"
         >
-          <div className="rounded-[10px] border border-border bg-raised p-6 sm:p-8">
-            <dl className="grid gap-4 sm:grid-cols-2">
-              {PROFILE_STATS.map((stat) => (
-                <div key={stat.label}>
-                  <dt className="sr-only">{stat.label}</dt>
-                  <dd className="font-studio-sans text-sm leading-relaxed text-studio-muted">
-                    <span className="text-primary">{stat.label}</span>
-                    {" - "}
-                    {stat.value}
-                  </dd>
-                </div>
-              ))}
-            </dl>
-          </div>
+          <dl className="border-t border-studio-line">
+            {PROFILE_STATS.map((stat) => (
+              <div key={stat.label} className="grid gap-1 border-b border-studio-line py-4 sm:grid-cols-[10rem_1fr] sm:gap-6">
+                <dt className="text-sm font-bold text-studio-text">{stat.label}</dt>
+                <dd className="type-body text-studio-muted">{stat.value}</dd>
+              </div>
+            ))}
+          </dl>
         </section>
 
         <section className="border-b border-border py-12" aria-label="Bio">
@@ -117,16 +111,11 @@ export default function AboutPage() {
           aria-label="Off the pitch"
         >
           <h2 className="mb-4 font-studio-display text-2xl text-studio-text">Off the pitch</h2>
-          <div className="grid gap-4 md:grid-cols-3">
+          <div className="border-t border-studio-line">
             {OFF_THE_PITCH.map((item) => (
-              <article
-                key={item.label}
-                className="rounded-[10px] border border-border bg-raised px-4 py-4"
-              >
-                <p className="mb-2 font-studio-sans text-sm text-studio-muted">{item.label}</p>
-                <p className="text-sm leading-relaxed text-primary">
-                  {item.line}
-                </p>
+              <article key={item.label} className="border-b border-studio-line py-4">
+                <h3 className="font-studio-display text-2xl text-studio-text">{item.label}</h3>
+                <p className="type-body mt-2 max-w-prose text-studio-muted">{item.line}</p>
               </article>
             ))}
           </div>

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { CaseShot } from "@/components/work/CaseShot";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata = createPageMetadata({
@@ -17,6 +18,7 @@ function BuildSection({
   screenshotCaption,
   screenshotSrc,
   screenshotAlt,
+  bleed = false,
 }: {
   title: string;
   description: string;
@@ -24,21 +26,29 @@ function BuildSection({
   screenshotCaption: string;
   screenshotSrc: string;
   screenshotAlt: string;
+  bleed?: boolean;
 }) {
   return (
     <section className="border-t border-border py-10 first:border-t-0 first:pt-0">
-      <p className="font-studio-sans text-sm mb-3 text-secondary">Concept build</p>
-      <h2 className="text-[1.25rem] font-semibold text-primary">{title}</h2>
-      <div className="relative mt-5 h-64 w-full overflow-hidden rounded-lg border border-border bg-raised sm:h-80">
-        <Image
-          src={screenshotSrc}
-          alt={screenshotAlt}
-          fill
-          sizes="(max-width: 1120px) 100vw, 1120px"
-          className="object-cover object-top"
-        />
-      </div>
-      <p className="font-studio-sans text-sm mt-3 text-secondary">{screenshotCaption}</p>
+      <h2 className="font-studio-display text-2xl text-studio-text">{title}</h2>
+      {bleed ? (
+        <div className="mt-5">
+          <CaseShot src={screenshotSrc} alt={screenshotAlt} caption={screenshotCaption} priority />
+        </div>
+      ) : (
+        <figure className="mt-5">
+          <div className="relative aspect-[16/10] w-full overflow-hidden bg-studio-surface">
+            <Image
+              src={screenshotSrc}
+              alt={screenshotAlt}
+              fill
+              sizes="(max-width: 1120px) 100vw, 1120px"
+              className="object-cover object-top"
+            />
+          </div>
+          <figcaption className="mt-3 font-studio-sans text-sm text-studio-faint">{screenshotCaption}</figcaption>
+        </figure>
+      )}
       <p className="mt-5 max-w-3xl text-base leading-relaxed text-primary sm:text-lg">
         {description}
       </p>
@@ -104,8 +114,8 @@ export default function ConceptBuildsPage() {
         </header>
 
         <div className="border-b border-border py-12">
-          {BUILDS.map((build) => (
-            <BuildSection key={build.title} {...build} />
+          {BUILDS.map((build, index) => (
+            <BuildSection key={build.title} {...build} bleed={index === 0} />
           ))}
         </div>
 

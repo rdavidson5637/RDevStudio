@@ -60,17 +60,15 @@ export default function ToolkitPage() {
         {groups.map((group) => (
           <section key={group.title}>
             <h2 className="type-h2 text-studio-text">{group.title}</h2>
-            <ul className="mt-6 grid gap-4 md:grid-cols-2">
+            <ul className="mt-6 border-t border-studio-line">
               {group.tools.map((tool) => (
-                <li key={tool.slug}>
+                <li key={tool.slug} className="border-b border-studio-line">
                   <Link
                     href={tool.href}
-                    className="card group flex h-full flex-col p-5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-studio-text"
+                    className="block py-4 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-studio-text"
                   >
-                    <span>
-                      <span className="block font-studio-display text-2xl text-studio-text">{tool.title}</span>
-                      <span className="type-body mt-1 block text-studio-muted">{tool.description}</span>
-                    </span>
+                    <span className="block font-studio-display text-2xl text-studio-text">{tool.title}</span>
+                    <span className="type-body mt-1 block max-w-prose text-studio-muted">{tool.description}</span>
                   </Link>
                 </li>
               ))}

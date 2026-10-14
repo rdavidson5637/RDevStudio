@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { createPageMetadata } from "@/lib/metadata";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
+import { CaseShot } from "@/components/work/CaseShot";
 
 export const metadata = createPageMetadata({
   title: "ShelterLink",
@@ -35,7 +36,7 @@ function ScreenshotSlot({
           className="object-cover object-top"
         />
       </div>
-      <figcaption className="font-studio-sans text-sm text-secondary">{caption}</figcaption>
+      <figcaption className="font-studio-sans text-sm text-studio-faint">{caption}</figcaption>
     </figure>
   );
 }
@@ -77,24 +78,14 @@ export default function ShelterLinkCaseStudyPage() {
           </div>
         </header>
 
-        <section
-          className="border-b border-border py-12"
-          aria-label="Hero screenshot"
-        >
-          <div className="relative h-72 w-full overflow-hidden rounded-lg border border-border bg-raised sm:h-[34rem]">
-            <Image
-              src="/images/work/shelterlink-admin-dashboard.png"
-              alt="ShelterLink admin dashboard with volunteer metrics and recent activity"
-              fill
-              priority
-              sizes="(max-width: 1120px) 100vw, 1120px"
-              className="object-cover object-top"
-            />
-          </div>
-          <p className="font-studio-sans text-sm mt-3 text-secondary">
-            Admin dashboard
-          </p>
-        </section>
+        <div className="border-b border-border py-12">
+          <CaseShot
+            src="/images/work/shelterlink-admin-dashboard.png"
+            alt="ShelterLink admin dashboard with volunteer metrics and recent activity"
+            caption="Admin dashboard"
+            priority
+          />
+        </div>
 
         <section className="border-b border-border py-12">
           <SectionHeading>How they were running it</SectionHeading>

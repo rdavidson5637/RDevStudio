@@ -1,4 +1,3 @@
-import { Reveal } from "@/components/motion/Reveal";
 import { ProductCard } from "@/components/products/ProductCard";
 import { Section } from "@/components/ui/Section";
 import { games } from "@/lib/content/products";
@@ -17,10 +16,8 @@ export default function GamesPage() {
       <h1 className="display-lg max-w-3xl text-balance text-studio-text">Games</h1>
       <p className="type-body mt-5 max-w-xl text-studio-muted">Free in the browser. No ads, no sign-up.</p>
       <div className="mt-14 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
-        {games.map((game, index) => (
-          <Reveal key={game.slug} delay={index * 60} className={game.featured ? "lg:col-span-2" : undefined}>
-            <ProductCard product={game} />
-          </Reveal>
+        {games.map((game) => (
+          <ProductCard key={game.slug} product={game} />
         ))}
       </div>
     </Section>

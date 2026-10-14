@@ -1,5 +1,8 @@
 import Link from "next/link";
-import { createPageMetadata } from "@/lib/metadata";
+import { Scoreboard } from "@/components/pricing/Scoreboard";
+import { FAQ } from "@/components/services/FAQ";
+import { Button } from "@/components/ui/Button";
+import { Section } from "@/components/ui/Section";
 import {
   CHARITY_NOTE,
   CONTENT_CREATION_FEATURES,
@@ -8,7 +11,7 @@ import {
   SERVICES,
   SOCIAL_MEDIA_FEATURES,
 } from "@/lib/constants";
-import { FAQ } from "@/components/services/FAQ";
+import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata = createPageMetadata({
   title: "Work with me",
@@ -40,7 +43,7 @@ const SERVICE_DETAILS = [
       "I build it, you see a draft, one round of notes",
       "Launch and a handover of how to make simple edits",
     ],
-    cta: "Start a project",
+    cta: "Get a quote",
   },
   {
     slug: "social",
@@ -51,12 +54,9 @@ const SERVICE_DETAILS = [
       "Answering comments and DMs all day",
       "Buying followers or fake engagement",
     ],
-    timeline:
-      "First month's calendar in the first week. Posting starts once you sign the calendar off.",
-    revisions:
-      "One round of notes on each month's batch - captions and graphics - before anything is scheduled.",
-    ideal:
-      "You know you should be posting and you do not have a free hour every week to do it.",
+    timeline: "First month's calendar in the first week. Posting starts once you sign the calendar off.",
+    revisions: "One round of notes on each month's batch - captions and graphics - before anything is scheduled.",
+    ideal: "You know you should be posting and you do not have a free hour every week to do it.",
     process: [
       "Look at what you already post, if anything",
       "Agree the month's calendar with you",
@@ -74,212 +74,133 @@ const SERVICE_DETAILS = [
       "Ongoing posting and scheduling (that is the social package)",
       "A new brand identity",
     ],
-    timeline:
-      "A small set in a few days. A bigger batch about a week, once the brief and any photos are in.",
-    revisions:
-      "One round included after you see the set. Extra rounds are quoted before I start them.",
-    ideal:
-      "A product launch, a campaign, or a batch of posts without a monthly retainer.",
+    timeline: "A small set in a few days. A bigger batch about a week, once the brief and any photos are in.",
+    revisions: "One round included after you see the set. Extra rounds are quoted before I start them.",
+    ideal: "A product launch, a campaign, or a batch of posts without a monthly retainer.",
     process: [
       "Brief: what it is for, who it is for, what you already have",
       "I write and design the set",
       "One round of notes",
       "Files delivered ready to post",
     ],
-    cta: "Start a project",
+    cta: "Get a quote",
   },
 ] as const;
 
 export default function ServicesPage() {
   return (
-    <div className="studio-page px-4 py-16 sm:px-6 md:py-24 lg:py-32">
-      <div className="container-wide px-6">
-        <header className="border-b border-border pb-10">
-          <p className="shell-label mb-3 text-accent">The offer</p>
-          <h1 className="display-lg text-studio-text">Work with me</h1>
-          <p className="mt-5 max-w-3xl text-base leading-relaxed text-primary sm:text-lg">
-            Websites, social media, and content for Northern Ireland small
-            businesses and charities. Clear prices. One person from start to
-            finish.
-          </p>
+    <div className="bg-studio-bg text-studio-text">
+      <Section>
+        <h1 className="display-lg max-w-[14ch] text-balance text-studio-text">Work with me</h1>
+        <p className="type-body mt-5 max-w-prose text-studio-muted">
+          Websites, social media, and content for Northern Ireland small businesses and charities. Clear prices. One person from start to finish.
+        </p>
+        <p className="type-body mt-4 max-w-prose text-studio-muted">{CHARITY_NOTE}</p>
+        <nav className="mt-6 flex flex-wrap gap-x-6" aria-label="Jump to service">
+          {SERVICES.map((service) => (
+            <a
+              key={service.slug}
+              href={`#${service.slug}`}
+              className="inline-flex min-h-11 items-center text-sm text-studio-text underline decoration-studio-line-strong underline-offset-4 hover:text-studio-accent"
+            >
+              {service.title}
+            </a>
+          ))}
+        </nav>
+        <div className="mt-10 max-w-xl">
+          <Scoreboard />
+        </div>
+      </Section>
 
-          <p className="mt-8 max-w-3xl text-base leading-relaxed text-primary">
-            {CHARITY_NOTE}
-          </p>
-
-          <nav
-            className="mt-6 flex flex-wrap gap-x-6"
-            aria-label="Jump to service"
-          >
-            {SERVICES.map((service) => (
-              <a
-                key={service.slug}
-                href={`#${service.slug}`}
-                className="inline-flex min-h-11 items-center text-sm text-primary underline decoration-border-strong underline-offset-4 hover:text-accent"
-              >
-                {service.title}
-              </a>
-            ))}
-          </nav>
-        </header>
-
-        <section className="py-4">
-          {SERVICES.map((service) => {
-            const details = SERVICE_DETAILS.find(
-              (item) => item.slug === service.slug,
-            );
-
-            if (!details) {
-              return null;
-            }
-
-            return (
-              <article
-                key={service.slug}
-                id={service.slug}
-                className="card scroll-mt-24 my-6 p-2 sm:p-4"
-              >
-                <div className="border-b border-border p-6 sm:p-8">
-                  <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
-                    <div className="max-w-2xl">
-                      <p className="shell-label text-accent">{service.number}</p>
-                      <h2 className="type-h2 mt-2 text-studio-text">
-                        {service.title}
-                      </h2>
-                      <p className="mt-3 text-primary">{service.description}</p>
-                    </div>
-                    <div className="shrink-0 sm:text-right">
-                      <p className="font-studio-display text-3xl text-studio-text">
-                        {service.price}
-                      </p>
-                      {service.priceNote ? (
-                        <p className="shell-label mt-1 text-secondary">
-                          {service.priceNote}
-                        </p>
-                      ) : null}
-                    </div>
-                  </div>
-                </div>
-
-                <div className="grid gap-6 p-6 sm:p-8 lg:grid-cols-2">
-                  <div>
-                    <h3 className="shell-label mb-4 text-secondary">
-                      What&apos;s included
-                    </h3>
-                    <ul className="space-y-2">
-                      {details.features.map((feature) => (
-                        <li key={feature} className="text-primary">
-                          {feature}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  <div>
-                    <h3 className="shell-label mb-4 text-secondary">What is not</h3>
-                    <ul className="space-y-2">
-                      {details.notIncluded.map((item) => (
-                        <li key={item} className="text-primary">
-                          {item}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-
-                <div className="grid gap-6 border-t border-border p-6 sm:p-8 lg:grid-cols-2">
-                  <div>
-                    <h3 className="shell-label mb-3 text-secondary">Timeline</h3>
-                    <p className="text-sm leading-relaxed text-primary sm:text-base">
-                      {details.timeline}
-                    </p>
-                    <h3 className="shell-label mb-3 mt-6 text-secondary">
-                      Revisions
-                    </h3>
-                    <p className="text-sm leading-relaxed text-primary sm:text-base">
-                      {details.revisions}
-                    </p>
-                  </div>
-
-                  <div>
-                    <h3 className="shell-label mb-4 text-secondary">The process</h3>
-                    <ol className="space-y-2">
-                      {details.process.map((step, stepIndex) => (
-                        <li key={step} className="text-primary">
-                          {stepIndex + 1}. {step}
-                        </li>
-                      ))}
-                    </ol>
-                  </div>
-                </div>
-
-                <div className="border-t border-border p-6 sm:p-8">
-                  <p className="text-sm text-primary">
-                    <span className="font-semibold text-primary">Ideal for:</span>{" "}
-                    {details.ideal}
-                  </p>
-                  <Link
-                    href="/contact"
-                    className="mt-4 inline-flex min-h-11 items-center gap-2 text-sm font-semibold text-accent transition-colors hover:text-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-studio-text"
-                  >
-                    {details.cta}
-                  </Link>
-                </div>
-              </article>
-            );
-          })}
-        </section>
-
-        <section className="border-t border-border py-12">
-          <p className="shell-label mb-3 text-accent">Game plan</p>
-          <h2 className="type-h2 text-studio-text">
-            How it works
-          </h2>
-          <p className="mt-4 max-w-2xl text-primary">
-            No committees. Here is what working together looks like.
-          </p>
-
-          <ol className="mt-10 border-t border-border">
-            {PROCESS_STEPS.map((step) => (
-              <li
-                key={step.number}
-                className="grid grid-cols-[3rem_1fr] gap-4 border-b border-border py-6"
-              >
-                <p className="shell-label text-secondary">{step.number}</p>
-                <div>
-                  <h3 className="font-semibold text-primary">{step.title}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-primary">
-                    {step.description}
-                  </p>
-                </div>
-              </li>
-            ))}
-          </ol>
-        </section>
-
-        <section className="border-t border-border py-12">
-          <FAQ />
-        </section>
-
-        <section className="border-t border-border py-12">
-          <div className="max-w-2xl">
-            <h2 className="type-h2 text-studio-text">
-              Tell me what you need
-            </h2>
-            <p className="mt-4 text-primary">
-              Send a note. I will come back with next steps.
-            </p>
-            <div className="mt-8 flex flex-wrap items-center gap-6">
-              <Link href="/contact" className="btn-primary">
-                Start a project
-              </Link>
-              <Link href="/work" className="inline-flex min-h-11 items-center text-sm text-primary underline underline-offset-4 hover:text-accent">
-                See the work
-              </Link>
+      {SERVICES.map((service) => {
+        const details = SERVICE_DETAILS.find((item) => item.slug === service.slug);
+        if (!details) return null;
+        return (
+          <Section key={service.slug} id={service.slug} className="border-t border-studio-line">
+            <h2 className="font-studio-display text-3xl text-studio-text">{service.title}</h2>
+            <p className="type-body mt-3 max-w-prose text-studio-muted">{service.description}</p>
+            <div className="mt-8 grid gap-10 lg:grid-cols-2">
+              <div>
+                <h3 className="font-studio-display text-2xl text-studio-text">What&apos;s included</h3>
+                <ul className="mt-4 border-t border-studio-line">
+                  {details.features.map((feature) => (
+                    <li key={feature} className="border-b border-studio-line py-3 text-studio-muted">
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div>
+                <h3 className="font-studio-display text-2xl text-studio-text">What is not</h3>
+                <ul className="mt-4 border-t border-studio-line">
+                  {details.notIncluded.map((item) => (
+                    <li key={item} className="border-b border-studio-line py-3 text-studio-muted">
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
-          </div>
-        </section>
-      </div>
+            <div className="mt-10 grid gap-8 border-t border-studio-line pt-8 lg:grid-cols-2">
+              <div>
+                <h3 className="font-studio-display text-2xl text-studio-text">Timeline</h3>
+                <p className="type-body mt-3 text-studio-muted">{details.timeline}</p>
+                <h3 className="mt-8 font-studio-display text-2xl text-studio-text">Revisions</h3>
+                <p className="type-body mt-3 text-studio-muted">{details.revisions}</p>
+              </div>
+              <div>
+                <h3 className="font-studio-display text-2xl text-studio-text">The process</h3>
+                <ol className="mt-4 border-t border-studio-line">
+                  {details.process.map((step, stepIndex) => (
+                    <li key={step} className="border-b border-studio-line py-3 text-studio-muted">
+                      {stepIndex + 1}. {step}
+                    </li>
+                  ))}
+                </ol>
+              </div>
+            </div>
+            <p className="type-body mt-8 max-w-prose text-studio-muted">
+              <span className="font-bold text-studio-text">Ideal for:</span> {details.ideal}
+            </p>
+            <Link
+              href="/contact"
+              className="mt-4 inline-flex min-h-11 items-center text-sm text-studio-text underline decoration-studio-line-strong underline-offset-4 hover:text-studio-accent"
+            >
+              {details.cta}
+            </Link>
+          </Section>
+        );
+      })}
+
+      <Section className="border-t border-studio-line" heading="How it works" intro="No committees. Here is what working together looks like.">
+        <ol className="mt-8 border-t border-studio-line">
+          {PROCESS_STEPS.map((step) => (
+            <li key={step.number} className="grid gap-2 border-b border-studio-line py-5 sm:grid-cols-[4rem_1fr] sm:gap-6">
+              <span className="font-studio-display text-2xl text-studio-text">{step.number}</span>
+              <div>
+                <h3 className="font-studio-display text-2xl text-studio-text">{step.title}</h3>
+                <p className="type-body mt-2 text-studio-muted">{step.description}</p>
+              </div>
+            </li>
+          ))}
+        </ol>
+      </Section>
+
+      <Section className="border-t border-studio-line">
+        <FAQ />
+      </Section>
+
+      <Section className="border-t border-studio-line" heading="Tell me what you need" intro="Send a note. I will come back with next steps.">
+        <div className="mt-8 flex flex-wrap items-center gap-6">
+          <Button href="/contact">Get a quote</Button>
+          <Link
+            href="/work"
+            className="inline-flex min-h-11 items-center text-sm text-studio-text underline decoration-studio-line-strong underline-offset-4 hover:text-studio-accent"
+          >
+            See the work
+          </Link>
+        </div>
+      </Section>
     </div>
   );
 }
