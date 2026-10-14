@@ -38,7 +38,7 @@ type LinkProps = Common & {
 function classes(variant: Variant, size: Size, className?: string) {
   return [
     "inline-flex items-center justify-center gap-2 font-studio-sans transition-colors duration-200",
-    variant === "primary" ? "text-lg font-bold" : size === "sm" ? "text-sm font-medium" : "text-base font-medium",
+    variant === "primary" ? "text-xl font-bold" : size === "sm" ? "text-sm font-medium" : "text-base font-medium",
     "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-studio-text",
     variants[variant],
     sizes[size],

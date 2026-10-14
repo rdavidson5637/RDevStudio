@@ -5,5 +5,5 @@ export const size = ogSize;
 export const contentType = ogContentType;
 
 export default function GamesOg() {
-  return studioOgImage("Play something.");
+  return studioOgImage("Games");
 }

@@ -24,7 +24,8 @@ async function shot(size: number) {
     viewport: { width: size, height: size },
     deviceScaleFactor: 1,
   });
-  await page.setContent(`<!doctype html><html><body style="margin:0;width:${size}px;height:${size}px;background:#0A0A0F;display:flex;align-items:center;justify-content:center"><div style="color:#F59E0B;font-family:Georgia,serif;font-size:${Math.round(size * 0.62)}px;line-height:1">R</div></body></html>`);
+  const stroke = Math.max(1, Math.round(size * 0.05));
+  await page.setContent(`<!doctype html><html><body style="margin:0;width:${size}px;height:${size}px;background:#0F2219;display:flex;align-items:center;justify-content:center"><svg width="${size}" height="${size}" viewBox="0 0 32 32"><circle cx="16" cy="16" r="8" fill="none" stroke="#EEF2EA" stroke-width="${(stroke / size) * 32}"/><circle cx="16" cy="16" r="2.2" fill="#E5402F"/></svg></body></html>`);
   const png = await page.screenshot({ type: "png" });
   await browser.close();
   return png;
