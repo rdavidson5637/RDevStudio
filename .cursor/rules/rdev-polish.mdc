@@ -12,7 +12,7 @@ alwaysApply: true
 - Anything under /hire stays unless a prompt says otherwise. The hire-meter finale card, the Rudi modal, and the FELINE_DISTRACTION_DETECTED card are intentional. Never remove or alter them.
 - Contact forms stay on Formspree. Don't change action, method or field names.
 - Don't weaken Supabase RLS. No secrets or service keys in client code.
-- Design: base #0A0A0F, amber #F59E0B as the only strong accent. DM Serif Display for headings, Geist for body, Geist Mono for labels. No new fonts or colour tokens. Opacity tints of existing colours are fine.
+- Design: Floodlights. Night #0F2219 page background, turf #173528 panels and image frames, turf-raised #1D4031 hover and raised panels, board #0A1912 the price scoreboard only, chalk #EEF2EA text and pitch lines, chalk-soft #C9D6CD secondary text, chalk-faint #B7C6BC captions. Rules: line rgba(238,242,234,0.18), line-strong rgba(238,242,234,0.35), cover-line rgba(238,242,234,0.5). Kit #E5402F is the only strong accent (primary button, the highlighted player or ball in a cover, one highlight per page), kit-hover #C9321F. Big Shoulders Display 800 for h1, h2 and big numbers. Atkinson Hyperlegible 400 and 700 for everything else. Those two fonts and those colour tokens are allowed. No monospace on studio pages. Opacity tints of existing colours are fine.
 - No new npm dependencies unless the task explicitly allows one.
 - Copy: no em dashes or en dashes, use plain hyphens. No filler. Banned: passionate, journey, seamless, leverage, crafting digital experiences, "I'd love to", "reaching out", circling back, synergy. Plain, dry NI English.
 - Never invent metrics, client results, user counts or testimonials. Keep client status labels exactly as currently written.

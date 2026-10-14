@@ -44,3 +44,6 @@ scripts/stout-finder/data/osm-pubs.json
 
 # parked for deletion / unfinished work kept out of the build
 /_to_delete/
+
+# local route screenshots (npm run shots)
+/.shots/
