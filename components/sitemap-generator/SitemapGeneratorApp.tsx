@@ -60,7 +60,7 @@ export function SitemapGeneratorApp() {
         title="Sitemap Generator"
         description="Paste your URLs to generate a standards-compliant XML sitemap - ready to upload or drop in your project."
       />
-      <div className="grid gap-8 py-10 lg:grid-cols-2">
+      <div className="grid gap-8 py-10 lg:grid-cols-2 [&>*]:min-w-0">
         <FadeIn className="space-y-4 rounded-[10px] border border-border-strong bg-raised p-5 sm:p-6">
           <label className="block">
             <span className="shell-label text-accent">Site base URL</span>

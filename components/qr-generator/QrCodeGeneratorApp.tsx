@@ -71,7 +71,7 @@ export function QrCodeGeneratorApp() {
         title="QR Code Generator"
         description="Create downloadable QR codes for URLs, Wi-Fi networks, or plain text - no sign-up required."
       />
-      <div className="grid gap-8 py-10 lg:grid-cols-2">
+      <div className="grid gap-8 py-10 lg:grid-cols-2 [&>*]:min-w-0">
         <FadeIn className="space-y-5 rounded-[10px] border border-border-strong bg-raised p-5 sm:p-6">
           <fieldset>
             <legend className="shell-label text-accent">QR type</legend>

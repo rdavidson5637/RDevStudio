@@ -37,7 +37,7 @@ export function GradientGeneratorApp() {
         title="Gradient Generator"
         description="Build linear or radial CSS gradients, preview them live, and copy the code into your stylesheet or Tailwind class."
       />
-      <div className="grid gap-8 py-10 lg:grid-cols-2">
+      <div className="grid gap-8 py-10 lg:grid-cols-2 [&>*]:min-w-0">
         <FadeIn className="space-y-5 rounded-[10px] border border-border-strong bg-raised p-5 sm:p-6">
           <div className="flex flex-wrap gap-2">
             {(["linear", "radial"] as const).map((t) => (

@@ -52,7 +52,7 @@ function JobCard({ job }: { job: ClientJob }) {
 
 export function ClientWork() {
   const feature = clientBySlug("rvs-cold-brew");
-  const rest = ["shelterlink", "paintball-wales", "assisi"]
+  const rest = ["shelterlink", "assisi"]
     .map((slug) => clientBySlug(slug))
     .filter((job) => job !== undefined);
 
@@ -111,7 +111,7 @@ export function ClientWork() {
           </div>
         </article>
       </Reveal>
-      <div className="mt-4 grid gap-4 md:grid-cols-3">
+      <div className="mt-4 grid gap-4 md:grid-cols-2">
         {rest.map((job, index) => (
           <Reveal key={job.slug} delay={index * 60}>
             <JobCard job={job} />

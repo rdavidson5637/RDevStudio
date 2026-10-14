@@ -56,7 +56,7 @@ export function BingoCardGeneratorApp() {
         title="Bingo Card Generator"
         description="Generate unique 5×5 bingo cards from your word list - perfect for meetings and watch parties."
       />
-      <div className="grid gap-8 py-10 lg:grid-cols-2">
+      <div className="grid gap-8 py-10 lg:grid-cols-2 [&>*]:min-w-0">
         <FadeIn className="space-y-4 rounded-[10px] border border-border-strong bg-raised p-5 sm:p-6">
           <label className="block">
             <span className="shell-label text-accent">

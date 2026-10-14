@@ -937,8 +937,10 @@ body {
     background: var(--color-studio-amber);
   }
 
+  /* Solid, not 80%: the site layout wrapper is still paper underneath, so a
+     translucent header showed up as a grey bar at the top of every page. */
   .studio-header {
-    background-color: var(--color-studio-bg-80);
+    background-color: var(--color-studio-bg);
   }
 
   .studio-scrim {

@@ -96,7 +96,7 @@ export function RandomWheelApp() {
         title="Random Wheel"
         description="Add names or options, spin the wheel, and let chance pick the winner."
       />
-      <div className="grid gap-8 py-10 lg:grid-cols-2">
+      <div className="grid gap-8 py-10 lg:grid-cols-2 [&>*]:min-w-0">
         <FadeIn className="rounded-[10px] border border-border-strong bg-raised p-5 sm:p-6">
           <label className="block" htmlFor="wheel-options">
             <span className="shell-label text-accent">
@@ -123,7 +123,7 @@ export function RandomWheelApp() {
           delayMs={80}
           className="flex flex-col items-center rounded-[10px] border border-border-strong bg-raised p-6"
         >
-          <div className="relative">
+          <div className="relative w-full max-w-[320px]">
             <div
               className="absolute left-1/2 top-0 z-10 -translate-x-1/2 -translate-y-1 text-2xl text-destructive"
               aria-hidden="true"
@@ -134,7 +134,7 @@ export function RandomWheelApp() {
               ref={canvasRef}
               width={320}
               height={320}
-              className="rounded-full"
+              className="block h-auto w-full rounded-full"
               aria-label="Random wheel"
             />
           </div>

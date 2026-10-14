@@ -41,9 +41,11 @@ export function Hero() {
                 Play something
               </Button>
             </div>
-            <p className="mt-6 font-studio-mono text-sm text-zinc-400">
-              Websites from £{PRICE_WEBSITE_GBP} · You own the code · Free for registered charities
-            </p>
+            <ul className="mt-6 flex flex-wrap gap-x-4 gap-y-1 font-studio-mono text-sm text-zinc-400">
+              <li>Websites from £{PRICE_WEBSITE_GBP}</li>
+              <li>You own the code</li>
+              <li>Free for registered charities</li>
+            </ul>
           </Stagger>
 
           <div className="group relative hidden h-[26rem] lg:block">

@@ -17,14 +17,14 @@ const homeProducts = [
 export function LiveStrip() {
   return (
     <Section id="live" eyebrow="LIVE NOW" heading="On the site, and open.">
-      <div className="mt-10 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+      <div className="mt-10 grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-3">
         {homeProducts.map((product, index) => (
           <Reveal
             key={product.slug}
             delay={index * 60}
-            className={product.featured ? "lg:col-span-2" : undefined}
+            className={index === 0 ? "col-span-2" : product.featured ? "lg:col-span-2" : undefined}
           >
-            <ProductCard product={product} />
+            <ProductCard product={product} compact={index > 0} />
           </Reveal>
         ))}
       </div>
