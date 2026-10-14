@@ -76,8 +76,7 @@ export function ClientWork() {
                 src={feature.image}
                 alt="RV's Cold Brew website, with the counter behind the headline"
                 domain={domainOf(feature.siteUrl)}
-                sizes="(max-width: 1024px) 100vw, 60vw"
-                priority
+                sizes="(max-width: 768px) calc(100vw - 3rem), (max-width: 1024px) 80vw, 55vw"
               />
               <div className="absolute -bottom-2 -right-2 hidden md:block">
                 <PhoneFrame
