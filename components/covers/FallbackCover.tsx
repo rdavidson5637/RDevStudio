@@ -18,7 +18,8 @@ export function FallbackCover({ initial = "R" }: { initial?: string }) {
         y="118"
         textAnchor="middle"
         fill={kit}
-        fontFamily="var(--font-studio-display), Georgia, serif"
+        fontFamily="var(--font-studio-display), sans-serif"
+        fontWeight={800}
         fontSize="72"
       >
         {initial.slice(0, 1).toUpperCase()}

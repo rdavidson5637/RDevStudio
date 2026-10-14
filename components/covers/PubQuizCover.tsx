@@ -1,4 +1,4 @@
-import { CoverFrame, kit, faint, line } from "./CoverFrame";
+import { chalk, CoverFrame, faint, kit, line } from "./CoverFrame";
 
 const PILLS = [
   { y: 78, hot: false },
@@ -30,9 +30,10 @@ export function PubQuizCover() {
         x="232"
         y="58"
         textAnchor="end"
-        fill={kit}
-        fontFamily="var(--font-studio-mono), ui-monospace, monospace"
-        fontSize="14"
+        fill={chalk}
+        fontFamily="var(--font-studio-display), sans-serif"
+        fontWeight={800}
+        fontSize="16"
       >
         ABCD
       </text>

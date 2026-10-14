@@ -1,4 +1,4 @@
-import { CoverFrame, kit, line } from "./CoverFrame";
+import { chalk, CoverFrame, kit, line } from "./CoverFrame";
 
 const FRETS = [56, 108, 160, 212, 264];
 const STRINGS = [48, 70, 92, 114, 136, 158];
@@ -27,7 +27,7 @@ export function GuitarLabCover() {
           cx={note.x}
           cy={note.y}
           r={note.root ? 6 : 4.5}
-          fill={note.root ? kit : "rgba(255,255,255,0.75)"}
+          fill={note.root && note.x === 56 ? kit : chalk}
           style={{ animationDelay: note.delay }}
         />
       ))}

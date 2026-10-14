@@ -23,6 +23,7 @@ export function DraftAnalyserCover() {
       <path
         className="cover-draw"
         d="M40 150 C80 150 90 70 140 80 C190 90 200 40 280 36"
+        pathLength="1"
         stroke={kit}
         strokeWidth="2.5"
         strokeLinecap="round"

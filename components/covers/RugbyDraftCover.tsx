@@ -1,4 +1,4 @@
-import { CoverFrame, kit, line } from "./CoverFrame";
+import { chalk, CoverFrame, kit, line } from "./CoverFrame";
 
 const DOTS = [
   [160, 168],
@@ -28,7 +28,7 @@ export function RugbyDraftCover() {
       <path d="M148 16 V36 H172 V16" stroke={line} />
       <path d="M148 184 V164 H172 V184" stroke={line} />
       {DOTS.map(([x, y]) => (
-        <circle key={`${x}-${y}`} cx={x} cy={y} r="3.5" fill="rgba(255,255,255,0.7)" />
+        <circle key={`${x}-${y}`} cx={x} cy={y} r="3.5" fill={chalk} />
       ))}
       <g className="cover-pass">
         <ellipse cx="78" cy="108" rx="7" ry="4.5" fill={kit} transform="rotate(-24 78 108)" />

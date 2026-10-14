@@ -1,4 +1,4 @@
-import { CoverFrame, kit, line } from "./CoverFrame";
+import { chalk, CoverFrame, kit, line } from "./CoverFrame";
 
 const LETTERS = ["R", "A", "N", "D", "E", "V", "S", "T", "U", "O", "I", "L", "M", "C", "H", "Y"];
 const PATH = "M78 58 L130 58 L130 98 L182 98 L234 98";
@@ -11,24 +11,24 @@ export function LongestWordCover() {
         const row = Math.floor(index / 4);
         const x = 54 + col * 52;
         const y = 34 + row * 40;
-        const onPath = [0, 1, 5, 6, 7].includes(index);
         return (
           <g key={letter + index}>
-            <rect x={x} y={y} width="40" height="32" rx="4" stroke={line} fill={onPath ? "rgba(245,158,11,0.12)" : "transparent"} />
+            <rect x={x} y={y} width="40" height="32" rx="4" stroke={line} />
             <text
               x={x + 20}
-              y={y + 21}
+              y={y + 22}
               textAnchor="middle"
-              fill={onPath ? kit : "rgba(255,255,255,0.8)"}
-              fontFamily="var(--font-studio-mono), ui-monospace, monospace"
-              fontSize="14"
+              fill={chalk}
+              fontFamily="var(--font-studio-display), sans-serif"
+              fontWeight={800}
+              fontSize="16"
             >
               {letter}
             </text>
           </g>
         );
       })}
-      <path className="cover-draw" d={PATH} stroke={kit} strokeWidth="2" strokeLinecap="round" />
+      <path className="cover-draw" d={PATH} pathLength="1" stroke={kit} strokeWidth="2" strokeLinecap="round" />
     </CoverFrame>
   );
 }
