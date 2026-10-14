@@ -54,7 +54,7 @@ export function Reveal({ children, delay = 0, as: Tag = "div", className = "", i
     <Tag
       ref={ref}
       className={`${motionClass} ${className}`.trim()}
-      style={mode === "shown" ? { transitionDelay: `${delay}ms` } : undefined}
+      style={mode === "shown" && delay > 0 ? { animationDelay: `${delay}ms` } : undefined}
     >
       {children}
     </Tag>
