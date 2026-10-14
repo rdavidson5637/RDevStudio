@@ -19,8 +19,7 @@ const apps = [
 export default function ProjectsPage() {
   return (
     <Section className="bg-bg text-studio-text">
-      <p className="eyebrow text-studio-muted">Projects</p>
-      <h1 className="display-lg mt-4 max-w-3xl text-balance text-studio-text">Things I build for myself.</h1>
+      <h1 className="display-lg max-w-3xl text-balance text-studio-text">Projects</h1>
       <p className="type-body mt-5 max-w-xl text-studio-muted">
         Not client work, and not the games. Some are live. The rest are still being built.
       </p>

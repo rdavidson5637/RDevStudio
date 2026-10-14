@@ -9,7 +9,7 @@ const CARDS = [
     title: "Real-time rooms",
     body: "Pub Quiz keeps each game in memory and, when Redis is configured, in Upstash. Players subscribe to a Pusher channel named from the game id. Draft Analyser pushes the live board on its own channel when the stats refresh.",
     products: "Pub Quiz, Draft Analyser",
-    snippet: "game-${gameId}  ·  draft-live",
+    snippet: "Pub Quiz channel game-${gameId}. Draft Analyser channel draft-live.",
   },
   {
     title: "Postgres with row level security",
@@ -34,8 +34,7 @@ const CARDS = [
 export function UnderTheHood() {
   return (
     <Section
-      eyebrow="UNDER THE HOOD"
-      heading="How the games actually work."
+      heading="How the games work"
       intro="Everything here is built and run by me. The code is on GitHub."
     >
       <div className="mt-10 grid gap-4 md:grid-cols-2">
@@ -45,7 +44,7 @@ export function UnderTheHood() {
               <h3 className="font-studio-display text-2xl text-studio-text">{card.title}</h3>
               <p className="type-body mt-3 text-studio-muted">{card.body}</p>
               <p className="mt-4 text-sm text-studio-text">{card.products}</p>
-              <p className="mt-3 font-studio-mono text-xs text-studio-accent">{card.snippet}</p>
+              <p className="mt-3 font-studio-sans text-sm text-studio-muted">{card.snippet}</p>
             </article>
           </Reveal>
         ))}

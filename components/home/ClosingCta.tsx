@@ -7,7 +7,7 @@ export function ClosingCta() {
     <section className="bg-bg py-20 text-studio-text md:py-28">
       <Container>
         <h2 className="display-lg max-w-3xl text-balance text-studio-text">
-          Need a site, help with posting, or something that does not fit a package?
+          Tell me what you need
         </h2>
         <p className="type-body mt-4 max-w-xl text-studio-muted">
           Send a note and I will come back with next steps.

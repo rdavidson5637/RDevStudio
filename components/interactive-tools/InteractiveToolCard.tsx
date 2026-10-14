@@ -23,7 +23,7 @@ export function InteractiveToolCard({
 
   return (
     <article
-      className={`work-card-lift group flex animate-fade-in flex-col overflow-hidden rounded-[10px] border border-border bg-raised opacity-0 ${
+      className={`work-card-lift group flex flex-col overflow-hidden rounded-[10px] border border-border bg-raised ${
         compact ? "p-5" : "p-6 sm:p-8"
       } ${isSoon ? "!opacity-90" : ""}`}
       style={{ animationDelay: `${animationDelayMs}ms` }}
@@ -34,7 +34,7 @@ export function InteractiveToolCard({
       >
         <div className="flex items-start justify-between gap-3">
           <h2
-            className={`font-display uppercase leading-tight text-primary ${
+            className={`font-display leading-tight text-primary ${
               compact ? "text-lg sm:text-xl" : "text-xl sm:text-2xl"
             }`}
           >
@@ -58,7 +58,7 @@ export function InteractiveToolCard({
               isSoon ? "" : "transition-colors group-hover:text-accent"
             }`}
           >
-            {isSoon ? "Preview →" : "Open →"}
+            {isSoon ? "Preview" : "Open"}
           </span>
         </div>
       </Link>

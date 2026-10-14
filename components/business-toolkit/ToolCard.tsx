@@ -28,7 +28,7 @@ export function ToolCard({
         className={`flex items-start justify-between gap-3 ${onToggleFavourite ? "pr-10" : ""}`}
       >
         <h2
-          className={`font-display uppercase leading-tight text-primary ${
+          className={`font-display leading-tight text-primary ${
             compact ? "text-lg sm:text-xl" : "text-xl sm:text-2xl"
           }`}
         >
@@ -52,7 +52,7 @@ export function ToolCard({
             isSoon ? "" : "transition-colors group-hover:text-accent"
           }`}
         >
-          {isSoon ? "Preview →" : "Open →"}
+          {isSoon ? "Preview" : "Open"}
         </span>
       </div>
     </>

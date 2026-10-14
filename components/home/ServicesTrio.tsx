@@ -19,7 +19,7 @@ export function ServicesTrio() {
             href="/services"
             className="shrink-0 text-sm font-semibold text-primary transition-colors hover:text-accent"
           >
-            See services →
+            See services
           </Link>
         </div>
 

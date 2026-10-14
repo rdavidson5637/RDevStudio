@@ -12,7 +12,7 @@ export const metadata = createPageMetadata({
 });
 
 function SectionHeading({ children }: { children: React.ReactNode }) {
-  return <h2 className="shell-label mb-3 text-accent">{children}</h2>;
+  return <h2 className="mb-3 font-studio-display text-2xl text-studio-text">{children}</h2>;
 }
 
 function ScreenshotSlot({
@@ -35,7 +35,7 @@ function ScreenshotSlot({
           className="object-cover object-top"
         />
       </div>
-      <figcaption className="shell-label text-secondary">{caption}</figcaption>
+      <figcaption className="font-studio-sans text-sm text-secondary">{caption}</figcaption>
     </figure>
   );
 }
@@ -53,18 +53,18 @@ export default function RvsColdBrewCaseStudyPage() {
           className="mb-8"
         />
         <header className="space-y-6 border-b border-border pb-10">
-          <p className="shell-label text-accent">CASE STUDY - 02</p>
+          <p className="font-studio-sans text-sm text-accent">Case study - 02</p>
           <h1 className="display-lg text-studio-text">RV&apos;s Cold Brew</h1>
           <p className="max-w-2xl text-lg text-primary">
             A live site for a Belfast cold brew and matcha counter at
             Great Northern Mall.
           </p>
 
-          <div className="grid grid-cols-2 gap-x-4 gap-y-2 border-t border-border pt-5 font-mono text-[11px] uppercase tracking-[0.08em] text-secondary lg:grid-cols-4">
+          <div className="grid grid-cols-2 gap-x-4 gap-y-2 border-t border-border pt-5 font-studio-sans text-sm text-secondary lg:grid-cols-4">
             <p>ROLE - Design & development</p>
-            <p>TYPE - Brand site</p>
-            <p>STATUS - Live · still a client</p>
-            <p>YEAR - 2026</p>
+            <p>Type: Brand site</p>
+            <p>Status: Live, still a client</p>
+            <p>Year - 2026</p>
           </div>
         </header>
 
@@ -82,13 +82,13 @@ export default function RvsColdBrewCaseStudyPage() {
               className="object-cover object-top"
             />
           </div>
-          <p className="shell-label mt-3 text-secondary">
+          <p className="font-studio-sans text-sm mt-3 text-secondary">
             Landing page, Great Northern Mall
           </p>
         </section>
 
         <section className="border-b border-border py-12">
-          <SectionHeading>THE COUNTER</SectionHeading>
+          <SectionHeading>The counter</SectionHeading>
           <p className="max-w-3xl text-base leading-relaxed text-primary sm:text-lg">
             RV&apos;s pours cold brew and ceremonial Okumidori matcha from Unit
             11 in Great Northern Mall, beside Grand Central. People find them
@@ -99,7 +99,7 @@ export default function RvsColdBrewCaseStudyPage() {
         </section>
 
         <section className="border-b border-border py-12">
-          <SectionHeading>THE SITE</SectionHeading>
+          <SectionHeading>The site</SectionHeading>
           <p className="max-w-3xl text-base leading-relaxed text-primary sm:text-lg">
             It leads with the product, then the menu, opening hours, the unit
             number, and directions. Copy stays short. Built to load quickly on
@@ -121,7 +121,7 @@ export default function RvsColdBrewCaseStudyPage() {
         </section>
 
         <section className="border-b border-border py-12">
-          <SectionHeading>WHERE IT STANDS</SectionHeading>
+          <SectionHeading>Where it stands</SectionHeading>
           <p className="max-w-3xl text-base leading-relaxed text-primary sm:text-lg">
             The site is live. Menu, hours, and directions for Unit 11 at Great
             Northern Mall. RV&apos;s is still a client.
@@ -132,7 +132,7 @@ export default function RvsColdBrewCaseStudyPage() {
             rel="noopener noreferrer"
             className="mt-5 inline-flex items-center text-base font-semibold text-primary transition-colors hover:text-accent"
           >
-            Visit live site →
+            Visit live site
           </a>
         </section>
 
@@ -140,9 +140,9 @@ export default function RvsColdBrewCaseStudyPage() {
           <div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
             <Link
               href="/work/paintball-wales"
-              className="shell-label text-lg text-primary transition-colors hover:text-accent"
+              className="font-studio-sans text-sm text-primary transition-colors hover:text-accent"
             >
-              NEXT FIXTURE →
+              Next case study
             </Link>
             <Link
               href="/contact"

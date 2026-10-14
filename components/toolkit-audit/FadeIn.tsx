@@ -17,7 +17,7 @@ export function FadeIn({
 
   return (
     <Tag
-      className={`animate-fade-in opacity-0 motion-reduce:animate-none motion-reduce:opacity-100 ${className}`}
+      className={className}
       style={style}
     >
       {children}

@@ -223,7 +223,6 @@ export default function ServicesPage() {
                     className="mt-4 inline-flex min-h-11 items-center gap-2 text-sm font-semibold text-accent transition-colors hover:text-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-studio-text"
                   >
                     {details.cta}
-                    <span aria-hidden="true">→</span>
                   </Link>
                 </div>
               </article>

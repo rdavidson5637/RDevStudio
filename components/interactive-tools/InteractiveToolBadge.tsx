@@ -17,7 +17,7 @@ const BADGE_LABELS: Record<InteractiveToolBadge, string> = {
 export function InteractiveToolBadge({ badge }: InteractiveToolBadgeProps) {
   return (
     <span
-      className={`shrink-0 rounded-full border px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-wider ${BADGE_STYLES[badge]}`}
+      className={`shrink-0 rounded-full border px-2.5 py-0.5 text-[10px] font-semibold ${BADGE_STYLES[badge]}`}
     >
       {BADGE_LABELS[badge]}
     </span>

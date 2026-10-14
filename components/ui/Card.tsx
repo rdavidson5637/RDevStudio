@@ -22,7 +22,7 @@ export function Card({
 }: CardProps) {
   return (
     <Tag
-      className={`studio-card rounded-studio border border-studio-border bg-studio-surface transition-colors duration-200 hover:border-studio-border-strong ${paddingClass[padding]} ${className}`}
+      className={`rounded bg-studio-surface transition-colors duration-200 hover:bg-studio-surface-2 ${paddingClass[padding]} ${className}`}
     >
       {children}
     </Tag>

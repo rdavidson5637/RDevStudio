@@ -54,8 +54,7 @@ export function HomeFaq() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
       <div className="grid gap-10 lg:grid-cols-[minmax(0,18rem)_1fr] lg:items-start">
         <div className="lg:sticky lg:top-28">
-          <p className="eyebrow text-studio-muted">Questions</p>
-          <h2 className="display-lg mt-3 text-balance text-studio-text">The usual ones.</h2>
+          <h2 className="display-lg text-balance text-studio-text">Questions people ask</h2>
           <a
             href={WHATSAPP_URL}
             className="inline-flex min-h-11 items-center text-sm text-studio-text underline decoration-studio-line-strong underline-offset-4 hover:text-studio-accent"

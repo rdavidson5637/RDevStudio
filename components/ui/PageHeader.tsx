@@ -13,7 +13,7 @@ export function PageHeader({
     <div
       className={`mb-12 lg:mb-16 ${centered ? "mx-auto max-w-3xl text-center" : ""}`}
     >
-      <h1 className="heading-display text-3xl sm:text-4xl lg:text-5xl">
+      <h1 className="font-studio-display text-3xl text-studio-text sm:text-4xl lg:text-5xl">
         {title}
       </h1>
       {subtitle && (

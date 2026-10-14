@@ -57,18 +57,15 @@ const PACKAGES = [
 
 export function WorkWithMe() {
   return (
-    <Section id="work-with-me" eyebrow="WORK WITH ME" heading="Straight prices. One person, start to finish.">
+    <Section id="work-with-me" heading="What it costs">
       <div className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
         {PACKAGES.map((item, index) => (
           <Reveal key={item.title} delay={index * 60}>
             <a
               href={item.href}
-              className={`card relative flex h-full flex-col p-5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-studio-text ${
-                item.anchor ? "border-studio-accent" : ""
-              }`}
+              className="card relative flex h-full flex-col p-5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-studio-text"
             >
-              {item.anchor ? <p className="type-label text-studio-accent">Start here</p> : null}
-              <h3 className="mt-2 font-studio-display text-2xl text-studio-text">{item.title}</h3>
+              <h3 className="font-studio-display text-2xl text-studio-text">{item.title}</h3>
               <p className="mt-4 text-studio-text">
                 {item.from ? <span className="mr-1 text-sm text-studio-muted">from</span> : null}
                 <span className="font-studio-display text-4xl">{item.price}</span>
@@ -91,11 +88,9 @@ export function WorkWithMe() {
           Registered charities get the same packages free - website, social and content. Say you are registered when you get in touch.
         </p>
       </div>
-      <ul className="mt-6 flex flex-wrap gap-2">
+      <ul className="mt-6 space-y-2 text-sm text-studio-muted">
         {["50% upfront", "50% at launch", "You own the domain, content and code", "No lock-in"].map((term) => (
-          <li key={term} className="rounded-full border border-studio-line px-3 py-2 font-studio-mono text-xs text-studio-muted">
-            {term}
-          </li>
+          <li key={term}>{term}</li>
         ))}
       </ul>
       <div className="mt-8 flex flex-wrap items-center gap-6">

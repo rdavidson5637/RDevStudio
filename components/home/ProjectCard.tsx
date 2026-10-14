@@ -30,10 +30,10 @@ export function ProjectRow({ project, priority = false }: ProjectRowProps) {
         ) : null}
         <span className="min-w-0 flex-1">
           <span className="flex items-baseline justify-between gap-4">
-            <span className="font-studio-display text-2xl leading-tight text-studio-text transition-colors duration-200 group-hover:text-studio-accent">
+            <span className="font-studio-display text-2xl leading-tight text-studio-text">
               {project.name}
             </span>
-            <span className="type-label shrink-0 text-studio-muted">{status}</span>
+            <span className="shrink-0 text-sm text-studio-muted">{status}</span>
           </span>
           <span className="type-body mt-1 block text-studio-muted">{project.tagline}</span>
         </span>

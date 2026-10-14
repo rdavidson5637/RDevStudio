@@ -14,8 +14,7 @@ export const metadata = createPageMetadata({
 export default function GamesPage() {
   return (
     <Section className="bg-bg text-studio-text">
-      <p className="eyebrow text-studio-muted">Games</p>
-      <h1 className="display-lg mt-4 max-w-3xl text-balance text-studio-text">Play something.</h1>
+      <h1 className="display-lg max-w-3xl text-balance text-studio-text">Games</h1>
       <p className="type-body mt-5 max-w-xl text-studio-muted">Free in the browser. No ads, no sign-up.</p>
       <div className="mt-14 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
         {games.map((game, index) => (

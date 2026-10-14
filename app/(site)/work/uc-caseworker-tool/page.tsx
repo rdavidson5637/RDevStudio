@@ -11,7 +11,7 @@ export const metadata = createPageMetadata({
 });
 
 function SectionHeading({ children }: { children: React.ReactNode }) {
-  return <h2 className="shell-label mb-3 text-accent">{children}</h2>;
+  return <h2 className="mb-3 font-studio-display text-2xl text-studio-text">{children}</h2>;
 }
 
 function ScreenshotSlot({
@@ -34,7 +34,7 @@ function ScreenshotSlot({
           className="object-cover object-top"
         />
       </div>
-      <figcaption className="shell-label text-secondary">{caption}</figcaption>
+      <figcaption className="font-studio-sans text-sm text-secondary">{caption}</figcaption>
     </figure>
   );
 }
@@ -53,18 +53,18 @@ export default function UcCaseworkerToolCaseStudyPage() {
     <div className="studio-page px-4 py-16 sm:px-6 md:py-24 lg:py-32">
       <article className="container-wide px-6">
         <header className="space-y-6 border-b border-border pb-10">
-          <p className="shell-label text-accent">CASE STUDY - 05</p>
+          <p className="font-studio-sans text-sm text-accent">Case study - 05</p>
           <h1 className="display-lg text-studio-text">UC Caseworker Assistant</h1>
           <p className="max-w-2xl text-lg text-primary">
             An AI assistant for Universal Credit caseworkers, built by a
             working caseworker with an MSc in Software Development.
           </p>
 
-          <div className="grid grid-cols-2 gap-x-4 gap-y-2 border-t border-border pt-5 font-mono text-[11px] uppercase tracking-[0.08em] text-secondary lg:grid-cols-4">
+          <div className="grid grid-cols-2 gap-x-4 gap-y-2 border-t border-border pt-5 font-studio-sans text-sm text-secondary lg:grid-cols-4">
             <p>ROLE - Design & development (solo)</p>
-            <p>STACK - Node.js · Express · Claude API</p>
-            <p>STATUS - Portfolio prototype</p>
-            <p>YEAR - 2026</p>
+            <p>Stack: Node.js, Express, Claude API</p>
+            <p>Status: Portfolio prototype</p>
+            <p>Year - 2026</p>
           </div>
         </header>
 
@@ -82,13 +82,13 @@ export default function UcCaseworkerToolCaseStudyPage() {
               className="object-cover object-top"
             />
           </div>
-          <p className="shell-label mt-3 text-secondary">
+          <p className="font-studio-sans text-sm mt-3 text-secondary">
             Journal response assistant, synthetic example
           </p>
         </section>
 
         <section className="border-b border-border py-12">
-          <SectionHeading>THE PROBLEM</SectionHeading>
+          <SectionHeading>The problem</SectionHeading>
           <p className="max-w-3xl text-base leading-relaxed text-primary sm:text-lg">
             Caseworkers answer a high volume of claimant journal messages,
             write handover case notes, and populate repetitive standard
@@ -103,7 +103,7 @@ export default function UcCaseworkerToolCaseStudyPage() {
         </section>
 
         <section className="border-b border-border py-12">
-          <SectionHeading>THE BUILD</SectionHeading>
+          <SectionHeading>The build</SectionHeading>
           <div className="max-w-3xl space-y-5 text-base leading-relaxed text-primary sm:text-lg">
             <p>
               Three tools, one principle throughout: the AI drafts, the
@@ -130,7 +130,7 @@ export default function UcCaseworkerToolCaseStudyPage() {
             {BUILD_FEATURES.map((feature) => (
               <li
                 key={feature}
-                className="shell-label rounded-lg border border-border bg-raised px-4 py-3 text-primary"
+                className="font-studio-sans text-sm rounded-lg border border-border bg-raised px-4 py-3 text-primary"
               >
                 {feature}
               </li>
@@ -147,7 +147,7 @@ export default function UcCaseworkerToolCaseStudyPage() {
         </section>
 
         <section className="border-b border-border py-12">
-          <SectionHeading>DECISIONS</SectionHeading>
+          <SectionHeading>Decisions</SectionHeading>
           <div className="grid gap-8">
             <section className="space-y-3">
               <h3 className="text-[1.25rem] font-semibold text-primary">
@@ -210,7 +210,7 @@ export default function UcCaseworkerToolCaseStudyPage() {
         </section>
 
         <section className="border-b border-border py-12">
-          <SectionHeading>THE RESULT</SectionHeading>
+          <SectionHeading>The result</SectionHeading>
           <p className="max-w-3xl text-base leading-relaxed text-primary sm:text-lg">
             A working prototype that argues two things at once: real
             understanding of the caseworker workflow it was built for, and
@@ -224,9 +224,9 @@ export default function UcCaseworkerToolCaseStudyPage() {
           <div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
             <Link
               href="/work"
-              className="shell-label text-lg text-primary transition-colors hover:text-accent"
+              className="font-studio-sans text-sm text-primary transition-colors hover:text-accent"
             >
-              BACK TO THE FIXTURE LIST →
+              Back to the work
             </Link>
             <Link
               href="/contact"

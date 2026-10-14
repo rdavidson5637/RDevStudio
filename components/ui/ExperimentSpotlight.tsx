@@ -27,7 +27,7 @@ export function ExperimentSpotlight({
   return (
     <article
       className={`work-card-lift group flex flex-col overflow-hidden rounded-[10px] border border-border bg-raised ${
-        animated ? "animate-fade-in opacity-0" : ""
+        ""
       } ${compact ? "p-5" : "p-6 sm:p-8"}`}
       style={animated ? { animationDelay: `${animationDelayMs}ms` } : undefined}
     >
@@ -37,7 +37,7 @@ export function ExperimentSpotlight({
       >
         <div className="flex items-start justify-between gap-3">
           <h2
-            className={`font-display uppercase leading-tight text-primary ${
+            className={`font-display leading-tight text-primary ${
               compact ? "text-lg sm:text-xl" : "text-xl sm:text-2xl"
             }`}
           >
@@ -63,7 +63,7 @@ export function ExperimentSpotlight({
         <div className="mt-5 flex items-center justify-between gap-4">
           <span className="shell-label text-accent">{kicker}</span>
           <span className="pitch-link text-sm font-semibold text-primary transition-colors group-hover:text-accent">
-            {soon ? "Have a look →" : "Open →"}
+            {soon ? "Have a look" : "Open"}
           </span>
         </div>
       </Link>

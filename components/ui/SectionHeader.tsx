@@ -24,10 +24,7 @@ export function SectionHeader({
     return (
       <div className={`flex flex-wrap items-end justify-between gap-x-8 gap-y-3 ${className}`}>
         <div className="max-w-2xl">
-          {label ? <p className="type-label text-studio-muted">{label}</p> : null}
-          {text ? (
-            <h2 className="display-lg mt-3 text-balance text-studio-text">{text}</h2>
-          ) : null}
+          {text ? <h2 className="display-lg text-balance text-studio-text">{text}</h2> : null}
         </div>
         {href && linkLabel ? (
           <Link

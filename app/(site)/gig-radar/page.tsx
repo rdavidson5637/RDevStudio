@@ -11,8 +11,7 @@ export const metadata = createPageMetadata({
 export default function GigRadarPage() {
   return (
     <ComingSoon
-      eyebrow="Belfast and Dublin"
-      title="GIG RADAR"
+      title="Gig Radar"
       blurb="A weekly email of who you actually listen to, playing in Belfast or Dublin, before the tickets go. Matched to your Last.fm, not a listings dump."
       points={[
         "Pulls your Last.fm artists, or you pick them yourself",

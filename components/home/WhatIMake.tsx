@@ -60,7 +60,7 @@ export function WhatIMake() {
                 />
 
                 <span
-                  className={`relative font-display text-sm font-semibold tracking-widest uppercase ${styles.label}`}
+                  className={`relative font-display text-sm font-semibold ${styles.label}`}
                 >
                   0{index + 1}
                 </span>
@@ -85,7 +85,7 @@ export function WhatIMake() {
                     className="transition-transform duration-normal ease-out group-hover:translate-x-1"
                     aria-hidden="true"
                   >
-                    →
+                   
                   </span>
                 </span>
               </Link>

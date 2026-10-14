@@ -54,8 +54,7 @@ export default function ToolkitPage() {
 
   return (
     <Section className="bg-bg text-studio-text">
-      <p className="eyebrow text-studio-muted">Tools</p>
-      <h1 className="display-lg mt-4 text-studio-text">Tools</h1>
+      <h1 className="display-lg text-studio-text">Tools</h1>
       <p className="type-body mt-5 max-w-xl text-studio-muted">Free to use, no sign-up. Audits, generators, and a few utilities.</p>
       <div className="mt-14 space-y-14">
         {groups.map((group) => (
@@ -66,11 +65,8 @@ export default function ToolkitPage() {
                 <li key={tool.slug}>
                   <Link
                     href={tool.href}
-                    className="card group flex h-full gap-4 p-5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-studio-text"
+                    className="card group flex h-full flex-col p-5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-studio-text"
                   >
-                    <span className="mt-1 inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-studio-line font-studio-mono text-xs text-studio-accent">
-                      {tool.title.slice(0, 1)}
-                    </span>
                     <span>
                       <span className="block font-studio-display text-2xl text-studio-text">{tool.title}</span>
                       <span className="type-body mt-1 block text-studio-muted">{tool.description}</span>

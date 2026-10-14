@@ -11,28 +11,28 @@ export const metadata = createPageMetadata({
 });
 
 const PROFILE_STATS = [
-  { label: "POSITION", value: "Designer / developer" },
-  { label: "CLUB", value: "RDev Studio" },
-  { label: "HOMETOWN", value: "Carrickfergus, Northern Ireland" },
+  { label: "Position", value: "Designer / developer" },
+  { label: "Club", value: "RDev Studio" },
+  { label: "Hometown", value: "Carrickfergus, Northern Ireland" },
   {
-    label: "EDUCATION",
+    label: "Education",
     value:
-      "MSc Software Development, Queen's University Belfast (Commendation) · BSc Forensic Science, LJMU",
+      "MSc Software Development, Queen's University Belfast (Commendation). BSc Forensic Science, LJMU.",
   },
-  { label: "DAY JOB", value: "UK Civil Service - casework" },
+  { label: "Day job", value: "UK Civil Service - casework" },
 ] as const;
 
 const OFF_THE_PITCH = [
   {
-    label: "RUDI",
+    label: "Rudi",
     line: "Border Collie. Chief morale officer. Adopted from Assisi - yes, the same sanctuary.",
   },
   {
-    label: "FOOTBALL & RUGBY",
+    label: "Football and rugby",
     line: "Arsenal and Ulster. One of these causes me significantly more stress than the other.",
   },
   {
-    label: "OTHERWISE",
+    label: "Otherwise",
     line: "Music, gaming, and making short videos nobody asked for.",
   },
 ] as const;
@@ -44,7 +44,6 @@ export default function AboutPage() {
         <Reveal as="header" className="border-b border-border pb-10">
           <div className="grid gap-8 lg:grid-cols-[1fr,280px] lg:items-end">
             <div>
-              <p className="eyebrow mb-3 text-studio-accent">Squad - No. 10</p>
               <h1 className="display-lg text-studio-text">Ryan Davidson</h1>
             </div>
             <figure>
@@ -58,8 +57,8 @@ export default function AboutPage() {
                   className="object-cover object-center"
                 />
               </div>
-              <figcaption className="shell-label mt-3 text-secondary">
-                QUEEN&apos;S UNIVERSITY BELFAST - MSc
+              <figcaption className="mt-3 font-studio-sans text-sm text-studio-muted">
+                Queen&apos;s University Belfast, MSc
               </figcaption>
             </figure>
           </div>
@@ -74,7 +73,7 @@ export default function AboutPage() {
               {PROFILE_STATS.map((stat) => (
                 <div key={stat.label}>
                   <dt className="sr-only">{stat.label}</dt>
-                  <dd className="font-mono text-[11px] uppercase leading-relaxed tracking-[0.08em] text-secondary">
+                  <dd className="font-studio-sans text-sm leading-relaxed text-studio-muted">
                     <span className="text-primary">{stat.label}</span>
                     {" - "}
                     {stat.value}
@@ -117,14 +116,14 @@ export default function AboutPage() {
           className="border-b border-border py-12"
           aria-label="Off the pitch"
         >
-          <p className="shell-label mb-4 text-accent">OFF THE PITCH</p>
+          <h2 className="mb-4 font-studio-display text-2xl text-studio-text">Off the pitch</h2>
           <div className="grid gap-4 md:grid-cols-3">
             {OFF_THE_PITCH.map((item) => (
               <article
                 key={item.label}
                 className="rounded-[10px] border border-border bg-raised px-4 py-4"
               >
-                <p className="shell-label mb-2 text-secondary">{item.label}</p>
+                <p className="mb-2 font-studio-sans text-sm text-studio-muted">{item.label}</p>
                 <p className="text-sm leading-relaxed text-primary">
                   {item.line}
                 </p>

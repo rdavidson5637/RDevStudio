@@ -17,7 +17,7 @@ export function BrowserFrame({ src, alt, domain, sizes, priority = false, mutedL
         <span className="h-2.5 w-2.5 rounded-full bg-white/15" />
         <span className="h-2.5 w-2.5 rounded-full bg-white/15" />
         {domain ? (
-          <span className="ml-2 truncate rounded-full border border-studio-line px-3 py-1 font-studio-mono text-xs text-studio-muted">
+          <span className="ml-2 truncate font-studio-sans text-xs text-studio-muted">
             {domain}
           </span>
         ) : null}
@@ -26,7 +26,7 @@ export function BrowserFrame({ src, alt, domain, sizes, priority = false, mutedL
         {src ? (
           <Image src={src} alt={alt} fill priority={priority} sizes={sizes} className="object-cover object-top" />
         ) : (
-          <p className="flex h-full items-center justify-center px-4 text-center font-studio-mono text-xs text-studio-muted">
+          <p className="flex h-full items-center justify-center px-4 text-center font-studio-sans text-xs text-studio-muted">
             {mutedLabel ?? "Preview after sign-off"}
           </p>
         )}
@@ -43,7 +43,7 @@ export function PhoneFrame({ src, alt, sizes }: { src?: string; alt: string; siz
         {src ? (
           <Image src={src} alt={alt} fill sizes={sizes} className="object-cover object-top" />
         ) : (
-          <p className="flex h-full items-center justify-center px-2 text-center font-studio-mono text-[10px] text-studio-muted">
+          <p className="flex h-full items-center justify-center px-2 text-center font-studio-sans text-xs text-studio-muted">
             Preview after sign-off
           </p>
         )}

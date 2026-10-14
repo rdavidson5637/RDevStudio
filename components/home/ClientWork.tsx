@@ -25,18 +25,9 @@ function JobCard({ job }: { job: ClientJob }) {
         mutedLabel={job.slug === "assisi" ? "Preview after sign-off" : "Preview after sign-off"}
       />
       <div className="flex flex-1 flex-col p-5">
-        <p className="type-label text-studio-muted">{job.statusLabel}</p>
+        <p className="text-sm font-bold text-studio-muted">{job.statusLabel}</p>
         <h3 className="mt-2 font-studio-display text-2xl text-studio-text">{job.name}</h3>
         <p className="type-body mt-2 text-studio-muted">{job.summary}</p>
-        {job.stack && job.stack.length > 0 ? (
-          <ul className="mt-4 flex flex-wrap gap-2">
-            {job.stack.slice(0, 3).map((chip) => (
-              <li key={chip} className="rounded-full border border-studio-line px-2.5 py-1 font-studio-mono text-xs text-studio-muted">
-                {chip}
-              </li>
-            ))}
-          </ul>
-        ) : null}
         {job.href && job.href !== "/work" ? (
           <Link
             href={job.href}
@@ -59,11 +50,11 @@ export function ClientWork() {
   if (!feature) return null;
 
   return (
-    <Section eyebrow="CLIENT WORK" heading="Real clients. Real sites.">
+    <Section heading="Sites I've built">
       <div className="mt-4 flex justify-end">
         <Link
           href="/work"
-          className="type-label inline-flex min-h-11 items-center text-studio-muted underline-offset-4 hover:text-studio-accent hover:underline"
+          className="inline-flex min-h-11 items-center font-studio-sans text-sm text-studio-muted underline-offset-4 hover:text-studio-accent hover:underline"
         >
           All work
         </Link>
@@ -88,18 +79,9 @@ export function ClientWork() {
               </div>
             </div>
             <div className="pb-4 md:pb-16">
-              <p className="type-label text-studio-muted">{feature.statusLabel}</p>
+              <p className="text-sm font-bold text-studio-muted">{feature.statusLabel}</p>
               <h3 className="mt-2 font-studio-display text-4xl text-studio-text">{feature.name}</h3>
               <p className="type-body mt-3 max-w-md text-studio-muted">{feature.summary}</p>
-              {feature.stack ? (
-                <ul className="mt-4 flex flex-wrap gap-2">
-                  {feature.stack.map((chip) => (
-                    <li key={chip} className="rounded-full border border-studio-line px-2.5 py-1 font-studio-mono text-xs text-studio-muted">
-                      {chip}
-                    </li>
-                  ))}
-                </ul>
-              ) : null}
               {feature.href ? (
                 <Link
                   href={feature.href}

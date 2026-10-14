@@ -68,7 +68,7 @@ function InteractiveSection({
   return (
     <section className="border-b border-border py-10">
       <header
-        className="mb-6 animate-fade-in opacity-0"
+        className="mb-6"
         style={{ animationDelay: `${animationOffset}ms` }}
       >
         <p className="shell-label mb-2 text-accent">{label}</p>
@@ -182,7 +182,7 @@ export function InteractiveToolsLanding() {
 
       <section className="py-10">
         <header
-          className="mb-6 animate-fade-in opacity-0"
+          className="mb-6"
           style={{
             animationDelay: showHighlightSections ? "280ms" : "120ms",
           }}
@@ -197,7 +197,7 @@ export function InteractiveToolsLanding() {
 
         {filteredTools.length === 0 ? (
           <div
-            className="animate-fade-in rounded-[10px] border border-border-strong bg-raised p-8 text-center opacity-0"
+            className="rounded-[10px] border border-border-strong bg-raised p-8 text-center"
             style={{ animationDelay: "160ms" }}
           >
             <p className="text-base text-secondary">
@@ -222,7 +222,7 @@ export function InteractiveToolsLanding() {
       {showHighlightSections && comingSoonTools.length > 0 ? (
         <section className="border-t border-border py-10">
           <header
-            className="mb-6 animate-fade-in opacity-0"
+            className="mb-6"
             style={{ animationDelay: "360ms" }}
           >
             <p className="shell-label mb-2 text-accent">Pipeline</p>

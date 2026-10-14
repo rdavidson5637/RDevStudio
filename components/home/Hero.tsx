@@ -9,10 +9,6 @@ import { PRICE_WEBSITE_GBP } from "@/lib/constants";
 
 const FAN = ["champions-draft", "longest-word", "stout-finder"] as const;
 
-function Underline({ children }: { children: string }) {
-  return <span className="border-b border-studio-accent">{children}</span>;
-}
-
 export function Hero() {
   const fan = FAN.map((slug) => productBySlug(slug)).filter((product) => product !== undefined);
 
@@ -21,14 +17,8 @@ export function Hero() {
       <Container className="relative pt-8 pb-16 md:pt-20 md:pb-24 lg:pt-24 lg:pb-28">
         <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,28rem)] lg:gap-8">
           <Stagger>
-            <p className="type-label text-studio-muted">Carrickfergus, Northern Ireland</p>
-            <h1 className="display-xl mt-6 max-w-4xl text-balance text-studio-text">
-              <span className="block">
-                <Underline>Websites</Underline> for local businesses.
-              </span>
-              <span className="mt-2 block">
-                <Underline>Games</Underline> for everyone else.
-              </span>
+            <h1 className="display-xl max-w-4xl text-balance text-studio-text">
+              Websites for local businesses. Games for everyone else.
             </h1>
             <p className="type-body mt-8 max-w-xl text-studio-muted">
               I design and build websites for Northern Ireland small businesses and charities. I also make the games and apps below, and they are all live.
@@ -39,8 +29,8 @@ export function Hero() {
                 Play something
               </Button>
             </div>
-            <p className="mt-6 font-studio-mono text-sm text-zinc-400">
-              Websites from £{PRICE_WEBSITE_GBP} · You own the code · Free for registered charities
+            <p className="mt-6 max-w-xl font-studio-sans text-sm text-studio-muted">
+              Websites from £{PRICE_WEBSITE_GBP}. You own the code. Free for registered charities.
             </p>
           </Stagger>
 

@@ -56,7 +56,7 @@ export function Footer() {
         <div className="grid grid-cols-2 gap-x-6 gap-y-10 md:grid-cols-4">
           {COLUMNS.map((column) => (
             <nav key={column.title} aria-label={column.title}>
-              <p className="type-label text-studio-muted">{column.title}</p>
+              <p className="font-studio-sans text-sm text-studio-muted">{column.title}</p>
               <ul className="mt-4">
                 {column.links.map((link) => (
                   <li key={`${column.title}-${link.label}`}>
@@ -68,7 +68,7 @@ export function Footer() {
           ))}
 
           <div>
-            <p className="type-label text-studio-muted">Contact</p>
+            <p className="font-studio-sans text-sm text-studio-muted">Contact</p>
             <ul className="mt-4 text-sm">
               <li>
                 <a
@@ -93,7 +93,7 @@ export function Footer() {
         </div>
 
         <div className="mt-16 flex flex-col gap-4 border-t border-studio-border pt-6 sm:flex-row sm:items-center sm:justify-between">
-          <p className="type-label text-studio-muted">© 2026 Ryan Davidson</p>
+          <p className="font-studio-sans text-sm text-studio-muted">© 2026 Ryan Davidson</p>
           <p className="text-sm text-studio-muted">Carrickfergus, Northern Ireland</p>
           <div className="flex items-center gap-4">
             <a

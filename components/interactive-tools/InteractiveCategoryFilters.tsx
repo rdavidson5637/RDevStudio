@@ -12,7 +12,7 @@ export function InteractiveCategoryFilters({
 }: InteractiveCategoryFiltersProps) {
   return (
     <div
-      className="flex animate-fade-in flex-wrap gap-2 opacity-0"
+      className="flex flex-wrap gap-2"
       style={{ animationDelay: "80ms" }}
       role="group"
       aria-label="Filter interactive tools by category"

@@ -48,7 +48,7 @@ function ClientCard({ job }: { job: ClientWork }) {
         mutedLabel="Preview after sign-off"
       />
       <div className="flex flex-1 flex-col p-5">
-        <p className="type-label text-studio-muted">{job.statusLabel}</p>
+        <p className="text-sm font-bold text-studio-muted">{job.statusLabel}</p>
         <h3 className="mt-2 font-studio-display text-2xl text-studio-text">{job.name}</h3>
         <p className="type-body mt-2 text-studio-muted">{job.summary}</p>
         {job.href && job.href !== "/work" ? (
@@ -69,8 +69,7 @@ export default function WorkPage() {
 
   return (
     <Section className="bg-bg text-studio-text">
-      <p className="eyebrow text-studio-muted">Work</p>
-      <h1 className="display-lg mt-4 text-studio-text">Work</h1>
+      <h1 className="display-lg text-studio-text">Work</h1>
       <p className="type-body mt-5 max-w-xl text-studio-muted">Client jobs first. Experiments and games further down.</p>
 
       <h2 className="type-h2 mt-14 text-studio-text">Client work</h2>
@@ -87,7 +86,7 @@ export default function WorkPage() {
       <p className="type-body mt-2 text-studio-muted">Concept builds and a personal experiment. Not client jobs.</p>
       <div className="mt-6 grid gap-4 md:grid-cols-2">
         {OTHER.map((item) => (
-          <Link key={item.href} href={item.href} className="card block p-5 hover:border-studio-line-strong">
+          <Link key={item.href} href={item.href} className="card block p-5">
             <span className="font-studio-display text-2xl text-studio-text">{item.title}</span>
             <span className="type-body mt-2 block text-studio-muted">{item.description}</span>
           </Link>
