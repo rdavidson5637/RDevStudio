@@ -4,7 +4,7 @@ import { StatusDot } from "@/components/motion/StatusDot";
 import { Stagger } from "@/components/motion/Stagger";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
-import { liveProducts, productBySlug } from "@/lib/content/products";
+import { productBySlug } from "@/lib/content/products";
 import { PRICE_WEBSITE_GBP } from "@/lib/constants";
 
 const FAN = ["champions-draft", "longest-word", "stout-finder"] as const;
@@ -65,22 +65,6 @@ export function Hero() {
               </Link>
             ))}
           </div>
-        </div>
-
-        <div className="scrollbar-none -mx-6 mt-8 flex snap-x snap-mandatory gap-3 overflow-x-auto px-6 lg:hidden">
-          {liveProducts.map((product) => (
-            <Link
-              key={product.slug}
-              href={product.href}
-              className="w-36 shrink-0 snap-start focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-amber"
-              {...(product.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-            >
-              <span className="block overflow-hidden rounded-xl border border-studio-line">
-                <ProductCover slug={product.cover} />
-              </span>
-              <span className="mt-2 block text-sm text-studio-text">{product.name}</span>
-            </Link>
-          ))}
         </div>
       </Container>
     </section>
