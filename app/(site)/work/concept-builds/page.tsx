@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { Reveal } from "@/components/motion/Reveal";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata = createPageMetadata({
@@ -89,8 +90,8 @@ export default function ConceptBuildsPage() {
   return (
     <div className="studio-page px-4 py-16 sm:px-6 md:py-24 lg:py-32">
       <article className="container-wide px-6">
-        <header className="space-y-6 border-b border-border pb-10">
-          <p className="shell-label text-accent">CASE STUDY - 04</p>
+        <Reveal as="header" className="space-y-6 border-b border-border pb-10">
+          <p className="eyebrow text-amber">CASE STUDY - 04</p>
           <h1 className="display-lg text-studio-text">Concept builds</h1>
           <p className="max-w-2xl text-lg text-primary">
             Three sites exploring how local businesses could look online.
@@ -101,7 +102,7 @@ export default function ConceptBuildsPage() {
             are how I show range: three different brands, three different
             audiences, one standard.
           </p>
-        </header>
+        </Reveal>
 
         <div className="border-b border-border py-12">
           {BUILDS.map((build) => (

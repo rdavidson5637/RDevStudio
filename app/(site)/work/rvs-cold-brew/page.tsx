@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { createPageMetadata } from "@/lib/metadata";
+import { Reveal } from "@/components/motion/Reveal";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 
 export const metadata = createPageMetadata({
@@ -52,8 +53,8 @@ export default function RvsColdBrewCaseStudyPage() {
           ]}
           className="mb-8"
         />
-        <header className="space-y-6 border-b border-border pb-10">
-          <p className="shell-label text-accent">CASE STUDY - 02</p>
+        <Reveal as="header" className="space-y-6 border-b border-border pb-10">
+          <p className="eyebrow text-amber">CASE STUDY - 02</p>
           <h1 className="display-lg text-studio-text">RV&apos;s Cold Brew</h1>
           <p className="max-w-2xl text-lg text-primary">
             A live site for a Belfast cold brew and matcha counter at
@@ -66,7 +67,7 @@ export default function RvsColdBrewCaseStudyPage() {
             <p>STATUS - Live · still a client</p>
             <p>YEAR - 2026</p>
           </div>
-        </header>
+        </Reveal>
 
         <section
           className="border-b border-border py-12"

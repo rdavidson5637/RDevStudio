@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { Reveal } from "@/components/motion/Reveal";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata = createPageMetadata({
@@ -52,8 +53,8 @@ export default function UcCaseworkerToolCaseStudyPage() {
   return (
     <div className="studio-page px-4 py-16 sm:px-6 md:py-24 lg:py-32">
       <article className="container-wide px-6">
-        <header className="space-y-6 border-b border-border pb-10">
-          <p className="shell-label text-accent">CASE STUDY - 05</p>
+        <Reveal as="header" className="space-y-6 border-b border-border pb-10">
+          <p className="eyebrow text-amber">CASE STUDY - 05</p>
           <h1 className="display-lg text-studio-text">UC Caseworker Assistant</h1>
           <p className="max-w-2xl text-lg text-primary">
             An AI assistant for Universal Credit caseworkers, built by a
@@ -66,7 +67,7 @@ export default function UcCaseworkerToolCaseStudyPage() {
             <p>STATUS - Portfolio prototype</p>
             <p>YEAR - 2026</p>
           </div>
-        </header>
+        </Reveal>
 
         <section
           className="border-b border-border py-12"
