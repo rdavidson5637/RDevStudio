@@ -96,6 +96,15 @@ async function assertFormspreeAllowed(page: Page) {
   }
 }
 
+async function checkFormErrorGet(page: Page) {
+  const response = await page.request.get(`${BASE}/api/form-error`);
+  const status = response.status();
+  if (status !== 405) {
+    throw new Error(`/api/form-error GET returned ${status}, expected 405`);
+  }
+  console.log("405 /api/form-error");
+}
+
 async function checkStoutFinderRedirect(page: Page) {
   const response = await page.request.get(`${BASE}/stout-finder`, { maxRedirects: 0 });
   const status = response.status();
@@ -114,6 +123,7 @@ async function main() {
   const browser = await chromium.launch();
   const page = await browser.newPage();
   await checkStoutFinderRedirect(page);
+  await checkFormErrorGet(page);
   for (const route of ROUTES) {
     await check(page, route);
   }

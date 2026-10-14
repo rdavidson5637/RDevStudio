@@ -2,12 +2,16 @@
 
 import { useState } from "react";
 import { useForm, ValidationError } from "@formspree/react";
+import { FormSendFailure } from "@/components/contact/FormSendFailure";
+import { useFormFailureReport } from "@/components/contact/useFormFailureReport";
 
 const NEWSLETTER_FORM_ID = "xanyzkvo";
 
 export function Newsletter() {
   const [state, handleSubmit] = useForm(NEWSLETTER_FORM_ID);
   const [email, setEmail] = useState("");
+  useFormFailureReport("newsletter", state.errors);
+  const formFailed = (state.errors?.getFormErrors().length ?? 0) > 0;
 
   if (state.succeeded) {
     return (
@@ -68,6 +72,9 @@ export function Newsletter() {
             errors={state.errors}
             className="mt-2 text-sm text-[#d22b2b]"
           />
+          {formFailed ? (
+            <FormSendFailure className="mt-3 text-sm text-[#d22b2b]" />
+          ) : null}
 
           <p className="mt-6 text-xs text-tertiary">
             Join 50+ subscribers. Your email is safe with me.

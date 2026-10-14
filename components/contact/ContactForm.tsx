@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useForm, ValidationError } from "@formspree/react";
+import { FormSendFailure } from "@/components/contact/FormSendFailure";
 import { FormSuccess } from "@/components/contact/FormSuccess";
 import {
   inputClassName,
@@ -9,6 +10,7 @@ import {
   selectClassName,
   submitButtonClassName,
 } from "@/components/contact/form-styles";
+import { useFormFailureReport } from "@/components/contact/useFormFailureReport";
 import { CONTACT_SERVICE_OPTIONS, FORMSPREE_FORM_ID } from "@/lib/constants";
 
 function isValidEmail(value: string) {
@@ -21,11 +23,14 @@ function ContactFormFields({ onReset }: { onReset: () => void }) {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
 
+  useFormFailureReport("contact", state.errors);
+
   const canSubmit =
     name.trim().length > 0 &&
     isValidEmail(email.trim()) &&
     message.trim().length > 0 &&
     !state.submitting;
+  const formFailed = (state.errors?.getFormErrors().length ?? 0) > 0;
 
   if (state.succeeded) {
     return <FormSuccess onReset={onReset} />;
@@ -114,11 +119,8 @@ function ContactFormFields({ onReset }: { onReset: () => void }) {
         />
       </div>
 
-      {state.errors ? (
-        <p className="text-sm leading-relaxed text-amber">
-          That didn&apos;t send. Try again, or just email me directly - address
-          is right there.
-        </p>
+      {formFailed ? (
+        <FormSendFailure className="text-sm leading-relaxed text-amber" />
       ) : null}
 
       <button

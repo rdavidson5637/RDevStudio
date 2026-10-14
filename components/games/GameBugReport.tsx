@@ -2,6 +2,8 @@
 
 import { useEffect, useState } from "react";
 import { useForm, ValidationError } from "@formspree/react";
+import { FormSendFailure } from "@/components/contact/FormSendFailure";
+import { useFormFailureReport } from "@/components/contact/useFormFailureReport";
 import { FORMSPREE_FORM_ID } from "@/lib/constants";
 
 export type GameBugReportGame = "Champions Draft" | "Rugby Draft";
@@ -19,6 +21,8 @@ function BugReportForm({ game, context, onClose }: ModalProps) {
   const [state, handleSubmit] = useForm(FORMSPREE_FORM_ID);
   const [pageUrl, setPageUrl] = useState("");
   const [userAgent, setUserAgent] = useState("");
+  useFormFailureReport("game-bug", state.errors);
+  const formFailed = (state.errors?.getFormErrors().length ?? 0) > 0;
 
   useEffect(() => {
     setPageUrl(window.location.href);
@@ -96,10 +100,9 @@ function BugReportForm({ game, context, onClose }: ModalProps) {
         />
       </div>
 
-      <ValidationError
-        errors={state.errors}
-        className="rounded-lg border border-red-500/30 bg-red-500/10 px-4 py-3 text-sm text-red-400"
-      />
+      {formFailed ? (
+        <FormSendFailure className="rounded-lg border border-red-500/30 bg-red-500/10 px-4 py-3 text-sm text-red-400" />
+      ) : null}
 
       <button
         type="submit"

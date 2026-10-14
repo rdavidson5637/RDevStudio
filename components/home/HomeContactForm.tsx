@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useForm, ValidationError } from "@formspree/react";
+import { FormSendFailure } from "@/components/contact/FormSendFailure";
 import { FormSuccess } from "@/components/contact/FormSuccess";
 import {
   inputClassName,
@@ -9,10 +10,13 @@ import {
   selectClassName,
   submitButtonClassName,
 } from "@/components/contact/form-styles";
+import { useFormFailureReport } from "@/components/contact/useFormFailureReport";
 import { CONTACT_SERVICE_OPTIONS, FORMSPREE_FORM_ID } from "@/lib/constants";
 
 function HomeContactFormFields({ onReset }: { onReset: () => void }) {
   const [state, handleSubmit] = useForm(FORMSPREE_FORM_ID);
+  useFormFailureReport("home-contact", state.errors);
+  const formFailed = (state.errors?.getFormErrors().length ?? 0) > 0;
 
   if (state.succeeded) {
     return <FormSuccess onReset={onReset} />;
@@ -118,10 +122,9 @@ function HomeContactFormFields({ onReset }: { onReset: () => void }) {
         />
       </div>
 
-      <ValidationError
-        errors={state.errors}
-        className="border border-red-500/30 bg-red-500/10 px-4 py-3 text-sm text-red-400"
-      />
+      {formFailed ? (
+        <FormSendFailure className="border border-red-500/30 bg-red-500/10 px-4 py-3 text-sm text-red-400" />
+      ) : null}
 
       <button
         type="submit"
