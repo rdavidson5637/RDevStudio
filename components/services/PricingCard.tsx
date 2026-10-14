@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { PRICING_FEATURES } from "@/lib/constants";
+import { PRICE_WEBSITE_GBP, PRICING_FEATURES } from "@/lib/constants";
 
 export function PricingCard() {
   return (
@@ -7,7 +7,7 @@ export function PricingCard() {
       <div className="border-b border-border bg-paper px-8 py-10 text-center">
         <p className="label-caps text-tertiary">Website Design & Build</p>
         <p className="mt-2 font-display text-6xl font-extrabold text-primary">
-          £650
+          £{PRICE_WEBSITE_GBP}
         </p>
         <p className="mt-2 text-sm text-secondary">
           One-off payment · No hidden fees

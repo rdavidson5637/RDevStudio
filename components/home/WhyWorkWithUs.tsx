@@ -1,4 +1,5 @@
 import { SectionHeader } from "@/components/ui/SectionHeader";
+import { PRICE_CARE_PLAN_GBP } from "@/lib/constants";
 
 type FeatureIconProps = {
   className?: string;
@@ -158,7 +159,7 @@ const FEATURES = [
   {
     title: "Ongoing support available",
     description:
-      "£30/month keeps your site updated, secure, and running smoothly.",
+      `£${PRICE_CARE_PLAN_GBP}/month keeps your site updated, secure, and running smoothly.`,
     Icon: ShieldIcon,
   },
 ] as const;

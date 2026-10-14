@@ -1,12 +1,21 @@
 import { Reveal } from "@/components/motion/Reveal";
 import { Button } from "@/components/ui/Button";
 import { Section } from "@/components/ui/Section";
-import { CONTENT_CREATION_FEATURES, PRICING_FEATURES, SOCIAL_MEDIA_FEATURES } from "@/lib/constants";
+import {
+  CONTENT_CREATION_FEATURES,
+  PRICE_CARE_PLAN_GBP,
+  PRICE_CONTENT_GBP,
+  PRICE_SOCIAL_GBP,
+  PRICE_WEBSITE_GBP,
+  PRICING_FEATURES,
+  SOCIAL_MEDIA_FEATURES,
+  WHATSAPP_URL,
+} from "@/lib/constants";
 
 const PACKAGES = [
   {
     title: "Websites",
-    price: "£650",
+    price: `£${PRICE_WEBSITE_GBP}`,
     from: true,
     note: "one-off",
     copy: "A site that says who you are, what you do, and how to get in touch. Phone first. No template.",
@@ -16,7 +25,7 @@ const PACKAGES = [
   },
   {
     title: "Social media",
-    price: "£150",
+    price: `£${PRICE_SOCIAL_GBP}`,
     from: true,
     note: "/mo",
     copy: "A plan, captions and graphics so you are not making it up every Monday.",
@@ -26,7 +35,7 @@ const PACKAGES = [
   },
   {
     title: "Content",
-    price: "£200",
+    price: `£${PRICE_CONTENT_GBP}`,
     from: true,
     note: "a project",
     copy: "A batch of posts or a one-off set. Written to sound like you, not like an agency.",
@@ -36,7 +45,7 @@ const PACKAGES = [
   },
   {
     title: "Care plan",
-    price: "£30",
+    price: `£${PRICE_CARE_PLAN_GBP}`,
     from: false,
     note: "/month, optional",
     copy: "Hosting, security updates and small changes, so the site stays up and stays current.",
@@ -92,7 +101,7 @@ export function WorkWithMe() {
       </ul>
       <div className="mt-8 flex flex-wrap items-center gap-6">
         <Button href="/contact">Start a project</Button>
-        <Button href="https://wa.me/447378420418" variant="secondary">
+        <Button href={WHATSAPP_URL} variant="secondary">
           Message on WhatsApp
         </Button>
       </div>

@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
+import { WHATSAPP_URL } from "@/lib/constants";
 
 export function ClosingCta() {
   return (
@@ -13,7 +14,7 @@ export function ClosingCta() {
         </p>
         <div className="mt-8 flex flex-wrap items-center gap-6">
           <Button href="/contact">Start a project</Button>
-          <Button href="https://wa.me/447378420418" variant="secondary">
+          <Button href={WHATSAPP_URL} variant="secondary">
             WhatsApp
           </Button>
         </div>

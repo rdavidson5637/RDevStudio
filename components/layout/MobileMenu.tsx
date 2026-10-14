@@ -3,10 +3,8 @@
 import Link from "next/link";
 import { useEffect, useRef } from "react";
 import { createPortal } from "react-dom";
-import { SHELL_NAV_LINKS } from "@/lib/constants";
+import { SHELL_NAV_LINKS, WHATSAPP_URL } from "@/lib/constants";
 import { Button } from "@/components/ui/Button";
-
-const WHATSAPP_URL = "https://wa.me/447378420418";
 
 type MobileMenuProps = {
   open: boolean;

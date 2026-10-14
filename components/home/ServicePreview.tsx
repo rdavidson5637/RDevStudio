@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { PRICING_FEATURES } from "@/lib/constants";
+import { PRICE_WEBSITE_GBP, PRICING_FEATURES } from "@/lib/constants";
 
 export function ServicePreview() {
   const previewFeatures = PRICING_FEATURES.slice(0, 4);
@@ -23,7 +23,7 @@ export function ServicePreview() {
                 Get Online
               </p>
               <p className="mt-2 text-5xl font-bold">
-                £650
+                £{PRICE_WEBSITE_GBP}
                 <span className="text-lg font-normal text-white/70">
                   {" "}
                   one-off

@@ -5,6 +5,7 @@ import { Stagger } from "@/components/motion/Stagger";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { liveProducts, productBySlug } from "@/lib/content/products";
+import { PRICE_WEBSITE_GBP } from "@/lib/constants";
 
 const FAN = ["champions-draft", "longest-word", "stout-finder"] as const;
 
@@ -41,7 +42,7 @@ export function Hero() {
               </Button>
             </div>
             <p className="mt-6 font-studio-mono text-sm text-zinc-400">
-              Websites from £650 · You own the code · Free for registered charities
+              Websites from £{PRICE_WEBSITE_GBP} · You own the code · Free for registered charities
             </p>
           </Stagger>
 

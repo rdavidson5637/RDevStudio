@@ -1,10 +1,16 @@
 import { Section } from "@/components/ui/Section";
+import {
+  PRICE_CARE_PLAN_GBP,
+  PRICE_CONTENT_GBP,
+  PRICE_SOCIAL_GBP,
+  PRICE_WEBSITE_GBP,
+  WHATSAPP_URL,
+} from "@/lib/constants";
 
 const FAQ = [
   {
     question: "How much does a website cost?",
-    answer:
-      "Websites start at £650, one-off. Social media starts at £150 a month and content at £200 a project. You get the quote in writing before anything starts.",
+    answer: `Websites start at £${PRICE_WEBSITE_GBP}, one-off. Social media starts at £${PRICE_SOCIAL_GBP} a month and content at £${PRICE_CONTENT_GBP} a project. You get the quote in writing before anything starts.`,
   },
   {
     question: "How do payments work?",
@@ -17,7 +23,7 @@ const FAQ = [
   {
     question: "What happens after launch?",
     answer:
-      "You can look after it yourself, or take the optional £30 a month care plan: hosting, security updates and small changes.",
+      `You can look after it yourself, or take the optional £${PRICE_CARE_PLAN_GBP} a month care plan: hosting, security updates and small changes.`,
   },
   {
     question: "Do charities pay?",
@@ -51,7 +57,7 @@ export function HomeFaq() {
           <p className="eyebrow text-studio-muted">Questions</p>
           <h2 className="display-lg mt-3 text-balance text-studio-text">The usual ones.</h2>
           <a
-            href="https://wa.me/447378420418"
+            href={WHATSAPP_URL}
             className="inline-flex min-h-11 items-center text-sm text-studio-text underline decoration-studio-line-strong underline-offset-4 hover:text-amber"
             target="_blank"
             rel="noopener noreferrer"

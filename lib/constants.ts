@@ -8,6 +8,13 @@ export const EMAIL = "ryan@rdevstudio.co.uk";
 export const CONTACT_EMAIL = "ryan@rdevstudio.co.uk";
 export const GITHUB_URL = "https://github.com/rdavidson5637";
 export const FORMSPREE_FORM_ID = "mgoqjqve";
+export const WHATSAPP_URL = "https://wa.me/447378420418";
+
+/** GBP amounts the public site already shows. Display strings are built from these. */
+export const PRICE_WEBSITE_GBP = 650;
+export const PRICE_SOCIAL_GBP = 150;
+export const PRICE_CONTENT_GBP = 200;
+export const PRICE_CARE_PLAN_GBP = 30;
 
 export const CONTACT_SERVICE_OPTIONS = [
   "Website",
@@ -188,7 +195,7 @@ export const SERVICES = [
     number: "01",
     slug: "websites",
     title: "Websites",
-    price: "from £650",
+    price: `from £${PRICE_WEBSITE_GBP}`,
     priceNote: "one-off",
     description:
       "A site that says who you are, what you do, and how to get in touch. Phone first. No template.",
@@ -197,7 +204,7 @@ export const SERVICES = [
     number: "02",
     slug: "social",
     title: "Social media",
-    price: "from £150/mo",
+    price: `from £${PRICE_SOCIAL_GBP}/mo`,
     priceNote: "",
     description:
       "A plan, captions, and graphics so you are not making it up every Monday.",
@@ -206,7 +213,7 @@ export const SERVICES = [
     number: "03",
     slug: "content",
     title: "Content",
-    price: "from £200/project",
+    price: `from £${PRICE_CONTENT_GBP}/project`,
     priceNote: "",
     description:
       "A batch of posts or a one-off set. Written to sound like you, not like an agency.",

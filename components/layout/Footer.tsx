@@ -1,8 +1,7 @@
 import Link from "next/link";
-import { CONTACT_EMAIL, GITHUB_URL } from "@/lib/constants";
+import { CONTACT_EMAIL, GITHUB_URL, WHATSAPP_URL } from "@/lib/constants";
 
 const LINKEDIN_URL = "https://www.linkedin.com/in/ryan-davidson-462bb221b";
-const WHATSAPP_URL = "https://wa.me/447378420418";
 
 const COLUMNS = [
   {

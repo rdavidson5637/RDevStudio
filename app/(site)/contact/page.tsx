@@ -1,7 +1,7 @@
 import { ContactForm } from "@/components/contact/ContactForm";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
-import { CHARITY_NOTE, CONTACT_EMAIL, GITHUB_URL } from "@/lib/constants";
+import { CHARITY_NOTE, CONTACT_EMAIL, GITHUB_URL, WHATSAPP_URL } from "@/lib/constants";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata = createPageMetadata({
@@ -12,7 +12,6 @@ export const metadata = createPageMetadata({
 });
 
 const LINKEDIN_URL = "https://www.linkedin.com/in/ryan-davidson-462bb221b";
-const WHATSAPP_URL = "https://wa.me/447378420418";
 
 export default function ContactPage() {
   return (
