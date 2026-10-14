@@ -10,16 +10,14 @@ import { PRICE_WEBSITE_GBP } from "@/lib/constants";
 const FAN = ["champions-draft", "longest-word", "stout-finder"] as const;
 
 function Underline({ children }: { children: string }) {
-  return <span className="border-b border-amber">{children}</span>;
+  return <span className="border-b border-studio-accent">{children}</span>;
 }
 
 export function Hero() {
   const fan = FAN.map((slug) => productBySlug(slug)).filter((product) => product !== undefined);
 
   return (
-    <section className="noise relative overflow-hidden bg-bg text-studio-text">
-      <div className="hero-glow pointer-events-none absolute -right-10 -top-24 h-[32rem] w-[32rem]" aria-hidden="true" />
-      <div className="hero-grid pointer-events-none absolute inset-0" aria-hidden="true" />
+    <section className="relative overflow-hidden bg-bg text-studio-text">
       <Container className="relative pt-8 pb-16 md:pt-20 md:pb-24 lg:pt-24 lg:pb-28">
         <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,28rem)] lg:gap-8">
           <Stagger>
@@ -51,7 +49,7 @@ export function Hero() {
               <Link
                 key={product.slug}
                 href={product.href}
-                className="fan-card absolute left-6 top-6 block w-64 rounded-2xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-amber"
+                className="fan-card absolute left-6 top-6 block w-64 rounded-2xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-studio-text"
                 style={{ ["--i" as string]: index, zIndex: index + 1 }}
                 {...(product.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
               >
@@ -72,7 +70,7 @@ export function Hero() {
             <Link
               key={product.slug}
               href={product.href}
-              className="w-36 shrink-0 snap-start focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-amber"
+              className="w-36 shrink-0 snap-start focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-studio-text"
               {...(product.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
             >
               <span className="block overflow-hidden rounded-xl border border-studio-line">

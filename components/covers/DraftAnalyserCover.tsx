@@ -1,4 +1,4 @@
-import { CoverFrame, amber, line } from "./CoverFrame";
+import { CoverFrame, kit, line } from "./CoverFrame";
 
 const CHIPS = [
   [36, 36],
@@ -23,7 +23,7 @@ export function DraftAnalyserCover() {
       <path
         className="cover-draw"
         d="M40 150 C80 150 90 70 140 80 C190 90 200 40 280 36"
-        stroke={amber}
+        stroke={kit}
         strokeWidth="2.5"
         strokeLinecap="round"
       />

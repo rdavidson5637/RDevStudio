@@ -1,4 +1,4 @@
-import { CoverFrame, amber, line } from "./CoverFrame";
+import { CoverFrame, kit, line } from "./CoverFrame";
 
 const DOTS = [
   [160, 168],
@@ -31,7 +31,7 @@ export function RugbyDraftCover() {
         <circle key={`${x}-${y}`} cx={x} cy={y} r="3.5" fill="rgba(255,255,255,0.7)" />
       ))}
       <g className="cover-pass">
-        <ellipse cx="78" cy="108" rx="7" ry="4.5" fill={amber} transform="rotate(-24 78 108)" />
+        <ellipse cx="78" cy="108" rx="7" ry="4.5" fill={kit} transform="rotate(-24 78 108)" />
       </g>
     </CoverFrame>
   );

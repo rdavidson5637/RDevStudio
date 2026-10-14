@@ -1,4 +1,4 @@
-import { CoverFrame, amber, faint } from "./CoverFrame";
+import { CoverFrame, kit, faint } from "./CoverFrame";
 
 export function FallbackCover({ initial = "R" }: { initial?: string }) {
   const dots = [];
@@ -17,7 +17,7 @@ export function FallbackCover({ initial = "R" }: { initial?: string }) {
         x="160"
         y="118"
         textAnchor="middle"
-        fill={amber}
+        fill={kit}
         fontFamily="var(--font-studio-display), Georgia, serif"
         fontSize="72"
       >

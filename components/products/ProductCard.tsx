@@ -6,7 +6,7 @@ import type { Product } from "@/lib/content/products";
 export function ProductCard({ product }: { product: Product }) {
   const soon = product.status === "soon";
   const className =
-    "card group flex h-full flex-col overflow-hidden focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-amber";
+    "card group flex h-full flex-col overflow-hidden focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-studio-text";
 
   const body = (
     <>

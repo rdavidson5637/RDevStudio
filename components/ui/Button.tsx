@@ -5,15 +5,15 @@ type Variant = "primary" | "secondary" | "ghost";
 type Size = "sm" | "md";
 
 const variants: Record<Variant, string> = {
-  primary: "rounded-sm bg-amber text-bg hover:bg-amber-hover",
+  primary: "rounded-sm bg-studio-accent text-studio-text hover:bg-studio-accent-hover",
   secondary:
-    "bg-transparent px-0 text-studio-text underline decoration-studio-border-strong underline-offset-4 hover:text-amber hover:decoration-amber",
-  ghost: "bg-transparent px-0 text-studio-muted hover:text-amber",
+    "bg-transparent px-0 text-studio-text underline decoration-studio-border-strong underline-offset-4 hover:text-studio-accent hover:decoration-studio-accent",
+  ghost: "bg-transparent px-0 text-studio-muted hover:text-studio-accent",
 };
 
 const sizes: Record<Size, string> = {
-  sm: "min-h-11 px-4 text-sm",
-  md: "min-h-12 px-5 text-base",
+  sm: "min-h-11 px-4",
+  md: "min-h-12 px-5",
 };
 
 type Common = {
@@ -37,8 +37,9 @@ type LinkProps = Common & {
 
 function classes(variant: Variant, size: Size, className?: string) {
   return [
-    "inline-flex items-center justify-center gap-2 font-studio-sans font-medium transition-colors duration-200",
-    "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber",
+    "inline-flex items-center justify-center gap-2 font-studio-sans transition-colors duration-200",
+    variant === "primary" ? "text-lg font-bold" : size === "sm" ? "text-sm font-medium" : "text-base font-medium",
+    "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-studio-text",
     variants[variant],
     sizes[size],
     className,

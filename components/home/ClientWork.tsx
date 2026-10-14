@@ -40,7 +40,7 @@ function JobCard({ job }: { job: ClientJob }) {
         {job.href && job.href !== "/work" ? (
           <Link
             href={job.href}
-            className="mt-4 inline-flex min-h-11 items-center text-sm text-studio-text underline decoration-studio-line-strong underline-offset-4 hover:text-amber"
+            className="mt-4 inline-flex min-h-11 items-center text-sm text-studio-text underline decoration-studio-line-strong underline-offset-4 hover:text-studio-accent"
           >
             Read the case study
           </Link>
@@ -63,7 +63,7 @@ export function ClientWork() {
       <div className="mt-4 flex justify-end">
         <Link
           href="/work"
-          className="type-label inline-flex min-h-11 items-center text-studio-muted underline-offset-4 hover:text-amber hover:underline"
+          className="type-label inline-flex min-h-11 items-center text-studio-muted underline-offset-4 hover:text-studio-accent hover:underline"
         >
           All work
         </Link>
@@ -103,7 +103,7 @@ export function ClientWork() {
               {feature.href ? (
                 <Link
                   href={feature.href}
-                  className="mt-5 inline-flex min-h-11 items-center text-sm text-studio-text underline decoration-studio-line-strong underline-offset-4 hover:text-amber"
+                  className="mt-5 inline-flex min-h-11 items-center text-sm text-studio-text underline decoration-studio-line-strong underline-offset-4 hover:text-studio-accent"
                 >
                   Read the case study
                 </Link>

@@ -32,7 +32,7 @@ export function HomeProcess() {
         <ol className="relative grid gap-8 md:grid-cols-4">
           {STEPS.map((step) => (
             <li key={step.number} className="relative pl-10 md:pl-0">
-              <span className="absolute left-0 top-0 flex h-8 w-8 items-center justify-center rounded-full border border-studio-line bg-studio-bg font-studio-mono text-xs text-amber md:static">
+              <span className="absolute left-0 top-0 flex h-8 w-8 items-center justify-center rounded-full border border-studio-line bg-studio-bg font-studio-mono text-xs text-studio-accent md:static">
                 {step.number}
               </span>
               <h3 className="mt-3 font-studio-display text-2xl text-studio-text">{step.title}</h3>

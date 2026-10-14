@@ -1,4 +1,4 @@
-import { CoverFrame, amber, line } from "./CoverFrame";
+import { CoverFrame, kit, line } from "./CoverFrame";
 
 const DOTS = [
   { x: 160, y: 168, dx: 0, dy: 0 },
@@ -29,7 +29,7 @@ export function ChampionsDraftCover() {
           cx={dot.x}
           cy={dot.y}
           r={dot.hot ? 5 : 4}
-          fill={dot.hot ? amber : "rgba(255,255,255,0.72)"}
+          fill={dot.hot ? kit : "rgba(255,255,255,0.72)"}
           style={{ ["--dx" as string]: `${dot.dx}px`, ["--dy" as string]: `${dot.dy}px` }}
         />
       ))}

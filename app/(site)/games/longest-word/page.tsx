@@ -11,7 +11,7 @@ export const metadata = createPageMetadata({
 
 export default function LongestWordPage() {
   return (
-    <div className="section-padding pt-28">
+    <div className="section-padding pt-28 font-geist">
       <div className="container-wide px-6">
         <header className="border-b border-border pb-10">
           <p className="shell-label mb-3 text-accent">DAILY</p>

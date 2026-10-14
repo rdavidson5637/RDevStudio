@@ -31,7 +31,7 @@ export default function ContactPage() {
           <aside className="flex flex-col gap-6">
             <a
               href={`mailto:${CONTACT_EMAIL}`}
-              className="inline-flex min-h-11 items-center font-studio-display text-2xl text-studio-text underline-offset-4 hover:text-amber hover:underline"
+              className="inline-flex min-h-11 items-center font-studio-display text-2xl text-studio-text underline-offset-4 hover:text-studio-accent hover:underline"
             >
               {CONTACT_EMAIL}
             </a>
@@ -41,10 +41,10 @@ export default function ContactPage() {
             <p className="type-body text-studio-muted">I usually reply within one working day.</p>
             <p className="type-body text-studio-muted">{CHARITY_NOTE}</p>
             <div className="flex gap-4">
-              <a href={LINKEDIN_URL} className="inline-flex min-h-11 items-center text-sm text-studio-muted hover:text-amber" target="_blank" rel="noopener noreferrer">
+              <a href={LINKEDIN_URL} className="inline-flex min-h-11 items-center text-sm text-studio-muted hover:text-studio-accent" target="_blank" rel="noopener noreferrer">
                 LinkedIn
               </a>
-              <a href={GITHUB_URL} className="inline-flex min-h-11 items-center text-sm text-studio-muted hover:text-amber" target="_blank" rel="noopener noreferrer">
+              <a href={GITHUB_URL} className="inline-flex min-h-11 items-center text-sm text-studio-muted hover:text-studio-accent" target="_blank" rel="noopener noreferrer">
                 GitHub
               </a>
             </div>

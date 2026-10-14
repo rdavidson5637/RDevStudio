@@ -44,7 +44,7 @@ export default function AboutPage() {
         <Reveal as="header" className="border-b border-border pb-10">
           <div className="grid gap-8 lg:grid-cols-[1fr,280px] lg:items-end">
             <div>
-              <p className="eyebrow mb-3 text-amber">Squad - No. 10</p>
+              <p className="eyebrow mb-3 text-studio-accent">Squad - No. 10</p>
               <h1 className="display-lg text-studio-text">Ryan Davidson</h1>
             </div>
             <figure>

@@ -58,7 +58,7 @@ export function HomeFaq() {
           <h2 className="display-lg mt-3 text-balance text-studio-text">The usual ones.</h2>
           <a
             href={WHATSAPP_URL}
-            className="inline-flex min-h-11 items-center text-sm text-studio-text underline decoration-studio-line-strong underline-offset-4 hover:text-amber"
+            className="inline-flex min-h-11 items-center text-sm text-studio-text underline decoration-studio-line-strong underline-offset-4 hover:text-studio-accent"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -68,7 +68,7 @@ export function HomeFaq() {
         <div className="border-t border-studio-line">
           {FAQ.map((item) => (
             <details key={item.question} className="group border-b border-studio-line">
-              <summary className="flex min-h-14 cursor-pointer list-none items-center justify-between gap-4 py-4 text-left font-studio-sans text-lg text-studio-text focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-amber [&::-webkit-details-marker]:hidden">
+              <summary className="flex min-h-14 cursor-pointer list-none items-center justify-between gap-4 py-4 text-left font-studio-sans text-lg text-studio-text focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-studio-text [&::-webkit-details-marker]:hidden">
                 {item.question}
                 <span className="faq-plus inline-flex h-5 w-5 shrink-0 items-center justify-center text-studio-muted" aria-hidden="true">
                   <svg viewBox="0 0 20 20" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="1.5">

@@ -41,7 +41,7 @@ function FooterLink({ href, label }: { href: string; label: string }) {
   return (
     <Link
       href={href}
-      className="inline-flex min-h-11 min-w-11 items-center text-sm text-studio-muted transition-colors hover:text-studio-text focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-amber"
+      className="inline-flex min-h-11 min-w-11 items-center text-sm text-studio-muted transition-colors hover:text-studio-text focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-studio-text"
       {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
     >
       {label}
@@ -73,7 +73,7 @@ export function Footer() {
               <li>
                 <a
                   href={`mailto:${CONTACT_EMAIL}`}
-                  className="inline-flex min-h-11 items-center text-studio-muted transition-colors hover:text-studio-text focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-amber"
+                  className="inline-flex min-h-11 items-center text-studio-muted transition-colors hover:text-studio-text focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-studio-text"
                 >
                   {CONTACT_EMAIL}
                 </a>
@@ -81,7 +81,7 @@ export function Footer() {
               <li>
                 <a
                   href={WHATSAPP_URL}
-                  className="inline-flex min-h-11 items-center text-studio-muted transition-colors hover:text-studio-text focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-amber"
+                  className="inline-flex min-h-11 items-center text-studio-muted transition-colors hover:text-studio-text focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-studio-text"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -98,7 +98,7 @@ export function Footer() {
           <div className="flex items-center gap-4">
             <a
               href={GITHUB_URL}
-              className="inline-flex h-11 w-11 items-center justify-center text-studio-muted transition-colors hover:text-studio-text focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-amber"
+              className="inline-flex h-11 w-11 items-center justify-center text-studio-muted transition-colors hover:text-studio-text focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-studio-text"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="GitHub"
@@ -109,7 +109,7 @@ export function Footer() {
             </a>
             <a
               href={LINKEDIN_URL}
-              className="inline-flex h-11 w-11 items-center justify-center text-studio-muted transition-colors hover:text-studio-text focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-amber"
+              className="inline-flex h-11 w-11 items-center justify-center text-studio-muted transition-colors hover:text-studio-text focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-studio-text"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn"

@@ -1,4 +1,4 @@
-import { CoverFrame, amber, faint } from "./CoverFrame";
+import { CoverFrame, kit, faint } from "./CoverFrame";
 
 const PINS = [
   { x: 70, y: 70, hot: false },
@@ -23,11 +23,11 @@ export function StoutFinderCover() {
       })}
       {PINS.map((pin) => (
         <g key={`${pin.x}-${pin.y}`}>
-          {pin.hot ? <circle className="cover-ripple" cx={pin.x} cy={pin.y - 10} r="10" stroke={amber} /> : null}
+          {pin.hot ? <circle className="cover-ripple" cx={pin.x} cy={pin.y - 10} r="10" stroke={kit} /> : null}
           <path
             d={`M${pin.x} ${pin.y} c0-12 16-12 16 0 c0 10-16 18-16 18 c0 0-16-8-16-18 c0-12 16-12 16 0z`}
             transform="translate(-8 -22)"
-            fill={pin.hot ? amber : "rgba(255,255,255,0.55)"}
+            fill={pin.hot ? kit : "rgba(255,255,255,0.55)"}
           />
         </g>
       ))}

@@ -1,4 +1,4 @@
-import { CoverFrame, amber, faint, line } from "./CoverFrame";
+import { CoverFrame, kit, faint, line } from "./CoverFrame";
 
 const PILLS = [
   { y: 78, hot: false },
@@ -22,15 +22,15 @@ export function PubQuizCover() {
           width="184"
           height="16"
           rx="8"
-          fill={pill.hot ? amber : "transparent"}
-          stroke={pill.hot ? amber : line}
+          fill={pill.hot ? kit : "transparent"}
+          stroke={pill.hot ? kit : line}
         />
       ))}
       <text
         x="232"
         y="58"
         textAnchor="end"
-        fill={amber}
+        fill={kit}
         fontFamily="var(--font-studio-mono), ui-monospace, monospace"
         fontSize="14"
       >

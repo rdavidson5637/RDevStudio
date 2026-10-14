@@ -45,7 +45,7 @@ export function UnderTheHood() {
               <h3 className="font-studio-display text-2xl text-studio-text">{card.title}</h3>
               <p className="type-body mt-3 text-studio-muted">{card.body}</p>
               <p className="mt-4 text-sm text-studio-text">{card.products}</p>
-              <p className="mt-3 font-studio-mono text-xs text-amber">{card.snippet}</p>
+              <p className="mt-3 font-studio-mono text-xs text-studio-accent">{card.snippet}</p>
             </article>
           </Reveal>
         ))}
@@ -54,7 +54,7 @@ export function UnderTheHood() {
         <Button href={GITHUB_URL}>GitHub</Button>
         <Link
           href="/hire"
-          className="inline-flex min-h-11 items-center text-sm text-studio-text underline decoration-studio-line-strong underline-offset-4 hover:text-amber"
+          className="inline-flex min-h-11 items-center text-sm text-studio-text underline decoration-studio-line-strong underline-offset-4 hover:text-studio-accent"
         >
           Hiring? The long version
         </Link>

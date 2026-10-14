@@ -9,5 +9,9 @@ export const metadata = createPageMetadata({
 });
 
 export default function HirePage() {
-  return <HireRyanPage />;
+  return (
+    <div className="font-geist">
+      <HireRyanPage />
+    </div>
+  );
 }

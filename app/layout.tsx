@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Anton, DM_Serif_Display, Geist, Geist_Mono, Space_Mono } from "next/font/google";
+import { Anton, Atkinson_Hyperlegible, Big_Shoulders, Geist, Space_Mono } from "next/font/google";
 import { rootMetadata } from "@/lib/metadata";
 import { StructuredData } from "@/components/StructuredData";
 import { SiteMetrics } from "@/components/layout/SiteMetrics";
@@ -19,22 +19,24 @@ const spaceMono = Space_Mono({
   display: "swap",
 });
 
-const dmSerif = DM_Serif_Display({
-  weight: "400",
+const bigShoulders = Big_Shoulders({
   subsets: ["latin"],
+  axes: ["opsz"],
   variable: "--font-studio-display",
   display: "swap",
+  adjustFontFallback: false,
 });
 
-const geist = Geist({
+const atkinson = Atkinson_Hyperlegible({
+  weight: ["400", "700"],
   subsets: ["latin"],
   variable: "--font-studio-sans",
   display: "swap",
 });
 
-const geistMono = Geist_Mono({
+const geist = Geist({
   subsets: ["latin"],
-  variable: "--font-studio-mono",
+  variable: "--font-geist",
   display: "swap",
 });
 
@@ -43,7 +45,7 @@ export const metadata: Metadata = rootMetadata;
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  themeColor: "#0A0A0F",
+  themeColor: "#0F2219",
 };
 
 export default function RootLayout({
@@ -54,7 +56,7 @@ export default function RootLayout({
   return (
     <html
       lang="en-GB"
-      className={`${anton.variable} ${spaceMono.variable} ${dmSerif.variable} ${geist.variable} ${geistMono.variable}`}
+      className={`${anton.variable} ${spaceMono.variable} ${bigShoulders.variable} ${atkinson.variable} ${geist.variable}`}
     >
       <body className="font-sans antialiased">
         <StructuredData />

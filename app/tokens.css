@@ -107,25 +107,26 @@
   --duration-slow: 400ms;
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
 
-  /* ── Studio palette (redesign/v2). Existing paper tokens stay. ─ */
-  --color-studio-bg: #0a0a0f;
-  --color-studio-bg-80: rgba(10, 10, 15, 0.8);
-  --color-studio-bg-20: rgba(10, 10, 15, 0.2);
-  --color-studio-surface: #101018;
-  --color-studio-surface-2: #15151f;
-  --color-studio-line: rgba(255, 255, 255, 0.06);
-  --color-studio-line-strong: rgba(255, 255, 255, 0.12);
-  --color-studio-border: rgba(255, 255, 255, 0.08);
-  --color-studio-border-strong: rgba(255, 255, 255, 0.14);
-  --color-studio-text: #f4f4f5;
-  --color-studio-muted: #a1a1aa;
-  --color-studio-faint: #94949e;
-  --color-studio-amber: #f59e0b;
-  --color-studio-amber-hover: #d97706;
-  --color-studio-amber-soft: rgba(245, 158, 11, 0.12);
-  --color-studio-amber-glow: rgba(245, 158, 11, 0.35);
+  /* ── Studio palette (Floodlights). Existing paper tokens stay. ─ */
+  --color-studio-bg: #0f2219;
+  --color-studio-bg-80: rgba(15, 34, 25, 0.8);
+  --color-studio-bg-20: rgba(15, 34, 25, 0.2);
+  --color-studio-surface: #173528;
+  --color-studio-surface-2: #1d4031;
+  --color-studio-line: rgba(238, 242, 234, 0.18);
+  --color-studio-line-strong: rgba(238, 242, 234, 0.35);
+  --color-studio-border: rgba(238, 242, 234, 0.18);
+  --color-studio-border-strong: rgba(238, 242, 234, 0.35);
+  --color-studio-text: #eef2ea;
+  --color-studio-muted: #c9d6cd;
+  --color-studio-faint: #b7c6bc;
+  --color-studio-accent: #e5402f;
+  --color-studio-accent-hover: #c9321f;
+  --color-studio-accent-soft: rgba(229, 64, 47, 0.14);
+  --color-studio-board: #0a1912;
+  --color-studio-cover-line: rgba(238, 242, 234, 0.5);
   --color-studio-live: #22c55e;
-  --color-studio-soon: #f59e0b;
+  --color-studio-soon: #c9d6cd;
   --color-rvs-teal: #143944;
   --color-rvs-cream: #f4ead4;
 

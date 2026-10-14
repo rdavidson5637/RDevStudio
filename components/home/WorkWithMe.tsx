@@ -63,12 +63,11 @@ export function WorkWithMe() {
           <Reveal key={item.title} delay={index * 60}>
             <a
               href={item.href}
-              className={`card relative flex h-full flex-col p-5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-amber ${
-                item.anchor ? "border-amber" : ""
+              className={`card relative flex h-full flex-col p-5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-studio-text ${
+                item.anchor ? "border-studio-accent" : ""
               }`}
             >
-              {item.anchor ? <span className="glow-amber pointer-events-none absolute inset-0 -z-10" aria-hidden="true" /> : null}
-              {item.anchor ? <p className="type-label text-amber">Start here</p> : null}
+              {item.anchor ? <p className="type-label text-studio-accent">Start here</p> : null}
               <h3 className="mt-2 font-studio-display text-2xl text-studio-text">{item.title}</h3>
               <p className="mt-4 text-studio-text">
                 {item.from ? <span className="mr-1 text-sm text-studio-muted">from</span> : null}
@@ -87,7 +86,7 @@ export function WorkWithMe() {
           </Reveal>
         ))}
       </div>
-      <div className="mt-6 border-l-2 border-amber bg-studio-surface px-5 py-4">
+      <div className="mt-6 border-l-2 border-studio-accent bg-studio-surface px-5 py-4">
         <p className="type-body max-w-2xl text-studio-muted">
           Registered charities get the same packages free - website, social and content. Say you are registered when you get in touch.
         </p>

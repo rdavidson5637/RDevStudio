@@ -16,7 +16,7 @@ export function FormSuccess({ onReset }: FormSuccessProps) {
         <button
           type="button"
           onClick={onReset}
-          className="mt-5 min-h-11 text-sm font-medium text-amber underline-offset-4 hover:underline"
+          className="mt-5 min-h-11 text-sm font-medium text-studio-accent underline-offset-4 hover:underline"
         >
           Send another
         </button>

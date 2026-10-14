@@ -1,4 +1,4 @@
-import { CoverFrame, amber, line } from "./CoverFrame";
+import { CoverFrame, kit, line } from "./CoverFrame";
 
 const LETTERS = ["R", "A", "N", "D", "E", "V", "S", "T", "U", "O", "I", "L", "M", "C", "H", "Y"];
 const PATH = "M78 58 L130 58 L130 98 L182 98 L234 98";
@@ -19,7 +19,7 @@ export function LongestWordCover() {
               x={x + 20}
               y={y + 21}
               textAnchor="middle"
-              fill={onPath ? amber : "rgba(255,255,255,0.8)"}
+              fill={onPath ? kit : "rgba(255,255,255,0.8)"}
               fontFamily="var(--font-studio-mono), ui-monospace, monospace"
               fontSize="14"
             >
@@ -28,7 +28,7 @@ export function LongestWordCover() {
           </g>
         );
       })}
-      <path className="cover-draw" d={PATH} stroke={amber} strokeWidth="2" strokeLinecap="round" />
+      <path className="cover-draw" d={PATH} stroke={kit} strokeWidth="2" strokeLinecap="round" />
     </CoverFrame>
   );
 }

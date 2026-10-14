@@ -52,7 +52,7 @@ function ClientCard({ job }: { job: ClientWork }) {
         <h3 className="mt-2 font-studio-display text-2xl text-studio-text">{job.name}</h3>
         <p className="type-body mt-2 text-studio-muted">{job.summary}</p>
         {job.href && job.href !== "/work" ? (
-          <Link href={job.href} className="mt-4 inline-flex min-h-11 items-center text-sm underline underline-offset-4 hover:text-amber">
+          <Link href={job.href} className="mt-4 inline-flex min-h-11 items-center text-sm underline underline-offset-4 hover:text-studio-accent">
             Read the case study
           </Link>
         ) : null}

@@ -91,7 +91,7 @@ export function MobileMenu({ open, onClose, isActive }: MobileMenuProps) {
               onClick={onClose}
               aria-current={active ? "page" : undefined}
               className={`menu-item font-studio-display text-3xl tracking-tight ${
-                active ? "text-amber" : "text-studio-text"
+                active ? "text-studio-accent" : "text-studio-text"
               }`}
               style={{ animationDelay: `${index * 60}ms` }}
             >
@@ -107,7 +107,7 @@ export function MobileMenu({ open, onClose, isActive }: MobileMenuProps) {
         </Button>
         <a
           href={WHATSAPP_URL}
-          className="mt-3 inline-flex min-h-11 w-full items-center justify-center text-sm text-studio-muted underline decoration-studio-line-strong underline-offset-4 hover:text-amber"
+          className="mt-3 inline-flex min-h-11 w-full items-center justify-center text-sm text-studio-muted underline decoration-studio-line-strong underline-offset-4 hover:text-studio-accent"
           target="_blank"
           rel="noopener noreferrer"
         >
