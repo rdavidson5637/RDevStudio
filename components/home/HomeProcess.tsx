@@ -1,5 +1,3 @@
-import { Section } from "@/components/ui/Section";
-
 const STEPS = [
   {
     number: "01",
@@ -25,18 +23,17 @@ const STEPS = [
 
 export function HomeProcess() {
   return (
-    <Section heading="How it works">
-      <div className="relative mt-10">
-        <ol className="relative grid gap-8 md:grid-cols-4">
-          {STEPS.map((step) => (
-            <li key={step.number} className="relative">
-              <span className="font-studio-display text-2xl text-studio-text">{step.number}</span>
-              <h3 className="mt-3 font-studio-display text-2xl text-studio-text">{step.title}</h3>
-              <p className="type-body mt-2 text-studio-muted">{step.copy}</p>
-            </li>
-          ))}
-        </ol>
-      </div>
-    </Section>
+    <ol className="mt-12 border-t border-studio-line">
+      {STEPS.map((step) => (
+        <li
+          key={step.number}
+          className="grid gap-2 border-b border-studio-line py-5 sm:grid-cols-[4rem_11rem_1fr] sm:items-baseline sm:gap-6"
+        >
+          <span className="font-studio-display text-2xl text-studio-text">{step.number}</span>
+          <h3 className="font-studio-display text-2xl text-studio-text">{step.title}</h3>
+          <p className="type-body text-studio-muted">{step.copy}</p>
+        </li>
+      ))}
+    </ol>
   );
 }

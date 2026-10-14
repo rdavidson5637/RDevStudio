@@ -14,7 +14,7 @@ const DOTS = [
   { x: 232, y: 48, dx: -36, dy: -4 },
 ];
 
-export function ChampionsDraftCover() {
+export function ChampionsDraftCover({ full = false }: { full?: boolean }) {
   return (
     <CoverFrame>
       <rect x="28" y="14" width="264" height="172" rx="8" stroke={line} />
@@ -22,6 +22,12 @@ export function ChampionsDraftCover() {
       <circle cx="160" cy="100" r="22" stroke={line} />
       <rect x="108" y="14" width="104" height="28" stroke={line} />
       <rect x="108" y="158" width="104" height="28" stroke={line} />
+      {full ? (
+        <>
+          <rect x="136" y="14" width="48" height="10" stroke={line} />
+          <rect x="136" y="176" width="48" height="10" stroke={line} />
+        </>
+      ) : null}
       {DOTS.map((dot) => (
         <circle
           key={`${dot.x}-${dot.y}`}
