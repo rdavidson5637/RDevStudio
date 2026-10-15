@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { SITE_URL } from "@/lib/constants";
 
 export type BreadcrumbItem = {
   label: string;
@@ -20,7 +21,7 @@ export function Breadcrumbs({ items, className = "" }: BreadcrumbsProps) {
       "@type": "ListItem",
       position: index + 1,
       name: item.label,
-      ...(item.href && { item: `https://rdevstudio.co.uk${item.href}` }),
+      ...(item.href && { item: `${SITE_URL}${item.href}` }),
     })),
   };
 

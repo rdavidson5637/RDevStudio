@@ -59,7 +59,7 @@ export function ClientWork() {
   if (!feature) return null;
 
   return (
-    <Section eyebrow="CLIENT WORK" heading="Real clients. Real sites.">
+    <Section compact eyebrow="CLIENT WORK" heading="Real clients. Real sites.">
       <div className="mt-4 flex justify-end">
         <Link
           href="/work"

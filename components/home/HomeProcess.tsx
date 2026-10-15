@@ -26,7 +26,7 @@ const STEPS = [
 
 export function HomeProcess() {
   return (
-    <Section eyebrow="HOW IT WORKS" heading="Four steps, no surprises.">
+    <Section compact eyebrow="HOW IT WORKS" heading="Four steps, no surprises.">
       <div className="relative mt-10">
         <ProcessTrack />
         <ol className="relative grid gap-8 md:grid-cols-4">

@@ -7,11 +7,13 @@ type SectionProps = {
   intro?: string;
   children?: ReactNode;
   className?: string;
+  compact?: boolean;
 };
 
-export function Section({ id, eyebrow, heading, intro, children, className = "" }: SectionProps) {
+export function Section({ id, eyebrow, heading, intro, children, className = "", compact = false }: SectionProps) {
+  const pad = compact ? "py-8 md:py-12 lg:py-16" : "py-16 md:py-24 lg:py-32";
   return (
-    <section id={id} className={`py-16 md:py-24 lg:py-32 ${className}`}>
+    <section id={id} className={`${pad} ${className}`}>
       <div className="mx-auto max-w-studio px-6 md:px-8">
         {eyebrow ? <p className="eyebrow text-studio-muted">{eyebrow}</p> : null}
         {heading ? <h2 className="display-lg mt-3 text-balance text-studio-text">{heading}</h2> : null}

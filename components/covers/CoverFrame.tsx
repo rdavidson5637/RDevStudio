@@ -7,13 +7,20 @@ type CoverFrameProps = {
 export function CoverFrame({ children }: CoverFrameProps) {
   return (
     <div className="noise relative aspect-[16/10] w-full overflow-hidden bg-studio-surface" aria-hidden="true">
-      <svg viewBox="0 0 320 200" className="absolute inset-0 h-full w-full" fill="none">
+      <svg
+        viewBox="0 0 320 200"
+        className="absolute inset-0 h-full w-full"
+        fill="none"
+        strokeWidth="2.6"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
         {children}
       </svg>
     </div>
   );
 }
 
-export const line = "var(--color-studio-line-strong)";
+export const line = "rgba(255, 255, 255, 0.72)";
 export const faint = "var(--color-studio-line)";
 export const amber = "var(--color-studio-amber)";

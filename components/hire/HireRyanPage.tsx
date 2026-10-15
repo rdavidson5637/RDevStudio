@@ -180,8 +180,8 @@ export function HireRyanPage() {
                 <p className="lead-text mt-3 max-w-2xl">{item.detail}</p>
                 {index === 0 && (
                   <p className="editorial-note mt-3">
-                    Graduating Summer 2026 - completing while working full time
-                    in Belfast.
+                    Graduated with Commendation while working full time in
+                    Belfast.
                   </p>
                 )}
               </li>

@@ -42,12 +42,12 @@ export default function AboutPage() {
     <div className="studio-page px-4 py-16 sm:px-6 md:py-24 lg:py-32">
       <article className="container-wide px-6">
         <Reveal as="header" className="border-b border-border pb-10">
-          <div className="grid gap-8 lg:grid-cols-[1fr,280px] lg:items-end">
-            <div>
+          <div className="grid items-center gap-8 lg:grid-cols-[18rem_auto] lg:justify-start">
+            <div className="lg:col-start-2">
               <p className="eyebrow mb-3 text-amber">Squad - No. 10</p>
               <h1 className="display-lg text-studio-text">Ryan Davidson</h1>
             </div>
-            <figure>
+            <figure className="lg:col-start-1 lg:row-start-1">
               <div className="relative aspect-[3/4] w-full overflow-hidden bg-raised">
                 <Image
                   src="/images/ryan-davidson.jpg"
@@ -138,17 +138,9 @@ export default function AboutPage() {
             <p className="text-base font-semibold text-primary sm:text-lg">
               Want the formal version?
             </p>
-            <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
-              <Link href="/contact" className="btn-secondary">
-                CV on request
-              </Link>
-              <Link
-                href="/contact"
-                className="text-center text-sm font-semibold text-primary underline decoration-border-strong underline-offset-4 transition-colors hover:text-accent sm:text-left"
-              >
-                Get in touch
-              </Link>
-            </div>
+            <Link href="/contact" className="btn-secondary">
+              CV on request
+            </Link>
           </div>
         </section>
       </article>

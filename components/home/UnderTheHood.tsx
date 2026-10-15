@@ -34,6 +34,7 @@ const CARDS = [
 export function UnderTheHood() {
   return (
     <Section
+      compact
       eyebrow="UNDER THE HOOD"
       heading="How the games actually work."
       intro="Everything here is built and run by me. The code is on GitHub."

@@ -1,5 +1,5 @@
 export const SITE_NAME = "RDev Studio";
-export const SITE_URL = "https://rdevstudio.co.uk";
+export const SITE_URL = "https://www.rdevstudio.co.uk";
 export const SITE_TITLE =
   "RDev Studio, websites for NI businesses and charities";
 export const SITE_DESCRIPTION =
@@ -15,6 +15,9 @@ export const PRICE_WEBSITE_GBP = 650;
 export const PRICE_SOCIAL_GBP = 150;
 export const PRICE_CONTENT_GBP = 200;
 export const PRICE_CARE_PLAN_GBP = 30;
+export const CARE_PLAN_NOTE = "/month, optional";
+export const CARE_PLAN_COPY =
+  "Hosting, security updates and small changes, so the site stays up and stays current.";
 
 export const CONTACT_SERVICE_OPTIONS = [
   "Website",

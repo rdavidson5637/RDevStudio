@@ -38,8 +38,6 @@ export default function ContactPage() {
             <Button href={WHATSAPP_URL} variant="secondary">
               WhatsApp
             </Button>
-            <p className="type-body text-studio-muted">I usually reply within one working day.</p>
-            <p className="type-body text-studio-muted">{CHARITY_NOTE}</p>
             <div className="flex gap-4">
               <a href={LINKEDIN_URL} className="inline-flex min-h-11 items-center text-sm text-studio-muted hover:text-amber" target="_blank" rel="noopener noreferrer">
                 LinkedIn

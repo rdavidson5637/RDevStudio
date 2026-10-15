@@ -1,8 +1,11 @@
 import Link from "next/link";
 import { createPageMetadata } from "@/lib/metadata";
 import {
+  CARE_PLAN_COPY,
+  CARE_PLAN_NOTE,
   CHARITY_NOTE,
   CONTENT_CREATION_FEATURES,
+  PRICE_CARE_PLAN_GBP,
   PRICING_FEATURES,
   PROCESS_STEPS,
   SERVICES,
@@ -120,6 +123,12 @@ export default function ServicesPage() {
                 {service.title}
               </a>
             ))}
+            <a
+              href="#care-plan"
+              className="inline-flex min-h-11 items-center text-sm text-primary underline decoration-border-strong underline-offset-4 hover:text-accent"
+            >
+              Care plan
+            </a>
           </nav>
         </header>
 
@@ -229,6 +238,31 @@ export default function ServicesPage() {
               </article>
             );
           })}
+
+          <article id="care-plan" className="card scroll-mt-24 my-6 p-2 sm:p-4">
+            <div className="p-6 sm:p-8">
+              <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+                <div className="max-w-2xl">
+                  <p className="shell-label text-accent">04</p>
+                  <h2 className="type-h2 mt-2 text-studio-text">Care plan</h2>
+                  <p className="mt-3 text-primary">{CARE_PLAN_COPY}</p>
+                </div>
+                <div className="shrink-0 sm:text-right">
+                  <p className="font-studio-display text-3xl text-studio-text">
+                    £{PRICE_CARE_PLAN_GBP}
+                  </p>
+                  <p className="shell-label mt-1 text-secondary">{CARE_PLAN_NOTE}</p>
+                </div>
+              </div>
+              <Link
+                href="/contact"
+                className="mt-6 inline-flex min-h-11 items-center gap-2 text-sm font-semibold text-accent transition-colors hover:text-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-amber"
+              >
+                Get in touch
+                <span aria-hidden="true">→</span>
+              </Link>
+            </div>
+          </article>
         </section>
 
         <section className="border-t border-border py-12">
