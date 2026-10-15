@@ -5,10 +5,11 @@ import { ImageResponse } from "next/og";
 export const ogSize = { width: 1200, height: 630 };
 export const ogContentType = "image/png";
 
-const NIGHT = "#0F2219";
-const CHALK = "#EEF2EA";
-const CHALK_FAINT = "#B7C6BC";
-const KIT = "#E5402F";
+// Grenadine palette. Keep in step with --color-studio-* in app/tokens.css.
+const BASE = "#112F2C";
+const TEXT = "#FBE6A0";
+const MUTED = "#CFC7A3";
+const ACCENT = "#F48067";
 
 function toArrayBuffer(buffer: Buffer) {
   return buffer.buffer.slice(buffer.byteOffset, buffer.byteOffset + buffer.byteLength) as ArrayBuffer;
@@ -26,12 +27,12 @@ export async function studioOgImage(headline: string, kicker = "RDev Studio") {
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-between",
-          backgroundColor: NIGHT,
-          color: CHALK,
+          backgroundColor: BASE,
+          color: TEXT,
           padding: "72px",
         }}
       >
-        <div style={{ display: "flex", fontFamily: "Big Shoulders", fontWeight: 800, fontSize: 36, color: CHALK_FAINT }}>
+        <div style={{ display: "flex", fontFamily: "Big Shoulders", fontWeight: 800, fontSize: 36, color: MUTED }}>
           {kicker}
         </div>
         <div style={{ display: "flex", flexDirection: "column" }}>
@@ -48,11 +49,11 @@ export async function studioOgImage(headline: string, kicker = "RDev Studio") {
             {headline}
           </div>
           <div style={{ display: "flex", alignItems: "center", marginTop: 32 }}>
-            <div style={{ width: 220, height: 2, backgroundColor: "rgba(238,242,234,0.5)" }} />
-            <div style={{ width: 16, height: 16, borderRadius: 16, backgroundColor: KIT, marginLeft: 16 }} />
+            <div style={{ width: 220, height: 2, backgroundColor: "rgba(251,230,160,0.5)" }} />
+            <div style={{ width: 16, height: 16, borderRadius: 16, backgroundColor: ACCENT, marginLeft: 16 }} />
           </div>
         </div>
-        <div style={{ display: "flex", fontFamily: "Big Shoulders", fontWeight: 800, fontSize: 28, color: CHALK_FAINT }}>
+        <div style={{ display: "flex", fontFamily: "Big Shoulders", fontWeight: 800, fontSize: 28, color: MUTED }}>
           rdevstudio.co.uk
         </div>
       </div>

@@ -120,7 +120,7 @@ body {
 }
 
 ::selection {
-  background-color: rgba(229, 64, 47, 0.35);
+  background-color: rgba(244, 128, 103, 0.35);
   color: var(--color-studio-text);
 }
 
@@ -948,7 +948,7 @@ body {
   .studio-page .btn-primary {
     background-color: var(--color-studio-accent);
     border-color: var(--color-studio-accent);
-    color: var(--color-studio-text);
+    color: var(--color-studio-on-accent);
     font-size: 1.25rem;
     font-weight: 700;
   }
