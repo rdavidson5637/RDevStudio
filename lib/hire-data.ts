@@ -5,7 +5,7 @@ export const HIRE_MILESTONES_TITLE = "Milestones";
 export const HIRE_TAGLINE = "Software Developer & Product Designer";
 
 export const HIRE_PROFILE =
-  "Software developer graduating Summer 2026 with an MSc in Software Development - and a genuine interest in product design, particularly where technology meets real human behaviour. I've built ShelterLink in close collaboration with Assisi Animal Sanctuary, making every UX decision myself. I also run RDev Studio, serving local NI businesses. I work extensively with AI tools including Cursor and Claude to stay focused on what actually matters: solving the right problem well.";
+  "Software developer. MSc Software Development, Queen's University Belfast - Commendation. Genuine interest in product design, particularly where technology meets real human behaviour. I've built ShelterLink in close collaboration with Assisi Animal Sanctuary, making every UX decision myself. I also run RDev Studio, serving local NI businesses. I work extensively with AI tools including Cursor and Claude to stay focused on what actually matters: solving the right problem well.";
 
 export const HIRE_STATS = [
   "MSc Software Development, Queen's University Belfast - Commendation",
@@ -16,7 +16,7 @@ export const HIRE_STATS = [
 ] as const;
 
 export const HIRE_ABOUT_POINTS = [
-  "Completing MSc while working full time - graduating Summer 2026",
+  "MSc with Commendation, completed while working full time",
   "End-to-end UX and product ownership",
   "Real client work through RDev Studio",
   "Strong communication under pressure",
@@ -30,7 +30,7 @@ export const HIRE_QUALIFICATIONS = [
     title: "MSc Software Development",
     institution: "Queen's University Belfast",
     detail:
-      "Graduating Summer 2026. Modules in relational databases, web development, cloud computing, Agile, and data analytics. Individual project: ShelterLink - built end-to-end as a real-world product for a Belfast charity.",
+      "Graduated with Commendation. Modules in relational databases, web development, cloud computing, Agile, and data analytics. Individual project: ShelterLink - built end-to-end as a real-world product for a Belfast charity.",
   },
   {
     year: "2020 - 2024",
@@ -233,7 +233,7 @@ export const HIRE_WEAKNESSES = [
 
 export const HIRE_FINAL_REASONS = [
   "Built real projects",
-  "Graduating Summer 2026 while working full time",
+  "Graduated with Commendation while working full time",
   "Works well with clients",
   "Solves problems",
   "Apparently dog approved",
