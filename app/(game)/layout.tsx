@@ -3,5 +3,5 @@ export default function GameLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return <>{children}</>;
+  return <div className="font-geist">{children}</div>;
 }

@@ -11,8 +11,7 @@ export const metadata = createPageMetadata({
 export default function GuitarLabPage() {
   return (
     <ComingSoon
-      eyebrow="Fretboard"
-      title="GUITAR LAB"
+      title="Guitar Lab"
       blurb="Scales, chords and progressions drawn on a real fretboard, with alternate tunings and a capo, all held in the URL so you can send someone a link to exactly what you are looking at."
       points={[
         "Fretboard viewer for any key, scale or mode",

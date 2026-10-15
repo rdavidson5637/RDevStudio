@@ -22,7 +22,7 @@ export function PortfolioPlay() {
             href="/games"
             className="shrink-0 text-sm font-semibold text-primary transition-colors hover:text-accent"
           >
-            All games →
+            All games
           </Link>
         </div>
 
@@ -30,7 +30,7 @@ export function PortfolioPlay() {
           <FeaturedGames variant="section" />
         </div>
 
-        <p className="mb-5 text-sm font-semibold uppercase tracking-widest text-primary">
+        <p className="mb-5 text-sm font-semibold text-primary">
           More games
         </p>
         <div className="mb-12 grid grid-cols-1 gap-5 md:grid-cols-2">
@@ -40,14 +40,14 @@ export function PortfolioPlay() {
         </div>
 
         <div className="flex flex-col gap-4 border-t border-border pt-10 sm:flex-row sm:items-end sm:justify-between">
-          <p className="text-sm font-semibold uppercase tracking-widest text-primary">
+          <p className="text-sm font-semibold text-primary">
             Projects
           </p>
           <Link
             href="/projects"
             className="shrink-0 text-sm font-semibold text-primary transition-colors hover:text-accent"
           >
-            All projects →
+            All projects
           </Link>
         </div>
         <div className="mt-5 grid grid-cols-1 gap-5 md:grid-cols-2">

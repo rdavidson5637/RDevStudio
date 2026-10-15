@@ -90,10 +90,9 @@ export function MobileMenu({ open, onClose, isActive }: MobileMenuProps) {
               href={link.href}
               onClick={onClose}
               aria-current={active ? "page" : undefined}
-              className={`menu-item font-studio-display text-3xl tracking-tight ${
-                active ? "text-amber" : "text-studio-text"
+              className={`font-studio-sans text-2xl ${
+                active ? "text-studio-accent" : "text-studio-text"
               }`}
-              style={{ animationDelay: `${index * 60}ms` }}
             >
               {link.label}
             </Link>
@@ -101,13 +100,13 @@ export function MobileMenu({ open, onClose, isActive }: MobileMenuProps) {
         })}
       </nav>
 
-      <div className="menu-item" style={{ animationDelay: `${SHELL_NAV_LINKS.length * 60}ms` }}>
+      <div>
         <Button href="/contact" className="w-full" onClick={onClose}>
-          Start a project
+          Get a quote
         </Button>
         <a
           href={WHATSAPP_URL}
-          className="mt-3 inline-flex min-h-11 w-full items-center justify-center text-sm text-studio-muted underline decoration-studio-line-strong underline-offset-4 hover:text-amber"
+          className="mt-3 inline-flex min-h-11 w-full items-center justify-center text-sm text-studio-muted underline decoration-studio-line-strong underline-offset-4 hover:text-studio-accent"
           target="_blank"
           rel="noopener noreferrer"
         >

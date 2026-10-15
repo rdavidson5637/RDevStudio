@@ -14,7 +14,7 @@ const IS_LIVE = process.env.WARDROBE_LIVE === "true";
 
 export default function WardrobeAIPage() {
   return (
-    <div className="section-padding pt-28">
+    <div className="section-padding pt-28 font-geist">
       <div className="container-wide px-6">
         {IS_LIVE ? (
           <>

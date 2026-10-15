@@ -5,5 +5,5 @@ export const size = ogSize;
 export const contentType = ogContentType;
 
 export default function WorkOg() {
-  return studioOgImage("Real clients. Real sites.");
+  return studioOgImage("Work");
 }

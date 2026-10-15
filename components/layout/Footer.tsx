@@ -41,7 +41,7 @@ function FooterLink({ href, label }: { href: string; label: string }) {
   return (
     <Link
       href={href}
-      className="inline-flex min-h-11 min-w-11 items-center text-sm text-studio-muted transition-colors hover:text-studio-text focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-amber"
+      className="inline-flex min-h-11 min-w-11 items-center text-sm text-studio-muted transition-colors hover:text-studio-text focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-studio-text"
       {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
     >
       {label}
@@ -56,7 +56,7 @@ export function Footer() {
         <div className="grid grid-cols-2 gap-x-6 gap-y-10 md:grid-cols-4">
           {COLUMNS.map((column) => (
             <nav key={column.title} aria-label={column.title}>
-              <p className="type-label text-studio-muted">{column.title}</p>
+              <p className="font-studio-sans text-sm text-studio-muted">{column.title}</p>
               <ul className="mt-4">
                 {column.links.map((link) => (
                   <li key={`${column.title}-${link.label}`}>
@@ -68,12 +68,12 @@ export function Footer() {
           ))}
 
           <div>
-            <p className="type-label text-studio-muted">Contact</p>
+            <p className="font-studio-sans text-sm text-studio-muted">Contact</p>
             <ul className="mt-4 text-sm">
               <li>
                 <a
                   href={`mailto:${CONTACT_EMAIL}`}
-                  className="inline-flex min-h-11 items-center text-studio-muted transition-colors hover:text-studio-text focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-amber"
+                  className="inline-flex min-h-11 items-center text-studio-muted transition-colors hover:text-studio-text focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-studio-text"
                 >
                   {CONTACT_EMAIL}
                 </a>
@@ -81,7 +81,7 @@ export function Footer() {
               <li>
                 <a
                   href={WHATSAPP_URL}
-                  className="inline-flex min-h-11 items-center text-studio-muted transition-colors hover:text-studio-text focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-amber"
+                  className="inline-flex min-h-11 items-center text-studio-muted transition-colors hover:text-studio-text focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-studio-text"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -93,12 +93,12 @@ export function Footer() {
         </div>
 
         <div className="mt-16 flex flex-col gap-4 border-t border-studio-border pt-6 sm:flex-row sm:items-center sm:justify-between">
-          <p className="type-label text-studio-muted">© 2026 Ryan Davidson</p>
+          <p className="font-studio-sans text-sm text-studio-muted">© 2026 Ryan Davidson</p>
           <p className="text-sm text-studio-muted">Carrickfergus, Northern Ireland</p>
           <div className="flex items-center gap-4">
             <a
               href={GITHUB_URL}
-              className="inline-flex h-11 w-11 items-center justify-center text-studio-muted transition-colors hover:text-studio-text focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-amber"
+              className="inline-flex h-11 w-11 items-center justify-center text-studio-muted transition-colors hover:text-studio-text focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-studio-text"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="GitHub"
@@ -109,7 +109,7 @@ export function Footer() {
             </a>
             <a
               href={LINKEDIN_URL}
-              className="inline-flex h-11 w-11 items-center justify-center text-studio-muted transition-colors hover:text-studio-text focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-amber"
+              className="inline-flex h-11 w-11 items-center justify-center text-studio-muted transition-colors hover:text-studio-text focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-studio-text"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn"

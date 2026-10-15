@@ -72,7 +72,7 @@ function ToolkitSection({
     <section className="border-b border-border py-10">
       <header className="mb-6">
         <p className="shell-label mb-2 text-accent">{label}</p>
-        <h2 className="font-display text-2xl uppercase tracking-tight text-primary sm:text-3xl">
+        <h2 className="font-display text-2xl tracking-tight text-primary sm:text-3xl">
           {title}
         </h2>
       </header>
@@ -198,7 +198,7 @@ export function ToolkitLanding() {
           <p className="shell-label mb-2 text-accent">
             {showPersonalSections ? "Full squad" : "Results"}
           </p>
-          <h2 className="font-display text-2xl uppercase tracking-tight text-primary sm:text-3xl">
+          <h2 className="font-display text-2xl tracking-tight text-primary sm:text-3xl">
             {showPersonalSections ? "All tools" : "Matching tools"}
           </h2>
         </header>
@@ -227,7 +227,7 @@ export function ToolkitLanding() {
         <section className="border-t border-border py-10">
           <header className="mb-6">
             <p className="shell-label mb-2 text-accent">Pipeline</p>
-            <h2 className="font-display text-2xl uppercase tracking-tight text-primary sm:text-3xl">
+            <h2 className="font-display text-2xl tracking-tight text-primary sm:text-3xl">
               Coming soon
             </h2>
           </header>

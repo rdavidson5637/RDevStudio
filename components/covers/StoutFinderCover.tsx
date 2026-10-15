@@ -1,4 +1,4 @@
-import { CoverFrame, amber, faint } from "./CoverFrame";
+import { chalk, CoverFrame, faint, kit } from "./CoverFrame";
 
 const PINS = [
   { x: 70, y: 70, hot: false },
@@ -7,6 +7,10 @@ const PINS = [
   { x: 230, y: 130, hot: false },
   { x: 100, y: 150, hot: false },
 ];
+
+function glassPath(x: number, y: number) {
+  return `M${x - 7} ${y - 18} L${x + 7} ${y - 18} L${x + 4.5} ${y - 4} L${x + 6} ${y - 1} L${x - 6} ${y - 1} L${x - 4.5} ${y - 4} Z`;
+}
 
 export function StoutFinderCover() {
   const dots = [];
@@ -23,12 +27,14 @@ export function StoutFinderCover() {
       })}
       {PINS.map((pin) => (
         <g key={`${pin.x}-${pin.y}`}>
-          {pin.hot ? <circle className="cover-ripple" cx={pin.x} cy={pin.y - 10} r="10" stroke={amber} /> : null}
+          {pin.hot ? <circle className="cover-ripple" cx={pin.x} cy={pin.y - 10} r="10" stroke={kit} /> : null}
           <path
-            d={`M${pin.x} ${pin.y} c0-12 16-12 16 0 c0 10-16 18-16 18 c0 0-16-8-16-18 c0-12 16-12 16 0z`}
-            transform="translate(-8 -22)"
-            fill={pin.hot ? amber : "rgba(255,255,255,0.55)"}
+            d={glassPath(pin.x, pin.y)}
+            fill={pin.hot ? kit : "none"}
+            stroke={pin.hot ? kit : chalk}
+            strokeWidth="1.4"
           />
+          {pin.hot ? <ellipse cx={pin.x} cy={pin.y - 18} rx="7" ry="2" fill={chalk} /> : null}
         </g>
       ))}
     </CoverFrame>

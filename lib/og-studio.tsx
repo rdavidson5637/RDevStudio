@@ -5,15 +5,18 @@ import { ImageResponse } from "next/og";
 export const ogSize = { width: 1200, height: 630 };
 export const ogContentType = "image/png";
 
+// Grenadine palette. Keep in step with --color-studio-* in app/tokens.css.
+const BASE = "#112F2C";
+const TEXT = "#FBE6A0";
+const MUTED = "#CFC7A3";
+const ACCENT = "#F48067";
+
 function toArrayBuffer(buffer: Buffer) {
   return buffer.buffer.slice(buffer.byteOffset, buffer.byteOffset + buffer.byteLength) as ArrayBuffer;
 }
 
-export async function studioOgImage(headline: string) {
-  const [display, mono] = await Promise.all([
-    readFile(join(process.cwd(), "app/fonts/DMSerifDisplay.ttf")),
-    readFile(join(process.cwd(), "app/fonts/GeistMono.ttf")),
-  ]);
+export async function studioOgImage(headline: string, kicker = "RDev Studio") {
+  const display = await readFile(join(process.cwd(), "app/fonts/BigShoulders-800.ttf"));
 
   return new ImageResponse(
     (
@@ -24,28 +27,40 @@ export async function studioOgImage(headline: string) {
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-between",
-          backgroundColor: "#0A0A0F",
-          backgroundImage:
-            "linear-gradient(rgba(255,255,255,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.06) 1px, transparent 1px)",
-          backgroundSize: "48px 48px",
-          color: "#F4F4F5",
+          backgroundColor: BASE,
+          color: TEXT,
           padding: "72px",
         }}
       >
-        <div style={{ fontFamily: "DM Serif Display", fontSize: 44 }}>RDev Studio</div>
-        <div style={{ display: "flex", flexDirection: "column" }}>
-          <div style={{ fontFamily: "DM Serif Display", fontSize: 68, lineHeight: 1.08, maxWidth: 980 }}>{headline}</div>
-          <div style={{ width: 88, height: 4, background: "#F59E0B", marginTop: 28 }} />
+        <div style={{ display: "flex", fontFamily: "Big Shoulders", fontWeight: 800, fontSize: 36, color: MUTED }}>
+          {kicker}
         </div>
-        <div style={{ fontFamily: "Geist Mono", fontSize: 24, letterSpacing: 1, color: "#A1A1AA" }}>rdevstudio.co.uk</div>
+        <div style={{ display: "flex", flexDirection: "column" }}>
+          <div
+            style={{
+              display: "flex",
+              fontFamily: "Big Shoulders",
+              fontWeight: 800,
+              fontSize: 72,
+              lineHeight: 1.05,
+              maxWidth: 1000,
+            }}
+          >
+            {headline}
+          </div>
+          <div style={{ display: "flex", alignItems: "center", marginTop: 32 }}>
+            <div style={{ width: 220, height: 2, backgroundColor: "rgba(251,230,160,0.5)" }} />
+            <div style={{ width: 16, height: 16, borderRadius: 16, backgroundColor: ACCENT, marginLeft: 16 }} />
+          </div>
+        </div>
+        <div style={{ display: "flex", fontFamily: "Big Shoulders", fontWeight: 800, fontSize: 28, color: MUTED }}>
+          rdevstudio.co.uk
+        </div>
       </div>
     ),
     {
       ...ogSize,
-      fonts: [
-        { name: "DM Serif Display", data: toArrayBuffer(display), style: "normal", weight: 400 },
-        { name: "Geist Mono", data: toArrayBuffer(mono), style: "normal", weight: 400 },
-      ],
+      fonts: [{ name: "Big Shoulders", data: toArrayBuffer(display), style: "normal", weight: 800 }],
     },
   );
 }

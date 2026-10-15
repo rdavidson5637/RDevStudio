@@ -25,7 +25,7 @@ export function SelectedWork() {
             href="/work"
             className="shrink-0 text-sm font-semibold text-primary transition-colors hover:text-accent"
           >
-            See the work →
+            See the work
           </Link>
         </div>
 

@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 import type {
   InteractiveTool,
@@ -13,7 +14,6 @@ import {
 } from "@/lib/interactive-tools/catalog";
 import { getTrendingSlugs } from "@/lib/interactive-tools/storage";
 import { InteractiveCategoryFilters } from "./InteractiveCategoryFilters";
-import { InteractiveToolCard } from "./InteractiveToolCard";
 import { InteractiveToolSearch } from "./InteractiveToolSearch";
 
 function matchesSearch(tool: InteractiveTool, query: string): boolean {
@@ -49,48 +49,36 @@ function resolveTools(slugs: string[]): InteractiveTool[] {
 }
 
 type InteractiveSectionProps = {
-  label: string;
   title: string;
   tools: InteractiveTool[];
-  compact?: boolean;
-  animationOffset?: number;
 };
 
-function InteractiveSection({
-  label,
-  title,
-  tools,
-  compact = false,
-  animationOffset = 0,
-}: InteractiveSectionProps) {
+function ToolList({ tools }: { tools: InteractiveTool[] }) {
+  return (
+    <ul className="border-t border-studio-line">
+      {tools.map((tool) => (
+        <li key={tool.id} className="border-b border-studio-line">
+          <Link
+            href={tool.href}
+            className="block py-4 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-studio-text"
+          >
+            <span className="block font-studio-display text-2xl text-studio-text">{tool.title}</span>
+            <span className="type-body mt-1 block max-w-prose text-studio-muted">{tool.description}</span>
+          </Link>
+        </li>
+      ))}
+    </ul>
+  );
+}
+
+function InteractiveSection({ title, tools }: InteractiveSectionProps) {
   if (tools.length === 0) return null;
 
   return (
-    <section className="border-b border-border py-10">
-      <header
-        className="mb-6 animate-fade-in opacity-0"
-        style={{ animationDelay: `${animationOffset}ms` }}
-      >
-        <p className="shell-label mb-2 text-accent">{label}</p>
-        <h2 className="font-display text-2xl uppercase tracking-tight text-primary sm:text-3xl">
-          {title}
-        </h2>
-      </header>
-      <div
-        className={`grid gap-5 ${
-          compact
-            ? "grid-cols-1 sm:grid-cols-2 xl:grid-cols-4"
-            : "grid-cols-1 md:grid-cols-2"
-        }`}
-      >
-        {tools.map((tool, index) => (
-          <InteractiveToolCard
-            key={tool.id}
-            tool={tool}
-            compact={compact}
-            animationDelayMs={animationOffset + 80 + index * 70}
-          />
-        ))}
+    <section className="border-b border-studio-line py-10">
+      <h2 className="font-studio-display text-3xl text-studio-text">{title}</h2>
+      <div className="mt-6">
+        <ToolList tools={tools} />
       </div>
     </section>
   );
@@ -164,81 +152,32 @@ export function InteractiveToolsLanding() {
 
       {showHighlightSections ? (
         <>
-          <InteractiveSection
-            label="Featured"
-            title="Start here"
-            tools={featuredTools}
-            animationOffset={120}
-          />
-          <InteractiveSection
-            label="Trending"
-            title="Popular right now"
-            tools={trendingTools}
-            compact
-            animationOffset={200}
-          />
+          <InteractiveSection title="Start here" tools={featuredTools} />
+          <InteractiveSection title="Popular right now" tools={trendingTools} />
         </>
       ) : null}
 
       <section className="py-10">
-        <header
-          className="mb-6 animate-fade-in opacity-0"
-          style={{
-            animationDelay: showHighlightSections ? "280ms" : "120ms",
-          }}
-        >
-          <p className="shell-label mb-2 text-accent">
-            {showHighlightSections ? "Full lineup" : "Results"}
-          </p>
-          <h2 className="font-display text-2xl uppercase tracking-tight text-primary sm:text-3xl">
-            {showHighlightSections ? "All tools" : "Matching tools"}
-          </h2>
-        </header>
+        <h2 className="font-studio-display text-3xl text-studio-text">
+          {showHighlightSections ? "All tools" : "Matching tools"}
+        </h2>
 
         {filteredTools.length === 0 ? (
-          <div
-            className="animate-fade-in rounded-[10px] border border-border-strong bg-raised p-8 text-center opacity-0"
-            style={{ animationDelay: "160ms" }}
-          >
-            <p className="text-base text-secondary">
-              No tools match your search. Try a different keyword or category.
-            </p>
-          </div>
+          <p className="type-body mt-6 text-studio-muted">
+            No tools match your search. Try a different keyword or category.
+          </p>
         ) : (
-          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-3">
-            {filteredTools.map((tool, index) => (
-              <InteractiveToolCard
-                key={tool.id}
-                tool={tool}
-                animationDelayMs={
-                  (showHighlightSections ? 320 : 160) + index * 70
-                }
-              />
-            ))}
+          <div className="mt-6">
+            <ToolList tools={filteredTools} />
           </div>
         )}
       </section>
 
       {showHighlightSections && comingSoonTools.length > 0 ? (
-        <section className="border-t border-border py-10">
-          <header
-            className="mb-6 animate-fade-in opacity-0"
-            style={{ animationDelay: "360ms" }}
-          >
-            <p className="shell-label mb-2 text-accent">Pipeline</p>
-            <h2 className="font-display text-2xl uppercase tracking-tight text-primary sm:text-3xl">
-              Coming soon
-            </h2>
-          </header>
-          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-4">
-            {comingSoonTools.map((tool, index) => (
-              <InteractiveToolCard
-                key={tool.id}
-                tool={tool}
-                compact
-                animationDelayMs={400 + index * 70}
-              />
-            ))}
+        <section className="border-t border-studio-line py-10">
+          <h2 className="font-studio-display text-3xl text-studio-text">Coming soon</h2>
+          <div className="mt-6">
+            <ToolList tools={comingSoonTools} />
           </div>
         </section>
       ) : null}

@@ -30,7 +30,7 @@ export function InteractiveToolPlaceholder({
           ← Interactive Tools
         </Link>
 
-        <header className="mt-8 max-w-3xl animate-fade-in border-b border-border pb-10 opacity-0">
+        <header className="mt-8 max-w-3xl border-b border-border pb-10">
           <div className="flex flex-wrap items-center gap-3">
             <p className="shell-label text-accent">{categoryLabel}</p>
             {tool.badge ? <InteractiveToolBadge badge={tool.badge} /> : null}
@@ -43,7 +43,7 @@ export function InteractiveToolPlaceholder({
 
         <section className="py-12">
           <div
-            className="mx-auto max-w-2xl animate-fade-in rounded-[10px] border border-border-strong bg-raised p-8 text-center opacity-0 sm:p-12"
+            className="mx-auto max-w-2xl rounded-[10px] border border-border-strong bg-raised p-8 text-center sm:p-12"
             style={{ animationDelay: "120ms" }}
           >
             <p className="shell-label text-accent">In development</p>

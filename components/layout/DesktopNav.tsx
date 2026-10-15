@@ -17,19 +17,16 @@ export function DesktopNav() {
             key={link.href}
             href={link.href}
             aria-current={active ? "page" : undefined}
-            className={`relative inline-flex min-h-11 items-center text-sm transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-amber ${
-              active ? "text-white" : "text-zinc-400 hover:text-white"
+            className={`relative inline-flex min-h-11 items-center font-studio-sans text-sm transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-studio-text ${
+              active ? "text-studio-text" : "text-studio-muted hover:text-studio-text"
             }`}
           >
             {link.label}
-            {active ? (
-              <span className="absolute bottom-2 left-0 right-0 h-0.5 bg-amber" aria-hidden="true" />
-            ) : null}
           </Link>
         );
       })}
       <Button href="/contact" size="sm">
-        Start a project
+        Get a quote
       </Button>
     </nav>
   );

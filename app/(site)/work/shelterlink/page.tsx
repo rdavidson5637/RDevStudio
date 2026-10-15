@@ -1,8 +1,8 @@
 import Link from "next/link";
 import Image from "next/image";
 import { createPageMetadata } from "@/lib/metadata";
-import { Reveal } from "@/components/motion/Reveal";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
+import { CaseShot } from "@/components/work/CaseShot";
 
 export const metadata = createPageMetadata({
   title: "ShelterLink",
@@ -13,7 +13,7 @@ export const metadata = createPageMetadata({
 });
 
 function SectionHeading({ children }: { children: React.ReactNode }) {
-  return <h2 className="shell-label mb-3 text-accent">{children}</h2>;
+  return <h2 className="mb-3 font-studio-display text-2xl text-studio-text">{children}</h2>;
 }
 
 function ScreenshotSlot({
@@ -36,7 +36,7 @@ function ScreenshotSlot({
           className="object-cover object-top"
         />
       </div>
-      <figcaption className="shell-label text-secondary">{caption}</figcaption>
+      <figcaption className="font-studio-sans text-sm text-studio-faint">{caption}</figcaption>
     </figure>
   );
 }
@@ -62,43 +62,33 @@ export default function ShelterLinkCaseStudyPage() {
           ]}
           className="mb-8"
         />
-        <Reveal as="header" className="space-y-6 border-b border-border pb-10">
-          <p className="eyebrow text-amber">CASE STUDY - 01</p>
+        <header className="space-y-6 border-b border-border pb-10">
+          <p className="font-studio-sans text-sm text-accent">Case study - 01</p>
           <h1 className="display-lg text-studio-text">ShelterLink</h1>
           <p className="max-w-2xl text-lg text-primary">
             Volunteer rotas, roles, and an admin dashboard for Assisi Animal
             Sanctuary.
           </p>
 
-          <div className="grid grid-cols-2 gap-x-4 gap-y-2 border-t border-border pt-5 font-mono text-[11px] uppercase tracking-[0.08em] text-secondary lg:grid-cols-4">
+          <div className="grid grid-cols-2 gap-x-4 gap-y-2 border-t border-border pt-5 font-studio-sans text-sm text-secondary lg:grid-cols-4">
             <p>ROLE - Design & development (solo)</p>
-            <p>STACK - Node.js · Express · MySQL · Vanilla JS · PicoCSS</p>
-            <p>STATUS - Ready for live use</p>
-            <p>YEAR - 2025-26</p>
+            <p>Stack: Node.js, Express, MySQL, Vanilla JS, PicoCSS</p>
+            <p>Status: Ready for live use</p>
+            <p>Year - 2025-26</p>
           </div>
-        </Reveal>
+        </header>
 
-        <section
-          className="border-b border-border py-12"
-          aria-label="Hero screenshot"
-        >
-          <div className="relative h-72 w-full overflow-hidden rounded-lg border border-border bg-raised sm:h-[34rem]">
-            <Image
-              src="/images/work/shelterlink-admin-dashboard.png"
-              alt="ShelterLink admin dashboard with volunteer metrics and recent activity"
-              fill
-              priority
-              sizes="(max-width: 1120px) 100vw, 1120px"
-              className="object-cover object-top"
-            />
-          </div>
-          <p className="shell-label mt-3 text-secondary">
-            Admin dashboard
-          </p>
-        </section>
+        <div className="border-b border-border py-12">
+          <CaseShot
+            src="/images/work/shelterlink-admin-dashboard.png"
+            alt="ShelterLink admin dashboard with volunteer metrics and recent activity"
+            caption="Admin dashboard"
+            priority
+          />
+        </div>
 
         <section className="border-b border-border py-12">
-          <SectionHeading>HOW THEY WERE RUNNING IT</SectionHeading>
+          <SectionHeading>How they were running it</SectionHeading>
           <p className="max-w-3xl text-base leading-relaxed text-primary sm:text-lg">
             Assisi runs on volunteers. Who was in, who was trained for which
             jobs, and who was covering Sunday all lived in paper rotas, phone
@@ -109,7 +99,7 @@ export default function ShelterLinkCaseStudyPage() {
         </section>
 
         <section className="border-b border-border py-12">
-          <SectionHeading>WHAT I BUILT</SectionHeading>
+          <SectionHeading>What I built</SectionHeading>
           <div className="max-w-3xl space-y-5 text-base leading-relaxed text-primary sm:text-lg">
             <p>
               ShelterLink is the system they asked for. Volunteers sign up,
@@ -130,7 +120,7 @@ export default function ShelterLinkCaseStudyPage() {
             {BUILD_FEATURES.map((feature) => (
               <li
                 key={feature}
-                className="shell-label rounded-lg border border-border bg-raised px-4 py-3 text-primary"
+                className="font-studio-sans text-sm rounded-lg border border-border bg-raised px-4 py-3 text-primary"
               >
                 {feature}
               </li>
@@ -157,7 +147,7 @@ export default function ShelterLinkCaseStudyPage() {
         </section>
 
         <section className="border-b border-border py-12">
-          <SectionHeading>WHY IT IS PLAIN</SectionHeading>
+          <SectionHeading>Why it is plain</SectionHeading>
           <div className="max-w-3xl space-y-5 text-base leading-relaxed text-primary sm:text-lg">
             <p>
               The sanctuary does not have a developer on staff. Whatever I
@@ -173,7 +163,7 @@ export default function ShelterLinkCaseStudyPage() {
         </section>
 
         <section className="border-b border-border py-12">
-          <SectionHeading>WHERE IT STANDS</SectionHeading>
+          <SectionHeading>Where it stands</SectionHeading>
           <p className="max-w-3xl text-base leading-relaxed text-primary sm:text-lg">
             ShelterLink started as my MSc dissertation at Queen&apos;s
             University Belfast. I graduated with Commendation. The platform is
@@ -185,9 +175,9 @@ export default function ShelterLinkCaseStudyPage() {
           <div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
             <Link
               href="/work/rvs-cold-brew"
-              className="shell-label text-lg text-primary transition-colors hover:text-accent"
+              className="font-studio-sans text-sm text-primary transition-colors hover:text-accent"
             >
-              NEXT FIXTURE →
+              Next case study
             </Link>
             <Link
               href="/contact"

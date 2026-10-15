@@ -24,15 +24,12 @@ export function SectionHeader({
     return (
       <div className={`flex flex-wrap items-end justify-between gap-x-8 gap-y-3 ${className}`}>
         <div className="max-w-2xl">
-          {label ? <p className="type-label text-studio-muted">{label}</p> : null}
-          {text ? (
-            <h2 className="display-lg mt-3 text-balance text-studio-text">{text}</h2>
-          ) : null}
+          {text ? <h2 className="display-lg text-balance text-studio-text">{text}</h2> : null}
         </div>
         {href && linkLabel ? (
           <Link
             href={href}
-            className="type-label inline-flex min-h-11 items-center text-studio-muted underline-offset-4 transition-colors hover:text-amber hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-amber"
+            className="type-label inline-flex min-h-11 items-center text-studio-muted underline-offset-4 transition-colors hover:text-studio-accent hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-studio-text"
           >
             {linkLabel}
           </Link>

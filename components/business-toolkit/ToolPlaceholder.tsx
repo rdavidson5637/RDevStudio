@@ -42,7 +42,7 @@ export function ToolPlaceholder({ tool }: ToolPlaceholderProps) {
         <section className="py-12">
           <div className="mx-auto max-w-2xl rounded-[10px] border border-border-strong bg-raised p-8 text-center sm:p-12">
             <p className="shell-label text-accent">In development</p>
-            <h2 className="mt-4 font-display text-2xl uppercase tracking-tight text-primary sm:text-3xl">
+            <h2 className="mt-4 font-display text-2xl tracking-tight text-primary sm:text-3xl">
               Coming soon
             </h2>
             <p className="mt-4 text-base leading-relaxed text-secondary">

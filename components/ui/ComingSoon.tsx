@@ -1,7 +1,6 @@
 import Link from "next/link";
 
 type ComingSoonProps = {
-  eyebrow: string;
   title: string;
   blurb: string;
   points?: readonly string[];
@@ -10,7 +9,6 @@ type ComingSoonProps = {
 };
 
 export function ComingSoon({
-  eyebrow,
   title,
   blurb,
   points = [],
@@ -21,13 +19,7 @@ export function ComingSoon({
     <div className="section-padding pt-28">
       <div className="container-wide px-6">
         <header className="border-b border-border pb-10">
-          <div className="flex flex-wrap items-center gap-3">
-            <p className="shell-label text-accent">{eyebrow}</p>
-            <span className="rounded-full border border-border-strong bg-raised px-2.5 py-0.5 text-xs font-semibold text-accent">
-              Coming soon
-            </span>
-          </div>
-          <h1 className="programme-h1 mt-3">{title}</h1>
+          <h1 className="font-studio-display text-4xl text-studio-text sm:text-5xl">{title}</h1>
           <p className="mt-5 max-w-3xl text-base leading-relaxed text-secondary sm:text-lg">
             {blurb}
           </p>
@@ -35,7 +27,7 @@ export function ComingSoon({
 
         {points.length > 0 ? (
           <section className="mt-10 max-w-3xl">
-            <p className="shell-label text-accent">What it will do</p>
+            <p className="font-studio-sans text-sm text-studio-muted">What it will do</p>
             <ul className="mt-4 space-y-3">
               {points.map((point) => (
                 <li
@@ -72,7 +64,7 @@ export function ComingSoon({
             href="/projects"
             className="inline-flex rounded-md bg-primary px-6 py-3 text-sm font-semibold text-paper transition-colors hover:bg-[#d22b2b]"
           >
-            See the other projects →
+            See the other projects
           </Link>
           <Link
             href="/contact"

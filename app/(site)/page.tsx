@@ -1,11 +1,10 @@
-import { Hero } from "@/components/home/Hero";
-import { LiveStrip } from "@/components/home/LiveStrip";
 import { ClientWork } from "@/components/home/ClientWork";
-import { UnderTheHood } from "@/components/home/UnderTheHood";
-import { WorkWithMe } from "@/components/home/WorkWithMe";
-import { HomeProcess } from "@/components/home/HomeProcess";
+import { Costs } from "@/components/home/Costs";
+import { Hero } from "@/components/home/Hero";
 import { HomeFaq } from "@/components/home/HomeFaq";
-import { ClosingCta } from "@/components/home/ClosingCta";
+import { Pitch } from "@/components/home/Pitch";
+import { TellMe } from "@/components/home/TellMe";
+import { UnderTheHood } from "@/components/home/UnderTheHood";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata = createPageMetadata({
@@ -17,15 +16,14 @@ export const metadata = createPageMetadata({
 
 export default function HomePage() {
   return (
-    <div className="bg-bg">
+    <div className="bg-studio-bg text-studio-text">
       <Hero />
-      <LiveStrip />
       <ClientWork />
+      <Costs />
+      <Pitch />
       <UnderTheHood />
-      <WorkWithMe />
-      <HomeProcess />
       <HomeFaq />
-      <ClosingCta />
+      <TellMe />
     </div>
   );
 }

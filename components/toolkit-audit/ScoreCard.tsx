@@ -41,18 +41,18 @@ export function ScoreCard({
           <div className="flex flex-wrap items-center gap-3">
             <p className="shell-label text-accent">{category.title}</p>
             <span
-              className={`rounded-full border px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-wider ${style.badgeClass}`}
+              className={`rounded-full border px-2.5 py-0.5 text-[10px] font-semibold ${style.badgeClass}`}
             >
               {style.label}
             </span>
           </div>
 
           {isHero ? (
-            <Heading className="mt-3 font-display text-3xl uppercase tracking-tight text-primary sm:text-4xl">
+            <Heading className="mt-3 font-display text-3xl tracking-tight text-primary sm:text-4xl">
               {letter} grade
             </Heading>
           ) : (
-            <Heading className="mt-2 font-display text-xl uppercase tracking-tight text-primary">
+            <Heading className="mt-2 font-display text-xl tracking-tight text-primary">
               {category.score}
               <span className="text-base text-tertiary"> / 100</span>
             </Heading>

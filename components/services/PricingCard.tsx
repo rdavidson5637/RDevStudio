@@ -10,7 +10,7 @@ export function PricingCard() {
           £{PRICE_WEBSITE_GBP}
         </p>
         <p className="mt-2 text-sm text-secondary">
-          One-off payment · No hidden fees
+          One-off payment. No hidden fees
         </p>
       </div>
       <div className="flex flex-1 flex-col p-8 sm:p-10">

@@ -72,7 +72,7 @@ function ContactFormFields({ onReset }: { onReset: () => void }) {
           prefix="Email"
           field="email"
           errors={state.errors}
-          className="mt-1.5 text-sm text-amber"
+          className="mt-1.5 text-sm text-studio-accent"
         />
       </div>
 
@@ -115,12 +115,12 @@ function ContactFormFields({ onReset }: { onReset: () => void }) {
           prefix="Message"
           field="message"
           errors={state.errors}
-          className="mt-1.5 text-sm text-amber"
+          className="mt-1.5 text-sm text-studio-accent"
         />
       </div>
 
       {formFailed ? (
-        <FormSendFailure className="text-sm leading-relaxed text-amber" />
+        <FormSendFailure className="text-sm leading-relaxed text-studio-accent" />
       ) : null}
 
       <button

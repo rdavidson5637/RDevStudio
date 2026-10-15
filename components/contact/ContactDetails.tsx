@@ -6,7 +6,7 @@ export function ContactDetails() {
       <h2 className="heading-display text-lg">Details</h2>
       <ul className="mt-6 space-y-6">
         <li>
-          <p className="font-display text-xs font-semibold uppercase tracking-widest text-secondary">
+          <p className="font-display text-xs font-semibold text-secondary">
             Email
           </p>
           <a
@@ -17,7 +17,7 @@ export function ContactDetails() {
           </a>
         </li>
         <li>
-          <p className="font-display text-xs font-semibold uppercase tracking-widest text-secondary">
+          <p className="font-display text-xs font-semibold text-secondary">
             Availability
           </p>
           <p className="mt-1 text-secondary">
@@ -25,7 +25,7 @@ export function ContactDetails() {
           </p>
         </li>
         <li>
-          <p className="font-display text-xs font-semibold uppercase tracking-widest text-secondary">
+          <p className="font-display text-xs font-semibold text-secondary">
             Response time
           </p>
           <p className="mt-1 text-secondary">Usually within 24 hours</p>
@@ -33,7 +33,7 @@ export function ContactDetails() {
       </ul>
 
       <div className="mt-8 rounded-lg border border-border bg-paper p-6">
-        <p className="font-display text-xs font-semibold uppercase tracking-widest text-secondary">
+        <p className="font-display text-xs font-semibold text-secondary">
           Freelance work
         </p>
         <p className="lead-text mt-2 text-sm">

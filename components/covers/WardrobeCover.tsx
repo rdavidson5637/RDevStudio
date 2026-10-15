@@ -1,4 +1,4 @@
-import { CoverFrame, amber, line } from "./CoverFrame";
+import { CoverFrame, kit, line } from "./CoverFrame";
 
 export function WardrobeCover() {
   return (
@@ -13,7 +13,7 @@ export function WardrobeCover() {
         <path d="M120 158 H160 L154 186 H126 Z" stroke={line} />
         <path d="M118 188 H140 M158 188 H180" stroke={line} />
       </g>
-      <rect className="cover-pulse" x="196" y="86" width="78" height="28" rx="14" fill={amber} />
+      <rect className="cover-pulse" x="196" y="86" width="78" height="28" rx="14" fill={kit} />
     </CoverFrame>
   );
 }

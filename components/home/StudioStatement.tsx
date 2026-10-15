@@ -12,7 +12,7 @@ export function StudioStatement() {
           </p>
           <footer className="mt-10 flex items-center gap-4">
             <div className="editorial-rule flex-1" />
-            <cite className="font-display text-xs font-semibold uppercase tracking-widest text-secondary not-italic">
+            <cite className="font-display text-xs font-semibold text-secondary not-italic">
               RDev Studio
             </cite>
           </footer>

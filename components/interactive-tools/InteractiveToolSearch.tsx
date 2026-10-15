@@ -10,7 +10,7 @@ export function InteractiveToolSearch({
   resultCount,
 }: InteractiveToolSearchProps) {
   return (
-    <div className="relative animate-fade-in opacity-0">
+    <div className="relative">
       <label htmlFor="interactive-tool-search" className="sr-only">
         Search interactive tools
       </label>
