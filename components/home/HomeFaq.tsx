@@ -50,7 +50,7 @@ const faqJsonLd = {
 
 export function HomeFaq() {
   return (
-    <Section>
+    <Section compact>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
       <div className="grid gap-10 lg:grid-cols-[minmax(0,18rem)_1fr] lg:items-start">
         <div className="lg:sticky lg:top-28">

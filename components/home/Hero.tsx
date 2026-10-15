@@ -20,8 +20,8 @@ export function Hero() {
     <section className="noise relative overflow-hidden bg-bg text-studio-text">
       <div className="hero-glow pointer-events-none absolute -right-10 -top-24 h-[32rem] w-[32rem]" aria-hidden="true" />
       <div className="hero-grid pointer-events-none absolute inset-0" aria-hidden="true" />
-      <Container className="relative pt-8 pb-16 md:pt-20 md:pb-24 lg:pt-24 lg:pb-28">
-        <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,28rem)] lg:gap-8">
+      <Container className="relative pt-8 pb-0 md:pt-12 md:pb-2 lg:pt-16 lg:pb-4">
+        <div className="grid items-start gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,28rem)] lg:gap-8">
           <Stagger>
             <p className="type-label text-studio-muted">Carrickfergus, Northern Ireland</p>
             <h1 className="display-xl mt-6 max-w-4xl text-balance text-studio-text">
@@ -46,18 +46,18 @@ export function Hero() {
             </p>
           </Stagger>
 
-          <div className="group relative hidden h-[26rem] lg:block">
+          <div className="fan-stage group relative hidden lg:block">
             {fan.map((product, index) => (
               <Link
                 key={product.slug}
                 href={product.href}
-                className="fan-card absolute left-6 top-6 block w-64 rounded-2xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-amber"
+                className="fan-card absolute left-1/2 top-0 block w-80 rounded-2xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-amber"
                 style={{ ["--i" as string]: index, zIndex: index + 1 }}
                 {...(product.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
               >
                 <span className="block overflow-hidden rounded-2xl border border-studio-line bg-studio-surface shadow-[inset_0_1px_0_rgba(255,255,255,0.04)]">
                   <ProductCover slug={product.cover} />
-                  <span className="flex items-center justify-between gap-3 px-3 py-3">
+                  <span className="fan-label flex items-center justify-between gap-3 px-3 py-3">
                     <span className="font-studio-display text-lg text-studio-text">{product.name}</span>
                     <StatusDot status={product.status} />
                   </span>

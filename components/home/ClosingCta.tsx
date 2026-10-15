@@ -4,7 +4,7 @@ import { WHATSAPP_URL } from "@/lib/constants";
 
 export function ClosingCta() {
   return (
-    <section className="bg-bg py-20 text-studio-text md:py-28">
+    <section className="bg-bg py-12 text-studio-text md:py-16 lg:py-20">
       <Container>
         <h2 className="display-lg max-w-3xl text-balance text-studio-text">
           Need a site, help with posting, or something that does not fit a package?

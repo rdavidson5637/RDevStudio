@@ -16,7 +16,7 @@ const homeProducts = [
 
 export function LiveStrip() {
   return (
-    <Section id="live" eyebrow="LIVE NOW" heading="On the site, and open.">
+    <Section id="live" compact eyebrow="LIVE NOW" heading="On the site, and open.">
       <div className="mt-10 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
         {homeProducts.map((product, index) => (
           <Reveal

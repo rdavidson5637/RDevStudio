@@ -3,6 +3,8 @@ import { Button } from "@/components/ui/Button";
 import { Section } from "@/components/ui/Section";
 import {
   CONTENT_CREATION_FEATURES,
+  CARE_PLAN_COPY,
+  CARE_PLAN_NOTE,
   PRICE_CARE_PLAN_GBP,
   PRICE_CONTENT_GBP,
   PRICE_SOCIAL_GBP,
@@ -47,9 +49,9 @@ const PACKAGES = [
     title: "Care plan",
     price: `£${PRICE_CARE_PLAN_GBP}`,
     from: false,
-    note: "/month, optional",
-    copy: "Hosting, security updates and small changes, so the site stays up and stays current.",
-    href: "/services",
+    note: CARE_PLAN_NOTE,
+    copy: CARE_PLAN_COPY,
+    href: "/services#care-plan",
     bullets: [] as readonly string[],
     anchor: false,
   },
@@ -57,7 +59,7 @@ const PACKAGES = [
 
 export function WorkWithMe() {
   return (
-    <Section id="work-with-me" eyebrow="WORK WITH ME" heading="Straight prices. One person, start to finish.">
+    <Section id="work-with-me" compact eyebrow="WORK WITH ME" heading="Straight prices. One person, start to finish.">
       <div className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
         {PACKAGES.map((item, index) => (
           <Reveal key={item.title} delay={index * 60} className="h-full">
