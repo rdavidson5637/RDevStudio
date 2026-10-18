@@ -18,10 +18,10 @@ export default function HomePage() {
   return (
     <div className="bg-studio-bg text-studio-text">
       <Hero />
-      <ClientWork />
-      <Costs />
       <Pitch />
       <UnderTheHood />
+      <Costs />
+      <ClientWork />
       <HomeFaq />
       <TellMe />
     </div>

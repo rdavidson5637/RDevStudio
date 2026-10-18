@@ -39,11 +39,11 @@ In code these are the `--color-studio-*` tokens in `app/tokens.css`.
 
 ## Homepage order
 
-1. Hero: headline, one paragraph, Get a quote, the Champions Draft pitch drawing.
-2. Sites I've built.
-3. What it costs: the scoreboard, then the four steps.
-4. On the pitch: the games.
-5. How the games work.
+1. Hero: headline, one paragraph, Get a quote, client shots and a game cover in the first viewport.
+2. Projects: the games and tools.
+3. How the games work.
+4. What it costs: the scoreboard, then the four steps.
+5. Sites I've built.
 6. Questions people ask.
 7. Tell me what you need: photos of Ryan and Rudi, contact.
 
