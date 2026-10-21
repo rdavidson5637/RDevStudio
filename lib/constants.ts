@@ -78,7 +78,7 @@ export const SHELL_NAV_LINKS = [
   { href: "/games", label: "Games" },
   { href: "/projects", label: "Projects" },
   { href: "/toolkit", label: "Tools" },
-  { href: "/services", label: "Work with me" },
+  { href: "/services", label: "Services" },
 ] as const;
 
 export const SECONDARY_NAV_HUBS = [

@@ -1,6 +1,6 @@
+import Image from "next/image";
 import { Button } from "@/components/ui/Button";
-import { StoutFinderMock } from "@/components/home/StoutFinderMock";
-import { STOUT_FINDER } from "@/lib/constants";
+import { PRICE_WEBSITE_GBP, STOUT_FINDER } from "@/lib/constants";
 import { getStoutFinderPubCount } from "@/lib/stout-finder-stats";
 
 export async function StoutFinderHero() {
@@ -27,12 +27,32 @@ export async function StoutFinderHero() {
               href="#offer"
               className="inline-flex min-h-11 items-center text-base text-studio-text underline decoration-studio-border-strong underline-offset-4 hover:text-studio-accent hover:decoration-studio-accent"
             >
-              I build sites for NI businesses too
+              I build sites for NI businesses too, from £{PRICE_WEBSITE_GBP}
             </a>
           </div>
         </div>
         <div className="rounded-sm bg-studio-surface px-4 py-10 sm:px-10">
-          <StoutFinderMock />
+          <figure className="mx-auto w-full max-w-[18rem]">
+            <a
+              href={STOUT_FINDER.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block overflow-hidden rounded-[2rem] border-2 border-studio-border-strong focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-studio-text"
+            >
+              <Image
+                src="/images/stout-finder/home-390.png"
+                alt="Stout Finder on a phone: Who has Beamish on, brand tabs and a dark map of Belfast with pint glasses on the pubs that have it"
+                width={390}
+                height={844}
+                priority
+                sizes="(max-width: 640px) 288px, 288px"
+                className="h-auto w-full"
+              />
+            </a>
+            <figcaption className="mt-3 text-center text-sm text-studio-faint">
+              A screenshot of the live app, Belfast.
+            </figcaption>
+          </figure>
         </div>
       </div>
     </section>

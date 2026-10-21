@@ -11,17 +11,17 @@ function soonLine(products: Product[]) {
   return `Still being built: ${names.join(", ")} and ${last}.`;
 }
 
+const pitchProducts = liveProducts.filter((product) => product.slug !== "stout-finder");
+
 export function Pitch() {
   return (
     <Section id="games" heading="On the pitch">
-      <div className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-        {liveProducts
-          .filter((product) => product.slug !== "stout-finder")
-          .map((product) => (
+      <div className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+        {pitchProducts.map((product, index) => (
           <Link
             key={product.slug}
             href={product.href}
-            className="group block bg-studio-surface transition-colors duration-200 hover:bg-studio-surface-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-studio-text"
+            className={`${index === 0 || index === pitchProducts.length - 1 ? "md:col-span-2 " : ""}group block bg-studio-surface transition-colors duration-200 hover:bg-studio-surface-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-studio-text`}
             {...(product.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
           >
             <ProductCover slug={product.cover} initial={product.name} />
