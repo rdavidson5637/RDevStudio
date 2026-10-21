@@ -3,7 +3,7 @@ import Link from "next/link";
 import { Section } from "@/components/ui/Section";
 import { clientBySlug, type ClientWork as ClientJob } from "@/lib/content/products";
 
-const FEATURED = ["rvs-cold-brew", "paintball-wales", "shelterlink"] as const;
+const FEATURED = ["rvs-cold-brew", "shelterlink"] as const;
 
 function Panel({ job }: { job: ClientJob }) {
   const body = (
@@ -14,7 +14,7 @@ function Panel({ job }: { job: ClientJob }) {
             src={job.image}
             alt={`${job.name} website`}
             fill
-            sizes="(max-width: 768px) 100vw, 33vw"
+            sizes="(max-width: 768px) 100vw, 50vw"
             className="object-cover object-top"
           />
         </div>
@@ -46,8 +46,8 @@ export function ClientWork() {
   const assisi = clientBySlug("assisi");
 
   return (
-    <Section heading="Sites I've built">
-      <div className="mt-10 grid gap-4 md:grid-cols-3">
+    <Section heading="Sites I've built" className="studio-light">
+      <div className="mt-10 grid gap-4 md:grid-cols-2">
         {jobs.map((job) => (
           <Panel key={job.slug} job={job} />
         ))}

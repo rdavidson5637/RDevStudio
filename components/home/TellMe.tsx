@@ -5,10 +5,10 @@ import { EMAIL, WHATSAPP_URL } from "@/lib/constants";
 
 export function TellMe() {
   return (
-    <Section id="contact">
-      <div className="grid gap-8 sm:grid-cols-2">
+    <Section id="contact" className="studio-band">
+      <div className="grid max-w-2xl gap-6 sm:grid-cols-2">
         <figure>
-          <div className="relative aspect-[3/4] overflow-hidden bg-studio-surface">
+          <div className="relative aspect-[4/5] overflow-hidden bg-studio-surface">
             <Image
               src="/images/ryan-davidson.jpg"
               alt="Ryan Davidson in graduation gown outside Queen's University Belfast"
@@ -20,7 +20,7 @@ export function TellMe() {
           <figcaption className="mt-3 text-sm text-studio-faint">Me. MSc Software Development, Queen&apos;s.</figcaption>
         </figure>
         <figure>
-          <div className="relative aspect-[3/4] overflow-hidden bg-studio-surface">
+          <div className="relative aspect-[4/5] overflow-hidden bg-studio-surface">
             <Image
               src="/images/rudi/rudi-scarf.jpg"
               alt="Rudi, a black and white dog, wearing an Arsenal scarf"

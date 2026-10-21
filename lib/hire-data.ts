@@ -126,7 +126,7 @@ export const HIRE_PROJECTS = [
     highlights: ["NI small businesses", "Websites & content"],
     image: "/images/logo/rdevstudio-logo.png",
     imageFit: "contain" as const,
-    imageBg: "#0f172a",
+    imageBg: "#112f2c",
     href: "/",
     external: false,
   },

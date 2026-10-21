@@ -4,6 +4,11 @@ const nextConfig = {
   async redirects() {
     return [
       {
+        source: "/work/paintball-wales",
+        destination: "/work",
+        permanent: true,
+      },
+      {
         source: "/stout-finder",
         destination: "https://stoutfinder.com",
         permanent: true,

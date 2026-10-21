@@ -1,8 +1,10 @@
 import { ClientWork } from "@/components/home/ClientWork";
-import { Costs } from "@/components/home/Costs";
-import { Hero } from "@/components/home/Hero";
 import { HomeFaq } from "@/components/home/HomeFaq";
+import { OfferBand } from "@/components/home/OfferBand";
 import { Pitch } from "@/components/home/Pitch";
+import { Process } from "@/components/home/Process";
+import { StoutFinderHero } from "@/components/home/StoutFinderHero";
+import { StoutFinderHonest } from "@/components/home/StoutFinderHonest";
 import { TellMe } from "@/components/home/TellMe";
 import { UnderTheHood } from "@/components/home/UnderTheHood";
 import { createPageMetadata } from "@/lib/metadata";
@@ -17,9 +19,11 @@ export const metadata = createPageMetadata({
 export default function HomePage() {
   return (
     <div className="bg-studio-bg text-studio-text">
-      <Hero />
+      <StoutFinderHero />
+      <OfferBand />
       <ClientWork />
-      <Costs />
+      <StoutFinderHonest />
+      <Process />
       <Pitch />
       <UnderTheHood />
       <HomeFaq />

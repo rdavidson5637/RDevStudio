@@ -78,7 +78,7 @@ export const SHELL_NAV_LINKS = [
   { href: "/games", label: "Games" },
   { href: "/projects", label: "Projects" },
   { href: "/toolkit", label: "Tools" },
-  { href: "/services", label: "Work with me" },
+  { href: "/services", label: "Services" },
 ] as const;
 
 export const SECONDARY_NAV_HUBS = [
@@ -154,10 +154,6 @@ export const SOCIAL_PROOF_ITEMS = [
     title: "RV's Cold Brew",
     detail: "Live site for a Belfast cold brew and matcha counter. Menu, hours, and directions.",
   },
-  {
-    title: "Paintball Wales",
-    detail: "Live park site. Built so groups can enquire on their phones.",
-  },
 ] as const;
 
 export const CHARITY_NOTE =
@@ -223,7 +219,6 @@ export const SERVICES = [
 export const HOME_PROJECT_IDS = [
   "shelterlink",
   "rvs-coldbrew",
-  "paintball-wales",
 ] as const;
 
 export const PRICING_FEATURES = [
@@ -335,23 +330,6 @@ export const PROJECTS = [
     previewFit: "contain" as const,
     previewBg: "#0a1a1f",
     outcome: "Live site",
-  },
-  {
-    id: "paintball-wales",
-    title: "Paintball Wales",
-    category: "Client Work" as const,
-    type: "Marketing Site",
-    summary: "Client · bookings-focused site",
-    description:
-      "Phone-first site for a Snowdonia paintball park. Replaced a cluttered banner so groups can enquire on their phones.",
-    highlights: ["A page per group type", "Enquire on every screen", "Fast on a phone"],
-    tags: ["Next.js", "Tailwind", "Vercel"],
-    buttonLabel: "Read the case study",
-    href: "/work/paintball-wales",
-    image: "/images/work/paintball-wales-hero.jpg",
-    imageAlt:
-      "Paintball Wales hero scene with players in masks and camouflage gear",
-    outcome: "Live park site",
   },
   {
     id: "concept-builds",

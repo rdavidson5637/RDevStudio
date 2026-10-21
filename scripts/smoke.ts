@@ -9,7 +9,6 @@ const ROUTES = [
   "/work",
   "/work/shelterlink",
   "/work/rvs-cold-brew",
-  "/work/paintball-wales",
   "/work/concept-builds",
   "/work/uc-caseworker-tool",
   "/services",

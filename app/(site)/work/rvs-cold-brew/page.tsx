@@ -130,7 +130,7 @@ export default function RvsColdBrewCaseStudyPage() {
         <footer className="py-12">
           <div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
             <Link
-              href="/work/paintball-wales"
+              href="/work/shelterlink"
               className="font-studio-sans text-sm text-primary transition-colors hover:text-accent"
             >
               Next case study

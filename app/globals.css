@@ -806,33 +806,33 @@ body {
   .display-lg,
   .type-h2,
   .h2 {
-    font-weight: 800;
+    font-weight: 400;
     font-optical-sizing: auto;
   }
 
   .display-xl {
-    font-family: var(--font-studio-display), "Arial Narrow", sans-serif;
-    font-weight: 800;
+    font-family: var(--font-studio-display), Georgia, serif;
+    font-weight: 400;
     font-size: var(--text-display-xl);
     line-height: 1.05;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.01em;
   }
 
   .display-lg {
-    font-family: var(--font-studio-display), "Arial Narrow", sans-serif;
-    font-weight: 800;
+    font-family: var(--font-studio-display), Georgia, serif;
+    font-weight: 400;
     font-size: var(--text-display-lg);
     line-height: 1.08;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.01em;
   }
 
   .type-h2,
   .h2 {
-    font-family: var(--font-studio-display), "Arial Narrow", sans-serif;
-    font-weight: 800;
+    font-family: var(--font-studio-display), Georgia, serif;
+    font-weight: 400;
     font-size: var(--text-h2);
     line-height: 1.15;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.01em;
   }
 
   .type-h3,
@@ -904,10 +904,10 @@ body {
   .studio-page .programme-h1,
   .studio-page .heading-display,
   .studio-page .section-heading {
-    font-family: var(--font-studio-display), "Arial Narrow", sans-serif;
-    font-weight: 800;
+    font-family: var(--font-studio-display), Georgia, serif;
+    font-weight: 400;
     text-transform: none;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.01em;
     color: var(--color-studio-text);
     line-height: 1.08;
   }
@@ -962,5 +962,75 @@ body {
     background-color: transparent;
     border-color: var(--color-studio-border-strong);
     color: var(--color-studio-text);
+  }
+}
+
+/*
+ * Full-bleed colour bands. Each one re-points the --color-studio-* tokens, so
+ * the existing studio-* classes read correctly inside it. Text on Grenadine
+ * and Ochre is always Slate.
+ */
+.studio-light {
+  --color-studio-bg: #fbe6a0;
+  --color-studio-surface: #f2d98c;
+  --color-studio-surface-2: #ecd078;
+  --color-studio-line: rgba(17, 47, 44, 0.2);
+  --color-studio-line-strong: rgba(17, 47, 44, 0.4);
+  --color-studio-border: rgba(17, 47, 44, 0.2);
+  --color-studio-border-strong: rgba(17, 47, 44, 0.4);
+  --color-studio-text: #112f2c;
+  --color-studio-muted: #2c4a3a;
+  --color-studio-faint: #4a6657;
+  background-color: #fbe6a0;
+  color: #112f2c;
+}
+
+.studio-ochre {
+  --color-studio-bg: #e2b540;
+  --color-studio-surface: #d8aa33;
+  --color-studio-surface-2: #cf9f2b;
+  --color-studio-line: rgba(17, 47, 44, 0.22);
+  --color-studio-line-strong: rgba(17, 47, 44, 0.45);
+  --color-studio-border: rgba(17, 47, 44, 0.22);
+  --color-studio-border-strong: rgba(17, 47, 44, 0.45);
+  --color-studio-text: #112f2c;
+  --color-studio-muted: #2c4a3a;
+  --color-studio-faint: #2c4a3a;
+  --color-studio-accent: #112f2c;
+  --color-studio-accent-hover: #183e3a;
+  --color-studio-on-accent: #fbe6a0;
+  background-color: #e2b540;
+  color: #112f2c;
+}
+
+.studio-band {
+  --color-studio-bg: #f48067;
+  --color-studio-surface: #f79a85;
+  --color-studio-surface-2: #f9ad9b;
+  --color-studio-line: rgba(17, 47, 44, 0.3);
+  --color-studio-line-strong: rgba(17, 47, 44, 0.55);
+  --color-studio-border: rgba(17, 47, 44, 0.3);
+  --color-studio-border-strong: rgba(17, 47, 44, 0.55);
+  --color-studio-text: #112f2c;
+  --color-studio-muted: #183e3a;
+  --color-studio-faint: #183e3a;
+  --color-studio-accent: #112f2c;
+  --color-studio-accent-hover: #183e3a;
+  --color-studio-on-accent: #fbe6a0;
+  background-color: #f48067;
+  color: #112f2c;
+}
+
+/* Stout Finder mock: rows arrive one after another, opacity only. */
+@keyframes sf-row-in {
+  from {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .sf-row {
+    animation: sf-row-in 600ms ease-out both;
+    animation-delay: calc(var(--sf-i, 0) * 180ms + 300ms);
   }
 }

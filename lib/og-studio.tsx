@@ -16,7 +16,8 @@ function toArrayBuffer(buffer: Buffer) {
 }
 
 export async function studioOgImage(headline: string, kicker = "RDev Studio") {
-  const display = await readFile(join(process.cwd(), "app/fonts/BigShoulders-800.ttf"));
+  const display = await readFile(join(process.cwd(), "lib/og/dm-serif-display-latin-400-normal.woff"));
+  const label = await readFile(join(process.cwd(), "lib/og/instrument-sans-latin-600-normal.woff"));
 
   return new ImageResponse(
     (
@@ -32,16 +33,16 @@ export async function studioOgImage(headline: string, kicker = "RDev Studio") {
           padding: "72px",
         }}
       >
-        <div style={{ display: "flex", fontFamily: "Big Shoulders", fontWeight: 800, fontSize: 36, color: MUTED }}>
+        <div style={{ display: "flex", fontFamily: "Instrument Sans", fontWeight: 600, fontSize: 32, color: MUTED }}>
           {kicker}
         </div>
         <div style={{ display: "flex", flexDirection: "column" }}>
           <div
             style={{
               display: "flex",
-              fontFamily: "Big Shoulders",
-              fontWeight: 800,
-              fontSize: 72,
+              fontFamily: "DM Serif Display",
+              fontWeight: 400,
+              fontSize: 92,
               lineHeight: 1.05,
               maxWidth: 1000,
             }}
@@ -53,14 +54,17 @@ export async function studioOgImage(headline: string, kicker = "RDev Studio") {
             <div style={{ width: 16, height: 16, borderRadius: 16, backgroundColor: ACCENT, marginLeft: 16 }} />
           </div>
         </div>
-        <div style={{ display: "flex", fontFamily: "Big Shoulders", fontWeight: 800, fontSize: 28, color: MUTED }}>
+        <div style={{ display: "flex", fontFamily: "Instrument Sans", fontWeight: 600, fontSize: 28, color: MUTED }}>
           rdevstudio.co.uk
         </div>
       </div>
     ),
     {
       ...ogSize,
-      fonts: [{ name: "Big Shoulders", data: toArrayBuffer(display), style: "normal", weight: 800 }],
+      fonts: [
+        { name: "DM Serif Display", data: toArrayBuffer(display), style: "normal", weight: 400 },
+        { name: "Instrument Sans", data: toArrayBuffer(label), style: "normal", weight: 600 },
+      ],
     },
   );
 }
