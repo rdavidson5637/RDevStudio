@@ -32,7 +32,10 @@
   --color-selection-bg: #1e5c3a33;
 
   --font-body-family: var(--font-body), system-ui, sans-serif;
-  --font-label-family: var(--font-label), ui-monospace, monospace;
+  /* The studio classes still say studio-*; both point at the two site fonts. */
+  --font-studio-display: var(--font-display);
+  --font-studio-sans: var(--font-body);
+  --font-label-family: var(--font-body), system-ui, sans-serif;
 
   /* ── Typography: scale ───────────────────────────────────── */
   --text-xs: 0.75rem;
