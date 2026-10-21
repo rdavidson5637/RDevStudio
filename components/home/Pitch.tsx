@@ -15,7 +15,9 @@ export function Pitch() {
   return (
     <Section id="games" heading="On the pitch">
       <div className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-        {liveProducts.map((product) => (
+        {liveProducts
+          .filter((product) => product.slug !== "stout-finder")
+          .map((product) => (
           <Link
             key={product.slug}
             href={product.href}

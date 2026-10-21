@@ -62,7 +62,7 @@ function ClientCard({ job }: { job: ClientWork }) {
 }
 
 export default function WorkPage() {
-  const clients = ["shelterlink", "rvs-cold-brew", "paintball-wales", "assisi"]
+  const clients = ["shelterlink", "rvs-cold-brew", "assisi"]
     .map((slug) => clientBySlug(slug))
     .filter((job) => job !== undefined);
   const games = GAME_SLUGS.map((slug) => productBySlug(slug)).filter((product) => product !== undefined);
