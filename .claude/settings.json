@@ -1,0 +1,27 @@
+{
+  "permissions": {
+    "deny": [
+      "Read(./.env.local)",
+      "Read(./.env.*.local)",
+      "Read(./.env*.bak*)",
+      "Edit(./.env.local)",
+      "Edit(./.env.*.local)",
+      "Write(./.env.local)",
+      "Write(./.env.*.local)"
+    ]
+  },
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write|MultiEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"$CLAUDE_PROJECT_DIR/.claude/hooks/check-copy.mjs\"",
+            "timeout": 15
+          }
+        ]
+      }
+    ]
+  }
+}
