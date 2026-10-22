@@ -28,7 +28,7 @@ export function Scoreboard() {
               {"detail" in row ? <p className="mt-1 max-w-xs text-sm text-studio-on-second-muted">{row.detail}</p> : null}
             </div>
             <p className="shrink-0 text-right">
-              <span className="font-studio-display text-4xl leading-none text-studio-on-second">£{row.price}</span>
+              <span className="font-studio-display text-4xl leading-none tabular-nums text-studio-on-second">£{row.price}</span>
               <span className="mt-1 block text-sm text-studio-on-second-muted">{row.note}</span>
             </p>
           </li>
