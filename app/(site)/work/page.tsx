@@ -90,6 +90,12 @@ export default function WorkPage() {
           <div className="mt-6 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
             <ProductCard product={stoutFinder} />
           </div>
+          <Link
+            href="/work/stout-finder"
+            className="mt-4 inline-flex min-h-11 items-center text-sm underline underline-offset-4 hover:text-studio-accent"
+          >
+            Read how Stout Finder stays honest
+          </Link>
         </>
       ) : null}
 
