@@ -27,6 +27,9 @@ export function Footer() {
                   <FooterLink href={link.href} label={link.label} />
                 </li>
               ))}
+              <li>
+                <FooterLink href="/charities" label="Charities" />
+              </li>
             </ul>
           </nav>
 

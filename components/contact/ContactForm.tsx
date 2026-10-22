@@ -102,7 +102,13 @@ function ContactFormFields({ onReset }: { onReset: () => void }) {
   }
 
   return (
-    <form onSubmit={onSubmit} className="space-y-5" noValidate>
+    <form
+      onSubmit={onSubmit}
+      method="post"
+      action={FORMSPREE_FORM_ID ? `https://formspree.io/f/${FORMSPREE_FORM_ID}` : undefined}
+      className="space-y-5"
+      noValidate
+    >
       <div className="absolute left-[-9999px] h-px w-px overflow-hidden" aria-hidden="true">
         <label htmlFor="_gotcha">Leave this blank</label>
         <input id="_gotcha" name="_gotcha" type="text" tabIndex={-1} autoComplete="off" />
