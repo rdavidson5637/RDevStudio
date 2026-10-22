@@ -7,7 +7,7 @@ import { CaseShot } from "@/components/work/CaseShot";
 export const metadata = createPageMetadata({
   title: "ShelterLink",
   description:
-    "Volunteer rotas, roles, and an admin dashboard for Assisi Animal Sanctuary.",
+    "Case study: volunteer rotas, roles and an admin dashboard built by RDev Studio for Assisi Animal Sanctuary in Northern Ireland.",
   path: "/work/shelterlink",
   ogImage: null,
 });

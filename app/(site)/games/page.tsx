@@ -5,7 +5,8 @@ import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata = createPageMetadata({
   title: "Games",
-  description: "Free browser games built by Ryan Davidson. No ads, no sign-up.",
+  description:
+    "Free browser games built by Ryan Davidson of RDev Studio in Carrickfergus. Play in your browser, no ads and no sign-up.",
   path: "/games",
   ogImage: null,
 });

@@ -7,7 +7,7 @@ import { createPageMetadata } from "@/lib/metadata";
 export const metadata = createPageMetadata({
   title: "Contact",
   description:
-    "Projects for NI businesses and charities, plus the odd collaboration. Based in Carrickfergus.",
+    "Get a quote for a website for your NI business or charity. Ryan Davidson, RDev Studio, Carrickfergus. Email, WhatsApp or the form.",
   path: "/contact",
 });
 

@@ -7,7 +7,8 @@ import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata = createPageMetadata({
   title: "Work",
-  description: "Client work, concepts, experiments, and free browser games by Ryan Davidson.",
+  description:
+    "Websites and tools built by RDev Studio in Carrickfergus: client work, concept builds for NI businesses, experiments and free browser games.",
   path: "/work",
   ogImage: null,
 });
