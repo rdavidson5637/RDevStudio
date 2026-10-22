@@ -26,7 +26,7 @@ export function Footer() {
               Websites for businesses and charities in Northern Ireland. One person, start to finish.
             </p>
             <div className="mt-6">
-              <Button href="/contact" size="sm">
+              <Button href="/contact" size="sm" variant="outline">
                 Get a quote
               </Button>
             </div>
