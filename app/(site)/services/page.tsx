@@ -14,7 +14,7 @@ import {
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata = createPageMetadata({
-  title: "Work with me",
+  title: "Prices and services",
   description:
     "Website design, social media management, and content creation for Northern Ireland small businesses and charities. Clear pricing, no nonsense.",
   path: "/services",

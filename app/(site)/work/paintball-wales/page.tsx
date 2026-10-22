@@ -27,7 +27,7 @@ function ScreenshotSlot({
 }) {
   return (
     <figure className="space-y-3">
-      <div className="relative h-64 w-full overflow-hidden rounded-lg border border-border bg-raised sm:h-80">
+      <div className="relative h-64 w-full overflow-hidden rounded-lg border border-studio-line bg-studio-surface sm:h-80">
         <Image
           src={src}
           alt={alt}
@@ -52,7 +52,7 @@ const BUILD_FEATURES = [
 
 export default function PaintballWalesCaseStudyPage() {
   return (
-    <div className="studio-page px-4 py-16 sm:px-6 md:py-24 lg:py-32">
+    <div className="bg-studio-bg py-16 font-studio-sans text-studio-text md:py-24 lg:py-32">
       <article className="container-wide px-6">
         <Breadcrumbs
           items={[
@@ -62,23 +62,22 @@ export default function PaintballWalesCaseStudyPage() {
           ]}
           className="mb-8"
         />
-        <header className="space-y-6 border-b border-border pb-10">
-          <p className="font-studio-sans text-sm text-accent">Case study - 03</p>
+        <header className="space-y-6 border-b border-studio-line pb-10">
           <h1 className="display-lg text-studio-text">Paintball Wales</h1>
-          <p className="max-w-2xl text-lg text-primary">
+          <p className="type-body max-w-prose text-studio-muted">
             A phone-first site for North Wales&apos; longest-established outdoor
             paintball park, in Snowdonia.
           </p>
 
-          <div className="grid grid-cols-2 gap-x-4 gap-y-2 border-t border-border pt-5 font-studio-sans text-sm text-secondary lg:grid-cols-4">
-            <p>ROLE - Design &amp; development</p>
+          <div className="grid grid-cols-2 gap-x-4 gap-y-2 border-t border-studio-line pt-5 font-studio-sans text-sm text-studio-muted lg:grid-cols-4">
+            <p>Role: design and development</p>
             <p>Stack: Next.js 14, TypeScript, Tailwind</p>
             <p>Type: Marketing site, Local SEO</p>
             <p>Year - 2026</p>
           </div>
         </header>
 
-        <div className="border-b border-border py-12">
+        <div className="border-b border-studio-line py-12">
           <CaseShot
             src="/images/work/paintball-wales-hero.jpg"
             alt="Paintball Wales players in action amid purple flares in the Snowdonia woodland"
@@ -88,9 +87,9 @@ export default function PaintballWalesCaseStudyPage() {
           />
         </div>
 
-        <section className="border-b border-border py-12">
+        <section className="border-b border-studio-line py-12">
           <SectionHeading>The old banner</SectionHeading>
-          <p className="mb-8 max-w-3xl text-base leading-relaxed text-primary sm:text-lg">
+          <p className="mb-8 max-w-prose type-body text-studio-text">
             Paintball Wales has run outdoor paintball in Snowdonia for over
             twenty years. Longest-established park of its kind in North Wales,
             and they have been on BBC, Radio 1 and S4C. Groups still landed on
@@ -99,7 +98,7 @@ export default function PaintballWalesCaseStudyPage() {
             get planned. The job was a site that looks like the woods and makes
             it obvious how to enquire.
           </p>
-          <div className="relative h-56 w-full overflow-hidden rounded-lg border border-border bg-raised sm:h-72">
+          <div className="relative h-56 w-full overflow-hidden rounded-lg border border-studio-line bg-studio-surface sm:h-72">
             <Image
               src="/images/work/paintball-wales-before-banner.png"
               alt="The previous Paintball Wales promotional banner, densely packed with text and slogans"
@@ -108,14 +107,14 @@ export default function PaintballWalesCaseStudyPage() {
               className="object-contain bg-black"
             />
           </div>
-          <p className="font-studio-sans text-sm mt-3 text-secondary">
+          <p className="font-studio-sans text-sm mt-3 text-studio-muted">
             The old promotional banner
           </p>
         </section>
 
-        <section className="border-b border-border py-12">
+        <section className="border-b border-studio-line py-12">
           <SectionHeading>What replaced it</SectionHeading>
-          <div className="max-w-3xl space-y-5 text-base leading-relaxed text-primary sm:text-lg">
+          <div className="max-w-prose space-y-5 type-body text-studio-text">
             <p>
               Photos from the park, a tight palette, and an enquire path on
               every page. Each kind of group gets its own page: stag and hen,
@@ -137,7 +136,7 @@ export default function PaintballWalesCaseStudyPage() {
             {BUILD_FEATURES.map((feature) => (
               <li
                 key={feature}
-                className="font-studio-sans text-sm rounded-lg border border-border bg-raised px-4 py-3 text-primary"
+                className="font-studio-sans text-sm rounded-lg border border-studio-line bg-studio-surface px-4 py-3 text-studio-text"
               >
                 {feature}
               </li>
@@ -163,9 +162,9 @@ export default function PaintballWalesCaseStudyPage() {
           </div>
         </section>
 
-        <section className="border-b border-border py-12">
+        <section className="border-b border-studio-line py-12">
           <SectionHeading>Where it stands</SectionHeading>
-          <p className="max-w-3xl text-base leading-relaxed text-primary sm:text-lg">
+          <p className="max-w-prose type-body text-studio-text">
             The site is live. The owner can keep contact details current
             without a developer. Built and hosted on Vercel.
           </p>
@@ -173,7 +172,7 @@ export default function PaintballWalesCaseStudyPage() {
             href="https://paintball-wales.vercel.app"
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-5 inline-flex items-center text-base font-semibold text-primary transition-colors hover:text-accent"
+            className="mt-5 inline-flex items-center text-base font-semibold text-studio-text transition-colors hover:text-studio-accent"
           >
             Visit live site
           </a>
@@ -183,13 +182,13 @@ export default function PaintballWalesCaseStudyPage() {
           <div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
             <Link
               href="/work/concept-builds"
-              className="font-studio-sans text-sm text-primary transition-colors hover:text-accent"
+              className="font-studio-sans text-sm text-studio-text transition-colors hover:text-studio-accent"
             >
               Next case study
             </Link>
             <Link
               href="/contact"
-              className="text-base text-primary underline decoration-border-strong underline-offset-4 transition-colors hover:text-accent"
+              className="text-base text-studio-text underline decoration-studio-line-strong underline-offset-4 transition-colors hover:text-studio-accent"
             >
               Got a similar problem? Get in touch.
             </Link>

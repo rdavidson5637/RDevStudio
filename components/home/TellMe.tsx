@@ -34,7 +34,7 @@ export function TellMe() {
       </div>
       <h2 className="display-lg mt-12 max-w-[16ch] text-balance text-studio-text">Tell me what you need</h2>
       <p className="type-body mt-4 max-w-prose text-studio-muted">
-        A site, help with posting, or something that doesn&apos;t fit a package. I reply myself.
+        A site, help with posting, or something that doesn&apos;t fit a package. I&apos;ll reply myself, ask a few questions about what you need, then send a fixed quote.
       </p>
       <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-3">
         <Button href="/contact">Get a quote</Button>

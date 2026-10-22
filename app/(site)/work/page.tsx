@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { Reveal } from "@/components/motion/Reveal";
 import { ProductCard } from "@/components/products/ProductCard";
 import { Section } from "@/components/ui/Section";
 import { BrowserFrame } from "@/components/work/BrowserFrame";
@@ -75,10 +74,8 @@ export default function WorkPage() {
       <h2 className="type-h2 mt-14 text-studio-text">Client work</h2>
       <p className="type-body mt-2 text-studio-muted">Jobs for real organisations.</p>
       <div className="mt-6 grid gap-4 md:grid-cols-2">
-        {clients.map((job, index) => (
-          <Reveal key={job.slug} delay={index * 60}>
-            <ClientCard job={job} />
-          </Reveal>
+        {clients.map((job) => (
+          <ClientCard key={job.slug} job={job} />
         ))}
       </div>
 

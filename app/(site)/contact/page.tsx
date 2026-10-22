@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { ContactForm } from "@/components/contact/ContactForm";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
@@ -19,7 +20,7 @@ export default function ContactPage() {
       <Container className="py-20 md:py-28">
         <h1 className="display-lg max-w-3xl text-balance">Start a project</h1>
         <p className="type-body mt-5 max-w-xl text-studio-muted">
-          Need a site, help with posting, or something that does not fit a package. Form or email. I read both. I usually reply within one working day.
+          Need a site, help with posting, or something that does not fit a package. Form or email. I&apos;ll reply myself, ask a few questions about what you need, then send a fixed quote. I usually reply within one working day.
         </p>
         <p className="type-body mt-4 max-w-xl text-studio-muted">{CHARITY_NOTE}</p>
 
@@ -37,8 +38,6 @@ export default function ContactPage() {
             <Button href={WHATSAPP_URL} variant="secondary">
               WhatsApp
             </Button>
-            <p className="type-body text-studio-muted">I usually reply within one working day.</p>
-            <p className="type-body text-studio-muted">{CHARITY_NOTE}</p>
             <div className="flex gap-4">
               <a href={LINKEDIN_URL} className="inline-flex min-h-11 items-center text-sm text-studio-muted hover:text-studio-accent" target="_blank" rel="noopener noreferrer">
                 LinkedIn
@@ -49,7 +48,12 @@ export default function ContactPage() {
             </div>
             <p className="type-body text-studio-muted">Based in Carrickfergus. Working anywhere.</p>
             <p className="type-body text-studio-muted">
-              I only use your name and email to reply to this enquiry. I do not pass them on.
+              <Link
+                href="/privacy"
+                className="text-studio-text underline decoration-studio-line-strong underline-offset-4 hover:text-studio-accent"
+              >
+                How I use what you send
+              </Link>
             </p>
           </aside>
         </div>

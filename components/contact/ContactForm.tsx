@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { useForm, ValidationError } from "@formspree/react";
 import { FormSendFailure } from "@/components/contact/FormSendFailure";
 import { FormSuccess } from "@/components/contact/FormSuccess";
@@ -132,7 +133,13 @@ function ContactFormFields({ onReset }: { onReset: () => void }) {
       </button>
 
       <p className="text-sm leading-relaxed text-studio-muted">
-        Usually within one working day. I only use these details to reply.
+        Usually within one working day. I only use these details to reply.{" "}
+        <Link
+          href="/privacy"
+          className="text-studio-text underline decoration-studio-line-strong underline-offset-4 hover:text-studio-accent"
+        >
+          How I use what you send
+        </Link>
       </p>
     </form>
   );

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { FORMSPREE_FORM_ID } from "@/lib/constants";
 
 const FORMSPREE_ENDPOINT = FORMSPREE_FORM_ID
@@ -82,10 +83,7 @@ export function LeadCaptureCard({
         role="status"
         className="rounded-[10px] border border-accent/40 bg-raised p-6 text-center"
       >
-        <p className="font-display text-xl text-primary">Sent - check your inbox soon.</p>
-        <p className="mt-2 text-sm text-secondary">
-          I&apos;ll be in touch with the full {toolName} breakdown.
-        </p>
+        <p className="font-display text-xl text-primary">Sent. I&apos;ll reply with the breakdown.</p>
       </div>
     );
   }
@@ -138,6 +136,11 @@ export function LeadCaptureCard({
           Something went wrong. Please try again or use the contact page.
         </p>
       )}
+      <p className="mt-3 text-sm text-secondary">
+        <Link href="/privacy" className="underline underline-offset-4 hover:text-accent">
+          How I use what you send
+        </Link>
+      </p>
     </div>
   );
 }
