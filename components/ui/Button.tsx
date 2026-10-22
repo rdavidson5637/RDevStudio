@@ -7,15 +7,23 @@ type Size = "sm" | "md";
 const variants: Record<Variant, string> = {
   primary: "rounded-sm bg-studio-accent text-studio-on-accent hover:bg-studio-accent-hover",
   secondary:
-    "bg-transparent px-0 text-studio-text underline decoration-studio-border-strong underline-offset-4 hover:text-studio-accent hover:decoration-studio-accent",
+    "bg-transparent text-studio-text underline decoration-studio-border-strong underline-offset-4 hover:text-studio-accent hover:decoration-studio-accent",
   outline:
     "rounded-sm border border-studio-border-strong bg-transparent text-studio-text hover:border-studio-text",
-  ghost: "bg-transparent px-0 text-studio-muted hover:text-studio-accent",
+  ghost: "bg-transparent text-studio-muted hover:text-studio-accent",
 };
 
 const sizes: Record<Size, string> = {
-  sm: "min-h-11 px-4",
-  md: "min-h-12 px-5",
+  sm: "min-h-11",
+  md: "min-h-12",
+};
+
+// Text-style variants sit flush with the copy around them, so they get no side padding.
+const padding: Record<Variant, Record<Size, string>> = {
+  primary: { sm: "px-4", md: "px-5" },
+  outline: { sm: "px-4", md: "px-5" },
+  secondary: { sm: "px-0", md: "px-0" },
+  ghost: { sm: "px-0", md: "px-0" },
 };
 
 type Common = {
@@ -44,6 +52,7 @@ function classes(variant: Variant, size: Size, className?: string) {
     "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-studio-text",
     variants[variant],
     sizes[size],
+    padding[variant][size],
     className,
   ]
     .filter(Boolean)

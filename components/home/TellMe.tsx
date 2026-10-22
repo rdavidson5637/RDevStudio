@@ -6,33 +6,7 @@ import { EMAIL, WHATSAPP_URL } from "@/lib/constants";
 export function TellMe() {
   return (
     <Section id="contact" className="studio-band">
-      <div className="grid max-w-2xl gap-6 sm:grid-cols-2">
-        <figure>
-          <div className="relative aspect-[4/5] overflow-hidden bg-studio-surface">
-            <Image
-              src="/images/ryan-davidson.jpg"
-              alt="Ryan Davidson in graduation gown outside Queen's University Belfast"
-              fill
-              sizes="(max-width: 640px) 100vw, 40vw"
-              className="object-cover object-center"
-            />
-          </div>
-          <figcaption className="mt-3 text-sm text-studio-faint">Me. MSc Software Development, Queen&apos;s.</figcaption>
-        </figure>
-        <figure>
-          <div className="relative aspect-[4/5] overflow-hidden bg-studio-surface">
-            <Image
-              src="/images/rudi/rudi-scarf.jpg"
-              alt="Rudi, a black and white dog, wearing an Arsenal scarf"
-              fill
-              sizes="(max-width: 640px) 100vw, 40vw"
-              className="object-cover object-center"
-            />
-          </div>
-          <figcaption className="mt-3 text-sm text-studio-faint">Rudi, from Assisi Animal Sanctuary.</figcaption>
-        </figure>
-      </div>
-      <h2 className="display-lg mt-12 max-w-[16ch] text-balance text-studio-text">Tell me what you need</h2>
+      <h2 className="display-lg max-w-[16ch] text-balance text-studio-text">Tell me what you need</h2>
       <p className="type-body mt-4 max-w-prose text-studio-muted">
         A site, help with posting, or something that doesn&apos;t fit a package. I&apos;ll reply myself, ask a few questions about what you need, then send a fixed quote.
       </p>
@@ -52,6 +26,32 @@ export function TellMe() {
         >
           {EMAIL}
         </a>
+      </div>
+      <div className="mt-12 grid max-w-xl grid-cols-2 gap-4 sm:gap-6">
+        <figure>
+          <div className="relative aspect-[4/5] overflow-hidden bg-studio-surface">
+            <Image
+              src="/images/ryan-davidson.jpg"
+              alt="Ryan Davidson in graduation gown outside Queen's University Belfast"
+              fill
+              sizes="(max-width: 640px) 45vw, 280px"
+              className="object-cover object-center"
+            />
+          </div>
+          <figcaption className="mt-3 text-sm text-studio-faint">Me. MSc Software Development, Queen&apos;s.</figcaption>
+        </figure>
+        <figure>
+          <div className="relative aspect-[4/5] overflow-hidden bg-studio-surface">
+            <Image
+              src="/images/rudi/rudi-scarf.jpg"
+              alt="Rudi, a black and white dog, wearing an Arsenal scarf"
+              fill
+              sizes="(max-width: 640px) 45vw, 280px"
+              className="object-cover object-center"
+            />
+          </div>
+          <figcaption className="mt-3 text-sm text-studio-faint">Rudi, from Assisi Animal Sanctuary.</figcaption>
+        </figure>
       </div>
     </Section>
   );

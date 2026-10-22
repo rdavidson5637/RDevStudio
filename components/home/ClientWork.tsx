@@ -30,13 +30,13 @@ function Panel({ job }: { job: ClientJob }) {
   );
 
   if (!job.href) {
-    return <article className="flex h-full flex-col bg-studio-surface">{body}</article>;
+    return <article className="flex h-full flex-col border border-studio-border-strong bg-studio-surface">{body}</article>;
   }
 
   return (
     <Link
       href={job.href}
-      className="flex h-full flex-col bg-studio-surface transition-colors duration-200 hover:bg-studio-surface-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-studio-text"
+      className="flex h-full flex-col border border-studio-border-strong bg-studio-surface transition-colors duration-200 hover:bg-studio-surface-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-studio-text"
     >
       {body}
     </Link>
