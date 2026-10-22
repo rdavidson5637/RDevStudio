@@ -13,7 +13,7 @@ function soonLine(products: Product[]) {
 
 const pitchProducts = liveProducts.filter((product) => product.slug !== "stout-finder");
 
-export function Pitch() {
+export function Pitch({ showSoon = true }: { showSoon?: boolean }) {
   return (
     <Section id="games" heading="On the pitch">
       <div className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
@@ -32,7 +32,9 @@ export function Pitch() {
           </Link>
         ))}
       </div>
-      <p className="type-body mt-8 max-w-prose text-studio-muted">{soonLine(soonProducts)}</p>
+      {showSoon ? (
+        <p className="type-body mt-8 max-w-prose text-studio-muted">{soonLine(soonProducts)}</p>
+      ) : null}
     </Section>
   );
 }

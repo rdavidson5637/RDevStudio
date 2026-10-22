@@ -1,13 +1,15 @@
 import Link from "next/link";
 import type { ButtonHTMLAttributes, ReactNode } from "react";
 
-type Variant = "primary" | "secondary" | "ghost";
+type Variant = "primary" | "secondary" | "outline" | "ghost";
 type Size = "sm" | "md";
 
 const variants: Record<Variant, string> = {
   primary: "rounded-sm bg-studio-accent text-studio-on-accent hover:bg-studio-accent-hover",
   secondary:
     "bg-transparent px-0 text-studio-text underline decoration-studio-border-strong underline-offset-4 hover:text-studio-accent hover:decoration-studio-accent",
+  outline:
+    "rounded-sm border border-studio-border-strong bg-transparent text-studio-text hover:border-studio-text",
   ghost: "bg-transparent px-0 text-studio-muted hover:text-studio-accent",
 };
 

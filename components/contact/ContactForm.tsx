@@ -1,7 +1,6 @@
 "use client";
 
-import { useState } from "react";
-import { useForm, ValidationError } from "@formspree/react";
+import { useState, type FormEvent } from "react";
 import { FormSendFailure } from "@/components/contact/FormSendFailure";
 import { FormSuccess } from "@/components/contact/FormSuccess";
 import {
@@ -11,33 +10,103 @@ import {
   submitButtonClassName,
 } from "@/components/contact/form-styles";
 import { useFormFailureReport } from "@/components/contact/useFormFailureReport";
+import { reportFormError } from "@/components/contact/report-form-error";
 import { CONTACT_SERVICE_OPTIONS, FORMSPREE_FORM_ID } from "@/lib/constants";
+import { SITE_URL } from "@/lib/site";
 
 function isValidEmail(value: string) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
 }
 
+type FieldErrors = {
+  name?: string;
+  email?: string;
+  enquiryType?: string;
+  message?: string;
+};
+
 function ContactFormFields({ onReset }: { onReset: () => void }) {
-  const [state, handleSubmit] = useForm(FORMSPREE_FORM_ID);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [enquiryType, setEnquiryType] = useState("");
   const [message, setMessage] = useState("");
+  const [errors, setErrors] = useState<FieldErrors>({});
+  const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
 
-  useFormFailureReport("contact", state.errors);
+  useFormFailureReport("contact", null);
 
-  const canSubmit =
-    name.trim().length > 0 &&
-    isValidEmail(email.trim()) &&
-    message.trim().length > 0 &&
-    !state.submitting;
-  const formFailed = (state.errors?.getFormErrors().length ?? 0) > 0;
+  function validate(): FieldErrors {
+    const next: FieldErrors = {};
+    if (!name.trim()) next.name = "Add your name.";
+    if (!isValidEmail(email.trim())) next.email = "That email does not look right.";
+    if (!enquiryType) next.enquiryType = "Choose what this is about.";
+    if (!message.trim()) next.message = "Add a message.";
+    return next;
+  }
 
-  if (state.succeeded) {
+  async function onSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    const gotcha = String(new FormData(event.currentTarget).get("_gotcha") ?? "");
+    if (gotcha.trim()) {
+      setStatus("success");
+      return;
+    }
+
+    const nextErrors = validate();
+    setErrors(nextErrors);
+    if (Object.keys(nextErrors).length > 0) {
+      setStatus("idle");
+      return;
+    }
+
+    if (!FORMSPREE_FORM_ID) {
+      setStatus("error");
+      reportFormError("contact", "formspree");
+      return;
+    }
+
+    setStatus("sending");
+    try {
+      const response = await fetch(`https://formspree.io/f/${FORMSPREE_FORM_ID}`, {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: name.trim(),
+          email: email.trim(),
+          enquiryType,
+          message: message.trim(),
+          _gotcha: "",
+          _subject: `New enquiry from ${new URL(SITE_URL).host}: ${enquiryType}`,
+        }),
+      });
+
+      if (!response.ok) {
+        setStatus("error");
+        reportFormError("contact", "formspree");
+        return;
+      }
+
+      setStatus("success");
+    } catch {
+      setStatus("error");
+      reportFormError("contact", "formspree");
+    }
+  }
+
+  if (status === "success") {
     return <FormSuccess onReset={onReset} />;
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-5" noValidate>
+    <form onSubmit={onSubmit} className="space-y-5" noValidate>
+      <div className="absolute left-[-9999px] h-px w-px overflow-hidden" aria-hidden="true">
+        <label htmlFor="_gotcha">Leave this blank</label>
+        <input id="_gotcha" name="_gotcha" type="text" tabIndex={-1} autoComplete="off" />
+      </div>
+
       <div>
         <label htmlFor="name" className={labelClassName}>
           Name
@@ -49,9 +118,16 @@ function ContactFormFields({ onReset }: { onReset: () => void }) {
           required
           autoComplete="name"
           value={name}
+          aria-invalid={errors.name ? true : undefined}
+          aria-describedby={errors.name ? "name-error" : undefined}
           onChange={(event) => setName(event.target.value)}
           className={inputClassName}
         />
+        {errors.name ? (
+          <p id="name-error" className="mt-1.5 text-sm text-studio-accent" aria-live="polite">
+            {errors.name}
+          </p>
+        ) : null}
       </div>
 
       <div>
@@ -65,15 +141,16 @@ function ContactFormFields({ onReset }: { onReset: () => void }) {
           required
           autoComplete="email"
           value={email}
+          aria-invalid={errors.email ? true : undefined}
+          aria-describedby={errors.email ? "email-error" : undefined}
           onChange={(event) => setEmail(event.target.value)}
           className={inputClassName}
         />
-        <ValidationError
-          prefix="Email"
-          field="email"
-          errors={state.errors}
-          className="mt-1.5 text-sm text-studio-accent"
-        />
+        {errors.email ? (
+          <p id="email-error" className="mt-1.5 text-sm text-studio-accent" aria-live="polite">
+            {errors.email}
+          </p>
+        ) : null}
       </div>
 
       <div>
@@ -84,7 +161,10 @@ function ContactFormFields({ onReset }: { onReset: () => void }) {
           id="enquiryType"
           name="enquiryType"
           required
-          defaultValue=""
+          value={enquiryType}
+          aria-invalid={errors.enquiryType ? true : undefined}
+          aria-describedby={errors.enquiryType ? "enquiryType-error" : undefined}
+          onChange={(event) => setEnquiryType(event.target.value)}
           className={selectClassName}
         >
           <option value="" disabled>
@@ -96,6 +176,11 @@ function ContactFormFields({ onReset }: { onReset: () => void }) {
             </option>
           ))}
         </select>
+        {errors.enquiryType ? (
+          <p id="enquiryType-error" className="mt-1.5 text-sm text-studio-accent" aria-live="polite">
+            {errors.enquiryType}
+          </p>
+        ) : null}
       </div>
 
       <div>
@@ -108,32 +193,30 @@ function ContactFormFields({ onReset }: { onReset: () => void }) {
           required
           rows={5}
           value={message}
+          aria-invalid={errors.message ? true : undefined}
+          aria-describedby={errors.message ? "message-error" : undefined}
           onChange={(event) => setMessage(event.target.value)}
           className={`${inputClassName} resize-y`}
         />
-        <ValidationError
-          prefix="Message"
-          field="message"
-          errors={state.errors}
-          className="mt-1.5 text-sm text-studio-accent"
-        />
+        {errors.message ? (
+          <p id="message-error" className="mt-1.5 text-sm text-studio-accent" aria-live="polite">
+            {errors.message}
+          </p>
+        ) : null}
       </div>
 
-      {formFailed ? (
-        <FormSendFailure className="text-sm leading-relaxed text-studio-accent" />
+      {status === "error" ? (
+        <div role="alert" aria-live="polite">
+          <FormSendFailure className="text-sm leading-relaxed text-studio-accent" />
+        </div>
       ) : null}
 
-      <button
-        type="submit"
-        disabled={!canSubmit}
-        className={submitButtonClassName}
-      >
-        {state.submitting ? "Sending..." : "Send it"}
-      </button>
-
-      <p className="text-sm leading-relaxed text-studio-muted">
-        Usually within one working day. I only use these details to reply.
+      <p className="sr-only" aria-live="polite">
+        {status === "sending" ? "Sending..." : ""}
       </p>
+      <button type="submit" disabled={status === "sending"} className={submitButtonClassName}>
+        {status === "sending" ? "Sending..." : "Send it"}
+      </button>
     </form>
   );
 }
@@ -141,7 +224,5 @@ function ContactFormFields({ onReset }: { onReset: () => void }) {
 export function ContactForm() {
   const [formKey, setFormKey] = useState(0);
 
-  return (
-    <ContactFormFields key={formKey} onReset={() => setFormKey((k) => k + 1)} />
-  );
+  return <ContactFormFields key={formKey} onReset={() => setFormKey((key) => key + 1)} />;
 }

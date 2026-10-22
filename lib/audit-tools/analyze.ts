@@ -1,5 +1,6 @@
 import type { AuditCategoryScore } from "@/types/toolkit-audit";
 import type { UrlAuditResult } from "@/types/url-audit-tool";
+import { SITE_URL } from "@/lib/site";
 
 /**
  * Real server-side site analysis. Fetches the URL (server-side, so no CORS),
@@ -51,7 +52,7 @@ export async function fetchSignals(rawUrl: string): Promise<SiteSignals> {
   const started = Date.now();
   const res = await fetch(url, {
     redirect: "follow",
-    headers: { "User-Agent": "RDevStudioGrader/1.0 (+https://rdevstudio.co.uk)" },
+    headers: { "User-Agent": `RDevStudioGrader/1.0 (+${SITE_URL})` },
     signal: AbortSignal.timeout(12_000),
   });
   const responseTimeMs = Date.now() - started;

@@ -1,4 +1,5 @@
 import "server-only";
+import { SITE_URL } from "@/lib/site";
 import { supabaseAdmin } from "@/lib/supabase/admin";
 import { clubFeed, SHARED_FEEDS } from "./feeds";
 import { isFresh, parseRss, type RssItem } from "./parse-rss";
@@ -26,7 +27,7 @@ async function fetchText(url: string): Promise<string | null> {
     const res = await fetch(url, {
       headers: {
         Accept: "application/rss+xml, application/atom+xml, application/xml, text/xml",
-        "User-Agent": "RDevStudio-FPL-Draft-Analyser/1.0 (+https://rdevstudio.co.uk)",
+        "User-Agent": `RDevStudio-FPL-Draft-Analyser/1.0 (+${SITE_URL})`,
       },
       signal: controller.signal,
       next: { revalidate: 0 },

@@ -39,7 +39,7 @@ export function UnderTheHood() {
           </article>
         ))}
       </div>
-      <p className="mt-6 flex flex-wrap gap-x-6 gap-y-2">
+      <p className="mt-6">
         <Link
           href={GITHUB_URL}
           className="inline-flex min-h-11 items-center text-sm text-studio-text underline decoration-studio-line-strong underline-offset-4 hover:text-studio-accent"
@@ -47,12 +47,6 @@ export function UnderTheHood() {
           rel="noopener noreferrer"
         >
           GitHub
-        </Link>
-        <Link
-          href="/hire"
-          className="inline-flex min-h-11 items-center text-sm text-studio-text underline decoration-studio-line-strong underline-offset-4 hover:text-studio-accent"
-        >
-          Hiring? The long version
         </Link>
       </p>
     </Section>

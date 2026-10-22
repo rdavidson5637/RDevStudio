@@ -1,7 +1,8 @@
 import { mkdir } from "node:fs/promises";
 import { chromium } from "playwright";
+import { SITE_URL } from "../lib/site";
 
-const BASE = "https://www.rdevstudio.co.uk";
+const BASE = SITE_URL;
 
 const shots = [
   {

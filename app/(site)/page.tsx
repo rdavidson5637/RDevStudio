@@ -1,12 +1,11 @@
 import { ClientWork } from "@/components/home/ClientWork";
 import { HomeFaq } from "@/components/home/HomeFaq";
 import { OfferBand } from "@/components/home/OfferBand";
-import { Pitch } from "@/components/home/Pitch";
+import { MoreBuilds } from "@/components/home/MoreBuilds";
 import { Process } from "@/components/home/Process";
 import { StoutFinderHero } from "@/components/home/StoutFinderHero";
 import { StoutFinderHonest } from "@/components/home/StoutFinderHonest";
 import { TellMe } from "@/components/home/TellMe";
-import { UnderTheHood } from "@/components/home/UnderTheHood";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata = createPageMetadata({
@@ -24,8 +23,7 @@ export default function HomePage() {
       <ClientWork />
       <StoutFinderHonest />
       <Process />
-      <Pitch />
-      <UnderTheHood />
+      <MoreBuilds />
       <HomeFaq />
       <TellMe />
     </div>

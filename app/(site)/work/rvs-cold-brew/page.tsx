@@ -7,7 +7,7 @@ import { CaseShot } from "@/components/work/CaseShot";
 export const metadata = createPageMetadata({
   title: "RV's Cold Brew",
   description:
-    "Live site for a Belfast cold brew and matcha counter at Great Northern Mall. Menu, hours, and directions.",
+    "A Belfast cold brew and matcha counter. Menu, hours and where to find Unit 11. Square is linked and the last details are being finished.",
   path: "/work/rvs-cold-brew",
   ogImage: "/work/rvs-cold-brew/opengraph-image",
 });
@@ -57,14 +57,15 @@ export default function RvsColdBrewCaseStudyPage() {
           <p className="font-studio-sans text-sm text-accent">Case study - 02</p>
           <h1 className="display-lg text-studio-text">RV&apos;s Cold Brew</h1>
           <p className="max-w-2xl text-lg text-primary">
-            A live site for a Belfast cold brew and matcha counter at
-            Great Northern Mall.
+            A Belfast cold brew and matcha counter. Menu, hours and where to
+            find Unit 11. Square is linked and the last details are being
+            finished.
           </p>
 
           <div className="grid grid-cols-2 gap-x-4 gap-y-2 border-t border-border pt-5 font-studio-sans text-sm text-secondary lg:grid-cols-4">
             <p>ROLE - Design & development</p>
             <p>Type: Brand site</p>
-            <p>Status: Live, still a client</p>
+            <p>Status: Live site - nearly finished</p>
             <p>Year - 2026</p>
           </div>
         </header>
@@ -82,8 +83,8 @@ export default function RvsColdBrewCaseStudyPage() {
           <SectionHeading>The counter</SectionHeading>
           <p className="max-w-3xl text-base leading-relaxed text-primary sm:text-lg">
             RV&apos;s pours cold brew and ceremonial Okumidori matcha from Unit
-            11 in Great Northern Mall, beside Grand Central. People find them
-            on a phone: what is on, where is the unit, when are they open. They
+            11 in Great Northern Mall, beside Grand Central. The site shows
+            what is on, where the unit is, and when they are open. They
             needed a site that shows the drinks properly and how to get there,
             not a template with a logo swapped in.
           </p>
@@ -94,7 +95,7 @@ export default function RvsColdBrewCaseStudyPage() {
           <p className="max-w-3xl text-base leading-relaxed text-primary sm:text-lg">
             It leads with the product, then the menu, opening hours, the unit
             number, and directions. Copy stays short. Built to load quickly on
-            a phone, which is how most of their customers arrive.
+            a phone.
           </p>
 
           <div className="mt-10 grid gap-8">
@@ -114,8 +115,9 @@ export default function RvsColdBrewCaseStudyPage() {
         <section className="border-b border-border py-12">
           <SectionHeading>Where it stands</SectionHeading>
           <p className="max-w-3xl text-base leading-relaxed text-primary sm:text-lg">
-            The site is live. Menu, hours, and directions for Unit 11 at Great
-            Northern Mall. RV&apos;s is still a client.
+            Nearly finished. Square is linked and the last details are being
+            finished. Menu, hours, and where to find Unit 11 at Great Northern
+            Mall.
           </p>
           <a
             href="https://rvscoldbrew.vercel.app"
@@ -123,7 +125,7 @@ export default function RvsColdBrewCaseStudyPage() {
             rel="noopener noreferrer"
             className="mt-5 inline-flex items-center text-base font-semibold text-primary transition-colors hover:text-accent"
           >
-            Visit live site
+            Open the site
           </a>
         </section>
 

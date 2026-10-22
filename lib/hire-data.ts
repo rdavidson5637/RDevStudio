@@ -1,3 +1,5 @@
+import { SITE_URL } from "@/lib/site";
+
 export const HIRE_CHAOS_TRANSITION = "Still here? Fine. Here's the rest.";
 
 export const HIRE_MILESTONES_TITLE = "Milestones";
@@ -107,7 +109,7 @@ export const HIRE_PROJECTS = [
     tag: "RDev Studio client - Belfast",
     title: "RV's Cold Brew",
     description:
-      "Confirmed RDev Studio client. Live site for a Belfast cold brew and matcha counter - menu, hours, and where to find Unit 11.",
+      "A Belfast cold brew and matcha counter. Menu, hours and where to find Unit 11. Square is linked and the last details are being finished.",
     highlight: "Client work",
     highlights: ["Business website", "Design & implementation", "Social media"],
     image: "/images/work/rvs-coldbrew.png",
@@ -139,12 +141,12 @@ export const HIRE_PROJECTS = [
     highlight: "Live & played",
     highlights: ["Football", "Tournament modes", "Free to play"],
     image: "/images/games/champions-draft.jpg",
-    href: "https://rdevstudio.co.uk/champions-draft",
+    href: `${SITE_URL}/champions-draft`,
     external: true,
     links: [
       {
         label: "Play",
-        href: "https://rdevstudio.co.uk/champions-draft",
+        href: `${SITE_URL}/champions-draft`,
         external: true,
       },
     ],

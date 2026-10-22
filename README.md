@@ -1,6 +1,6 @@
 # RDev Studio
 
-A one-person web studio site, plus live games and tools, at [rdevstudio.co.uk](https://rdevstudio.co.uk).
+A one-person web studio site, plus live games and tools, at [www.rdevstudio.co.uk](https://www.rdevstudio.co.uk).
 
 Next.js 15 App Router, TypeScript, Tailwind, Supabase, Pusher, Upstash Redis, Vercel, Formspree, and the Anthropic API. Node 22.
 
