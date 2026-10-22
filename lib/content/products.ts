@@ -150,6 +150,7 @@ export const clientWork: ClientWork[] = [
     name: "RV's Cold Brew",
     href: "/work/rvs-cold-brew",
     siteUrl: "https://rvscoldbrew.vercel.app",
+    image: "/images/work/rvs-coldbrew-hero.jpg",
     statusLabel: "Live site - nearly finished",
     summary:
       "A Belfast cold brew and matcha counter. Menu, hours and where to find Unit 11. Square is linked and the last details are being finished.",

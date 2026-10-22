@@ -28,7 +28,8 @@ function domainOf(url?: string) {
  * than a broken or placeholder image.
  */
 export function FeaturedRow({ job, flip = false, siteLinkLabel = "Open the live site", waitingLabel }: Props) {
-  const desktop = captureFor(job.slug, "desktop");
+  // A fresh capture wins. Otherwise use the job's own screenshot, if it has one.
+  const desktop = captureFor(job.slug, "desktop") ?? job.image;
   const mobile = captureFor(job.slug, "mobile");
   const domain = domainOf(job.siteUrl);
   const hasCaseStudy = job.href && job.href !== "/work";

@@ -96,13 +96,16 @@ export default function ServicesPage() {
           Websites, social media, and content for Northern Ireland small businesses and charities. Clear prices. One person from start to finish.
         </p>
         <p className="type-body mt-4 max-w-prose text-studio-muted">{CHARITY_NOTE}</p>
-        <Link
-          href="/charities"
-          className="mt-1 inline-flex min-h-11 items-center text-sm text-studio-text underline decoration-studio-line-strong underline-offset-4 hover:text-studio-accent"
-        >
-          What charities get
-        </Link>
-        <nav className="mt-6 flex flex-wrap gap-x-6" aria-label="Jump to service">
+        <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-2">
+          <Button href="/contact">Get a quote</Button>
+          <Link
+            href="/charities"
+            className="inline-flex min-h-11 items-center text-sm text-studio-text underline decoration-studio-line-strong underline-offset-4 hover:text-studio-accent"
+          >
+            What charities get
+          </Link>
+        </div>
+        <nav className="mt-4 flex flex-wrap gap-x-6" aria-label="Jump to service">
           {SERVICES.map((service) => (
             <a
               key={service.slug}
