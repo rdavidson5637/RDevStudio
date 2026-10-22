@@ -1,48 +1,13 @@
 import Link from "next/link";
-import { CONTACT_EMAIL, GITHUB_URL, WHATSAPP_URL } from "@/lib/constants";
+import { CONTACT_EMAIL, GITHUB_URL, SHELL_NAV_LINKS, WHATSAPP_URL } from "@/lib/constants";
 
 const LINKEDIN_URL = "https://www.linkedin.com/in/ryan-davidson-462bb221b";
 
-const COLUMNS = [
-  {
-    title: "Studio",
-    links: [
-      { href: "/work", label: "Work" },
-      { href: "/about", label: "About" },
-      { href: "/contact", label: "Contact" },
-      { href: "/hire", label: "Hiring? The long version" },
-      { href: "/contact", label: "CV on request" },
-    ],
-  },
-  {
-    title: "Play",
-    links: [
-      { href: "/games", label: "Games" },
-      { href: "/champions-draft", label: "Champions Draft" },
-      { href: "/rugby-draft", label: "Rugby Draft" },
-      { href: "/pub-quiz", label: "Pub Quiz" },
-      { href: "/games/longest-word", label: "Longest Word" },
-    ],
-  },
-  {
-    title: "Projects",
-    links: [
-      { href: "/draft", label: "Draft Analyser" },
-      { href: "/wardrobe-ai", label: "Wardrobe AI" },
-      { href: "https://stoutfinder.com", label: "Stout Finder" },
-      { href: "/guitar-lab", label: "Guitar Lab" },
-      { href: "/gig-radar", label: "Gig Radar" },
-    ],
-  },
-] as const;
-
 function FooterLink({ href, label }: { href: string; label: string }) {
-  const external = href.startsWith("http");
   return (
     <Link
       href={href}
       className="inline-flex min-h-11 min-w-11 items-center text-sm text-studio-muted transition-colors hover:text-studio-text focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-studio-text"
-      {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
     >
       {label}
     </Link>
@@ -53,19 +18,17 @@ export function Footer() {
   return (
     <footer className="border-t border-studio-border bg-bg text-studio-text" role="contentinfo">
       <div className="mx-auto max-w-studio px-6 py-16 md:px-8">
-        <div className="grid grid-cols-2 gap-x-6 gap-y-10 md:grid-cols-4">
-          {COLUMNS.map((column) => (
-            <nav key={column.title} aria-label={column.title}>
-              <p className="font-studio-sans text-sm text-studio-muted">{column.title}</p>
-              <ul className="mt-4">
-                {column.links.map((link) => (
-                  <li key={`${column.title}-${link.label}`}>
-                    <FooterLink href={link.href} label={link.label} />
-                  </li>
-                ))}
-              </ul>
-            </nav>
-          ))}
+        <div className="grid gap-x-6 gap-y-10 sm:grid-cols-2">
+          <nav aria-label="Footer">
+            <p className="font-studio-sans text-sm text-studio-muted">Studio</p>
+            <ul className="mt-4">
+              {SHELL_NAV_LINKS.map((link) => (
+                <li key={link.href}>
+                  <FooterLink href={link.href} label={link.label} />
+                </li>
+              ))}
+            </ul>
+          </nav>
 
           <div>
             <p className="font-studio-sans text-sm text-studio-muted">Contact</p>

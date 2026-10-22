@@ -19,17 +19,17 @@ const ROWS = [
 
 export function Scoreboard() {
   return (
-    <div className="bg-studio-board">
+    <div className="rounded-sm bg-studio-second text-studio-on-second">
       <ul>
         {ROWS.map((row) => (
-          <li key={row.name} className="flex items-start justify-between gap-4 border-b border-studio-line px-5 py-4 last:border-b-0">
+          <li key={row.name} className="flex items-start justify-between gap-4 border-b border-studio-on-second-line px-5 py-4 last:border-b-0">
             <div>
-              <p className="text-studio-text">{row.name}</p>
-              {"detail" in row ? <p className="mt-1 max-w-xs text-sm text-studio-muted">{row.detail}</p> : null}
+              <p className="font-bold text-studio-on-second">{row.name}</p>
+              {"detail" in row ? <p className="mt-1 max-w-xs text-sm text-studio-on-second-muted">{row.detail}</p> : null}
             </div>
             <p className="shrink-0 text-right">
-              <span className="font-studio-display text-4xl leading-none text-studio-text">£{row.price}</span>
-              <span className="mt-1 block text-sm text-studio-muted">{row.note}</span>
+              <span className="font-studio-display text-4xl leading-none text-studio-on-second">£{row.price}</span>
+              <span className="mt-1 block text-sm text-studio-on-second-muted">{row.note}</span>
             </p>
           </li>
         ))}

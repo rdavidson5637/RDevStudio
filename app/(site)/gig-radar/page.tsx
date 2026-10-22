@@ -1,12 +1,16 @@
+import type { Metadata } from "next";
 import { ComingSoon } from "@/components/ui/ComingSoon";
 import { createPageMetadata } from "@/lib/metadata";
 
-export const metadata = createPageMetadata({
-  title: "Gig Radar",
-  description:
-    "A weekly email of who you listen to, playing in Belfast or Dublin, before the tickets go. In build, not live yet.",
-  path: "/gig-radar",
-});
+export const metadata: Metadata = {
+  ...createPageMetadata({
+    title: "Gig Radar",
+    description:
+      "A weekly email of who you listen to, playing in Belfast or Dublin, before the tickets go. In build, not live yet.",
+    path: "/gig-radar",
+  }),
+  robots: { index: false, follow: true },
+};
 
 export default function GigRadarPage() {
   return (

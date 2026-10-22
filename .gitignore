@@ -47,3 +47,6 @@ scripts/stout-finder/data/osm-pubs.json
 
 # local route screenshots (npm run shots)
 /.shots/
+
+# Claude Code local settings
+.claude/settings.local.json

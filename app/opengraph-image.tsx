@@ -5,5 +5,5 @@ export const size = ogSize;
 export const contentType = ogContentType;
 
 export default function OpengraphImage() {
-  return studioOgImage("Websites for businesses and charities in Northern Ireland");
+  return studioOgImage("Websites for NI businesses and charities. From £650.", "RDev Studio. Maker of Stout Finder");
 }

@@ -12,7 +12,7 @@ exist for manual triggers and for Pro schedules.
 Trigger any of them:
 
 ```bash
-curl -s https://rdevstudio.co.uk/api/cron/sync \
+curl -s https://www.rdevstudio.co.uk/api/cron/sync \
   -H "Authorization: Bearer $CRON_SECRET" | jq
 ```
 

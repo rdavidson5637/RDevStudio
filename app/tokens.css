@@ -32,7 +32,10 @@
   --color-selection-bg: #1e5c3a33;
 
   --font-body-family: var(--font-body), system-ui, sans-serif;
-  --font-label-family: var(--font-label), ui-monospace, monospace;
+  /* The studio classes still say studio-*; both point at the two site fonts. */
+  --font-studio-display: var(--font-display);
+  --font-studio-sans: var(--font-body);
+  --font-label-family: var(--font-body), system-ui, sans-serif;
 
   /* ── Typography: scale ───────────────────────────────────── */
   --text-xs: 0.75rem;
@@ -107,26 +110,32 @@
   --duration-slow: 400ms;
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
 
-  /* ── Studio palette (Floodlights). Existing paper tokens stay. ─ */
-  --color-studio-bg: #0f2219;
-  --color-studio-bg-80: rgba(15, 34, 25, 0.8);
-  --color-studio-bg-20: rgba(15, 34, 25, 0.2);
-  --color-studio-surface: #173528;
-  --color-studio-surface-2: #1d4031;
-  --color-studio-line: rgba(238, 242, 234, 0.18);
-  --color-studio-line-strong: rgba(238, 242, 234, 0.35);
-  --color-studio-border: rgba(238, 242, 234, 0.18);
-  --color-studio-border-strong: rgba(238, 242, 234, 0.35);
-  --color-studio-text: #eef2ea;
-  --color-studio-muted: #c9d6cd;
-  --color-studio-faint: #b7c6bc;
-  --color-studio-accent: #e5402f;
-  --color-studio-accent-hover: #c9321f;
-  --color-studio-accent-soft: rgba(229, 64, 47, 0.14);
-  --color-studio-board: #0a1912;
-  --color-studio-cover-line: rgba(238, 242, 234, 0.5);
-  --color-studio-live: #22c55e;
-  --color-studio-soon: #c9d6cd;
+  /* ── Studio palette (Grenadine, Wada 166 + 325). Existing paper tokens stay. ─ */
+  --color-studio-bg: #112f2c; /* Deep Slate Green */
+  --color-studio-bg-80: rgba(17, 47, 44, 0.8);
+  --color-studio-bg-20: rgba(17, 47, 44, 0.2);
+  --color-studio-surface: #183e3a;
+  --color-studio-surface-2: #1e4a45;
+  --color-studio-line: rgba(251, 230, 160, 0.18);
+  --color-studio-line-strong: rgba(251, 230, 160, 0.35);
+  --color-studio-border: rgba(251, 230, 160, 0.18);
+  --color-studio-border-strong: rgba(251, 230, 160, 0.35);
+  --color-studio-text: #fbe6a0; /* Naples Yellow */
+  --color-studio-muted: #cfc7a3;
+  --color-studio-faint: #b9b392;
+  --color-studio-accent: #f48067; /* Grenadine Pink */
+  --color-studio-accent-hover: #f79a85;
+  --color-studio-accent-soft: rgba(244, 128, 103, 0.14);
+  --color-studio-on-accent: #112f2c;
+  --color-studio-second: #e2b540; /* Yellow Ocher */
+  --color-studio-on-second: #112f2c;
+  --color-studio-on-second-muted: #2c4a3a;
+  --color-studio-on-second-line: rgba(17, 47, 44, 0.22);
+  --color-studio-board: var(--color-studio-second);
+  --color-studio-cover-line: rgba(251, 230, 160, 0.5);
+  --color-studio-cover-faint: rgba(251, 230, 160, 0.3);
+  --color-studio-live: #e2b540;
+  --color-studio-soon: #cfc7a3;
   --color-rvs-teal: #143944;
   --color-rvs-cream: #f4ead4;
 

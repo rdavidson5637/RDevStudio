@@ -1,12 +1,16 @@
+import type { Metadata } from "next";
 import { ComingSoon } from "@/components/ui/ComingSoon";
 import { createPageMetadata } from "@/lib/metadata";
 
-export const metadata = createPageMetadata({
-  title: "Guitar Lab",
-  description:
-    "Fretboard viewer, chord finder and progression tool for guitar. In build, not live yet.",
-  path: "/guitar-lab",
-});
+export const metadata: Metadata = {
+  ...createPageMetadata({
+    title: "Guitar Lab",
+    description:
+      "Fretboard viewer, chord finder and progression tool for guitar. In build, not live yet.",
+    path: "/guitar-lab",
+  }),
+  robots: { index: false, follow: true },
+};
 
 export default function GuitarLabPage() {
   return (

@@ -1,5 +1,6 @@
+export { SITE_URL } from "@/lib/site";
+
 export const SITE_NAME = "RDev Studio";
-export const SITE_URL = "https://rdevstudio.co.uk";
 export const SITE_TITLE =
   "Web design for NI businesses and charities | RDev Studio, Carrickfergus";
 export const SITE_DESCRIPTION =
@@ -7,7 +8,8 @@ export const SITE_DESCRIPTION =
 export const EMAIL = "ryan@rdevstudio.co.uk";
 export const CONTACT_EMAIL = "ryan@rdevstudio.co.uk";
 export const GITHUB_URL = "https://github.com/rdavidson5637";
-export const FORMSPREE_FORM_ID = "mgoqjqve";
+/** Public Formspree id. Set NEXT_PUBLIC_FORMSPREE_ID in Vercel. Not hardcoded. */
+export const FORMSPREE_FORM_ID = process.env.NEXT_PUBLIC_FORMSPREE_ID ?? "";
 export const WHATSAPP_URL = "https://wa.me/447378420418";
 
 /** GBP amounts the public site already shows. Display strings are built from these. */
@@ -75,10 +77,12 @@ export const STUDIO_PROJECTS = [
 ] as const;
 
 export const SHELL_NAV_LINKS = [
-  { href: "/games", label: "Games" },
+  { href: "/services", label: "Services" },
+  { href: "/work", label: "Work" },
   { href: "/projects", label: "Projects" },
-  { href: "/toolkit", label: "Tools" },
-  { href: "/services", label: "Work with me" },
+  { href: "/toolkit", label: "Toolkit" },
+  { href: "/about", label: "About" },
+  { href: "/contact", label: "Contact" },
 ] as const;
 
 export const SECONDARY_NAV_HUBS = [
@@ -95,8 +99,6 @@ export const SECONDARY_NAV_LINKS = [
   { href: "/draft", label: "Draft Analyser" },
   { href: "/wardrobe-ai", label: "Wardrobe AI" },
   { href: "https://stoutfinder.com", label: "Stout Finder" },
-  { href: "/guitar-lab", label: "Guitar Lab" },
-  { href: "/gig-radar", label: "Gig Radar" },
 ] as const;
 
 export const SOCIAL_LINKS = [
@@ -152,11 +154,8 @@ export const SOCIAL_PROOF_ITEMS = [
   },
   {
     title: "RV's Cold Brew",
-    detail: "Live site for a Belfast cold brew and matcha counter. Menu, hours, and directions.",
-  },
-  {
-    title: "Paintball Wales",
-    detail: "Live park site. Built so groups can enquire on their phones.",
+    detail:
+      "A Belfast cold brew and matcha counter. Menu, hours and where to find Unit 11. Square is linked and the last details are being finished.",
   },
 ] as const;
 
@@ -223,7 +222,6 @@ export const SERVICES = [
 export const HOME_PROJECT_IDS = [
   "shelterlink",
   "rvs-coldbrew",
-  "paintball-wales",
 ] as const;
 
 export const PRICING_FEATURES = [
@@ -324,7 +322,7 @@ export const PROJECTS = [
     type: "Brand Site",
     summary: "Client · brand site",
     description:
-      "Live site for a Belfast cold brew and matcha counter. Menu, hours, and where to find Unit 11.",
+      "A Belfast cold brew and matcha counter. Menu, hours and where to find Unit 11. Square is linked and the last details are being finished.",
     highlights: ["Menu and location", "Mall hours", "Phone-first"],
     tags: ["Next.js", "Tailwind", "Vercel"],
     buttonLabel: "Read the case study",
@@ -334,24 +332,7 @@ export const PROJECTS = [
       "RV's Cold Brew logo - circular badge with cream typography on dark teal",
     previewFit: "contain" as const,
     previewBg: "#0a1a1f",
-    outcome: "Live site",
-  },
-  {
-    id: "paintball-wales",
-    title: "Paintball Wales",
-    category: "Client Work" as const,
-    type: "Marketing Site",
-    summary: "Client · bookings-focused site",
-    description:
-      "Phone-first site for a Snowdonia paintball park. Replaced a cluttered banner so groups can enquire on their phones.",
-    highlights: ["A page per group type", "Enquire on every screen", "Fast on a phone"],
-    tags: ["Next.js", "Tailwind", "Vercel"],
-    buttonLabel: "Read the case study",
-    href: "/work/paintball-wales",
-    image: "/images/work/paintball-wales-hero.jpg",
-    imageAlt:
-      "Paintball Wales hero scene with players in masks and camouflage gear",
-    outcome: "Live park site",
+    outcome: "Live site - nearly finished",
   },
   {
     id: "concept-builds",

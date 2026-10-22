@@ -52,8 +52,8 @@ export function HomeFaq() {
     <Section heading="Questions people ask">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
       <div className="mt-10 border-t border-studio-line">
-        {FAQ.map((item) => (
-          <details key={item.question} className="border-b border-studio-line">
+        {FAQ.map((item, index) => (
+          <details key={item.question} open={index === 0} className="border-b border-studio-line">
             <summary className="flex min-h-14 cursor-pointer list-none items-center justify-between gap-4 py-4 text-left font-studio-sans text-lg text-studio-text focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-studio-text [&::-webkit-details-marker]:hidden">
               {item.question}
             </summary>

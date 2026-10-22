@@ -15,6 +15,6 @@ export function CoverFrame({ children }: CoverFrameProps) {
 }
 
 export const line = "var(--color-studio-cover-line)";
-export const faint = "rgba(238, 242, 234, 0.3)";
+export const faint = "var(--color-studio-cover-faint)";
 export const chalk = "var(--color-studio-text)";
 export const kit = "var(--color-studio-accent)";

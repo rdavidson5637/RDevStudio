@@ -1,43 +1,29 @@
 import type { Metadata, Viewport } from "next";
-import { Anton, Atkinson_Hyperlegible, Big_Shoulders, Geist, Space_Mono } from "next/font/google";
+import localFont from "next/font/local";
 import { rootMetadata } from "@/lib/metadata";
 import { StructuredData } from "@/components/StructuredData";
 import { SiteMetrics } from "@/components/layout/SiteMetrics";
 import "./globals.css";
 
-const anton = Anton({
-  weight: "400",
-  subsets: ["latin"],
+// Self-hosted (OFL, from Fontsource) so builds never depend on Google Fonts.
+const dmSerifDisplay = localFont({
+  src: [
+    { path: "./fonts/dm-serif-display-latin-400-normal.woff2", weight: "400", style: "normal" },
+    { path: "./fonts/dm-serif-display-latin-400-italic.woff2", weight: "400", style: "italic" },
+  ],
   variable: "--font-display",
   display: "swap",
+  fallback: ["Georgia", "serif"],
 });
 
-const spaceMono = Space_Mono({
-  weight: ["400", "700"],
-  subsets: ["latin"],
-  variable: "--font-label",
+const instrumentSans = localFont({
+  src: [
+    { path: "./fonts/instrument-sans-latin-400-normal.woff2", weight: "400", style: "normal" },
+    { path: "./fonts/instrument-sans-latin-600-normal.woff2", weight: "600", style: "normal" },
+  ],
+  variable: "--font-body",
   display: "swap",
-});
-
-const bigShoulders = Big_Shoulders({
-  subsets: ["latin"],
-  axes: ["opsz"],
-  variable: "--font-studio-display",
-  display: "swap",
-  adjustFontFallback: false,
-});
-
-const atkinson = Atkinson_Hyperlegible({
-  weight: ["400", "700"],
-  subsets: ["latin"],
-  variable: "--font-studio-sans",
-  display: "swap",
-});
-
-const geist = Geist({
-  subsets: ["latin"],
-  variable: "--font-geist",
-  display: "swap",
+  fallback: ["system-ui", "sans-serif"],
 });
 
 export const metadata: Metadata = rootMetadata;
@@ -45,7 +31,7 @@ export const metadata: Metadata = rootMetadata;
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  themeColor: "#0F2219",
+  themeColor: "#112F2C",
 };
 
 export default function RootLayout({
@@ -56,7 +42,7 @@ export default function RootLayout({
   return (
     <html
       lang="en-GB"
-      className={`${anton.variable} ${spaceMono.variable} ${bigShoulders.variable} ${atkinson.variable} ${geist.variable}`}
+      className={`${dmSerifDisplay.variable} ${instrumentSans.variable}`}
     >
       <body className="font-sans antialiased">
         <StructuredData />

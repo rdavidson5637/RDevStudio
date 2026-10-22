@@ -14,11 +14,12 @@ import type {
   ElementSummary,
   Transaction,
 } from "./types";
+import { SITE_URL } from "@/lib/site";
 import { normalizeLiveElements } from "./parse";
 
 const DRAFT_BASE = "https://draft.premierleague.com/api";
 const FPL_BASE = "https://fantasy.premierleague.com/api";
-const USER_AGENT = "RDevStudio-FPL-Draft-Analyser/1.0 (+https://rdevstudio.co.uk)";
+const USER_AGENT = `RDevStudio-FPL-Draft-Analyser/1.0 (+${SITE_URL})`;
 const TIMEOUT_MS = 10_000;
 const MAX_ATTEMPTS = 3;
 

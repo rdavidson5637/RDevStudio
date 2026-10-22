@@ -157,17 +157,6 @@ export const clientWork: ClientWork[] = [
     mobileImage: "/work/rvs-cold-brew-mobile.webp",
     stack: ["Next.js", "Tailwind", "Vercel"],
   },
-  {
-    slug: "paintball-wales",
-    name: "Paintball Wales",
-    href: "/work/paintball-wales",
-    siteUrl: "https://paintball-wales.vercel.app",
-    statusLabel: "Live park site",
-    summary: "Phone-first site for a Snowdonia paintball park, built to replace a cluttered banner.",
-    image: "/work/paintball-wales-desktop.webp",
-    mobileImage: "/work/paintball-wales-mobile.webp",
-    stack: ["Next.js", "Tailwind", "Vercel"],
-  },
 ];
 
 export const liveProducts = products.filter((product) => product.status === "live");

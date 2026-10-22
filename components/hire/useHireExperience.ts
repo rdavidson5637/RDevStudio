@@ -10,12 +10,7 @@ type SectionKey =
   | "final-cta";
 
 export function useHireExperience() {
-  const prefersReducedMotion =
-    typeof window !== "undefined"
-      ? window.matchMedia("(prefers-reduced-motion: reduce)").matches
-      : false;
-
-  const [motionReduced, setMotionReduced] = useState(prefersReducedMotion);
+  const [motionReduced, setMotionReduced] = useState(false);
   const [chaosStarted, setChaosStarted] = useState(false);
   const [finaleReached, setFinaleReached] = useState(false);
   const [unlockedAchievements, setUnlockedAchievements] = useState<string[]>(
