@@ -883,7 +883,8 @@ body {
   }
 
   .studio-header {
-    background-color: var(--color-studio-bg-80);
+    /* Near-solid: the page wrapper behind the sticky header is light, so a looser mix reads grey. */
+    background-color: color-mix(in srgb, var(--color-studio-bg) 94%, transparent);
   }
 
   .studio-scrim {

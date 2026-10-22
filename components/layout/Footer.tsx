@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Button } from "@/components/ui/Button";
 import { CONTACT_EMAIL, GITHUB_URL, SHELL_NAV_LINKS, WHATSAPP_URL } from "@/lib/constants";
 
 const LINKEDIN_URL = "https://www.linkedin.com/in/ryan-davidson-462bb221b";
@@ -18,7 +19,19 @@ export function Footer() {
   return (
     <footer className="border-t border-studio-border bg-bg text-studio-text" role="contentinfo">
       <div className="mx-auto max-w-studio px-6 py-16 md:px-8">
-        <div className="grid gap-x-6 gap-y-10 sm:grid-cols-2">
+        <div className="grid gap-x-10 gap-y-10 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr]">
+          <div className="sm:col-span-2 lg:col-span-1">
+            <p className="font-studio-display text-3xl text-studio-text">RDev Studio</p>
+            <p className="type-body mt-3 max-w-sm text-studio-muted">
+              Websites for businesses and charities in Northern Ireland. One person, start to finish.
+            </p>
+            <div className="mt-6">
+              <Button href="/contact" size="sm">
+                Get a quote
+              </Button>
+            </div>
+          </div>
+
           <nav aria-label="Footer">
             <p className="font-studio-sans text-sm text-studio-muted">Studio</p>
             <ul className="mt-4">

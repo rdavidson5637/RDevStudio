@@ -57,6 +57,8 @@ function ContactFormFields({ onReset }: { onReset: () => void }) {
     setErrors(nextErrors);
     if (Object.keys(nextErrors).length > 0) {
       setStatus("idle");
+      const firstInvalid = (["name", "email", "enquiryType", "message"] as const).find((field) => nextErrors[field]);
+      if (firstInvalid) document.getElementById(firstInvalid)?.focus();
       return;
     }
 
@@ -147,6 +149,7 @@ function ContactFormFields({ onReset }: { onReset: () => void }) {
           name="email"
           required
           autoComplete="email"
+          spellCheck={false}
           value={email}
           aria-invalid={errors.email ? true : undefined}
           aria-describedby={errors.email ? "email-error" : undefined}
@@ -219,10 +222,10 @@ function ContactFormFields({ onReset }: { onReset: () => void }) {
       ) : null}
 
       <p className="sr-only" aria-live="polite">
-        {status === "sending" ? "Sending..." : ""}
+        {status === "sending" ? "Sending…" : ""}
       </p>
       <button type="submit" disabled={status === "sending"} className={submitButtonClassName}>
-        {status === "sending" ? "Sending..." : "Send it"}
+        {status === "sending" ? "Sending…" : "Send it"}
       </button>
       <p className="text-sm leading-relaxed text-studio-muted">
         <Link

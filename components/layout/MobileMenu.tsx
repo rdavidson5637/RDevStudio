@@ -18,6 +18,7 @@ export function MobileMenu({ open, onClose, isActive }: MobileMenuProps) {
   useEffect(() => {
     if (!open) return;
 
+    const opener = document.activeElement instanceof HTMLElement ? document.activeElement : null;
     const panel = panelRef.current;
     const focusable = panel
       ? Array.from(panel.querySelectorAll<HTMLElement>("a[href], button:not([disabled])"))
@@ -46,6 +47,7 @@ export function MobileMenu({ open, onClose, isActive }: MobileMenuProps) {
     return () => {
       document.removeEventListener("keydown", onKey);
       document.body.style.overflow = "";
+      opener?.focus();
     };
   }, [open, onClose]);
 
@@ -82,7 +84,7 @@ export function MobileMenu({ open, onClose, isActive }: MobileMenuProps) {
       </div>
 
       <nav className="flex flex-1 flex-col justify-center gap-5" aria-label="Mobile navigation">
-        {SHELL_NAV_LINKS.map((link, index) => {
+        {SHELL_NAV_LINKS.map((link) => {
           const active = isActive(link.href);
           return (
             <Link
