@@ -159,7 +159,26 @@ export const clientWork: ClientWork[] = [
   },
 ];
 
-export const liveProducts = products.filter((product) => product.status === "live");
+/**
+ * Sites built on spec. Not client jobs. Each one is labelled as a concept
+ * wherever it appears, and never described as the organisation's own site.
+ */
+export const conceptWork: ClientWork[] = [
+  {
+    slug: "crosskennan",
+    name: "Crosskennan Lane Animal Sanctuary",
+    siteUrl: "https://crosskennan.vercel.app",
+    statusLabel: "Concept - not a client job",
+    summary:
+      "A rebuilt front door for a real animal sanctuary near Antrim. Adopt, Donate and Volunteer sit in the top bar, and because visits are by appointment only, the phone number comes first. I built it on spec. It is not their site, and the demo says so in its footer.",
+  },
+];
+
+export function conceptBySlug(slug: string) {
+  return conceptWork.find((job) => job.slug === slug);
+}
+
+export const liveProducts =products.filter((product) => product.status === "live");
 export const soonProducts = products.filter((product) => product.status === "soon");
 export const games = products.filter((product) => product.kind === "game");
 export const projects = products.filter((product) => product.kind === "project");
