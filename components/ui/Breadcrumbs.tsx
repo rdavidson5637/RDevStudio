@@ -53,7 +53,7 @@ export function Breadcrumbs({ items, className = "" }: BreadcrumbsProps) {
                 ) : (
                   <Link
                     href={item.href}
-                    className="text-studio-muted underline decoration-studio-line-strong underline-offset-4 transition-colors hover:text-studio-accent"
+                    className="inline-flex min-h-11 items-center text-studio-muted underline decoration-studio-line-strong underline-offset-4 transition-colors hover:text-studio-accent"
                   >
                     {item.label}
                   </Link>

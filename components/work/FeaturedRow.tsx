@@ -32,31 +32,30 @@ export function FeaturedRow({ job, flip = false, siteLinkLabel = "Open the live 
   const mobile = captureFor(job.slug, "mobile");
   const domain = domainOf(job.siteUrl);
   const hasCaseStudy = job.href && job.href !== "/work";
+  // No screenshot and not waiting on sign-off: skip the image column rather
+  // than show an empty panel. The row becomes text only until captures exist.
+  const showImage = Boolean(desktop || waitingLabel);
 
   return (
     <article className="grid items-center gap-8 border-t border-studio-line py-12 lg:grid-cols-12 lg:gap-12 lg:py-16">
-      <div className={`lg:col-span-7 ${flip ? "lg:order-2" : ""}`}>
-        <div className="relative">
-          {desktop ? (
-            <BrowserFrame src={desktop} alt={`${job.name} website`} domain={domain} sizes="(max-width: 1024px) 100vw, 58vw" />
-          ) : waitingLabel ? (
-            <BrowserFrame alt="" domain={domain} sizes="58vw" mutedLabel={waitingLabel} />
-          ) : (
-            <div className="flex aspect-[16/10] items-center justify-center overflow-hidden rounded-xl border border-studio-line bg-studio-surface px-6">
-              <p className="text-balance text-center font-studio-display text-4xl leading-tight text-studio-text md:text-5xl">
-                {job.name}
-              </p>
-            </div>
-          )}
-          {mobile ? (
-            <div className="absolute -bottom-6 right-4 hidden sm:block">
-              <PhoneFrame src={mobile} alt={`${job.name} on a phone`} sizes="144px" />
-            </div>
-          ) : null}
+      {showImage ? (
+        <div className={`lg:col-span-7 ${flip ? "lg:order-2" : ""}`}>
+          <div className="relative">
+            {desktop ? (
+              <BrowserFrame src={desktop} alt={`${job.name} website`} domain={domain} sizes="(max-width: 1024px) 100vw, 58vw" />
+            ) : (
+              <BrowserFrame alt="" domain={domain} sizes="58vw" mutedLabel={waitingLabel} />
+            )}
+            {mobile ? (
+              <div className="absolute -bottom-6 right-4 hidden sm:block">
+                <PhoneFrame src={mobile} alt={`${job.name} on a phone`} sizes="144px" />
+              </div>
+            ) : null}
+          </div>
         </div>
-      </div>
+      ) : null}
 
-      <div className={`lg:col-span-5 ${flip ? "lg:order-1" : ""}`}>
+      <div className={`${showImage ? "lg:col-span-5" : "lg:col-span-9"} ${showImage && flip ? "lg:order-1" : ""}`}>
         <p className="text-sm font-bold text-studio-muted">{job.statusLabel}</p>
         <h3 className="mt-2 font-studio-display text-3xl leading-tight text-studio-text md:text-4xl">{job.name}</h3>
         <p className="type-body mt-4 max-w-prose text-studio-muted">{job.summary}</p>
