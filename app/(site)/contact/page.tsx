@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { ContactForm } from "@/components/contact/ContactForm";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
@@ -35,7 +34,7 @@ export default function ContactPage() {
             >
               {CONTACT_EMAIL}
             </a>
-            <Button href={WHATSAPP_URL} variant="secondary">
+            <Button href={WHATSAPP_URL} variant="secondary" className="self-start">
               WhatsApp
             </Button>
             <div className="flex gap-4">
@@ -47,14 +46,6 @@ export default function ContactPage() {
               </a>
             </div>
             <p className="type-body text-studio-muted">Based in Carrickfergus. Working anywhere.</p>
-            <p className="type-body text-studio-muted">
-              <Link
-                href="/privacy"
-                className="text-studio-text underline decoration-studio-line-strong underline-offset-4 hover:text-studio-accent"
-              >
-                How I use what you send
-              </Link>
-            </p>
           </aside>
         </div>
       </Container>

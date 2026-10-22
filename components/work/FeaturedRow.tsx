@@ -39,7 +39,7 @@ export function FeaturedRow({ job, flip = false, siteLinkLabel = "Open the live 
   return (
     <article className="grid items-center gap-8 border-t border-studio-line py-12 lg:grid-cols-12 lg:gap-12 lg:py-16">
       {showImage ? (
-        <div className={`lg:col-span-7 ${flip ? "lg:order-2" : ""}`}>
+        <div className={`lg:col-span-7 ${flip ? "lg:order-2" : ""} ${desktop ? "" : "hidden lg:block"}`}>
           <div className="relative">
             {desktop ? (
               <BrowserFrame src={desktop} alt={`${job.name} website`} domain={domain} sizes="(max-width: 1024px) 100vw, 58vw" />
