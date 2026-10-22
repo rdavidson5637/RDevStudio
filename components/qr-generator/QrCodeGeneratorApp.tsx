@@ -4,13 +4,14 @@ import { useCallback, useEffect, useId, useState } from "react";
 import { ToolkitToolHeader } from "@/components/toolkit-audit/ToolkitToolHeader";
 import { FadeIn } from "@/components/toolkit-audit/FadeIn";
 import { recordRecentSlug } from "@/lib/business-toolkit/storage";
+import { SITE_URL } from "@/lib/site";
 
 type QrType = "url" | "wifi" | "text";
 
 export function QrCodeGeneratorApp() {
   const canvasId = useId();
   const [qrType, setQrType] = useState<QrType>("url");
-  const [url, setUrl] = useState("https://rdevstudio.co.uk");
+  const [url, setUrl] = useState(SITE_URL);
   const [ssid, setSsid] = useState("");
   const [wifiPassword, setWifiPassword] = useState("");
   const [text, setText] = useState("");

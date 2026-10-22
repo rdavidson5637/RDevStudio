@@ -1,6 +1,7 @@
 import { readFile } from "node:fs/promises";
 import { join } from "node:path";
 import { ImageResponse } from "next/og";
+import { SITE_URL } from "@/lib/site";
 
 export const ogSize = { width: 1200, height: 630 };
 export const ogContentType = "image/png";
@@ -55,7 +56,7 @@ export async function studioOgImage(headline: string, kicker = "RDev Studio") {
           </div>
         </div>
         <div style={{ display: "flex", fontFamily: "Instrument Sans", fontWeight: 600, fontSize: 28, color: MUTED }}>
-          rdevstudio.co.uk
+          {new URL(SITE_URL).host}
         </div>
       </div>
     ),

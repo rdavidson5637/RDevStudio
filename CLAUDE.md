@@ -1,4 +1,4 @@
-# RDev Studio (rdevstudio.co.uk)
+# RDev Studio (www.rdevstudio.co.uk)
 
 One-person web studio site for Ryan Davidson, Carrickfergus, NI. Also hosts live games, tools and write-ups. Read README.md for the map of the repo.
 

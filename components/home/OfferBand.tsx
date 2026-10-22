@@ -16,7 +16,7 @@ const ROWS = [
 
 export function OfferBand() {
   return (
-    <section id="offer" className="studio-ochre py-16 md:py-24 lg:py-28">
+    <section id="offer" className="studio-ochre scroll-mt-20 py-16 md:py-24 lg:py-28">
       <div className="mx-auto grid max-w-studio gap-12 px-6 md:px-8 lg:grid-cols-2 lg:gap-16">
         <div>
           <h2 className="display-lg max-w-[14ch] text-balance text-studio-text">

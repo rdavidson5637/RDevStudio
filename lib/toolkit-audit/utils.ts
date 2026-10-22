@@ -1,7 +1,8 @@
 import type { ScanStep, UrlValidationResult } from "@/types/toolkit-audit";
+import { SITE_URL } from "@/lib/site";
 
 export const DEFAULT_EXAMPLE_URLS = [
-  { label: "RDev Studio", url: "https://rdevstudio.co.uk" },
+  { label: "RDev Studio", url: SITE_URL },
   { label: "BBC", url: "https://www.bbc.co.uk" },
   { label: "Example.com", url: "https://example.com" },
 ] as const;

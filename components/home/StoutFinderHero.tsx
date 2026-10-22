@@ -21,14 +21,13 @@ export async function StoutFinderHero() {
               : "Every pub in the UK, from OpenStreetMap."}{" "}
             The ones with a recent report show up as a pint.
           </p>
-          <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3">
-            <Button href={STOUT_FINDER.href}>Open Stout Finder</Button>
-            <a
-              href="#offer"
-              className="inline-flex min-h-11 items-center text-base text-studio-text underline decoration-studio-border-strong underline-offset-4 hover:text-studio-accent hover:decoration-studio-accent"
-            >
-              I build sites for NI businesses too, from £{PRICE_WEBSITE_GBP}
-            </a>
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
+            <Button href={STOUT_FINDER.href} className="w-full sm:w-auto">
+              Open Stout Finder
+            </Button>
+            <Button href="#offer" variant="outline" className="w-full sm:w-auto">
+              Need a website? From £{PRICE_WEBSITE_GBP}
+            </Button>
           </div>
         </div>
         <div className="rounded-sm bg-studio-surface px-4 py-10 sm:px-10">
