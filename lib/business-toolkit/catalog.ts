@@ -35,7 +35,6 @@ export const BUSINESS_TOOLS: BusinessTool[] = [
     category: "audit",
     href: `${TOOLKIT_BASE_PATH}/website-grader`,
     featured: true,
-    badge: "new",
     keywords: ["website", "grader", "score", "audit", "performance", "mobile"],
   },
   {
@@ -47,7 +46,6 @@ export const BUSINESS_TOOLS: BusinessTool[] = [
     category: "audit",
     href: `${TOOLKIT_BASE_PATH}/ai-landing-page-auditor`,
     featured: true,
-    badge: "new",
     keywords: ["ai", "landing page", "auditor", "conversion", "copy"],
   },
   {
@@ -59,7 +57,6 @@ export const BUSINESS_TOOLS: BusinessTool[] = [
     category: "audit",
     href: `${TOOLKIT_BASE_PATH}/seo-checker`,
     featured: true,
-    badge: "new",
     keywords: ["seo", "meta", "titles", "headings", "search"],
   },
   {
@@ -71,7 +68,6 @@ export const BUSINESS_TOOLS: BusinessTool[] = [
     category: "audit",
     href: `${TOOLKIT_BASE_PATH}/accessibility-checker`,
     featured: false,
-    badge: "new",
     keywords: ["accessibility", "a11y", "wcag", "contrast", "alt text"],
   },
   {
@@ -83,7 +79,6 @@ export const BUSINESS_TOOLS: BusinessTool[] = [
     category: "audit",
     href: `${TOOLKIT_BASE_PATH}/google-business-profile-audit`,
     featured: false,
-    badge: "new",
     keywords: ["google", "business profile", "gbp", "local", "listings"],
   },
   {
@@ -95,7 +90,6 @@ export const BUSINESS_TOOLS: BusinessTool[] = [
     category: "generator",
     href: `${TOOLKIT_BASE_PATH}/qr-code-generator`,
     featured: true,
-    badge: "new",
     keywords: ["qr", "code", "generator", "download", "wifi"],
   },
   {
@@ -107,7 +101,6 @@ export const BUSINESS_TOOLS: BusinessTool[] = [
     category: "generator",
     href: `${TOOLKIT_BASE_PATH}/invoice-generator`,
     featured: false,
-    badge: "new",
     keywords: ["invoice", "pdf", "billing", "freelance", "payment"],
   },
   {
@@ -119,7 +112,6 @@ export const BUSINESS_TOOLS: BusinessTool[] = [
     category: "generator",
     href: `${TOOLKIT_BASE_PATH}/review-response-generator`,
     featured: false,
-    badge: "new",
     keywords: ["review", "response", "google", "reputation", "reply"],
   },
   {
@@ -131,7 +123,6 @@ export const BUSINESS_TOOLS: BusinessTool[] = [
     category: "creative",
     href: `${TOOLKIT_BASE_PATH}/business-name-generator`,
     featured: false,
-    badge: "new",
     keywords: ["business", "name", "brand", "startup", "naming"],
   },
   {
@@ -143,7 +134,6 @@ export const BUSINESS_TOOLS: BusinessTool[] = [
     category: "creative",
     href: `${TOOLKIT_BASE_PATH}/logo-roast`,
     featured: false,
-    badge: "new",
     keywords: ["logo", "roast", "critique", "brand", "design"],
   },
   {
@@ -155,7 +145,6 @@ export const BUSINESS_TOOLS: BusinessTool[] = [
     category: "generator",
     href: `${TOOLKIT_BASE_PATH}/sitemap-generator`,
     featured: false,
-    badge: "new",
     keywords: ["sitemap", "xml", "seo", "crawl", "urls"],
   },
   {
@@ -167,7 +156,6 @@ export const BUSINESS_TOOLS: BusinessTool[] = [
     category: "generator",
     href: `${TOOLKIT_BASE_PATH}/robots-txt-generator`,
     featured: false,
-    badge: "new",
     keywords: ["robots", "txt", "crawler", "seo", "disallow"],
   },
   {
@@ -179,7 +167,6 @@ export const BUSINESS_TOOLS: BusinessTool[] = [
     category: "generator",
     href: `${TOOLKIT_BASE_PATH}/favicon-generator`,
     featured: false,
-    badge: "new",
     keywords: ["favicon", "icon", "manifest", "pwa", "brand"],
   },
   {
@@ -191,7 +178,6 @@ export const BUSINESS_TOOLS: BusinessTool[] = [
     category: "generator",
     href: `${TOOLKIT_BASE_PATH}/colour-palette-generator`,
     featured: false,
-    badge: "new",
     keywords: ["colour", "palette", "hex", "design", "harmony"],
   },
   {
@@ -203,7 +189,6 @@ export const BUSINESS_TOOLS: BusinessTool[] = [
     category: "generator",
     href: `${TOOLKIT_BASE_PATH}/gradient-generator`,
     featured: false,
-    badge: "new",
     keywords: ["gradient", "css", "tailwind", "linear", "radial"],
   },
 ];

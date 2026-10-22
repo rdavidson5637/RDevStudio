@@ -153,8 +153,6 @@ export const clientWork: ClientWork[] = [
     statusLabel: "Live site - nearly finished",
     summary:
       "A Belfast cold brew and matcha counter. Menu, hours and where to find Unit 11. Square is linked and the last details are being finished.",
-    image: "/work/rvs-cold-brew-desktop.webp",
-    mobileImage: "/work/rvs-cold-brew-mobile.webp",
     stack: ["Next.js", "Tailwind", "Vercel"],
   },
 ];

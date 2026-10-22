@@ -2,16 +2,18 @@ import Image from "next/image";
 import Link from "next/link";
 import { Section } from "@/components/ui/Section";
 import { clientBySlug, type ClientWork as ClientJob } from "@/lib/content/products";
+import { captureFor } from "@/lib/work-captures";
 
 const FEATURED = ["rvs-cold-brew", "shelterlink"] as const;
 
 function Panel({ job }: { job: ClientJob }) {
+  const image = captureFor(job.slug, "desktop") ?? job.image;
   const body = (
     <>
-      {job.image ? (
+      {image ? (
         <div className="relative aspect-[16/10] bg-studio-bg">
           <Image
-            src={job.image}
+            src={image}
             alt={`${job.name} website`}
             fill
             sizes="(max-width: 768px) 100vw, 50vw"

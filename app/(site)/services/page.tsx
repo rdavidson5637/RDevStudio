@@ -96,6 +96,12 @@ export default function ServicesPage() {
           Websites, social media, and content for Northern Ireland small businesses and charities. Clear prices. One person from start to finish.
         </p>
         <p className="type-body mt-4 max-w-prose text-studio-muted">{CHARITY_NOTE}</p>
+        <Link
+          href="/charities"
+          className="mt-1 inline-flex min-h-11 items-center text-sm text-studio-text underline decoration-studio-line-strong underline-offset-4 hover:text-studio-accent"
+        >
+          What charities get
+        </Link>
         <nav className="mt-6 flex flex-wrap gap-x-6" aria-label="Jump to service">
           {SERVICES.map((service) => (
             <a
@@ -162,12 +168,11 @@ export default function ServicesPage() {
             <p className="type-body mt-8 max-w-prose text-studio-muted">
               <span className="font-bold text-studio-text">Ideal for:</span> {details.ideal}
             </p>
-            <Link
-              href="/contact"
-              className="mt-4 inline-flex min-h-11 items-center text-sm text-studio-text underline decoration-studio-line-strong underline-offset-4 hover:text-studio-accent"
-            >
-              {details.cta}
-            </Link>
+            <div className="mt-6">
+              <Button href="/contact" variant="outline">
+                {details.cta}
+              </Button>
+            </div>
           </Section>
         );
       })}

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Button } from "@/components/ui/Button";
 import {
   PRICE_CARE_PLAN_GBP,
@@ -24,11 +25,18 @@ export function OfferBand() {
           </h2>
           <p className="type-body mt-5 max-w-prose text-studio-muted">
             I&apos;m Ryan, one person in Carrickfergus doing the whole job, from the first chat to launch.
+            Shops, trades, restaurants, salons and charities across Northern Ireland.
           </p>
           <ul className="type-body mt-6 max-w-prose space-y-2 text-studio-text">
             <li>Half up front, half when it goes live.</li>
             <li>The domain, the content and the code are yours.</li>
-            <li>Registered charities get every package free. Say you&apos;re registered when you get in touch.</li>
+            <li>
+              Registered charities get every package free.{" "}
+              <Link href="/charities" className="underline decoration-studio-border-strong underline-offset-4 hover:decoration-studio-text">
+                What charities get
+              </Link>
+              .
+            </li>
           </ul>
           <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3">
             <Button href="/contact">Get a quote</Button>
