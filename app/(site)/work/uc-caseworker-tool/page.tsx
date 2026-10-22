@@ -8,7 +8,7 @@ export const metadata = createPageMetadata({
   description:
     "Case study: an AI assistant for Universal Credit caseworkers, built around safeguarding and human-in-the-loop review.",
   path: "/work/uc-caseworker-tool",
-  ogImage: "/work/uc-caseworker-tool/opengraph-image",
+  ogImage: null,
 });
 
 function SectionHeading({ children }: { children: React.ReactNode }) {

@@ -5,7 +5,8 @@ type PageMeta = {
   title: string;
   description?: string;
   path: string;
-  ogImage?: string;
+  /** A path, or null to use the route's own opengraph-image file. Defaults to the studio card. */
+  ogImage?: string | null;
 };
 
 export function createPageMetadata({
@@ -31,13 +32,16 @@ export function createPageMetadata({
       siteName: SITE_NAME,
       locale: "en_GB",
       type: "website",
-      images: [{ url: ogImage, width: 1200, height: 630 }],
+      // No images here unless a page asks for one. Next then uses the nearest
+      // opengraph-image file for the route (nested ones get a hashed URL, so
+      // hard-coding "/work/opengraph-image" gave a 404).
+      ...(ogImage ? { images: [{ url: ogImage, width: 1200, height: 630 }] } : {}),
     },
     twitter: {
       card: "summary_large_image",
       title: pageTitle,
       description,
-      images: [ogImage],
+      ...(ogImage ? { images: [ogImage] } : {}),
     },
   };
 }

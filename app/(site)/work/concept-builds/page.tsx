@@ -8,7 +8,7 @@ export const metadata = createPageMetadata({
   description:
     "Three concept builds showing range across trades, restaurant, and salon website design.",
   path: "/work/concept-builds",
-  ogImage: "/work/concept-builds/opengraph-image",
+  ogImage: null,
 });
 
 function BuildSection({

@@ -7,7 +7,7 @@ export const metadata = createPageMetadata({
   title: "Games",
   description: "Free browser games built by Ryan Davidson. No ads, no sign-up.",
   path: "/games",
-  ogImage: "/games/opengraph-image",
+  ogImage: null,
 });
 
 export default function GamesPage() {

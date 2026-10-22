@@ -9,7 +9,7 @@ export const metadata = createPageMetadata({
   description:
     "Volunteer rotas, roles, and an admin dashboard for Assisi Animal Sanctuary.",
   path: "/work/shelterlink",
-  ogImage: "/work/shelterlink/opengraph-image",
+  ogImage: null,
 });
 
 function SectionHeading({ children }: { children: React.ReactNode }) {

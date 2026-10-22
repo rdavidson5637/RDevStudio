@@ -9,7 +9,7 @@ export const metadata = createPageMetadata({
   title: "Work",
   description: "Client work, concepts, experiments, and free browser games by Ryan Davidson.",
   path: "/work",
-  ogImage: "/work/opengraph-image",
+  ogImage: null,
 });
 
 const OTHER = [
