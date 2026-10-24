@@ -8,12 +8,12 @@ import { SITE_URL } from "@/lib/site";
  */
 const LAST_MODIFIED: Record<string, string> = {
   "/": "2026-10-22",
-  "/services": "2026-10-22",
+  "/services": "2026-10-24",
   "/work": "2026-10-22",
   "/work/rvs-cold-brew": "2026-10-22",
   "/work/shelterlink": "2026-10-22",
   "/work/concept-builds": "2026-10-22",
-  "/about": "2026-10-22",
+  "/about": "2026-10-24",
   "/contact": "2026-10-22",
   "/projects": "2026-10-22",
   "/toolkit": "2026-10-22",

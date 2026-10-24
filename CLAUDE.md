@@ -13,7 +13,8 @@ One-person web studio site for Ryan Davidson, Carrickfergus, NI. Also hosts live
 - Run lint and `npx tsc --noEmit` before saying a change is done.
 
 ## Where the rules live
-- Visual design for this site: `DESIGN.md` points to `.design/brief.md` (Grenadine palette, Big Shoulders Display and Atkinson Hyperlegible, banned list, page jobs). Also `.cursor/rules/design-standards.mdc` and `.cursor/rules/rdev-polish.mdc`. Follow them. Use the `--color-studio-*` tokens, not raw hex. Do not add fonts or colour tokens without saying so.
+- Visual design for this site: `DESIGN.md` points to `.design/brief.md`. Also `.cursor/rules/design-standards.mdc` and `.cursor/rules/rdev-polish.mdc`. Follow them. Use the `--color-studio-*` tokens, not raw hex. Do not add fonts or colour tokens without saying so.
+- Grenadine hex, for the next audit: base `#112F2C`, panel `#183E3A`, panel raised `#1E4A45`, text `#FBE6A0`, muted `#CFC7A3`, faint `#B9B392`, accent `#F48067`, accent hover `#F79A85`, text on accent `#112F2C`, ochre `#E2B540`, text on ochre `#112F2C`.
 - Copy rules: `.claude/rules/copy.md` (loads when you touch app, components or lib).
 - Database and secrets: `.claude/rules/supabase.md` (loads when you touch supabase or lib).
 

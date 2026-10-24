@@ -1,6 +1,6 @@
-import Link from "next/link";
 import Image from "next/image";
 import { Reveal } from "@/components/motion/Reveal";
+import { Button } from "@/components/ui/Button";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata = createPageMetadata({
@@ -92,9 +92,8 @@ export default function AboutPage() {
             <p>
               What I like building is straightforward: useful things for real
               people. A volunteer platform for an animal sanctuary. Sites for
-              local businesses. Football games that strangers on the internet
-              play at work when they should be doing something else. If nobody
-              uses it, I&apos;m not interested.
+              local businesses. Games and tools I make between client jobs. If
+              nobody would use it, I&apos;m not interested.
             </p>
             <p>
               I do design and development both - from first Figma frame to
@@ -122,22 +121,7 @@ export default function AboutPage() {
         </section>
 
         <section className="py-12" aria-label="Call to action">
-          <div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
-            <p className="text-base font-semibold text-primary sm:text-lg">
-              Want the formal version?
-            </p>
-            <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
-              <Link href="/contact" className="btn-secondary">
-                CV on request
-              </Link>
-              <Link
-                href="/contact"
-                className="text-center text-sm font-semibold text-primary underline decoration-border-strong underline-offset-4 transition-colors hover:text-accent sm:text-left"
-              >
-                Get in touch
-              </Link>
-            </div>
-          </div>
+          <Button href="/contact">Get in touch</Button>
         </section>
       </article>
     </div>

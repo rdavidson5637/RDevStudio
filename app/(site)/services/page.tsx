@@ -14,7 +14,7 @@ import {
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata = createPageMetadata({
-  title: "Work with me",
+  title: "Websites, social and content",
   description:
     "Website design, social media management, and content creation for Northern Ireland small businesses and charities. Clear pricing, no nonsense.",
   path: "/services",
@@ -91,11 +91,14 @@ export default function ServicesPage() {
   return (
     <div className="bg-studio-bg text-studio-text">
       <Section>
-        <h1 className="display-lg max-w-[14ch] text-balance text-studio-text">Work with me</h1>
+        <h1 className="display-lg max-w-[16ch] text-balance text-studio-text">Websites, social and content</h1>
         <p className="type-body mt-5 max-w-prose text-studio-muted">
           Websites, social media, and content for Northern Ireland small businesses and charities. Clear prices. One person from start to finish.
         </p>
         <p className="type-body mt-4 max-w-prose text-studio-muted">{CHARITY_NOTE}</p>
+        <div className="mt-8">
+          <Button href="/contact">Get a quote</Button>
+        </div>
         <nav className="mt-6 flex flex-wrap gap-x-6" aria-label="Jump to service">
           {SERVICES.map((service) => (
             <a
