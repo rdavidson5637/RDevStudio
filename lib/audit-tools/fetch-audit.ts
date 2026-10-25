@@ -2,11 +2,11 @@ import type { UrlAuditResult } from "@/types/url-audit-tool";
 
 export async function fetchAuditResult(
   url: string,
-  tool?: "seo",
+  tool?: "seo" | "a11y",
 ): Promise<UrlAuditResult> {
   const params = new URLSearchParams({ url });
-  if (tool === "seo") {
-    params.set("tool", "seo");
+  if (tool) {
+    params.set("tool", tool);
   }
 
   const res = await fetch(`/api/audit?${params}`);

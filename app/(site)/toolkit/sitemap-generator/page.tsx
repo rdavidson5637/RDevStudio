@@ -3,7 +3,7 @@ import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata = createPageMetadata({
   title: "Sitemap Generator",
-  description: "Generate XML sitemaps from a list of URLs.",
+  description: "Paste a list of URLs and download an XML sitemap. It does not crawl the site.",
   path: "/toolkit/sitemap-generator",
 });
 

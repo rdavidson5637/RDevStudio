@@ -4,7 +4,7 @@ import { createPageMetadata } from "@/lib/metadata";
 export const metadata = createPageMetadata({
   title: "Accessibility Checker",
   description:
-    "Free website accessibility checker - contrast, alt text, forms, and keyboard navigation.",
+    "Reads a page for a language, a title, a heading, a viewport, and image alt text. It does not measure contrast or keyboard use.",
   path: "/toolkit/accessibility-checker",
 });
 
