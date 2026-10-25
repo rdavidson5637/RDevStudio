@@ -4,7 +4,7 @@ import { createPageMetadata } from "@/lib/metadata";
 export const metadata = createPageMetadata({
   title: "Google Business Profile Audit",
   description:
-    "Audit your Google Business Profile listing for completeness, photos, reviews, and local SEO.",
+    "A checklist for a Google Business Profile. The page does not invent a score from a website address.",
   path: "/toolkit/google-business-profile-audit",
 });
 

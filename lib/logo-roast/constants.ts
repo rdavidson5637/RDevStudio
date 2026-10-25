@@ -11,9 +11,9 @@ export const ACCEPTED_IMAGE_TYPES = [
   "image/png",
   "image/jpeg",
   "image/webp",
-  "image/svg+xml",
+  "image/gif",
 ] as const;
 
-export const ACCEPTED_IMAGE_EXTENSIONS = ".png,.jpg,.jpeg,.webp,.svg";
+export const ACCEPTED_IMAGE_EXTENSIONS = ".png,.jpg,.jpeg,.webp,.gif";
 
-export const MAX_LOGO_FILE_BYTES = 5 * 1024 * 1024;
+export const MAX_LOGO_FILE_BYTES = 4 * 1024 * 1024;

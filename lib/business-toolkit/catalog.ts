@@ -41,9 +41,9 @@ export const BUSINESS_TOOLS: BusinessTool[] = [
   {
     id: "ai-landing-page-auditor",
     slug: "ai-landing-page-auditor",
-    title: "AI Landing Page Auditor",
+    title: "Landing page checker",
     description:
-      "Paste a URL and get an AI breakdown of messaging, structure, and conversion opportunities.",
+      "Paste a URL. The check reads the HTML for a heading, a description, a way to respond, and a privacy link.",
     category: "audit",
     href: `${TOOLKIT_BASE_PATH}/ai-landing-page-auditor`,
     featured: true,
@@ -55,7 +55,7 @@ export const BUSINESS_TOOLS: BusinessTool[] = [
     slug: "seo-checker",
     title: "SEO Checker",
     description:
-      "Quick on-page SEO scan - titles, meta tags, headings, and the basics that actually matter.",
+      "Reads a page for a title, a meta description, a heading, a canonical, and HTTPS.",
     category: "audit",
     href: `${TOOLKIT_BASE_PATH}/seo-checker`,
     featured: true,
@@ -67,7 +67,7 @@ export const BUSINESS_TOOLS: BusinessTool[] = [
     slug: "accessibility-checker",
     title: "Accessibility Checker",
     description:
-      "Spot common a11y issues - contrast, alt text, labels, and keyboard traps - before your users do.",
+      "Reads the page HTML for a language, a title, a heading, a viewport, and image alt text.",
     category: "audit",
     href: `${TOOLKIT_BASE_PATH}/accessibility-checker`,
     featured: false,
@@ -79,7 +79,7 @@ export const BUSINESS_TOOLS: BusinessTool[] = [
     slug: "google-business-profile-audit",
     title: "Google Business Profile Audit",
     description:
-      "Review your GBP listing for completeness, consistency, and the details local customers notice.",
+      "A checklist for your Google listing. It does not invent a score from a website address.",
     category: "audit",
     href: `${TOOLKIT_BASE_PATH}/google-business-profile-audit`,
     featured: false,
@@ -139,7 +139,7 @@ export const BUSINESS_TOOLS: BusinessTool[] = [
     slug: "logo-roast",
     title: "Logo Roast",
     description:
-      "Upload a logo for a blunt-but-fair critique - typography, colour, scalability, and first impressions.",
+      "Upload a PNG, JPG, WebP, or GIF. A written critique comes back when the roast service is connected.",
     category: "creative",
     href: `${TOOLKIT_BASE_PATH}/logo-roast`,
     featured: false,
@@ -151,7 +151,7 @@ export const BUSINESS_TOOLS: BusinessTool[] = [
     slug: "sitemap-generator",
     title: "Sitemap Generator",
     description:
-      "Crawl a site or paste your URLs to generate a standards-compliant XML sitemap.",
+      "Paste a list of URLs and download an XML sitemap. It does not crawl the site.",
     category: "generator",
     href: `${TOOLKIT_BASE_PATH}/sitemap-generator`,
     featured: false,

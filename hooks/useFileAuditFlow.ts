@@ -8,7 +8,7 @@ import type { AuditPhase, ScanStep } from "@/types/toolkit-audit";
 type UseFileAuditFlowOptions<T> = {
   toolSlug: string;
   steps: readonly ScanStep[];
-  getResult: (fileName: string) => T;
+  getResult: (fileName: string, file: File) => T | Promise<T>;
   stepDurationMs?: number;
 };
 
@@ -24,6 +24,7 @@ export function useFileAuditFlow<T>({
   const [progress, setProgress] = useState(0);
   const [activeStepIndex, setActiveStepIndex] = useState(0);
   const [result, setResult] = useState<T | null>(null);
+  const [error, setError] = useState<string | null>(null);
   const abortRef = useRef(false);
   const previewUrlRef = useRef<string | null>(null);
 
@@ -55,22 +56,30 @@ export function useFileAuditFlow<T>({
       setProgress(0);
       setActiveStepIndex(0);
       setResult(null);
+      setError(null);
 
-      const scanResult = await simulateScan(
-        steps,
-        () => getResult(file.name),
-        (nextProgress, stepIndex) => {
-          if (!abortRef.current) {
-            setProgress(nextProgress);
-            setActiveStepIndex(stepIndex);
-          }
-        },
-        stepDurationMs
-      );
+      try {
+        const scanResult = await simulateScan(
+          steps,
+          () => getResult(file.name, file),
+          (nextProgress, stepIndex) => {
+            if (!abortRef.current) {
+              setProgress(nextProgress);
+              setActiveStepIndex(stepIndex);
+            }
+          },
+          stepDurationMs
+        );
 
-      if (!abortRef.current) {
-        setResult(scanResult);
-        setPhase("results");
+        if (!abortRef.current) {
+          setResult(scanResult);
+          setPhase("results");
+        }
+      } catch (err) {
+        if (!abortRef.current) {
+          setError(err instanceof Error ? err.message : "That didn't work. Try again.");
+          setPhase("error");
+        }
       }
     },
     [steps, getResult, stepDurationMs, setPreview]
@@ -86,6 +95,7 @@ export function useFileAuditFlow<T>({
     setFileName("");
     setPreviewUrl(null);
     setResult(null);
+    setError(null);
     setProgress(0);
     setActiveStepIndex(0);
   }, []);
@@ -97,6 +107,7 @@ export function useFileAuditFlow<T>({
     progress,
     activeStepIndex,
     result,
+    error,
     runScan,
     reset,
   };

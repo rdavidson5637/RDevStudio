@@ -1,6 +1,8 @@
 import { NextResponse } from "next/server";
 import {
+  buildAccessibilityResult,
   buildGraderResult,
+  buildLandingResult,
   buildSeoResult,
   fetchSignals,
   normalizeUrl,
@@ -32,7 +34,11 @@ export async function GET(request: Request) {
     const result =
       tool === "seo"
         ? buildSeoResult(target.toString(), signals)
-        : buildGraderResult(target.toString(), signals);
+        : tool === "a11y"
+          ? buildAccessibilityResult(target.toString(), signals)
+          : tool === "landing"
+            ? buildLandingResult(target.toString(), signals)
+            : buildGraderResult(target.toString(), signals);
     return NextResponse.json(result);
   } catch {
     return NextResponse.json(

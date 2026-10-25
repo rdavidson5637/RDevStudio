@@ -4,7 +4,7 @@ import { createPageMetadata } from "@/lib/metadata";
 export const metadata = createPageMetadata({
   title: "Logo Roast",
   description:
-    "Upload your logo for an honest critique - brand score, typography, colour, scalability, and more from RDev Studio.",
+    "Upload a PNG, JPG, WebP, or GIF for a written critique. If the roast service is not connected, the page says so.",
   path: "/toolkit/logo-roast",
 });
 
