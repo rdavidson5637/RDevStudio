@@ -8,7 +8,7 @@ import { SITE_URL } from "@/lib/site";
  */
 const LAST_MODIFIED: Record<string, string> = {
   "/": "2026-10-22",
-  "/services": "2026-10-22",
+  "/services": "2026-10-25",
   "/work": "2026-10-22",
   "/work/rvs-cold-brew": "2026-10-22",
   "/work/shelterlink": "2026-10-22",

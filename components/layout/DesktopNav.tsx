@@ -9,7 +9,7 @@ export function DesktopNav() {
   const pathname = usePathname();
 
   return (
-    <nav className="hidden items-center gap-7 md:flex" aria-label="Main navigation">
+    <nav className="hidden items-center gap-4 md:flex lg:gap-7" aria-label="Main navigation">
       {SHELL_NAV_LINKS.map((link) => {
         const active = pathname === link.href || pathname.startsWith(`${link.href}/`);
         return (
