@@ -4,7 +4,7 @@ import { createPageMetadata } from "@/lib/metadata";
 export const metadata = createPageMetadata({
   title: "Invoice Generator",
   description:
-    "Create professional invoices in the browser and print or save as PDF.",
+    "Build an invoice in the browser and print it, or save a PDF from the print dialog.",
   path: "/toolkit/invoice-generator",
 });
 

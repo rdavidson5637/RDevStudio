@@ -4,7 +4,7 @@ import { createPageMetadata } from "@/lib/metadata";
 export const metadata = createPageMetadata({
   title: "Website Grader",
   description:
-    "Score any website on SEO, accessibility, performance, security, and best practices - free from RDev Studio.",
+    "Reads one page for a title, headings, image alt text, the server response, and a few security headers. It is not a phone speed test.",
   path: "/toolkit/website-grader",
 });
 

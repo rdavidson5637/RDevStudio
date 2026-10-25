@@ -3,7 +3,8 @@ import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata = createPageMetadata({
   title: "Review Response Generator",
-  description: "Draft replies to Google and social reviews.",
+  description:
+    "Paste a review and get a short draft that quotes it. Read the draft before you post it.",
   path: "/toolkit/review-response-generator",
 });
 

@@ -94,6 +94,52 @@ export function scanUrlError(input: string): string | null {
   return null;
 }
 
+const MAX_HTML_BYTES = 1_500_000;
+
+async function readCappedText(response: Response): Promise<string> {
+  const declared = Number(response.headers.get("content-length"));
+  if (Number.isFinite(declared) && declared > MAX_HTML_BYTES) {
+    await response.body?.cancel();
+    throw new Error("That page is too large to check.");
+  }
+  if (!response.body) {
+    const text = await response.text();
+    if (new TextEncoder().encode(text).byteLength > MAX_HTML_BYTES) {
+      throw new Error("That page is too large to check.");
+    }
+    return text;
+  }
+
+  const reader = response.body.getReader();
+  const chunks: Uint8Array[] = [];
+  let total = 0;
+  while (true) {
+    const { done, value } = await reader.read();
+    if (done) break;
+    total += value.byteLength;
+    if (total > MAX_HTML_BYTES) {
+      await reader.cancel();
+      throw new Error("That page is too large to check.");
+    }
+    chunks.push(value);
+  }
+
+  const merged = new Uint8Array(total);
+  let offset = 0;
+  for (const chunk of chunks) {
+    merged.set(chunk, offset);
+    offset += chunk.byteLength;
+  }
+  return new TextDecoder().decode(merged);
+}
+
+function titleLengthIssue(title: string, min: number, max: number): string {
+  if (!title) return "No title tag";
+  if (title.length < min) return `The title is very short (${title.length} characters)`;
+  if (title.length > max) return `The title is very long (${title.length} characters)`;
+  return "The title length is off";
+}
+
 async function fetchPublic(start: URL): Promise<{ response: Response; finalUrl: string }> {
   let current = start;
 
@@ -124,7 +170,7 @@ export async function fetchSignals(rawUrl: string): Promise<SiteSignals> {
   const started = Date.now();
   const { response: res, finalUrl } = await fetchPublic(new URL(normalizeUrl(rawUrl)));
   const responseTimeMs = Date.now() - started;
-  const html = await res.text();
+  const html = await readCappedText(res);
   const isHttps = finalUrl.startsWith("https://");
 
   const headers: Record<string, string> = {};
@@ -241,14 +287,14 @@ export function buildGraderResult(rawUrl: string, s: SiteSignals): UrlAuditResul
     "SEO",
     [
       { pass: s.title.length > 0, weight: 2, good: "Page title present", bad: "No <title> tag found" },
-      { pass: titleOk, weight: 1, good: "Title length is in a good range", bad: "Title is too short or too long" },
+      { pass: titleOk, weight: 1, good: "Title length is in a good range", bad: titleLengthIssue(s.title, 10, 65) },
       { pass: s.hasMetaDescription, weight: 2, good: "Meta description set", bad: "Meta description missing" },
       { pass: s.hasCanonical, weight: 1, good: "Canonical URL declared", bad: "No canonical tag" },
       { pass: s.hasH1, weight: 1, good: "H1 heading present", bad: "No H1 heading found" },
       { pass: s.hasOpenGraph, weight: 1, good: "Open Graph tags for social sharing", bad: "No Open Graph tags - links look bare when shared" },
     ],
     "Solid on-page SEO foundations.",
-    "On-page SEO has clear gaps holding back search visibility."
+    "On-page SEO has gaps."
   );
 
   const accessibility = scoreCategory(
@@ -270,13 +316,13 @@ export function buildGraderResult(rawUrl: string, s: SiteSignals): UrlAuditResul
 
   const performance = scoreCategory(
     "performance",
-    "Performance",
+    "Server response",
     [
       { pass: s.responseTimeMs <= 800, weight: 3, good: `Fast server response (${s.responseTimeMs}ms)`, bad: `Slow server response (${s.responseTimeMs}ms)` },
       { pass: s.htmlBytes <= 150_000, weight: 2, good: `Lightweight HTML (${Math.round(s.htmlBytes / 1024)}KB)`, bad: `Heavy HTML (${Math.round(s.htmlBytes / 1024)}KB)` },
     ],
-    "First response is quick and lightweight.",
-    "Response time or page weight could be improved."
+    "The server answered quickly and the HTML is light. This is not a phone speed test.",
+    "The server was slow, or the HTML is heavy. This is not a phone speed test."
   );
 
   const security = scoreCategory(
@@ -310,7 +356,7 @@ export function buildGraderResult(rawUrl: string, s: SiteSignals): UrlAuditResul
     rawUrl,
     s,
     [seo, accessibility, performance, security, bestPractices],
-    "A real scan of the fetchable signals - SEO, accessibility basics, speed, security, and best practices."
+    "Checked the HTML, the server response, HTTPS, and a few headers. This is not a phone speed test."
   );
 }
 
@@ -323,7 +369,7 @@ export function buildSeoResult(rawUrl: string, s: SiteSignals): UrlAuditResult {
     "Meta Tags",
     [
       { pass: s.title.length > 0, weight: 2, good: "Title tag found", bad: "No <title> tag" },
-      { pass: titleOk, weight: 1, good: "Title length is sensible", bad: "Title too short or too long" },
+      { pass: titleOk, weight: 1, good: "Title length is sensible", bad: titleLengthIssue(s.title, 10, 65) },
       { pass: s.hasMetaDescription, weight: 2, good: "Meta description set", bad: "Meta description missing or empty" },
       { pass: s.hasOpenGraph, weight: 1, good: "Open Graph tags present", bad: "Open Graph tags incomplete" },
     ],
@@ -407,7 +453,7 @@ export function buildLandingResult(rawUrl: string, s: SiteSignals): LandingPageA
     "First screen",
     [
       { pass: s.h1Text.length > 0, weight: 2, good: "The page has an h1", bad: "No h1 heading" },
-      { pass: s.title.length >= 10 && s.title.length <= 70, weight: 1, good: "The title is a usable length", bad: "The title is missing, very short, or very long" },
+      { pass: s.title.length >= 10 && s.title.length <= 70, weight: 1, good: "The title is a usable length", bad: titleLengthIssue(s.title, 10, 70) },
       { pass: s.hasMetaDescription, weight: 1, good: "A meta description is set", bad: "No meta description" },
     ],
     "The page says what it is in the title and the heading.",
