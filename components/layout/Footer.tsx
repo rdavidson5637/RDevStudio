@@ -58,6 +58,12 @@ export function Footer() {
         <div className="mt-16 flex flex-col gap-4 border-t border-studio-border pt-6 sm:flex-row sm:items-center sm:justify-between">
           <p className="font-studio-sans text-sm text-studio-muted">© 2026 Ryan Davidson</p>
           <p className="text-sm text-studio-muted">Carrickfergus, Northern Ireland</p>
+          <Link
+            href="/privacy"
+            className="inline-flex min-h-11 items-center text-sm text-studio-muted underline decoration-studio-line-strong underline-offset-4 transition-colors hover:text-studio-text focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-studio-text"
+          >
+            Privacy
+          </Link>
           <div className="flex items-center gap-4">
             <a
               href={GITHUB_URL}

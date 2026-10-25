@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
+import Link from "next/link";
 import { FormSendFailure } from "@/components/contact/FormSendFailure";
 import { FormSuccess } from "@/components/contact/FormSuccess";
 import {
@@ -217,6 +218,14 @@ function ContactFormFields({ onReset }: { onReset: () => void }) {
       <button type="submit" disabled={status === "sending"} className={submitButtonClassName}>
         {status === "sending" ? "Sending..." : "Send it"}
       </button>
+      <p className="text-sm leading-relaxed text-studio-muted">
+        <Link
+          href="/privacy"
+          className="text-studio-text underline decoration-studio-line-strong underline-offset-4 hover:text-studio-accent"
+        >
+          How I use what you send
+        </Link>
+      </p>
     </form>
   );
 }

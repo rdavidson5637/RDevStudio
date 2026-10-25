@@ -8,13 +8,15 @@ import { SITE_URL } from "@/lib/site";
  */
 const LAST_MODIFIED: Record<string, string> = {
   "/": "2026-10-22",
-  "/services": "2026-10-24",
+  "/services": "2026-10-25",
   "/work": "2026-10-22",
   "/work/rvs-cold-brew": "2026-10-22",
   "/work/shelterlink": "2026-10-22",
   "/work/concept-builds": "2026-10-22",
-  "/about": "2026-10-24",
+  "/work/uc-caseworker-tool": "2026-10-22",
+  "/about": "2026-10-22",
   "/contact": "2026-10-22",
+  "/privacy": "2026-10-22",
   "/projects": "2026-10-22",
   "/toolkit": "2026-10-22",
   "/toolkit/website-grader": "2026-10-22",
@@ -41,8 +43,10 @@ const STATIC_PATHS = [
   "/work/rvs-cold-brew",
   "/work/shelterlink",
   "/work/concept-builds",
+  "/work/uc-caseworker-tool",
   "/about",
   "/contact",
+  "/privacy",
   "/projects",
   "/toolkit",
 ] as const;

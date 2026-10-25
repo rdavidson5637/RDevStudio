@@ -29,7 +29,7 @@ function BuildSection({
   bleed?: boolean;
 }) {
   return (
-    <section className="border-t border-border py-10 first:border-t-0 first:pt-0">
+    <section className="border-t border-studio-line py-10 first:border-t-0 first:pt-0">
       <h2 className="font-studio-display text-2xl text-studio-text">{title}</h2>
       {bleed ? (
         <div className="mt-5">
@@ -49,14 +49,14 @@ function BuildSection({
           <figcaption className="mt-3 font-studio-sans text-sm text-studio-faint">{screenshotCaption}</figcaption>
         </figure>
       )}
-      <p className="mt-5 max-w-3xl text-base leading-relaxed text-primary sm:text-lg">
+      <p className="mt-5 max-w-prose type-body text-studio-text">
         {description}
       </p>
       <a
         href={href}
         target="_blank"
         rel="noopener noreferrer"
-        className="mt-5 inline-flex items-center text-base font-semibold text-primary transition-colors hover:text-accent"
+        className="mt-5 inline-flex items-center text-base font-semibold text-studio-text transition-colors hover:text-studio-accent"
       >
         Visit the build
       </a>
@@ -97,15 +97,14 @@ const BUILDS = [
 
 export default function ConceptBuildsPage() {
   return (
-    <div className="studio-page px-4 py-16 sm:px-6 md:py-24 lg:py-32">
+    <div className="bg-studio-bg py-16 font-studio-sans text-studio-text md:py-24 lg:py-32">
       <article className="container-wide px-6">
-        <header className="space-y-6 border-b border-border pb-10">
-          <p className="font-studio-sans text-sm text-accent">Case study - 04</p>
+        <header className="space-y-6 border-b border-studio-line pb-10">
           <h1 className="display-lg text-studio-text">Concept builds</h1>
-          <p className="max-w-2xl text-lg text-primary">
+          <p className="type-body max-w-prose text-studio-muted">
             Three sites exploring how local businesses could look online.
           </p>
-          <p className="max-w-3xl text-base leading-relaxed text-primary sm:text-lg">
+          <p className="max-w-prose type-body text-studio-text">
             Not every business I want to design for has hired me yet. These
             three concept builds - a trades firm, a restaurant, and a salon -
             are how I show range: three different brands, three different
@@ -113,7 +112,7 @@ export default function ConceptBuildsPage() {
           </p>
         </header>
 
-        <div className="border-b border-border py-12">
+        <div className="border-b border-studio-line py-12">
           {BUILDS.map((build, index) => (
             <BuildSection key={build.title} {...build} bleed={index === 0} />
           ))}
@@ -123,13 +122,13 @@ export default function ConceptBuildsPage() {
           <div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
             <Link
               href="/work/uc-caseworker-tool"
-              className="font-studio-sans text-sm text-primary transition-colors hover:text-accent"
+              className="font-studio-sans text-sm text-studio-text transition-colors hover:text-studio-accent"
             >
               Next case study
             </Link>
             <Link
               href="/contact"
-              className="text-base text-primary underline decoration-border-strong underline-offset-4 transition-colors hover:text-accent"
+              className="text-base text-studio-text underline decoration-studio-line-strong underline-offset-4 transition-colors hover:text-studio-accent"
             >
               Got a similar problem? Get in touch.
             </Link>

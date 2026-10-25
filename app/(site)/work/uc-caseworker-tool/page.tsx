@@ -26,7 +26,7 @@ function ScreenshotSlot({
 }) {
   return (
     <figure className="space-y-3">
-      <div className="relative h-64 w-full overflow-hidden rounded-lg border border-border bg-raised sm:h-96">
+      <div className="relative h-64 w-full overflow-hidden rounded-lg border border-studio-line bg-studio-surface sm:h-96">
         <Image
           src={src}
           alt={alt}
@@ -51,25 +51,24 @@ const BUILD_FEATURES = [
 
 export default function UcCaseworkerToolCaseStudyPage() {
   return (
-    <div className="studio-page px-4 py-16 sm:px-6 md:py-24 lg:py-32">
+    <div className="bg-studio-bg py-16 font-studio-sans text-studio-text md:py-24 lg:py-32">
       <article className="container-wide px-6">
-        <header className="space-y-6 border-b border-border pb-10">
-          <p className="font-studio-sans text-sm text-accent">Case study - 05</p>
+        <header className="space-y-6 border-b border-studio-line pb-10">
           <h1 className="display-lg text-studio-text">UC Caseworker Assistant</h1>
-          <p className="max-w-2xl text-lg text-primary">
+          <p className="type-body max-w-prose text-studio-muted">
             An AI assistant for Universal Credit caseworkers, built by a
             working caseworker with an MSc in Software Development.
           </p>
 
-          <div className="grid grid-cols-2 gap-x-4 gap-y-2 border-t border-border pt-5 font-studio-sans text-sm text-secondary lg:grid-cols-4">
-            <p>ROLE - Design & development (solo)</p>
+          <div className="grid grid-cols-2 gap-x-4 gap-y-2 border-t border-studio-line pt-5 font-studio-sans text-sm text-studio-muted lg:grid-cols-4">
+            <p>Role: design and development, solo</p>
             <p>Stack: Node.js, Express, Claude API</p>
             <p>Status: Portfolio prototype</p>
             <p>Year - 2026</p>
           </div>
         </header>
 
-        <div className="border-b border-border py-12">
+        <div className="border-b border-studio-line py-12">
           <CaseShot
             src="/images/work/uc-caseworker-journal.jpg"
             alt="UC Caseworker Assistant journal response tool with a synthetic overpayment example loaded"
@@ -78,9 +77,9 @@ export default function UcCaseworkerToolCaseStudyPage() {
           />
         </div>
 
-        <section className="border-b border-border py-12">
+        <section className="border-b border-studio-line py-12">
           <SectionHeading>The problem</SectionHeading>
-          <p className="max-w-3xl text-base leading-relaxed text-primary sm:text-lg">
+          <p className="max-w-prose type-body text-studio-text">
             Caseworkers answer a high volume of claimant journal messages,
             write handover case notes, and populate repetitive standard
             letters every day. Each task carries real weight: a journal
@@ -93,9 +92,9 @@ export default function UcCaseworkerToolCaseStudyPage() {
           </p>
         </section>
 
-        <section className="border-b border-border py-12">
+        <section className="border-b border-studio-line py-12">
           <SectionHeading>The build</SectionHeading>
-          <div className="max-w-3xl space-y-5 text-base leading-relaxed text-primary sm:text-lg">
+          <div className="max-w-prose space-y-5 type-body text-studio-text">
             <p>
               Three tools, one principle throughout: the AI drafts, the
               caseworker decides. The journal assistant classifies a pasted
@@ -121,7 +120,7 @@ export default function UcCaseworkerToolCaseStudyPage() {
             {BUILD_FEATURES.map((feature) => (
               <li
                 key={feature}
-                className="font-studio-sans text-sm rounded-lg border border-border bg-raised px-4 py-3 text-primary"
+                className="font-studio-sans text-sm rounded-lg border border-studio-line bg-studio-surface px-4 py-3 text-studio-text"
               >
                 {feature}
               </li>
@@ -137,14 +136,14 @@ export default function UcCaseworkerToolCaseStudyPage() {
           </div>
         </section>
 
-        <section className="border-b border-border py-12">
+        <section className="border-b border-studio-line py-12">
           <SectionHeading>Decisions</SectionHeading>
           <div className="grid gap-8">
             <section className="space-y-3">
-              <h3 className="text-[1.25rem] font-semibold text-primary">
+              <h3 className="text-[1.25rem] font-semibold text-studio-text">
                 Synthetic data, from the first commit
               </h3>
-              <p className="max-w-3xl text-base leading-relaxed text-primary sm:text-lg">
+              <p className="max-w-prose type-body text-studio-text">
                 This tool never uses, contains or assumes real claimant data.
                 Every example message, name and case detail is fabricated,
                 and operational values - account numbers, sort codes,
@@ -156,10 +155,10 @@ export default function UcCaseworkerToolCaseStudyPage() {
             </section>
 
             <section className="space-y-3">
-              <h3 className="text-[1.25rem] font-semibold text-primary">
+              <h3 className="text-[1.25rem] font-semibold text-studio-text">
                 The AI never invents policy
               </h3>
-              <p className="max-w-3xl text-base leading-relaxed text-primary sm:text-lg">
+              <p className="max-w-prose type-body text-studio-text">
                 Classification picks the relevant guidance files so the model
                 is never asked to search a dump of every policy area, and its
                 system prompt constrains it to draft only from the guidance
@@ -170,10 +169,10 @@ export default function UcCaseworkerToolCaseStudyPage() {
             </section>
 
             <section className="space-y-3">
-              <h3 className="text-[1.25rem] font-semibold text-primary">
+              <h3 className="text-[1.25rem] font-semibold text-studio-text">
                 Letters are code, not a model
               </h3>
-              <p className="max-w-3xl text-base leading-relaxed text-primary sm:text-lg">
+              <p className="max-w-prose type-body text-studio-text">
                 The AI may extract values from pasted text into a form; it
                 never drafts the letter itself. Generating the letter is
                 deterministic string replacement, so fixed legal wording and
@@ -185,10 +184,10 @@ export default function UcCaseworkerToolCaseStudyPage() {
             </section>
 
             <section className="space-y-3">
-              <h3 className="text-[1.25rem] font-semibold text-primary">
+              <h3 className="text-[1.25rem] font-semibold text-studio-text">
                 Safeguarding is flagged, not delegated
               </h3>
-              <p className="max-w-3xl text-base leading-relaxed text-primary sm:text-lg">
+              <p className="max-w-prose type-body text-studio-text">
                 A message that reads as suicide risk, domestic abuse, child
                 safeguarding, homelessness or a fraud admission surfaces a
                 banner before any draft is shown, pointing the caseworker to
@@ -200,9 +199,9 @@ export default function UcCaseworkerToolCaseStudyPage() {
           </div>
         </section>
 
-        <section className="border-b border-border py-12">
+        <section className="border-b border-studio-line py-12">
           <SectionHeading>The result</SectionHeading>
-          <p className="max-w-3xl text-base leading-relaxed text-primary sm:text-lg">
+          <p className="max-w-prose type-body text-studio-text">
             A working prototype that argues two things at once: real
             understanding of the caseworker workflow it was built for, and
             the discipline to build safe, compliant software around an LLM
@@ -215,13 +214,13 @@ export default function UcCaseworkerToolCaseStudyPage() {
           <div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
             <Link
               href="/work"
-              className="font-studio-sans text-sm text-primary transition-colors hover:text-accent"
+              className="font-studio-sans text-sm text-studio-text transition-colors hover:text-studio-accent"
             >
               Back to the work
             </Link>
             <Link
               href="/contact"
-              className="text-base text-primary underline decoration-border-strong underline-offset-4 transition-colors hover:text-accent"
+              className="text-base text-studio-text underline decoration-studio-line-strong underline-offset-4 transition-colors hover:text-studio-accent"
             >
               Got a similar problem? Get in touch.
             </Link>

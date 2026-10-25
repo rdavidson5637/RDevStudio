@@ -2,7 +2,7 @@ export { SITE_URL } from "@/lib/site";
 
 export const SITE_NAME = "RDev Studio";
 export const SITE_TITLE =
-  "RDev Studio, websites for NI businesses and charities";
+  "Web design for NI businesses and charities | RDev Studio, Carrickfergus";
 export const SITE_DESCRIPTION =
   "Websites, social media, and content for Northern Ireland small businesses and charities. Designed and built in Carrickfergus.";
 export const EMAIL = "ryan@rdevstudio.co.uk";

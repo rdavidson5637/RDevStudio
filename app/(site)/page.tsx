@@ -9,7 +9,7 @@ import { TellMe } from "@/components/home/TellMe";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata = createPageMetadata({
-  title: "Websites for NI businesses and charities",
+  title: "Web design for NI businesses and charities",
   description:
     "RDev Studio designs and builds websites for Northern Ireland small businesses and charities. Clear packages, straight prices, based in Carrickfergus.",
   path: "/",

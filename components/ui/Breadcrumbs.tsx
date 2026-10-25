@@ -39,13 +39,13 @@ export function Breadcrumbs({ items, className = "" }: BreadcrumbsProps) {
             return (
               <li key={item.label} className="flex items-center gap-1.5">
                 {index > 0 && (
-                  <span className="text-tertiary" aria-hidden="true">
+                  <span className="text-studio-faint" aria-hidden="true">
                     /
                   </span>
                 )}
                 {isLast || !item.href ? (
                   <span
-                    className={isLast ? "font-medium text-primary" : "text-secondary"}
+                    className={isLast ? "font-medium text-studio-text" : "text-studio-muted"}
                     aria-current={isLast ? "page" : undefined}
                   >
                     {item.label}
@@ -53,7 +53,7 @@ export function Breadcrumbs({ items, className = "" }: BreadcrumbsProps) {
                 ) : (
                   <Link
                     href={item.href}
-                    className="text-secondary transition-colors hover:text-accent"
+                    className="text-studio-muted underline decoration-studio-line-strong underline-offset-4 transition-colors hover:text-studio-accent"
                   >
                     {item.label}
                   </Link>
