@@ -31,7 +31,7 @@ export const BUSINESS_TOOLS: BusinessTool[] = [
     slug: "website-grader",
     title: "Website Grader",
     description:
-      "Score any site on speed, mobile readiness, and first impressions - with plain-English fixes.",
+      "Reads one page for a title, headings, image alt text, the server response, and a few security headers. It is not a phone speed test.",
     category: "audit",
     href: `${TOOLKIT_BASE_PATH}/website-grader`,
     featured: true,
@@ -91,7 +91,7 @@ export const BUSINESS_TOOLS: BusinessTool[] = [
     slug: "qr-code-generator",
     title: "QR Code Generator",
     description:
-      "Create downloadable QR codes for URLs, Wi-Fi, and contact details - no sign-up required.",
+      "Create a QR code for a URL, a Wi-Fi login, or a piece of text. No sign-up.",
     category: "generator",
     href: `${TOOLKIT_BASE_PATH}/qr-code-generator`,
     featured: true,
@@ -103,7 +103,7 @@ export const BUSINESS_TOOLS: BusinessTool[] = [
     slug: "invoice-generator",
     title: "Invoice Generator",
     description:
-      "Build clean, professional invoices in the browser and export as PDF when you're ready to send.",
+      "Build an invoice in the browser and print it, or save a PDF from the print dialog.",
     category: "generator",
     href: `${TOOLKIT_BASE_PATH}/invoice-generator`,
     featured: false,
@@ -115,7 +115,7 @@ export const BUSINESS_TOOLS: BusinessTool[] = [
     slug: "review-response-generator",
     title: "Review Response Generator",
     description:
-      "Draft on-brand replies to Google and social reviews - polite, professional, and ready to tweak.",
+      "Paste a review and get a short draft that quotes it. Read the draft before you post it.",
     category: "generator",
     href: `${TOOLKIT_BASE_PATH}/review-response-generator`,
     featured: false,
@@ -127,7 +127,7 @@ export const BUSINESS_TOOLS: BusinessTool[] = [
     slug: "business-name-generator",
     title: "Business Name Generator",
     description:
-      "Brainstorm name ideas by industry, tone, and keywords - then shortlist your favourites.",
+      "Shuffle name ideas from your keywords and the industry. It mixes words. It does not check if a name is free.",
     category: "creative",
     href: `${TOOLKIT_BASE_PATH}/business-name-generator`,
     featured: false,
@@ -175,7 +175,7 @@ export const BUSINESS_TOOLS: BusinessTool[] = [
     slug: "favicon-generator",
     title: "Favicon Generator",
     description:
-      "Turn an image or lettermark into favicon sizes and a web app manifest - ready to drop in your project.",
+      "Upload an image and download PNG favicons at 16, 32, 180, and 512 pixels.",
     category: "generator",
     href: `${TOOLKIT_BASE_PATH}/favicon-generator`,
     featured: false,

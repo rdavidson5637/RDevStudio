@@ -3,7 +3,7 @@ import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata = createPageMetadata({
   title: "Favicon Generator",
-  description: "Upload an image and download favicon PNG sizes.",
+  description: "Upload an image and download PNG favicons at 16, 32, 180, and 512 pixels.",
   path: "/toolkit/favicon-generator",
 });
 

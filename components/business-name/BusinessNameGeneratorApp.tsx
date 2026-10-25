@@ -1,30 +1,10 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 import { ToolkitToolHeader } from "@/components/toolkit-audit/ToolkitToolHeader";
 import { FadeIn } from "@/components/toolkit-audit/FadeIn";
 import { recordRecentSlug } from "@/lib/business-toolkit/storage";
-
-const PREFIXES = [
-  "North",
-  "Bright",
-  "True",
-  "Peak",
-  "Urban",
-  "Green",
-  "Blue",
-  "Carrick",
-];
-const SUFFIXES = [
-  "Works",
-  "Co",
-  "Studio",
-  "Labs",
-  "Collective",
-  "Digital",
-  "Group",
-  "HQ",
-];
+import { buildNameIdeas } from "@/lib/business-name/ideas";
 
 export function BusinessNameGeneratorApp() {
   const [keywords, setKeywords] = useState("coffee, belfast, craft");
@@ -35,36 +15,8 @@ export function BusinessNameGeneratorApp() {
     recordRecentSlug("business-name-generator");
   }, []);
 
-  const keywordList = useMemo(
-    () =>
-      keywords
-        .split(/[,\s]+/)
-        .map((k) => k.trim())
-        .filter(Boolean),
-    [keywords],
-  );
-
   const generate = () => {
-    const names = new Set<string>();
-    const bases = keywordList.length ? keywordList : [industry || "brand"];
-    while (names.size < 12) {
-      const base = bases[Math.floor(Math.random() * bases.length)];
-      const cap = base.charAt(0).toUpperCase() + base.slice(1);
-      const style = Math.random();
-      if (style < 0.33)
-        names.add(
-          `${PREFIXES[Math.floor(Math.random() * PREFIXES.length)]} ${cap}`,
-        );
-      else if (style < 0.66)
-        names.add(
-          `${cap} ${SUFFIXES[Math.floor(Math.random() * SUFFIXES.length)]}`,
-        );
-      else
-        names.add(
-          `${cap}${SUFFIXES[Math.floor(Math.random() * SUFFIXES.length)]}`,
-        );
-    }
-    setResults([...names]);
+    setResults(buildNameIdeas(keywords, industry));
   };
 
   return (
@@ -72,7 +24,7 @@ export function BusinessNameGeneratorApp() {
       <ToolkitToolHeader
         category="Creative & brand"
         title="Business Name Generator"
-        description="Brainstorm name ideas by industry and keywords - shuffle until something sticks."
+        description="Shuffle name ideas from your keywords and the industry. It mixes words. It does not check if a name is free."
       />
       <div className="grid gap-8 py-10 lg:grid-cols-2">
         <FadeIn className="space-y-4 rounded-[10px] border border-border-strong bg-raised p-5 sm:p-6">
@@ -110,7 +62,7 @@ export function BusinessNameGeneratorApp() {
                   <button
                     type="button"
                     onClick={() => navigator.clipboard.writeText(name)}
-                    className="w-full rounded-md border border-border-strong bg-paper px-4 py-3 text-left text-primary transition-colors hover:border-accent hover:text-accent"
+                    className="min-h-12 w-full rounded-md border border-border-strong bg-paper px-4 py-3 text-left text-primary transition-colors hover:border-accent hover:text-accent"
                   >
                     {name}
                   </button>
