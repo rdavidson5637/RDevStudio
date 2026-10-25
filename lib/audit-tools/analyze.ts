@@ -47,17 +47,79 @@ export function normalizeUrl(input: string): string {
   return trimmed;
 }
 
+function isBlockedHost(hostname: string): boolean {
+  const host = hostname.toLowerCase().replace(/^\[|\]$/g, "");
+  if (
+    host === "localhost" ||
+    host.endsWith(".localhost") ||
+    host.endsWith(".local") ||
+    host.endsWith(".internal") ||
+    host === "0.0.0.0" ||
+    host === "::1" ||
+    host === "metadata.google.internal"
+  ) {
+    return true;
+  }
+  if (host.startsWith("127.") || host.startsWith("10.") || host.startsWith("192.168.") || host.startsWith("169.254.")) {
+    return true;
+  }
+  if (/^172\.(1[6-9]|2\d|3[01])\./.test(host)) return true;
+  if (/^100\.(6[4-9]|[7-9]\d|1[01]\d|12[0-7])\./.test(host)) return true;
+  if (host.includes(":")) {
+    const bare = host.split("%")[0];
+    if (bare === "::1" || bare.startsWith("fc") || bare.startsWith("fd") || bare.startsWith("fe80")) return true;
+  }
+  return false;
+}
+
+/** Returns an error message when a grader URL is not a public http(s) address. */
+export function scanUrlError(input: string): string | null {
+  let url: URL;
+  try {
+    url = new URL(normalizeUrl(input));
+  } catch {
+    return "That doesn't look like a valid URL.";
+  }
+  if (url.protocol !== "http:" && url.protocol !== "https:") {
+    return "That doesn't look like a valid URL.";
+  }
+  if (url.username || url.password || isBlockedHost(url.hostname)) {
+    return "That host can't be scanned.";
+  }
+  return null;
+}
+
+async function fetchPublic(start: URL): Promise<{ response: Response; finalUrl: string }> {
+  let current = start;
+
+  for (let hop = 0; hop < 5; hop += 1) {
+    const response = await fetch(current, {
+      redirect: "manual",
+      headers: { "User-Agent": `RDevStudioGrader/1.0 (+${SITE_URL})` },
+      signal: AbortSignal.timeout(12_000),
+    });
+    if (response.status < 300 || response.status >= 400) {
+      return { response, finalUrl: current.toString() };
+    }
+    const location = response.headers.get("location");
+    if (!location) break;
+    const next = new URL(location, current);
+    if (scanUrlError(next.toString())) {
+      throw new Error("That host can't be scanned.");
+    }
+    current = next;
+  }
+
+  throw new Error("Couldn't reach that site.");
+}
+
 export async function fetchSignals(rawUrl: string): Promise<SiteSignals> {
-  const url = normalizeUrl(rawUrl);
+  const blocked = scanUrlError(rawUrl);
+  if (blocked) throw new Error(blocked);
   const started = Date.now();
-  const res = await fetch(url, {
-    redirect: "follow",
-    headers: { "User-Agent": `RDevStudioGrader/1.0 (+${SITE_URL})` },
-    signal: AbortSignal.timeout(12_000),
-  });
+  const { response: res, finalUrl } = await fetchPublic(new URL(normalizeUrl(rawUrl)));
   const responseTimeMs = Date.now() - started;
   const html = await res.text();
-  const finalUrl = res.url || url;
   const isHttps = finalUrl.startsWith("https://");
 
   const headers: Record<string, string> = {};

@@ -42,7 +42,12 @@ export default function AboutPage() {
       <article className="mx-auto max-w-studio">
         <header className="border-b border-studio-line pb-10">
           <div className="grid gap-8 lg:grid-cols-[1fr_280px] lg:items-end">
-            <h1 className="display-lg text-studio-text">Ryan Davidson</h1>
+            <div>
+              <h1 className="display-lg text-studio-text">Ryan Davidson</h1>
+              <div className="mt-8">
+                <Button href="/contact">Get in touch</Button>
+              </div>
+            </div>
             <figure>
               <div className="relative aspect-[3/4] w-full overflow-hidden bg-studio-surface">
                 <Image

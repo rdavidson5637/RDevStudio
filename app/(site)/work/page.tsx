@@ -1,116 +1,133 @@
 import Link from "next/link";
-import { Reveal } from "@/components/motion/Reveal";
-import { ProductCard } from "@/components/products/ProductCard";
+import { CaseShot } from "@/components/work/CaseShot";
+import { Button } from "@/components/ui/Button";
 import { Section } from "@/components/ui/Section";
-import { BrowserFrame } from "@/components/work/BrowserFrame";
-import { clientBySlug, productBySlug, type ClientWork } from "@/lib/content/products";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata = createPageMetadata({
   title: "Work",
-  description: "Client work, experiments, and free browser games by Ryan Davidson.",
+  description:
+    "Client work from RDev Studio: ShelterLink, RV's Cold Brew, and other builds. Based in Carrickfergus.",
   path: "/work",
   ogImage: "/work/opengraph-image",
 });
 
-const OTHER = [
+const ROWS = [
+  {
+    title: "ShelterLink",
+    line: "Ready for live use. Volunteer rotas, roles and an admin dashboard for Assisi Animal Sanctuary.",
+    href: "/work/shelterlink",
+  },
+  {
+    title: "Assisi Animal Sanctuary",
+    line: "A rebuilt site and brand. Built, awaiting their sign-off.",
+  },
   {
     title: "Concept builds",
-    description: "Three local-business sites: trades, restaurant, salon.",
+    line: "Three local-business sites: trades, restaurant, salon.",
     href: "/work/concept-builds",
   },
   {
     title: "UC Caseworker Assistant",
-    description: "AI assistant for Universal Credit caseworkers, built around safeguarding.",
+    line: "An assistant for Universal Credit casework, built around safeguarding.",
     href: "/work/uc-caseworker-tool",
+  },
+  {
+    title: "Stout Finder",
+    line: "Which pubs have stout on, and when someone last checked. Lives at stoutfinder.com.",
+    href: "https://stoutfinder.com",
+    external: true,
+  },
+  {
+    title: "Games and side projects",
+    line: "Draft tools, a pub quiz, and two things still being built.",
+    href: "/projects",
   },
 ] as const;
 
-const GAME_SLUGS = ["champions-draft", "rugby-draft", "longest-word", "pub-quiz"] as const;
+function WorkRow({
+  title,
+  line,
+  href,
+  external,
+}: {
+  title: string;
+  line: string;
+  href?: string;
+  external?: boolean;
+}) {
+  const body = (
+    <>
+      <span>
+        <span className="block font-studio-display text-2xl text-studio-text">{title}</span>
+        <span className="type-body mt-1 block max-w-prose text-studio-muted">{line}</span>
+      </span>
+      {href ? (
+        <span aria-hidden="true" className="text-2xl text-studio-text transition-colors group-hover:text-studio-accent">
+          →
+        </span>
+      ) : null}
+    </>
+  );
 
-function domainOf(url?: string) {
-  if (!url) return undefined;
-  try {
-    return new URL(url).host;
-  } catch {
-    return undefined;
+  if (!href) {
+    return <div className="flex items-center justify-between gap-6 py-6">{body}</div>;
   }
-}
 
-function ClientCard({ job }: { job: ClientWork }) {
   return (
-    <article className="card flex h-full flex-col overflow-hidden">
-      <BrowserFrame
-        src={job.slug === "assisi" ? undefined : job.image}
-        alt={job.image && job.slug !== "assisi" ? `${job.name} website` : ""}
-        domain={domainOf(job.siteUrl)}
-        sizes="(max-width: 768px) 100vw, 33vw"
-        mutedLabel="Preview after sign-off"
-      />
-      <div className="flex flex-1 flex-col p-5">
-        <p className="text-sm font-bold text-studio-muted">{job.statusLabel}</p>
-        <h3 className="mt-2 font-studio-display text-2xl text-studio-text">{job.name}</h3>
-        <p className="type-body mt-2 text-studio-muted">{job.summary}</p>
-        {job.href && job.href !== "/work" ? (
-          <Link href={job.href} className="mt-4 inline-flex min-h-11 items-center text-sm underline underline-offset-4 hover:text-studio-accent">
-            Read the case study
-          </Link>
-        ) : null}
-      </div>
-    </article>
+    <Link
+      href={href}
+      target={external ? "_blank" : undefined}
+      rel={external ? "noopener noreferrer" : undefined}
+      className="group flex min-h-11 items-center justify-between gap-6 py-6 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-studio-text"
+    >
+      {body}
+    </Link>
   );
 }
 
 export default function WorkPage() {
-  const clients = ["shelterlink", "rvs-cold-brew", "assisi"]
-    .map((slug) => clientBySlug(slug))
-    .filter((job) => job !== undefined);
-  const stoutFinder = productBySlug("stout-finder");
-  const games = GAME_SLUGS.map((slug) => productBySlug(slug)).filter((product) => product !== undefined);
-
   return (
-    <Section className="bg-bg text-studio-text">
-      <h1 className="display-lg text-studio-text">Work</h1>
-      <p className="type-body mt-5 max-w-xl text-studio-muted">Client jobs first. Experiments and games further down.</p>
+    <div className="bg-studio-bg text-studio-text">
+      <Section>
+        <h1 className="display-lg text-studio-text">Work</h1>
+        <p className="type-body mt-5 max-w-prose text-studio-muted">
+          Client jobs first. Games and the things still being built are on the projects page.
+        </p>
+        <div className="mt-8">
+          <Button href="/contact">Get a quote</Button>
+        </div>
+      </Section>
 
-      <h2 className="type-h2 mt-14 text-studio-text">Client work</h2>
-      <p className="type-body mt-2 text-studio-muted">Jobs for real organisations.</p>
-      <div className="mt-6 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-        {clients.map((job, index) => (
-          <Reveal key={job.slug} delay={index * 60}>
-            <ClientCard job={job} />
-          </Reveal>
-        ))}
-      </div>
-
-      {stoutFinder ? (
-        <>
-          <h2 className="type-h2 mt-16 text-studio-text">My own product</h2>
-          <p className="type-body mt-2 text-studio-muted">Built and run by me.</p>
-          <div className="mt-6 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-            <ProductCard product={stoutFinder} />
-          </div>
-        </>
-      ) : null}
-
-      <h2 className="type-h2 mt-16 text-studio-text">Other work</h2>
-      <p className="type-body mt-2 text-studio-muted">Concept builds and a personal experiment. Not client jobs.</p>
-      <div className="mt-6 grid gap-4 md:grid-cols-2">
-        {OTHER.map((item) => (
-          <Link key={item.href} href={item.href} className="card block p-5">
-            <span className="font-studio-display text-2xl text-studio-text">{item.title}</span>
-            <span className="type-body mt-2 block text-studio-muted">{item.description}</span>
+      <section className="border-t border-studio-line pb-8" aria-label="RV's Cold Brew">
+        <CaseShot
+          src="/images/work/rvs-coldbrew-hero.jpg"
+          alt="RV's Cold Brew landing page hero screenshot"
+          caption="RV's Cold Brew, Great Northern Mall. Nearly finished."
+          priority
+        />
+        <div className="mx-auto max-w-studio px-6 pt-4 md:px-8">
+          <Link
+            href="/work/rvs-cold-brew"
+            className="inline-flex min-h-11 items-center text-base text-studio-text underline decoration-studio-line-strong underline-offset-4 hover:text-studio-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-studio-text"
+          >
+            Read the case study
           </Link>
-        ))}
-      </div>
+        </div>
+      </section>
 
-      <h2 className="type-h2 mt-16 text-studio-text">Games</h2>
-      <p className="type-body mt-2 text-studio-muted">Free in the browser.</p>
-      <div className="mt-6 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
-        {games.map((game) => (
-          <ProductCard key={game.slug} product={game} />
-        ))}
-      </div>
-    </Section>
+      <section className="border-t border-studio-line">
+        <div className="mx-auto max-w-studio px-6 md:px-8">
+          <h2 className="type-h2 pt-16 text-studio-text">The rest</h2>
+          <ul className="mt-6 border-t border-studio-line">
+            {ROWS.map((row) => (
+              <li key={row.title} className="border-b border-studio-line">
+                <WorkRow {...row} />
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+    </div>
   );
 }

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Pitch } from "@/components/home/Pitch";
 import { UnderTheHood } from "@/components/home/UnderTheHood";
+import { Button } from "@/components/ui/Button";
 import { Section } from "@/components/ui/Section";
 import { soonProducts } from "@/lib/content/products";
 import { createPageMetadata } from "@/lib/metadata";
@@ -20,6 +21,9 @@ export default function ProjectsPage() {
         <p className="type-body mt-5 max-w-xl text-studio-muted">
           Not client work. Some of these are live. Two at the bottom are still being built.
         </p>
+        <div className="mt-8">
+          <Button href="/contact">Get a quote</Button>
+        </div>
       </Section>
       <Pitch showSoon={false} />
       <section className="border-t border-studio-line">

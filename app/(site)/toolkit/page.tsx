@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Button } from "@/components/ui/Button";
 import { Section } from "@/components/ui/Section";
 import { BUSINESS_TOOLS } from "@/lib/business-toolkit/catalog";
 import { createPageMetadata } from "@/lib/metadata";
@@ -56,6 +57,9 @@ export default function ToolkitPage() {
     <Section className="bg-bg text-studio-text">
       <h1 className="display-lg text-studio-text">Tools</h1>
       <p className="type-body mt-5 max-w-xl text-studio-muted">Free to use, no sign-up. Audits, generators, and a few utilities.</p>
+      <div className="mt-8">
+        <Button href="/contact">Get a quote</Button>
+      </div>
       <div className="mt-14 space-y-14">
         {groups.map((group) => (
           <section key={group.title}>
