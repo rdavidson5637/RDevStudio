@@ -77,33 +77,43 @@ export const STUDIO_PROJECTS = [
 ] as const;
 
 export const SHELL_NAV_LINKS = [
-  { href: "/services", label: "Services" },
   { href: "/work", label: "Work" },
-  { href: "/projects", label: "Projects" },
-  { href: "/toolkit", label: "Toolkit" },
+  { href: "/services", label: "Services" },
+  { href: "/services/charities", label: "Charities" },
   { href: "/about", label: "About" },
-  { href: "/contact", label: "Contact" },
+] as const;
+
+export const LAB_NAV_LINKS = [
+  { href: "/lab", label: "The Lab" },
+  { href: "https://stoutfinder.com", label: "Stout Finder", external: true },
+  { href: "/champions-draft", label: "Champions Draft" },
+  { href: "/rugby-draft", label: "Rugby Draft" },
+  { href: "/pub-quiz", label: "Pub Quiz" },
+  { href: "/games/longest-word", label: "Longest Word" },
+  { href: "/draft", label: "Draft Analyser" },
+  { href: "/toolkit", label: "Business Toolkit" },
 ] as const;
 
 export const SECONDARY_NAV_HUBS = [
+  { href: "/lab", label: "Lab" },
   { href: "/games", label: "Games" },
   { href: "/toolkit", label: "Tools" },
   { href: "/interactive", label: "Play" },
 ] as const;
 
 export const SECONDARY_NAV_LINKS = [
+  { href: "/lab", label: "Lab" },
   { href: "/games", label: "Games" },
   { href: "/champions-draft", label: "Champions Draft" },
   { href: "/rugby-draft", label: "Rugby Draft" },
   { href: "/pub-quiz", label: "Pub Quiz" },
   { href: "/draft", label: "Draft Analyser" },
-  { href: "/wardrobe-ai", label: "Wardrobe AI" },
   { href: "https://stoutfinder.com", label: "Stout Finder" },
 ] as const;
 
 export const SOCIAL_LINKS = [
   {
-    href: "https://www.instagram.com/rdevstudio_",
+    href: "https://www.instagram.com/mgsldavi",
     label: "Instagram",
     icon: "instagram" as const,
   },

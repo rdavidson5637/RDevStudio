@@ -11,7 +11,10 @@ export function DesktopNav() {
   return (
     <nav className="hidden items-center gap-7 md:flex" aria-label="Main navigation">
       {SHELL_NAV_LINKS.map((link) => {
-        const active = pathname === link.href || pathname.startsWith(`${link.href}/`);
+        const active =
+          link.href === "/services"
+            ? pathname === "/services" || pathname.startsWith("/services/businesses")
+            : pathname === link.href || pathname.startsWith(`${link.href}/`);
         return (
           <Link
             key={link.href}
@@ -26,7 +29,7 @@ export function DesktopNav() {
         );
       })}
       <Button href="/contact" size="sm">
-        Get a quote
+        Contact
       </Button>
     </nav>
   );

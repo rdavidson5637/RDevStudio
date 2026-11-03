@@ -12,7 +12,10 @@ export function MobileNav() {
     setOpen(false);
   }, [pathname]);
 
-  const isActive = (href: string) => pathname === href || pathname.startsWith(`${href}/`);
+  const isActive = (href: string) =>
+    href === "/services"
+      ? pathname === "/services" || pathname.startsWith("/services/businesses")
+      : pathname === href || pathname.startsWith(`${href}/`);
 
   return (
     <>

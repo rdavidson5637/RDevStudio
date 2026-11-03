@@ -102,7 +102,7 @@ export function MobileMenu({ open, onClose, isActive }: MobileMenuProps) {
 
       <div>
         <Button href="/contact" className="w-full" onClick={onClose}>
-          Get a quote
+          Contact
         </Button>
         <a
           href={WHATSAPP_URL}
@@ -110,7 +110,7 @@ export function MobileMenu({ open, onClose, isActive }: MobileMenuProps) {
           target="_blank"
           rel="noopener noreferrer"
         >
-          WhatsApp
+          Message me on WhatsApp
         </a>
       </div>
     </div>,

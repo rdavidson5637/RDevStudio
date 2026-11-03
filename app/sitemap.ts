@@ -7,17 +7,20 @@ import { SITE_URL } from "@/lib/site";
  * Do not stamp these with the build time.
  */
 const LAST_MODIFIED: Record<string, string> = {
-  "/": "2026-10-22",
-  "/services": "2026-10-22",
-  "/work": "2026-10-22",
+  "/": "2026-11-03",
+  "/services": "2026-11-03",
+  "/services/businesses": "2026-11-03",
+  "/services/charities": "2026-11-03",
+  "/work": "2026-11-03",
   "/work/rvs-cold-brew": "2026-10-22",
   "/work/shelterlink": "2026-10-22",
   "/work/concept-builds": "2026-10-22",
   "/work/uc-caseworker-tool": "2026-10-22",
-  "/about": "2026-10-22",
-  "/contact": "2026-10-22",
+  "/about": "2026-11-03",
+  "/contact": "2026-11-03",
   "/privacy": "2026-10-22",
-  "/projects": "2026-10-22",
+  "/lab": "2026-11-03",
+  "/projects": "2026-11-03",
   "/toolkit": "2026-10-22",
   "/toolkit/website-grader": "2026-10-22",
   "/toolkit/ai-landing-page-auditor": "2026-10-22",
@@ -39,6 +42,8 @@ const LAST_MODIFIED: Record<string, string> = {
 const STATIC_PATHS = [
   "/",
   "/services",
+  "/services/businesses",
+  "/services/charities",
   "/work",
   "/work/rvs-cold-brew",
   "/work/shelterlink",
@@ -47,6 +52,7 @@ const STATIC_PATHS = [
   "/about",
   "/contact",
   "/privacy",
+  "/lab",
   "/projects",
   "/toolkit",
 ] as const;
