@@ -42,7 +42,12 @@ export default function AboutPage() {
       <article className="mx-auto max-w-studio">
         <header className="border-b border-studio-line pb-10">
           <div className="grid gap-8 lg:grid-cols-[1fr_280px] lg:items-end">
-            <h1 className="display-lg text-studio-text">Ryan Davidson</h1>
+            <div>
+              <h1 className="display-lg text-studio-text">Ryan Davidson</h1>
+              <p className="type-body mt-4 max-w-prose text-studio-muted">
+                One-person studio in Carrickfergus. When you hire RDev Studio, you deal with me from the first message to the live site.
+              </p>
+            </div>
             <figure>
               <div className="relative aspect-[3/4] w-full overflow-hidden bg-studio-surface">
                 <Image
@@ -114,7 +119,7 @@ export default function AboutPage() {
         <section className="py-12" aria-label="Get in touch">
           <p className="type-body max-w-prose text-studio-muted">CV on request.</p>
           <div className="mt-6">
-            <Button href="/contact">Get in touch</Button>
+            <Button href="/contact">Get a fixed quote</Button>
           </div>
         </section>
       </article>
