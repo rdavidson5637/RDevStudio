@@ -5,11 +5,11 @@ import { DRAFT_CTAS, DRAFT_HERO } from "@/lib/content/redesign-draft";
 
 export function Hero() {
   return (
-    <section className="border-b border-studio-line py-14 md:py-24 lg:py-28">
+    <section className="border-b border-studio-line py-14 md:py-20 lg:py-20">
       <div className="mx-auto max-w-studio px-6 md:px-8">
         <div className="grid items-center gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
           <div>
-            <h1 className="display-xl max-w-[16ch] text-balance text-studio-text">
+            <h1 className="display-lg max-w-[18ch] text-balance text-studio-text">
               {DRAFT_HERO.h1}
             </h1>
             <p className="type-body mt-6 max-w-prose text-studio-muted">
