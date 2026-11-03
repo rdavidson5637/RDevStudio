@@ -2,13 +2,12 @@ import Link from "next/link";
 import { Pitch } from "@/components/home/Pitch";
 import { UnderTheHood } from "@/components/home/UnderTheHood";
 import { Section } from "@/components/ui/Section";
-import { soonProducts } from "@/lib/content/products";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata = createPageMetadata({
   title: "Projects",
   description:
-    "Games and side projects from RDev Studio: Champions Draft, Rugby Draft, Pub Quiz, Longest Word, Draft Analyser, Wardrobe AI, and interactive tools.",
+    "Games and side projects from RDev Studio: Champions Draft, Rugby Draft, Pub Quiz, Longest Word, Draft Analyser, and interactive tools.",
   path: "/projects",
 });
 
@@ -18,7 +17,14 @@ export default function ProjectsPage() {
       <Section>
         <h1 className="display-lg max-w-3xl text-balance text-studio-text">Projects</h1>
         <p className="type-body mt-5 max-w-xl text-studio-muted">
-          Not client work. Some of these are live. Two at the bottom are still being built.
+          Games, live tools, and browser builds outside client work. See everything together in{" "}
+          <Link
+            href="/lab"
+            className="text-studio-text underline decoration-studio-line-strong underline-offset-4 hover:text-studio-accent"
+          >
+            the Lab
+          </Link>
+          .
         </p>
       </Section>
       <Pitch showSoon={false} />
@@ -44,16 +50,6 @@ export default function ProjectsPage() {
         </div>
       </section>
       <UnderTheHood />
-      <Section heading="Still being built">
-        <ul className="mt-8 border-t border-studio-line">
-          {soonProducts.map((product) => (
-            <li key={product.slug} className="border-b border-studio-line py-5">
-              <p className="font-studio-display text-2xl text-studio-text">{product.name}</p>
-              <p className="type-body mt-2 max-w-prose text-studio-muted">{product.tagline}</p>
-            </li>
-          ))}
-        </ul>
-      </Section>
     </div>
   );
 }
