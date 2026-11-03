@@ -11,7 +11,7 @@ export function ProofStrip() {
               <h2 className="font-studio-display text-2xl text-studio-text">
                 <Link
                   href={item.href}
-                  className="underline decoration-studio-line underline-offset-4 transition-colors hover:text-studio-accent hover:decoration-studio-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-studio-text"
+                  className="inline-flex min-h-11 items-center underline decoration-studio-line underline-offset-4 transition-colors hover:text-studio-accent hover:decoration-studio-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-studio-text"
                 >
                   {item.name}
                 </Link>
