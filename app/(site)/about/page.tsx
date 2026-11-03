@@ -47,6 +47,9 @@ export default function AboutPage() {
               <p className="type-body mt-4 max-w-prose text-studio-muted">
                 One-person studio in Carrickfergus. When you hire RDev Studio, you deal with me from the first message to the live site.
               </p>
+              <div className="mt-8">
+                <Button href="/contact">Get a fixed quote</Button>
+              </div>
             </div>
             <figure>
               <div className="relative aspect-[3/4] w-full overflow-hidden bg-studio-surface">

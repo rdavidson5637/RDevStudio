@@ -4,7 +4,7 @@ import { createPageMetadata } from "@/lib/metadata";
 export const metadata = createPageMetadata({
   title: "SEO Checker",
   description:
-    "Free on-page SEO checker - meta tags, headings, links, and technical SEO from RDev Studio.",
+    "Reads a page for a title, a meta description, a heading, a canonical, and HTTPS.",
   path: "/toolkit/seo-checker",
 });
 

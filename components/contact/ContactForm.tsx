@@ -125,7 +125,7 @@ function ContactFormFields({ onReset }: { onReset: () => void }) {
           className={inputClassName}
         />
         {errors.name ? (
-          <p id="name-error" className="mt-1.5 text-sm text-studio-accent" aria-live="polite">
+          <p id="name-error" className="mt-1.5 text-sm font-bold text-studio-text" aria-live="polite">
             {errors.name}
           </p>
         ) : null}
@@ -148,7 +148,7 @@ function ContactFormFields({ onReset }: { onReset: () => void }) {
           className={inputClassName}
         />
         {errors.email ? (
-          <p id="email-error" className="mt-1.5 text-sm text-studio-accent" aria-live="polite">
+          <p id="email-error" className="mt-1.5 text-sm font-bold text-studio-text" aria-live="polite">
             {errors.email}
           </p>
         ) : null}
@@ -178,7 +178,7 @@ function ContactFormFields({ onReset }: { onReset: () => void }) {
           ))}
         </select>
         {errors.enquiryType ? (
-          <p id="enquiryType-error" className="mt-1.5 text-sm text-studio-accent" aria-live="polite">
+          <p id="enquiryType-error" className="mt-1.5 text-sm font-bold text-studio-text" aria-live="polite">
             {errors.enquiryType}
           </p>
         ) : null}
@@ -200,7 +200,7 @@ function ContactFormFields({ onReset }: { onReset: () => void }) {
           className={`${inputClassName} resize-y`}
         />
         {errors.message ? (
-          <p id="message-error" className="mt-1.5 text-sm text-studio-accent" aria-live="polite">
+          <p id="message-error" className="mt-1.5 text-sm font-bold text-studio-text" aria-live="polite">
             {errors.message}
           </p>
         ) : null}
@@ -208,7 +208,7 @@ function ContactFormFields({ onReset }: { onReset: () => void }) {
 
       {status === "error" ? (
         <div role="alert" aria-live="polite">
-          <FormSendFailure className="text-sm leading-relaxed text-studio-accent" />
+          <FormSendFailure className="text-sm font-bold leading-relaxed text-studio-text" />
         </div>
       ) : null}
 

@@ -15,15 +15,14 @@ export function validateLogoFile(
   ) {
     return {
       valid: false,
-      message:
-        "Use PNG, JPG, WebP, or SVG - other formats aren’t supported yet.",
+      message: "Use a PNG, JPG, WebP, or GIF.",
     };
   }
 
   if (file.size > MAX_LOGO_FILE_BYTES) {
     return {
       valid: false,
-      message: "File is too large. Maximum size is 5 MB.",
+      message: "File is too large. Maximum size is 4 MB.",
     };
   }
 

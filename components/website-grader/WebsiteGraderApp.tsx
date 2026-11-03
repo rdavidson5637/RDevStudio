@@ -59,7 +59,7 @@ export function WebsiteGraderApp() {
       <ToolkitToolHeader
         category="Audit & analysis"
         title="Website Grader"
-        description="Paste any URL for a quick health check - SEO, accessibility, performance, security, and best practices in one report."
+        description="Paste a URL. This reads the HTML, times the server response, and checks a few headers. It is not a phone speed test."
       />
 
       {phase === "input" ? (
@@ -67,7 +67,7 @@ export function WebsiteGraderApp() {
           <UrlAuditForm
             onSubmit={runScan}
             submitLabel="Grade site"
-            hint="We'll check SEO, accessibility, performance, security, and best practices."
+            hint="The check uses the page HTML and the server response. It does not load the page on a phone."
           />
         </div>
       ) : null}
@@ -75,7 +75,7 @@ export function WebsiteGraderApp() {
       {phase === "loading" ? (
         <ScanLoadingPanel
           title={host}
-          subtitle="Running checks across SEO, accessibility, performance, and more."
+          subtitle="Reading the HTML and timing the server response."
           steps={GRADER_LOADING_STEPS}
           progress={progress}
           activeStepIndex={activeStepIndex}

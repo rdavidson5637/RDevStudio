@@ -31,7 +31,7 @@ export const BUSINESS_TOOLS: BusinessTool[] = [
     slug: "website-grader",
     title: "Website Grader",
     description:
-      "Score any site on speed, mobile readiness, and first impressions - with plain-English fixes.",
+      "Reads one page for a title, headings, image alt text, the server response, and a few security headers. It is not a phone speed test.",
     category: "audit",
     href: `${TOOLKIT_BASE_PATH}/website-grader`,
     featured: true,
@@ -41,9 +41,9 @@ export const BUSINESS_TOOLS: BusinessTool[] = [
   {
     id: "ai-landing-page-auditor",
     slug: "ai-landing-page-auditor",
-    title: "AI Landing Page Auditor",
+    title: "Landing page checker",
     description:
-      "Paste a URL and get an AI breakdown of messaging, structure, and conversion opportunities.",
+      "Paste a URL. The check reads the HTML for a heading, a description, a way to respond, and a privacy link.",
     category: "audit",
     href: `${TOOLKIT_BASE_PATH}/ai-landing-page-auditor`,
     featured: true,
@@ -55,7 +55,7 @@ export const BUSINESS_TOOLS: BusinessTool[] = [
     slug: "seo-checker",
     title: "SEO Checker",
     description:
-      "Quick on-page SEO scan - titles, meta tags, headings, and the basics that actually matter.",
+      "Reads a page for a title, a meta description, a heading, a canonical, and HTTPS.",
     category: "audit",
     href: `${TOOLKIT_BASE_PATH}/seo-checker`,
     featured: true,
@@ -67,7 +67,7 @@ export const BUSINESS_TOOLS: BusinessTool[] = [
     slug: "accessibility-checker",
     title: "Accessibility Checker",
     description:
-      "Spot common a11y issues - contrast, alt text, labels, and keyboard traps - before your users do.",
+      "Reads the page HTML for a language, a title, a heading, a viewport, and image alt text.",
     category: "audit",
     href: `${TOOLKIT_BASE_PATH}/accessibility-checker`,
     featured: false,
@@ -79,7 +79,7 @@ export const BUSINESS_TOOLS: BusinessTool[] = [
     slug: "google-business-profile-audit",
     title: "Google Business Profile Audit",
     description:
-      "Review your GBP listing for completeness, consistency, and the details local customers notice.",
+      "A checklist for your Google listing. It does not invent a score from a website address.",
     category: "audit",
     href: `${TOOLKIT_BASE_PATH}/google-business-profile-audit`,
     featured: false,
@@ -91,7 +91,7 @@ export const BUSINESS_TOOLS: BusinessTool[] = [
     slug: "qr-code-generator",
     title: "QR Code Generator",
     description:
-      "Create downloadable QR codes for URLs, Wi-Fi, and contact details - no sign-up required.",
+      "Create a QR code for a URL, a Wi-Fi login, or a piece of text. No sign-up.",
     category: "generator",
     href: `${TOOLKIT_BASE_PATH}/qr-code-generator`,
     featured: true,
@@ -103,7 +103,7 @@ export const BUSINESS_TOOLS: BusinessTool[] = [
     slug: "invoice-generator",
     title: "Invoice Generator",
     description:
-      "Build clean, professional invoices in the browser and export as PDF when you're ready to send.",
+      "Build an invoice in the browser and print it, or save a PDF from the print dialog.",
     category: "generator",
     href: `${TOOLKIT_BASE_PATH}/invoice-generator`,
     featured: false,
@@ -115,7 +115,7 @@ export const BUSINESS_TOOLS: BusinessTool[] = [
     slug: "review-response-generator",
     title: "Review Response Generator",
     description:
-      "Draft on-brand replies to Google and social reviews - polite, professional, and ready to tweak.",
+      "Paste a review and get a short draft that quotes it. Read the draft before you post it.",
     category: "generator",
     href: `${TOOLKIT_BASE_PATH}/review-response-generator`,
     featured: false,
@@ -127,7 +127,7 @@ export const BUSINESS_TOOLS: BusinessTool[] = [
     slug: "business-name-generator",
     title: "Business Name Generator",
     description:
-      "Brainstorm name ideas by industry, tone, and keywords - then shortlist your favourites.",
+      "Shuffle name ideas from your keywords and the industry. It mixes words. It does not check if a name is free.",
     category: "creative",
     href: `${TOOLKIT_BASE_PATH}/business-name-generator`,
     featured: false,
@@ -139,7 +139,7 @@ export const BUSINESS_TOOLS: BusinessTool[] = [
     slug: "logo-roast",
     title: "Logo Roast",
     description:
-      "Upload a logo for a blunt-but-fair critique - typography, colour, scalability, and first impressions.",
+      "Upload a PNG, JPG, WebP, or GIF. A written critique comes back when the roast service is connected.",
     category: "creative",
     href: `${TOOLKIT_BASE_PATH}/logo-roast`,
     featured: false,
@@ -151,7 +151,7 @@ export const BUSINESS_TOOLS: BusinessTool[] = [
     slug: "sitemap-generator",
     title: "Sitemap Generator",
     description:
-      "Crawl a site or paste your URLs to generate a standards-compliant XML sitemap.",
+      "Paste a list of URLs and download an XML sitemap. It does not crawl the site.",
     category: "generator",
     href: `${TOOLKIT_BASE_PATH}/sitemap-generator`,
     featured: false,
@@ -175,7 +175,7 @@ export const BUSINESS_TOOLS: BusinessTool[] = [
     slug: "favicon-generator",
     title: "Favicon Generator",
     description:
-      "Turn an image or lettermark into favicon sizes and a web app manifest - ready to drop in your project.",
+      "Upload an image and download PNG favicons at 16, 32, 180, and 512 pixels.",
     category: "generator",
     href: `${TOOLKIT_BASE_PATH}/favicon-generator`,
     featured: false,

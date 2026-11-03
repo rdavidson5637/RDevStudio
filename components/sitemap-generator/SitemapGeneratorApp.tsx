@@ -5,15 +5,22 @@ import { ToolkitToolHeader } from "@/components/toolkit-audit/ToolkitToolHeader"
 import { FadeIn } from "@/components/toolkit-audit/FadeIn";
 import { recordRecentSlug } from "@/lib/business-toolkit/storage";
 
+function escapeXml(value: string): string {
+  return value
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
+}
+
 function buildSitemapXml(urls: string[], baseUrl: string): string {
-  const today = new Date().toISOString().split("T")[0];
   const entries = urls
     .map((raw) => {
       try {
         const u = raw.startsWith("http")
           ? raw
           : new URL(raw, baseUrl).toString();
-        return `  <url>\n    <loc>${u}</loc>\n    <lastmod>${today}</lastmod>\n    <changefreq>weekly</changefreq>\n    <priority>0.7</priority>\n  </url>`;
+        return `  <url>\n    <loc>${escapeXml(u)}</loc>\n  </url>`;
       } catch {
         return null;
       }
@@ -58,7 +65,7 @@ export function SitemapGeneratorApp() {
       <ToolkitToolHeader
         category="Generators"
         title="Sitemap Generator"
-        description="Paste your URLs to generate a standards-compliant XML sitemap - ready to upload or drop in your project."
+        description="Paste a list of URLs and download an XML sitemap. This does not crawl the site, and it does not invent dates or priorities."
       />
       <div className="grid gap-8 py-10 lg:grid-cols-2">
         <FadeIn className="space-y-4 rounded-[10px] border border-border-strong bg-raised p-5 sm:p-6">

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Pitch } from "@/components/home/Pitch";
 import { UnderTheHood } from "@/components/home/UnderTheHood";
+import { Button } from "@/components/ui/Button";
 import { Section } from "@/components/ui/Section";
 import { createPageMetadata } from "@/lib/metadata";
 
@@ -26,6 +27,9 @@ export default function ProjectsPage() {
           </Link>
           .
         </p>
+        <div className="mt-8">
+          <Button href="/contact">Get a fixed quote</Button>
+        </div>
       </Section>
       <Pitch showSoon={false} />
       <section className="border-t border-studio-line">

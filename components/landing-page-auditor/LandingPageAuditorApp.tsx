@@ -1,8 +1,8 @@
 "use client";
 
 import { useId } from "react";
+import { AuditErrorPanel } from "@/components/toolkit-audit/AuditErrorPanel";
 import { AuditResultsHeader } from "@/components/toolkit-audit/AuditResultsHeader";
-import { PlaceholderNotice } from "@/components/toolkit-audit/PlaceholderNotice";
 import { RecommendationsCard } from "@/components/toolkit-audit/RecommendationsCard";
 import { ScanLoadingPanel } from "@/components/toolkit-audit/ScanLoadingPanel";
 import { ScoreCard } from "@/components/toolkit-audit/ScoreCard";
@@ -11,7 +11,6 @@ import { UrlAuditForm } from "@/components/toolkit-audit/UrlAuditForm";
 import { useFocusOnPhaseChange } from "@/hooks/useFocusOnPhaseChange";
 import { useUrlAuditFlow } from "@/hooks/useUrlAuditFlow";
 import { AUDITOR_LOADING_STEPS } from "@/lib/landing-page-auditor/constants";
-import { getPlaceholderAuditResult } from "@/lib/landing-page-auditor/placeholder";
 import { getHostname, staggerDelay } from "@/lib/toolkit-audit/utils";
 import type { LandingPageAuditResult } from "@/types/landing-page-auditor";
 
@@ -25,12 +24,21 @@ export function LandingPageAuditorApp() {
     progress,
     activeStepIndex,
     result,
+    error,
     runScan,
     reset,
   } = useUrlAuditFlow<LandingPageAuditResult>({
     toolSlug: "ai-landing-page-auditor",
     steps: AUDITOR_LOADING_STEPS,
-    getResult: getPlaceholderAuditResult,
+    getResult: async (url: string) => {
+      const params = new URLSearchParams({ url, tool: "landing" });
+      const response = await fetch(`/api/audit?${params}`);
+      const payload = (await response.json()) as LandingPageAuditResult & { error?: string };
+      if (!response.ok) {
+        throw new Error(payload.error ?? "That page could not be checked.");
+      }
+      return payload;
+    },
   });
 
   useFocusOnPhaseChange(phase, resultsHeadingId);
@@ -54,8 +62,8 @@ export function LandingPageAuditorApp() {
 
       <ToolkitToolHeader
         category="Audit & analysis"
-        title="AI Landing Page Auditor"
-        description="Paste a landing page URL for an AI-style breakdown of messaging, CTAs, trust signals, visual hierarchy, and conversion opportunities."
+        title="Landing page checker"
+        description="Paste a URL. This reads the HTML for a heading, a description, a way to respond, and a privacy link. It does not guess at design or copy."
       />
 
       {phase === "input" ? (
@@ -63,7 +71,7 @@ export function LandingPageAuditorApp() {
           <UrlAuditForm
             onSubmit={runScan}
             submitLabel="Audit page"
-            hint="We'll analyse hero, CTAs, copy, colour, trust, hierarchy, accessibility, and UX."
+            hint="The check uses the page HTML. Colour, layout, and tone are not scored."
           />
         </div>
       ) : null}
@@ -71,7 +79,7 @@ export function LandingPageAuditorApp() {
       {phase === "loading" ? (
         <ScanLoadingPanel
           title={host}
-          subtitle="Reviewing conversion patterns, copy clarity, and page structure."
+          subtitle="Reading the heading, the description, and how someone can respond."
           steps={AUDITOR_LOADING_STEPS}
           progress={progress}
           activeStepIndex={activeStepIndex}
@@ -114,8 +122,11 @@ export function LandingPageAuditorApp() {
             />
           </div>
 
-          <PlaceholderNotice message="Sample audit data shown for preview - AI backend is not connected yet." />
         </section>
+      ) : null}
+
+      {phase === "error" && error ? (
+        <AuditErrorPanel message={error} onRetry={reset} retryLabel="Check another page" />
       ) : null}
     </div>
   );

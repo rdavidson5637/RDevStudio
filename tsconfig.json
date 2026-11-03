@@ -38,6 +38,7 @@
   "exclude": [
     "node_modules",
     "wip",
-    "_to_delete"
+    "_to_delete",
+    "**/_wip/**"
   ]
 }

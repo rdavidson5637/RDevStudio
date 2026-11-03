@@ -4,42 +4,31 @@ import { useEffect, useState } from "react";
 import { ToolkitToolHeader } from "@/components/toolkit-audit/ToolkitToolHeader";
 import { FadeIn } from "@/components/toolkit-audit/FadeIn";
 import { recordRecentSlug } from "@/lib/business-toolkit/storage";
+import { draftReviewReply, type ReviewTone } from "@/lib/review-response/draft";
 
 const TONES = ["Professional", "Friendly", "Apologetic"] as const;
-
-function generateResponse(
-  rating: number,
-  review: string,
-  tone: string,
-  business: string,
-): string {
-  const name = business || "our team";
-  if (rating >= 4) {
-    return tone === "Friendly"
-      ? `Thanks so much for the lovely review! We're thrilled you had a great experience with ${name}. Hope to see you again soon.`
-      : `Thank you for your ${rating}-star review. We appreciate your feedback and are glad ${name} met your expectations.`;
-  }
-  if (rating <= 2) {
-    return tone === "Apologetic"
-      ? `We're sorry your experience didn't meet expectations. Thank you for the honest feedback - we'd like to make this right. Please contact ${name} directly so we can follow up.`
-      : `Thank you for your feedback. We're disappointed we fell short and would welcome the chance to resolve this. Please reach out to ${name} at your convenience.`;
-  }
-  return `Thank you for taking the time to review ${name}. We appreciate your balanced feedback and will use it to keep improving.`;
-}
 
 export function ReviewResponseGeneratorApp() {
   const [rating, setRating] = useState(5);
   const [review, setReview] = useState("");
-  const [tone, setTone] = useState<(typeof TONES)[number]>("Professional");
+  const [tone, setTone] = useState<ReviewTone>("Professional");
   const [business, setBusiness] = useState("");
   const [response, setResponse] = useState("");
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     recordRecentSlug("review-response-generator");
   }, []);
 
   const handleGenerate = () => {
-    setResponse(generateResponse(rating, review, tone, business));
+    const draft = draftReviewReply({ rating, review, tone, business });
+    if (!draft.ok) {
+      setResponse("");
+      setError(draft.error);
+      return;
+    }
+    setError(null);
+    setResponse(draft.reply);
   };
 
   return (
@@ -47,7 +36,7 @@ export function ReviewResponseGeneratorApp() {
       <ToolkitToolHeader
         category="Generators"
         title="Review Response Generator"
-        description="Draft polite, on-brand replies to Google and social reviews - tweak and post in seconds."
+        description="Paste the review and get a short draft that quotes it. Read the draft before you post it. This does not use a model."
       />
       <div className="grid gap-8 py-10 lg:grid-cols-2">
         <FadeIn className="space-y-4 rounded-[10px] border border-border-strong bg-raised p-5 sm:p-6">
@@ -76,7 +65,7 @@ export function ReviewResponseGeneratorApp() {
             <span className="shell-label text-accent">Tone</span>
             <select
               value={tone}
-              onChange={(e) => setTone(e.target.value as typeof tone)}
+              onChange={(e) => setTone(e.target.value as ReviewTone)}
               className="mt-2 w-full rounded-md border border-border-strong bg-paper px-4 py-3 text-primary"
             >
               {TONES.map((t) => (
@@ -88,7 +77,7 @@ export function ReviewResponseGeneratorApp() {
           </label>
           <label className="block">
             <span className="shell-label text-accent">
-              Review text (optional)
+              Review text
             </span>
             <textarea
               value={review}
@@ -110,10 +99,18 @@ export function ReviewResponseGeneratorApp() {
           className="rounded-[10px] border border-border-strong bg-raised p-5 sm:p-6"
         >
           <p className="shell-label text-accent">Suggested reply</p>
+          {error ? (
+            <p className="mt-4 text-sm font-bold text-primary" role="alert">
+              {error}
+            </p>
+          ) : null}
           {response ? (
             <>
               <p className="mt-4 text-base leading-relaxed text-secondary">
                 {response}
+              </p>
+              <p className="mt-3 text-sm text-tertiary">
+                Read this before you post it. It quotes the review and nothing else.
               </p>
               <button
                 type="button"

@@ -17,12 +17,12 @@ export function RecommendationsCard({
       delayMs={animationDelayMs}
       className="work-card-lift overflow-hidden rounded-[10px] border border-border bg-raised p-6 sm:p-8"
     >
-      <p className="shell-label text-accent">AI recommendations</p>
+      <p className="shell-label text-accent">From the HTML</p>
       <h2 className="mt-2 font-display text-2xl uppercase tracking-tight text-primary sm:text-3xl">
-        Priority fixes
+        Issues found
       </h2>
       <p className="mt-3 max-w-3xl text-base leading-relaxed text-secondary">
-        Actionable changes ranked by likely impact on conversions and clarity.
+        These are the checks that failed. Nothing here is guessed.
       </p>
       <ol className="mt-6 space-y-4">
         {recommendations.map((item, index) => (

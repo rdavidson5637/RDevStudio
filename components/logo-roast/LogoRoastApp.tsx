@@ -1,15 +1,14 @@
 "use client";
 
 import { useId, useState } from "react";
+import { AuditErrorPanel } from "@/components/toolkit-audit/AuditErrorPanel";
 import { AuditResultsHeader } from "@/components/toolkit-audit/AuditResultsHeader";
-import { PlaceholderNotice } from "@/components/toolkit-audit/PlaceholderNotice";
 import { ScanLoadingPanel } from "@/components/toolkit-audit/ScanLoadingPanel";
 import { ScoreCard } from "@/components/toolkit-audit/ScoreCard";
 import { ToolkitToolHeader } from "@/components/toolkit-audit/ToolkitToolHeader";
 import { useFileAuditFlow } from "@/hooks/useFileAuditFlow";
 import { useFocusOnPhaseChange } from "@/hooks/useFocusOnPhaseChange";
 import { LOGO_ROAST_STEPS } from "@/lib/logo-roast/constants";
-import { getPlaceholderRoastResult } from "@/lib/logo-roast/placeholder";
 import { staggerDelay } from "@/lib/toolkit-audit/utils";
 import type { LogoRoastResult } from "@/types/logo-roast";
 import { ImageUploadZone } from "./ImageUploadZone";
@@ -27,12 +26,27 @@ export function LogoRoastApp() {
     progress,
     activeStepIndex,
     result,
+    error,
     runScan,
     reset,
   } = useFileAuditFlow<LogoRoastResult>({
     toolSlug: "logo-roast",
     steps: LOGO_ROAST_STEPS,
-    getResult: getPlaceholderRoastResult,
+    getResult: async (_fileName, file) => {
+      const body = new FormData();
+      body.set("file", file);
+      const response = await fetch("/api/logo-roast", { method: "POST", body });
+      let payload: (LogoRoastResult & { error?: string }) | null = null;
+      try {
+        payload = (await response.json()) as LogoRoastResult & { error?: string };
+      } catch {
+        throw new Error("That didn't work. Try again, or email ryan@rdevstudio.co.uk.");
+      }
+      if (!response.ok || !payload || !payload.overall) {
+        throw new Error(payload?.error ?? "That didn't work. Try again.");
+      }
+      return payload;
+    },
   });
 
   useFocusOnPhaseChange(phase, resultsHeadingId);
@@ -75,7 +89,7 @@ export function LogoRoastApp() {
       <ToolkitToolHeader
         category="Creative & brand"
         title="Logo Roast"
-        description="Upload a logo for a blunt-but-fair critique - typography, colour, scalability, memorability, and accessibility. Placeholder AI responses for now."
+        description="Upload a PNG, JPG, WebP, or GIF. You get a written critique of the mark. If the roast service is not connected, the page says so."
       />
 
       {phase === "input" ? (
@@ -152,8 +166,11 @@ export function LogoRoastApp() {
             </div>
           </div>
 
-          <PlaceholderNotice message="Placeholder roast data shown for preview - AI analysis is not connected yet." />
         </section>
+      ) : null}
+
+      {phase === "error" && error ? (
+        <AuditErrorPanel message={error} onRetry={handleReset} retryLabel="Try another logo" />
       ) : null}
     </div>
   );

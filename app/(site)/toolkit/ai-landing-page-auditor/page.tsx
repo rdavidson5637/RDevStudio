@@ -2,9 +2,9 @@ import { LandingPageAuditorApp } from "@/components/landing-page-auditor/Landing
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata = createPageMetadata({
-  title: "AI Landing Page Auditor",
+  title: "Landing page checker",
   description:
-    "AI-powered landing page audit - hero score, CTA analysis, copywriting, trust signals, and conversion recommendations from RDev Studio.",
+    "Reads a page for a heading, a description, a way to respond, and a privacy link. It does not invent findings.",
   path: "/toolkit/ai-landing-page-auditor",
 });
 

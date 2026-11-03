@@ -3,7 +3,8 @@ import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata = createPageMetadata({
   title: "Business Name Generator",
-  description: "Brainstorm business name ideas by industry and keywords.",
+  description:
+    "Shuffle name ideas from your keywords and the industry. It does not check if a name is free.",
   path: "/toolkit/business-name-generator",
 });
 

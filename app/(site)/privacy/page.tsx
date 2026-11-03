@@ -1,3 +1,4 @@
+import { Button } from "@/components/ui/Button";
 import { Section } from "@/components/ui/Section";
 import { CONTACT_EMAIL } from "@/lib/constants";
 import { createPageMetadata } from "@/lib/metadata";
@@ -54,6 +55,9 @@ export default function PrivacyPage() {
         <p className="type-body mt-5 max-w-prose text-studio-muted">
           RDev Studio is Ryan Davidson, in Carrickfergus. This page matches what the site does today. The site does not set its own cookies, so there is no cookie banner.
         </p>
+        <div className="mt-8">
+          <Button href="/contact">Get in touch</Button>
+        </div>
         <div className="mt-12 max-w-prose border-t border-studio-line">
           {SECTIONS.map((section) => (
             <section key={section.title} className="border-b border-studio-line py-8">
