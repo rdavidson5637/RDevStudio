@@ -28,7 +28,7 @@ export function DesktopNav() {
           </Link>
         );
       })}
-      <Button href="/contact" size="sm">
+      <Button href="/contact" size="sm" aria-current={pathname === "/contact" ? "page" : undefined}>
         Contact
       </Button>
     </nav>

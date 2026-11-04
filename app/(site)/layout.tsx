@@ -14,7 +14,10 @@ export default function SiteLayout({
       <SkipToContent />
       <ChunkLoadRecovery />
       <Header />
-      <main id="main-content">{children}</main>
+      {/* tabIndex -1 lets the skip link move focus here, not just scroll. */}
+      <main id="main-content" tabIndex={-1} className="focus:outline-none">
+        {children}
+      </main>
       <Footer />
       <BackToTop />
     </div>

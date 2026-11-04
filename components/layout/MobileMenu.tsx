@@ -9,10 +9,12 @@ import { Button } from "@/components/ui/Button";
 type MobileMenuProps = {
   open: boolean;
   onClose: () => void;
+  /** Close and return focus to the menu button (Escape, close button). */
+  onDismiss: () => void;
   isActive: (href: string) => boolean;
 };
 
-export function MobileMenu({ open, onClose, isActive }: MobileMenuProps) {
+export function MobileMenu({ open, onClose, onDismiss, isActive }: MobileMenuProps) {
   const panelRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -28,7 +30,7 @@ export function MobileMenu({ open, onClose, isActive }: MobileMenuProps) {
 
     const onKey = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
-        onClose();
+        onDismiss();
         return;
       }
       if (event.key !== "Tab" || focusable.length === 0) return;
@@ -47,7 +49,7 @@ export function MobileMenu({ open, onClose, isActive }: MobileMenuProps) {
       document.removeEventListener("keydown", onKey);
       document.body.style.overflow = "";
     };
-  }, [open, onClose]);
+  }, [open, onDismiss]);
 
   if (!open || typeof document === "undefined") return null;
 
@@ -64,14 +66,14 @@ export function MobileMenu({ open, onClose, isActive }: MobileMenuProps) {
         <Link
           href="/"
           onClick={onClose}
-          className="font-studio-display text-xl"
+          className="inline-flex h-11 items-center font-studio-display text-xl"
           aria-label="RDev Studio - Home"
         >
           RDev Studio
         </Link>
         <button
           type="button"
-          onClick={onClose}
+          onClick={onDismiss}
           className="flex h-11 w-11 items-center justify-center text-studio-muted hover:text-studio-text"
           aria-label="Close menu"
         >
@@ -90,7 +92,7 @@ export function MobileMenu({ open, onClose, isActive }: MobileMenuProps) {
               href={link.href}
               onClick={onClose}
               aria-current={active ? "page" : undefined}
-              className={`font-studio-sans text-2xl ${
+              className={`inline-flex min-h-11 items-center font-studio-sans text-2xl ${
                 active ? "text-studio-accent" : "text-studio-text"
               }`}
             >
@@ -101,7 +103,12 @@ export function MobileMenu({ open, onClose, isActive }: MobileMenuProps) {
       </nav>
 
       <div>
-        <Button href="/contact" className="w-full" onClick={onClose}>
+        <Button
+          href="/contact"
+          className="w-full"
+          onClick={onClose}
+          aria-current={isActive("/contact") ? "page" : undefined}
+        >
           Contact
         </Button>
         <a
