@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { CaseFooter } from "@/components/work/CaseFooter";
 import Image from "next/image";
 import { createPageMetadata } from "@/lib/metadata";
 import { CaseShot } from "@/components/work/CaseShot";
@@ -210,22 +211,7 @@ export default function UcCaseworkerToolCaseStudyPage() {
           </p>
         </section>
 
-        <footer className="py-12">
-          <div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
-            <Link
-              href="/work"
-              className="font-studio-sans text-sm text-studio-text transition-colors hover:text-studio-accent"
-            >
-              Back to the work
-            </Link>
-            <Link
-              href="/contact"
-              className="text-base text-studio-text underline decoration-studio-line-strong underline-offset-4 transition-colors hover:text-studio-accent"
-            >
-              Got a similar problem? Get in touch.
-            </Link>
-          </div>
-        </footer>
+        <CaseFooter />
       </article>
     </div>
   );

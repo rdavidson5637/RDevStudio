@@ -1,4 +1,5 @@
 import Image from "next/image";
+import ryanPhoto from "@/public/images/ryan-davidson.jpg";
 import { Button } from "@/components/ui/Button";
 import { createPageMetadata } from "@/lib/metadata";
 
@@ -54,7 +55,8 @@ export default function AboutPage() {
             <figure>
               <div className="relative aspect-[3/4] w-full overflow-hidden bg-studio-surface">
                 <Image
-                  src="/images/ryan-davidson.jpg"
+                  src={ryanPhoto}
+                  placeholder="blur"
                   alt="Ryan Davidson in graduation gown outside Queen's University Belfast"
                   fill
                   priority

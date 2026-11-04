@@ -2,6 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { Section } from "@/components/ui/Section";
 import { DRAFT_CTAS } from "@/lib/content/redesign-draft";
+import ryanPhoto from "@/public/images/ryan-davidson.jpg";
+import rudiPhoto from "@/public/images/rudi/rudi-scarf.jpg";
 
 export function AboutLabTeaser() {
   return (
@@ -30,7 +32,9 @@ export function AboutLabTeaser() {
             <figure>
               <div className="relative aspect-[4/5] overflow-hidden border border-studio-line bg-studio-surface">
                 <Image
-                  src="/images/ryan-davidson.jpg"
+                  src={ryanPhoto}
+                  placeholder="blur"
+                  loading="eager"
                   alt="Ryan Davidson in graduation gown outside Queen's University Belfast"
                   fill
                   sizes="(max-width: 640px) 45vw, 240px"
@@ -44,7 +48,9 @@ export function AboutLabTeaser() {
             <figure>
               <div className="relative aspect-[4/5] overflow-hidden border border-studio-line bg-studio-surface">
                 <Image
-                  src="/images/rudi/rudi-scarf.jpg"
+                  src={rudiPhoto}
+                  placeholder="blur"
+                  loading="eager"
                   alt="Rudi, a Border Collie, wearing an Arsenal scarf"
                   fill
                   sizes="(max-width: 640px) 45vw, 240px"

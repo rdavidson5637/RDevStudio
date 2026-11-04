@@ -20,7 +20,7 @@ export function DesktopNav() {
             key={link.href}
             href={link.href}
             aria-current={active ? "page" : undefined}
-            className={`relative inline-flex min-h-11 items-center font-studio-sans text-sm transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-studio-text ${
+            className={`relative inline-flex min-h-11 items-center font-studio-sans text-sm transition-colors lg:text-base focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-studio-text ${
               active ? "text-studio-text" : "text-studio-muted hover:text-studio-text"
             }`}
           >

@@ -100,9 +100,9 @@ export const HIRE_PROJECTS = [
       "Platform development",
     ],
     image: "/images/work/shelterlink.png",
-    href: "https://github.com/rdavidson19/ShelterLink",
-    external: true,
-    github: "https://github.com/rdavidson19/ShelterLink",
+    href: "/work/shelterlink",
+    external: false,
+    github: "https://github.com/rdavidson5637/ShelterLinkMain",
   },
   {
     id: "rvs",
@@ -162,7 +162,7 @@ export const HIRE_PROJECTS = [
     highlights: ["World Cup", "Six Nations", "Champions Cup"],
     image: "/images/games/rugby-draft.jpg",
     links: [{ label: "Play", href: "/rugby-draft", external: false }],
-    github: "https://github.com/rdavidson5637",
+    github: "https://github.com/rdavidson5637/rugby-draft",
   },
 ] as const;
 
