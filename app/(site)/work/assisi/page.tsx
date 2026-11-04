@@ -40,7 +40,7 @@ export default function AssisiCaseStudyPage() {
         </header>
 
         <div className="border-b border-studio-line py-12">
-          <div className="flex aspect-[16/10] w-full max-w-3xl flex-col justify-between border border-studio-line bg-studio-surface p-6">
+          <div className="flex h-56 w-full max-w-3xl flex-col justify-between border border-studio-line bg-studio-surface p-6">
             <p className="text-sm text-studio-faint">{study.category}</p>
             <p className="font-studio-display text-3xl text-studio-text">{study.name}</p>
             <p className="text-sm font-bold text-studio-muted">Preview after sign-off</p>
