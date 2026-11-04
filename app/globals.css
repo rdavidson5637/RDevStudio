@@ -981,6 +981,9 @@ body {
   --color-studio-text: #112f2c;
   --color-studio-muted: #2c4a3a;
   --color-studio-faint: #4a6657;
+  --color-studio-accent: #112f2c;
+  --color-studio-accent-hover: #183e3a;
+  --color-studio-on-accent: #fbe6a0;
   background-color: #fbe6a0;
   color: #112f2c;
 }
