@@ -63,7 +63,7 @@ export function CaseStudiesTeaser() {
                   href={study.href}
                   className="inline-flex min-h-11 items-center text-sm font-bold text-studio-text underline decoration-studio-line-strong underline-offset-4 transition-colors hover:text-studio-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-studio-text"
                 >
-                  {study.href === "/work" ? "View on the work page" : "Read the case study"}
+                  Read the case study
                 </Link>
                 {"siteUrl" in study && study.siteUrl ? (
                   <a

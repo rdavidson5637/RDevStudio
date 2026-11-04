@@ -43,7 +43,7 @@ export const DRAFT_PROOF_ITEMS = [
     name: "Assisi site and brand",
     role: "Rebuilt website and brand for Assisi Animal Sanctuary",
     status: "Built - awaiting their sign-off",
-    href: "/work",
+    href: "/work/assisi",
   },
 ] as const;
 
@@ -127,7 +127,7 @@ export const DRAFT_CASE_STUDIES = [
     name: "Assisi site and brand",
     category: "Client work - Charity",
     status: "Built - awaiting sign-off",
-    href: "/work",
+    href: "/work/assisi",
     challenge:
       "A sanctuary needs a clear, calm public site where adopters, donors, and supporters can find animals and help without hunting through menus.",
     solution:

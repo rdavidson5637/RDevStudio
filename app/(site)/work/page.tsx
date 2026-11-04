@@ -64,18 +64,12 @@ function CaseStudyCard({ study }: { study: StudyItem }) {
         </dl>
 
         <div className="mt-6 flex flex-wrap items-center gap-6 border-t border-studio-line pt-4">
-          {study.href !== "/work" ? (
-            <Link
-              href={study.href}
-              className="inline-flex min-h-11 items-center text-sm font-bold text-studio-text underline decoration-studio-line-strong underline-offset-4 transition-colors hover:text-studio-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-studio-text"
-            >
-              Read the case study
-            </Link>
-          ) : (
-            <span className="text-sm text-studio-faint">
-              Public preview available once signed off by the sanctuary
-            </span>
-          )}
+          <Link
+            href={study.href}
+            className="inline-flex min-h-11 items-center text-sm font-bold text-studio-text underline decoration-studio-line-strong underline-offset-4 transition-colors hover:text-studio-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-studio-text"
+          >
+            Read the case study
+          </Link>
           {"siteUrl" in study && study.siteUrl ? (
             <a
               href={study.siteUrl}
