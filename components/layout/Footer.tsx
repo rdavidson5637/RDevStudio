@@ -1,12 +1,28 @@
 import Link from "next/link";
-import { CONTACT_EMAIL, GITHUB_URL, SHELL_NAV_LINKS, WHATSAPP_URL } from "@/lib/constants";
+import {
+  CONTACT_EMAIL,
+  GITHUB_URL,
+  LAB_NAV_LINKS,
+  SHELL_NAV_LINKS,
+  WHATSAPP_URL,
+} from "@/lib/constants";
 
 const LINKEDIN_URL = "https://www.linkedin.com/in/ryan-davidson-462bb221b";
+const INSTAGRAM_URL = "https://www.instagram.com/mgsldavi";
 
-function FooterLink({ href, label }: { href: string; label: string }) {
+function FooterLink({
+  href,
+  label,
+  external,
+}: {
+  href: string;
+  label: string;
+  external?: boolean;
+}) {
   return (
     <Link
       href={href}
+      {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
       className="inline-flex min-h-11 min-w-11 items-center text-sm text-studio-muted transition-colors hover:text-studio-text focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-studio-text"
     >
       {label}
@@ -18,20 +34,41 @@ export function Footer() {
   return (
     <footer className="border-t border-studio-border bg-bg text-studio-text" role="contentinfo">
       <div className="mx-auto max-w-studio px-6 py-16 md:px-8">
-        <div className="grid gap-x-6 gap-y-10 sm:grid-cols-2">
-          <nav aria-label="Footer">
-            <p className="font-studio-sans text-sm text-studio-muted">Studio</p>
+        <div className="grid gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
+          <nav aria-label="Studio">
+            <p className="font-studio-sans text-sm font-bold text-studio-text">Studio</p>
             <ul className="mt-4">
               {SHELL_NAV_LINKS.map((link) => (
                 <li key={link.href}>
                   <FooterLink href={link.href} label={link.label} />
                 </li>
               ))}
+              <li>
+                <FooterLink href="/services/businesses" label="Local businesses" />
+              </li>
+              <li>
+                <FooterLink href="/contact" label="Contact" />
+              </li>
+            </ul>
+          </nav>
+
+          <nav aria-label="Lab and tools">
+            <p className="font-studio-sans text-sm font-bold text-studio-text">Lab (games and tools)</p>
+            <ul className="mt-4">
+              {LAB_NAV_LINKS.map((link) => (
+                <li key={link.href}>
+                  <FooterLink
+                    href={link.href}
+                    label={link.label}
+                    external={"external" in link ? link.external : undefined}
+                  />
+                </li>
+              ))}
             </ul>
           </nav>
 
           <div>
-            <p className="font-studio-sans text-sm text-studio-muted">Contact</p>
+            <p className="font-studio-sans text-sm font-bold text-studio-text">Contact</p>
             <ul className="mt-4 text-sm">
               <li>
                 <a
@@ -48,7 +85,17 @@ export function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  WhatsApp
+                  Message me on WhatsApp
+                </a>
+              </li>
+              <li>
+                <a
+                  href={INSTAGRAM_URL}
+                  className="inline-flex min-h-11 items-center text-studio-muted transition-colors hover:text-studio-text focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-studio-text"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Instagram @mgsldavi
                 </a>
               </li>
             </ul>

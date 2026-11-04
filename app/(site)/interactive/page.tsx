@@ -24,15 +24,15 @@ export default function InteractiveToolsPage() {
         <InteractiveToolsLanding />
 
         <section className="border-t border-border pt-10">
-          <p className="mb-2 font-studio-sans text-sm text-studio-muted">Projects</p>
+          <p className="mb-2 font-studio-sans text-sm text-studio-muted">The Lab</p>
           <p className="max-w-2xl text-base leading-relaxed text-secondary">
-            Draft Analyser and Wardrobe AI live under Projects, not here.
+            Stout Finder, Draft Analyser, Champions Draft, Rugby Draft, and Pub Quiz live in the Lab.
           </p>
           <Link
-            href="/projects"
+            href="/lab"
             className="mt-4 inline-flex text-sm font-semibold text-accent underline-offset-2 hover:underline"
           >
-            See projects
+            Open the Lab
           </Link>
         </section>
       </div>

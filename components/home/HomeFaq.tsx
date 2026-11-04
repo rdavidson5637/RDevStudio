@@ -49,7 +49,7 @@ const faqJsonLd = {
 
 export function HomeFaq() {
   return (
-    <Section heading="Questions people ask">
+    <Section heading="Questions people ask" className="border-t border-studio-line">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
       <div className="mt-10 border-t border-studio-line">
         {FAQ.map((item, index) => (
@@ -67,7 +67,7 @@ export function HomeFaq() {
         target="_blank"
         rel="noopener noreferrer"
       >
-        Still stuck? WhatsApp me
+        Message me on WhatsApp
       </a>
     </Section>
   );

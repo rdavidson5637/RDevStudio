@@ -87,7 +87,7 @@ export const products: Product[] = [
     name: "Wardrobe AI",
     href: "/wardrobe-ai",
     kind: "project",
-    status: "live",
+    status: process.env.WARDROBE_LIVE === "true" ? "live" : "soon",
     tagline: "Outfits from a real wardrobe. An honest verdict.",
     stack: ["Supabase", "Anthropic"],
     cover: "wardrobe-ai",

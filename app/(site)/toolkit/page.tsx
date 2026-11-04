@@ -58,7 +58,7 @@ export default function ToolkitPage() {
       <h1 className="display-lg text-studio-text">Tools</h1>
       <p className="type-body mt-5 max-w-xl text-studio-muted">Free to use, no sign-up. Audits, generators, and a few utilities.</p>
       <div className="mt-8">
-        <Button href="/contact">Get a quote</Button>
+        <Button href="/contact">Get a fixed quote</Button>
       </div>
       <div className="mt-14 space-y-14">
         {groups.map((group) => (

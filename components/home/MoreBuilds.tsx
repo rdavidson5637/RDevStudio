@@ -5,7 +5,7 @@ export function MoreBuilds() {
     <section className="border-t border-studio-line bg-studio-bg">
       <div className="mx-auto max-w-studio px-6 md:px-8">
         <Link
-          href="/projects"
+          href="/lab"
           className="group flex min-h-11 items-center justify-between gap-6 py-8 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-studio-text"
         >
           <span>

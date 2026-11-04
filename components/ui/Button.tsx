@@ -35,6 +35,7 @@ type LinkProps = Common & {
   target?: string;
   rel?: string;
   onClick?: () => void;
+  "aria-current"?: "page" | undefined;
 };
 
 function classes(variant: Variant, size: Size, className?: string) {
@@ -64,6 +65,7 @@ export function Button(props: ButtonProps | LinkProps) {
         target={props.target ?? (external ? "_blank" : undefined)}
         rel={props.rel ?? (external ? "noopener noreferrer" : undefined)}
         onClick={props.onClick}
+        aria-current={props["aria-current"]}
       >
         {props.children}
       </Link>

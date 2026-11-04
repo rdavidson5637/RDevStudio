@@ -1,133 +1,149 @@
+import Image from "next/image";
 import Link from "next/link";
-import { CaseShot } from "@/components/work/CaseShot";
 import { Button } from "@/components/ui/Button";
 import { Section } from "@/components/ui/Section";
+import {
+  DRAFT_CASE_STUDIES,
+  DRAFT_CONCEPT_STUDIES,
+  DRAFT_CTAS,
+} from "@/lib/content/redesign-draft";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata = createPageMetadata({
-  title: "Work",
+  title: "Work and case studies",
   description:
-    "Client work from RDev Studio: ShelterLink, RV's Cold Brew, and other builds. Based in Carrickfergus.",
+    "Client and charity case studies, plus local-business concept builds by Ryan Davidson at RDev Studio.",
   path: "/work",
   ogImage: "/work/opengraph-image",
 });
 
-const ROWS = [
-  {
-    title: "ShelterLink",
-    line: "Ready for live use. Volunteer rotas, roles and an admin dashboard for Assisi Animal Sanctuary.",
-    href: "/work/shelterlink",
-  },
-  {
-    title: "Assisi Animal Sanctuary",
-    line: "A rebuilt site and brand. Built, awaiting their sign-off.",
-  },
-  {
-    title: "Concept builds",
-    line: "Three local-business sites: trades, restaurant, salon.",
-    href: "/work/concept-builds",
-  },
-  {
-    title: "UC Caseworker Assistant",
-    line: "An assistant for Universal Credit casework, built around safeguarding.",
-    href: "/work/uc-caseworker-tool",
-  },
-  {
-    title: "Stout Finder",
-    line: "Which pubs have stout on, and when someone last checked. Lives at stoutfinder.com.",
-    href: "https://stoutfinder.com",
-    external: true,
-  },
-  {
-    title: "Games and side projects",
-    line: "Draft tools, a pub quiz, and two things still being built.",
-    href: "/projects",
-  },
-] as const;
+type StudyItem = (typeof DRAFT_CASE_STUDIES)[number] | (typeof DRAFT_CONCEPT_STUDIES)[number];
 
-function WorkRow({
-  title,
-  line,
-  href,
-  external,
-}: {
-  title: string;
-  line: string;
-  href?: string;
-  external?: boolean;
-}) {
-  const body = (
-    <>
-      <span>
-        <span className="block font-studio-display text-2xl text-studio-text">{title}</span>
-        <span className="type-body mt-1 block max-w-prose text-studio-muted">{line}</span>
-      </span>
-      {href ? (
-        <span aria-hidden="true" className="text-2xl text-studio-text transition-colors group-hover:text-studio-accent">
-          →
-        </span>
-      ) : null}
-    </>
-  );
-
-  if (!href) {
-    return <div className="flex items-center justify-between gap-6 py-6">{body}</div>;
-  }
-
+function CaseStudyCard({ study }: { study: StudyItem }) {
   return (
-    <Link
-      href={href}
-      target={external ? "_blank" : undefined}
-      rel={external ? "noopener noreferrer" : undefined}
-      className="group flex min-h-11 items-center justify-between gap-6 py-6 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-studio-text"
-    >
-      {body}
-    </Link>
+    <article className="grid gap-8 border border-studio-border bg-studio-surface p-6 md:p-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+      {"image" in study && study.image ? (
+        <div className="relative aspect-[16/10] w-full overflow-hidden border border-studio-line bg-studio-bg">
+          <Image
+            src={study.image}
+            alt={study.imageAlt}
+            fill
+            sizes="(max-width: 1024px) 100vw, 42vw"
+            className="object-cover object-top"
+          />
+        </div>
+      ) : (
+        <div className="flex aspect-[16/10] w-full flex-col justify-between border border-studio-line bg-studio-bg p-6">
+          <p className="text-sm text-studio-faint">{study.category}</p>
+          <p className="font-studio-display text-3xl text-studio-text">{study.name}</p>
+          <p className="text-sm font-bold text-studio-muted">Preview after sign-off</p>
+        </div>
+      )}
+
+      <div>
+        <div className="flex flex-wrap items-center justify-between gap-2 border-b border-studio-line pb-3 text-sm">
+          <span className="text-studio-muted">{study.category}</span>
+          <span className="font-bold text-studio-text">{study.status}</span>
+        </div>
+
+        <h3 className="mt-4 font-studio-display text-3xl text-studio-text">{study.name}</h3>
+
+        <dl className="mt-5 space-y-4 text-sm sm:text-base">
+          <div className="grid gap-1 sm:grid-cols-[7rem_1fr] sm:gap-4">
+            <dt className="font-bold text-studio-text">Challenge</dt>
+            <dd className="text-studio-muted">{study.challenge}</dd>
+          </div>
+          <div className="grid gap-1 sm:grid-cols-[7rem_1fr] sm:gap-4">
+            <dt className="font-bold text-studio-text">Solution</dt>
+            <dd className="text-studio-muted">{study.solution}</dd>
+          </div>
+          <div className="grid gap-1 sm:grid-cols-[7rem_1fr] sm:gap-4">
+            <dt className="font-bold text-studio-text">Status</dt>
+            <dd className="text-studio-muted">{study.result}</dd>
+          </div>
+        </dl>
+
+        <div className="mt-6 flex flex-wrap items-center gap-6 border-t border-studio-line pt-4">
+          <Link
+            href={study.href}
+            className="inline-flex min-h-11 items-center text-sm font-bold text-studio-text underline decoration-studio-line-strong underline-offset-4 transition-colors hover:text-studio-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-studio-text"
+          >
+            Read the case study
+          </Link>
+          {"siteUrl" in study && study.siteUrl ? (
+            <a
+              href={study.siteUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex min-h-11 items-center text-sm text-studio-muted underline decoration-studio-line underline-offset-4 transition-colors hover:text-studio-text focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-studio-text"
+            >
+              Open live preview
+            </a>
+          ) : null}
+        </div>
+      </div>
+    </article>
   );
 }
 
 export default function WorkPage() {
   return (
     <div className="bg-studio-bg text-studio-text">
-      <Section>
-        <h1 className="display-lg text-studio-text">Work</h1>
+      <Section className="border-b border-studio-line">
+        <h1 className="display-lg max-w-[16ch] text-balance text-studio-text">
+          Work and case studies
+        </h1>
         <p className="type-body mt-5 max-w-prose text-studio-muted">
-          Client jobs first. Games and the things still being built are on the projects page.
+          Client and charity builds come first, with honest status labels on where each project stands. Concept builds and prototypes sit separately below.
         </p>
-        <div className="mt-8">
-          <Button href="/contact">Get a quote</Button>
+        <div className="mt-8 flex flex-wrap items-center gap-6">
+          <Button href="/contact">{DRAFT_CTAS.primary}</Button>
+          <Link
+            href="/services"
+            className="inline-flex min-h-11 items-center text-base text-studio-text underline decoration-studio-line-strong underline-offset-4 hover:text-studio-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-studio-text"
+          >
+            See services and from-prices
+          </Link>
         </div>
       </Section>
 
-      <section className="border-t border-studio-line pb-8" aria-label="RV's Cold Brew">
-        <CaseShot
-          src="/images/work/rvs-coldbrew-hero.jpg"
-          alt="RV's Cold Brew landing page hero screenshot"
-          caption="RV's Cold Brew, Great Northern Mall. Nearly finished."
-          priority
-        />
-        <div className="mx-auto max-w-studio px-6 pt-4 md:px-8">
+      <Section
+        heading="Client and charity work"
+        intro="Real organisations in Belfast and Northern Ireland."
+        className="border-b border-studio-line"
+      >
+        <div className="mt-10 space-y-10">
+          {DRAFT_CASE_STUDIES.map((study) => (
+            <CaseStudyCard key={study.slug} study={study} />
+          ))}
+        </div>
+      </Section>
+
+      <Section
+        heading="Concept builds and prototypes"
+        intro="Speculative local-business demos and a responsible AI casework prototype. Labelled clearly so you know what is client work and what is a demo."
+        className="border-b border-studio-line"
+      >
+        <div className="mt-10 space-y-10">
+          {DRAFT_CONCEPT_STUDIES.map((study) => (
+            <CaseStudyCard key={study.slug} study={study} />
+          ))}
+        </div>
+      </Section>
+
+      <Section
+        heading="Looking for the games and Stout Finder?"
+        intro="Stout Finder, Champions Draft, Rugby Draft, Pub Quiz, and the free small-business tools now live in the Lab."
+      >
+        <div className="mt-6 flex flex-wrap items-center gap-6">
           <Link
-            href="/work/rvs-cold-brew"
-            className="inline-flex min-h-11 items-center text-base text-studio-text underline decoration-studio-line-strong underline-offset-4 hover:text-studio-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-studio-text"
+            href="/lab"
+            className="inline-flex min-h-11 items-center text-base font-bold text-studio-text underline decoration-studio-line-strong underline-offset-4 transition-colors hover:text-studio-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-studio-text"
           >
-            Read the case study
+            {DRAFT_CTAS.lab}
           </Link>
         </div>
-      </section>
-
-      <section className="border-t border-studio-line">
-        <div className="mx-auto max-w-studio px-6 md:px-8">
-          <h2 className="type-h2 pt-16 text-studio-text">The rest</h2>
-          <ul className="mt-6 border-t border-studio-line">
-            {ROWS.map((row) => (
-              <li key={row.title} className="border-b border-studio-line">
-                <WorkRow {...row} />
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
+      </Section>
     </div>
   );
 }

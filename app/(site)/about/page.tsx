@@ -44,8 +44,11 @@ export default function AboutPage() {
           <div className="grid gap-8 lg:grid-cols-[1fr_280px] lg:items-end">
             <div>
               <h1 className="display-lg text-studio-text">Ryan Davidson</h1>
+              <p className="type-body mt-4 max-w-prose text-studio-muted">
+                One-person studio in Carrickfergus. When you hire RDev Studio, you deal with me from the first message to the live site.
+              </p>
               <div className="mt-8">
-                <Button href="/contact">Get in touch</Button>
+                <Button href="/contact">Get a fixed quote</Button>
               </div>
             </div>
             <figure>
@@ -119,7 +122,7 @@ export default function AboutPage() {
         <section className="py-12" aria-label="Get in touch">
           <p className="type-body max-w-prose text-studio-muted">CV on request.</p>
           <div className="mt-6">
-            <Button href="/contact">Get in touch</Button>
+            <Button href="/contact">Get a fixed quote</Button>
           </div>
         </section>
       </article>

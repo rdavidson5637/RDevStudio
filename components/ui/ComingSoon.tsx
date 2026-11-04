@@ -61,7 +61,7 @@ export function ComingSoon({
 
         <div className="mt-12 flex flex-wrap gap-4 border-t border-border pt-10">
           <Link
-            href="/projects"
+            href="/lab"
             className="inline-flex rounded-md bg-primary px-6 py-3 text-sm font-semibold text-paper transition-colors hover:bg-[#d22b2b]"
           >
             See the other projects

@@ -36,9 +36,17 @@ export default function ContactPage() {
               {CONTACT_EMAIL}
             </a>
             <Button href={WHATSAPP_URL} variant="secondary">
-              WhatsApp
+              Message me on WhatsApp
             </Button>
-            <div className="flex gap-4">
+            <div className="flex flex-wrap gap-4">
+              <a
+                href="https://www.instagram.com/mgsldavi"
+                className="inline-flex min-h-11 items-center text-sm text-studio-muted hover:text-studio-accent"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Instagram @mgsldavi
+              </a>
               <a href={LINKEDIN_URL} className="inline-flex min-h-11 items-center text-sm text-studio-muted hover:text-studio-accent" target="_blank" rel="noopener noreferrer">
                 LinkedIn
               </a>

@@ -45,7 +45,12 @@ const nextConfig = {
       },
       {
         source: "/coming-soon",
-        destination: "/projects",
+        destination: "/lab",
+        permanent: true,
+      },
+      {
+        source: "/projects",
+        destination: "/lab",
         permanent: true,
       },
       {
