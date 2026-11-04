@@ -1,13 +1,14 @@
 import Link from "next/link";
 import { createPageMetadata } from "@/lib/metadata";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
-import { DRAFT_CASE_STUDIES } from "@/lib/content/redesign-draft";
+import { DRAFT_CASE_STUDIES, DRAFT_PROOF_ITEMS } from "@/lib/content/redesign-draft";
 
 const study = DRAFT_CASE_STUDIES.find((item) => item.slug === "assisi")!;
+const proof = DRAFT_PROOF_ITEMS.find((item) => item.href === "/work/assisi")!;
 
 export const metadata = createPageMetadata({
   title: study.name,
-  description: study.solution,
+  description: proof.role,
   path: "/work/assisi",
   ogImage: "/work/assisi/opengraph-image",
 });
@@ -30,7 +31,7 @@ export default function AssisiCaseStudyPage() {
         />
         <header className="space-y-6 border-b border-studio-line pb-10">
           <h1 className="display-lg text-studio-text">{study.name}</h1>
-          <p className="type-body max-w-prose text-studio-muted">{study.solution}</p>
+          <p className="type-body max-w-prose text-studio-muted">{proof.role}</p>
 
           <div className="grid grid-cols-1 gap-x-4 gap-y-2 border-t border-studio-line pt-5 font-studio-sans text-sm text-studio-muted sm:grid-cols-2">
             <p>{study.category}</p>
