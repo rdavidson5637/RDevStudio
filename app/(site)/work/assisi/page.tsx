@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { createPageMetadata } from "@/lib/metadata";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
+import { Button } from "@/components/ui/Button";
+import { CaseFooter } from "@/components/work/CaseFooter";
 import { DRAFT_CASE_STUDIES, DRAFT_PROOF_ITEMS } from "@/lib/content/redesign-draft";
 
 const study = DRAFT_CASE_STUDIES.find((item) => item.slug === "assisi")!;
@@ -13,9 +15,12 @@ export const metadata = createPageMetadata({
   ogImage: "/work/assisi/opengraph-image",
 });
 
-function SectionHeading({ children }: { children: React.ReactNode }) {
-  return <h2 className="mb-3 font-studio-display text-2xl text-studio-text">{children}</h2>;
-}
+const FACTS = [
+  "A full rebuild of the public website for Assisi Animal Sanctuary.",
+  "A new brand to go with it.",
+  "Laid out so adopters, donors and supporters can find animals and ways to help without hunting through menus.",
+  "Designed for phone and desktop from the start.",
+] as const;
 
 export default function AssisiCaseStudyPage() {
   return (
@@ -29,58 +34,60 @@ export default function AssisiCaseStudyPage() {
           ]}
           className="mb-8"
         />
-        <header className="space-y-6 border-b border-studio-line pb-10">
+        <header className="space-y-4 border-b border-studio-line pb-10">
           <h1 className="display-lg text-studio-text">{study.name}</h1>
-          <p className="type-body max-w-prose text-studio-muted">{proof.role}</p>
-
-          <div className="grid grid-cols-1 gap-x-4 gap-y-2 border-t border-studio-line pt-5 font-studio-sans text-sm text-studio-muted sm:grid-cols-2">
-            <p>{study.category}</p>
-            <p>Status: {study.status}</p>
-          </div>
+          <p className="text-sm text-studio-muted">
+            {study.category}. Built, waiting on the sanctuary&apos;s sign-off.
+          </p>
         </header>
 
         <div className="border-b border-studio-line py-12">
-          <div className="flex h-56 w-full max-w-3xl flex-col justify-between border border-studio-line bg-studio-surface p-6">
-            <p className="text-sm text-studio-faint">{study.category}</p>
-            <p className="font-studio-display text-3xl text-studio-text">{study.name}</p>
-            <p className="text-sm font-bold text-studio-muted">Preview after sign-off</p>
+          <div className="flex min-h-56 w-full flex-col items-center justify-center gap-2 border border-studio-line bg-studio-surface p-8 text-center">
+            <p className="font-studio-display text-2xl text-studio-text">Preview after sign-off</p>
+            <p className="max-w-prose text-sm text-studio-muted">
+              Screenshots and a public link go up here once the sanctuary has approved them.
+            </p>
           </div>
         </div>
 
         <section className="border-b border-studio-line py-12">
-          <SectionHeading>The brief</SectionHeading>
-          <p className="max-w-prose type-body text-studio-text">{study.challenge}</p>
-        </section>
-
-        <section className="border-b border-studio-line py-12">
-          <SectionHeading>What I built</SectionHeading>
-          <p className="max-w-prose type-body text-studio-text">{study.solution}</p>
-        </section>
-
-        <section className="border-b border-studio-line py-12">
-          <SectionHeading>Where it stands</SectionHeading>
-          <p className="max-w-prose type-body text-studio-text">{study.result}</p>
-          <p className="mt-4 max-w-prose type-body text-studio-muted">
-            Screenshots and a public link go up here once the sanctuary has signed it off.
+          <h2 className="mb-4 font-studio-display text-2xl text-studio-text">What it is</h2>
+          <ul className="max-w-prose list-disc space-y-3 pl-5 type-body text-studio-text marker:text-studio-faint">
+            {FACTS.map((fact) => (
+              <li key={fact}>{fact}</li>
+            ))}
+          </ul>
+          <p className="mt-6 type-body text-studio-muted">
+            Also for Assisi:{" "}
+            <Link
+              href="/work/shelterlink"
+              className="inline-flex min-h-11 items-center font-bold text-studio-text underline decoration-studio-line-strong underline-offset-4 transition-colors hover:text-studio-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-studio-text"
+            >
+              ShelterLink<span aria-hidden="true">&nbsp;&rarr;</span>
+            </Link>
           </p>
         </section>
 
-        <footer className="py-12">
-          <div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
+        <section className="border-b border-studio-line py-12">
+          <h2 className="mb-3 font-studio-display text-2xl text-studio-text">
+            Run a rescue or a charity?
+          </h2>
+          <p className="max-w-prose type-body text-studio-muted">
+            Registered charities get their site free. Tell me what you need and I&apos;ll walk you
+            through how this one was put together.
+          </p>
+          <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-4">
+            <Button href="/contact">Ask for a walkthrough</Button>
             <Link
-              href="/work/shelterlink"
-              className="inline-flex min-h-11 items-center font-studio-sans text-sm text-studio-text transition-colors hover:text-studio-accent"
+              href="/services/charities"
+              className="inline-flex min-h-11 items-center text-base text-studio-text underline decoration-studio-line-strong underline-offset-4 transition-colors hover:text-studio-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-studio-text"
             >
-              Next case study
-            </Link>
-            <Link
-              href="/contact"
-              className="inline-flex min-h-11 items-center text-base text-studio-text underline decoration-studio-line-strong underline-offset-4 transition-colors hover:text-studio-accent"
-            >
-              Got a similar problem? Get in touch.
+              How charity sites work
             </Link>
           </div>
-        </footer>
+        </section>
+
+        <CaseFooter next={{ href: "/work/shelterlink", label: "ShelterLink" }} />
       </article>
     </div>
   );

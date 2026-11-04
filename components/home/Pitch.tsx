@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { ProductCover } from "@/components/covers";
 import { Section } from "@/components/ui/Section";
@@ -24,10 +25,26 @@ export function Pitch({ showSoon = true }: { showSoon?: boolean }) {
             className={`${index === 0 || index === pitchProducts.length - 1 ? "md:col-span-2 " : ""}group block bg-studio-surface transition-colors duration-200 hover:bg-studio-surface-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-studio-text`}
             {...(product.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
           >
-            <ProductCover slug={product.cover} initial={product.name} />
+            {product.image ? (
+              <div className="relative aspect-[16/10] w-full overflow-hidden bg-studio-surface-2">
+                <Image
+                  src={product.image}
+                  alt=""
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 50vw"
+                  className="object-cover object-top"
+                />
+              </div>
+            ) : (
+              <ProductCover slug={product.cover} initial={product.name} />
+            )}
             <div className="p-5">
               <h3 className="font-studio-display text-2xl leading-tight text-studio-text">{product.name}</h3>
               <p className="type-body mt-2 text-studio-muted">{product.tagline}</p>
+              <span className="mt-4 inline-flex min-h-11 items-center text-sm font-bold text-studio-text underline decoration-studio-line-strong underline-offset-4 group-hover:text-studio-accent">
+                {product.kind === "game" ? "Play" : "Open"}
+                <span aria-hidden="true">&nbsp;&rarr;</span>
+              </span>
             </div>
           </Link>
         ))}

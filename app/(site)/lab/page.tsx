@@ -7,6 +7,7 @@ import { Section } from "@/components/ui/Section";
 import { STOUT_FINDER } from "@/lib/constants";
 import { getStoutFinderPubCount } from "@/lib/stout-finder-stats";
 import { createPageMetadata } from "@/lib/metadata";
+import stoutFinderPhone from "@/public/images/stout-finder/home-390.png";
 
 export const metadata = createPageMetadata({
   title: "The Lab - Stout Finder, games, and browser tools",
@@ -60,10 +61,9 @@ export default async function LabPage() {
                 className="block overflow-hidden rounded-[2rem] border-2 border-studio-border-strong focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-studio-text"
               >
                 <Image
-                  src="/images/stout-finder/home-390.png"
+                  src={stoutFinderPhone}
+                  placeholder="blur"
                   alt="Stout Finder on a phone showing brand tabs and a dark map of Belfast with pint glasses on pubs"
-                  width={390}
-                  height={844}
                   sizes="288px"
                   className="h-auto w-full"
                 />
@@ -117,6 +117,21 @@ export default async function LabPage() {
       </section>
 
       <UnderTheHood />
+
+      <Section className="border-t border-studio-line">
+        <h2 className="display-lg max-w-[24ch] text-balance text-studio-text">
+          Want something built for your business or rescue?
+        </h2>
+        <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-4">
+          <Button href="/contact">Get a fixed quote</Button>
+          <Link
+            href="/work"
+            className="inline-flex min-h-11 items-center text-base font-medium text-studio-text underline decoration-studio-border-strong underline-offset-4 transition-colors hover:text-studio-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-studio-text"
+          >
+            See the work
+          </Link>
+        </div>
+      </Section>
     </div>
   );
 }

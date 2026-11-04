@@ -33,11 +33,9 @@ function CaseStudyCard({ study }: { study: StudyItem }) {
           />
         </div>
       ) : (
-        <div className="flex aspect-[16/10] w-full flex-col justify-between border border-studio-line bg-studio-bg p-6">
-          <p className="text-sm text-studio-faint">{study.category}</p>
-          <p className="font-studio-display text-3xl text-studio-text">{study.name}</p>
-          <p className="text-sm font-bold text-studio-muted">Preview after sign-off</p>
-        </div>
+        <div className="flex aspect-[16/10] w-full items-center justify-center border border-studio-line bg-studio-bg p-6 text-center">
+                <p className="text-sm font-bold text-studio-muted">Preview after sign-off</p>
+              </div>
       )}
 
       <div>

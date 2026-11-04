@@ -47,13 +47,16 @@ export function Footer() {
                 <FooterLink href="/services/businesses" label="Local businesses" />
               </li>
               <li>
+                <FooterLink href="/hire" label="CV" />
+              </li>
+              <li>
                 <FooterLink href="/contact" label="Contact" />
               </li>
             </ul>
           </nav>
 
           <nav aria-label="Lab and tools">
-            <p className="font-studio-sans text-sm font-bold text-studio-text">Lab (games and tools)</p>
+            <p className="font-studio-sans text-sm font-bold text-studio-text">Games and tools</p>
             <ul className="mt-4">
               {LAB_NAV_LINKS.map((link) => (
                 <li key={link.href}>
@@ -117,7 +120,7 @@ export function Footer() {
               className="inline-flex h-11 w-11 items-center justify-center text-studio-muted transition-colors hover:text-studio-text focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-studio-text"
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="GitHub"
+              aria-label="Ryan Davidson on GitHub (opens in a new tab)"
             >
               <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M12 .5C5.73.5.5 5.73.5 12.02c0 5.1 3.29 9.42 7.86 10.95.58.1.79-.25.79-.56v-2.17c-3.2.7-3.87-1.36-3.87-1.36-.53-1.34-1.28-1.7-1.28-1.7-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.2 1.77 1.2 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.23-1.28-5.23-5.7 0-1.26.45-2.29 1.2-3.1-.12-.3-.52-1.48.11-3.08 0 0 .97-.31 3.18 1.18a11.1 11.1 0 0 1 5.8 0c2.2-1.49 3.17-1.18 3.17-1.18.64 1.6.24 2.78.12 3.08.75.81 1.2 1.84 1.2 3.1 0 4.43-2.69 5.4-5.25 5.69.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.52 11.52 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5Z" />
@@ -128,7 +131,7 @@ export function Footer() {
               className="inline-flex h-11 w-11 items-center justify-center text-studio-muted transition-colors hover:text-studio-text focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-studio-text"
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="LinkedIn"
+              aria-label="Ryan Davidson on LinkedIn (opens in a new tab)"
             >
               <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45ZM22.23 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45C23.2 24 24 23.23 24 22.27V1.73C24 .77 23.2 0 22.23 0Z" />

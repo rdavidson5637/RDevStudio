@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/Button";
 import { DRAFT_CTAS, DRAFT_HERO } from "@/lib/content/redesign-draft";
+import coldBrewDesktop from "@/public/work/rvs-cold-brew-desktop.webp";
 
 export function Hero() {
   return (
@@ -24,19 +25,12 @@ export function Hero() {
                 {DRAFT_CTAS.secondary}
               </Link>
             </div>
-            <p className="mt-6 text-sm text-studio-muted">
-              <Link
-                href="/services/charities"
-                className="inline-flex min-h-11 items-center underline decoration-studio-line-strong underline-offset-4 transition-colors hover:text-studio-text focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-studio-text"
-              >
-                {DRAFT_CTAS.charity}
-              </Link>
-            </p>
           </div>
 
           <figure className="overflow-hidden border border-studio-border bg-studio-surface">
             <Link
               href="/work/rvs-cold-brew"
+              aria-label="RV's Cold Brew case study"
               className="block focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-studio-text"
             >
               <div className="flex items-center justify-between border-b border-studio-line px-4 py-2.5 text-xs text-studio-muted">
@@ -45,7 +39,8 @@ export function Hero() {
               </div>
               <div className="relative aspect-[16/10] w-full bg-studio-surface-2">
                 <Image
-                  src="/work/rvs-cold-brew-desktop.webp"
+                  src={coldBrewDesktop}
+                  placeholder="blur"
                   alt="RV's Cold Brew website showing cold brew and Okumidori matcha at Unit 11, Great Northern Mall, Belfast"
                   fill
                   priority

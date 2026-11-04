@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { CaseFooter } from "@/components/work/CaseFooter";
 import Image from "next/image";
 import { CaseShot } from "@/components/work/CaseShot";
 import { createPageMetadata } from "@/lib/metadata";
@@ -118,22 +119,7 @@ export default function ConceptBuildsPage() {
           ))}
         </div>
 
-        <footer className="py-12">
-          <div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
-            <Link
-              href="/work/uc-caseworker-tool"
-              className="font-studio-sans text-sm text-studio-text transition-colors hover:text-studio-accent"
-            >
-              Next case study
-            </Link>
-            <Link
-              href="/contact"
-              className="text-base text-studio-text underline decoration-studio-line-strong underline-offset-4 transition-colors hover:text-studio-accent"
-            >
-              Got a similar problem? Get in touch.
-            </Link>
-          </div>
-        </footer>
+        <CaseFooter next={{ href: "/work/uc-caseworker-tool", label: "UC Caseworker Assistant" }} />
       </article>
     </div>
   );

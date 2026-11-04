@@ -311,7 +311,7 @@ export function HireRyanPage() {
                                   ? "noopener noreferrer"
                                   : undefined
                               }
-                              className="text-sm font-medium text-accent transition-colors hover:text-primary"
+                              className="inline-flex min-h-11 items-center text-sm font-medium text-accent transition-colors hover:text-primary"
                             >
                               {link.label} →
                             </a>
@@ -321,7 +321,7 @@ export function HireRyanPage() {
                             href={project.github}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="text-sm font-medium text-secondary transition-colors hover:text-primary"
+                            className="inline-flex min-h-11 items-center text-sm font-medium text-secondary transition-colors hover:text-primary"
                           >
                             GitHub →
                           </a>

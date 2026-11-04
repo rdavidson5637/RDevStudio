@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { CaseFooter } from "@/components/work/CaseFooter";
 import Image from "next/image";
 import { createPageMetadata } from "@/lib/metadata";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
@@ -122,28 +123,13 @@ export default function RvsColdBrewCaseStudyPage() {
             href="https://rvscoldbrew.vercel.app"
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-5 inline-flex items-center text-base font-semibold text-studio-text transition-colors hover:text-studio-accent"
+            className="mt-5 inline-flex min-h-11 items-center text-base font-semibold text-studio-text transition-colors hover:text-studio-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-studio-text"
           >
             Open the site
           </a>
         </section>
 
-        <footer className="py-12">
-          <div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
-            <Link
-              href="/work/shelterlink"
-              className="font-studio-sans text-sm text-studio-text transition-colors hover:text-studio-accent"
-            >
-              Next case study
-            </Link>
-            <Link
-              href="/contact"
-              className="text-base text-studio-text underline decoration-studio-line-strong underline-offset-4 transition-colors hover:text-studio-accent"
-            >
-              Got a similar problem? Get in touch.
-            </Link>
-          </div>
-        </footer>
+        <CaseFooter next={{ href: "/work/shelterlink", label: "ShelterLink" }} />
       </article>
     </div>
   );
