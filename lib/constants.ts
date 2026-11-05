@@ -83,6 +83,17 @@ export const SHELL_NAV_LINKS = [
   { href: "/about", label: "About" },
 ] as const;
 
+/** Header menu (desktop and mobile). The footer Studio column keeps SHELL_NAV_LINKS,
+ *  since games and tools already have their own Lab column there. */
+export const HEADER_NAV_LINKS = [
+  { href: "/work", label: "Work" },
+  { href: "/services", label: "Services" },
+  { href: "/services/charities", label: "Charities" },
+  { href: "/games", label: "Games" },
+  { href: "/toolkit", label: "Tools" },
+  { href: "/about", label: "About" },
+] as const;
+
 export const LAB_NAV_LINKS = [
   { href: "/lab", label: "The Lab" },
   { href: "https://stoutfinder.com", label: "Stout Finder", external: true },
