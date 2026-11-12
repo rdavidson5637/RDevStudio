@@ -1,34 +1,58 @@
+import Link from "next/link";
+import { Dot, POS } from "@/components/analyser/bits";
+import { LiveRefresh } from "@/components/analyser/live-refresh";
+import { getAnalyser } from "@/lib/analyser/data/load";
 import { createPageMetadata } from "@/lib/metadata";
-import { EmptyState } from "@/components/draft/EmptyState";
-import { LiveBoard } from "@/components/draft/LiveBoard";
-import { getCurrentEvent } from "@/lib/draft/queries";
-import { getLiveBoard } from "@/lib/draft/live";
 
 export const metadata = createPageMetadata({
-  title: "Live Gameweek",
-  description: "Live points per player, provisional bonus and live H2H scorelines as the gameweek plays out.",
+  title: "Draft live",
+  description: "Live Academy FC totals, provisional bonus and autosubs for the current gameweek.",
   path: "/draft/live",
 });
 
-export default async function DraftLivePage() {
-  const event = await getCurrentEvent();
-  if (!event) return <EmptyState />;
-
-  let entryId: number;
+export default async function Page() {
+  let data;
   try {
-    entryId = (await import("@/lib/fpl/config")).FPL_DRAFT_ENTRY_ID;
+    data = await getAnalyser();
   } catch {
-    return <EmptyState title="FPL_DRAFT_ENTRY_ID not set" />;
+    return <p className="t-body measure">The sheet is waiting on a sync.</p>;
   }
-
-  try {
-    const board = await getLiveBoard(event.id, entryId);
-    return <LiveBoard board={board} myEntryId={entryId} eventId={event.id} />;
-  } catch {
-    return (
-      <EmptyState title="Live feed unavailable">
-        The draft live endpoint did not respond. Try again once the gameweek is in play.
-      </EmptyState>
-    );
-  }
+  const rows = [...data.table].sort((a, b) => b.live - a.live || b.total - a.total);
+  return (
+    <div className="stack">
+      <LiveRefresh />
+      <header>
+        <p className="t-label soft">{data.current.name}</p>
+        <h1 className="t-title">Live totals</h1>
+        <p className="t-body measure soft">
+          Points already include provisional bonus for matches that are on. Autosubs appear once a starter's fixture is finished on zero minutes. This page refreshes itself every minute.
+        </p>
+      </header>
+      {rows.map((side) => (
+        <section key={side.entryId}>
+          <h2 className="t-heading">
+            {side.name} <span className="nums">{side.live}</span>
+            {side.entryId === data.me.entryId ? <span className="t-label"> · you</span> : null}
+          </h2>
+          {side.subs.length > 0 ? <p className="t-small soft">{side.subs.join(". ")}</p> : null}
+          <ul style={{ listStyle: "none", margin: "0.4rem 0 0", padding: 0 }}>
+            {side.squad.map((player) => (
+              <li key={player.id} className="row">
+                <Dot score={player.availability} band={player.band} />
+                <span>
+                  <Link href={`/draft/player/${player.id}`}>{player.name}</Link>
+                  <span className="t-label soft"> {POS[player.position]} {player.pick <= 11 ? "XI" : "bench"}</span>
+                  <span className="t-small soft"> {player.liveMinutes ?? 0} min</span>
+                </span>
+                <span className="nums">
+                  {(player.livePoints ?? 0) + player.provisionalBonus}
+                  {player.provisionalBonus > 0 ? <span className="t-label soft"> +{player.provisionalBonus}</span> : null}
+                </span>
+              </li>
+            ))}
+          </ul>
+        </section>
+      ))}
+    </div>
+  );
 }

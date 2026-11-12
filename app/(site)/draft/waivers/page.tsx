@@ -1,50 +1,40 @@
+import { WaiverBoard } from "@/components/analyser/waiver-board";
+import { getAnalyser } from "@/lib/analyser/data/load";
 import { createPageMetadata } from "@/lib/metadata";
-import { EmptyState } from "@/components/draft/EmptyState";
-import { SectionHeading } from "@/components/draft/SectionHeading";
-import { WaiverBoard } from "@/components/draft/WaiverBoard";
-import { getCurrentEvent } from "@/lib/draft/queries";
-import { getWaiverBoard } from "@/lib/draft/waivers";
 
 export const metadata = createPageMetadata({
-  title: "Waiver Wire",
-  description: "Every unowned player in the league, ranked by projected points over the next 3 and 6 gameweeks.",
+  title: "Draft waivers",
+  description: "Every free agent in Academy FC, ranked on the next three and six gameweeks, with the drop from your squad.",
   path: "/draft/waivers",
 });
 
-export default async function WaiverWirePage() {
-  const event = await getCurrentEvent();
-  if (!event) return <EmptyState />;
-
-  let entryId: number;
+export default async function Page() {
+  let data;
   try {
-    entryId = (await import("@/lib/fpl/config")).FPL_DRAFT_ENTRY_ID;
+    data = await getAnalyser();
   } catch {
-    return <EmptyState title="FPL_DRAFT_ENTRY_ID not set" />;
+    return <p className="t-body measure">The sheet is waiting on a sync.</p>;
   }
-
-  const board = await getWaiverBoard(event.id, entryId);
-  if (board.players.length === 0) {
-    return (
-      <EmptyState title="No free agents yet">
-        Ownership has to sync before the wire fills in. Check back after the daily job.
-      </EmptyState>
-    );
-  }
-
   return (
-    <div className="space-y-6">
-      <div>
-        <SectionHeading kicker="The pool">Waiver wire</SectionHeading>
-        <p className="mt-3 max-w-2xl text-sm text-secondary">
-          Available here means unowned in this league, not in the global FPL pool. Projections
-          come from the model on{" "}
-          <a href="/draft/how-it-works" className="text-primary underline decoration-border-strong underline-offset-4 hover:text-accent">
-            How it&apos;s built
-          </a>
-          .
+    <div className="stack">
+      <header>
+        <p className="t-label soft">Waiver {data.me.waiver ?? "-"}</p>
+        <h1 className="t-title">Free agents in this league</h1>
+        <p className="t-body measure soft">
+          Available means nobody in Academy FC owns them. Projections are the model on the method page, not the official ep_next. You hold waiver {data.me.waiver ?? "an unknown slot"}.
         </p>
-      </div>
-      <WaiverBoard board={board} />
+      </header>
+      {data.gapPlayers.length > 0 ? (
+        <p className="t-small soft">
+          Biggest gaps versus FPL's own ep_next: {data.gapPlayers.map((player) => player.name).join(", ")}.
+        </p>
+      ) : null}
+      {data.rising.length > 0 ? (
+        <p className="t-small soft">
+          Availability up in the last 72 hours: {data.rising.map((player) => player.name).join(", ")}.
+        </p>
+      ) : null}
+      <WaiverBoard players={data.freeAgents} squad={data.me.squad} horizon={data.horizon} />
     </div>
   );
 }

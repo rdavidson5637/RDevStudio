@@ -1,53 +1,30 @@
+import { SquadBoard } from "@/components/analyser/squad-board";
+import { getAnalyser } from "@/lib/analyser/data/load";
 import { createPageMetadata } from "@/lib/metadata";
-import { EmptyState } from "@/components/draft/EmptyState";
-import { StatTile } from "@/components/draft/StatTile";
-import { SquadBoardClient } from "@/components/draft/SquadBoardClient";
-import { OptimisePanel } from "@/components/draft/OptimisePanel";
-import { getCurrentEvent } from "@/lib/draft/queries";
-import { getSquad } from "@/lib/draft/squad";
 
 export const metadata = createPageMetadata({
-  title: "Squad Board",
-  description: "Your 15 - availability, next fixture and projected points, as a pitch view or a sortable table.",
+  title: "Draft squad",
+  description: "Saliba Dooby Doo as a teamsheet, with the best legal XI and the points left on the bench.",
   path: "/draft/squad",
 });
 
-export default async function SquadBoardPage() {
-  const event = await getCurrentEvent();
-  if (!event) return <EmptyState />;
-
-  let entryId: number;
+export default async function Page() {
+  let data;
   try {
-    const config = await import("@/lib/fpl/config");
-    entryId = config.FPL_DRAFT_ENTRY_ID;
+    data = await getAnalyser();
   } catch {
-    return <EmptyState title="FPL_DRAFT_ENTRY_ID not set" />;
+    return <p className="t-body measure">The sheet is waiting on a sync.</p>;
   }
-
-  const squad = await getSquad(entryId, event.id);
-  if (squad.length === 0) return <EmptyState />;
-
-  const xi = squad.filter((p) => p.pickPosition <= 11);
-  const bench = squad.filter((p) => p.pickPosition > 11);
-
-  const projectedTotal = xi.reduce((sum, p) => sum + (p.projectedPoints ?? 0), 0);
-  const flaggedCount = xi.filter((p) => p.availabilityScore < 75).length;
-  const fdrValues = xi.map((p) => p.nextFixture?.difficulty).filter((d): d is number => d != null);
-  const avgFdr = fdrValues.length > 0 ? fdrValues.reduce((a, b) => a + b, 0) / fdrValues.length : null;
-  const benchStrength = bench.reduce((sum, p) => sum + (p.projectedPoints ?? 0), 0);
-
   return (
-    <div className="space-y-6">
-      <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
-        <StatTile label="Projected XI" value={projectedTotal.toFixed(1)} />
-        <StatTile label="Flagged in XI" value={flaggedCount} />
-        <StatTile label="Avg next FDR" value={avgFdr != null ? avgFdr.toFixed(1) : "-"} />
-        <StatTile label="Bench strength" value={benchStrength.toFixed(1)} />
-      </div>
-
-      <OptimisePanel squad={squad} />
-
-      <SquadBoardClient squad={squad} />
+    <div className="stack">
+      <header>
+        <p className="t-label soft">{data.me.name}</p>
+        <h1 className="t-title">The 15, and the side that scores more</h1>
+        <p className="t-body measure soft">
+          Projected XI {data.me.projected.toFixed(1)}. {data.me.reds} red flags. Bench is ordered by projected points, which is the autosub order.
+        </p>
+      </header>
+      <SquadBoard squad={data.me.squad} deadlinePassed={data.deadlinePassed} />
     </div>
   );
 }

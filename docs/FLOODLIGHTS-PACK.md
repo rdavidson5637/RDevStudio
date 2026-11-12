@@ -15,6 +15,17 @@ Everything happens on a `design/floodlights` branch, and nothing is merged until
 | F5 | Homepage rebuild | F3, F4 |
 | F6 | Inner pages | F5 |
 | F7 | Link previews, icon and final checks | F6 |
+| F8 | Showcase Stout Finder, ShelterLink and Draft Analyser | F7 |
+| F9 | Take the football out of the studio pages | F8 |
+| F10 | Move Paintball Wales further down | F8 |
+| F11 | Finish the pages the redesign missed | F10 |
+| F12 | Client-first nav and a tighter homepage | F11 |
+| F13 | Trust: quotes slot, privacy notice, footer, code links | F12 |
+| F14 | Audit the tools (report only, nothing deleted) | F11 |
+
+**14 Oct, round 3:** a final tidy-up after comparing the site with real ones: local NI web designers ([Nybbled](https://nybbled.co.uk/), [ProfileTree](https://profiletree.com/services/web-design-belfast/)) and well-regarded one-person sites ([Lynn Fisher](https://lynnandtonic.com/), [Josh Comeau](https://www.joshwcomeau.com/), [Paco Coursey](https://paco.me/)). F11 to F14 go on the same branch, before you merge.
+
+**14 Oct, round 2:** F1 to F7 are done on `design/floodlights` (7a92c88). Your feedback: mostly good, but too football-themed. The showcase should be Stout Finder, ShelterLink and the Draft Analyser, and Paintball Wales should sit further down the site. F8 to F10 handle that, on the same branch and still before merging.
 
 ---
 
@@ -155,11 +166,156 @@ RDev Studio. Read .design/brief.md. Finish the Floodlights redesign.
 Done when: build, lint, typecheck, tests and smoke pass, and you've given me the Lighthouse table, the leftover grep and the live-route check.
 ```
 
+## F8 Showcase Stout Finder, ShelterLink and Draft Analyser
+
+```text
+RDev Studio, design/floodlights branch. Read .design/brief.md. Homepage only: app/(site)/page.tsx and components/home.
+
+Ryan's feedback on the redesign: the homepage leans too hard on football. The three things to show off are Stout Finder, ShelterLink and the Draft Analyser. Paintball Wales comes off the homepage.
+
+New order: Hero, Things I've built, Client sites, What it costs, Games and side projects, How they're built, Questions people ask, Tell me what you need.
+
+1. Hero (components/home/Hero.tsx):
+   - Remove the Champions Draft pitch and its caption.
+   - Keep the h1 "Websites for businesses and charities in Northern Ireland".
+   - Paragraph: "I'm Ryan, one person in Carrickfergus doing the whole job, from the first chat to launch. I build my own products too, and a few of them are below."
+   - Buttons: "Get a quote" (to /contact) and "See what I've built" (text link to #built).
+   - Right column: Ryan's photo (/images/ryan-davidson.jpg, moved here from TellMe), captioned "Ryan Davidson, Carrickfergus". next/image with priority, sizes and real alt text. On phones it goes under the text.
+2. Things I've built (new component, id built). Three full-width rows alternating screenshot left and right, stacked on phones. Each row has a screenshot, the name as an h3, a line saying what it is, a line or two on how it works (this is for recruiters), the status in bold, and its links. Use this copy exactly:
+   - Stout Finder.
+     What: "A map of which UK pubs have Beamish, Guinness, Murphy's and the rest on, and when someone last checked."
+     How: "Every pub in the UK from OpenStreetMap, a PostGIS nearby search, and reports that fade as they age so the map stays honest. Next.js and Supabase."
+     Status: "Live at stoutfinder.com".
+     Link: "Open Stout Finder" to https://stoutfinder.com (new tab, rel noopener noreferrer).
+     Screenshot: copy ~/stoutfinder/docs/screenshots/pub-1280.png to public/images/work/stout-finder.png. If that path isn't there, take one with playwright from https://stoutfinder.com/pub/ownies-carrickfergus at 1280x800 and say so.
+   - ShelterLink.
+     What: "Volunteer rotas, roles and an admin dashboard for Assisi Animal Sanctuary." (as in lib/content/products.ts)
+     How: "Started as my MSc dissertation at Queen's. Node.js, Express and MySQL."
+     Status: "Ready for live use" (exactly. Never say Assisi uses it.)
+     Link: "Read the case study" to /work/shelterlink.
+     Screenshot: /images/work/shelterlink-admin-dashboard.png.
+   - Draft Analyser.
+     What: "FPL Draft squad board, projections and a start/sit optimiser."
+     How: "A daily job pulls the FPL Draft API into Supabase, Claude picks injury news out of BBC and Guardian feeds, and Pusher updates the live board during a gameweek." Check each part against app/api/cron/README.md and lib/draft before using it, and drop any part that isn't true.
+     Status: "Live".
+     Links: "Open it" to /draft and "How it's built" to /draft/how-it-works.
+     Screenshot: copy docs/screenshots/draft-1280.png to public/images/work/draft-analyser.png.
+   Section heading "Things I've built". No tags, dots or arrows. One accent use at most: the status text stays chalk, not red.
+3. Client sites (ClientWork.tsx): only RV's Cold Brew as a panel (screenshot, summary, status label exactly as in lib/content/products.ts), with the Assisi line next to it: "A new site and brand for Assisi Animal Sanctuary. Built - awaiting sign-off." Heading "Client sites". Remove paintball-wales from FEATURED.
+4. What it costs: unchanged.
+5. Games and side projects (Pitch.tsx: rename the component and file to SideProjects): heading "Games and side projects". Every live product except Stout Finder and Draft Analyser, so Champions Draft, Rugby Draft, Pub Quiz, Longest Word and Wardrobe AI, with their covers. The "Still being built" line stays.
+6. How they're built (UnderTheHood.tsx): heading "How they're built". Content unchanged.
+7. Tell me what you need (TellMe.tsx): Rudi's photo only (Ryan's moved to the hero), then the existing text and contact links.
+8. Delete homepage components nothing renders: SelectedWork, SocialProofBar, PortfolioPlay, StatsRow and any others, but only after grepping that nothing outside components/home imports them. Don't touch anything /hire imports.
+
+Done when: build, lint, typecheck and tests pass, one h1, nothing scrolls sideways at 390px, the three showcase links work, and npm run shots -- after-f8 still matches .shots/before for the live routes.
+```
+
+## F9 Take the football out of the studio pages
+
+```text
+RDev Studio, design/floodlights branch. Read .design/brief.md. Football belongs to the football games, not to the studio. Keep the colours and fonts. Remove the pitch theme around them.
+
+1. .design/brief.md: describe the palette by colour, not as a pitch at night. Keep the variable names and values. Replace the homepage order with F8's. Add a rule: "Football imagery and wording only appear on the football games themselves (their covers, names and taglines). Never in studio headings, copy, icons or link previews."
+2. Copy sweep across studio pages, components/home, components/layout, components/ui and lib/constants.ts (skip game taglines, game routes, /draft, /wardrobe-ai and /hire): grep -i for pitch, on the pitch, kick, kick-off, full time, matchday, half time, squad, line-up, XI, scoreboard, fixture, programme, extra time, transfer. Rewrite each hit plainly. Show old and new for every change.
+3. The price panel: keep its look (board colour, big numbers) but rename the component and any "scoreboard" class or comment to PriceList. No sports wording.
+4. Icon: replace the centre-circle mark in app/icon.svg and the apple icon with a plain "RD" in Big Shoulders 800, chalk on night, with a small kit-red bar under the D. Make sure it's legible at 16px; if it isn't, use just "R".
+5. Link previews (lib/og-studio.tsx): remove the chalk pitch line. Use a plain chalk rule and the kit-red bar from the icon instead.
+6. Remove any leftover hero pitch animation and its CSS (the players moving into position), since the hero no longer has a pitch.
+7. The football games' own covers stay exactly as they are.
+
+Done when: build, lint, typecheck and tests pass, the grep returns nothing outside game names and taglines (paste the final grep), and every copy change is listed old and new.
+```
+
+## F10 Move Paintball Wales further down
+
+```text
+RDev Studio, design/floodlights branch. Read .design/brief.md. Ryan doesn't want the Paintball Wales site front and centre. Keep it on the site, lower down. Don't delete its case study or break its URL.
+
+1. Homepage: no Paintball Wales anywhere (F8 removed it from ClientWork. Check nothing else on / renders it).
+2. lib/constants.ts: remove paintball-wales from HOME_PROJECT_IDS. Remove it from SOCIAL_PROOF_ITEMS only if something outside /hire renders that list. Leave PROJECTS as it is, because /hire uses it and /hire is off-limits.
+3. /work (app/(site)/work/page.tsx): client work in this order: ShelterLink, RV's Cold Brew, Assisi. Then, after the games and experiments, one section headed "Earlier work" with Paintball Wales and the concept builds as compact ruled rows: name, one line, a link to the case study. No big screenshots there.
+4. The RV's Cold Brew case study links to /work/paintball-wales as the next case study. Point it at /work/shelterlink instead, and check the other case studies' next links still make a sensible loop.
+5. /work/paintball-wales stays live, unchanged except for the shared styling it already has, and stays in the sitemap.
+6. Grep for paintball across app/, components/ and lib/ and list every remaining place it appears with a one-word reason (case study, earlier work, hire, sitemap).
+
+Done when: build, lint, typecheck and tests pass, / has no Paintball Wales, /work shows it only under "Earlier work", and its case study URL still returns 200.
+```
+
+## F11 Finish the pages the redesign missed
+
+```text
+RDev Studio, design/floodlights branch. Read .design/brief.md. Some pages still carry the old matchday programme look or lean on a CSS override layer.
+
+1. app/not-found.tsx is still the old design: paper background, Anton "404", the label "FULL TIME WHISTLE" and "Looks like this page got sent off". Rebuild it in Floodlights: night background, the shared header and footer, h1 "That page isn't here", one line ("It may have moved, or the link was wrong."), a "Back to the homepage" button and links to Work and Contact. No football wording.
+2. app/(site)/error.tsx: the same look. h1 "That didn't load", a "Try again" button calling reset() and a link home.
+3. app/(site)/about/page.tsx has a section headed "Off the pitch". Rename it plainly (e.g. "Away from the desk") and show old and new.
+4. Old tokens: the case studies (work/*), about, error and the (site) layout still use the old paper classes (text-primary, text-secondary, bg-raised, border-border, shell-label, font-display) and only look right because of the .studio-page overrides in app/globals.css (around lines 898 to 960). Replace those classes in every studio page with the studio tokens directly (text-studio-text, text-studio-muted, bg-studio-surface, border-studio-line and so on), then delete the override block. The (site) layout wrapper should use bg-studio-bg, not bg-paper. Don't touch the game routes, /hire, /draft or /wardrobe-ai, which may still use the paper tokens. Check with a grep that nothing outside those uses them.
+5. Page titles: the homepage title should say what and where: "Web design for NI businesses and charities | RDev Studio, Carrickfergus". /services is titled "Work with me": change it to "Prices and services". Keep the template "%s | RDev Studio" everywhere else. Every page keeps its own meta description, and the homepage one names Carrickfergus and Northern Ireland.
+
+Done when: build, lint, typecheck and tests pass, a made-up URL shows the new 404 with a 404 status, the override block is gone, and every studio page looks the same as before at 390px and 1280px (compare with npm run shots plus the studio pages you add to it).
+```
+
+## F12 Client-first nav and a tighter homepage
+
+```text
+RDev Studio, design/floodlights branch. Read .design/brief.md.
+
+The best one-person sites are short and every section has one job. Ours has eight homepage sections and a nav that leads with Games.
+
+1. Header nav (SHELL_NAV_LINKS in lib/constants.ts): Work, Prices, About, Projects, then the "Get a quote" button. Games and Tools come out of the main nav (Games stays reachable from the homepage section and /projects, Tools from the footer). Change labels and links only. Every URL keeps working.
+2. Footer: three short groups. The studio (Work, Prices, About, Contact), Things I've made (Projects, Games, Tools, Stout Finder), and Get in touch (email, WhatsApp, GitHub). One line underneath: "RDev Studio is Ryan Davidson, Carrickfergus, Northern Ireland." No monospace, no capitals.
+3. Homepage: move "How they're built" off the homepage into /projects, under the project list. The homepage then runs: Hero, Things I've built, Client sites, What it costs, Games and side projects, Questions people ask, Tell me what you need.
+4. FAQ: keep it to the five questions a business owner asks most: cost, payments, who owns the site, what happens after launch, and whether charities pay. Move any others to /services. Keep the FAQ JSON-LD in sync with what's shown.
+5. Check the homepage at 1280px: the hero plus the first showcase row should be visible within about one and a half screen heights. If the hero is taller than one screen, tighten the spacing; don't shrink the type below the brief's scale.
+
+Done when: build, lint, typecheck and tests pass, every old nav URL still returns 200, and the live-route shots match .shots/before.
+```
+
+## F13 Trust: quotes slot, privacy notice, footer, code links
+
+```text
+RDev Studio, design/floodlights branch. Read .design/brief.md. Local competitors win trust with client quotes, reviews and plain business details. Add the places for those, without inventing anything.
+
+1. Quotes: add lib/content/testimonials.ts exporting an empty array of { quote, name, business, href? }. Add a "What clients said" block to the homepage (after Client sites) and to each matching case study. It renders nothing at all while the array is empty. When it has entries, show the quote as plain text in Atkinson with the name and business underneath. No stars, no photos of people, no invented content. Add a comment in the file saying only real quotes, with permission, go in it.
+2. Privacy notice at /privacy, linked from the footer and from under each contact form ("How I use what you send"). Plain English and accurate to what the code actually does. Read the code to confirm each point before writing it:
+   - contact and bug report forms go to Formspree and reach Ryan by email
+   - Vercel Web Analytics counts page views without cookies (check the @vercel/analytics setup to confirm)
+   - the games store only what they need to run (Pusher rooms, Upstash for the quiz, Supabase for the Draft Analyser, localStorage for Longest Word)
+   - how to ask for anything to be deleted: email ryan@rdevstudio.co.uk
+   Don't add a cookie banner unless the code sets non-essential cookies. If it does, list them and stop.
+3. Showcase code links (F8's "Things I've built"): a "Code on GitHub" link for the Draft Analyser to https://github.com/rdavidson5637/RDevStudio/tree/main/lib/draft, since that repo is public. Leave Stout Finder and ShelterLink without code links for now; Ryan will say if those repos go public.
+4. Contact page and the homepage's last section: say what happens after someone gets in touch, using only what's already true on the site: "I'll reply myself, ask a few questions about what you need, then send a fixed quote." No response-time promise unless lib/constants.ts has a REPLY_TIME value, which stays unset until Ryan gives one.
+
+Done when: build, lint, typecheck and tests pass, /privacy renders and is in the sitemap, the quotes block is invisible with an empty array (show me a test or a render check), and nothing on the site claims anything the code doesn't do.
+```
+
+## F14 Audit the tools (report only, nothing deleted)
+
+```text
+RDev Studio, design/floodlights branch. Report only: no code changes in this prompt.
+
+/toolkit has 15 tools and /interactive has 9. A curated handful of good tools helps; two dozen of mixed quality makes a portfolio look padded.
+
+1. For every route under app/(site)/toolkit and app/(site)/interactive: load it on npm run build && npm run start, try its main action once with harmless sample input (don't submit anything that emails Ryan or calls a paid API more than once), and note: works / broken / partly works, any console errors, whether it calls an external or AI API (and which env var it needs), and whether it looks right in Floodlights.
+2. Give me a table: tool, route, status, external calls, and your call on each (keep, fix, or hide from the index). Judge it as a small business owner and as a recruiter: does it do something useful and do it properly?
+3. Propose what /toolkit and /interactive should list. Hiding means removing a tool from the index and sitemap, not deleting the route.
+
+Done when: I have the table and the proposal. Change nothing until I reply.
+```
+
+Then push the branch, check the Vercel preview on your phone, and merge when you're happy.
+
 ---
 
 ## For you, not Cursor
 
-- **Merge `polish/v2` first.** The forms fix shouldn't wait for a redesign.
+- **Get two or three real quotes** for F13's slot: a line each from RV's Cold Brew, Tony at Paintball Wales and whoever you deal with at Assisi, with their OK to use their name. Quotes are the biggest thing your local competitors have that you don't.
+- **Google Business Profile reviews:** once the profile is set up, ask the same people to leave a review there too.
+- **How long a site takes:** if you give a real typical timeline, Cursor can add it to /services. ProfileTree publishes theirs; yours shouldn't be a guess.
+- **Stout Finder's repo:** its README is written for recruiters, but the repo is private. If you want it public, check the git history for any committed keys first, then flip it and add a code link.
+- **ICO fee:** businesses that handle personal data (contact form messages count) usually need to pay the ICO's data protection fee unless exempt. Check the ICO's self-assessment before the privacy page goes live.
+- ~~Merge `polish/v2` first.~~ Done 14 Oct.
 - **After F7:** open the Vercel preview on your phone and click through the homepage, a case study, /services and /contact, plus each game, before merging `design/floodlights`.
 - **Then regenerate the README screenshots** with `npm run screenshots`, so GitHub shows the new look.
 - **Update your Claude project instructions.** The Design system section still says `#0A0A0F`, amber and DM Serif, and the stack says Next.js 14. Replace them with:

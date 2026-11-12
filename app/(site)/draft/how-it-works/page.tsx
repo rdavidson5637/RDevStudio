@@ -1,76 +1,54 @@
 import { createPageMetadata } from "@/lib/metadata";
-import { SectionHeading } from "@/components/draft/SectionHeading";
 
 export const metadata = createPageMetadata({
-  title: "How It's Built",
-  description: "The data flow, the availability and projection models, and the trade-offs behind the draft analyser.",
+  title: "Draft method",
+  description: "How the Academy FC draft analyser scores availability, projects points, and simulates the table.",
   path: "/draft/how-it-works",
 });
 
-export default function HowItsBuiltPage() {
+export default function Page() {
   return (
-    <div className="space-y-10">
-      <div>
-        <SectionHeading kicker="Under the hood">How it&apos;s built</SectionHeading>
-        <p className="mt-4 max-w-2xl text-base leading-relaxed text-secondary sm:text-lg">
-          Both FPL APIs block browsers, so nothing in the page ever calls them. A daily cron
-          writes into Supabase; the pages read Postgres. The live gameweek page is the exception
-          - Vercel Hobby cannot run every five minutes, so that route hits the live endpoint
-          server-side, stores the snapshot, and pushes it over Pusher when credentials exist.
-          The tab also polls once a minute.
+    <article className="stack">
+      <header>
+        <p className="t-label soft">Method</p>
+        <h1 className="t-title">What the numbers are doing</h1>
+        <p className="t-body measure">
+          The browser never calls the Fantasy Premier League. An hourly job writes the public draft API into Postgres. Pages read that. The live page is the exception: it refreshes the current gameweek from the draft live endpoint, at most once a minute.
         </p>
-      </div>
+      </header>
 
-      <section className="rounded-lg border border-border bg-raised p-5">
-        <p className="shell-label mb-3 text-accent">Availability, 0-100</p>
-        <pre className="overflow-x-auto text-xs leading-relaxed text-secondary">
-{`base = { a:100, d:55, i:5, s:0, u:0, n:15 }[status]
-cop  = chance_next ?? chance_this ?? null
-score = cop != null ? 0.55 * base + 0.45 * cop : base
-score -= newsPenalty(news, age)          // official FPL text only
-score += minutesTrend(last4)             // 0 until per-match minutes exist
-score += reportedAbsence(signal)         // RSS/Claude, labelled reported
-score  = clamp(0, 100)
-if status == i: score = min(score, 40)   // unofficial reports cannot green an injury
-green >= 75   amber 40-74   red < 40`}
-        </pre>
-      </section>
-
-      <section className="rounded-lg border border-border bg-raised p-5">
-        <p className="shell-label mb-3 text-accent">Projected points</p>
-        <pre className="overflow-x-auto text-xs leading-relaxed text-secondary">
-{`pStart = 0.55 * availability/100 + 0.45 * starts_per_90
-xP = pStart * (appearance + xG * goalPts + xA * 3
-     + CS_prob * csPts + defconProb * 2 + bonus)
-fixMult = {1:1.25, 2:1.12, 3:1.00, 4:0.88, 5:0.75}[FDR]
-Scoring values come from bootstrap settings, not hardcoded 10s.`}
-        </pre>
-      </section>
-
-      <section className="rounded-lg border border-border bg-raised p-5">
-        <p className="shell-label mb-3 text-accent">News layer</p>
-        <p className="text-sm leading-relaxed text-secondary">
-          Daily cron pulls BBC/Guardian RSS (feeds and summaries only), keeps items from the last
-          48 hours, and asks Claude for a structured availability signal per club. Matches are
-          scoped to that club. Stored rows never overwrite official FPL status, news, or chance
-          fields. The UI labels every extract <span className="text-primary">reported, not confirmed</span>.
+      <section>
+        <h2 className="t-heading">Availability, 0 to 100</h2>
+        <p className="t-body measure">
+          The official status is the base: available 100, doubt 55, injured 5, suspended or unavailable 0, not in the squad 15. If FPL publish a chance of playing, that is blended in at 45%. A news phrase such as hamstring or ruptured takes points off, and the penalty fades after three weeks. The last four finished gameweeks move the score by up to 10 if minutes are rising or falling. A reported training signal can nudge it, and is labelled reported. An injured player cannot be pushed into the green by a report.
         </p>
       </section>
 
       <section>
-        <p className="shell-label mb-3 text-accent">What is not here yet</p>
-        <ul className="space-y-2 text-sm text-secondary">
-          <li>
-            Per-match minutes history, so the availability minutes-trend term stays at zero.
-          </li>
-          <li>
-            True five-minute in-play cron. Hobby is daily; on Pro set{" "}
-            <code className="text-primary">/api/cron/live</code> to{" "}
-            <code className="text-primary">*/5 * * * *</code>. Until then the live page refreshes
-            itself, with Pusher when configured.
-          </li>
-        </ul>
+        <h2 className="t-heading">Projected points</h2>
+        <p className="t-body measure">
+          Chance of starting is availability times how often they have actually played. A fit player with no starts stays a cameo. Under 40 availability the chance is capped, so a red flag projects near zero. Per-90 rates from fewer than about five games are shrunk, so a three-minute cameo cannot look like a goal a week. Expected minutes feed goals, assists, appearance points, bonus, cards and goals conceded. Clean sheets use a Poisson chance of zero from the opponent's expected goals, and only goalkeepers and defenders get them. Defensive contribution uses the hit rate over the recent gameweeks against the published threshold. Scoring values come from the draft settings block, with last season's numbers only as a fallback. For players with a points-per-game record, 60% of the projection is that record adjusted for the fixture, and 40% is the bottom-up model. Double gameweeks add both fixtures. A blank is zero, and it is drawn as a blank cell rather than skipped.
+        </p>
       </section>
-    </div>
+
+      <section>
+        <h2 className="t-heading">The league</h2>
+        <p className="t-body measure">
+          Academy FC is classic scoring, so there is no head-to-head fixture list. The season table is 4,000 draws of the remaining gameweeks around each side's current best XI. Title means finishing first. Top four is a points cut, not a playoff the league has published. Draft value compares a player's points with others within 25 places of their draft rank. Trades are checked same-position so the 2, 5, 5, 3 squad shape holds. Nothing on this site submits a waiver or a lineup.
+        </p>
+      </section>
+
+      <section>
+        <h2 className="t-heading">Reported news</h2>
+        <p className="t-body measure">
+          Twice a day the news job reads the BBC Premier League feed. If an API key is set, one model call proposes a signal, and the quote has to appear in the article before it is stored. Until that key is set, the job records nothing. A stored line is labelled reported, with the source link, and it never overwrites the official FPL note.
+        </p>
+      </section>
+
+      <section>
+        <h2 className="t-heading">Schedule</h2>
+        <p className="t-small">/api/cron/sync hourly. /api/cron/live every five minutes. /api/cron/news at 07:00 and 19:00 UTC. All three need the bearer cron secret.</p>
+      </section>
+    </article>
   );
 }
