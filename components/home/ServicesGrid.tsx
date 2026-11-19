@@ -8,7 +8,7 @@ export function ServicesGrid() {
     <Section
       id="services"
       heading="Services and from-prices"
-      intro="Straight prices agreed before work starts. Half up front, half at launch. You own the domain, the content, and the code."
+      intro="Built for NI local services - plumbers, HVAC, dentists, salons and similar. Straight prices agreed before work starts. Half up front, half at launch. You own the domain, the content, and the code."
       className="border-b border-studio-line"
     >
       <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">

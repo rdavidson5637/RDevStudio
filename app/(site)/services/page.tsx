@@ -121,7 +121,7 @@ export default function ServicesPage() {
                 For local businesses
               </h2>
               <p className="type-body mt-3 text-studio-muted">
-                Trades, cafes, salons, and independent shops across Northern Ireland. Fixed quotes, 50% upfront and 50% at launch, and full ownership of your domain and code.
+                Plumbers, HVAC, dentists, salons, cafes and independent shops across Northern Ireland. Fixed quotes, 50% upfront and 50% at launch, and full ownership of your domain and code.
               </p>
             </div>
             <div className="mt-6 pt-2">
