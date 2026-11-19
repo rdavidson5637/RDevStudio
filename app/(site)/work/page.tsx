@@ -92,7 +92,7 @@ export default function WorkPage() {
           Work and case studies
         </h1>
         <p className="type-body mt-5 max-w-prose text-studio-muted">
-          Client and charity builds come first, with honest status labels on where each project stands. Concept builds and prototypes sit separately below.
+          Client and charity builds, plus Rondo the coaching app, with honest status labels on where each project stands. Concept builds and prototypes sit separately below.
         </p>
         <div className="mt-8 flex flex-wrap items-center gap-6">
           <Button href="/contact">{DRAFT_CTAS.primary}</Button>
@@ -107,7 +107,7 @@ export default function WorkPage() {
 
       <Section
         heading="Client and charity work"
-        intro="Real organisations in Belfast and Northern Ireland."
+        intro="Real organisations in Belfast and Northern Ireland, plus a live football coaching pilot."
         className="border-b border-studio-line"
       >
         <div className="mt-10 space-y-10">

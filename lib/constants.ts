@@ -159,13 +159,21 @@ export const ABOUT_BLURB =
 
 export const SOCIAL_PROOF_ITEMS = [
   {
-    title: "Assisi Animal Sanctuary",
-    detail: "Volunteer platform. Ready for live use.",
+    title: "ShelterLink",
+    detail: "Volunteer platform for Assisi Animal Sanctuary. Ready for live use.",
   },
   {
     title: "RV's Cold Brew",
     detail:
       "A Belfast cold brew and matcha counter. Menu, hours and where to find Unit 11. Square is linked and the last details are being finished.",
+  },
+  {
+    title: "Crosskennan Lane Animal Sanctuary",
+    detail: "Charity site preview online. Forms and listings still being finished.",
+  },
+  {
+    title: "Rondo",
+    detail: "Grassroots football coaching app. Live pilot with Grove United 3rds.",
   },
 ] as const;
 
@@ -305,7 +313,8 @@ export type ProjectCategory =
   | "Client Work"
   | "Concept Build"
   | "Food & Drink"
-  | "Personal Project";
+  | "Personal Project"
+  | "Studio Product";
 
 export const PROJECTS = [
   {
@@ -343,6 +352,48 @@ export const PROJECTS = [
     previewFit: "contain" as const,
     previewBg: "#0a1a1f",
     outcome: "Live site - nearly finished",
+  },
+  {
+    id: "crosskennan",
+    title: "Crosskennan Lane",
+    category: "Client Work" as const,
+    type: "Charity Site",
+    summary: "Client · charity",
+    description:
+      "Charity site for Crosskennan Lane Animal Sanctuary near Antrim. Adoption, volunteering, donate and ways to help.",
+    highlights: ["Adoption listings", "Volunteer forms", "Phone-first"],
+    tags: ["Next.js", "Tailwind", "TypeScript"],
+    buttonLabel: "Read the case study",
+    href: "/work/crosskennan",
+    outcome: "Preview online",
+  },
+  {
+    id: "assisi",
+    title: "Assisi site and brand",
+    category: "Client Work" as const,
+    type: "Website and brand",
+    summary: "Client · charity",
+    description:
+      "A rebuilt website and brand for Assisi Animal Sanctuary in Belfast.",
+    highlights: ["Full site rebuild", "New brand", "Phone-first"],
+    tags: ["Next.js", "Tailwind"],
+    buttonLabel: "Read the case study",
+    href: "/work/assisi",
+    outcome: "Built - awaiting sign-off",
+  },
+  {
+    id: "rondo",
+    title: "Rondo",
+    category: "Studio Product" as const,
+    type: "Coaching app",
+    summary: "Studio · football",
+    description:
+      "Free coaching app for grassroots football. Availability, training plans, match day and fees. Pilot with Grove United 3rds.",
+    highlights: ["Availability", "Session planner", "Match tracker"],
+    tags: ["Next.js", "Tailwind", "Supabase"],
+    buttonLabel: "Read the case study",
+    href: "/work/rondo",
+    outcome: "Live pilot",
   },
   {
     id: "concept-builds",

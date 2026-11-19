@@ -45,6 +45,25 @@ export const DRAFT_PROOF_ITEMS = [
     status: "Built - awaiting their sign-off",
     href: "/work/assisi",
   },
+  {
+    name: "Crosskennan Lane Animal Sanctuary",
+    role: "Charity site: adoption, volunteering, donate and ways to help",
+    status: "Preview online - forms and listings still being finished",
+    href: "/work/crosskennan",
+  },
+  {
+    name: "Rondo",
+    role: "Grassroots football coaching app (NIFD pilot)",
+    status: "Live pilot - Grove United 3rds",
+    href: "/work/rondo",
+  },
+] as const;
+
+/** Slugs shown on the homepage teaser. Full list lives on /work. */
+export const DRAFT_FEATURED_CASE_SLUGS = [
+  "rvs-cold-brew",
+  "shelterlink",
+  "crosskennan",
 ] as const;
 
 export const DRAFT_SERVICES_CARDS = [
@@ -134,6 +153,34 @@ export const DRAFT_CASE_STUDIES = [
       "A full website and brand rebuild designed for clarity on mobile and desktop.",
     result:
       "Built and awaiting their sign-off before public preview.",
+  },
+  {
+    slug: "crosskennan",
+    name: "Crosskennan Lane Animal Sanctuary",
+    category: "Client work - Charity",
+    status: "Preview online",
+    href: "/work/crosskennan",
+    siteUrl: "https://crosskennan.vercel.app",
+    challenge:
+      "A volunteer-run sanctuary near Antrim needed one clear place for adoption, volunteering, donate and ways to help, usable on a phone.",
+    solution:
+      "A Next.js charity site with adoption listings, dog/cat/equine rehoming forms, adult and under-18 volunteer paths, and support pages. Forms use Formspree when IDs are set, otherwise mailto.",
+    result:
+      "Vercel preview online. Formspree IDs unset. Listings and horse profiles still being finished. Not on the sanctuary production domain yet.",
+  },
+  {
+    slug: "rondo",
+    name: "Rondo",
+    category: "Studio product - Football",
+    status: "Live pilot",
+    href: "/work/rondo",
+    siteUrl: "https://rondo-cyan.vercel.app",
+    challenge:
+      "Grassroots coaches juggle availability, training plans, line-ups, match reports and fees across WhatsApp and spreadsheets.",
+    solution:
+      "A free phone-first coaching app: team link for players, session planner, line-up builder, live match tracker, fee ledger and a public drill library. Next.js and Supabase.",
+    result:
+      "Live pilot with Grove United 3rds as part of NIFD. Further clubs wait on review.",
   },
 ] as const;
 

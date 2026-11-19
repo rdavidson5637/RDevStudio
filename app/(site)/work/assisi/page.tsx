@@ -15,11 +15,16 @@ export const metadata = createPageMetadata({
   ogImage: "/work/assisi/opengraph-image",
 });
 
-const FACTS = [
-  "A full rebuild of the public website for Assisi Animal Sanctuary.",
-  "A new brand to go with it.",
-  "Laid out so adopters, donors and supporters can find animals and ways to help without hunting through menus.",
-  "Designed for phone and desktop from the start.",
+function SectionHeading({ children }: { children: React.ReactNode }) {
+  return <h2 className="mb-3 font-studio-display text-2xl text-studio-text">{children}</h2>;
+}
+
+const BUILD_FEATURES = [
+  "Full rebuild of the public website",
+  "New brand to go with the site",
+  "Phone and desktop layouts from the start",
+  "Clear paths for adopters, donors and supporters",
+  "Animals and ways to help without deep menus",
 ] as const;
 
 export default function AssisiCaseStudyPage() {
@@ -34,11 +39,20 @@ export default function AssisiCaseStudyPage() {
           ]}
           className="mb-8"
         />
-        <header className="space-y-4 border-b border-studio-line pb-10">
+        <header className="space-y-6 border-b border-studio-line pb-10">
           <h1 className="display-lg text-studio-text">{study.name}</h1>
-          <p className="text-sm text-studio-muted">
-            {study.category}. Built, waiting on the sanctuary&apos;s sign-off.
+          <p className="type-body max-w-prose text-studio-muted">
+            A rebuilt website and brand for Assisi Animal Sanctuary in Belfast.
+            Built and waiting on the sanctuary&apos;s sign-off before a public
+            preview goes up.
           </p>
+
+          <div className="grid grid-cols-2 gap-x-4 gap-y-2 border-t border-studio-line pt-5 font-studio-sans text-sm text-studio-muted lg:grid-cols-4">
+            <p>Role: design and development, solo</p>
+            <p>Type: Website and brand</p>
+            <p>Status: Built - awaiting sign-off</p>
+            <p>Year - 2025-26</p>
+          </div>
         </header>
 
         <div className="border-b border-studio-line py-12">
@@ -51,10 +65,29 @@ export default function AssisiCaseStudyPage() {
         </div>
 
         <section className="border-b border-studio-line py-12">
-          <h2 className="mb-4 font-studio-display text-2xl text-studio-text">What it is</h2>
-          <ul className="max-w-prose list-disc space-y-3 pl-5 type-body text-studio-text marker:text-studio-faint">
-            {FACTS.map((fact) => (
-              <li key={fact}>{fact}</li>
+          <SectionHeading>What they needed</SectionHeading>
+          <p className="max-w-prose type-body text-studio-text">
+            A sanctuary site has to stay calm and clear. Adopters, donors and
+            supporters should find animals and ways to help without hunting
+            through menus, on a phone as easily as on a desktop.
+          </p>
+        </section>
+
+        <section className="border-b border-studio-line py-12">
+          <SectionHeading>What I built</SectionHeading>
+          <p className="max-w-prose type-body text-studio-text">
+            A full rebuild of the public website and a new brand to go with it.
+            Layout and copy aim at the jobs people actually come to do: meet
+            animals, learn how to help, and get in touch.
+          </p>
+          <ul className="mt-8 grid grid-cols-1 gap-2 sm:grid-cols-2">
+            {BUILD_FEATURES.map((feature) => (
+              <li
+                key={feature}
+                className="rounded-lg border border-studio-line bg-studio-surface px-4 py-3 font-studio-sans text-sm text-studio-text"
+              >
+                {feature}
+              </li>
             ))}
           </ul>
           <p className="mt-6 type-body text-studio-muted">
@@ -69,9 +102,16 @@ export default function AssisiCaseStudyPage() {
         </section>
 
         <section className="border-b border-studio-line py-12">
-          <h2 className="mb-3 font-studio-display text-2xl text-studio-text">
-            Run a rescue or a charity?
-          </h2>
+          <SectionHeading>Where it stands</SectionHeading>
+          <p className="max-w-prose type-body text-studio-text">
+            Built and awaiting their sign-off. The sanctuary has not adopted
+            this rebrand publicly yet. Screenshots stay off the studio site
+            until they say otherwise.
+          </p>
+        </section>
+
+        <section className="border-b border-studio-line py-12">
+          <SectionHeading>Run a rescue or a charity?</SectionHeading>
           <p className="max-w-prose type-body text-studio-muted">
             Registered charities get their site free. Tell me what you need and I&apos;ll walk you
             through how this one was put together.
@@ -87,7 +127,7 @@ export default function AssisiCaseStudyPage() {
           </div>
         </section>
 
-        <CaseFooter next={{ href: "/work/shelterlink", label: "ShelterLink" }} />
+        <CaseFooter next={{ href: "/work/crosskennan", label: "Crosskennan" }} />
       </article>
     </div>
   );

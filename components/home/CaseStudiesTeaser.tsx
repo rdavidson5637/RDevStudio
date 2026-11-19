@@ -1,18 +1,26 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Section } from "@/components/ui/Section";
-import { DRAFT_CASE_STUDIES, DRAFT_CTAS } from "@/lib/content/redesign-draft";
+import {
+  DRAFT_CASE_STUDIES,
+  DRAFT_CTAS,
+  DRAFT_FEATURED_CASE_SLUGS,
+} from "@/lib/content/redesign-draft";
 
 export function CaseStudiesTeaser() {
+  const featured = DRAFT_FEATURED_CASE_SLUGS.map((slug) =>
+    DRAFT_CASE_STUDIES.find((study) => study.slug === slug),
+  ).filter((study): study is (typeof DRAFT_CASE_STUDIES)[number] => study !== undefined);
+
   return (
     <Section
       id="work"
       heading="Case studies"
-      intro="Real work for a Belfast coffee counter and an animal sanctuary, with honest status on where each build stands."
+      intro="Client and charity builds, plus a football coaching app, with honest status on where each one stands."
       className="border-b border-studio-line"
     >
       <div className="mt-12 space-y-10">
-        {DRAFT_CASE_STUDIES.map((study) => (
+        {featured.map((study) => (
           <article
             key={study.slug}
             className="grid gap-8 border border-studio-border bg-studio-surface p-6 md:p-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center"
