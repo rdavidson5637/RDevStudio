@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { EnterWhenVisible } from "@/components/motion/EnterWhenVisible";
 import { Section } from "@/components/ui/Section";
 import {
   DRAFT_CASE_STUDIES,
@@ -20,10 +21,12 @@ export function CaseStudiesTeaser() {
       className="border-b border-studio-line"
     >
       <div className="mt-12 space-y-10">
-        {featured.map((study) => (
-          <article
+        {featured.map((study, index) => (
+          <EnterWhenVisible
             key={study.slug}
-            className="grid gap-8 border border-studio-border bg-studio-surface p-6 md:p-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center"
+            as="article"
+            delayMs={index * 70}
+            className="case-study-card grid gap-8 border border-studio-border bg-studio-surface p-6 transition-colors duration-normal ease-out md:p-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center"
           >
             {"image" in study && study.image ? (
               <div className="relative aspect-[16/10] w-full overflow-hidden border border-studio-line bg-studio-bg">
@@ -83,7 +86,7 @@ export function CaseStudiesTeaser() {
                 ) : null}
               </div>
             </div>
-          </article>
+          </EnterWhenVisible>
         ))}
       </div>
 

@@ -5,29 +5,42 @@ import { DRAFT_CTAS, DRAFT_HERO } from "@/lib/content/redesign-draft";
 import coldBrewDesktop from "@/public/work/rvs-cold-brew-desktop.webp";
 
 /**
- * Home hero: name-as-monument composition.
+ * Home hero: name-as-monument composition with a one-time load entrance.
  * Brand spans the content width; offer and CTA sit under it;
  * RV's Cold Brew screenshot is the real work proof on the right (stacked below on small screens).
  * Agent-written layout - treat as unverified until Ryan has checked it.
  */
 export function Hero() {
   return (
-    <section className="relative border-b border-studio-line">
+    <section className="hero-enter relative border-b border-studio-line">
       <div className="mx-auto max-w-studio px-6 md:px-8">
         <div className="flex min-h-[min(92svh,54rem)] flex-col justify-end gap-10 pb-12 pt-14 md:gap-12 md:pb-16 md:pt-16 lg:min-h-[min(90svh,58rem)] lg:justify-between lg:pb-20 lg:pt-10">
-          <p className="display-xl max-w-full text-studio-text" aria-hidden="true">
+          <p
+            className="hero-enter-item display-xl max-w-full text-studio-text"
+            style={{ ["--hero-enter-delay" as string]: "0ms" }}
+            aria-hidden="true"
+          >
             RDev Studio
           </p>
 
           <div className="grid items-end gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)] lg:gap-14">
             <div>
-              <h1 className="display-lg max-w-[16ch] text-balance text-studio-text">
+              <h1
+                className="hero-enter-item display-lg max-w-[16ch] text-balance text-studio-text"
+                style={{ ["--hero-enter-delay" as string]: "90ms" }}
+              >
                 {DRAFT_HERO.h1}
               </h1>
-              <p className="type-body mt-5 max-w-prose text-studio-muted md:mt-6">
+              <p
+                className="hero-enter-item type-body mt-5 max-w-prose text-studio-muted md:mt-6"
+                style={{ ["--hero-enter-delay" as string]: "160ms" }}
+              >
                 {DRAFT_HERO.support}
               </p>
-              <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-4">
+              <div
+                className="hero-enter-item mt-8 flex flex-wrap items-center gap-x-6 gap-y-4"
+                style={{ ["--hero-enter-delay" as string]: "220ms" }}
+              >
                 <Button href="/contact">{DRAFT_CTAS.primary}</Button>
                 <Link
                   href="/work"
@@ -38,7 +51,10 @@ export function Hero() {
               </div>
             </div>
 
-            <figure className="overflow-hidden border border-studio-border bg-studio-surface">
+            <figure
+              className="hero-enter-item overflow-hidden border border-studio-border bg-studio-surface"
+              style={{ ["--hero-enter-delay" as string]: "280ms" }}
+            >
               <Link
                 href="/work/rvs-cold-brew"
                 aria-label="RV's Cold Brew case study"
