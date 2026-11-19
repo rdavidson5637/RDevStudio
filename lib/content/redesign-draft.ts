@@ -59,11 +59,20 @@ export const DRAFT_PROOF_ITEMS = [
   },
 ] as const;
 
-/** Slugs shown on the homepage teaser. Full list lives on /work. */
+/** Slugs shown on the homepage showcase. Full list lives on /work. */
 export const DRAFT_FEATURED_CASE_SLUGS = [
-  "rvs-cold-brew",
   "shelterlink",
+  "assisi",
   "crosskennan",
+  "rondo",
+] as const;
+
+/** Ordered showcase set for /work (charity + Rondo). No MGSL case page exists. */
+export const DRAFT_SHOWCASE_CASE_SLUGS = [
+  "shelterlink",
+  "assisi",
+  "crosskennan",
+  "rondo",
 ] as const;
 
 export const DRAFT_SERVICES_CARDS = [
