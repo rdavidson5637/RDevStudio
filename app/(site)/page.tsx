@@ -17,7 +17,7 @@ export const metadata = createPageMetadata({
 
 export default function HomePage() {
   return (
-    <div className="bg-studio-bg text-studio-text">
+    <>
       <Hero />
       <ProofStrip />
       <ServicesGrid />
@@ -26,6 +26,6 @@ export default function HomePage() {
       <AboutLabTeaser />
       <HomeFaq />
       <TellMe />
-    </div>
+    </>
   );
 }

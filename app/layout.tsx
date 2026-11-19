@@ -6,20 +6,21 @@ import { SiteMetrics } from "@/components/layout/SiteMetrics";
 import "./globals.css";
 
 // Self-hosted (OFL, from Fontsource) so builds never depend on Google Fonts.
-const dmSerifDisplay = localFont({
+// Grenadine brief: Big Shoulders Display 800 for headings, Atkinson Hyperlegible for body.
+const bigShouldersDisplay = localFont({
   src: [
-    { path: "./fonts/dm-serif-display-latin-400-normal.woff2", weight: "400", style: "normal" },
-    { path: "./fonts/dm-serif-display-latin-400-italic.woff2", weight: "400", style: "italic" },
+    { path: "./fonts/big-shoulders-display-latin-700-normal.woff2", weight: "700", style: "normal" },
+    { path: "./fonts/big-shoulders-display-latin-800-normal.woff2", weight: "800", style: "normal" },
   ],
   variable: "--font-display",
   display: "swap",
   fallback: ["Georgia", "serif"],
 });
 
-const instrumentSans = localFont({
+const atkinsonHyperlegible = localFont({
   src: [
-    { path: "./fonts/instrument-sans-latin-400-normal.woff2", weight: "400", style: "normal" },
-    { path: "./fonts/instrument-sans-latin-600-normal.woff2", weight: "600", style: "normal" },
+    { path: "./fonts/atkinson-hyperlegible-latin-400-normal.woff2", weight: "400", style: "normal" },
+    { path: "./fonts/atkinson-hyperlegible-latin-700-normal.woff2", weight: "700", style: "normal" },
   ],
   variable: "--font-body",
   display: "swap",
@@ -42,7 +43,7 @@ export default function RootLayout({
   return (
     <html
       lang="en-GB"
-      className={`${dmSerifDisplay.variable} ${instrumentSans.variable}`}
+      className={`${bigShouldersDisplay.variable} ${atkinsonHyperlegible.variable}`}
     >
       <body className="font-sans antialiased">
         <StructuredData />
