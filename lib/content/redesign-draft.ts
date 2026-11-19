@@ -168,7 +168,7 @@ export const DRAFT_CASE_STUDIES = [
     category: "Client work - Charity",
     status: "Ready for live use",
     href: "/work/shelterlink",
-    image: "/images/work/shelterlink-admin-dashboard.png",
+    image: "/images/work/shelterlink-admin-dashboard.webp",
     imageAlt: "ShelterLink admin dashboard for Assisi Animal Sanctuary",
     challenge:
       "Assisi Animal Sanctuary runs on volunteers. Shift cover, training roles, and Sunday rotas lived in paper lists and phone calls, taking staff time away from the animals.",

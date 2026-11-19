@@ -414,9 +414,14 @@ body {
 }
 
 @media (prefers-reduced-motion: no-preference) {
+  /* Hero: transform only so LCP never starts at opacity 0. */
   .hero-enter .hero-enter-item {
-    animation: studio-enter var(--duration-reveal) var(--ease-soft) both;
+    animation: studio-enter-shift var(--duration-reveal) var(--ease-soft) both;
     animation-delay: var(--hero-enter-delay, 0ms);
+  }
+
+  .hero-enter .hero-enter-lcp {
+    animation: none;
   }
 
   .studio-enter-pending {
@@ -554,6 +559,15 @@ body {
   }
   to {
     opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes studio-enter-shift {
+  from {
+    transform: translateY(12px);
+  }
+  to {
     transform: translateY(0);
   }
 }
