@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { MobileMenu } from "@/components/mock-a/MobileMenu";
 import { CONTACT_EMAIL, GITHUB_URL } from "@/lib/constants";
 import { MOCK_A_BASE, MOCK_A_QUOTE_HREF, MOCK_A_WHATSAPP_HREF } from "@/components/mock-a/data";
 import s from "@/components/mock-a/mockA.module.css";
@@ -55,21 +56,7 @@ export function MockHeader() {
             <Link href={MOCK_A_QUOTE_HREF} className={`${s.btn} ${s.btnLime} ${s.btnSm}`}>
               Get a quote
             </Link>
-            <details className={s.menu}>
-              <summary className={`${s.btn} ${s.btnGhost} ${s.btnSm}`}>
-                <span className={s.menuIcon} aria-hidden="true" />
-                <span className="sr-only">Menu</span>
-              </summary>
-              <nav className={s.menuPanel} aria-label="Main">
-                <ul>
-                  {NAV.map((item) => (
-                    <li key={item.href}>
-                      <Link href={item.href}>{item.label}</Link>
-                    </li>
-                  ))}
-                </ul>
-              </nav>
-            </details>
+            <MobileMenu items={NAV} />
           </div>
         </div>
       </header>

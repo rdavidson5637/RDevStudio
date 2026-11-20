@@ -233,7 +233,7 @@ export default function MockAHomePage() {
       </section>
 
       {/* ---------- Contact close ---------- */}
-      <section id="quote" className={`${s.close} ${s.section}`} aria-labelledby="quote-title" tabIndex={-1}>
+      <section id="quote" className={`${s.close} ${s.section}`} aria-labelledby="quote-title">
         <div className={s.wrap}>
           <p className={`${s.eyebrow} ${s.mono}`}>Contact</p>
           <h2 id="quote-title" className={s.closeDisplay} data-reveal>
