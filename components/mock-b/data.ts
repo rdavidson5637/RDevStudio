@@ -22,7 +22,6 @@ export type MockBProject = {
   linkLabel: string;
   secondaryHref?: string;
   secondaryLabel?: string;
-  accent: "seaglass" | "terracotta" | "butter";
   screenshot?: {
     src: string;
     alt: string;
@@ -63,7 +62,6 @@ export const MOCK_B_PROJECTS: readonly MockBProject[] = [
     linkLabel: "Open shelterlink.online",
     secondaryHref: "/work/shelterlink",
     secondaryLabel: "View repo case study",
-    accent: "seaglass",
     screenshot: {
       src: "/images/work/shelterlink-admin-dashboard.png",
       alt: "ShelterLink admin dashboard showing volunteer overview and activity",
@@ -105,7 +103,6 @@ export const MOCK_B_PROJECTS: readonly MockBProject[] = [
     href: "/work/assisi",
     external: false,
     linkLabel: "View repo case study",
-    accent: "terracotta",
   },
   {
     id: "crosskennan",
@@ -125,7 +122,6 @@ export const MOCK_B_PROJECTS: readonly MockBProject[] = [
     href: "https://crosskennan.vercel.app",
     external: true,
     linkLabel: "Open crosskennan.vercel.app",
-    accent: "butter",
   },
   {
     id: "rondo",
@@ -145,7 +141,6 @@ export const MOCK_B_PROJECTS: readonly MockBProject[] = [
     href: "/mock-b/work/rondo",
     external: false,
     linkLabel: "Read case study",
-    accent: "terracotta",
   },
   {
     id: "mgsl-hub",
@@ -165,7 +160,6 @@ export const MOCK_B_PROJECTS: readonly MockBProject[] = [
     href: "https://mgsl-hq-black.vercel.app",
     external: true,
     linkLabel: "Open mgsl-hq-black.vercel.app",
-    accent: "seaglass",
   },
 ] as const;
 
@@ -175,8 +169,6 @@ export type StudioService = {
   tag: string;
   summary: string;
   bullets: readonly string[];
-  icon: "website" | "webapp" | "gbp" | "charity";
-  tint: "terracotta" | "seaglass" | "butter" | "cream";
 };
 
 export const MOCK_B_SERVICES: readonly StudioService[] = [
@@ -191,8 +183,6 @@ export const MOCK_B_SERVICES: readonly StudioService[] = [
       "Contact form wired straight to your inbox",
       "You own your domain, copy, and code",
     ],
-    icon: "website",
-    tint: "terracotta",
   },
   {
     id: "web-apps",
@@ -205,8 +195,6 @@ export const MOCK_B_SERVICES: readonly StudioService[] = [
       "Plain, maintainable code without fragile bloat",
       "Sensible security and privacy built in",
     ],
-    icon: "webapp",
-    tint: "seaglass",
   },
   {
     id: "google-business-profile",
@@ -219,8 +207,6 @@ export const MOCK_B_SERVICES: readonly StudioService[] = [
       "Consistent contact details between site and Google",
       "Plain-English checklist with no invented scores",
     ],
-    icon: "gbp",
-    tint: "butter",
   },
   {
     id: "charities",
@@ -233,8 +219,6 @@ export const MOCK_B_SERVICES: readonly StudioService[] = [
       "Registered charities: mention it in your quote note",
       "Calm, readable layouts that anyone can navigate",
     ],
-    icon: "charity",
-    tint: "cream",
   },
 ] as const;
 
@@ -276,8 +260,6 @@ export type ServiceGuide = {
   number: string;
   title: string;
   tag: string;
-  icon: "website" | "webapp" | "gbp" | "charity";
-  tint: "terracotta" | "seaglass" | "butter" | "cream";
   quoteTopic: QuoteTopic;
   lead: string;
   included: readonly string[];
@@ -298,8 +280,6 @@ export const MOCK_B_SERVICE_GUIDES: readonly ServiceGuide[] = [
     number: "01",
     title: "Websites",
     tag: "Phone-first builds",
-    icon: "website",
-    tint: "terracotta",
     quoteTopic: "New website",
     lead: "Clear, fast websites built from scratch for Northern Ireland businesses and community organisations. No bloated templates and no lock-in.",
     included: [
@@ -324,8 +304,6 @@ export const MOCK_B_SERVICE_GUIDES: readonly ServiceGuide[] = [
     number: "02",
     title: "Web apps & handy tools",
     tag: "Custom workflows",
-    icon: "webapp",
-    tint: "seaglass",
     quoteTopic: "Web app / custom tool",
     lead: "Practical browser-based tools built around how your team actually works — especially when spreadsheets, messages, or paper rotas stop keeping up.",
     included: [
@@ -349,8 +327,6 @@ export const MOCK_B_SERVICE_GUIDES: readonly ServiceGuide[] = [
     number: "03",
     title: "Google Business Profile help",
     tag: "Local visibility",
-    icon: "gbp",
-    tint: "butter",
     quoteTopic: "Google Business Profile help",
     lead: "Straightforward setup and tidy-ups so local customers in Carrickfergus, Belfast, and across Northern Ireland can quickly find your hours, map pin, and contact details.",
     included: [
@@ -371,8 +347,6 @@ export const MOCK_B_SERVICE_GUIDES: readonly ServiceGuide[] = [
     number: "04",
     title: "Charity & small-business builds",
     tag: "Local roots",
-    icon: "charity",
-    tint: "cream",
     quoteTopic: "Charity / rescue build",
     lead: "RDev Studio works directly with Northern Ireland small businesses, animal rescues, registered charities, and community groups from first sketch to launch.",
     included: [

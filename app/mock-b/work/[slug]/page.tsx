@@ -8,10 +8,11 @@ import {
   MOCK_B_CASE_STUDY_SLUGS,
 } from "@/components/mock-b/case-studies";
 import {
-  WaveRule,
-  WavyUnderline,
+  ArrowLeftIcon,
+  ArrowRightIcon,
+  ExternalLinkIcon,
   WhatsAppIcon,
-} from "@/components/mock-b/CoastalDoodles";
+} from "@/components/mock-b/icons";
 import { WorkDeviceShowcase } from "@/components/mock-b/WorkDeviceShowcase";
 
 export const dynamicParams = false;
@@ -44,12 +45,6 @@ export async function generateMetadata({
   };
 }
 
-const ACCENT_PILL = {
-  seaglass: "bg-[var(--mb-seaglass-soft)] text-[var(--mb-seaglass-ink)]",
-  terracotta: "bg-[var(--mb-terracotta-soft)] text-[var(--mb-terracotta-ink)]",
-  butter: "bg-[var(--mb-butter-soft)] text-[var(--mb-ink)]",
-} as const;
-
 function TodoMarkerCard({
   label = "TODO for Ryan",
   children,
@@ -58,20 +53,16 @@ function TodoMarkerCard({
   children: React.ReactNode;
 }) {
   return (
-    <div className="mb-todo-box rounded-2xl p-4 sm:p-5">
-      <div className="flex flex-wrap items-center gap-2">
-        <span className="inline-flex items-center gap-1.5 rounded-full border border-[var(--mb-line-strong)] bg-[var(--mb-butter)] px-2.5 py-0.5 text-xs font-bold text-[var(--mb-ink)]">
-          <span
-            aria-hidden="true"
-            className="h-1.5 w-1.5 rounded-full bg-[var(--mb-terracotta)]"
-          />
+    <div className="mb-todo-box p-4 sm:p-5">
+      <div className="flex flex-wrap items-center gap-2.5">
+        <span className="inline-flex items-center gap-1.5 rounded-[var(--radius-sm)] border border-[var(--color-border-strong)] bg-[var(--color-bg-raised)] px-2.5 py-0.5 text-xs font-semibold text-[var(--color-ink)]">
           {label}
         </span>
-        <span className="text-xs font-semibold text-[var(--mb-ink-soft)]">
+        <span className="text-xs font-medium text-[var(--color-muted)]">
           Not stored in repo yet
         </span>
       </div>
-      <div className="mt-2.5 text-sm leading-relaxed text-[var(--mb-ink)]">
+      <div className="mt-2.5 text-sm leading-relaxed text-[var(--color-ink)]">
         {children}
       </div>
     </div>
@@ -95,66 +86,65 @@ export default async function MockBCaseStudyPage({
   const quoteHref = `/mock-b/contact?topic=${encodeURIComponent(study.quoteTopic)}`;
 
   return (
-    <div className="pb-16 sm:pb-24">
+    <div>
       {/* ── BREADCRUMB + CASE HEADER ─────────────────────────────────────── */}
       <section className="mx-auto max-w-5xl px-4 pb-10 pt-8 sm:px-6 sm:pt-14">
         <nav
           aria-label="Breadcrumb"
-          className="flex flex-wrap items-center gap-1 text-sm font-semibold text-[var(--mb-ink-soft)]"
+          className="flex flex-wrap items-center gap-1 text-sm font-medium text-[var(--color-muted)]"
         >
           <Link
             href="/mock-b"
-            className="inline-flex min-h-[44px] items-center rounded-full px-2 underline decoration-[var(--mb-line-strong)] underline-offset-4 hover:text-[var(--mb-terracotta)]"
+            className="inline-flex min-h-[44px] items-center pr-2 underline decoration-[var(--color-border-strong)] underline-offset-4 hover:text-[var(--color-accent)]"
           >
             Studio home
           </Link>
-          <span aria-hidden="true" className="text-[var(--mb-ink-faint)]">
+          <span aria-hidden="true" className="text-[var(--color-border-strong)]">
             /
           </span>
           <Link
             href="/mock-b/work"
-            className="inline-flex min-h-[44px] items-center rounded-full px-2 underline decoration-[var(--mb-line-strong)] underline-offset-4 hover:text-[var(--mb-terracotta)]"
+            className="inline-flex min-h-[44px] items-center px-2 underline decoration-[var(--color-border-strong)] underline-offset-4 hover:text-[var(--color-accent)]"
           >
             Work
           </Link>
-          <span aria-hidden="true" className="text-[var(--mb-ink-faint)]">
+          <span aria-hidden="true" className="text-[var(--color-border-strong)]">
             /
           </span>
           <span
             aria-current="page"
-            className="inline-flex min-h-[44px] items-center px-2 text-[var(--mb-ink)]"
+            className="inline-flex min-h-[44px] items-center px-2 font-semibold text-[var(--color-ink)]"
           >
             {project.name}
           </span>
         </nav>
 
         <div className="mt-4 max-w-3xl">
-          <div className="flex flex-wrap items-center gap-2 text-xs font-semibold">
-            <span className="mb-sticker mb-sticker-tilt-left mb-sticker-wobble bg-[var(--mb-butter-soft)] text-[var(--mb-ink)]">
+          <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs font-medium text-[var(--color-muted)]">
+            <span className="font-semibold uppercase tracking-wider text-[var(--color-text-tertiary)]">
               Case study {study.number} of 05
             </span>
-            <span
-              className={`rounded-full px-3 py-1.5 ${ACCENT_PILL[project.accent]}`}
-            >
+            <span aria-hidden="true" className="text-[var(--color-border-strong)]">
+              /
+            </span>
+            <span className="font-semibold text-[var(--color-accent)]">
               {project.type}
             </span>
-            <span className="rounded-full border border-[var(--mb-line)] bg-[var(--mb-paper)] px-3 py-1.5 text-[var(--mb-ink-soft)]">
-              {study.statusHeadline}
+            <span aria-hidden="true" className="text-[var(--color-border-strong)]">
+              /
             </span>
+            <span>{study.statusHeadline}</span>
           </div>
 
-          <h1 className="mb-display mt-4 text-[2.25rem] font-semibold leading-[1.08] tracking-tight text-[var(--mb-ink)] sm:text-5xl">
-            <span className="relative inline-block">
-              {project.name}
-              <WavyUnderline className="mt-1 h-2.5 w-full max-w-[220px] text-[var(--mb-terracotta)]" />
-            </span>
+          <h1 className="mb-display mt-3 text-[2.25rem] font-semibold leading-[1.08] tracking-tight text-[var(--color-ink)] sm:text-5xl">
+            {project.name}
           </h1>
 
-          <p className="mt-4 text-base leading-relaxed text-[var(--mb-ink-soft)] sm:text-lg">
+          <p className="mt-4 text-base leading-relaxed text-[var(--color-muted)] sm:text-lg">
             {project.summary}
           </p>
 
-          <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
+          <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
             {project.external ? (
               <a
                 href={project.href}
@@ -163,14 +153,12 @@ export default async function MockBCaseStudyPage({
                 className="mb-btn-primary w-full sm:w-auto"
               >
                 {project.linkLabel}
-                <span aria-hidden="true">&#8599;</span>
+                <ExternalLinkIcon className="h-3.5 w-3.5 shrink-0" />
               </a>
             ) : (
               <Link href={quoteHref} className="mb-btn-primary w-full sm:w-auto">
                 Ask about a build like this
-                <span aria-hidden="true" className="mb-arrow-icon">
-                  &rarr;
-                </span>
+                <ArrowRightIcon className="h-4 w-4 shrink-0" />
               </Link>
             )}
 
@@ -178,16 +166,16 @@ export default async function MockBCaseStudyPage({
               href={STUDIO_WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="mb-btn-whatsapp w-full sm:w-auto"
+              className="mb-btn-secondary w-full sm:w-auto"
             >
-              <WhatsAppIcon className="h-5 w-5 shrink-0" />
+              <WhatsAppIcon className="h-4 w-4 shrink-0 text-[var(--color-accent)]" />
               Message on WhatsApp
             </a>
 
             {study.repoCaseStudyHref && study.repoCaseStudyLabel ? (
               <Link
                 href={study.repoCaseStudyHref}
-                className="mb-btn-soft w-full sm:w-auto"
+                className="inline-flex min-h-[44px] items-center justify-center px-2 text-sm font-medium text-[var(--color-muted)] underline decoration-[var(--color-border-strong)] underline-offset-4 hover:text-[var(--color-ink)] sm:justify-start"
               >
                 {study.repoCaseStudyLabel}
               </Link>
@@ -195,60 +183,58 @@ export default async function MockBCaseStudyPage({
           </div>
         </div>
 
-        {/* Facts-at-a-glance strip */}
-        <dl className="mt-8 grid gap-3 rounded-3xl border-[1.5px] border-[var(--mb-line)] bg-[var(--mb-paper)] p-4 shadow-[0_3px_0_var(--mb-line)] sm:grid-cols-2 sm:p-5 lg:grid-cols-4">
-          <div className="rounded-2xl bg-[var(--mb-cream)] p-3.5">
-            <dt className="text-xs font-bold uppercase tracking-wide text-[var(--mb-ink-soft)]">
+        {/* Ruled facts-at-a-glance strip */}
+        <dl className="mt-10 grid gap-6 border-y border-[var(--color-border)] py-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div>
+            <dt className="text-xs font-semibold uppercase tracking-wider text-[var(--color-text-tertiary)]">
               Context
             </dt>
-            <dd className="mt-1 text-sm font-semibold text-[var(--mb-ink)]">
+            <dd className="mt-1.5 text-sm font-semibold text-[var(--color-ink)]">
               {study.clientOrContext}
             </dd>
           </div>
-          <div className="rounded-2xl bg-[var(--mb-cream)] p-3.5">
-            <dt className="text-xs font-bold uppercase tracking-wide text-[var(--mb-ink-soft)]">
+          <div>
+            <dt className="text-xs font-semibold uppercase tracking-wider text-[var(--color-text-tertiary)]">
               Status
             </dt>
-            <dd className="mt-1 text-sm font-semibold text-[var(--mb-ink)]">
+            <dd className="mt-1.5 text-sm font-semibold text-[var(--color-ink)]">
               {study.statusHeadline}
             </dd>
           </div>
-          <div className="rounded-2xl bg-[var(--mb-cream)] p-3.5">
-            <dt className="text-xs font-bold uppercase tracking-wide text-[var(--mb-ink-soft)]">
+          <div>
+            <dt className="text-xs font-semibold uppercase tracking-wider text-[var(--color-text-tertiary)]">
               Year / date
             </dt>
-            <dd className="mt-1 flex flex-wrap items-center gap-1.5 text-sm font-semibold text-[var(--mb-ink)]">
+            <dd className="mt-1.5 flex flex-wrap items-center gap-2 text-sm font-semibold text-[var(--color-ink)]">
               <span>{study.yearDisplay}</span>
               {study.yearIsTodo ? (
-                <span className="rounded-full bg-[var(--mb-butter)] px-2 py-0.5 text-[11px] font-bold text-[var(--mb-ink)]">
+                <span className="rounded-[var(--radius-sm)] border border-[var(--color-border-strong)] bg-[var(--color-bg-overlay)] px-2 py-0.5 text-[11px] font-semibold text-[var(--color-muted)]">
                   TODO for Ryan
                 </span>
               ) : null}
             </dd>
           </div>
-          <div className="rounded-2xl bg-[var(--mb-cream)] p-3.5">
-            <dt className="text-xs font-bold uppercase tracking-wide text-[var(--mb-ink-soft)]">
+          <div>
+            <dt className="text-xs font-semibold uppercase tracking-wider text-[var(--color-text-tertiary)]">
               Link
             </dt>
-            <dd className="mt-1 text-sm font-semibold text-[var(--mb-ink)]">
+            <dd className="mt-1 text-sm font-semibold text-[var(--color-ink)]">
               {project.external ? (
                 <a
                   href={project.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex min-h-[44px] items-center break-all text-[var(--mb-seaglass-ink)] underline decoration-[var(--mb-seaglass)]/45 underline-offset-4 hover:text-[var(--mb-seaglass)]"
+                  className="inline-flex min-h-[44px] items-center gap-1 break-all text-[var(--color-accent)] underline decoration-[var(--color-border-accent)] underline-offset-4 hover:text-[var(--color-accent-hover)]"
                 >
                   {project.href.replace(/^https?:\/\//, "")}
-                  <span aria-hidden="true" className="ml-1">
-                    &#8599;
-                  </span>
+                  <ExternalLinkIcon className="h-3.5 w-3.5 shrink-0" />
                 </a>
               ) : project.id === "assisi" ? (
-                <span>Held until sign-off</span>
+                <span className="inline-block pt-0.5">Held until sign-off</span>
               ) : (
-                <span className="inline-flex items-center gap-1.5">
+                <span className="inline-flex items-center gap-2 pt-0.5">
                   <span>In-site</span>
-                  <span className="rounded-full bg-[var(--mb-butter)] px-2 py-0.5 text-[11px] font-bold text-[var(--mb-ink)]">
+                  <span className="rounded-[var(--radius-sm)] border border-[var(--color-border-strong)] bg-[var(--color-bg-overlay)] px-2 py-0.5 text-[11px] font-semibold text-[var(--color-muted)]">
                     URL TODO
                   </span>
                 </span>
@@ -261,368 +247,350 @@ export default async function MockBCaseStudyPage({
       {/* ── VISUAL SHOWCASE ──────────────────────────────────────────────── */}
       <section
         aria-labelledby="case-visual-heading"
-        className="mx-auto max-w-5xl px-4 pb-12 sm:px-6"
+        className="mx-auto max-w-5xl px-4 pb-14 sm:px-6"
       >
-        <div className="mb-card p-4 sm:p-6">
-          <div className="mb-4 flex flex-wrap items-center justify-between gap-2">
-            <h2
-              id="case-visual-heading"
-              className="text-xs font-bold uppercase tracking-wide text-[var(--mb-ink-soft)]"
-            >
-              Visual preview
-            </h2>
-            <p className="text-xs font-medium text-[var(--mb-ink-soft)]">
-              {study.visualNote}
-            </p>
-          </div>
-          <WorkDeviceShowcase project={project} />
+        <div className="mb-3 flex flex-wrap items-baseline justify-between gap-2">
+          <h2
+            id="case-visual-heading"
+            className="text-xs font-semibold uppercase tracking-widest text-[var(--color-text-tertiary)]"
+          >
+            Visual preview
+          </h2>
+          <p className="text-xs font-medium text-[var(--color-muted)]">
+            {study.visualNote}
+          </p>
         </div>
+        <WorkDeviceShowcase project={project} />
       </section>
 
-      <div className="mx-auto max-w-5xl px-4 sm:px-6">
-        <WaveRule />
-      </div>
+      {/* ── MAIN CASE STUDY CONTENT + RULED SIDEBAR ──────────────────────── */}
+      <div className="border-t border-[var(--color-border)] bg-[var(--color-bg-raised)]">
+        <div className="mx-auto grid max-w-5xl gap-12 px-4 py-14 sm:px-6 sm:py-20 lg:grid-cols-[1.4fr_0.6fr] lg:items-start">
+          <div className="space-y-12">
+            {/* 1. The problem */}
+            <section aria-labelledby="case-problem-heading" data-mb-reveal="true">
+              <p className="text-xs font-semibold uppercase tracking-widest text-[var(--color-accent)]">
+                01 · Context
+              </p>
+              <h2
+                id="case-problem-heading"
+                className="mb-display mt-2 text-2xl font-semibold text-[var(--color-ink)] sm:text-3xl"
+              >
+                The problem
+              </h2>
 
-      {/* ── MAIN CASE STUDY CONTENT ──────────────────────────────────────── */}
-      <div className="mx-auto grid max-w-5xl gap-8 px-4 py-12 sm:px-6 sm:py-16 lg:grid-cols-[1.35fr_0.65fr] lg:items-start">
-        <div className="space-y-8">
-          {/* 1. The problem */}
-          <section
-            aria-labelledby="case-problem-heading"
-            data-mb-reveal="true"
-            className="mb-card p-5 sm:p-7"
-          >
-            <p className="text-xs font-bold uppercase tracking-wide text-[var(--mb-terracotta-ink)]">
-              01 · Context
-            </p>
-            <h2
-              id="case-problem-heading"
-              className="mb-display mt-1.5 text-2xl font-semibold text-[var(--mb-ink)] sm:text-3xl"
-            >
-              The problem
-            </h2>
-
-            {study.problemParagraphs.length > 0 ? (
-              <div className="mt-4 space-y-4 text-sm leading-relaxed text-[var(--mb-ink-soft)] sm:text-base">
-                {study.problemParagraphs.map((paragraph) => (
-                  <p key={paragraph}>{paragraph}</p>
-                ))}
-              </div>
-            ) : null}
-
-            {study.problemTodo ? (
-              <div className="mt-4">
-                <TodoMarkerCard>{study.problemTodo}</TodoMarkerCard>
-              </div>
-            ) : null}
-          </section>
-
-          {/* 2. What was built */}
-          <section
-            aria-labelledby="case-built-heading"
-            data-mb-reveal="true"
-            className="mb-card p-5 sm:p-7"
-          >
-            <p className="text-xs font-bold uppercase tracking-wide text-[var(--mb-seaglass-ink)]">
-              02 · Delivery
-            </p>
-            <h2
-              id="case-built-heading"
-              className="mb-display mt-1.5 text-2xl font-semibold text-[var(--mb-ink)] sm:text-3xl"
-            >
-              What was built
-            </h2>
-
-            <div className="mt-4 space-y-4 text-sm leading-relaxed text-[var(--mb-ink-soft)] sm:text-base">
-              {study.builtParagraphs.map((paragraph) => (
-                <p key={paragraph}>{paragraph}</p>
-              ))}
-            </div>
-
-            {study.builtHighlights.length > 0 ? (
-              <div className="mt-6">
-                <h3 className="text-xs font-bold uppercase tracking-wide text-[var(--mb-ink-soft)]">
-                  Confirmed highlights
-                </h3>
-                <ul className="mt-3 grid gap-2.5 sm:grid-cols-2">
-                  {study.builtHighlights.map((item) => (
-                    <li
-                      key={item}
-                      className="flex items-start gap-2.5 rounded-2xl border border-[var(--mb-line)] bg-[var(--mb-cream)] px-3.5 py-3 text-sm leading-snug text-[var(--mb-ink)]"
-                    >
-                      <span
-                        aria-hidden="true"
-                        className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-[var(--mb-terracotta)]"
-                      />
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ) : null}
-
-            {study.builtTodo ? (
-              <div className="mt-5">
-                <TodoMarkerCard>{study.builtTodo}</TodoMarkerCard>
-              </div>
-            ) : null}
-
-            {study.architectureNote ? (
-              <div className="mt-6 rounded-2xl border border-[var(--mb-line)] bg-[var(--mb-cream-deep)]/70 p-4 sm:p-5">
-                <h3 className="mb-display text-xl font-semibold text-[var(--mb-ink)]">
-                  {study.architectureNote.heading}
-                </h3>
-                <div className="mt-2.5 space-y-3 text-sm leading-relaxed text-[var(--mb-ink-soft)] sm:text-base">
-                  {study.architectureNote.paragraphs.map((paragraph) => (
+              {study.problemParagraphs.length > 0 ? (
+                <div className="mt-4 space-y-4 text-sm leading-relaxed text-[var(--color-muted)] sm:text-base">
+                  {study.problemParagraphs.map((paragraph) => (
                     <p key={paragraph}>{paragraph}</p>
                   ))}
                 </div>
-              </div>
-            ) : null}
+              ) : null}
 
-            {study.relatedProject ? (
-              <div className="mt-6 flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-[var(--mb-line)] bg-[var(--mb-cream)] px-4 py-3.5">
-                <p className="text-sm text-[var(--mb-ink-soft)]">
-                  {study.relatedProject.relation}
-                </p>
-                <Link
-                  href={`/mock-b/work/${study.relatedProject.slug}`}
-                  className="mb-arrow-link inline-flex min-h-[44px] items-center gap-1 text-sm font-semibold text-[var(--mb-terracotta-ink)] underline decoration-[var(--mb-terracotta)]/45 underline-offset-4 hover:text-[var(--mb-terracotta)]"
-                >
-                  Open {study.relatedProject.name}
-                  <span aria-hidden="true" className="mb-arrow-icon">
-                    &rarr;
-                  </span>
-                </Link>
-              </div>
-            ) : null}
-          </section>
+              {study.problemTodo ? (
+                <div className="mt-5">
+                  <TodoMarkerCard>{study.problemTodo}</TodoMarkerCard>
+                </div>
+              ) : null}
+            </section>
 
-          {/* 3. Status, results & TODOs for Ryan */}
-          <section
-            aria-labelledby="case-todos-heading"
-            data-mb-reveal="true"
-            className="mb-card p-5 sm:p-7"
-          >
-            <p className="text-xs font-bold uppercase tracking-wide text-[var(--mb-ink-soft)]">
-              03 · Facts &amp; gaps
-            </p>
-            <h2
-              id="case-todos-heading"
-              className="mb-display mt-1.5 text-2xl font-semibold text-[var(--mb-ink)] sm:text-3xl"
+            {/* 2. What was built */}
+            <section
+              aria-labelledby="case-built-heading"
+              data-mb-reveal="true"
+              className="border-t border-[var(--color-border)] pt-10"
             >
-              Where it stands &amp; TODOs for Ryan
-            </h2>
-            <p className="mt-3 text-sm leading-relaxed text-[var(--mb-ink-soft)] sm:text-base">
-              {study.outcomeConfirmed}
-            </p>
-
-            <div className="mt-5">
-              <TodoMarkerCard label="TODO for Ryan · Missing facts">
-                <p className="font-semibold text-[var(--mb-ink)]">
-                  Nothing below has been invented. Fill in only what is real and approved:
-                </p>
-                <ul className="mt-3 space-y-2.5">
-                  {study.todosForRyan.map((todo) => (
-                    <li
-                      key={todo.field}
-                      className="rounded-xl border border-[var(--mb-line-strong)] bg-[var(--mb-paper)] px-3.5 py-2.5 text-sm leading-relaxed"
-                    >
-                      <span className="font-bold text-[var(--mb-ink)]">
-                        {todo.field}:
-                      </span>{" "}
-                      <span className="text-[var(--mb-ink-soft)]">
-                        {todo.note}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
-              </TodoMarkerCard>
-            </div>
-          </section>
-        </div>
-
-        {/* ── SIDEBAR (STACK, STATUS, DIRECT CTA) ────────────────────────── */}
-        <aside className="space-y-6 lg:sticky lg:top-24">
-          <section
-            aria-labelledby="case-stack-heading"
-            data-mb-reveal="true"
-            className="mb-card p-5 sm:p-6"
-          >
-            <h2
-              id="case-stack-heading"
-              className="mb-display text-xl font-semibold text-[var(--mb-ink)]"
-            >
-              Stack &amp; focus
-            </h2>
-            <div className="mt-3 flex flex-wrap gap-2">
-              {study.stackConfirmed.map((tag) => (
-                <span
-                  key={tag}
-                  className="rounded-full border border-[var(--mb-line-strong)] bg-[var(--mb-cream)] px-3 py-1 text-xs font-semibold text-[var(--mb-ink)]"
-                >
-                  {tag}
-                </span>
-              ))}
-            </div>
-            <p className="mt-3.5 text-sm leading-relaxed text-[var(--mb-ink-soft)]">
-              {study.stackNote}
-            </p>
-            {study.stackTodo ? (
-              <div className="mt-4">
-                <TodoMarkerCard>{study.stackTodo}</TodoMarkerCard>
-              </div>
-            ) : null}
-          </section>
-
-          <section
-            aria-labelledby="case-status-heading"
-            data-mb-reveal="true"
-            className="mb-card p-5 sm:p-6"
-          >
-            <h2
-              id="case-status-heading"
-              className="mb-display text-xl font-semibold text-[var(--mb-ink)]"
-            >
-              Project status
-            </h2>
-            <p className="mt-2 inline-flex items-center gap-2 rounded-full border border-[var(--mb-seaglass)]/35 bg-[var(--mb-seaglass-soft)] px-3 py-1 text-xs font-bold text-[var(--mb-seaglass-ink)]">
-              <span
-                aria-hidden="true"
-                className="h-2 w-2 rounded-full bg-[var(--mb-seaglass)]"
-              />
-              {study.statusHeadline}
-            </p>
-            <p className="mt-3 text-sm leading-relaxed text-[var(--mb-ink-soft)]">
-              {study.statusDetail}
-            </p>
-          </section>
-
-          <section
-            aria-labelledby="case-sidebar-cta-heading"
-            data-mb-reveal="true"
-            className="rounded-3xl border-[1.5px] border-[var(--mb-line-strong)] bg-[var(--mb-cream-deep)] p-5 sm:p-6"
-          >
-            <h2
-              id="case-sidebar-cta-heading"
-              className="mb-display text-xl font-semibold text-[var(--mb-ink)]"
-            >
-              Planning something similar?
-            </h2>
-            <p className="mt-2 text-sm leading-relaxed text-[var(--mb-ink-soft)]">
-              Tell RDev Studio what you need and we will reply in plain English with clear next steps.
-            </p>
-            <div className="mt-4 flex flex-col gap-2.5">
-              <Link href={quoteHref} className="mb-btn-primary w-full">
-                Request a quote
-                <span aria-hidden="true" className="mb-arrow-icon">
-                  &rarr;
-                </span>
-              </Link>
-              <a
-                href={STUDIO_WHATSAPP_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mb-btn-whatsapp w-full"
+              <p className="text-xs font-semibold uppercase tracking-widest text-[var(--color-accent)]">
+                02 · Delivery
+              </p>
+              <h2
+                id="case-built-heading"
+                className="mb-display mt-2 text-2xl font-semibold text-[var(--color-ink)] sm:text-3xl"
               >
-                <WhatsAppIcon className="h-5 w-5 shrink-0" />
-                WhatsApp the studio
-              </a>
-            </div>
-          </section>
-        </aside>
+                What was built
+              </h2>
+
+              <div className="mt-4 space-y-4 text-sm leading-relaxed text-[var(--color-muted)] sm:text-base">
+                {study.builtParagraphs.map((paragraph) => (
+                  <p key={paragraph}>{paragraph}</p>
+                ))}
+              </div>
+
+              {study.builtHighlights.length > 0 ? (
+                <div className="mt-7">
+                  <h3 className="text-xs font-semibold uppercase tracking-widest text-[var(--color-text-tertiary)]">
+                    Confirmed highlights
+                  </h3>
+                  <ul className="mt-3 divide-y divide-[var(--color-border)] border-y border-[var(--color-border)] text-sm text-[var(--color-ink)]">
+                    {study.builtHighlights.map((item) => (
+                      <li key={item} className="flex items-start gap-2.5 py-3">
+                        <span
+                          aria-hidden="true"
+                          className="select-none text-[var(--color-accent)]"
+                        >
+                          &mdash;
+                        </span>
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ) : null}
+
+              {study.builtTodo ? (
+                <div className="mt-5">
+                  <TodoMarkerCard>{study.builtTodo}</TodoMarkerCard>
+                </div>
+              ) : null}
+
+              {study.architectureNote ? (
+                <div className="mt-7 rounded-r-[var(--radius-md)] border-l-2 border-[var(--color-accent)] bg-[var(--color-bg-overlay)] p-5">
+                  <h3 className="mb-display text-xl font-semibold text-[var(--color-ink)]">
+                    {study.architectureNote.heading}
+                  </h3>
+                  <div className="mt-2.5 space-y-3 text-sm leading-relaxed text-[var(--color-muted)] sm:text-base">
+                    {study.architectureNote.paragraphs.map((paragraph) => (
+                      <p key={paragraph}>{paragraph}</p>
+                    ))}
+                  </div>
+                </div>
+              ) : null}
+
+              {study.relatedProject ? (
+                <div className="mt-7 flex flex-wrap items-center justify-between gap-3 border-y border-[var(--color-border)] py-4">
+                  <p className="text-sm text-[var(--color-muted)]">
+                    {study.relatedProject.relation}
+                  </p>
+                  <Link
+                    href={`/mock-b/work/${study.relatedProject.slug}`}
+                    className="inline-flex min-h-[44px] items-center gap-1.5 text-sm font-semibold text-[var(--color-accent)] underline decoration-[var(--color-border-accent)] underline-offset-4 hover:text-[var(--color-accent-hover)]"
+                  >
+                    Open {study.relatedProject.name}
+                    <ArrowRightIcon className="h-4 w-4 shrink-0" />
+                  </Link>
+                </div>
+              ) : null}
+            </section>
+
+            {/* 3. Status, results & TODOs for Ryan */}
+            <section
+              aria-labelledby="case-todos-heading"
+              data-mb-reveal="true"
+              className="border-t border-[var(--color-border)] pt-10"
+            >
+              <p className="text-xs font-semibold uppercase tracking-widest text-[var(--color-text-tertiary)]">
+                03 · Facts &amp; gaps
+              </p>
+              <h2
+                id="case-todos-heading"
+                className="mb-display mt-2 text-2xl font-semibold text-[var(--color-ink)] sm:text-3xl"
+              >
+                Where it stands &amp; TODOs for Ryan
+              </h2>
+              <p className="mt-3 text-sm leading-relaxed text-[var(--color-muted)] sm:text-base">
+                {study.outcomeConfirmed}
+              </p>
+
+              <div className="mt-5">
+                <TodoMarkerCard label="TODO for Ryan · Missing facts">
+                  <p className="font-semibold text-[var(--color-ink)]">
+                    Nothing below has been invented. Fill in only what is real and approved:
+                  </p>
+                  <ul className="mt-3 divide-y divide-[var(--color-border)] border-t border-[var(--color-border)]">
+                    {study.todosForRyan.map((todo) => (
+                      <li key={todo.field} className="py-2.5 text-sm leading-relaxed">
+                        <span className="font-semibold text-[var(--color-ink)]">
+                          {todo.field}:
+                        </span>{" "}
+                        <span className="text-[var(--color-muted)]">{todo.note}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </TodoMarkerCard>
+              </div>
+            </section>
+          </div>
+
+          {/* ── SIDEBAR (RULED STACK, STATUS, DIRECT CTA) ────────────────── */}
+          <aside className="space-y-8 lg:sticky lg:top-24">
+            <section
+              aria-labelledby="case-stack-heading"
+              data-mb-reveal="true"
+              className="border-t border-[var(--color-border-strong)] pt-5"
+            >
+              <h2
+                id="case-stack-heading"
+                className="mb-display text-xl font-semibold text-[var(--color-ink)]"
+              >
+                Stack &amp; focus
+              </h2>
+              <div className="mt-3 flex flex-wrap gap-1.5">
+                {study.stackConfirmed.map((tag) => (
+                  <span
+                    key={tag}
+                    className="rounded-[var(--radius-sm)] border border-[var(--color-border-strong)] bg-[var(--color-paper)] px-2.5 py-1 text-xs font-medium text-[var(--color-ink)]"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+              <p className="mt-3.5 text-sm leading-relaxed text-[var(--color-muted)]">
+                {study.stackNote}
+              </p>
+              {study.stackTodo ? (
+                <div className="mt-4">
+                  <TodoMarkerCard>{study.stackTodo}</TodoMarkerCard>
+                </div>
+              ) : null}
+            </section>
+
+            <section
+              aria-labelledby="case-status-heading"
+              data-mb-reveal="true"
+              className="border-t border-[var(--color-border-strong)] pt-5"
+            >
+              <h2
+                id="case-status-heading"
+                className="mb-display text-xl font-semibold text-[var(--color-ink)]"
+              >
+                Project status
+              </h2>
+              <p className="mt-2.5 inline-flex items-center gap-2 text-xs font-semibold text-[var(--color-accent)]">
+                <span
+                  aria-hidden="true"
+                  className="h-2 w-2 rounded-full bg-[var(--color-accent)]"
+                />
+                {study.statusHeadline}
+              </p>
+              <p className="mt-2.5 text-sm leading-relaxed text-[var(--color-muted)]">
+                {study.statusDetail}
+              </p>
+            </section>
+
+            <section
+              aria-labelledby="case-sidebar-cta-heading"
+              data-mb-reveal="true"
+              className="rounded-[var(--radius-md)] border border-[var(--color-border)] bg-[var(--color-bg-overlay)] p-5"
+            >
+              <h2
+                id="case-sidebar-cta-heading"
+                className="mb-display text-xl font-semibold text-[var(--color-ink)]"
+              >
+                Planning something similar?
+              </h2>
+              <p className="mt-2 text-sm leading-relaxed text-[var(--color-muted)]">
+                Tell RDev Studio what you need and we will reply in plain English with clear next steps.
+              </p>
+              <div className="mt-4 flex flex-col gap-2.5">
+                <Link href={quoteHref} className="mb-btn-primary w-full">
+                  Request a quote
+                  <ArrowRightIcon className="h-4 w-4 shrink-0" />
+                </Link>
+                <a
+                  href={STUDIO_WHATSAPP_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mb-btn-secondary w-full"
+                >
+                  <WhatsAppIcon className="h-4 w-4 shrink-0 text-[var(--color-accent)]" />
+                  WhatsApp the studio
+                </a>
+              </div>
+            </section>
+          </aside>
+        </div>
       </div>
 
       {/* ── PREV / NEXT CASE STUDY NAVIGATION ────────────────────────────── */}
       <nav
         aria-label="More case studies"
-        className="mx-auto max-w-5xl px-4 pb-10 sm:px-6"
+        className="border-t border-[var(--color-border)] bg-[var(--color-paper)]"
       >
-        <div
-          data-mb-reveal="true"
-          className="grid gap-4 border-t border-[var(--mb-line)] pt-8 sm:grid-cols-2"
-        >
-          <Link
-            href={`/mock-b/work/${previous.id}`}
-            className="mb-card mb-card-interactive flex min-h-[44px] flex-col justify-between p-5"
+        <div className="mx-auto max-w-5xl px-4 py-12 sm:px-6">
+          <div
+            data-mb-reveal="true"
+            className="grid divide-y divide-[var(--color-border)] border-y border-[var(--color-border)] sm:grid-cols-2 sm:divide-x sm:divide-y-0"
           >
-            <span className="text-xs font-bold uppercase tracking-wide text-[var(--mb-ink-soft)]">
-              &larr; Previous project
-            </span>
-            <span className="mb-display mt-2 text-2xl font-semibold text-[var(--mb-ink)]">
-              {previous.name}
-            </span>
-            <span className="mt-1 text-xs font-medium text-[var(--mb-ink-soft)]">
-              {previous.type}
-            </span>
-          </Link>
+            <Link
+              href={`/mock-b/work/${previous.id}`}
+              className="flex min-h-[44px] flex-col justify-between py-6 transition-colors hover:text-[var(--color-accent)] sm:pr-8"
+            >
+              <span className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-[var(--color-text-tertiary)]">
+                <ArrowLeftIcon className="h-3.5 w-3.5 shrink-0" />
+                Previous project
+              </span>
+              <span className="mb-display mt-2 text-2xl font-semibold text-[var(--color-ink)]">
+                {previous.name}
+              </span>
+              <span className="mt-1 text-xs font-medium text-[var(--color-muted)]">
+                {previous.type}
+              </span>
+            </Link>
 
-          <Link
-            href={`/mock-b/work/${next.id}`}
-            className="mb-card mb-card-interactive flex min-h-[44px] flex-col justify-between p-5 sm:text-right"
-          >
-            <span className="text-xs font-bold uppercase tracking-wide text-[var(--mb-ink-soft)]">
-              Next project &rarr;
-            </span>
-            <span className="mb-display mt-2 text-2xl font-semibold text-[var(--mb-ink)]">
-              {next.name}
-            </span>
-            <span className="mt-1 text-xs font-medium text-[var(--mb-ink-soft)]">
-              {next.type}
-            </span>
-          </Link>
-        </div>
+            <Link
+              href={`/mock-b/work/${next.id}`}
+              className="flex min-h-[44px] flex-col justify-between py-6 transition-colors hover:text-[var(--color-accent)] sm:items-end sm:pl-8 sm:text-right"
+            >
+              <span className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-[var(--color-text-tertiary)]">
+                Next project
+                <ArrowRightIcon className="h-3.5 w-3.5 shrink-0" />
+              </span>
+              <span className="mb-display mt-2 text-2xl font-semibold text-[var(--color-ink)]">
+                {next.name}
+              </span>
+              <span className="mt-1 text-xs font-medium text-[var(--color-muted)]">
+                {next.type}
+              </span>
+            </Link>
+          </div>
 
-        <div className="mt-5 text-center">
-          <Link href="/mock-b/work" className="mb-btn-soft">
-            <span aria-hidden="true">&larr;</span>
-            Back to all five projects
-          </Link>
+          <div className="mt-6 text-center">
+            <Link href="/mock-b/work" className="mb-btn-secondary">
+              <ArrowLeftIcon className="h-4 w-4 shrink-0" />
+              Back to all five projects
+            </Link>
+          </div>
         </div>
       </nav>
 
       {/* ── BOTTOM DUAL CTA CLOSE ────────────────────────────────────────── */}
       <section
         aria-labelledby="case-close-heading"
-        className="mx-auto max-w-5xl px-4 pt-2 sm:px-6"
+        className="bg-[var(--color-ink)] text-[var(--color-text-inverse)]"
       >
         <div
           data-mb-reveal="true"
-          className="rounded-[32px] border-2 border-[var(--mb-line-strong)] bg-[var(--mb-paper)] p-6 shadow-[0_5px_0_var(--mb-line)] sm:p-9"
+          className="mx-auto flex max-w-5xl flex-col gap-6 px-4 py-16 sm:px-6 sm:py-20 lg:flex-row lg:items-center lg:justify-between"
         >
-          <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
-            <div className="max-w-xl">
-              <p className="mb-sticker mb-sticker-wobble bg-[var(--mb-butter)] text-[var(--mb-ink)]">
-                Start a project
-              </p>
-              <h2
-                id="case-close-heading"
-                className="mb-display mt-3 text-3xl font-semibold text-[var(--mb-ink)] sm:text-4xl"
-              >
-                Want a clear, phone-first build for your team?
-              </h2>
-              <p className="mt-2.5 text-base leading-relaxed text-[var(--mb-ink-soft)]">
-                Send a short note through the quote form or message RDev Studio directly on WhatsApp.
-              </p>
-            </div>
+          <div className="max-w-xl">
+            <p className="text-xs font-semibold uppercase tracking-widest text-[var(--color-border)]">
+              Start a project
+            </p>
+            <h2
+              id="case-close-heading"
+              className="mb-display mt-2 text-3xl font-semibold text-[var(--color-text-inverse)] sm:text-4xl"
+            >
+              Want a clear, phone-first build for your team?
+            </h2>
+            <p className="mt-3 text-base leading-relaxed text-[var(--color-border)]">
+              Send a short note through the quote form or message RDev Studio directly on WhatsApp.
+            </p>
+          </div>
 
-            <div className="flex flex-col gap-3 sm:flex-row lg:shrink-0">
-              <Link href={quoteHref} className="mb-btn-primary">
-                Start a quote
-                <span aria-hidden="true" className="mb-arrow-icon">
-                  &rarr;
-                </span>
-              </Link>
-              <a
-                href={STUDIO_WHATSAPP_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mb-btn-whatsapp"
-              >
-                <WhatsAppIcon className="h-5 w-5 shrink-0" />
-                Message on WhatsApp
-              </a>
-            </div>
+          <div className="flex flex-col gap-3 sm:flex-row lg:shrink-0">
+            <Link href={quoteHref} className="mb-btn-primary">
+              Start a quote
+              <ArrowRightIcon className="h-4 w-4 shrink-0" />
+            </Link>
+            <a
+              href={STUDIO_WHATSAPP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mb-btn-secondary-inverse"
+            >
+              <WhatsAppIcon className="h-4 w-4 shrink-0" />
+              Message on WhatsApp
+            </a>
           </div>
         </div>
       </section>

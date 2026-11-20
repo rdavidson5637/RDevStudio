@@ -27,19 +27,13 @@ export function MockBDesktopNav() {
             key={item.href}
             href={item.href}
             aria-current={active ? "page" : undefined}
-            className={`inline-flex min-h-[44px] items-center gap-1.5 rounded-full px-3.5 text-sm font-semibold transition-colors ${
+            className={`inline-flex min-h-[44px] items-center rounded-[var(--radius-sm)] px-3 text-sm font-medium transition-colors ${
               active
-                ? "border border-[var(--mb-line-strong)] bg-[var(--mb-butter-soft)] text-[var(--mb-ink)]"
-                : "text-[var(--mb-ink-soft)] hover:bg-[var(--mb-cream-deep)] hover:text-[var(--mb-ink)]"
+                ? "font-semibold text-[var(--color-accent)] underline decoration-[var(--color-accent)] decoration-2 underline-offset-8"
+                : "text-[var(--color-muted)] hover:text-[var(--color-ink)]"
             }`}
           >
-            {active ? (
-              <span
-                aria-hidden="true"
-                className="h-1.5 w-1.5 rounded-full bg-[var(--mb-terracotta)]"
-              />
-            ) : null}
-            <span>{item.label}</span>
+            {item.label}
           </Link>
         );
       })}
@@ -53,7 +47,7 @@ export function MockBMobileNav() {
   return (
     <nav
       aria-label="Mobile section navigation"
-      className="flex items-center justify-center gap-1 border-t border-[var(--mb-line)] bg-[var(--mb-paper)]/85 px-3 py-1 md:hidden"
+      className="flex items-center justify-center gap-1 border-t border-[var(--color-border)] bg-[var(--color-paper)] px-3 py-0.5 md:hidden"
     >
       {NAV_ITEMS.map((item) => {
         const active = isRouteActive(pathname, item.href);
@@ -62,19 +56,13 @@ export function MockBMobileNav() {
             key={item.href}
             href={item.href}
             aria-current={active ? "page" : undefined}
-            className={`inline-flex min-h-[44px] items-center gap-1.5 rounded-full px-3 text-xs font-semibold transition-colors ${
+            className={`inline-flex min-h-[44px] items-center px-3 text-xs font-semibold transition-colors ${
               active
-                ? "bg-[var(--mb-butter-soft)] text-[var(--mb-ink)] ring-1 ring-[var(--mb-line-strong)]"
-                : "text-[var(--mb-ink-soft)] hover:text-[var(--mb-ink)]"
+                ? "text-[var(--color-accent)] underline decoration-[var(--color-accent)] decoration-2 underline-offset-8"
+                : "text-[var(--color-muted)] hover:text-[var(--color-ink)]"
             }`}
           >
-            {active ? (
-              <span
-                aria-hidden="true"
-                className="h-1.5 w-1.5 rounded-full bg-[var(--mb-terracotta)]"
-              />
-            ) : null}
-            <span>{item.label}</span>
+            {item.label}
           </Link>
         );
       })}
