@@ -18,54 +18,51 @@ import { WarmQuoteForm } from "@/components/mock-b/WarmQuoteForm";
 export default function MockBHomePage() {
   return (
     <div>
-      {/* ── HERO (OPEN EDITORIAL LAYOUT) ─────────────────────────────────── */}
-      <section className="mx-auto max-w-5xl px-4 pb-16 pt-10 sm:px-6 sm:pb-24 sm:pt-16">
+      {/* Hero: brand-led type composition, one primary CTA */}
+      <section className="mb-shell max-w-6xl pb-16 pt-10 sm:pb-24 sm:pt-16">
         <LocalTimeChip />
 
-        <div className="mt-8 max-w-3xl">
-          <h1 className="mb-display text-[2.35rem] font-semibold leading-[1.06] tracking-tight text-[var(--mb-ink)] sm:text-5xl lg:text-[3.75rem]">
-            RDev Studio designs and builds{" "}
-            <span className="text-[var(--mb-link)]">websites</span> and digital products.
-          </h1>
+        <div className="mt-10 grid gap-10 lg:grid-cols-[minmax(0,1.35fr)_minmax(0,0.65fr)] lg:items-end lg:gap-14">
+          <div>
+            <h1 className="mb-h1 max-w-[20ch] text-[var(--mb-ink)]">
+              RDev Studio designs and builds websites and digital products.
+            </h1>
 
-          <p className="mt-6 max-w-2xl text-base leading-relaxed text-[var(--mb-muted)] sm:text-lg">
-            A friendly, plain-English web studio rooted in Carrickfergus, Northern Ireland. We build fast sites, useful web apps, and clearer local listings for small businesses and charities.
-          </p>
+            <p className="mb-lede mt-6">
+              A friendly, plain-English web studio rooted in Carrickfergus, Northern Ireland. We build fast sites, useful web apps, and clearer local listings for small businesses and charities.
+            </p>
 
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
-            <a href="#quote" className="mb-btn-primary w-full sm:w-auto">
-              Start a quote
-              <ArrowRightIcon className="h-4 w-4 shrink-0" />
-            </a>
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
+              <a href="#quote" className="mb-btn-primary w-full sm:w-auto">
+                Start a quote
+                <ArrowRightIcon className="h-4 w-4 shrink-0" />
+              </a>
 
+              <Link href="/mock-b/work" className="mb-text-link px-1">
+                See all five projects
+                <ArrowRightIcon className="h-4 w-4 shrink-0" />
+              </Link>
+            </div>
+          </div>
+
+          <div className="border-t border-[var(--mb-line-strong)] pt-6 lg:border-l lg:border-t-0 lg:pl-8 lg:pt-0">
+            <p className="mb-kicker-muted">Who this is for</p>
+            <ul className="mt-4 divide-y divide-[var(--mb-line)] border-y border-[var(--mb-line)] text-sm font-bold text-[var(--mb-ink)]">
+              <li className="py-3">Small businesses</li>
+              <li className="py-3">Charities &amp; rescues</li>
+              <li className="py-3">Web apps &amp; Google Business Profile</li>
+            </ul>
             <a
               href={STUDIO_WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="mb-btn-secondary w-full sm:w-auto"
+              className="mb-text-link mt-4 text-[var(--mb-link)]"
             >
               <WhatsAppIcon className="h-4 w-4 shrink-0 text-[var(--mb-icon)]" />
               Message on WhatsApp
             </a>
-
-            <Link
-              href="/mock-b/work"
-              className="inline-flex min-h-[44px] items-center justify-center px-3 text-sm font-semibold text-[var(--mb-ink)] underline decoration-[var(--mb-line-strong)] underline-offset-4 transition-colors hover:text-[var(--mb-link)] sm:justify-start"
-            >
-              See all five projects
-            </Link>
           </div>
         </div>
-
-        <ul className="mt-12 grid gap-3 border-t border-[var(--mb-line)] pt-6 text-sm font-medium text-[var(--mb-muted)] sm:grid-cols-3 sm:gap-6">
-          <li>Small businesses</li>
-          <li className="sm:border-l sm:border-[var(--mb-line)] sm:pl-6">
-            Charities &amp; rescues
-          </li>
-          <li className="sm:border-l sm:border-[var(--mb-line)] sm:pl-6">
-            Web apps &amp; Google Business Profile
-          </li>
-        </ul>
       </section>
 
       {/* ── LATEST WORK (FULL-BLEED RULED PROJECT ROWS) ──────────────────── */}
@@ -74,18 +71,18 @@ export default function MockBHomePage() {
         aria-labelledby="work-heading"
         className="border-t border-[var(--mb-line)] bg-[var(--mb-surface)]"
       >
-        <div className="mx-auto max-w-5xl scroll-mt-24 px-4 py-16 sm:px-6 sm:py-24">
+        <div className="mb-shell max-w-6xl scroll-mt-24 py-16 sm:px-6 sm:py-24">
           <div
             data-mb-reveal="true"
             className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between"
           >
             <div>
-              <p className="text-xs font-semibold uppercase tracking-widest text-[var(--mb-link)]">
+              <p className="mb-kicker">
                 Latest work
               </p>
               <h2
                 id="work-heading"
-                className="mb-display mt-2 text-3xl font-semibold tracking-tight text-[var(--mb-ink)] sm:text-4xl"
+                className="mb-display mt-2 text-3xl tracking-tight text-[var(--mb-ink)] sm:text-4xl"
               >
                 Five builds from the studio
               </h2>
@@ -133,7 +130,7 @@ export default function MockBHomePage() {
                     </div>
 
                     <div>
-                      <h3 className="mb-display text-2xl font-semibold text-[var(--mb-ink)] sm:text-3xl">
+                      <h3 className="mb-display text-2xl text-[var(--mb-ink)] sm:text-3xl">
                         <Link
                           href={`/mock-b/work/${project.id}`}
                           className="inline-flex min-h-[44px] items-center underline-offset-4 hover:text-[var(--mb-link)] hover:underline"
@@ -147,7 +144,7 @@ export default function MockBHomePage() {
                     </div>
 
                     <p className="text-xs font-medium text-[var(--mb-tertiary)]">
-                      {project.stack.join(" · ")}
+                      {project.stack.join(" / ")}
                     </p>
 
                     <div className="flex flex-wrap items-center gap-4 pt-1">
@@ -208,18 +205,18 @@ export default function MockBHomePage() {
         aria-labelledby="services-heading"
         className="mb-on-light border-t border-[var(--mb-line)] bg-[var(--mb-light)]"
       >
-        <div className="mx-auto max-w-5xl scroll-mt-24 px-4 py-16 sm:px-6 sm:py-24">
+        <div className="mb-shell max-w-6xl scroll-mt-24 py-16 sm:px-6 sm:py-24">
           <div
             data-mb-reveal="true"
             className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between"
           >
             <div className="max-w-2xl">
-              <p className="text-xs font-semibold uppercase tracking-widest text-[var(--mb-link)]">
+              <p className="mb-kicker">
                 Skills &amp; services
               </p>
               <h2
                 id="services-heading"
-                className="mb-display mt-2 text-3xl font-semibold tracking-tight text-[var(--mb-ink)] sm:text-4xl"
+                className="mb-display mt-2 text-3xl tracking-tight text-[var(--mb-ink)] sm:text-4xl"
               >
                 Practical web work, explained in plain English
               </h2>
@@ -246,12 +243,12 @@ export default function MockBHomePage() {
                     <span className="tabular-nums text-[var(--mb-link)]">
                       0{index + 1}
                     </span>
-                    <span className="uppercase tracking-wider text-[var(--mb-tertiary)]">
+                    <span className="text-[var(--mb-tertiary)]">
                       {service.tag}
                     </span>
                   </div>
 
-                  <h3 className="mb-display mt-3 text-2xl font-semibold text-[var(--mb-ink)]">
+                  <h3 className="mb-display mt-3 text-2xl text-[var(--mb-ink)]">
                     {service.title}
                   </h3>
                   <p className="mt-2.5 text-sm leading-relaxed text-[var(--mb-muted)] sm:text-base">
@@ -265,7 +262,7 @@ export default function MockBHomePage() {
                           aria-hidden="true"
                           className="select-none text-[var(--mb-link)]"
                         >
-                          &mdash;
+                          -
                         </span>
                         <span>{bullet}</span>
                       </li>
@@ -286,12 +283,12 @@ export default function MockBHomePage() {
             ))}
           </div>
 
-          {/* How a project runs — numbered ruled steps */}
+          {/* How a project runs - numbered ruled steps */}
           <div
             data-mb-reveal="true"
             className="mt-16 border-t border-[var(--mb-line-strong)] pt-12"
           >
-            <h3 className="mb-display text-2xl font-semibold text-[var(--mb-ink)]">
+            <h3 className="mb-display text-2xl text-[var(--mb-ink)]">
               How a project runs
             </h3>
             <ol className="mt-8 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
@@ -300,7 +297,7 @@ export default function MockBHomePage() {
                   key={item.step}
                   className="border-t border-[var(--mb-line-strong)] pt-4"
                 >
-                  <span className="mb-display text-2xl font-semibold tabular-nums text-[var(--mb-link)]">
+                  <span className="mb-num text-2xl">
                     {item.step}
                   </span>
                   <p className="mt-2 text-base font-semibold text-[var(--mb-ink)]">
@@ -324,15 +321,15 @@ export default function MockBHomePage() {
       >
         <div
           data-mb-reveal="true"
-          className="mx-auto grid max-w-5xl scroll-mt-24 gap-10 px-4 py-16 sm:px-6 sm:py-24 lg:grid-cols-[1.15fr_0.85fr] lg:items-start lg:gap-14"
+          className="mb-shell grid max-w-6xl scroll-mt-24 gap-10 px-4 py-16 sm:px-6 sm:py-24 lg:grid-cols-[1.15fr_0.85fr] lg:items-start lg:gap-14"
         >
           <div>
-            <p className="text-xs font-semibold uppercase tracking-widest text-[var(--mb-link)]">
+            <p className="mb-kicker">
               About RDev Studio
             </p>
             <h2
               id="about-heading"
-              className="mb-display mt-2 text-3xl font-semibold tracking-tight text-[var(--mb-ink)] sm:text-4xl"
+              className="mb-display mt-2 text-3xl tracking-tight text-[var(--mb-ink)] sm:text-4xl"
             >
               Local to Carrickfergus, built for real-world use
             </h2>
@@ -345,7 +342,7 @@ export default function MockBHomePage() {
           </div>
 
           <div className="border-t border-[var(--mb-line-strong)] pt-6 lg:border-t-0 lg:pt-0">
-            <h3 className="text-xs font-semibold uppercase tracking-widest text-[var(--mb-tertiary)]">
+            <h3 className="mb-kicker-muted">
               What you can expect
             </h3>
             <dl className="mt-4 divide-y divide-[var(--mb-line)] border-y border-[var(--mb-line)] text-sm">
@@ -380,16 +377,16 @@ export default function MockBHomePage() {
       >
         <div
           data-mb-reveal="true"
-          className="mx-auto grid max-w-5xl scroll-mt-24 gap-10 px-4 py-16 sm:px-6 sm:py-24 lg:grid-cols-[0.82fr_1.18fr] lg:items-start lg:gap-12"
+          className="mb-shell grid max-w-6xl scroll-mt-24 gap-10 px-4 py-16 sm:px-6 sm:py-24 lg:grid-cols-[0.82fr_1.18fr] lg:items-start lg:gap-12"
         >
           <div className="flex flex-col justify-between space-y-8">
             <div>
-              <p className="text-xs font-semibold uppercase tracking-widest text-[var(--mb-muted)]">
+              <p className="mb-kicker-muted">
                 Start a project
               </p>
               <h2
                 id="quote-heading"
-                className="mb-display mt-2 text-3xl font-semibold leading-tight text-[var(--mb-ink)] sm:text-4xl"
+                className="mb-display mt-2 text-3xl leading-tight text-[var(--mb-ink)] sm:text-4xl"
               >
                 Tell us what you are planning
               </h2>
@@ -429,7 +426,7 @@ export default function MockBHomePage() {
             </div>
           </div>
 
-          <div className="mb-on-surface rounded-[var(--radius-md)] border border-[var(--mb-line)] bg-[var(--mb-surface)] p-6 text-[var(--mb-ink)] sm:p-8">
+          <div className="mb-on-surface rounded-[var(--mb-radius)] border border-[var(--mb-line)] bg-[var(--mb-surface)] p-6 text-[var(--mb-ink)] sm:p-8">
             <WarmQuoteForm />
           </div>
         </div>

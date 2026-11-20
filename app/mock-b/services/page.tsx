@@ -26,7 +26,7 @@ export default function MockBServicesPage() {
   return (
     <div>
       {/* ── INTRO ────────────────────────────────────────────────────────── */}
-      <section className="mx-auto max-w-5xl px-4 pb-10 pt-8 sm:px-6 sm:pt-14">
+      <section className="mb-shell max-w-6xl pb-10 pt-8 sm:px-6 sm:pt-14">
         <Link
           href="/mock-b"
           className="inline-flex min-h-[44px] items-center gap-1.5 text-sm font-semibold text-[var(--mb-muted)] underline decoration-[var(--mb-line-strong)] underline-offset-4 hover:text-[var(--mb-link)]"
@@ -36,15 +36,15 @@ export default function MockBServicesPage() {
         </Link>
 
         <div className="mt-5 max-w-2xl">
-          <p className="text-xs font-semibold uppercase tracking-widest text-[var(--mb-link)]">
+          <p className="mb-kicker">
             Skills &amp; services
           </p>
-          <h1 className="mb-display mt-2 text-[2.25rem] font-semibold leading-[1.08] tracking-tight text-[var(--mb-ink)] sm:text-5xl">
+          <h1 className="mb-h1 mt-2 text-[var(--mb-ink)]">
             Plain-English{" "}
             <span className="text-[var(--mb-link)]">web work</span> for NI businesses &amp; charities.
           </h1>
           <p className="mt-5 text-base leading-relaxed text-[var(--mb-muted)] sm:text-lg">
-            RDev Studio designs and builds websites, custom web apps, and clearer local listings from Carrickfergus. Every job is scoped and quoted individually after a short conversation — no one-size-fits-all templates and no guesswork.
+            RDev Studio designs and builds websites, custom web apps, and clearer local listings from Carrickfergus. Every job is scoped and quoted individually after a short conversation - no one-size-fits-all templates and no guesswork.
           </p>
 
           <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
@@ -56,7 +56,7 @@ export default function MockBServicesPage() {
               href={STUDIO_WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="mb-btn-secondary w-full sm:w-auto"
+              className="mb-text-link text-[var(--mb-link)]"
             >
               <WhatsAppIcon className="h-4 w-4 shrink-0 text-[var(--mb-icon)]" />
               Message on WhatsApp
@@ -86,7 +86,7 @@ export default function MockBServicesPage() {
 
       {/* ── FOUR FULL-WIDTH RULED SERVICE SECTIONS ───────────────────────── */}
       <div className="bg-[var(--mb-surface)]">
-        <div className="mx-auto max-w-5xl divide-y divide-[var(--mb-line-strong)] px-4 sm:px-6">
+        <div className="mb-shell max-w-6xl divide-y divide-[var(--mb-line-strong)] px-4 sm:px-6">
           {MOCK_B_SERVICE_GUIDES.map((service) => (
             <article
               key={service.id}
@@ -103,12 +103,12 @@ export default function MockBServicesPage() {
                     <span aria-hidden="true" className="text-[var(--mb-line-strong)]">
                       /
                     </span>
-                    <span className="uppercase tracking-wider text-[var(--mb-tertiary)]">
+                    <span className="text-[var(--mb-tertiary)]">
                       {service.tag}
                     </span>
                   </div>
 
-                  <h2 className="mb-display mt-2 text-3xl font-semibold text-[var(--mb-ink)] sm:text-4xl">
+                  <h2 className="mb-display mt-2 text-3xl text-[var(--mb-ink)] sm:text-4xl">
                     {service.title}
                   </h2>
                   <p className="mt-3 text-base leading-relaxed text-[var(--mb-muted)]">
@@ -129,7 +129,7 @@ export default function MockBServicesPage() {
 
               <div className="mt-8 grid gap-8 border-t border-[var(--mb-line)] pt-7 lg:grid-cols-[1.25fr_0.75fr] lg:gap-12">
                 <div>
-                  <h3 className="text-xs font-semibold uppercase tracking-widest text-[var(--mb-tertiary)]">
+                  <h3 className="mb-kicker-muted">
                     What we focus on
                   </h3>
                   <ul className="mt-4 space-y-3 text-sm leading-relaxed text-[var(--mb-ink)] sm:text-base">
@@ -139,7 +139,7 @@ export default function MockBServicesPage() {
                           aria-hidden="true"
                           className="select-none text-[var(--mb-link)]"
                         >
-                          &mdash;
+                          -
                         </span>
                         <span>{item}</span>
                       </li>
@@ -149,7 +149,7 @@ export default function MockBServicesPage() {
 
                 <div className="space-y-6 border-t border-[var(--mb-line)] pt-6 lg:border-l lg:border-t-0 lg:pl-8 lg:pt-0">
                   <div>
-                    <h3 className="text-xs font-semibold uppercase tracking-widest text-[var(--mb-tertiary)]">
+                    <h3 className="mb-kicker-muted">
                       Good fit for
                     </h3>
                     <p className="mt-2 text-sm leading-relaxed text-[var(--mb-ink)]">
@@ -158,7 +158,7 @@ export default function MockBServicesPage() {
                   </div>
 
                   <div className="border-t border-[var(--mb-line)] pt-5">
-                    <h3 className="text-xs font-semibold uppercase tracking-widest text-[var(--mb-tertiary)]">
+                    <h3 className="mb-kicker-muted">
                       Worth knowing
                     </h3>
                     <ul className="mt-2.5 space-y-2.5 text-sm leading-relaxed text-[var(--mb-muted)]">
@@ -200,14 +200,14 @@ export default function MockBServicesPage() {
       >
         <div
           data-mb-reveal="true"
-          className="mx-auto max-w-5xl px-4 py-16 sm:px-6 sm:py-20"
+          className="mb-shell max-w-6xl py-16 sm:px-6 sm:py-20"
         >
-          <p className="text-xs font-semibold uppercase tracking-widest text-[var(--mb-link)]">
+          <p className="mb-kicker">
             How we work
           </p>
           <h2
             id="services-process-heading"
-            className="mb-display mt-2 text-3xl font-semibold text-[var(--mb-ink)] sm:text-4xl"
+            className="mb-display mt-2 text-3xl text-[var(--mb-ink)] sm:text-4xl"
           >
             Four calm steps from first message to launch
           </h2>
@@ -217,7 +217,7 @@ export default function MockBServicesPage() {
                 key={item.step}
                 className="border-t border-[var(--mb-line-strong)] pt-4"
               >
-                <span className="mb-display text-2xl font-semibold tabular-nums text-[var(--mb-link)]">
+                <span className="mb-num text-2xl">
                   {item.step}
                 </span>
                 <h3 className="mt-2 text-base font-semibold text-[var(--mb-ink)]">
@@ -235,12 +235,12 @@ export default function MockBServicesPage() {
       {/* ── COMMON QUESTIONS (RULED LIST, NO BOXED CARDS) ────────────────── */}
       <section
         aria-labelledby="services-faq-heading"
-        className="mx-auto max-w-5xl px-4 py-16 sm:px-6 sm:py-20"
+        className="mb-shell max-w-6xl py-16 sm:px-6 sm:py-20"
       >
         <div data-mb-reveal="true" className="max-w-2xl">
           <h2
             id="services-faq-heading"
-            className="mb-display text-3xl font-semibold text-[var(--mb-ink)]"
+            className="mb-display text-3xl text-[var(--mb-ink)]"
           >
             Common questions
           </h2>
@@ -256,7 +256,7 @@ export default function MockBServicesPage() {
               data-mb-reveal="true"
               className="grid gap-3 py-6 md:grid-cols-[0.85fr_1.15fr] md:gap-10"
             >
-              <dt className="mb-display text-xl font-semibold text-[var(--mb-ink)]">
+              <dt className="mb-display text-xl text-[var(--mb-ink)]">
                 {item.question}
               </dt>
               <dd className="text-sm leading-relaxed text-[var(--mb-muted)] sm:text-base">
@@ -274,20 +274,20 @@ export default function MockBServicesPage() {
       >
         <div
           data-mb-reveal="true"
-          className="mx-auto flex max-w-5xl flex-col gap-6 px-4 py-16 sm:px-6 sm:py-20 lg:flex-row lg:items-center lg:justify-between"
+          className="mb-shell flex max-w-6xl flex-col gap-6 px-4 py-16 sm:px-6 sm:py-20 lg:flex-row lg:items-center lg:justify-between"
         >
           <div className="max-w-xl">
-            <p className="text-xs font-semibold uppercase tracking-widest text-[var(--mb-muted)]">
+            <p className="mb-kicker-muted">
               Not sure which fits?
             </p>
             <h2
               id="services-close-heading"
-              className="mb-display mt-2 text-3xl font-semibold text-[var(--mb-ink)] sm:text-4xl"
+              className="mb-display mt-2 text-3xl text-[var(--mb-ink)] sm:text-4xl"
             >
               Tell us what you are trying to sort out
             </h2>
             <p className="mt-3 text-base leading-relaxed text-[var(--mb-muted)]">
-              Send a short note through the quote form or message RDev Studio on WhatsApp — we will point you toward the simplest option.
+              Send a short note through the quote form or message RDev Studio on WhatsApp - we will point you toward the simplest option.
             </p>
           </div>
 

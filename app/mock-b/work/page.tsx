@@ -33,7 +33,7 @@ export default function MockBWorkPage() {
   return (
     <div>
       {/* ── HEADER + JUMP BAR ────────────────────────────────────────────── */}
-      <section className="mx-auto max-w-5xl px-4 pb-10 pt-8 sm:px-6 sm:pt-14">
+      <section className="mb-shell max-w-6xl pb-10 pt-8 sm:px-6 sm:pt-14">
         <Link
           href="/mock-b"
           className="inline-flex min-h-[44px] items-center gap-1.5 text-sm font-semibold text-[var(--mb-muted)] underline decoration-[var(--mb-line-strong)] underline-offset-4 hover:text-[var(--mb-link)]"
@@ -43,10 +43,10 @@ export default function MockBWorkPage() {
         </Link>
 
         <div className="mt-5 max-w-2xl">
-          <p className="text-xs font-semibold uppercase tracking-widest text-[var(--mb-link)]">
+          <p className="mb-kicker">
             Studio showcase
           </p>
-          <h1 className="mb-display mt-2 text-4xl font-semibold tracking-tight text-[var(--mb-ink)] sm:text-5xl">
+          <h1 className="mb-h1 mt-2 text-[var(--mb-ink)]">
             Five builds from RDev Studio
           </h1>
           <p className="mt-4 text-base leading-relaxed text-[var(--mb-muted)] sm:text-lg">
@@ -73,8 +73,8 @@ export default function MockBWorkPage() {
         </nav>
       </section>
 
-      {/* ── FEATURED LEAD PROJECT (01 SHELTERLINK — FULL WIDTH) ──────────── */}
-      <section className="mx-auto max-w-5xl px-4 pb-16 pt-4 sm:px-6">
+      {/* ── FEATURED LEAD PROJECT (01 SHELTERLINK - FULL WIDTH) ──────────── */}
+      <section className="mb-shell max-w-6xl pb-16 pt-4 sm:px-6">
         <article
           id={featuredProject.id}
           data-mb-reveal="true"
@@ -102,7 +102,7 @@ export default function MockBWorkPage() {
                 <span>{featuredProject.statusLabel}</span>
               </div>
 
-              <h2 className="mb-display text-3xl font-semibold text-[var(--mb-ink)] sm:text-4xl">
+              <h2 className="mb-display text-3xl text-[var(--mb-ink)] sm:text-4xl">
                 <Link
                   href={`/mock-b/work/${featuredProject.id}`}
                   className="inline-flex min-h-[44px] items-center underline-offset-4 hover:text-[var(--mb-link)] hover:underline"
@@ -139,7 +139,7 @@ export default function MockBWorkPage() {
 
           <div className="grid gap-8 border-t border-[var(--mb-line)] pt-6 md:grid-cols-[1.35fr_0.65fr]">
             <div>
-              <h3 className="text-xs font-semibold uppercase tracking-widest text-[var(--mb-tertiary)]">
+              <h3 className="mb-kicker-muted">
                 Build notes
               </h3>
               <ul className="mt-3 space-y-2.5 text-sm leading-relaxed text-[var(--mb-ink)] sm:text-base">
@@ -149,7 +149,7 @@ export default function MockBWorkPage() {
                       aria-hidden="true"
                       className="select-none text-[var(--mb-link)]"
                     >
-                      &mdash;
+                      -
                     </span>
                     <span>{detail}</span>
                   </li>
@@ -158,14 +158,14 @@ export default function MockBWorkPage() {
             </div>
 
             <div className="border-t border-[var(--mb-line)] pt-5 md:border-l md:border-t-0 md:pl-8 md:pt-0">
-              <h3 className="text-xs font-semibold uppercase tracking-widest text-[var(--mb-tertiary)]">
+              <h3 className="mb-kicker-muted">
                 Focus &amp; stack
               </h3>
               <div className="mt-3 flex flex-wrap gap-2">
                 {featuredProject.stack.map((tag) => (
                   <span
                     key={tag}
-                    className="rounded-[var(--radius-sm)] border border-[var(--mb-line-strong)] bg-[var(--mb-surface)] px-2.5 py-1 text-xs font-medium text-[var(--mb-ink)]"
+                    className="rounded-[var(--mb-radius-sm)] border border-[var(--mb-line-strong)] bg-[var(--mb-surface)] px-2.5 py-1 text-xs font-medium text-[var(--mb-ink)]"
                   >
                     {tag}
                   </span>
@@ -186,9 +186,9 @@ export default function MockBWorkPage() {
         </article>
       </section>
 
-      {/* ── MIXED-SIZE EDITORIAL GRID (PROJECTS 02–05) ───────────────────── */}
+      {/* ── MIXED-SIZE EDITORIAL GRID (PROJECTS 02-05) ───────────────────── */}
       <section className="border-t border-[var(--mb-line)] bg-[var(--mb-surface)]">
-        <div className="mx-auto max-w-5xl px-4 py-16 sm:px-6 sm:py-20">
+        <div className="mb-shell max-w-6xl py-16 sm:px-6 sm:py-20">
           <div className="grid grid-cols-1 gap-x-10 gap-y-16 lg:grid-cols-12">
             {otherProjects.map((project, idx) => {
               const number = idx + 2;
@@ -222,7 +222,7 @@ export default function MockBWorkPage() {
                         <span>{project.statusLabel}</span>
                       </div>
 
-                      <h2 className="mb-display text-2xl font-semibold text-[var(--mb-ink)] sm:text-3xl">
+                      <h2 className="mb-display text-2xl text-[var(--mb-ink)] sm:text-3xl">
                         <Link
                           href={`/mock-b/work/${project.id}`}
                           className="inline-flex min-h-[44px] items-center underline-offset-4 hover:text-[var(--mb-link)] hover:underline"
@@ -244,7 +244,7 @@ export default function MockBWorkPage() {
                     </div>
 
                     <div className="space-y-3 border-t border-[var(--mb-line)] pt-4">
-                      <h3 className="text-xs font-semibold uppercase tracking-widest text-[var(--mb-tertiary)]">
+                      <h3 className="mb-kicker-muted">
                         Build notes
                       </h3>
                       <ul className="space-y-2 text-sm leading-relaxed text-[var(--mb-ink)]">
@@ -254,7 +254,7 @@ export default function MockBWorkPage() {
                               aria-hidden="true"
                               className="select-none text-[var(--mb-link)]"
                             >
-                              &mdash;
+                              -
                             </span>
                             <span>{detail}</span>
                           </li>
@@ -268,7 +268,7 @@ export default function MockBWorkPage() {
                       {project.stack.map((tag) => (
                         <span
                           key={tag}
-                          className="rounded-[var(--radius-sm)] border border-[var(--mb-line)] bg-[var(--mb-bg)] px-2.5 py-0.5 text-xs font-medium text-[var(--mb-muted)]"
+                          className="rounded-[var(--mb-radius-sm)] border border-[var(--mb-line)] bg-[var(--mb-bg)] px-2.5 py-0.5 text-xs font-medium text-[var(--mb-muted)]"
                         >
                           {tag}
                         </span>
@@ -318,15 +318,15 @@ export default function MockBWorkPage() {
       >
         <div
           data-mb-reveal="true"
-          className="mx-auto flex max-w-5xl flex-col gap-6 px-4 py-16 sm:px-6 sm:py-20 lg:flex-row lg:items-center lg:justify-between"
+          className="mb-shell flex max-w-6xl flex-col gap-6 px-4 py-16 sm:px-6 sm:py-20 lg:flex-row lg:items-center lg:justify-between"
         >
           <div className="max-w-xl">
-            <p className="text-xs font-semibold uppercase tracking-widest text-[var(--mb-muted)]">
+            <p className="mb-kicker-muted">
               Have a project in mind?
             </p>
             <h2
               id="work-cta-heading"
-              className="mb-display mt-2 text-3xl font-semibold text-[var(--mb-ink)] sm:text-4xl"
+              className="mb-display mt-2 text-3xl text-[var(--mb-ink)] sm:text-4xl"
             >
               Let us build something clear and useful together
             </h2>

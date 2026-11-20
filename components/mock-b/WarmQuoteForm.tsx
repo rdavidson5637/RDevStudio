@@ -185,11 +185,11 @@ function WarmQuoteFormFields({
       <div
         ref={successRef}
         tabIndex={-1}
-        className="rounded-[var(--radius-md)] border border-[var(--mb-border-accent)] bg-[var(--mb-accent-subtle)] p-6 text-left outline-none sm:p-7"
+        className="rounded-[var(--mb-radius)] border border-[var(--mb-border-accent)] bg-[var(--mb-accent-subtle)] p-6 text-left outline-none sm:p-7"
         role="status"
         aria-live="polite"
       >
-        <p className="text-xs font-semibold uppercase tracking-wider text-[var(--mb-link)]">
+        <p className="mb-kicker">
           Enquiry sent
         </p>
         <p className="mb-display mt-2 text-2xl font-semibold text-[var(--mb-ink)] sm:text-3xl">
@@ -221,7 +221,7 @@ function WarmQuoteFormFields({
   }
 
   const inputBase =
-    "mb-input mt-1.5 block w-full min-h-[44px] rounded-[var(--radius-md)] border bg-[var(--mb-surface)] px-3.5 py-2.5 text-base text-[var(--mb-ink)] placeholder:text-[var(--mb-tertiary)] transition-colors disabled:cursor-not-allowed disabled:opacity-60";
+    "mb-input mt-1.5 block w-full min-h-[44px] rounded-[var(--mb-radius)] border bg-[var(--mb-surface)] px-3.5 py-2.5 text-base text-[var(--mb-ink)] placeholder:text-[var(--mb-tertiary)] transition-colors disabled:cursor-not-allowed disabled:opacity-60";
   const inputNormal =
     "border-[var(--mb-line-strong)] focus:border-[var(--mb-accent)]";
   const inputInvalid =
@@ -258,7 +258,7 @@ function WarmQuoteFormFields({
         <div
           role="alert"
           aria-live="polite"
-          className="mb-alert rounded-[var(--radius-md)] border border-[var(--mb-ochre-ink)] bg-[var(--mb-ochre)] px-4 py-3 text-sm font-semibold text-[var(--mb-ink)]"
+          className="mb-alert rounded-[var(--mb-radius)] border border-[var(--mb-ochre-ink)] bg-[var(--mb-ochre)] px-4 py-3 text-sm font-semibold text-[var(--mb-ink)]"
         >
           {validationNotice}
         </div>
@@ -302,7 +302,7 @@ function WarmQuoteFormFields({
             >
               <span
                 aria-hidden="true"
-                className="inline-flex h-4 w-4 shrink-0 items-center justify-center rounded-[var(--radius-sm)] bg-[var(--mb-ochre)] text-[11px] font-bold text-[var(--mb-on-accent)]"
+                className="inline-flex h-4 w-4 shrink-0 items-center justify-center rounded-[var(--mb-radius-sm)] bg-[var(--mb-ochre)] text-[11px] font-bold text-[var(--mb-on-accent)]"
               >
                 !
               </span>
@@ -348,7 +348,7 @@ function WarmQuoteFormFields({
             >
               <span
                 aria-hidden="true"
-                className="inline-flex h-4 w-4 shrink-0 items-center justify-center rounded-[var(--radius-sm)] bg-[var(--mb-ochre)] text-[11px] font-bold text-[var(--mb-on-accent)]"
+                className="inline-flex h-4 w-4 shrink-0 items-center justify-center rounded-[var(--mb-radius-sm)] bg-[var(--mb-ochre)] text-[11px] font-bold text-[var(--mb-on-accent)]"
               >
                 !
               </span>
@@ -401,7 +401,7 @@ function WarmQuoteFormFields({
           >
             <span
               aria-hidden="true"
-              className="inline-flex h-4 w-4 shrink-0 items-center justify-center rounded-[var(--radius-sm)] bg-[var(--mb-ochre)] text-[11px] font-bold text-[var(--mb-on-accent)]"
+              className="inline-flex h-4 w-4 shrink-0 items-center justify-center rounded-[var(--mb-radius-sm)] bg-[var(--mb-ochre)] text-[11px] font-bold text-[var(--mb-on-accent)]"
             >
               !
             </span>
@@ -451,7 +451,7 @@ function WarmQuoteFormFields({
           >
             <span
               aria-hidden="true"
-              className="inline-flex h-4 w-4 shrink-0 items-center justify-center rounded-[var(--radius-sm)] bg-[var(--mb-ochre)] text-[11px] font-bold text-[var(--mb-on-accent)]"
+              className="inline-flex h-4 w-4 shrink-0 items-center justify-center rounded-[var(--mb-radius-sm)] bg-[var(--mb-ochre)] text-[11px] font-bold text-[var(--mb-on-accent)]"
             >
               !
             </span>
@@ -464,11 +464,11 @@ function WarmQuoteFormFields({
         <div
           role="alert"
           aria-live="polite"
-          className="mb-alert rounded-[var(--radius-md)] border border-[var(--mb-ochre-ink)] bg-[var(--mb-ochre)] p-4 text-sm leading-relaxed text-[var(--mb-ink)]"
+          className="mb-alert rounded-[var(--mb-radius)] border border-[var(--mb-ochre-ink)] bg-[var(--mb-ochre)] p-4 text-sm leading-relaxed text-[var(--mb-ink)]"
         >
           <p className="font-bold">The form could not send right now.</p>
           <p className="mt-1 font-medium text-[var(--mb-muted)]">
-            No need to start over — reach RDev Studio directly by email at{" "}
+            No need to start over - reach RDev Studio directly by email at{" "}
             <a
               href={`mailto:${CONTACT_EMAIL}`}
               className="font-semibold text-[var(--mb-link)] underline underline-offset-2 hover:text-[var(--mb-link-hover)]"

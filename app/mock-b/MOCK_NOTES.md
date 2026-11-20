@@ -30,16 +30,16 @@ Ryan picked Mock B's direction but flagged that parts "scream AI" (doodles, unif
 
 All nine routes live exclusively under `app/mock-b/**` with scoped styles in `app/mock-b/mock-b.css`, `robots: { index: false, follow: false }`, and zero edits to live site files, `app/sitemap.ts`, or `package.json`:
 
-- `/mock-b` — Studio home page: open editorial hero with local Carrickfergus time + availability status, five real studio projects as full-bleed ruled rows, ruled services list + four-step process, studio-only about block, and dark-band quote form + WhatsApp close.
-- `/mock-b/work` — Mixed-size editorial five-project showcase with ruled jump links, ShelterLink's three real screenshots from `public/images/work/`, flat live-token desktop/mobile preview panels for Assisi, Crosskennan, Rondo, and MGSL Hub, and direct links to each `/mock-b/work/[slug]` case study (strictly facts-only).
-- `/mock-b/work/[slug]` (5 static SSG pages via `generateStaticParams` + `dynamicParams = false`) — Dedicated facts-only case study pages covering **The problem**, **What was built**, **Stack & focus**, **Project status**, explicit **"TODO for Ryan"** callouts wherever facts are not stored in this repo, prev/next project navigation, and closing Quote (`?topic=...`) + WhatsApp CTAs:
-  - `/mock-b/work/shelterlink` — ShelterLink (Assisi Animal Sanctuary volunteer web app)
-  - `/mock-b/work/assisi` — Assisi Animal Sanctuary (website & brand rebuild, awaiting sign-off)
-  - `/mock-b/work/crosskennan` — Crosskennan (`crosskennan.vercel.app` live preview + TODO markers)
-  - `/mock-b/work/rondo` — Rondo (in-house studio build, live URL & details TODO markers)
-  - `/mock-b/work/mgsl-hub` — MGSL Hub (`mgsl-hq-black.vercel.app` live preview + TODO markers)
-- `/mock-b/services` — Dedicated plain-English services guide covering Websites, Web apps & handy tools, Google Business Profile help, and Charity & small-business builds (zero prices, facts-only, each ending with Quote form `?topic=...` prefill + WhatsApp CTAs, plus process steps and studio FAQs).
-- `/mock-b/contact` — Dedicated quote & contact page with the `WarmQuoteForm` (using `FORMSPREE_FORM_ID` with graceful empty-ID email/WhatsApp fallback, blur/submit inline validation, `aria-describedby`, `aria-live`, focus-first-invalid, and sending/error/success states) paired with a WhatsApp callout, direct email, and helpful scope checklist.
+- `/mock-b` - Studio home page: open editorial hero with local Carrickfergus time + availability status, five real studio projects as full-bleed ruled rows, ruled services list + four-step process, studio-only about block, and dark-band quote form + WhatsApp close.
+- `/mock-b/work` - Mixed-size editorial five-project showcase with ruled jump links, ShelterLink's three real screenshots from `public/images/work/`, flat live-token desktop/mobile preview panels for Assisi, Crosskennan, Rondo, and MGSL Hub, and direct links to each `/mock-b/work/[slug]` case study (strictly facts-only).
+- `/mock-b/work/[slug]` (5 static SSG pages via `generateStaticParams` + `dynamicParams = false`) - Dedicated facts-only case study pages covering **The problem**, **What was built**, **Stack & focus**, **Project status**, explicit **"TODO for Ryan"** callouts wherever facts are not stored in this repo, prev/next project navigation, and closing Quote (`?topic=...`) + WhatsApp CTAs:
+  - `/mock-b/work/shelterlink` - ShelterLink (Assisi Animal Sanctuary volunteer web app)
+  - `/mock-b/work/assisi` - Assisi Animal Sanctuary (website & brand rebuild, awaiting sign-off)
+  - `/mock-b/work/crosskennan` - Crosskennan (`crosskennan.vercel.app` live preview + TODO markers)
+  - `/mock-b/work/rondo` - Rondo (in-house studio build, live URL & details TODO markers)
+  - `/mock-b/work/mgsl-hub` - MGSL Hub (`mgsl-hq-black.vercel.app` live preview + TODO markers)
+- `/mock-b/services` - Dedicated plain-English services guide covering Websites, Web apps & handy tools, Google Business Profile help, and Charity & small-business builds (zero prices, facts-only, each ending with Quote form `?topic=...` prefill + WhatsApp CTAs, plus process steps and studio FAQs).
+- `/mock-b/contact` - Dedicated quote & contact page with the `WarmQuoteForm` (using `FORMSPREE_FORM_ID` with graceful empty-ID email/WhatsApp fallback, blur/submit inline validation, `aria-describedby`, `aria-live`, focus-first-invalid, and sending/error/success states) paired with a WhatsApp callout, direct email, and helpful scope checklist.
 
 ## Palette (Ryan's Grenadine pack)
 
@@ -63,14 +63,24 @@ Declared once under `.mock-b-root` in `app/mock-b/mock-b.css`. No edits to `app/
 
 Semantic helpers (`--mb-bg`, `--mb-ink`, `--mb-muted`, `--mb-surface`, `--mb-light`, `--mb-accent`, `--mb-link`, `--mb-icon`, `--mb-on-accent`, `--mb-focus-ring`) switch inside `.mb-on-light`, `.mb-on-surface`, and `.mb-todo-box` / `.mb-alert` so text stays readable when a section changes background.
 
-**Contrast:** Naples, muted, and faint text all pass WCAG AA on slate / Slate 2 / Slate 3. Slate text on Naples, grenadine, and ochre passes AA (and is required on those fills). Grenadine text on Naples fails AA (2.08:1), so links and kickers on light sections use Deep Slate (with underline) instead of pink. Naples muted / faint also fail on Naples, so muted copy there uses ochre ink (7.88:1). Grenadine deep icons are 3.75:1 on slate and 3.08:1 on Naples — both meet the 3:1 UI-component bar, but are not used as body text.
+**Contrast:** Naples, muted, and faint text all pass WCAG AA on slate / Slate 2 / Slate 3. Slate text on Naples, grenadine, and ochre passes AA (and is required on those fills). Grenadine text on Naples fails AA (2.08:1), so links and kickers on light sections use Deep Slate (with underline) instead of pink. Naples muted / faint also fail on Naples, so muted copy there uses ochre ink (7.88:1). Grenadine deep icons are 3.75:1 on slate and 3.08:1 on Naples - both meet the 3:1 UI-component bar, but are not used as body text.
 
 ## Fonts
 
 Loaded via built-in `next/font/google` in `app/mock-b/layout.tsx` (zero new npm packages, self-hosted by Next.js at build time, `display: "swap"`):
 
-- **Display:** `Fraunces` (weights 500, 600, 700; fallback `Georgia, serif`).
-- **Body / UI:** `Plus Jakarta Sans` (weights 400, 500, 600, 700; fallback `system-ui, sans-serif`).
+- **Display:** `Big_Shoulders` weight 800 (Google's current family name for Big Shoulders Display; `adjustFontFallback: false`).
+- **Body / UI:** `Atkinson_Hyperlegible` weights 400 and 700.
+
+## Pro pass (20 Nov, D-RD lane / `lane/rd-mockb-pro`)
+
+Premium studio finish on Ryan's chosen Mock B direction. Copy and TODOs untouched. Hex values unchanged. Scope: `app/mock-b/**`, `components/mock-b/**`, plus `docs/design-pro/mockb-pro/{before,after}` screenshots.
+
+- **Type:** Big Shoulders 800 + Atkinson Hyperlegible 400/700; fixed scale tokens (`--mb-text-*`), tight display leading, body measure ~67ch, sentence-case kickers (no all-caps eyebrows).
+- **Layout:** Wider shell (`max-w-6xl`), asymmetric home hero (type + ruled "Who this is for" column), one primary CTA per hero, WhatsApp demoted to text/icon, numbered sections, hairline rules, 8px rhythm, 2-4px radii.
+- **Imagery:** Larger ShelterLink screenshots with 16:9 / 16:10 crops, frame chrome captions, no monospace URL bars, no status dots.
+- **Motion / a11y:** Opacity-only reveals (220ms), off under `prefers-reduced-motion`; visible focus rings; 44px targets; AA Grenadine contrast rules kept.
+- **Checks:** `npm run lint`, `npx tsc --noEmit`, `npm test` (64/64), `npm run build` all pass. Screenshots at 390 and 1280 in `docs/design-pro/mockb-pro/`.
 
 ## Open TODOs for Ryan
 

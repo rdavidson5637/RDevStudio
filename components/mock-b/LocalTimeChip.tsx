@@ -22,14 +22,14 @@ export function LocalTimeChip() {
   }, []);
 
   return (
-    <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-xs font-medium text-[var(--mb-muted)]">
+    <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm font-bold text-[var(--mb-muted)]">
       <span className="inline-flex items-center gap-2 text-[var(--mb-ink)]">
-        <span className="font-semibold">Carrickfergus, NI</span>
+        <span>Carrickfergus, NI</span>
         <span aria-hidden="true" className="text-[var(--mb-line-strong)]">
           /
         </span>
         <span
-          className="inline-block min-w-[9ch] tabular-nums text-[var(--mb-muted)]"
+          className="inline-block min-w-[9ch] tabular-nums font-normal text-[var(--mb-muted)]"
           suppressHydrationWarning
         >
           {time} local
@@ -41,13 +41,7 @@ export function LocalTimeChip() {
         className="hidden h-3 w-px bg-[var(--mb-line-strong)] sm:inline-block"
       />
 
-      <span className="inline-flex items-center gap-2 font-semibold text-[var(--mb-link)]">
-        <span
-          aria-hidden="true"
-          className="h-2 w-2 rounded-full bg-[var(--mb-accent)]"
-        />
-        <span>Open to new projects</span>
-      </span>
+      <span className="font-bold text-[var(--mb-link)]">Open to new projects</span>
     </div>
   );
 }

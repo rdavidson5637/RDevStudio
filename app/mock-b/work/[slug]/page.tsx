@@ -36,7 +36,7 @@ export async function generateMetadata({
   }
 
   return {
-    title: `${entry.project.name} — Case study`,
+    title: `${entry.project.name} - Case study`,
     description: `${entry.project.name} (${entry.project.type}): ${entry.project.summary}`,
     robots: {
       index: false,
@@ -55,7 +55,7 @@ function TodoMarkerCard({
   return (
     <div className="mb-todo-box p-4 sm:p-5">
       <div className="flex flex-wrap items-center gap-2.5">
-        <span className="inline-flex items-center gap-1.5 rounded-[var(--radius-sm)] border border-[var(--mb-line-strong)] bg-[var(--mb-surface)] px-2.5 py-0.5 text-xs font-semibold text-[var(--mb-ink)]">
+        <span className="inline-flex items-center gap-1.5 rounded-[var(--mb-radius-sm)] border border-[var(--mb-line-strong)] bg-[var(--mb-surface)] px-2.5 py-0.5 text-xs font-semibold text-[var(--mb-ink)]">
           {label}
         </span>
         <span className="text-xs font-medium text-[var(--mb-muted)]">
@@ -88,7 +88,7 @@ export default async function MockBCaseStudyPage({
   return (
     <div>
       {/* ── BREADCRUMB + CASE HEADER ─────────────────────────────────────── */}
-      <section className="mx-auto max-w-5xl px-4 pb-10 pt-8 sm:px-6 sm:pt-14">
+      <section className="mb-shell max-w-6xl pb-10 pt-8 sm:px-6 sm:pt-14">
         <nav
           aria-label="Breadcrumb"
           className="flex flex-wrap items-center gap-1 text-sm font-medium text-[var(--mb-muted)]"
@@ -121,7 +121,7 @@ export default async function MockBCaseStudyPage({
 
         <div className="mt-4 max-w-3xl">
           <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs font-medium text-[var(--mb-muted)]">
-            <span className="font-semibold uppercase tracking-wider text-[var(--mb-tertiary)]">
+            <span className="mb-kicker-muted">
               Case study {study.number} of 05
             </span>
             <span aria-hidden="true" className="text-[var(--mb-line-strong)]">
@@ -136,7 +136,7 @@ export default async function MockBCaseStudyPage({
             <span>{study.statusHeadline}</span>
           </div>
 
-          <h1 className="mb-display mt-3 text-[2.25rem] font-semibold leading-[1.08] tracking-tight text-[var(--mb-ink)] sm:text-5xl">
+          <h1 className="mb-h1 mt-3 text-[var(--mb-ink)]">
             {project.name}
           </h1>
 
@@ -186,7 +186,7 @@ export default async function MockBCaseStudyPage({
         {/* Ruled facts-at-a-glance strip */}
         <dl className="mt-10 grid gap-6 border-y border-[var(--mb-line)] py-6 sm:grid-cols-2 lg:grid-cols-4">
           <div>
-            <dt className="text-xs font-semibold uppercase tracking-wider text-[var(--mb-tertiary)]">
+            <dt className="mb-kicker-muted">
               Context
             </dt>
             <dd className="mt-1.5 text-sm font-semibold text-[var(--mb-ink)]">
@@ -194,7 +194,7 @@ export default async function MockBCaseStudyPage({
             </dd>
           </div>
           <div>
-            <dt className="text-xs font-semibold uppercase tracking-wider text-[var(--mb-tertiary)]">
+            <dt className="mb-kicker-muted">
               Status
             </dt>
             <dd className="mt-1.5 text-sm font-semibold text-[var(--mb-ink)]">
@@ -202,20 +202,20 @@ export default async function MockBCaseStudyPage({
             </dd>
           </div>
           <div>
-            <dt className="text-xs font-semibold uppercase tracking-wider text-[var(--mb-tertiary)]">
+            <dt className="mb-kicker-muted">
               Year / date
             </dt>
             <dd className="mt-1.5 flex flex-wrap items-center gap-2 text-sm font-semibold text-[var(--mb-ink)]">
               <span>{study.yearDisplay}</span>
               {study.yearIsTodo ? (
-                <span className="rounded-[var(--radius-sm)] border border-[var(--mb-line-strong)] bg-[var(--mb-raised)] px-2 py-0.5 text-[11px] font-semibold text-[var(--mb-muted)]">
+                <span className="rounded-[var(--mb-radius-sm)] border border-[var(--mb-line-strong)] bg-[var(--mb-raised)] px-2 py-0.5 text-[11px] font-semibold text-[var(--mb-muted)]">
                   TODO for Ryan
                 </span>
               ) : null}
             </dd>
           </div>
           <div>
-            <dt className="text-xs font-semibold uppercase tracking-wider text-[var(--mb-tertiary)]">
+            <dt className="mb-kicker-muted">
               Link
             </dt>
             <dd className="mt-1 text-sm font-semibold text-[var(--mb-ink)]">
@@ -234,7 +234,7 @@ export default async function MockBCaseStudyPage({
               ) : (
                 <span className="inline-flex items-center gap-2 pt-0.5">
                   <span>In-site</span>
-                  <span className="rounded-[var(--radius-sm)] border border-[var(--mb-line-strong)] bg-[var(--mb-raised)] px-2 py-0.5 text-[11px] font-semibold text-[var(--mb-muted)]">
+                  <span className="rounded-[var(--mb-radius-sm)] border border-[var(--mb-line-strong)] bg-[var(--mb-raised)] px-2 py-0.5 text-[11px] font-semibold text-[var(--mb-muted)]">
                     URL TODO
                   </span>
                 </span>
@@ -247,12 +247,12 @@ export default async function MockBCaseStudyPage({
       {/* ── VISUAL SHOWCASE ──────────────────────────────────────────────── */}
       <section
         aria-labelledby="case-visual-heading"
-        className="mx-auto max-w-5xl px-4 pb-14 sm:px-6"
+        className="mb-shell max-w-6xl pb-14 sm:px-6"
       >
         <div className="mb-3 flex flex-wrap items-baseline justify-between gap-2">
           <h2
             id="case-visual-heading"
-            className="text-xs font-semibold uppercase tracking-widest text-[var(--mb-tertiary)]"
+            className="mb-kicker-muted"
           >
             Visual preview
           </h2>
@@ -265,16 +265,16 @@ export default async function MockBCaseStudyPage({
 
       {/* ── MAIN CASE STUDY CONTENT + RULED SIDEBAR ──────────────────────── */}
       <div className="border-t border-[var(--mb-line)] bg-[var(--mb-surface)]">
-        <div className="mx-auto grid max-w-5xl gap-12 px-4 py-14 sm:px-6 sm:py-20 lg:grid-cols-[1.4fr_0.6fr] lg:items-start">
+        <div className="mb-shell grid max-w-6xl gap-12 px-4 py-14 sm:px-6 sm:py-20 lg:grid-cols-[1.4fr_0.6fr] lg:items-start">
           <div className="space-y-12">
             {/* 1. The problem */}
             <section aria-labelledby="case-problem-heading" data-mb-reveal="true">
-              <p className="text-xs font-semibold uppercase tracking-widest text-[var(--mb-link)]">
-                01 · Context
+              <p className="mb-kicker">
+                01 / Context
               </p>
               <h2
                 id="case-problem-heading"
-                className="mb-display mt-2 text-2xl font-semibold text-[var(--mb-ink)] sm:text-3xl"
+                className="mb-display mt-2 text-2xl text-[var(--mb-ink)] sm:text-3xl"
               >
                 The problem
               </h2>
@@ -300,12 +300,12 @@ export default async function MockBCaseStudyPage({
               data-mb-reveal="true"
               className="border-t border-[var(--mb-line)] pt-10"
             >
-              <p className="text-xs font-semibold uppercase tracking-widest text-[var(--mb-link)]">
-                02 · Delivery
+              <p className="mb-kicker">
+                02 / Delivery
               </p>
               <h2
                 id="case-built-heading"
-                className="mb-display mt-2 text-2xl font-semibold text-[var(--mb-ink)] sm:text-3xl"
+                className="mb-display mt-2 text-2xl text-[var(--mb-ink)] sm:text-3xl"
               >
                 What was built
               </h2>
@@ -318,7 +318,7 @@ export default async function MockBCaseStudyPage({
 
               {study.builtHighlights.length > 0 ? (
                 <div className="mt-7">
-                  <h3 className="text-xs font-semibold uppercase tracking-widest text-[var(--mb-tertiary)]">
+                  <h3 className="mb-kicker-muted">
                     Confirmed highlights
                   </h3>
                   <ul className="mt-3 divide-y divide-[var(--mb-line)] border-y border-[var(--mb-line)] text-sm text-[var(--mb-ink)]">
@@ -328,7 +328,7 @@ export default async function MockBCaseStudyPage({
                           aria-hidden="true"
                           className="select-none text-[var(--mb-link)]"
                         >
-                          &mdash;
+                          -
                         </span>
                         <span>{item}</span>
                       </li>
@@ -344,8 +344,8 @@ export default async function MockBCaseStudyPage({
               ) : null}
 
               {study.architectureNote ? (
-                <div className="mb-on-light mt-7 rounded-r-[var(--radius-md)] border-l-2 border-[var(--mb-accent)] bg-[var(--mb-light)] p-5">
-                  <h3 className="mb-display text-xl font-semibold text-[var(--mb-ink)]">
+                <div className="mb-on-light mt-7 rounded-r-[var(--mb-radius)] border-l-2 border-[var(--mb-accent)] bg-[var(--mb-light)] p-5">
+                  <h3 className="mb-display text-xl text-[var(--mb-ink)]">
                     {study.architectureNote.heading}
                   </h3>
                   <div className="mt-2.5 space-y-3 text-sm leading-relaxed text-[var(--mb-muted)] sm:text-base">
@@ -378,12 +378,12 @@ export default async function MockBCaseStudyPage({
               data-mb-reveal="true"
               className="border-t border-[var(--mb-line)] pt-10"
             >
-              <p className="text-xs font-semibold uppercase tracking-widest text-[var(--mb-tertiary)]">
-                03 · Facts &amp; gaps
+              <p className="mb-kicker-muted">
+                03 / Facts &amp; gaps
               </p>
               <h2
                 id="case-todos-heading"
-                className="mb-display mt-2 text-2xl font-semibold text-[var(--mb-ink)] sm:text-3xl"
+                className="mb-display mt-2 text-2xl text-[var(--mb-ink)] sm:text-3xl"
               >
                 Where it stands &amp; TODOs for Ryan
               </h2>
@@ -392,7 +392,7 @@ export default async function MockBCaseStudyPage({
               </p>
 
               <div className="mt-5">
-                <TodoMarkerCard label="TODO for Ryan · Missing facts">
+                <TodoMarkerCard label="TODO for Ryan / Missing facts">
                   <p className="font-semibold text-[var(--mb-ink)]">
                     Nothing below has been invented. Fill in only what is real and approved:
                   </p>
@@ -420,7 +420,7 @@ export default async function MockBCaseStudyPage({
             >
               <h2
                 id="case-stack-heading"
-                className="mb-display text-xl font-semibold text-[var(--mb-ink)]"
+                className="mb-display text-xl text-[var(--mb-ink)]"
               >
                 Stack &amp; focus
               </h2>
@@ -428,7 +428,7 @@ export default async function MockBCaseStudyPage({
                 {study.stackConfirmed.map((tag) => (
                   <span
                     key={tag}
-                    className="rounded-[var(--radius-sm)] border border-[var(--mb-line-strong)] bg-[var(--mb-bg)] px-2.5 py-1 text-xs font-medium text-[var(--mb-ink)]"
+                    className="rounded-[var(--mb-radius-sm)] border border-[var(--mb-line-strong)] bg-[var(--mb-bg)] px-2.5 py-1 text-xs font-medium text-[var(--mb-ink)]"
                   >
                     {tag}
                   </span>
@@ -451,15 +451,11 @@ export default async function MockBCaseStudyPage({
             >
               <h2
                 id="case-status-heading"
-                className="mb-display text-xl font-semibold text-[var(--mb-ink)]"
+                className="mb-display text-xl text-[var(--mb-ink)]"
               >
                 Project status
               </h2>
-              <p className="mt-2.5 inline-flex items-center gap-2 text-xs font-semibold text-[var(--mb-link)]">
-                <span
-                  aria-hidden="true"
-                  className="h-2 w-2 rounded-full bg-[var(--mb-accent)]"
-                />
+              <p className="mt-2.5 text-sm font-bold text-[var(--mb-link)]">
                 {study.statusHeadline}
               </p>
               <p className="mt-2.5 text-sm leading-relaxed text-[var(--mb-muted)]">
@@ -470,11 +466,11 @@ export default async function MockBCaseStudyPage({
             <section
               aria-labelledby="case-sidebar-cta-heading"
               data-mb-reveal="true"
-              className="mb-on-light rounded-[var(--radius-md)] border border-[var(--mb-line)] bg-[var(--mb-light)] p-5"
+              className="mb-on-light rounded-[var(--mb-radius)] border border-[var(--mb-line)] bg-[var(--mb-light)] p-5"
             >
               <h2
                 id="case-sidebar-cta-heading"
-                className="mb-display text-xl font-semibold text-[var(--mb-ink)]"
+                className="mb-display text-xl text-[var(--mb-ink)]"
               >
                 Planning something similar?
               </h2>
@@ -506,7 +502,7 @@ export default async function MockBCaseStudyPage({
         aria-label="More case studies"
         className="border-t border-[var(--mb-line)] bg-[var(--mb-bg)]"
       >
-        <div className="mx-auto max-w-5xl px-4 py-12 sm:px-6">
+        <div className="mb-shell max-w-6xl py-12 sm:px-6">
           <div
             data-mb-reveal="true"
             className="grid divide-y divide-[var(--mb-line)] border-y border-[var(--mb-line)] sm:grid-cols-2 sm:divide-x sm:divide-y-0"
@@ -515,11 +511,11 @@ export default async function MockBCaseStudyPage({
               href={`/mock-b/work/${previous.id}`}
               className="flex min-h-[44px] flex-col justify-between py-6 transition-colors hover:text-[var(--mb-link)] sm:pr-8"
             >
-              <span className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-[var(--mb-tertiary)]">
+              <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-[var(--mb-tertiary)]">
                 <ArrowLeftIcon className="h-3.5 w-3.5 shrink-0" />
                 Previous project
               </span>
-              <span className="mb-display mt-2 text-2xl font-semibold text-[var(--mb-ink)]">
+              <span className="mb-display mt-2 text-2xl text-[var(--mb-ink)]">
                 {previous.name}
               </span>
               <span className="mt-1 text-xs font-medium text-[var(--mb-muted)]">
@@ -531,11 +527,11 @@ export default async function MockBCaseStudyPage({
               href={`/mock-b/work/${next.id}`}
               className="flex min-h-[44px] flex-col justify-between py-6 transition-colors hover:text-[var(--mb-link)] sm:items-end sm:pl-8 sm:text-right"
             >
-              <span className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-[var(--mb-tertiary)]">
+              <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-[var(--mb-tertiary)]">
                 Next project
                 <ArrowRightIcon className="h-3.5 w-3.5 shrink-0" />
               </span>
-              <span className="mb-display mt-2 text-2xl font-semibold text-[var(--mb-ink)]">
+              <span className="mb-display mt-2 text-2xl text-[var(--mb-ink)]">
                 {next.name}
               </span>
               <span className="mt-1 text-xs font-medium text-[var(--mb-muted)]">
@@ -560,15 +556,15 @@ export default async function MockBCaseStudyPage({
       >
         <div
           data-mb-reveal="true"
-          className="mx-auto flex max-w-5xl flex-col gap-6 px-4 py-16 sm:px-6 sm:py-20 lg:flex-row lg:items-center lg:justify-between"
+          className="mb-shell flex max-w-6xl flex-col gap-6 px-4 py-16 sm:px-6 sm:py-20 lg:flex-row lg:items-center lg:justify-between"
         >
           <div className="max-w-xl">
-            <p className="text-xs font-semibold uppercase tracking-widest text-[var(--mb-muted)]">
+            <p className="mb-kicker-muted">
               Start a project
             </p>
             <h2
               id="case-close-heading"
-              className="mb-display mt-2 text-3xl font-semibold text-[var(--mb-ink)] sm:text-4xl"
+              className="mb-display mt-2 text-3xl text-[var(--mb-ink)] sm:text-4xl"
             >
               Want a clear, phone-first build for your team?
             </h2>
