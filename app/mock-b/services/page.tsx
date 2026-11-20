@@ -109,7 +109,7 @@ export default function MockBServicesPage() {
                 {service.exampleHref && service.exampleLabel ? (
                   <Link
                     href={service.exampleHref}
-                    className="mb-btn-secondary w-fit shrink-0"
+                    className="mb-text-link w-fit shrink-0"
                   >
                     {service.exampleLabel}
                     <ArrowRightIcon className="h-4 w-4 shrink-0" />

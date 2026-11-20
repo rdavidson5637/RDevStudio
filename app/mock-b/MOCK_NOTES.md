@@ -114,6 +114,16 @@ Further editorial tighten. Copy, TODOs, and Grenadine hex values still untouched
 - **Closing bands:** Work and case-study closes stack type-led (aligned with services) so CTAs sit under the copy, not in a side button column.
 - **QA:** No horizontal overflow at 360 or 390; visible interactive targets >= 44px (skip link and off-screen form honeypot excluded). Shots in `docs/design-pro/mockb-pro/pass4-before/` and `pass4-after/`.
 
+## Pro pass 5 (20 Nov, refine / same PR #35)
+
+Placeholder chrome and leftover outline CTAs. Copy, TODOs, and Grenadine hex values still untouched.
+
+- **Wireframes flattened:** Project and case-study placeholders for Assisi, Crosskennan, Rondo, and MGSL Hub drop nested bordered mini-cards; they use ruled type blocks and hairline bars instead.
+- **Phone frames:** Square ruled panels (no soft inset phone chrome).
+- **Services:** Example project links demoted from outline buttons to `mb-text-link`.
+- **Case sidebar CTA:** Left-accent Naples panel (matches contact aside) instead of a bordered rounded box.
+- **QA:** Shots in `docs/design-pro/mockb-pro/pass5-before/` and `pass5-after/` (390 + 1280; Assisi case included for placeholder chrome).
+
 ## Open TODOs for Ryan
 
 - [ ] **Formspree:** Confirm `NEXT_PUBLIC_FORMSPREE_ID` is set in the `rdev-studio` Vercel project and submit one test quote on `/mock-b/contact` in the preview to verify inbox delivery.

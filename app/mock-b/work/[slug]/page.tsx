@@ -450,7 +450,7 @@ export default async function MockBCaseStudyPage({
             <section
               aria-labelledby="case-sidebar-cta-heading"
               data-mb-reveal="true"
-              className="mb-on-light rounded-[var(--mb-radius)] border border-[var(--mb-line)] bg-[var(--mb-light)] p-5"
+              className="mb-on-light border-l-2 border-[var(--mb-accent)] bg-[var(--mb-light)] p-5"
             >
               <h2
                 id="case-sidebar-cta-heading"
