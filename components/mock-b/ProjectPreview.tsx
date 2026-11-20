@@ -63,7 +63,7 @@ export function ProjectPreview({
             <span className="mb-display text-sm text-[var(--mb-ink)]">
               Assisi Animal Sanctuary
             </span>
-            <span className="rounded-[var(--mb-radius-sm)] border border-[var(--mb-line-strong)] bg-[var(--mb-raised)] px-2 py-0.5 text-[10px] font-semibold text-[var(--mb-muted)]">
+            <span className="mb-caption font-medium">
               Preview held for sign-off
             </span>
           </div>
@@ -162,9 +162,7 @@ export function ProjectPreview({
             <span className="mb-display text-sm text-[var(--mb-ink)]">
               Rondo
             </span>
-            <span className="rounded-[var(--mb-radius-sm)] border border-[var(--mb-line)] bg-[var(--mb-raised)] px-2 py-0.5 text-[10px] font-semibold text-[var(--mb-muted)]">
-              In-house web app
-            </span>
+            <span className="mb-caption font-medium">In-house web app</span>
           </div>
 
           <div className="my-3 grid grid-cols-3 gap-2.5" aria-hidden="true">
@@ -202,9 +200,7 @@ export function ProjectPreview({
           <span className="mb-display text-sm text-[var(--mb-ink)]">
             MGSL Hub
           </span>
-          <span className="rounded-[var(--mb-radius-sm)] border border-[var(--mb-border-accent)] bg-[var(--mb-accent-subtle)] px-2 py-0.5 text-[10px] font-semibold text-[var(--mb-link)]">
-            Web hub
-          </span>
+          <span className="mb-caption font-medium">Web hub</span>
         </div>
 
         <div className="grid grid-cols-3 gap-2.5 py-3" aria-hidden="true">

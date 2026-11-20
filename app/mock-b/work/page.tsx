@@ -263,7 +263,7 @@ export default function MockBWorkPage() {
                     <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
                       <Link
                         href={`/mock-b/work/${project.id}`}
-                        className="mb-btn-secondary w-fit"
+                        className="mb-text-link w-fit"
                       >
                         Read case study
                         <ArrowRightIcon className="h-4 w-4 shrink-0" />
@@ -303,9 +303,9 @@ export default function MockBWorkPage() {
       >
         <div
           data-mb-reveal="true"
-          className="mb-shell mb-section-pad flex max-w-6xl flex-col gap-6 px-4 sm:px-6 lg:flex-row lg:items-center lg:justify-between"
+          className="mb-shell mb-section-pad max-w-6xl px-4 sm:px-6"
         >
-          <div className="max-w-xl">
+          <div className="max-w-2xl border-t border-[var(--mb-line-strong)] pt-8">
             <p className="mb-kicker-muted">Have a project in mind?</p>
             <h2 id="work-cta-heading" className="mb-h2 mt-2 text-[var(--mb-ink)]">
               Let us build something clear and useful together
@@ -313,22 +313,21 @@ export default function MockBWorkPage() {
             <p className="mt-3 text-base leading-relaxed text-[var(--mb-muted)]">
               Send a short note through the quote form or message RDev Studio on WhatsApp for a straightforward chat.
             </p>
-          </div>
-
-          <div className="flex flex-col gap-3 sm:flex-row sm:items-center lg:shrink-0">
-            <Link href="/mock-b/contact" className="mb-btn-primary">
-              Start a quote
-              <ArrowRightIcon className="h-4 w-4 shrink-0" />
-            </Link>
-            <a
-              href={STUDIO_WHATSAPP_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mb-text-link"
-            >
-              <WhatsAppIcon className="h-4 w-4 shrink-0" />
-              Message on WhatsApp
-            </a>
+            <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
+              <Link href="/mock-b/contact" className="mb-btn-primary w-full sm:w-auto">
+                Start a quote
+                <ArrowRightIcon className="h-4 w-4 shrink-0" />
+              </Link>
+              <a
+                href={STUDIO_WHATSAPP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mb-text-link"
+              >
+                <WhatsAppIcon className="h-4 w-4 shrink-0" />
+                Message on WhatsApp
+              </a>
+            </div>
           </div>
         </div>
       </section>

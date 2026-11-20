@@ -104,6 +104,16 @@ Tighter CTA hierarchy and mobile rhythm. Copy, TODOs, and Grenadine hex values s
 - **QA:** Shots in `docs/design-pro/mockb-pro/pass3-before/` and `pass3-after/` (360, 390, 1280).
 - **Follow-up in same pass:** Services FAQ questions use bold body type (not display `mb-h3`); services closing band is type-led stacked instead of side-by-side so it does not mirror the work/case closing pattern.
 
+## Pro pass 4 (20 Nov, refine / same PR #35)
+
+Further editorial tighten. Copy, TODOs, and Grenadine hex values still untouched.
+
+- **Ruled lists over equal grids:** Home services become ruled editorial rows (title + bullets + text link); home and services process steps become numbered ruled rows instead of a 4-up equal card grid.
+- **Quieter secondary actions:** Section header outline buttons and project "Read case study" links demoted to `mb-text-link`; home quote WhatsApp and contact aside WhatsApp demoted from outline buttons to text links so one grenadine primary remains.
+- **No pill badges:** Case-study TODO / URL markers and placeholder preview labels use caption/meta text; facts strip is a ruled definition list (label / value rows) instead of a 4-up tile grid.
+- **Closing bands:** Work and case-study closes stack type-led (aligned with services) so CTAs sit under the copy, not in a side button column.
+- **QA:** No horizontal overflow at 360 or 390; visible interactive targets >= 44px (skip link and off-screen form honeypot excluded). Shots in `docs/design-pro/mockb-pro/pass4-before/` and `pass4-after/`.
+
 ## Open TODOs for Ryan
 
 - [ ] **Formspree:** Confirm `NEXT_PUBLIC_FORMSPREE_ID` is set in the `rdev-studio` Vercel project and submit one test quote on `/mock-b/contact` in the preview to verify inbox delivery.

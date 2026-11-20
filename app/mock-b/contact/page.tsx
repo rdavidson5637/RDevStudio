@@ -105,7 +105,7 @@ export default function MockBContactPage() {
                 href={STUDIO_WHATSAPP_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mb-btn-secondary-inverse mt-5 w-full"
+                className="mb-text-link mt-4"
               >
                 <WhatsAppIcon className="h-4 w-4 shrink-0" />
                 Message on WhatsApp

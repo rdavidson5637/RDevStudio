@@ -97,7 +97,7 @@ export function WorkDeviceShowcase({ project }: { project: MockBProject }) {
               <span className="mb-display text-sm text-[var(--mb-ink)]">
                 Assisi Animal Sanctuary
               </span>
-              <span className="rounded-[var(--mb-radius-sm)] border border-[var(--mb-line-strong)] bg-[var(--mb-raised)] px-2.5 py-0.5 text-[11px] font-semibold text-[var(--mb-muted)]">
+              <span className="mb-caption max-w-[18ch] text-right font-medium sm:max-w-none">
                 Preview held until sanctuary sign-off
               </span>
             </div>
@@ -229,7 +229,7 @@ export function WorkDeviceShowcase({ project }: { project: MockBProject }) {
               <span className="mb-display text-base text-[var(--mb-ink)]">
                 Rondo
               </span>
-              <span className="rounded-[var(--mb-radius-sm)] border border-[var(--mb-line)] bg-[var(--mb-raised)] px-2.5 py-0.5 text-[11px] font-semibold text-[var(--mb-muted)]">
+              <span className="mb-caption max-w-[18ch] text-right font-medium sm:max-w-none">
                 Live link to be confirmed by studio
               </span>
             </div>
@@ -285,9 +285,7 @@ export function WorkDeviceShowcase({ project }: { project: MockBProject }) {
             <span className="mb-display text-base text-[var(--mb-ink)]">
               MGSL Hub
             </span>
-            <span className="rounded-[var(--mb-radius-sm)] border border-[var(--mb-border-accent)] bg-[var(--mb-accent-subtle)] px-2.5 py-0.5 text-[11px] font-semibold text-[var(--mb-link)]">
-              Web hub preview
-            </span>
+            <span className="mb-caption font-medium">Web hub preview</span>
           </div>
 
           <div className="my-5 grid gap-3 sm:grid-cols-12" aria-hidden="true">

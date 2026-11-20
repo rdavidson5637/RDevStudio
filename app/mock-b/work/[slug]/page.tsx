@@ -54,13 +54,12 @@ function TodoMarkerCard({
 }) {
   return (
     <div className="mb-todo-box p-4 sm:p-5">
-      <div className="flex flex-wrap items-center gap-2.5">
-        <span className="inline-flex items-center gap-1.5 rounded-[var(--mb-radius-sm)] border border-[var(--mb-line-strong)] bg-[var(--mb-surface)] px-2.5 py-0.5 text-xs font-semibold text-[var(--mb-ink)]">
-          {label}
+      <div className="mb-meta">
+        <span className="font-semibold text-[var(--mb-ink)]">{label}</span>
+        <span aria-hidden="true" className="mb-meta-sep">
+          /
         </span>
-        <span className="text-xs font-medium text-[var(--mb-muted)]">
-          Not stored in repo yet
-        </span>
+        <span className="text-[var(--mb-muted)]">Not stored in repo yet</span>
       </div>
       <div className="mt-2.5 text-sm leading-relaxed text-[var(--mb-ink)]">
         {children}
@@ -183,42 +182,34 @@ export default async function MockBCaseStudyPage({
           </div>
         </div>
 
-        {/* Ruled facts-at-a-glance strip */}
-        <dl className="mt-10 grid gap-6 border-y border-[var(--mb-line)] py-6 sm:grid-cols-2 lg:grid-cols-4">
-          <div>
-            <dt className="mb-kicker-muted">
-              Context
-            </dt>
-            <dd className="mt-1.5 text-sm font-semibold text-[var(--mb-ink)]">
+        {/* Ruled facts-at-a-glance: editorial rows, not equal card tiles */}
+        <dl className="mt-10 divide-y divide-[var(--mb-line)] border-y border-[var(--mb-line)]">
+          <div className="grid gap-1 py-4 sm:grid-cols-[7.5rem_minmax(0,1fr)] sm:items-baseline sm:gap-6">
+            <dt className="mb-kicker-muted">Context</dt>
+            <dd className="text-sm font-semibold text-[var(--mb-ink)]">
               {study.clientOrContext}
             </dd>
           </div>
-          <div>
-            <dt className="mb-kicker-muted">
-              Status
-            </dt>
-            <dd className="mt-1.5 text-sm font-semibold text-[var(--mb-ink)]">
+          <div className="grid gap-1 py-4 sm:grid-cols-[7.5rem_minmax(0,1fr)] sm:items-baseline sm:gap-6">
+            <dt className="mb-kicker-muted">Status</dt>
+            <dd className="text-sm font-semibold text-[var(--mb-ink)]">
               {study.statusHeadline}
             </dd>
           </div>
-          <div>
-            <dt className="mb-kicker-muted">
-              Year / date
-            </dt>
-            <dd className="mt-1.5 flex flex-wrap items-center gap-2 text-sm font-semibold text-[var(--mb-ink)]">
+          <div className="grid gap-1 py-4 sm:grid-cols-[7.5rem_minmax(0,1fr)] sm:items-baseline sm:gap-6">
+            <dt className="mb-kicker-muted">Year / date</dt>
+            <dd className="text-sm font-semibold text-[var(--mb-ink)]">
               <span>{study.yearDisplay}</span>
               {study.yearIsTodo ? (
-                <span className="rounded-[var(--mb-radius-sm)] border border-[var(--mb-line-strong)] bg-[var(--mb-raised)] px-2 py-0.5 text-[11px] font-semibold text-[var(--mb-muted)]">
+                <span className="mb-caption ml-2 inline font-medium">
                   TODO for Ryan
                 </span>
               ) : null}
             </dd>
           </div>
-          <div>
-            <dt className="mb-kicker-muted">
-              Link
-            </dt>
-            <dd className="mt-1 text-sm font-semibold text-[var(--mb-ink)]">
+          <div className="grid gap-1 py-4 sm:grid-cols-[7.5rem_minmax(0,1fr)] sm:items-baseline sm:gap-6">
+            <dt className="mb-kicker-muted">Link</dt>
+            <dd className="text-sm font-semibold text-[var(--mb-ink)]">
               {project.external ? (
                 <a
                   href={project.href}
@@ -232,11 +223,9 @@ export default async function MockBCaseStudyPage({
               ) : project.id === "assisi" ? (
                 <span className="inline-block pt-0.5">Held until sign-off</span>
               ) : (
-                <span className="inline-flex items-center gap-2 pt-0.5">
+                <span className="inline-flex flex-wrap items-baseline gap-x-2 gap-y-1 pt-0.5">
                   <span>In-site</span>
-                  <span className="rounded-[var(--mb-radius-sm)] border border-[var(--mb-line-strong)] bg-[var(--mb-raised)] px-2 py-0.5 text-[11px] font-semibold text-[var(--mb-muted)]">
-                    URL TODO
-                  </span>
+                  <span className="mb-caption font-medium">URL TODO</span>
                 </span>
               )}
             </dd>
@@ -551,9 +540,9 @@ export default async function MockBCaseStudyPage({
       >
         <div
           data-mb-reveal="true"
-          className="mb-shell mb-section-pad flex max-w-6xl flex-col gap-6 px-4 sm:px-6 lg:flex-row lg:items-center lg:justify-between"
+          className="mb-shell mb-section-pad max-w-6xl px-4 sm:px-6"
         >
-          <div className="max-w-xl">
+          <div className="max-w-2xl border-t border-[var(--mb-line-strong)] pt-8">
             <p className="mb-kicker-muted">Start a project</p>
             <h2 id="case-close-heading" className="mb-h2 mt-2 text-[var(--mb-ink)]">
               Want a clear, phone-first build for your team?
@@ -561,22 +550,21 @@ export default async function MockBCaseStudyPage({
             <p className="mt-3 text-base leading-relaxed text-[var(--mb-muted)]">
               Send a short note through the quote form or message RDev Studio directly on WhatsApp.
             </p>
-          </div>
-
-          <div className="flex flex-col gap-3 sm:flex-row sm:items-center lg:shrink-0">
-            <Link href={quoteHref} className="mb-btn-primary">
-              Start a quote
-              <ArrowRightIcon className="h-4 w-4 shrink-0" />
-            </Link>
-            <a
-              href={STUDIO_WHATSAPP_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mb-text-link"
-            >
-              <WhatsAppIcon className="h-4 w-4 shrink-0" />
-              Message on WhatsApp
-            </a>
+            <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
+              <Link href={quoteHref} className="mb-btn-primary w-full sm:w-auto">
+                Start a quote
+                <ArrowRightIcon className="h-4 w-4 shrink-0" />
+              </Link>
+              <a
+                href={STUDIO_WHATSAPP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mb-text-link"
+              >
+                <WhatsAppIcon className="h-4 w-4 shrink-0" />
+                Message on WhatsApp
+              </a>
+            </div>
           </div>
         </div>
       </section>

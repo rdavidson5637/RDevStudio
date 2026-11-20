@@ -196,21 +196,21 @@ export default function MockBServicesPage() {
           <h2 id="services-process-heading" className="mb-h2 mt-2 text-[var(--mb-ink)]">
             Four calm steps from first message to launch
           </h2>
-          <ol className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+          <ol className="mt-10 divide-y divide-[var(--mb-line)] border-y border-[var(--mb-line)]">
             {STUDIO_RHYTHM.map((item) => (
               <li
                 key={item.step}
-                className="border-t border-[var(--mb-line-strong)] pt-4"
+                className="grid gap-2 py-5 sm:grid-cols-[4.5rem_minmax(0,1fr)] sm:items-baseline sm:gap-6"
               >
-                <span className="mb-num text-xl">
-                  {item.step}
-                </span>
-                <h3 className="mt-2 text-base font-semibold text-[var(--mb-ink)]">
-                  {item.title}
-                </h3>
-                <p className="mt-1.5 text-sm leading-relaxed text-[var(--mb-muted)]">
-                  {item.body}
-                </p>
+                <span className="mb-num text-xl">{item.step}</span>
+                <div className="min-w-0 max-w-[var(--mb-measure)]">
+                  <h3 className="text-base font-semibold text-[var(--mb-ink)]">
+                    {item.title}
+                  </h3>
+                  <p className="mt-1.5 text-sm leading-relaxed text-[var(--mb-muted)]">
+                    {item.body}
+                  </p>
+                </div>
               </li>
             ))}
           </ol>

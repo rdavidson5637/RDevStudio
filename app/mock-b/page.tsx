@@ -83,7 +83,7 @@ export default function MockBHomePage() {
               </h2>
             </div>
 
-            <Link href="/mock-b/work" className="mb-btn-secondary w-fit">
+            <Link href="/mock-b/work" className="mb-text-link w-fit shrink-0">
               Open full showcase
               <ArrowRightIcon className="h-4 w-4 shrink-0" />
             </Link>
@@ -150,7 +150,7 @@ export default function MockBHomePage() {
                     <div className="flex flex-wrap items-center gap-4 pt-1">
                       <Link
                         href={`/mock-b/work/${project.id}`}
-                        className="mb-btn-secondary"
+                        className="mb-text-link"
                       >
                         Read case study
                         <ArrowRightIcon className="h-4 w-4 shrink-0" />
@@ -220,37 +220,42 @@ export default function MockBHomePage() {
               </p>
             </div>
 
-            <Link href="/mock-b/services" className="mb-btn-secondary w-fit shrink-0">
+            <Link href="/mock-b/services" className="mb-text-link w-fit shrink-0">
               Full services guide
               <ArrowRightIcon className="h-4 w-4 shrink-0" />
             </Link>
           </div>
 
-          <div className="mt-12 grid gap-x-10 gap-y-12 sm:grid-cols-2">
+          <ol className="mt-10 divide-y divide-[var(--mb-line)] border-y border-[var(--mb-line)]">
             {MOCK_B_SERVICES.map((service, index) => (
-              <article
-                key={service.id}
-                data-mb-reveal="true"
-                className="flex flex-col justify-between border-t border-[var(--mb-line-strong)] pt-6"
-              >
-                <div>
-                  <div className="flex items-center justify-between gap-3 text-xs font-semibold">
-                    <span className="tabular-nums text-[var(--mb-link)]">
-                      0{index + 1}
-                    </span>
-                    <span className="text-[var(--mb-tertiary)]">
-                      {service.tag}
-                    </span>
+              <li key={service.id} data-mb-reveal="true" className="py-6 sm:py-7">
+                <div className="grid gap-4 md:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)] md:items-start md:gap-10">
+                  <div className="min-w-0">
+                    <div className="mb-meta">
+                      <span className="tabular-nums font-semibold text-[var(--mb-link)]">
+                        0{index + 1}
+                      </span>
+                      <span aria-hidden="true" className="mb-meta-sep">
+                        /
+                      </span>
+                      <span className="text-[var(--mb-tertiary)]">{service.tag}</span>
+                    </div>
+                    <h3 className="mb-h3 mt-2 text-[var(--mb-ink)]">
+                      {service.title}
+                    </h3>
+                    <p className="mt-2 max-w-[var(--mb-measure)] text-sm leading-relaxed text-[var(--mb-muted)] sm:text-base">
+                      {service.summary}
+                    </p>
+                    <a
+                      href="#quote"
+                      className="mb-text-link mt-4"
+                    >
+                      Ask for a quote on this
+                      <ArrowRightIcon className="h-4 w-4 shrink-0" />
+                    </a>
                   </div>
 
-                  <h3 className="mb-h3 mt-3 text-[var(--mb-ink)]">
-                    {service.title}
-                  </h3>
-                  <p className="mt-2.5 text-sm leading-relaxed text-[var(--mb-muted)] sm:text-base">
-                    {service.summary}
-                  </p>
-
-                  <ul className="mt-5 space-y-2 border-t border-[var(--mb-line)] pt-4 text-sm text-[var(--mb-ink)]">
+                  <ul className="space-y-2 border-t border-[var(--mb-line)] pt-4 text-sm text-[var(--mb-ink)] md:border-t-0 md:border-l md:pt-0 md:pl-8">
                     {service.bullets.map((bullet) => (
                       <li key={bullet} className="flex items-start gap-2.5">
                         <span
@@ -264,41 +269,31 @@ export default function MockBHomePage() {
                     ))}
                   </ul>
                 </div>
-
-                <div className="mt-5">
-                  <a
-                    href="#quote"
-                    className="inline-flex min-h-[44px] items-center gap-1.5 text-sm font-semibold text-[var(--mb-link)] underline decoration-[var(--mb-border-accent)] underline-offset-4 hover:text-[var(--mb-link-hover)]"
-                  >
-                    Ask for a quote on this
-                    <ArrowRightIcon className="h-4 w-4 shrink-0" />
-                  </a>
-                </div>
-              </article>
+              </li>
             ))}
-          </div>
+          </ol>
 
-          {/* How a project runs - numbered ruled steps */}
+          {/* How a project runs - numbered ruled steps (editorial rows, not equal cards) */}
           <div
             data-mb-reveal="true"
             className="mt-16 border-t border-[var(--mb-line-strong)] pt-12"
           >
             <h3 className="mb-h3 text-[var(--mb-ink)]">How a project runs</h3>
-            <ol className="mt-8 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+            <ol className="mt-8 divide-y divide-[var(--mb-line)] border-y border-[var(--mb-line)]">
               {STUDIO_RHYTHM.map((item) => (
                 <li
                   key={item.step}
-                  className="border-t border-[var(--mb-line-strong)] pt-4"
+                  className="grid gap-2 py-5 sm:grid-cols-[4.5rem_minmax(0,1fr)] sm:items-baseline sm:gap-6"
                 >
-                  <span className="mb-num text-xl">
-                    {item.step}
-                  </span>
-                  <p className="mt-2 text-base font-semibold text-[var(--mb-ink)]">
-                    {item.title}
-                  </p>
-                  <p className="mt-1.5 text-sm leading-relaxed text-[var(--mb-muted)]">
-                    {item.body}
-                  </p>
+                  <span className="mb-num text-xl">{item.step}</span>
+                  <div className="min-w-0 max-w-[var(--mb-measure)]">
+                    <p className="text-base font-semibold text-[var(--mb-ink)]">
+                      {item.title}
+                    </p>
+                    <p className="mt-1.5 text-sm leading-relaxed text-[var(--mb-muted)]">
+                      {item.body}
+                    </p>
+                  </div>
                 </li>
               ))}
             </ol>
@@ -390,7 +385,7 @@ export default function MockBHomePage() {
                   href={STUDIO_WHATSAPP_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mb-btn-secondary-inverse mt-4 w-full sm:w-auto"
+                  className="mb-text-link mt-3"
                 >
                   <WhatsAppIcon className="h-4 w-4 shrink-0" />
                   Message on WhatsApp
