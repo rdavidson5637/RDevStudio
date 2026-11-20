@@ -23,6 +23,7 @@ const LAST_MODIFIED: Record<string, string> = {
   "/contact": "2026-11-03",
   "/privacy": "2026-10-25",
   "/lab": "2026-11-03",
+  "/interactive": "2026-11-03",
   "/toolkit": "2026-10-25",
   "/toolkit/website-grader": "2026-10-25",
   "/toolkit/ai-landing-page-auditor": "2026-10-25",
@@ -58,6 +59,7 @@ const STATIC_PATHS = [
   "/contact",
   "/privacy",
   "/lab",
+  "/interactive",
   "/toolkit",
 ] as const;
 
