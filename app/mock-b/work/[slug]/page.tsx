@@ -90,29 +90,29 @@ export default async function MockBCaseStudyPage({
       <section className="mb-shell mb-page-intro max-w-6xl sm:px-6">
         <nav
           aria-label="Breadcrumb"
-          className="flex flex-wrap items-center gap-1 text-sm font-medium text-[var(--mb-muted)]"
+          className="mb-meta gap-x-2"
         >
           <Link
             href="/mock-b"
-            className="inline-flex min-h-[44px] items-center pr-2 underline decoration-[var(--mb-line-strong)] underline-offset-4 hover:text-[var(--mb-link)]"
+            className="mb-back-link px-0"
           >
             Studio home
           </Link>
-          <span aria-hidden="true" className="text-[var(--mb-line-strong)]">
+          <span aria-hidden="true" className="mb-meta-sep">
             /
           </span>
           <Link
             href="/mock-b/work"
-            className="inline-flex min-h-[44px] items-center px-2 underline decoration-[var(--mb-line-strong)] underline-offset-4 hover:text-[var(--mb-link)]"
+            className="mb-back-link px-0"
           >
             Work
           </Link>
-          <span aria-hidden="true" className="text-[var(--mb-line-strong)]">
+          <span aria-hidden="true" className="mb-meta-sep">
             /
           </span>
           <span
             aria-current="page"
-            className="inline-flex min-h-[44px] items-center px-2 font-semibold text-[var(--mb-ink)]"
+            className="inline-flex min-h-[44px] items-center font-semibold text-[var(--mb-ink)]"
           >
             {project.name}
           </span>
@@ -215,7 +215,7 @@ export default async function MockBCaseStudyPage({
                   href={project.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex min-h-[44px] max-w-full items-center gap-1 break-all text-[var(--mb-link)] underline decoration-[var(--mb-border-accent)] underline-offset-4 hover:text-[var(--mb-link-hover)]"
+                  className="mb-text-link max-w-full break-all"
                 >
                   {project.href.replace(/^https?:\/\//, "")}
                   <ExternalLinkIcon className="h-3.5 w-3.5 shrink-0" />
@@ -266,9 +266,11 @@ export default async function MockBCaseStudyPage({
               </h2>
 
               {study.problemParagraphs.length > 0 ? (
-                <div className="mt-4 space-y-4 text-sm leading-relaxed text-[var(--mb-muted)] sm:text-base">
+                <div className="mt-4 space-y-4">
                   {study.problemParagraphs.map((paragraph) => (
-                    <p key={paragraph}>{paragraph}</p>
+                    <p key={paragraph} className="mb-prose">
+                      {paragraph}
+                    </p>
                   ))}
                 </div>
               ) : null}
@@ -296,9 +298,11 @@ export default async function MockBCaseStudyPage({
                 What was built
               </h2>
 
-              <div className="mt-4 space-y-4 text-sm leading-relaxed text-[var(--mb-muted)] sm:text-base">
+              <div className="mt-4 space-y-4">
                 {study.builtParagraphs.map((paragraph) => (
-                  <p key={paragraph}>{paragraph}</p>
+                  <p key={paragraph} className="mb-prose">
+                    {paragraph}
+                  </p>
                 ))}
               </div>
 
@@ -330,13 +334,15 @@ export default async function MockBCaseStudyPage({
               ) : null}
 
               {study.architectureNote ? (
-                <div className="mb-on-light mt-7 rounded-r-[var(--mb-radius)] border-l-2 border-[var(--mb-accent)] bg-[var(--mb-light)] p-5">
+                <div className="mb-on-light mt-7 border-l-2 border-[var(--mb-accent)] bg-[var(--mb-light)] p-5">
                   <h3 className="mb-h3 text-[var(--mb-ink)]">
                     {study.architectureNote.heading}
                   </h3>
-                  <div className="mt-2.5 space-y-3 text-sm leading-relaxed text-[var(--mb-muted)] sm:text-base">
+                  <div className="mt-2.5 space-y-3">
                     {study.architectureNote.paragraphs.map((paragraph) => (
-                      <p key={paragraph}>{paragraph}</p>
+                      <p key={paragraph} className="mb-prose">
+                        {paragraph}
+                      </p>
                     ))}
                   </div>
                 </div>
@@ -344,12 +350,12 @@ export default async function MockBCaseStudyPage({
 
               {study.relatedProject ? (
                 <div className="mt-7 flex flex-wrap items-center justify-between gap-3 border-y border-[var(--mb-line)] py-4">
-                  <p className="text-sm text-[var(--mb-muted)]">
+                  <p className="mb-prose">
                     {study.relatedProject.relation}
                   </p>
                   <Link
                     href={`/mock-b/work/${study.relatedProject.slug}`}
-                    className="inline-flex min-h-[44px] items-center gap-1.5 text-sm font-semibold text-[var(--mb-link)] underline decoration-[var(--mb-border-accent)] underline-offset-4 hover:text-[var(--mb-link-hover)]"
+                    className="mb-text-link"
                   >
                     Open {study.relatedProject.name}
                     <ArrowRightIcon className="h-4 w-4 shrink-0" />
@@ -373,9 +379,7 @@ export default async function MockBCaseStudyPage({
               >
                 Where it stands &amp; TODOs for Ryan
               </h2>
-              <p className="mt-3 text-sm leading-relaxed text-[var(--mb-muted)] sm:text-base">
-                {study.outcomeConfirmed}
-              </p>
+              <p className="mb-prose mt-3">{study.outcomeConfirmed}</p>
 
               <div className="mt-5">
                 <TodoMarkerCard label="TODO for Ryan / Missing facts">
@@ -418,9 +422,7 @@ export default async function MockBCaseStudyPage({
                   </span>
                 ))}
               </p>
-              <p className="mt-3.5 text-sm leading-relaxed text-[var(--mb-muted)]">
-                {study.stackNote}
-              </p>
+              <p className="mb-prose mt-3.5">{study.stackNote}</p>
               {study.stackTodo ? (
                 <div className="mt-4">
                   <TodoMarkerCard>{study.stackTodo}</TodoMarkerCard>
@@ -442,9 +444,7 @@ export default async function MockBCaseStudyPage({
               <p className="mt-2.5 text-sm font-bold text-[var(--mb-link)]">
                 {study.statusHeadline}
               </p>
-              <p className="mt-2.5 text-sm leading-relaxed text-[var(--mb-muted)]">
-                {study.statusDetail}
-              </p>
+              <p className="mb-prose mt-2.5">{study.statusDetail}</p>
             </section>
 
             <section
@@ -458,11 +458,11 @@ export default async function MockBCaseStudyPage({
               >
                 Planning something similar?
               </h2>
-              <p className="mt-2 text-sm leading-relaxed text-[var(--mb-muted)]">
+              <p className="mb-prose mt-2">
                 Tell RDev Studio what you need and we will reply in plain English with clear next steps.
               </p>
-              <div className="mt-4 flex flex-col gap-3">
-                <Link href={quoteHref} className="mb-btn-primary w-full">
+              <div className="mt-4 flex flex-col gap-1">
+                <Link href={quoteHref} className="mb-text-link w-fit">
                   Request a quote
                   <ArrowRightIcon className="h-4 w-4 shrink-0" />
                 </Link>
@@ -495,14 +495,14 @@ export default async function MockBCaseStudyPage({
               href={`/mock-b/work/${previous.id}`}
               className="flex min-h-[44px] flex-col justify-between py-6 transition-colors hover:text-[var(--mb-link)] sm:pr-8"
             >
-              <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-[var(--mb-tertiary)]">
+              <span className="mb-kicker-muted inline-flex items-center gap-1.5">
                 <ArrowLeftIcon className="h-3.5 w-3.5 shrink-0" />
                 Previous project
               </span>
               <span className="mb-h3 mt-2 text-[var(--mb-ink)]">
                 {previous.name}
               </span>
-              <span className="mt-1 text-xs font-medium text-[var(--mb-muted)]">
+              <span className="mb-caption mt-1 font-medium text-[var(--mb-muted)]">
                 {previous.type}
               </span>
             </Link>
@@ -511,14 +511,14 @@ export default async function MockBCaseStudyPage({
               href={`/mock-b/work/${next.id}`}
               className="flex min-h-[44px] flex-col justify-between py-6 transition-colors hover:text-[var(--mb-link)] sm:items-end sm:pl-8 sm:text-right"
             >
-              <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-[var(--mb-tertiary)]">
+              <span className="mb-kicker-muted inline-flex items-center gap-1.5">
                 Next project
                 <ArrowRightIcon className="h-3.5 w-3.5 shrink-0" />
               </span>
               <span className="mb-h3 mt-2 text-[var(--mb-ink)]">
                 {next.name}
               </span>
-              <span className="mt-1 text-xs font-medium text-[var(--mb-muted)]">
+              <span className="mb-caption mt-1 font-medium text-[var(--mb-muted)]">
                 {next.type}
               </span>
             </Link>

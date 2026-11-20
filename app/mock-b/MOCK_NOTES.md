@@ -135,6 +135,17 @@ Header, form surfaces, and type-token cleanup. Copy, TODOs, and Grenadine hex va
 - **Captions:** Placeholder chrome uses `mb-caption` / `mb-kicker` instead of ad-hoc 10/11px sizes.
 - **QA:** Shots in `docs/design-pro/mockb-pro/pass6-before/` and `pass6-after/`.
 
+## Pro pass 7 (20 Nov, refine / same PR #35)
+
+One accent per view, square frames, prose tokens. Copy, TODOs, and Grenadine hex values still untouched.
+
+- **CTA hierarchy:** Services section quote buttons demoted from grenadine primary to `mb-text-link` (hero + closing keep the primary). Case-study sidebar quote demoted the same way so hero/closing hold the accent.
+- **Frames:** `mb-frame` and phone chrome are square (radius 0); architecture callouts drop the right radius.
+- **Type:** Shared `mb-prose` for long-form body; jump numbers, prev/next, and device captions use `mb-caption` / `mb-meta` / `mb-kicker-muted`; home and work secondary links standardised on `mb-text-link`.
+- **Contact:** Sticky ruled aside on large screens; form intro and email use prose/text-link tokens.
+- **Case breadcrumb:** Quiet `mb-back-link` trail instead of underlined breadcrumb cluster.
+- **QA:** Shots in `docs/design-pro/mockb-pro/pass7-before/` and `pass7-after/`.
+
 ## Open TODOs for Ryan
 
 - [ ] **Formspree:** Confirm `NEXT_PUBLIC_FORMSPREE_ID` is set in the `rdev-studio` Vercel project and submit one test quote on `/mock-b/contact` in the preview to verify inbox delivery.

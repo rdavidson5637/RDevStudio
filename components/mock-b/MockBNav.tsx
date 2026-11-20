@@ -56,8 +56,8 @@ export function MockBMobileNav() {
             key={item.href}
             href={item.href}
             aria-current={active ? "page" : undefined}
-            className={`inline-flex min-h-[44px] flex-1 items-center justify-center px-1.5 text-[11px] font-bold transition-colors sm:flex-none sm:px-3 sm:text-xs ${
-              active
+            className={`inline-flex min-h-[44px] flex-1 items-center justify-center px-1.5 text-[length:var(--mb-text-caption)] font-bold transition-colors sm:flex-none sm:px-3 sm:text-sm ${
+                active
                 ? "text-[var(--mb-link)] underline decoration-[var(--mb-link)] decoration-2 underline-offset-8"
                 : "text-[var(--mb-muted)] hover:text-[var(--mb-ink)]"
             }`}

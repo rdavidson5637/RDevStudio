@@ -345,8 +345,22 @@
 .mb-frame {
   overflow: hidden;
   border: 1px solid var(--mb-line-strong);
-  border-radius: var(--mb-radius-sm);
+  border-radius: 0;
   background-color: var(--mb-surface);
+}
+
+/* Shared prose measure for body paragraphs in long-form sections */
+.mb-prose {
+  max-width: var(--mb-measure);
+  font-size: var(--mb-text-sm);
+  line-height: var(--mb-leading-body);
+  color: var(--mb-muted);
+}
+
+@media (min-width: 640px) {
+  .mb-prose {
+    font-size: var(--mb-text-base);
+  }
 }
 
 .mb-frame-chrome {

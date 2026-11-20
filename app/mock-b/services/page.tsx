@@ -65,7 +65,7 @@ export default function MockBServicesPage() {
         >
           {MOCK_B_SERVICE_GUIDES.map((service) => (
             <a key={service.id} href={`#${service.id}`} className="mb-jump-link">
-              <span className="tabular-nums text-xs text-[var(--mb-tertiary)]">
+              <span className="mb-caption tabular-nums font-semibold text-[var(--mb-tertiary)]">
                 {service.number}
               </span>
               <span className="max-w-[14ch] truncate sm:max-w-none">{service.title}</span>
@@ -86,11 +86,11 @@ export default function MockBServicesPage() {
             >
               <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
                 <div className="max-w-2xl">
-                  <div className="flex flex-wrap items-center gap-3 text-xs font-semibold">
-                    <span className="tabular-nums text-[var(--mb-link)]">
+                  <div className="mb-meta">
+                    <span className="tabular-nums font-semibold text-[var(--mb-link)]">
                       {service.number}
                     </span>
-                    <span aria-hidden="true" className="text-[var(--mb-line-strong)]">
+                    <span aria-hidden="true" className="mb-meta-sep">
                       /
                     </span>
                     <span className="text-[var(--mb-tertiary)]">
@@ -160,10 +160,10 @@ export default function MockBServicesPage() {
                 </div>
               </div>
 
-              <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
+              <div className="mt-8 flex flex-col gap-1 sm:flex-row sm:flex-wrap sm:items-center sm:gap-x-5">
                 <Link
                   href={`/mock-b/contact?topic=${encodeURIComponent(service.quoteTopic)}`}
-                  className="mb-btn-primary w-full sm:w-auto"
+                  className="mb-text-link w-fit"
                 >
                   Ask for a quote on {service.title.toLowerCase()}
                   <ArrowRightIcon className="h-4 w-4 shrink-0" />
@@ -241,9 +241,7 @@ export default function MockBServicesPage() {
               <dt className="text-base font-bold leading-snug text-[var(--mb-ink)] sm:text-[var(--mb-text-md)]">
                 {item.question}
               </dt>
-              <dd className="max-w-[var(--mb-measure)] text-sm leading-relaxed text-[var(--mb-muted)] sm:text-base">
-                {item.answer}
-              </dd>
+              <dd className="mb-prose">{item.answer}</dd>
             </div>
           ))}
         </dl>

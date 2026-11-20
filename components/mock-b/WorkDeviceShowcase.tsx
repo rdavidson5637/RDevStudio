@@ -26,12 +26,12 @@ function PhoneFrame({
   children: React.ReactNode;
 }) {
   return (
-    <div className="mx-auto flex w-full max-w-[230px] flex-col border border-[var(--mb-line-strong)] bg-[var(--mb-bg)] md:max-w-none">
-      <div className="mb-caption border-b border-[var(--mb-line)] px-2.5 py-1.5 font-medium">
-        Phone
+    <div className="mb-frame mx-auto flex w-full max-w-[230px] flex-col md:max-w-none">
+      <div className="mb-frame-chrome justify-center">
+        <span>Phone</span>
       </div>
-      <div className="flex-1 overflow-hidden">{children}</div>
-      <p className="mb-caption border-t border-[var(--mb-line)] px-2.5 py-2 text-center font-medium">
+      <div className="flex-1 overflow-hidden bg-[var(--mb-bg)]">{children}</div>
+      <p className="mb-caption border-t border-[var(--mb-line)] bg-[var(--mb-raised)] px-2.5 py-2 text-center font-medium">
         {label}
       </p>
     </div>
@@ -111,13 +111,13 @@ export function WorkDeviceShowcase({ project }: { project: MockBProject }) {
                 <p className="mb-display text-lg text-[var(--mb-ink)]">
                   Calm, clear navigation for adopters and donors
                 </p>
-                <p className="text-xs leading-relaxed text-[var(--mb-muted)]">
+                <p className="mb-caption leading-relaxed">
                   Structured so people looking to adopt, donate, or volunteer reach the right page without digging through menus.
                 </p>
               </div>
               <div>
                 <span className="mb-caption font-medium">Core paths</span>
-                <div className="mt-2 divide-y divide-[var(--mb-line)] border-y border-[var(--mb-line)] text-xs font-medium text-[var(--mb-ink)]">
+                <div className="mb-caption mt-2 divide-y divide-[var(--mb-line)] border-y border-[var(--mb-line)] font-medium text-[var(--mb-ink)]">
                   <div className="py-2">Find animals</div>
                   <div className="py-2">Ways to donate</div>
                   <div className="py-2">Volunteer info</div>
@@ -125,7 +125,7 @@ export function WorkDeviceShowcase({ project }: { project: MockBProject }) {
               </div>
             </div>
 
-            <p className="border-t border-[var(--mb-line)] pt-3 text-xs font-medium text-[var(--mb-muted)]">
+            <p className="mb-caption border-t border-[var(--mb-line)] pt-3 font-medium">
               Full public screenshots and live link will publish once Assisi approves them.
             </p>
           </div>
@@ -176,7 +176,7 @@ export function WorkDeviceShowcase({ project }: { project: MockBProject }) {
               </div>
             </div>
 
-            <div className="flex items-center justify-between border-t border-[var(--mb-line)] pt-3 text-xs font-medium text-[var(--mb-muted)]">
+            <div className="mb-caption flex items-center justify-between border-t border-[var(--mb-line)] pt-3 font-medium">
               <span>Straightforward charity layout</span>
               <span className="font-semibold text-[var(--mb-link)]">Hosted preview online</span>
             </div>
@@ -226,7 +226,7 @@ export function WorkDeviceShowcase({ project }: { project: MockBProject }) {
               <div className="h-1.5 w-3/4 bg-[var(--mb-line-strong)]" />
             </div>
 
-            <div className="flex items-center justify-between border-t border-[var(--mb-line)] pt-3 text-xs font-medium text-[var(--mb-muted)]">
+            <div className="mb-caption flex items-center justify-between border-t border-[var(--mb-line)] pt-3 font-medium">
               <span>In-house RDev Studio web app</span>
               <span className="font-semibold text-[var(--mb-ink)]">Studio project</span>
             </div>
@@ -280,7 +280,7 @@ export function WorkDeviceShowcase({ project }: { project: MockBProject }) {
             </div>
           </div>
 
-          <div className="flex items-center justify-between border-t border-[var(--mb-line)] pt-3 text-xs font-medium text-[var(--mb-muted)]">
+          <div className="mb-caption flex items-center justify-between border-t border-[var(--mb-line)] pt-3 font-medium">
             <span>Dedicated hub UI</span>
             <span className="font-semibold text-[var(--mb-link)]">Live on Vercel</span>
           </div>

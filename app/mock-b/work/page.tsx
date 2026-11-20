@@ -55,7 +55,7 @@ export default function MockBWorkPage() {
         >
           {MOCK_B_PROJECTS.map((project, index) => (
             <a key={project.id} href={`#${project.id}`} className="mb-jump-link">
-              <span className="tabular-nums text-xs text-[var(--mb-tertiary)]">
+              <span className="mb-caption tabular-nums font-semibold text-[var(--mb-tertiary)]">
                 0{index + 1}
               </span>
               <span className="max-w-[12ch] truncate sm:max-w-none">{project.name}</span>
@@ -162,7 +162,7 @@ export default function MockBWorkPage() {
                 <div className="mt-4">
                   <Link
                     href={featuredProject.secondaryHref}
-                    className="inline-flex min-h-[44px] items-center text-sm font-medium text-[var(--mb-muted)] underline decoration-[var(--mb-line-strong)] underline-offset-4 hover:text-[var(--mb-ink)]"
+                    className="mb-text-link text-[var(--mb-muted)]"
                   >
                     {featuredProject.secondaryLabel}
                   </Link>

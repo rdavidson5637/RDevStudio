@@ -83,7 +83,7 @@ export default function MockBLayout({
             </a>
             <Link
               href="/mock-b/contact"
-              className="mb-btn-primary px-3 text-xs sm:px-4 sm:text-sm"
+              className="mb-btn-primary px-3 text-[length:var(--mb-text-caption)] sm:px-4 sm:text-sm"
             >
               Get a quote
             </Link>

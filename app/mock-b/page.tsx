@@ -161,7 +161,7 @@ export default function MockBHomePage() {
                           href={project.href}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-flex min-h-[44px] items-center gap-1.5 text-sm font-semibold text-[var(--mb-link)] underline decoration-[var(--mb-border-accent)] underline-offset-4 hover:text-[var(--mb-link-hover)]"
+                          className="mb-text-link"
                         >
                           {project.linkLabel}
                           <ExternalLinkIcon className="h-3.5 w-3.5 shrink-0" />
@@ -169,7 +169,7 @@ export default function MockBHomePage() {
                       ) : project.id === "assisi" ? (
                         <Link
                           href={project.href}
-                          className="inline-flex min-h-[44px] items-center text-sm font-semibold text-[var(--mb-link)] underline decoration-[var(--mb-border-accent)] underline-offset-4 hover:text-[var(--mb-link-hover)]"
+                          className="mb-text-link"
                         >
                           {project.linkLabel}
                         </Link>
@@ -178,7 +178,7 @@ export default function MockBHomePage() {
                       {project.secondaryHref && project.secondaryLabel ? (
                         <Link
                           href={project.secondaryHref}
-                          className="inline-flex min-h-[44px] items-center text-sm font-medium text-[var(--mb-muted)] underline decoration-[var(--mb-line-strong)] underline-offset-4 hover:text-[var(--mb-ink)]"
+                          className="mb-text-link text-[var(--mb-muted)]"
                         >
                           {project.secondaryLabel}
                         </Link>

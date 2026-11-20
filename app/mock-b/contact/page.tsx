@@ -78,7 +78,7 @@ export default function MockBContactPage() {
               <h2 id="contact-form-heading" className="mb-h2 mt-2 text-[var(--mb-ink)]">
                 Send a short note
               </h2>
-              <p className="mt-2 text-sm leading-relaxed text-[var(--mb-muted)] sm:text-base">
+              <p className="mb-prose mt-2">
                 Plain English is best. We will come back by email with clear next steps and a tailored quote before any work begins.
               </p>
             </div>
@@ -89,7 +89,10 @@ export default function MockBContactPage() {
           </div>
 
           {/* Direct channels + helpful checklist (ruled aside) */}
-          <aside aria-label="Direct contact options" className="space-y-8 lg:pt-1">
+          <aside
+            aria-label="Direct contact options"
+            className="space-y-8 lg:sticky lg:top-24 lg:pt-1"
+          >
             <div
               data-mb-reveal="true"
               className="mb-on-light border-l-2 border-[var(--mb-accent)] bg-[var(--mb-light)] p-6"
@@ -98,7 +101,7 @@ export default function MockBContactPage() {
               <h2 className="mb-h3 mt-2 text-[var(--mb-ink)]">
                 Message on WhatsApp
               </h2>
-              <p className="mt-2.5 text-sm leading-relaxed text-[var(--mb-muted)]">
+              <p className="mb-prose mt-2.5">
                 Handy if you want to send a link, ask a quick question, or talk through a rough idea without writing a long email.
               </p>
               <a
@@ -118,12 +121,12 @@ export default function MockBContactPage() {
             >
               <h2 className="mb-h3 text-[var(--mb-ink)]">Direct studio email</h2>
               <p className="mb-caption mt-1">Carrickfergus, Northern Ireland</p>
-              <p className="mt-3 text-sm leading-relaxed text-[var(--mb-muted)]">
+              <p className="mb-prose mt-3">
                 Prefer to write from your own inbox? Send your note straight to RDev Studio:
               </p>
               <a
                 href={`mailto:${CONTACT_EMAIL}`}
-                className="mt-2 inline-flex min-h-[44px] items-center text-base font-semibold text-[var(--mb-link)] underline decoration-[var(--mb-border-accent)] underline-offset-4 hover:text-[var(--mb-link-hover)]"
+                className="mb-text-link mt-2"
               >
                 {CONTACT_EMAIL}
               </a>
