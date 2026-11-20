@@ -61,7 +61,7 @@ function TodoMarkerCard({
         </span>
         <span className="text-[var(--mb-muted)]">Not stored in repo yet</span>
       </div>
-      <div className="mt-2.5 text-sm leading-relaxed text-[var(--mb-ink)]">
+      <div className="mb-prose mt-2.5 text-[var(--mb-ink)]">
         {children}
       </div>
     </div>
@@ -311,16 +311,15 @@ export default async function MockBCaseStudyPage({
                   <h3 className="mb-kicker-muted">
                     Confirmed highlights
                   </h3>
-                  <ul className="mt-3 divide-y divide-[var(--mb-line)] border-y border-[var(--mb-line)] text-sm text-[var(--mb-ink)]">
+                  <ul className="mt-3 divide-y divide-[var(--mb-line)] border-y border-[var(--mb-line)]">
                     {study.builtHighlights.map((item) => (
                       <li key={item} className="flex items-start gap-2.5 py-3">
-                        <span
-                          aria-hidden="true"
-                          className="select-none text-[var(--mb-link)]"
-                        >
+                        <span aria-hidden="true" data-mb-dash className="text-[var(--mb-link)]">
                           -
                         </span>
-                        <span>{item}</span>
+                        <span className="text-sm leading-relaxed text-[var(--mb-ink)] sm:text-base">
+                          {item}
+                        </span>
                       </li>
                     ))}
                   </ul>
@@ -547,7 +546,7 @@ export default async function MockBCaseStudyPage({
             <h2 id="case-close-heading" className="mb-h2 mt-2 text-[var(--mb-ink)]">
               Want a clear, phone-first build for your team?
             </h2>
-            <p className="mt-3 text-base leading-relaxed text-[var(--mb-muted)]">
+            <p className="mb-body mt-3">
               Send a short note through the quote form or message RDev Studio directly on WhatsApp.
             </p>
             <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">

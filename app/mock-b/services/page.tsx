@@ -122,13 +122,10 @@ export default function MockBServicesPage() {
                   <h3 className="mb-kicker-muted">
                     What we focus on
                   </h3>
-                  <ul className="mt-4 space-y-3 text-sm leading-relaxed text-[var(--mb-ink)] sm:text-base">
+                  <ul className="mb-dash-list mt-4">
                     {service.included.map((item) => (
-                      <li key={item} className="flex items-start gap-2.5">
-                        <span
-                          aria-hidden="true"
-                          className="select-none text-[var(--mb-link)]"
-                        >
+                      <li key={item}>
+                        <span aria-hidden="true" data-mb-dash>
                           -
                         </span>
                         <span>{item}</span>
@@ -142,7 +139,7 @@ export default function MockBServicesPage() {
                     <h3 className="mb-kicker-muted">
                       Good fit for
                     </h3>
-                    <p className="mt-2 text-sm leading-relaxed text-[var(--mb-ink)]">
+                    <p className="mb-prose mt-2 text-[var(--mb-ink)]">
                       {service.goodFit}
                     </p>
                   </div>
@@ -151,9 +148,11 @@ export default function MockBServicesPage() {
                     <h3 className="mb-kicker-muted">
                       Worth knowing
                     </h3>
-                    <ul className="mt-2.5 space-y-2.5 text-sm leading-relaxed text-[var(--mb-muted)]">
+                    <ul className="mt-2.5 space-y-2.5">
                       {service.notes.map((note) => (
-                        <li key={note}>{note}</li>
+                        <li key={note} className="mb-prose">
+                          {note}
+                        </li>
                       ))}
                     </ul>
                   </div>
@@ -207,7 +206,7 @@ export default function MockBServicesPage() {
                   <h3 className="text-base font-semibold text-[var(--mb-ink)]">
                     {item.title}
                   </h3>
-                  <p className="mt-1.5 text-sm leading-relaxed text-[var(--mb-muted)]">
+                  <p className="mb-prose mt-1.5">
                     {item.body}
                   </p>
                 </div>
@@ -226,7 +225,7 @@ export default function MockBServicesPage() {
           <h2 id="services-faq-heading" className="mb-h2 text-[var(--mb-ink)]">
             Common questions
           </h2>
-          <p className="mt-2 text-base text-[var(--mb-muted)]">
+          <p className="mb-body mt-2">
             Straight answers before you even send a message.
           </p>
         </div>
@@ -261,7 +260,7 @@ export default function MockBServicesPage() {
             <h2 id="services-close-heading" className="mb-h2 mt-2 text-[var(--mb-ink)]">
               Tell us what you are trying to sort out
             </h2>
-            <p className="mt-3 text-base leading-relaxed text-[var(--mb-muted)]">
+            <p className="mb-body mt-3">
               Send a short note through the quote form or message RDev Studio on WhatsApp - we will point you toward the simplest option.
             </p>
             <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">

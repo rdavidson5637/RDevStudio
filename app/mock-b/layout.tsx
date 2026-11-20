@@ -103,13 +103,13 @@ export default function MockBLayout({
               <p className="mb-h3 text-[var(--mb-ink)]">
                 {SITE_NAME}
               </p>
-              <p className="max-w-md text-sm leading-relaxed text-[var(--mb-muted)]">
+              <p className="mb-prose max-w-md">
                 Websites, web apps, and local web support from Carrickfergus, Northern Ireland.
               </p>
             </div>
             <a
               href={`mailto:${CONTACT_EMAIL}`}
-              className="inline-flex min-h-[44px] items-center text-sm font-semibold text-[var(--mb-ink)] underline decoration-[var(--mb-line-strong)] underline-offset-4 hover:text-[var(--mb-link)] md:justify-end"
+              className="mb-text-link md:justify-self-end"
             >
               {CONTACT_EMAIL}
             </a>

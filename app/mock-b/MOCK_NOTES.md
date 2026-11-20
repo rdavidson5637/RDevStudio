@@ -146,6 +146,17 @@ One accent per view, square frames, prose tokens. Copy, TODOs, and Grenadine hex
 - **Case breadcrumb:** Quiet `mb-back-link` trail instead of underlined breadcrumb cluster.
 - **QA:** Shots in `docs/design-pro/mockb-pro/pass7-before/` and `pass7-after/`.
 
+## Pro pass 8 (20 Nov, refine / same PR #35)
+
+Type-token sweep, quieter form errors, cleaner hero. Copy, TODOs, and Grenadine hex values still untouched.
+
+- **Hero:** Removed redundant WhatsApp from the home "Who this is for" column (header already carries it) so the first viewport stays brand + one primary CTA group.
+- **Type tokens:** Ad-hoc muted paragraphs and closing band copy use `mb-prose` / `mb-body`; shared `mb-dash-list` for service and build-note rows; mid-sentence emails use `mb-inline-link`.
+- **Hover:** Project titles use `mb-title-link` (colour only, no underline + colour).
+- **Form:** Field errors are ochre type (`mb-field-error`) without badge chips; 8px field rhythm (`space-y-6`); inputs use 2px radius.
+- **Rhythm:** Work featured band uses `mb-section-pad`; footer email standardised on `mb-text-link`.
+- **QA:** No overflow at 360/390; contact interactive targets >= 44px. Shots in `docs/design-pro/mockb-pro/pass8-before/` and `pass8-after/`.
+
 ## Open TODOs for Ryan
 
 - [ ] **Formspree:** Confirm `NEXT_PUBLIC_FORMSPREE_ID` is set in the `rdev-studio` Vercel project and submit one test quote on `/mock-b/contact` in the preview to verify inbox delivery.

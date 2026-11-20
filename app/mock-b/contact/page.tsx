@@ -139,9 +139,9 @@ export default function MockBContactPage() {
               <h2 className="mb-h3 text-[var(--mb-ink)]">
                 What helps us quote clearly
               </h2>
-              <ul className="mt-4 divide-y divide-[var(--mb-line)] border-y border-[var(--mb-line)] text-sm leading-relaxed text-[var(--mb-ink)]">
+              <ul className="mt-4 divide-y divide-[var(--mb-line)] border-y border-[var(--mb-line)]">
                 {HELPFUL_NOTES.map((item) => (
-                  <li key={item} className="py-3">
+                  <li key={item} className="py-3 text-sm leading-relaxed text-[var(--mb-ink)] sm:text-base">
                     {item}
                   </li>
                 ))}

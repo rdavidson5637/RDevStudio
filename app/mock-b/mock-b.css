@@ -540,6 +540,83 @@
   color: var(--mb-link);
 }
 
+/* Mid-sentence links (email inside prose): underline always, hover colour only */
+.mb-inline-link {
+  font-weight: 700;
+  color: var(--mb-ink);
+  text-decoration: underline;
+  text-decoration-color: var(--mb-line-strong);
+  text-underline-offset: 4px;
+  transition: color 180ms ease;
+}
+
+.mb-inline-link:hover {
+  color: var(--mb-link);
+}
+
+.mb-on-light .mb-inline-link {
+  color: var(--mb-slate);
+  text-decoration-color: var(--mb-slate-line-strong);
+}
+
+.mb-on-light .mb-inline-link:hover {
+  color: var(--mb-ochre-ink);
+}
+
+/* Project / section titles: hover changes colour only */
+.mb-title-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: inherit;
+  transition: color 180ms ease;
+}
+
+.mb-title-link:hover {
+  color: var(--mb-link);
+}
+
+/* Form field errors: ochre type, no badge chip */
+.mb-field-error {
+  margin-top: 0.375rem;
+  font-size: var(--mb-text-sm);
+  font-weight: 700;
+  line-height: 1.45;
+  color: var(--mb-ochre);
+}
+
+/* Ruled dash lists (services, build notes) */
+.mb-dash-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.mb-dash-list > li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.625rem;
+  font-size: var(--mb-text-sm);
+  line-height: var(--mb-leading-body);
+  color: var(--mb-ink);
+}
+
+@media (min-width: 640px) {
+  .mb-dash-list > li {
+    font-size: var(--mb-text-base);
+  }
+}
+
+.mb-dash-list > li + li {
+  margin-top: 0.625rem;
+}
+
+.mb-dash-list > li > [data-mb-dash] {
+  flex-shrink: 0;
+  user-select: none;
+  color: var(--mb-link);
+}
+
 @keyframes mb-spin {
   to {
     transform: rotate(360deg);
@@ -580,6 +657,8 @@
   .mb-btn-secondary,
   .mb-btn-secondary-inverse,
   .mb-text-link,
+  .mb-inline-link,
+  .mb-title-link,
   .mb-back-link,
   .mb-jump-link,
   [data-mb-reveal] {

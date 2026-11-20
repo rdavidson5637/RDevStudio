@@ -69,7 +69,7 @@ export default function MockBWorkPage() {
         <article
           id={featuredProject.id}
           data-mb-reveal="true"
-          className="mb-shell max-w-6xl scroll-mt-24 space-y-8 py-12 sm:px-6 sm:py-16"
+          className="mb-shell mb-section-pad max-w-6xl scroll-mt-24 space-y-8 sm:px-6"
         >
           <div className="grid gap-6 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,0.8fr)] lg:items-end lg:gap-12">
             <div className="space-y-3">
@@ -96,7 +96,7 @@ export default function MockBWorkPage() {
               <h2 className="mb-h2 text-[var(--mb-ink)]">
                 <Link
                   href={`/mock-b/work/${featuredProject.id}`}
-                  className="inline-flex min-h-[44px] items-center underline-offset-4 hover:text-[var(--mb-link)] hover:underline"
+                  className="mb-title-link"
                 >
                   {featuredProject.name}
                 </Link>
@@ -131,13 +131,10 @@ export default function MockBWorkPage() {
               <h3 className="mb-kicker-muted">
                 Build notes
               </h3>
-              <ul className="mt-3 space-y-2.5 text-sm leading-relaxed text-[var(--mb-ink)] sm:text-base">
+              <ul className="mb-dash-list mt-3">
                 {featuredProject.details.map((detail) => (
-                  <li key={detail} className="flex items-start gap-2.5">
-                    <span
-                      aria-hidden="true"
-                      className="select-none text-[var(--mb-link)]"
-                    >
+                  <li key={detail}>
+                    <span aria-hidden="true" data-mb-dash>
                       -
                     </span>
                     <span>{detail}</span>
@@ -212,12 +209,12 @@ export default function MockBWorkPage() {
                       <h2 className="mb-h3 text-[var(--mb-ink)]">
                         <Link
                           href={`/mock-b/work/${project.id}`}
-                          className="inline-flex min-h-[44px] items-center underline-offset-4 hover:text-[var(--mb-link)] hover:underline"
+                          className="mb-title-link"
                         >
                           {project.name}
                         </Link>
                       </h2>
-                      <p className="text-sm leading-relaxed text-[var(--mb-muted)] sm:text-base">
+                      <p className="mb-prose">
                         {project.summary}
                       </p>
                     </div>
@@ -234,13 +231,10 @@ export default function MockBWorkPage() {
                       <h3 className="mb-kicker-muted">
                         Build notes
                       </h3>
-                      <ul className="space-y-2 text-sm leading-relaxed text-[var(--mb-ink)]">
+                      <ul className="mb-dash-list">
                         {project.details.map((detail) => (
-                          <li key={detail} className="flex items-start gap-2.5">
-                            <span
-                              aria-hidden="true"
-                              className="select-none text-[var(--mb-link)]"
-                            >
+                          <li key={detail}>
+                            <span aria-hidden="true" data-mb-dash>
                               -
                             </span>
                             <span>{detail}</span>
@@ -310,7 +304,7 @@ export default function MockBWorkPage() {
             <h2 id="work-cta-heading" className="mb-h2 mt-2 text-[var(--mb-ink)]">
               Let us build something clear and useful together
             </h2>
-            <p className="mt-3 text-base leading-relaxed text-[var(--mb-muted)]">
+            <p className="mb-body mt-3">
               Send a short note through the quote form or message RDev Studio on WhatsApp for a straightforward chat.
             </p>
             <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">

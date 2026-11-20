@@ -52,15 +52,6 @@ export default function MockBHomePage() {
               <li className="py-3">Charities &amp; rescues</li>
               <li className="py-3">Web apps &amp; Google Business Profile</li>
             </ul>
-            <a
-              href={STUDIO_WHATSAPP_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mb-text-link mt-4"
-            >
-              <WhatsAppIcon className="h-4 w-4 shrink-0 text-[var(--mb-icon)]" />
-              Message on WhatsApp
-            </a>
           </div>
         </div>
       </section>
@@ -128,12 +119,12 @@ export default function MockBHomePage() {
                       <h3 className="mb-h3 text-[var(--mb-ink)]">
                         <Link
                           href={`/mock-b/work/${project.id}`}
-                          className="inline-flex min-h-[44px] items-center underline-offset-4 hover:text-[var(--mb-link)] hover:underline"
+                          className="mb-title-link"
                         >
                           {project.name}
                         </Link>
                       </h3>
-                      <p className="mt-2.5 text-sm leading-relaxed text-[var(--mb-muted)] sm:text-base">
+                      <p className="mb-prose mt-2.5">
                         {project.summary}
                       </p>
                     </div>
@@ -243,7 +234,7 @@ export default function MockBHomePage() {
                     <h3 className="mb-h3 mt-2 text-[var(--mb-ink)]">
                       {service.title}
                     </h3>
-                    <p className="mt-2 max-w-[var(--mb-measure)] text-sm leading-relaxed text-[var(--mb-muted)] sm:text-base">
+                    <p className="mb-prose mt-2">
                       {service.summary}
                     </p>
                     <a
@@ -255,13 +246,10 @@ export default function MockBHomePage() {
                     </a>
                   </div>
 
-                  <ul className="space-y-2 border-t border-[var(--mb-line)] pt-4 text-sm text-[var(--mb-ink)] md:border-t-0 md:border-l md:pt-0 md:pl-8">
+                  <ul className="mb-dash-list border-t border-[var(--mb-line)] pt-4 md:border-t-0 md:border-l md:pt-0 md:pl-8">
                     {service.bullets.map((bullet) => (
-                      <li key={bullet} className="flex items-start gap-2.5">
-                        <span
-                          aria-hidden="true"
-                          className="select-none text-[var(--mb-link)]"
-                        >
+                      <li key={bullet}>
+                        <span aria-hidden="true" data-mb-dash>
                           -
                         </span>
                         <span>{bullet}</span>
@@ -290,7 +278,7 @@ export default function MockBHomePage() {
                     <p className="text-base font-semibold text-[var(--mb-ink)]">
                       {item.title}
                     </p>
-                    <p className="mt-1.5 text-sm leading-relaxed text-[var(--mb-muted)]">
+                    <p className="mb-prose mt-1.5">
                       {item.body}
                     </p>
                   </div>
@@ -328,22 +316,22 @@ export default function MockBHomePage() {
             <h3 className="mb-kicker-muted">
               What you can expect
             </h3>
-            <dl className="mt-4 divide-y divide-[var(--mb-line)] border-y border-[var(--mb-line)] text-sm">
+            <dl className="mt-4 divide-y divide-[var(--mb-line)] border-y border-[var(--mb-line)]">
               <div className="py-4">
-                <dt className="font-semibold text-[var(--mb-ink)]">Direct studio contact</dt>
-                <dd className="mt-1 text-[var(--mb-muted)]">
+                <dt className="text-sm font-semibold text-[var(--mb-ink)]">Direct studio contact</dt>
+                <dd className="mb-prose mt-1">
                   No account managers or hand-offs between departments.
                 </dd>
               </div>
               <div className="py-4">
-                <dt className="font-semibold text-[var(--mb-ink)]">Built for phones first</dt>
-                <dd className="mt-1 text-[var(--mb-muted)]">
+                <dt className="text-sm font-semibold text-[var(--mb-ink)]">Built for phones first</dt>
+                <dd className="mb-prose mt-1">
                   Checked on real screens so buttons, menus, and forms feel effortless.
                 </dd>
               </div>
               <div className="py-4">
-                <dt className="font-semibold text-[var(--mb-ink)]">Charities &amp; local roots</dt>
-                <dd className="mt-1 text-[var(--mb-muted)]">
+                <dt className="text-sm font-semibold text-[var(--mb-ink)]">Charities &amp; local roots</dt>
+                <dd className="mb-prose mt-1">
                   Registered charities and rescues can ask about free-of-charge support.
                 </dd>
               </div>
@@ -392,11 +380,11 @@ export default function MockBHomePage() {
                 </a>
               </div>
 
-              <p className="text-sm text-[var(--mb-muted)]">
+              <p className="mb-prose">
                 Or email us directly at{" "}
                 <a
                   href={`mailto:${CONTACT_EMAIL}`}
-                  className="inline-flex min-h-[44px] items-center font-semibold text-[var(--mb-ink)] underline decoration-[var(--mb-line)] underline-offset-4 hover:text-[var(--mb-link-hover)]"
+                  className="mb-inline-link"
                 >
                   {CONTACT_EMAIL}
                 </a>
