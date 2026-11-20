@@ -1461,29 +1461,29 @@
 
 .devices {
   position: relative;
-  padding-bottom: 12%;
 }
 
-.phone {
+.devices:has(.secondaryScreen) {
+  padding-bottom: 18%;
+  padding-right: 8%;
+}
+
+.secondaryScreen {
   position: absolute;
-  right: 4%;
+  right: 0;
   bottom: 0;
-  width: 28%;
-  border-radius: 22px;
-  border: 6px solid #2a2a2e;
-  background: var(--a-panel);
+  width: 52%;
   overflow: hidden;
-  box-shadow: 0 30px 50px -20px rgb(0 0 0 / 0.7);
+  border-radius: 12px;
+  border: 1px solid var(--a-line-strong);
+  background: var(--a-panel);
+  box-shadow: 0 30px 50px -20px rgb(0 0 0 / 0.75);
+  transform: rotate(2deg);
 }
 
-.phoneBody {
-  position: relative;
-  aspect-ratio: 9 / 18;
-}
-
-.phoneBody img {
+.secondaryScreen .screenBody img {
   object-fit: cover;
-  object-position: left top;
+  object-position: top;
 }
 
 @media (min-width: 1000px) {

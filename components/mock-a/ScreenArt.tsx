@@ -23,6 +23,8 @@ function Illustration({
 }) {
   const t = TONES[tone];
   const label = name.toUpperCase();
+  // Shrink long names so they never run into the shapes beside them.
+  const fit = (max: number, width: number) => Math.min(max, Math.floor(width / (label.length * 0.62)));
 
   return (
     <svg className={s.illo} viewBox="0 0 320 200" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
@@ -33,7 +35,7 @@ function Illustration({
           <rect x="200" y="15" width="24" height="6" rx="3" fill={t.soft} />
           <rect x="230" y="15" width="24" height="6" rx="3" fill={t.soft} />
           <rect x="262" y="12" width="42" height="12" rx="6" fill={t.block} />
-          <text x="16" y="78" fill={t.block} fontFamily="Arial, sans-serif" fontWeight="700" fontSize="34" letterSpacing="-2">
+          <text x="16" y="78" fill={t.block} fontFamily="Arial, sans-serif" fontWeight="700" fontSize={fit(34, 190)} letterSpacing="-1.5">
             {label}
           </text>
           <rect x="16" y="92" width="150" height="6" rx="3" fill={t.soft} />
@@ -42,7 +44,7 @@ function Illustration({
           <rect x="16" y="156" width="92" height="34" rx="4" fill={t.soft} />
           <rect x="114" y="156" width="92" height="34" rx="4" fill={t.soft} />
           <rect x="212" y="156" width="92" height="34" rx="4" fill={t.soft} />
-          <circle cx="262" cy="88" r="42" fill={t.block} opacity="0.9" />
+          <circle cx="268" cy="96" r="34" fill={t.block} opacity="0.9" />
         </>
       ) : null}
       {layout === "hub" ? (
@@ -52,7 +54,7 @@ function Illustration({
           {[44, 60, 76, 92].map((y) => (
             <rect key={y} x="12" y={y} width="44" height="6" rx="3" fill={t.ink} opacity="0.5" />
           ))}
-          <text x="84" y="44" fill={t.block} fontFamily="Arial, sans-serif" fontWeight="700" fontSize="26" letterSpacing="-1.5">
+          <text x="84" y="44" fill={t.block} fontFamily="Arial, sans-serif" fontWeight="700" fontSize={fit(26, 220)} letterSpacing="-1.5">
             {label}
           </text>
           {[0, 1, 2].map((i) => (
@@ -68,7 +70,7 @@ function Illustration({
           <circle cx="160" cy="92" r="58" fill="none" stroke={t.block} strokeWidth="10" />
           <circle cx="160" cy="92" r="58" fill="none" stroke={t.soft} strokeWidth="10" strokeDasharray="90 300" />
           <circle cx="160" cy="34" r="8" fill={t.block} />
-          <text x="160" y="104" textAnchor="middle" fill={t.block} fontFamily="Arial, sans-serif" fontWeight="700" fontSize="30" letterSpacing="-1.5">
+          <text x="160" y="104" textAnchor="middle" fill={t.block} fontFamily="Arial, sans-serif" fontWeight="700" fontSize={fit(30, 100)} letterSpacing="-1.5">
             {label}
           </text>
           <rect x="96" y="168" width="128" height="16" rx="8" fill={t.block} />
@@ -99,7 +101,12 @@ export function ScreenArt({
   showUrl?: boolean;
 }) {
   const { art } = project;
-  const url = project.link?.external ? project.link.label : `rdevstudio.co.uk/work/${project.slug}`;
+  // Only show a URL that really exists.
+  const url = project.link?.external
+    ? project.link.label
+    : project.caseStudy
+      ? `rdevstudio.co.uk${project.caseStudy.href}`
+      : null;
 
   return (
     <figure className={s.screen} style={{ margin: 0 }}>
@@ -107,7 +114,7 @@ export function ScreenArt({
         <span />
         <span />
         <span />
-        {showUrl ? <p className={s.screenUrl}>{url}</p> : null}
+        {showUrl && url ? <p className={s.screenUrl}>{url}</p> : null}
       </div>
       <div className={s.screenBody}>
         {art.kind === "image" ? (
