@@ -82,7 +82,7 @@ export default function MockBLayout({
               Work
             </Link>
             <Link
-              href="/mock-b#services"
+              href="/mock-b/services"
               className="inline-flex min-h-[44px] items-center rounded-full px-3.5 text-sm font-semibold text-[var(--mb-ink-soft)] transition-colors hover:bg-[var(--mb-cream-deep)] hover:text-[var(--mb-ink)]"
             >
               Services
@@ -133,7 +133,7 @@ export default function MockBLayout({
             Work
           </Link>
           <Link
-            href="/mock-b#services"
+            href="/mock-b/services"
             className="inline-flex min-h-[44px] items-center rounded-full px-3 text-xs font-semibold text-[var(--mb-ink-soft)] hover:text-[var(--mb-ink)]"
           >
             Services
@@ -187,6 +187,12 @@ export default function MockBLayout({
             >
               {CONTACT_EMAIL}
             </a>
+            <Link
+              href="/mock-b/services"
+              className="inline-flex min-h-[44px] items-center rounded-full px-3 text-[var(--mb-ink)] underline decoration-[var(--mb-line-strong)] underline-offset-4 hover:text-[var(--mb-terracotta)]"
+            >
+              Services
+            </Link>
             <Link
               href="/mock-b/work"
               className="inline-flex min-h-[44px] items-center rounded-full px-3 text-[var(--mb-ink)] underline decoration-[var(--mb-line-strong)] underline-offset-4 hover:text-[var(--mb-terracotta)]"

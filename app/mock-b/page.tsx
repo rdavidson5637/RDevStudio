@@ -228,19 +228,26 @@ export default function MockBHomePage() {
         aria-labelledby="services-heading"
         className="mx-auto max-w-5xl scroll-mt-28 px-4 py-14 sm:px-6 sm:py-20"
       >
-        <div className="max-w-2xl">
-          <p className="mb-sticker mb-sticker-tilt-right bg-[var(--mb-seaglass-soft)] text-[var(--mb-seaglass-ink)] border-[var(--mb-seaglass)]/35">
-            Skills &amp; services
-          </p>
-          <h2
-            id="services-heading"
-            className="mb-display mt-3 text-3xl font-semibold tracking-tight text-[var(--mb-ink)] sm:text-4xl"
-          >
-            Practical web work, explained in plain English
-          </h2>
-          <p className="mt-3 text-base leading-relaxed text-[var(--mb-ink-soft)]">
-            Every job is quoted clearly after a quick conversation, so you only pay for what your business or charity actually needs.
-          </p>
+        <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+          <div className="max-w-2xl">
+            <p className="mb-sticker mb-sticker-tilt-right bg-[var(--mb-seaglass-soft)] text-[var(--mb-seaglass-ink)] border-[var(--mb-seaglass)]/35">
+              Skills &amp; services
+            </p>
+            <h2
+              id="services-heading"
+              className="mb-display mt-3 text-3xl font-semibold tracking-tight text-[var(--mb-ink)] sm:text-4xl"
+            >
+              Practical web work, explained in plain English
+            </h2>
+            <p className="mt-3 text-base leading-relaxed text-[var(--mb-ink-soft)]">
+              Every job is quoted clearly after a quick conversation, so you only pay for what your business or charity actually needs.
+            </p>
+          </div>
+
+          <Link href="/mock-b/services" className="mb-btn-soft w-fit shrink-0">
+            Full services guide
+            <span aria-hidden="true">&rarr;</span>
+          </Link>
         </div>
 
         <div className="mt-9 grid gap-5 sm:grid-cols-2">

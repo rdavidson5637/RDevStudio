@@ -267,3 +267,149 @@ export const QUOTE_TOPICS = [
   "Charity / rescue build",
   "Something else",
 ] as const;
+
+export type QuoteTopic = (typeof QUOTE_TOPICS)[number];
+
+export type ServiceGuide = {
+  id: string;
+  number: string;
+  title: string;
+  tag: string;
+  icon: "website" | "webapp" | "gbp" | "charity";
+  tint: "terracotta" | "seaglass" | "butter" | "cream";
+  quoteTopic: QuoteTopic;
+  lead: string;
+  included: readonly string[];
+  goodFit: string;
+  notes: readonly string[];
+  exampleHref?: string;
+  exampleLabel?: string;
+};
+
+/**
+ * Expanded facts-only service guides for /mock-b/services.
+ * Strictly studio voice ("we" / "RDev Studio"), zero prices, no invented stats or claims.
+ * TODO: Ryan to review wording for Google Business Profile help and charity support.
+ */
+export const MOCK_B_SERVICE_GUIDES: readonly ServiceGuide[] = [
+  {
+    id: "websites",
+    number: "01",
+    title: "Websites",
+    tag: "Phone-first builds",
+    icon: "website",
+    tint: "terracotta",
+    quoteTopic: "New website",
+    lead: "Clear, fast websites built from scratch for Northern Ireland businesses and community organisations. No bloated templates and no lock-in.",
+    included: [
+      "Core pages shaped around what visitors actually look for: what you do, examples of your work, opening details, and easy contact",
+      "Phone-first layout checked on real mobile screens before anything goes live",
+      "Contact or quote form wired straight to your inbox, plus direct WhatsApp links if you use it",
+      "Clean page titles, descriptions, and a Google Maps embed if you have a physical premises",
+      "Hosting setup and domain pointing so you keep full ownership of your domain, copy, and code",
+    ],
+    goodFit:
+      "Shops, cafes, trades firms, salons, independent services, and local organisations that want a dependable site without agency jargon.",
+    notes: [
+      "We help put your existing details into plain English — no invented testimonials or filler copy.",
+      "One round of revisions is built into the handover after you review the first full draft.",
+      "Need extra pages, an online shop, or ongoing updates later? We quote those clearly before starting.",
+    ],
+    exampleHref: "/mock-b/work#crosskennan",
+    exampleLabel: "See Crosskennan & Assisi builds",
+  },
+  {
+    id: "web-apps",
+    number: "02",
+    title: "Web apps & handy tools",
+    tag: "Custom workflows",
+    icon: "webapp",
+    tint: "seaglass",
+    quoteTopic: "Web app / custom tool",
+    lead: "Practical browser-based tools built around how your team actually works — especially when spreadsheets, messages, or paper rotas stop keeping up.",
+    included: [
+      "Volunteer rotas, shift scheduling, role allocation, and straightforward admin dashboards",
+      "Focused hubs and internal web tools designed to read clearly on both phones and desktops",
+      "Clean data exports (such as CSV) so your records stay portable and useful day to day",
+      "Plain, maintainable code stacks chosen for long-term reliability rather than fragile hype",
+      "Sensible security basics: authentication, rate limiting, and privacy-aware data handling",
+    ],
+    goodFit:
+      "Charities managing volunteers, local teams coordinating schedules, or small organisations needing one reliable place for day-to-day workflows.",
+    notes: [
+      "We scope the smallest useful first version so you can test it with real people quickly.",
+      "You see working preview links as features come together, not just static slides.",
+    ],
+    exampleHref: "/mock-b/work#shelterlink",
+    exampleLabel: "See ShelterLink & MGSL Hub",
+  },
+  {
+    id: "google-business-profile",
+    number: "03",
+    title: "Google Business Profile help",
+    tag: "Local visibility",
+    icon: "gbp",
+    tint: "butter",
+    quoteTopic: "Google Business Profile help",
+    lead: "Straightforward setup and tidy-ups so local customers in Carrickfergus, Belfast, and across Northern Ireland can quickly find your hours, map pin, and contact details.",
+    included: [
+      "Review of your business categories, service list, opening hours, and plain-English description",
+      "Checking that your name, address, phone, and website match cleanly between your site and Google",
+      "Guidance on choosing clear, honest photos and keeping seasonal hours accurate",
+      "A practical written checklist you can follow yourself afterwards — no invented scores or mystery jargon",
+    ],
+    goodFit:
+      "Local shops, trades, and venues whose Google listing is half-finished, out of date, or showing the wrong hours or links.",
+    notes: [
+      "We focus on accurate, helpful local information rather than gimmicks or guarantees nobody can honestly make.",
+      "Works nicely alongside a new website build or as a standalone tidy-up.",
+    ],
+  },
+  {
+    id: "charities-and-small-businesses",
+    number: "04",
+    title: "Charity & small-business builds",
+    tag: "Local roots",
+    icon: "charity",
+    tint: "cream",
+    quoteTopic: "Charity / rescue build",
+    lead: "RDev Studio works directly with Northern Ireland small businesses, animal rescues, registered charities, and community groups from first sketch to launch.",
+    included: [
+      "For small businesses: written scope agreed before work starts, direct studio communication, and full ownership of your site at launch",
+      "For registered charities: the same website care and craft without a build fee — mention your charity registration when you get in touch",
+      "For animal rescues and unregistered community groups: get in touch for a plain-English conversation about how we can help",
+      "Calm, accessible layouts that help adopters, donors, volunteers, and local customers find what they need on a phone",
+    ],
+    goodFit:
+      "Independent businesses across County Antrim and Belfast, plus registered charities, sanctuaries, and community projects across NI.",
+    notes: [
+      "Every project — commercial or charity — gets the same attention to phone usability, accessibility, and handover.",
+      "No compulsory monthly retainers; we can show you how to make simple edits yourself or handle them when asked.",
+    ],
+    exampleHref: "/mock-b/work#assisi",
+    exampleLabel: "See Assisi Animal Sanctuary",
+  },
+] as const;
+
+export const STUDIO_FAQ_ITEMS = [
+  {
+    question: "How long does a website usually take?",
+    answer:
+      "Most straightforward small-business sites go live in about a week once we have your text, photos, and contact details. Larger web apps or custom rebuilds are mapped out with clear milestones in your quote.",
+  },
+  {
+    question: "Who writes the copy for the site?",
+    answer:
+      "You know your business or charity best; we turn your notes, hours, services, and photos into clear plain English. We never invent testimonials, fake reviews, or made-up statistics.",
+  },
+  {
+    question: "How do charity builds work?",
+    answer:
+      "Registered charities can ask for the same website build care without a fee. If you are an animal rescue or community group that is not yet registered, send a note anyway and we will talk through what you need.",
+  },
+  {
+    question: "Will we own the finished website?",
+    answer:
+      "Yes. Your domain name, text, photos, and code belong to you. We can show you how to make simple updates or take care of occasional edits whenever you need a hand.",
+  },
+] as const;
