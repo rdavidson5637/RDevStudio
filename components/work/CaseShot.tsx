@@ -21,6 +21,7 @@ export function CaseShot({
           alt={alt}
           fill
           priority={priority}
+          fetchPriority={priority ? "high" : "auto"}
           sizes="100vw"
           className={position === "center" ? "object-cover object-center" : "object-cover object-top"}
         />

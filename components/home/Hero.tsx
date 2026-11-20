@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/Button";
 import { DRAFT_CTAS, DRAFT_HERO } from "@/lib/content/redesign-draft";
-import coldBrewDesktop from "@/public/work/rvs-cold-brew-desktop.webp";
+import coldBrewHero from "@/public/work/rvs-cold-brew-hero.webp";
 
 /**
  * Home hero: name-as-monument composition with a one-time load entrance.
@@ -51,10 +51,7 @@ export function Hero() {
               </div>
             </div>
 
-            <figure
-              className="hero-enter-item overflow-hidden border border-studio-border bg-studio-surface"
-              style={{ ["--hero-enter-delay" as string]: "280ms" }}
-            >
+            <figure className="hero-enter-item hero-enter-lcp overflow-hidden border border-studio-border bg-studio-surface">
               <Link
                 href="/work/rvs-cold-brew"
                 aria-label="RV's Cold Brew case study"
@@ -66,12 +63,14 @@ export function Hero() {
                 </div>
                 <div className="relative aspect-[16/10] w-full bg-studio-surface-2">
                   <Image
-                    src={coldBrewDesktop}
+                    src={coldBrewHero}
                     placeholder="blur"
                     alt="RV's Cold Brew website showing cold brew and Okumidori matcha at Unit 11, Great Northern Mall, Belfast"
                     fill
                     priority
-                    sizes="(max-width: 1024px) 100vw, 40vw"
+                    fetchPriority="high"
+                    quality={70}
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 540px"
                     className="object-cover object-top"
                   />
                 </div>

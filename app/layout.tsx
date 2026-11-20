@@ -9,7 +9,6 @@ import "./globals.css";
 // Grenadine brief: Big Shoulders Display 800 for headings, Atkinson Hyperlegible for body.
 const bigShouldersDisplay = localFont({
   src: [
-    { path: "./fonts/big-shoulders-display-latin-700-normal.woff2", weight: "700", style: "normal" },
     { path: "./fonts/big-shoulders-display-latin-800-normal.woff2", weight: "800", style: "normal" },
   ],
   variable: "--font-display",

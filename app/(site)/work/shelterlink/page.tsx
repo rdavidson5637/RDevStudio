@@ -80,7 +80,7 @@ export default function ShelterLinkCaseStudyPage() {
 
         <div className="border-b border-studio-line py-12">
           <CaseShot
-            src="/images/work/shelterlink-admin-dashboard.png"
+            src="/images/work/shelterlink-admin-dashboard.webp"
             alt="ShelterLink admin dashboard with volunteer metrics and recent activity"
             caption="Admin dashboard"
             priority
@@ -140,7 +140,7 @@ export default function ShelterLinkCaseStudyPage() {
             />
             <ScreenshotSlot
               caption="Admin dashboard and export controls"
-              src="/images/work/shelterlink-admin-dashboard.png"
+              src="/images/work/shelterlink-admin-dashboard.webp"
               alt="ShelterLink admin dashboard with volunteer stats and application review"
             />
           </div>
