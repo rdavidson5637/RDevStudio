@@ -49,21 +49,21 @@ export default function MockBLayout({
     >
       <a
         href="#mock-b-main"
-        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-[var(--radius-md)] focus:bg-[var(--color-ink)] focus:px-4 focus:py-2.5 focus:text-sm focus:font-semibold focus:text-[var(--color-text-inverse)]"
+        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-[var(--radius-md)] focus:bg-[var(--mb-accent)] focus:px-4 focus:py-2.5 focus:text-sm focus:font-semibold focus:text-[var(--mb-on-accent)]"
       >
         Skip to main content
       </a>
 
-      <header className="sticky top-0 z-40 border-b border-[var(--color-border)] bg-[var(--color-paper)]">
+      <header className="sticky top-0 z-40 border-b border-[var(--mb-line)] bg-[var(--mb-bg)]">
         <div className="mx-auto flex max-w-5xl items-center justify-between gap-3 px-4 py-3 sm:px-6">
           <Link
             href="/mock-b"
-            className="inline-flex min-h-[44px] shrink-0 flex-col justify-center leading-tight text-[var(--color-ink)] transition-colors hover:text-[var(--color-accent)]"
+            className="inline-flex min-h-[44px] shrink-0 flex-col justify-center leading-tight text-[var(--mb-ink)] transition-colors hover:text-[var(--mb-link)]"
           >
             <span className="mb-display whitespace-nowrap text-base font-semibold tracking-tight sm:text-lg">
               {SITE_NAME}
             </span>
-            <span className="whitespace-nowrap text-[11px] font-medium text-[var(--color-muted)]">
+            <span className="whitespace-nowrap text-[11px] font-medium text-[var(--mb-muted)]">
               Carrickfergus, NI
             </span>
           </Link>
@@ -76,14 +76,14 @@ export default function MockBLayout({
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Message RDev Studio on WhatsApp"
-              className="inline-flex min-h-[44px] min-w-[44px] items-center justify-center gap-1.5 rounded-[var(--radius-md)] border border-[var(--color-border-strong)] bg-transparent px-3 text-sm font-semibold text-[var(--color-ink)] transition-colors hover:border-[var(--color-ink)] hover:bg-[var(--color-bg-overlay)] sm:px-3.5"
+              className="inline-flex min-h-[44px] min-w-[44px] items-center justify-center gap-1.5 rounded-[var(--radius-md)] border border-[var(--mb-line-strong)] bg-transparent px-3 text-sm font-semibold text-[var(--mb-ink)] transition-colors hover:border-[var(--mb-ink)] hover:bg-[var(--mb-raised)] sm:px-3.5"
             >
-              <WhatsAppIcon className="h-4 w-4 shrink-0 text-[var(--color-accent)]" />
+              <WhatsAppIcon className="h-4 w-4 shrink-0 text-[var(--mb-icon)]" />
               <span className="hidden sm:inline">WhatsApp</span>
             </a>
             <Link
               href="/mock-b/contact"
-              className="inline-flex min-h-[44px] items-center justify-center whitespace-nowrap rounded-[var(--radius-md)] bg-[var(--color-accent)] px-3.5 text-xs font-semibold text-[var(--color-text-inverse)] transition-colors hover:bg-[var(--color-accent-hover)] sm:px-4 sm:text-sm"
+              className="inline-flex min-h-[44px] items-center justify-center whitespace-nowrap rounded-[var(--radius-md)] bg-[var(--mb-accent)] px-3.5 text-xs font-semibold text-[var(--mb-on-accent)] transition-colors hover:bg-[var(--mb-accent-hover)] sm:px-4 sm:text-sm"
             >
               Get a quote
             </Link>
@@ -97,13 +97,13 @@ export default function MockBLayout({
 
       <main id="mock-b-main">{children}</main>
 
-      <footer className="border-t border-[var(--color-border)] bg-[var(--color-bg-overlay)]">
+      <footer className="mb-on-light border-t border-[var(--mb-line)] bg-[var(--mb-light)]">
         <div className="mx-auto flex max-w-5xl flex-col gap-6 px-4 py-10 sm:px-6 md:flex-row md:items-center md:justify-between">
           <div className="space-y-1.5">
-            <p className="mb-display text-lg font-semibold text-[var(--color-ink)]">
+            <p className="mb-display text-lg font-semibold text-[var(--mb-ink)]">
               {SITE_NAME}
             </p>
-            <p className="text-sm text-[var(--color-muted)]">
+            <p className="text-sm text-[var(--mb-muted)]">
               Websites, web apps, and local web support from Carrickfergus, Northern Ireland.
             </p>
           </div>
@@ -111,7 +111,7 @@ export default function MockBLayout({
           <div className="flex shrink-0 flex-wrap items-center gap-x-2 gap-y-1 text-sm font-medium md:justify-end">
             <Link
               href="/mock-b/contact"
-              className="inline-flex min-h-[44px] items-center px-2.5 text-[var(--color-ink)] underline decoration-[var(--color-border-strong)] underline-offset-4 hover:text-[var(--color-accent)]"
+              className="inline-flex min-h-[44px] items-center px-2.5 text-[var(--mb-ink)] underline decoration-[var(--mb-line-strong)] underline-offset-4 hover:text-[var(--mb-link)]"
             >
               Contact &amp; quote
             </Link>
@@ -119,25 +119,25 @@ export default function MockBLayout({
               href={STUDIO_WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex min-h-[44px] items-center px-2.5 text-[var(--color-accent)] underline decoration-[var(--color-border-accent)] underline-offset-4 hover:text-[var(--color-accent-hover)]"
+              className="inline-flex min-h-[44px] items-center px-2.5 text-[var(--mb-link)] underline decoration-[var(--mb-border-accent)] underline-offset-4 hover:text-[var(--mb-link-hover)]"
             >
               WhatsApp
             </a>
             <a
               href={`mailto:${CONTACT_EMAIL}`}
-              className="inline-flex min-h-[44px] items-center px-2.5 text-[var(--color-ink)] underline decoration-[var(--color-border-strong)] underline-offset-4 hover:text-[var(--color-accent)]"
+              className="inline-flex min-h-[44px] items-center px-2.5 text-[var(--mb-ink)] underline decoration-[var(--mb-line-strong)] underline-offset-4 hover:text-[var(--mb-link)]"
             >
               {CONTACT_EMAIL}
             </a>
             <Link
               href="/mock-b/services"
-              className="inline-flex min-h-[44px] items-center px-2.5 text-[var(--color-ink)] underline decoration-[var(--color-border-strong)] underline-offset-4 hover:text-[var(--color-accent)]"
+              className="inline-flex min-h-[44px] items-center px-2.5 text-[var(--mb-ink)] underline decoration-[var(--mb-line-strong)] underline-offset-4 hover:text-[var(--mb-link)]"
             >
               Services
             </Link>
             <Link
               href="/mock-b/work"
-              className="inline-flex min-h-[44px] items-center px-2.5 text-[var(--color-ink)] underline decoration-[var(--color-border-strong)] underline-offset-4 hover:text-[var(--color-accent)]"
+              className="inline-flex min-h-[44px] items-center px-2.5 text-[var(--mb-ink)] underline decoration-[var(--mb-line-strong)] underline-offset-4 hover:text-[var(--mb-link)]"
             >
               All work
             </Link>

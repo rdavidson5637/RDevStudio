@@ -1,10 +1,16 @@
-# Mock B Notes: Editorial Warmth & Live Brand Tokens
+# Mock B Notes: Editorial Warmth & Grenadine Palette
 
 > Agent-written experimental mock for side-by-side comparison. Unverified until Ryan reviews the Vercel preview and copy. Keep draft PR #32 as a draft and do not merge into `main`.
 
+## Design pass 20 Nov (Grenadine palette)
+
+Ryan asked to drop the live-site pitch-green / cream tokens (`#1e5c3a` on paper) because they read as Assisi's colours, not his. This pass is colour-only: layout, doodle removal, and wording are unchanged. Every colour under `app/mock-b` and `components/mock-b` now comes from CSS variables in `app/mock-b/mock-b.css`. `app/tokens.css` and all live routes are untouched.
+
+The mock is dark-first. Deep Slate Green is the page background, Naples Yellow is body text on dark (and the background of light contrast sections), Grenadine Pink is the accent (primary buttons and highlights), and Yellow Ocher is used for alerts and TODO boxes. Closing bands that were dark ink are now Naples so they still stand out on the slate page. Form inputs are Slate 2 with Naples text and a visible grenadine focus ring (slate ring on light sections).
+
 ## Design pass 20 Nov (Ryan feedback)
 
-Ryan picked Mock B's direction but flagged that parts "scream AI" (doodles, uniform rounded cards everywhere, and off-brand colours). This pass removes all decorative illustrations, varies layouts across sections and routes, and locks every colour strictly to the live brand tokens in `app/tokens.css`:
+Ryan picked Mock B's direction but flagged that parts "scream AI" (doodles, uniform rounded cards everywhere, and off-brand colours). This pass removes all decorative illustrations, varies layouts across sections and routes, and (in that earlier pass) locked colours to the live brand tokens in `app/tokens.css`. Those live tokens have since been replaced by the Grenadine pack above:
 
 - **Removed all doodles, decorative SVGs, and off-brand colours:**
   - Deleted `components/mock-b/CoastalDoodles.tsx` (Carrickfergus Castle badge/scene, gulls, boats, waves, sun, flags, wavy dividers, squiggle underlines, and decorative service icons) and moved only functional icons (`WhatsAppIcon`, arrows, external-link, menu/close) into `components/mock-b/icons.tsx`.
@@ -35,22 +41,29 @@ All nine routes live exclusively under `app/mock-b/**` with scoped styles in `ap
 - `/mock-b/services` — Dedicated plain-English services guide covering Websites, Web apps & handy tools, Google Business Profile help, and Charity & small-business builds (zero prices, facts-only, each ending with Quote form `?topic=...` prefill + WhatsApp CTAs, plus process steps and studio FAQs).
 - `/mock-b/contact` — Dedicated quote & contact page with the `WarmQuoteForm` (using `FORMSPREE_FORM_ID` with graceful empty-ID email/WhatsApp fallback, blur/submit inline validation, `aria-describedby`, `aria-live`, focus-first-invalid, and sending/error/success states) paired with a WhatsApp callout, direct email, and helpful scope checklist.
 
-## Palette (live tokens only)
+## Palette (Ryan's Grenadine pack)
 
-Scoped strictly under `.mock-b-root` in `app/mock-b/mock-b.css` referencing `app/tokens.css` directly (no edits to `app/tokens.css`, `app/globals.css`, or `tailwind.config.ts`). Terracotta, seaglass, butter, and all mock-only hex colours were removed.
+Declared once under `.mock-b-root` in `app/mock-b/mock-b.css`. No edits to `app/tokens.css`, `app/globals.css`, or `tailwind.config.ts`. No live-site tokens and no leftover hex/rgb outside this palette block.
 
-| Token (`app/tokens.css`) | Role |
-| :--- | :--- |
-| `--color-paper` | Primary page background |
-| `--color-bg-raised` | Raised panels, alternating white bands, form inputs, screenshot frames |
-| `--color-bg-overlay` | Secondary sand bands, footer, callout and TODO surfaces |
-| `--color-ink` | Primary ink text and high-contrast dark closing bands |
-| `--color-muted` / `--color-text-tertiary` | Secondary and tertiary editorial copy |
-| `--color-accent` (`--color-pitch`) / `--color-accent-hover` | Primary buttons, links, active nav, kickers, status dot |
-| `--color-accent-subtle` / `--color-accent-muted` / `--color-border-accent` | Subtle green tints and borders |
-| `--color-border` / `--color-border-strong` | Hairline rules, dividers, secondary button and input outlines |
-| `--color-focus-ring` / `--color-selection-bg` | Focus ring halo and text selection |
-| `--color-text-inverse` | Text on pitch-green buttons and dark `--color-ink` bands |
+| Token | Value | Role |
+| :--- | :--- | :--- |
+| `--mb-slate` | `#112F2C` Deep Slate Green | Page background, and text on every light colour (Naples, grenadine, ochre) |
+| `--mb-naples` | `#FBE6A0` Naples Yellow | Text on the dark background, plus light section / closing-band backgrounds |
+| `--mb-grenadine` | `#F48067` Grenadine Pink | Accent: main buttons and highlights on dark sections |
+| `--mb-ochre` | `#E2B540` Yellow Ocher | Alerts, validation messages, and TODO boxes |
+| `--mb-slate-2` | `#183E3A` Slate 2 | Panels, cards, form inputs |
+| `--mb-slate-3` | `#1E4A45` Slate 3 | Hover states, raised / preview-chrome panels |
+| `--mb-naples-muted` | `#CFC7A3` Naples muted | Secondary text on dark |
+| `--mb-naples-faint` | `#B9B392` Naples faint | Captions and input placeholders on dark |
+| `--mb-grenadine-light` | `#F79A85` Grenadine light | Accent / button hover |
+| `--mb-grenadine-deep` | `#D75C42` Grenadine deep | Icons that sit on both dark and light backgrounds |
+| `--mb-ochre-ink` | `#2C4A3A` Ochre ink | Muted text on ochre and on Naples light sections |
+| `--mb-naples-line` / `--mb-naples-line-strong` | `#FBE6A0` at 18% / 35% | Hairline rules on dark |
+| `--mb-slate-line` / `--mb-slate-line-strong` | `#112F2C` at 18% / 35% | Hairline rules on light sections |
+
+Semantic helpers (`--mb-bg`, `--mb-ink`, `--mb-muted`, `--mb-surface`, `--mb-light`, `--mb-accent`, `--mb-link`, `--mb-icon`, `--mb-on-accent`, `--mb-focus-ring`) switch inside `.mb-on-light`, `.mb-on-surface`, and `.mb-todo-box` / `.mb-alert` so text stays readable when a section changes background.
+
+**Contrast:** Naples, muted, and faint text all pass WCAG AA on slate / Slate 2 / Slate 3. Slate text on Naples, grenadine, and ochre passes AA (and is required on those fills). Grenadine text on Naples fails AA (2.08:1), so links and kickers on light sections use Deep Slate (with underline) instead of pink. Naples muted / faint also fail on Naples, so muted copy there uses ochre ink (7.88:1). Grenadine deep icons are 3.75:1 on slate and 3.08:1 on Naples — both meet the 3:1 UI-component bar, but are not used as body text.
 
 ## Fonts
 

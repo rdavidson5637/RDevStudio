@@ -36,35 +36,35 @@ export default function MockBWorkPage() {
       <section className="mx-auto max-w-5xl px-4 pb-10 pt-8 sm:px-6 sm:pt-14">
         <Link
           href="/mock-b"
-          className="inline-flex min-h-[44px] items-center gap-1.5 text-sm font-semibold text-[var(--color-muted)] underline decoration-[var(--color-border-strong)] underline-offset-4 hover:text-[var(--color-accent)]"
+          className="inline-flex min-h-[44px] items-center gap-1.5 text-sm font-semibold text-[var(--mb-muted)] underline decoration-[var(--mb-line-strong)] underline-offset-4 hover:text-[var(--mb-link)]"
         >
           <ArrowLeftIcon className="h-4 w-4 shrink-0" />
           Back to studio home
         </Link>
 
         <div className="mt-5 max-w-2xl">
-          <p className="text-xs font-semibold uppercase tracking-widest text-[var(--color-accent)]">
+          <p className="text-xs font-semibold uppercase tracking-widest text-[var(--mb-link)]">
             Studio showcase
           </p>
-          <h1 className="mb-display mt-2 text-4xl font-semibold tracking-tight text-[var(--color-ink)] sm:text-5xl">
+          <h1 className="mb-display mt-2 text-4xl font-semibold tracking-tight text-[var(--mb-ink)] sm:text-5xl">
             Five builds from RDev Studio
           </h1>
-          <p className="mt-4 text-base leading-relaxed text-[var(--color-muted)] sm:text-lg">
+          <p className="mt-4 text-base leading-relaxed text-[var(--mb-muted)] sm:text-lg">
             Charity sites, volunteer platforms, and custom web apps designed and built in Carrickfergus. Every note below sticks strictly to confirmed project facts.
           </p>
         </div>
 
         <nav
           aria-label="Jump to project"
-          className="mt-8 flex flex-wrap items-center gap-x-5 gap-y-1 border-y border-[var(--color-border)] py-2"
+          className="mt-8 flex flex-wrap items-center gap-x-5 gap-y-1 border-y border-[var(--mb-line)] py-2"
         >
           {MOCK_B_PROJECTS.map((project, index) => (
             <a
               key={project.id}
               href={`#${project.id}`}
-              className="inline-flex min-h-[44px] items-center gap-2 text-sm font-medium text-[var(--color-ink)] hover:text-[var(--color-accent)]"
+              className="inline-flex min-h-[44px] items-center gap-2 text-sm font-medium text-[var(--mb-ink)] hover:text-[var(--mb-link)]"
             >
-              <span className="tabular-nums text-xs text-[var(--color-text-tertiary)]">
+              <span className="tabular-nums text-xs text-[var(--mb-tertiary)]">
                 0{index + 1}
               </span>
               <span>{project.name}</span>
@@ -82,35 +82,35 @@ export default function MockBWorkPage() {
         >
           <div className="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
             <div className="max-w-2xl space-y-2.5">
-              <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs font-medium text-[var(--color-muted)]">
-                <span className="tabular-nums font-semibold text-[var(--color-text-tertiary)]">
+              <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs font-medium text-[var(--mb-muted)]">
+                <span className="tabular-nums font-semibold text-[var(--mb-tertiary)]">
                   Project 01
                 </span>
-                <span aria-hidden="true" className="text-[var(--color-border-strong)]">
+                <span aria-hidden="true" className="text-[var(--mb-line-strong)]">
                   /
                 </span>
-                <span className="font-semibold text-[var(--color-accent)]">
+                <span className="font-semibold text-[var(--mb-link)]">
                   {featuredProject.type}
                 </span>
-                <span aria-hidden="true" className="text-[var(--color-border-strong)]">
+                <span aria-hidden="true" className="text-[var(--mb-line-strong)]">
                   /
                 </span>
                 <span>{featuredProject.year}</span>
-                <span aria-hidden="true" className="text-[var(--color-border-strong)]">
+                <span aria-hidden="true" className="text-[var(--mb-line-strong)]">
                   /
                 </span>
                 <span>{featuredProject.statusLabel}</span>
               </div>
 
-              <h2 className="mb-display text-3xl font-semibold text-[var(--color-ink)] sm:text-4xl">
+              <h2 className="mb-display text-3xl font-semibold text-[var(--mb-ink)] sm:text-4xl">
                 <Link
                   href={`/mock-b/work/${featuredProject.id}`}
-                  className="inline-flex min-h-[44px] items-center underline-offset-4 hover:text-[var(--color-accent)] hover:underline"
+                  className="inline-flex min-h-[44px] items-center underline-offset-4 hover:text-[var(--mb-link)] hover:underline"
                 >
                   {featuredProject.name}
                 </Link>
               </h2>
-              <p className="text-base leading-relaxed text-[var(--color-muted)]">
+              <p className="text-base leading-relaxed text-[var(--mb-muted)]">
                 {featuredProject.summary}
               </p>
             </div>
@@ -137,17 +137,17 @@ export default function MockBWorkPage() {
 
           <WorkDeviceShowcase project={featuredProject} />
 
-          <div className="grid gap-8 border-t border-[var(--color-border)] pt-6 md:grid-cols-[1.35fr_0.65fr]">
+          <div className="grid gap-8 border-t border-[var(--mb-line)] pt-6 md:grid-cols-[1.35fr_0.65fr]">
             <div>
-              <h3 className="text-xs font-semibold uppercase tracking-widest text-[var(--color-text-tertiary)]">
+              <h3 className="text-xs font-semibold uppercase tracking-widest text-[var(--mb-tertiary)]">
                 Build notes
               </h3>
-              <ul className="mt-3 space-y-2.5 text-sm leading-relaxed text-[var(--color-ink)] sm:text-base">
+              <ul className="mt-3 space-y-2.5 text-sm leading-relaxed text-[var(--mb-ink)] sm:text-base">
                 {featuredProject.details.map((detail) => (
                   <li key={detail} className="flex items-start gap-2.5">
                     <span
                       aria-hidden="true"
-                      className="select-none text-[var(--color-accent)]"
+                      className="select-none text-[var(--mb-link)]"
                     >
                       &mdash;
                     </span>
@@ -157,15 +157,15 @@ export default function MockBWorkPage() {
               </ul>
             </div>
 
-            <div className="border-t border-[var(--color-border)] pt-5 md:border-l md:border-t-0 md:pl-8 md:pt-0">
-              <h3 className="text-xs font-semibold uppercase tracking-widest text-[var(--color-text-tertiary)]">
+            <div className="border-t border-[var(--mb-line)] pt-5 md:border-l md:border-t-0 md:pl-8 md:pt-0">
+              <h3 className="text-xs font-semibold uppercase tracking-widest text-[var(--mb-tertiary)]">
                 Focus &amp; stack
               </h3>
               <div className="mt-3 flex flex-wrap gap-2">
                 {featuredProject.stack.map((tag) => (
                   <span
                     key={tag}
-                    className="rounded-[var(--radius-sm)] border border-[var(--color-border-strong)] bg-[var(--color-bg-raised)] px-2.5 py-1 text-xs font-medium text-[var(--color-ink)]"
+                    className="rounded-[var(--radius-sm)] border border-[var(--mb-line-strong)] bg-[var(--mb-surface)] px-2.5 py-1 text-xs font-medium text-[var(--mb-ink)]"
                   >
                     {tag}
                   </span>
@@ -175,7 +175,7 @@ export default function MockBWorkPage() {
                 <div className="mt-4">
                   <Link
                     href={featuredProject.secondaryHref}
-                    className="inline-flex min-h-[44px] items-center text-sm font-medium text-[var(--color-muted)] underline decoration-[var(--color-border-strong)] underline-offset-4 hover:text-[var(--color-ink)]"
+                    className="inline-flex min-h-[44px] items-center text-sm font-medium text-[var(--mb-muted)] underline decoration-[var(--mb-line-strong)] underline-offset-4 hover:text-[var(--mb-ink)]"
                   >
                     {featuredProject.secondaryLabel}
                   </Link>
@@ -187,7 +187,7 @@ export default function MockBWorkPage() {
       </section>
 
       {/* ── MIXED-SIZE EDITORIAL GRID (PROJECTS 02–05) ───────────────────── */}
-      <section className="border-t border-[var(--color-border)] bg-[var(--color-bg-raised)]">
+      <section className="border-t border-[var(--mb-line)] bg-[var(--mb-surface)]">
         <div className="mx-auto max-w-5xl px-4 py-16 sm:px-6 sm:py-20">
           <div className="grid grid-cols-1 gap-x-10 gap-y-16 lg:grid-cols-12">
             {otherProjects.map((project, idx) => {
@@ -198,39 +198,39 @@ export default function MockBWorkPage() {
                   key={project.id}
                   id={project.id}
                   data-mb-reveal="true"
-                  className={`flex scroll-mt-24 flex-col justify-between border-t border-[var(--color-border-strong)] pt-6 ${GRID_SPAN_BY_INDEX[idx]}`}
+                  className={`flex scroll-mt-24 flex-col justify-between border-t border-[var(--mb-line-strong)] pt-6 ${GRID_SPAN_BY_INDEX[idx]}`}
                 >
                   <div className="space-y-5">
                     <div className="space-y-2">
-                      <div className="flex flex-wrap items-center gap-x-2.5 gap-y-1 text-xs font-medium text-[var(--color-muted)]">
-                        <span className="tabular-nums font-semibold text-[var(--color-text-tertiary)]">
+                      <div className="flex flex-wrap items-center gap-x-2.5 gap-y-1 text-xs font-medium text-[var(--mb-muted)]">
+                        <span className="tabular-nums font-semibold text-[var(--mb-tertiary)]">
                           Project 0{number}
                         </span>
-                        <span aria-hidden="true" className="text-[var(--color-border-strong)]">
+                        <span aria-hidden="true" className="text-[var(--mb-line-strong)]">
                           /
                         </span>
-                        <span className="font-semibold text-[var(--color-accent)]">
+                        <span className="font-semibold text-[var(--mb-link)]">
                           {project.type}
                         </span>
-                        <span aria-hidden="true" className="text-[var(--color-border-strong)]">
+                        <span aria-hidden="true" className="text-[var(--mb-line-strong)]">
                           /
                         </span>
                         <span>{project.year}</span>
-                        <span aria-hidden="true" className="text-[var(--color-border-strong)]">
+                        <span aria-hidden="true" className="text-[var(--mb-line-strong)]">
                           /
                         </span>
                         <span>{project.statusLabel}</span>
                       </div>
 
-                      <h2 className="mb-display text-2xl font-semibold text-[var(--color-ink)] sm:text-3xl">
+                      <h2 className="mb-display text-2xl font-semibold text-[var(--mb-ink)] sm:text-3xl">
                         <Link
                           href={`/mock-b/work/${project.id}`}
-                          className="inline-flex min-h-[44px] items-center underline-offset-4 hover:text-[var(--color-accent)] hover:underline"
+                          className="inline-flex min-h-[44px] items-center underline-offset-4 hover:text-[var(--mb-link)] hover:underline"
                         >
                           {project.name}
                         </Link>
                       </h2>
-                      <p className="text-sm leading-relaxed text-[var(--color-muted)] sm:text-base">
+                      <p className="text-sm leading-relaxed text-[var(--mb-muted)] sm:text-base">
                         {project.summary}
                       </p>
                     </div>
@@ -243,16 +243,16 @@ export default function MockBWorkPage() {
                       )}
                     </div>
 
-                    <div className="space-y-3 border-t border-[var(--color-border)] pt-4">
-                      <h3 className="text-xs font-semibold uppercase tracking-widest text-[var(--color-text-tertiary)]">
+                    <div className="space-y-3 border-t border-[var(--mb-line)] pt-4">
+                      <h3 className="text-xs font-semibold uppercase tracking-widest text-[var(--mb-tertiary)]">
                         Build notes
                       </h3>
-                      <ul className="space-y-2 text-sm leading-relaxed text-[var(--color-ink)]">
+                      <ul className="space-y-2 text-sm leading-relaxed text-[var(--mb-ink)]">
                         {project.details.map((detail) => (
                           <li key={detail} className="flex items-start gap-2.5">
                             <span
                               aria-hidden="true"
-                              className="select-none text-[var(--color-accent)]"
+                              className="select-none text-[var(--mb-link)]"
                             >
                               &mdash;
                             </span>
@@ -263,12 +263,12 @@ export default function MockBWorkPage() {
                     </div>
                   </div>
 
-                  <div className="mt-6 space-y-4 border-t border-[var(--color-border)] pt-4">
+                  <div className="mt-6 space-y-4 border-t border-[var(--mb-line)] pt-4">
                     <div className="flex flex-wrap gap-1.5">
                       {project.stack.map((tag) => (
                         <span
                           key={tag}
-                          className="rounded-[var(--radius-sm)] border border-[var(--color-border)] bg-[var(--color-paper)] px-2.5 py-0.5 text-xs font-medium text-[var(--color-muted)]"
+                          className="rounded-[var(--radius-sm)] border border-[var(--mb-line)] bg-[var(--mb-bg)] px-2.5 py-0.5 text-xs font-medium text-[var(--mb-muted)]"
                         >
                           {tag}
                         </span>
@@ -289,7 +289,7 @@ export default function MockBWorkPage() {
                           href={project.href}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-flex min-h-[44px] items-center gap-1.5 text-sm font-semibold text-[var(--color-accent)] underline decoration-[var(--color-border-accent)] underline-offset-4 hover:text-[var(--color-accent-hover)]"
+                          className="inline-flex min-h-[44px] items-center gap-1.5 text-sm font-semibold text-[var(--mb-link)] underline decoration-[var(--mb-border-accent)] underline-offset-4 hover:text-[var(--mb-link-hover)]"
                         >
                           {project.linkLabel}
                           <ExternalLinkIcon className="h-3.5 w-3.5 shrink-0" />
@@ -297,7 +297,7 @@ export default function MockBWorkPage() {
                       ) : project.id === "assisi" ? (
                         <Link
                           href={project.href}
-                          className="inline-flex min-h-[44px] items-center text-sm font-semibold text-[var(--color-accent)] underline decoration-[var(--color-border-accent)] underline-offset-4 hover:text-[var(--color-accent-hover)]"
+                          className="inline-flex min-h-[44px] items-center text-sm font-semibold text-[var(--mb-link)] underline decoration-[var(--mb-border-accent)] underline-offset-4 hover:text-[var(--mb-link-hover)]"
                         >
                           {project.linkLabel}
                         </Link>
@@ -314,23 +314,23 @@ export default function MockBWorkPage() {
       {/* ── BOTTOM DUAL CTA CLOSE ────────────────────────────────────────── */}
       <section
         aria-labelledby="work-cta-heading"
-        className="bg-[var(--color-ink)] text-[var(--color-text-inverse)]"
+        className="mb-on-light bg-[var(--mb-light)] text-[var(--mb-ink)]"
       >
         <div
           data-mb-reveal="true"
           className="mx-auto flex max-w-5xl flex-col gap-6 px-4 py-16 sm:px-6 sm:py-20 lg:flex-row lg:items-center lg:justify-between"
         >
           <div className="max-w-xl">
-            <p className="text-xs font-semibold uppercase tracking-widest text-[var(--color-border)]">
+            <p className="text-xs font-semibold uppercase tracking-widest text-[var(--mb-muted)]">
               Have a project in mind?
             </p>
             <h2
               id="work-cta-heading"
-              className="mb-display mt-2 text-3xl font-semibold text-[var(--color-text-inverse)] sm:text-4xl"
+              className="mb-display mt-2 text-3xl font-semibold text-[var(--mb-ink)] sm:text-4xl"
             >
               Let us build something clear and useful together
             </h2>
-            <p className="mt-3 text-base leading-relaxed text-[var(--color-border)]">
+            <p className="mt-3 text-base leading-relaxed text-[var(--mb-muted)]">
               Send a short note through the quote form or message RDev Studio on WhatsApp for a straightforward chat.
             </p>
           </div>

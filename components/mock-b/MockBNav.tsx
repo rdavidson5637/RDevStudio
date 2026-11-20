@@ -29,8 +29,8 @@ export function MockBDesktopNav() {
             aria-current={active ? "page" : undefined}
             className={`inline-flex min-h-[44px] items-center rounded-[var(--radius-sm)] px-3 text-sm font-medium transition-colors ${
               active
-                ? "font-semibold text-[var(--color-accent)] underline decoration-[var(--color-accent)] decoration-2 underline-offset-8"
-                : "text-[var(--color-muted)] hover:text-[var(--color-ink)]"
+                ? "font-semibold text-[var(--mb-link)] underline decoration-[var(--mb-link)] decoration-2 underline-offset-8"
+                : "text-[var(--mb-muted)] hover:text-[var(--mb-ink)]"
             }`}
           >
             {item.label}
@@ -47,7 +47,7 @@ export function MockBMobileNav() {
   return (
     <nav
       aria-label="Mobile section navigation"
-      className="flex items-center justify-center gap-1 border-t border-[var(--color-border)] bg-[var(--color-paper)] px-3 py-0.5 md:hidden"
+      className="flex items-center justify-center gap-1 border-t border-[var(--mb-line)] bg-[var(--mb-bg)] px-3 py-0.5 md:hidden"
     >
       {NAV_ITEMS.map((item) => {
         const active = isRouteActive(pathname, item.href);
@@ -58,8 +58,8 @@ export function MockBMobileNav() {
             aria-current={active ? "page" : undefined}
             className={`inline-flex min-h-[44px] items-center px-3 text-xs font-semibold transition-colors ${
               active
-                ? "text-[var(--color-accent)] underline decoration-[var(--color-accent)] decoration-2 underline-offset-8"
-                : "text-[var(--color-muted)] hover:text-[var(--color-ink)]"
+                ? "text-[var(--mb-link)] underline decoration-[var(--mb-link)] decoration-2 underline-offset-8"
+                : "text-[var(--mb-muted)] hover:text-[var(--mb-ink)]"
             }`}
           >
             {item.label}

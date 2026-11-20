@@ -29,21 +29,21 @@ export default function MockBServicesPage() {
       <section className="mx-auto max-w-5xl px-4 pb-10 pt-8 sm:px-6 sm:pt-14">
         <Link
           href="/mock-b"
-          className="inline-flex min-h-[44px] items-center gap-1.5 text-sm font-semibold text-[var(--color-muted)] underline decoration-[var(--color-border-strong)] underline-offset-4 hover:text-[var(--color-accent)]"
+          className="inline-flex min-h-[44px] items-center gap-1.5 text-sm font-semibold text-[var(--mb-muted)] underline decoration-[var(--mb-line-strong)] underline-offset-4 hover:text-[var(--mb-link)]"
         >
           <ArrowLeftIcon className="h-4 w-4 shrink-0" />
           Back to studio home
         </Link>
 
         <div className="mt-5 max-w-2xl">
-          <p className="text-xs font-semibold uppercase tracking-widest text-[var(--color-accent)]">
+          <p className="text-xs font-semibold uppercase tracking-widest text-[var(--mb-link)]">
             Skills &amp; services
           </p>
-          <h1 className="mb-display mt-2 text-[2.25rem] font-semibold leading-[1.08] tracking-tight text-[var(--color-ink)] sm:text-5xl">
+          <h1 className="mb-display mt-2 text-[2.25rem] font-semibold leading-[1.08] tracking-tight text-[var(--mb-ink)] sm:text-5xl">
             Plain-English{" "}
-            <span className="text-[var(--color-accent)]">web work</span> for NI businesses &amp; charities.
+            <span className="text-[var(--mb-link)]">web work</span> for NI businesses &amp; charities.
           </h1>
-          <p className="mt-5 text-base leading-relaxed text-[var(--color-muted)] sm:text-lg">
+          <p className="mt-5 text-base leading-relaxed text-[var(--mb-muted)] sm:text-lg">
             RDev Studio designs and builds websites, custom web apps, and clearer local listings from Carrickfergus. Every job is scoped and quoted individually after a short conversation — no one-size-fits-all templates and no guesswork.
           </p>
 
@@ -58,7 +58,7 @@ export default function MockBServicesPage() {
               rel="noopener noreferrer"
               className="mb-btn-secondary w-full sm:w-auto"
             >
-              <WhatsAppIcon className="h-4 w-4 shrink-0 text-[var(--color-accent)]" />
+              <WhatsAppIcon className="h-4 w-4 shrink-0 text-[var(--mb-icon)]" />
               Message on WhatsApp
             </a>
           </div>
@@ -67,15 +67,15 @@ export default function MockBServicesPage() {
         {/* Ruled horizontal jump bar */}
         <nav
           aria-label="Jump to a service"
-          className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-1 border-y border-[var(--color-border)] py-2"
+          className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-1 border-y border-[var(--mb-line)] py-2"
         >
           {MOCK_B_SERVICE_GUIDES.map((service) => (
             <a
               key={service.id}
               href={`#${service.id}`}
-              className="inline-flex min-h-[44px] items-center gap-2 text-sm font-medium text-[var(--color-ink)] hover:text-[var(--color-accent)]"
+              className="inline-flex min-h-[44px] items-center gap-2 text-sm font-medium text-[var(--mb-ink)] hover:text-[var(--mb-link)]"
             >
-              <span className="tabular-nums text-xs text-[var(--color-text-tertiary)]">
+              <span className="tabular-nums text-xs text-[var(--mb-tertiary)]">
                 {service.number}
               </span>
               <span>{service.title}</span>
@@ -85,8 +85,8 @@ export default function MockBServicesPage() {
       </section>
 
       {/* ── FOUR FULL-WIDTH RULED SERVICE SECTIONS ───────────────────────── */}
-      <div className="bg-[var(--color-bg-raised)]">
-        <div className="mx-auto max-w-5xl divide-y divide-[var(--color-border-strong)] px-4 sm:px-6">
+      <div className="bg-[var(--mb-surface)]">
+        <div className="mx-auto max-w-5xl divide-y divide-[var(--mb-line-strong)] px-4 sm:px-6">
           {MOCK_B_SERVICE_GUIDES.map((service) => (
             <article
               key={service.id}
@@ -97,21 +97,21 @@ export default function MockBServicesPage() {
               <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
                 <div className="max-w-2xl">
                   <div className="flex flex-wrap items-center gap-3 text-xs font-semibold">
-                    <span className="tabular-nums text-[var(--color-accent)]">
+                    <span className="tabular-nums text-[var(--mb-link)]">
                       {service.number}
                     </span>
-                    <span aria-hidden="true" className="text-[var(--color-border-strong)]">
+                    <span aria-hidden="true" className="text-[var(--mb-line-strong)]">
                       /
                     </span>
-                    <span className="uppercase tracking-wider text-[var(--color-text-tertiary)]">
+                    <span className="uppercase tracking-wider text-[var(--mb-tertiary)]">
                       {service.tag}
                     </span>
                   </div>
 
-                  <h2 className="mb-display mt-2 text-3xl font-semibold text-[var(--color-ink)] sm:text-4xl">
+                  <h2 className="mb-display mt-2 text-3xl font-semibold text-[var(--mb-ink)] sm:text-4xl">
                     {service.title}
                   </h2>
-                  <p className="mt-3 text-base leading-relaxed text-[var(--color-muted)]">
+                  <p className="mt-3 text-base leading-relaxed text-[var(--mb-muted)]">
                     {service.lead}
                   </p>
                 </div>
@@ -127,17 +127,17 @@ export default function MockBServicesPage() {
                 ) : null}
               </div>
 
-              <div className="mt-8 grid gap-8 border-t border-[var(--color-border)] pt-7 lg:grid-cols-[1.25fr_0.75fr] lg:gap-12">
+              <div className="mt-8 grid gap-8 border-t border-[var(--mb-line)] pt-7 lg:grid-cols-[1.25fr_0.75fr] lg:gap-12">
                 <div>
-                  <h3 className="text-xs font-semibold uppercase tracking-widest text-[var(--color-text-tertiary)]">
+                  <h3 className="text-xs font-semibold uppercase tracking-widest text-[var(--mb-tertiary)]">
                     What we focus on
                   </h3>
-                  <ul className="mt-4 space-y-3 text-sm leading-relaxed text-[var(--color-ink)] sm:text-base">
+                  <ul className="mt-4 space-y-3 text-sm leading-relaxed text-[var(--mb-ink)] sm:text-base">
                     {service.included.map((item) => (
                       <li key={item} className="flex items-start gap-2.5">
                         <span
                           aria-hidden="true"
-                          className="select-none text-[var(--color-accent)]"
+                          className="select-none text-[var(--mb-link)]"
                         >
                           &mdash;
                         </span>
@@ -147,21 +147,21 @@ export default function MockBServicesPage() {
                   </ul>
                 </div>
 
-                <div className="space-y-6 border-t border-[var(--color-border)] pt-6 lg:border-l lg:border-t-0 lg:pl-8 lg:pt-0">
+                <div className="space-y-6 border-t border-[var(--mb-line)] pt-6 lg:border-l lg:border-t-0 lg:pl-8 lg:pt-0">
                   <div>
-                    <h3 className="text-xs font-semibold uppercase tracking-widest text-[var(--color-text-tertiary)]">
+                    <h3 className="text-xs font-semibold uppercase tracking-widest text-[var(--mb-tertiary)]">
                       Good fit for
                     </h3>
-                    <p className="mt-2 text-sm leading-relaxed text-[var(--color-ink)]">
+                    <p className="mt-2 text-sm leading-relaxed text-[var(--mb-ink)]">
                       {service.goodFit}
                     </p>
                   </div>
 
-                  <div className="border-t border-[var(--color-border)] pt-5">
-                    <h3 className="text-xs font-semibold uppercase tracking-widest text-[var(--color-text-tertiary)]">
+                  <div className="border-t border-[var(--mb-line)] pt-5">
+                    <h3 className="text-xs font-semibold uppercase tracking-widest text-[var(--mb-tertiary)]">
                       Worth knowing
                     </h3>
-                    <ul className="mt-2.5 space-y-2.5 text-sm leading-relaxed text-[var(--color-muted)]">
+                    <ul className="mt-2.5 space-y-2.5 text-sm leading-relaxed text-[var(--mb-muted)]">
                       {service.notes.map((note) => (
                         <li key={note}>{note}</li>
                       ))}
@@ -184,7 +184,7 @@ export default function MockBServicesPage() {
                   rel="noopener noreferrer"
                   className="mb-btn-secondary w-full sm:w-auto"
                 >
-                  <WhatsAppIcon className="h-4 w-4 shrink-0 text-[var(--color-accent)]" />
+                  <WhatsAppIcon className="h-4 w-4 shrink-0 text-[var(--mb-icon)]" />
                   Message on WhatsApp
                 </a>
               </div>
@@ -196,18 +196,18 @@ export default function MockBServicesPage() {
       {/* ── HOW A PROJECT RUNS (NUMBERED STEPS BAND) ─────────────────────── */}
       <section
         aria-labelledby="services-process-heading"
-        className="border-y border-[var(--color-border)] bg-[var(--color-bg-overlay)]"
+        className="mb-on-light border-y border-[var(--mb-line)] bg-[var(--mb-light)]"
       >
         <div
           data-mb-reveal="true"
           className="mx-auto max-w-5xl px-4 py-16 sm:px-6 sm:py-20"
         >
-          <p className="text-xs font-semibold uppercase tracking-widest text-[var(--color-accent)]">
+          <p className="text-xs font-semibold uppercase tracking-widest text-[var(--mb-link)]">
             How we work
           </p>
           <h2
             id="services-process-heading"
-            className="mb-display mt-2 text-3xl font-semibold text-[var(--color-ink)] sm:text-4xl"
+            className="mb-display mt-2 text-3xl font-semibold text-[var(--mb-ink)] sm:text-4xl"
           >
             Four calm steps from first message to launch
           </h2>
@@ -215,15 +215,15 @@ export default function MockBServicesPage() {
             {STUDIO_RHYTHM.map((item) => (
               <li
                 key={item.step}
-                className="border-t border-[var(--color-border-strong)] pt-4"
+                className="border-t border-[var(--mb-line-strong)] pt-4"
               >
-                <span className="mb-display text-2xl font-semibold tabular-nums text-[var(--color-accent)]">
+                <span className="mb-display text-2xl font-semibold tabular-nums text-[var(--mb-link)]">
                   {item.step}
                 </span>
-                <h3 className="mt-2 text-base font-semibold text-[var(--color-ink)]">
+                <h3 className="mt-2 text-base font-semibold text-[var(--mb-ink)]">
                   {item.title}
                 </h3>
-                <p className="mt-1.5 text-sm leading-relaxed text-[var(--color-muted)]">
+                <p className="mt-1.5 text-sm leading-relaxed text-[var(--mb-muted)]">
                   {item.body}
                 </p>
               </li>
@@ -240,26 +240,26 @@ export default function MockBServicesPage() {
         <div data-mb-reveal="true" className="max-w-2xl">
           <h2
             id="services-faq-heading"
-            className="mb-display text-3xl font-semibold text-[var(--color-ink)]"
+            className="mb-display text-3xl font-semibold text-[var(--mb-ink)]"
           >
             Common questions
           </h2>
-          <p className="mt-2 text-base text-[var(--color-muted)]">
+          <p className="mt-2 text-base text-[var(--mb-muted)]">
             Straight answers before you even send a message.
           </p>
         </div>
 
-        <dl className="mt-8 divide-y divide-[var(--color-border)] border-y border-[var(--color-border)]">
+        <dl className="mt-8 divide-y divide-[var(--mb-line)] border-y border-[var(--mb-line)]">
           {STUDIO_FAQ_ITEMS.map((item) => (
             <div
               key={item.question}
               data-mb-reveal="true"
               className="grid gap-3 py-6 md:grid-cols-[0.85fr_1.15fr] md:gap-10"
             >
-              <dt className="mb-display text-xl font-semibold text-[var(--color-ink)]">
+              <dt className="mb-display text-xl font-semibold text-[var(--mb-ink)]">
                 {item.question}
               </dt>
-              <dd className="text-sm leading-relaxed text-[var(--color-muted)] sm:text-base">
+              <dd className="text-sm leading-relaxed text-[var(--mb-muted)] sm:text-base">
                 {item.answer}
               </dd>
             </div>
@@ -270,23 +270,23 @@ export default function MockBServicesPage() {
       {/* ── CLOSING DUAL CTA ─────────────────────────────────────────────── */}
       <section
         aria-labelledby="services-close-heading"
-        className="bg-[var(--color-ink)] text-[var(--color-text-inverse)]"
+        className="mb-on-light bg-[var(--mb-light)] text-[var(--mb-ink)]"
       >
         <div
           data-mb-reveal="true"
           className="mx-auto flex max-w-5xl flex-col gap-6 px-4 py-16 sm:px-6 sm:py-20 lg:flex-row lg:items-center lg:justify-between"
         >
           <div className="max-w-xl">
-            <p className="text-xs font-semibold uppercase tracking-widest text-[var(--color-border)]">
+            <p className="text-xs font-semibold uppercase tracking-widest text-[var(--mb-muted)]">
               Not sure which fits?
             </p>
             <h2
               id="services-close-heading"
-              className="mb-display mt-2 text-3xl font-semibold text-[var(--color-text-inverse)] sm:text-4xl"
+              className="mb-display mt-2 text-3xl font-semibold text-[var(--mb-ink)] sm:text-4xl"
             >
               Tell us what you are trying to sort out
             </h2>
-            <p className="mt-3 text-base leading-relaxed text-[var(--color-border)]">
+            <p className="mt-3 text-base leading-relaxed text-[var(--mb-muted)]">
               Send a short note through the quote form or message RDev Studio on WhatsApp — we will point you toward the simplest option.
             </p>
           </div>

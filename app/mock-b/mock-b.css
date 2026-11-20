@@ -1,60 +1,161 @@
 /* Scoped stylesheet for Mock B (/mock-b/**).
-   Uses live RDev Studio brand tokens from app/tokens.css only. */
+   Ryan's Grenadine pack only — all brand hex/rgba values are declared here.
+   Does not use live-site tokens from app/tokens.css. */
 
 .mock-b-root {
-  color-scheme: light;
-  --mb-bg: var(--color-paper);
-  --mb-bg-overlay: var(--color-bg-overlay);
-  --mb-surface: var(--color-bg-raised);
-  --mb-ink: var(--color-ink);
-  --mb-muted: var(--color-muted);
-  --mb-tertiary: var(--color-text-tertiary);
-  --mb-accent: var(--color-accent);
-  --mb-accent-hover: var(--color-accent-hover);
-  --mb-accent-subtle: var(--color-accent-subtle);
-  --mb-accent-muted: var(--color-accent-muted);
-  --mb-line: var(--color-border);
-  --mb-line-strong: var(--color-border-strong);
-  --mb-border-accent: var(--color-border-accent);
-  --mb-inverse: var(--color-text-inverse);
+  color-scheme: dark;
 
-  background-color: var(--color-paper);
-  color: var(--color-ink);
+  /* Four main colours */
+  --mb-slate: #112F2C;
+  --mb-naples: #FBE6A0;
+  --mb-grenadine: #F48067;
+  --mb-ochre: #E2B540;
+
+  /* Shades mixed from those four */
+  --mb-slate-2: #183E3A;
+  --mb-slate-3: #1E4A45;
+  --mb-naples-muted: #CFC7A3;
+  --mb-naples-faint: #B9B392;
+  --mb-grenadine-light: #F79A85;
+  --mb-grenadine-deep: #D75C42;
+  --mb-ochre-ink: #2C4A3A;
+
+  /* See-through lines: Naples at 18% / 35% on dark, slate at the same opacities on light */
+  --mb-naples-line: rgba(251, 230, 160, 0.18);
+  --mb-naples-line-strong: rgba(251, 230, 160, 0.35);
+  --mb-slate-line: rgba(17, 47, 44, 0.18);
+  --mb-slate-line-strong: rgba(17, 47, 44, 0.35);
+  /* See-through lines (dark default) */
+  --mb-line: var(--mb-naples-line);
+  --mb-line-strong: var(--mb-naples-line-strong);
+
+  /* Semantic tokens — dark-first defaults */
+  --mb-bg: var(--mb-slate);
+  --mb-ink: var(--mb-naples);
+  --mb-muted: var(--mb-naples-muted);
+  --mb-tertiary: var(--mb-naples-faint);
+  --mb-surface: var(--mb-slate-2);
+  --mb-raised: var(--mb-slate-3);
+  --mb-light: var(--mb-naples);
+  --mb-accent: var(--mb-grenadine);
+  --mb-accent-hover: var(--mb-grenadine-light);
+  --mb-on-accent: var(--mb-slate);
+  --mb-icon: var(--mb-grenadine-deep);
+  --mb-link: var(--mb-grenadine);
+  --mb-link-hover: var(--mb-grenadine-light);
+  --mb-accent-subtle: color-mix(in srgb, var(--mb-grenadine) 16%, var(--mb-slate-2));
+  --mb-accent-muted: color-mix(in srgb, var(--mb-grenadine) 28%, var(--mb-slate-2));
+  --mb-border-accent: color-mix(in srgb, var(--mb-grenadine) 45%, transparent);
+  --mb-focus-ring: color-mix(in srgb, var(--mb-grenadine) 45%, transparent);
+  --mb-selection-bg: color-mix(in srgb, var(--mb-grenadine) 40%, var(--mb-slate));
+
+  background-color: var(--mb-bg);
+  color: var(--mb-ink);
   font-family: var(--font-mb-sans), system-ui, -apple-system, sans-serif;
   min-height: 100vh;
   position: relative;
   overflow-x: clip;
 }
 
+/* Naples light sections: slate text, ochre-ink muted. Accent fills stay grenadine. */
+.mb-on-light {
+  color-scheme: light;
+  background-color: var(--mb-light);
+  color: var(--mb-slate);
+  --mb-ink: var(--mb-slate);
+  --mb-muted: var(--mb-ochre-ink);
+  --mb-tertiary: var(--mb-ochre-ink);
+  --mb-link: var(--mb-slate);
+  --mb-link-hover: var(--mb-ochre-ink);
+  --mb-line: var(--mb-slate-line);
+  --mb-line-strong: var(--mb-slate-line-strong);
+  --mb-accent-subtle: color-mix(in srgb, var(--mb-grenadine-deep) 12%, var(--mb-naples));
+  --mb-accent-muted: color-mix(in srgb, var(--mb-grenadine-deep) 20%, var(--mb-naples));
+  --mb-border-accent: color-mix(in srgb, var(--mb-slate) 28%, transparent);
+  --mb-focus-ring: color-mix(in srgb, var(--mb-slate) 30%, transparent);
+  --mb-selection-bg: color-mix(in srgb, var(--mb-ochre) 45%, var(--mb-naples));
+}
+
+/* Slate 2 panels/forms, including those sitting on a Naples band. */
+.mb-on-surface {
+  color-scheme: dark;
+  background-color: var(--mb-surface);
+  color: var(--mb-naples);
+  --mb-ink: var(--mb-naples);
+  --mb-muted: var(--mb-naples-muted);
+  --mb-tertiary: var(--mb-naples-faint);
+  --mb-link: var(--mb-grenadine);
+  --mb-link-hover: var(--mb-grenadine-light);
+  --mb-line: var(--mb-naples-line);
+  --mb-line-strong: var(--mb-naples-line-strong);
+  --mb-accent-subtle: color-mix(in srgb, var(--mb-grenadine) 16%, var(--mb-slate-2));
+  --mb-accent-muted: color-mix(in srgb, var(--mb-grenadine) 28%, var(--mb-slate-2));
+  --mb-border-accent: color-mix(in srgb, var(--mb-grenadine) 45%, transparent);
+  --mb-focus-ring: color-mix(in srgb, var(--mb-grenadine) 45%, transparent);
+  --mb-selection-bg: color-mix(in srgb, var(--mb-grenadine) 40%, var(--mb-slate));
+}
+
 .mock-b-root ::selection {
-  background-color: var(--color-selection-bg);
-  color: var(--color-ink);
+  background-color: var(--mb-selection-bg);
+  color: var(--mb-ink);
 }
 
 .mock-b-root :focus-visible {
-  outline: 2px solid var(--color-accent);
+  outline: 2px solid var(--mb-accent);
   outline-offset: 2px;
-  box-shadow: 0 0 0 4px var(--color-focus-ring);
+  box-shadow: 0 0 0 4px var(--mb-focus-ring);
   border-radius: var(--radius-sm);
 }
 
+.mb-on-light :focus-visible {
+  outline-color: var(--mb-slate);
+}
+
 .mock-b-root select option {
-  background-color: var(--color-bg-raised);
-  color: var(--color-ink);
+  background-color: var(--mb-surface);
+  color: var(--mb-naples);
+}
+
+.mock-b-root input,
+.mock-b-root select,
+.mock-b-root textarea {
+  background-color: var(--mb-surface);
+  color: var(--mb-naples);
+}
+
+.mock-b-root .mb-input:focus,
+.mock-b-root .mb-input:focus-visible {
+  outline: 2px solid var(--mb-accent);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px var(--mb-focus-ring);
+  border-color: var(--mb-accent);
 }
 
 .mb-display {
   font-family: var(--font-mb-display), Georgia, serif;
 }
 
-/* Explicit "TODO for Ryan" callout box */
-.mb-todo-box {
-  background-color: var(--color-bg-overlay);
-  border: 1px dashed var(--color-border-strong);
+/* TODO / alert surfaces use ochre, with slate text */
+.mb-todo-box,
+.mb-alert {
+  background-color: var(--mb-ochre);
+  color: var(--mb-slate);
+  border: 1px dashed var(--mb-ochre-ink);
   border-radius: var(--radius-md);
+  --mb-ink: var(--mb-slate);
+  --mb-muted: var(--mb-ochre-ink);
+  --mb-tertiary: var(--mb-ochre-ink);
+  --mb-link: var(--mb-slate);
+  --mb-link-hover: var(--mb-ochre-ink);
+  --mb-line: var(--mb-slate-line);
+  --mb-line-strong: var(--mb-slate-line-strong);
 }
 
-/* Primary button: solid pitch green, white text, 6px radius */
+.mb-alert {
+  border-style: solid;
+}
+
+/* Primary button: grenadine, slate text, 6px radius */
 .mb-btn-primary {
   display: inline-flex;
   align-items: center;
@@ -63,21 +164,22 @@
   min-height: 44px;
   padding: 0.65rem 1.25rem;
   border-radius: var(--radius-md);
-  background-color: var(--color-accent);
-  color: var(--color-text-inverse);
+  background-color: var(--mb-grenadine);
+  color: var(--mb-slate);
   font-weight: 600;
   font-size: 0.9375rem;
   line-height: 1.25;
-  border: 1px solid var(--color-accent);
+  border: 1px solid var(--mb-grenadine);
   transition: background-color 150ms ease, border-color 150ms ease;
 }
 
 .mb-btn-primary:hover {
-  background-color: var(--color-accent-hover);
-  border-color: var(--color-accent-hover);
+  background-color: var(--mb-grenadine-light);
+  border-color: var(--mb-grenadine-light);
+  color: var(--mb-slate);
 }
 
-/* Secondary button: 1px ink/border outline, 6px radius */
+/* Secondary button: 1px outline, 6px radius */
 .mb-btn-secondary {
   display: inline-flex;
   align-items: center;
@@ -87,20 +189,20 @@
   padding: 0.65rem 1.25rem;
   border-radius: var(--radius-md);
   background-color: transparent;
-  color: var(--color-ink);
+  color: var(--mb-ink);
   font-weight: 600;
   font-size: 0.9375rem;
   line-height: 1.25;
-  border: 1px solid var(--color-border-strong);
+  border: 1px solid var(--mb-line-strong);
   transition: background-color 150ms ease, border-color 150ms ease;
 }
 
 .mb-btn-secondary:hover {
-  background-color: var(--color-bg-overlay);
-  border-color: var(--color-ink);
+  background-color: var(--mb-raised);
+  border-color: var(--mb-ink);
 }
 
-/* Secondary button on dark --color-ink surfaces */
+/* Secondary button on Naples closing bands */
 .mb-btn-secondary-inverse {
   display: inline-flex;
   align-items: center;
@@ -110,18 +212,18 @@
   padding: 0.65rem 1.25rem;
   border-radius: var(--radius-md);
   background-color: transparent;
-  color: var(--color-text-inverse);
+  color: var(--mb-slate);
   font-weight: 600;
   font-size: 0.9375rem;
   line-height: 1.25;
-  border: 1px solid var(--color-border);
+  border: 1px solid var(--mb-slate-line-strong);
   transition: background-color 150ms ease, border-color 150ms ease, color 150ms ease;
 }
 
 .mb-btn-secondary-inverse:hover {
-  background-color: var(--color-text-inverse);
-  color: var(--color-ink);
-  border-color: var(--color-text-inverse);
+  background-color: var(--mb-slate);
+  color: var(--mb-naples);
+  border-color: var(--mb-slate);
 }
 
 @keyframes mb-spin {
@@ -132,6 +234,8 @@
 
 .mb-spinner {
   animation: mb-spin 0.85s linear infinite;
+  border-color: color-mix(in srgb, var(--mb-slate) 28%, transparent);
+  border-top-color: var(--mb-slate);
 }
 
 /* Minimal fade-in reveal (below-the-fold via WarmMotionController) */
