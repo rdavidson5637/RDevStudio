@@ -13,19 +13,19 @@ import {
   SOCIAL_MEDIA_FEATURES,
   WHATSAPP_URL,
 } from "@/lib/constants";
-import { DRAFT_CTAS } from "@/lib/content/redesign-draft";
+import { DRAFT_CTAS, DRAFT_LOCAL_NICHES } from "@/lib/content/redesign-draft";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata = createPageMetadata({
-  title: "Websites and services for NI local businesses",
+  title: "Websites for NI plumbers, HVAC, dentists and salons",
   description:
-    "Fixed-price websites from £650, optional £30/mo care plan, social media from £150/mo, and content from £200/project for Northern Ireland small businesses.",
+    "Fixed-price websites from £650 for Northern Ireland plumbers, HVAC firms, dentists, salons and other local services. Optional care plan, social and content packages. Based in Carrickfergus.",
   path: "/services/businesses",
 });
 
 export default function LocalBusinessesServicesPage() {
   return (
-    <div className="bg-studio-bg text-studio-text">
+    <>
       <Section className="border-b border-studio-line">
         <p className="text-sm font-bold text-studio-muted">
           <Link
@@ -36,11 +36,11 @@ export default function LocalBusinessesServicesPage() {
           </Link>{" "}
           / Local businesses
         </p>
-        <h1 className="display-lg mt-4 max-w-[16ch] text-balance text-studio-text">
-          Websites for Northern Ireland small businesses
+        <h1 className="display-lg mt-4 max-w-[18ch] text-balance text-studio-text">
+          Websites for plumbers, HVAC, dentists and salons
         </h1>
         <p className="type-body mt-5 max-w-prose text-studio-muted">
-          Trades firms, coffee counters, restaurants, salons, and independent shops. You get a site built for a phone first, straight prices agreed before work starts, and direct contact with me in Carrickfergus.
+          Local-service businesses in Northern Ireland that need a phone-first site: who you are, what you do, where you cover, and how to get in touch. Straight prices agreed before work starts. Direct contact with me in Carrickfergus.
         </p>
 
         <div className="mt-10 grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
@@ -79,6 +79,38 @@ export default function LocalBusinessesServicesPage() {
             <Scoreboard />
           </div>
         </div>
+      </Section>
+
+      <Section
+        heading="Who this is for"
+        intro="Four niches I build for often. The same packages apply to other local services too. No invented client results on this page - only what the site needs to do."
+        className="border-b border-studio-line"
+      >
+        <ul className="mt-10 border-t border-studio-line">
+          {DRAFT_LOCAL_NICHES.map((niche) => (
+            <li key={niche.slug} className="border-b border-studio-line">
+              <Link
+                href="/contact"
+                className="group flex min-h-11 items-baseline justify-between gap-6 py-5 transition-colors hover:text-studio-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-studio-text"
+              >
+                <span className="min-w-0">
+                  <span className="block font-studio-display text-2xl text-studio-text group-hover:text-studio-accent">
+                    {niche.title}
+                  </span>
+                  <span className="mt-1 block max-w-prose text-sm text-studio-muted sm:text-base">
+                    {niche.line}
+                  </span>
+                </span>
+                <span
+                  aria-hidden="true"
+                  className="shrink-0 text-studio-faint transition-colors group-hover:text-studio-accent"
+                >
+                  &rarr;
+                </span>
+              </Link>
+            </li>
+          ))}
+        </ul>
       </Section>
 
       <Section
@@ -161,7 +193,7 @@ export default function LocalBusinessesServicesPage() {
 
       <Section
         heading="See examples of local business sites"
-        intro="Check the live client site for RV's Cold Brew in Belfast, or browse the three concept builds for a trades firm, a restaurant, and a hair salon."
+        intro="Live client work: RV's Cold Brew in Belfast. Concept demos only (not client results): Carrick Plumbing Co, The Anchor Restaurant, and Harbour Hair Studio."
       >
         <div className="mt-8 flex flex-wrap items-center gap-6">
           <Button href="/contact">{DRAFT_CTAS.primary}</Button>
@@ -179,6 +211,6 @@ export default function LocalBusinessesServicesPage() {
           </Link>
         </div>
       </Section>
-    </div>
+    </>
   );
 }

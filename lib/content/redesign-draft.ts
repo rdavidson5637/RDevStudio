@@ -75,6 +75,33 @@ export const DRAFT_SHOWCASE_CASE_SLUGS = [
   "rondo",
 ] as const;
 
+/**
+ * Local-services niches. Positioning only - no invented clients, reviews or results.
+ * Concept demos exist for trades and a salon; HVAC and dentists are niches I quote for, not live client case studies.
+ */
+export const DRAFT_LOCAL_NICHES = [
+  {
+    slug: "plumbers",
+    title: "Plumbers",
+    line: "Emergency call number first, service area clear, and a form that lands in your inbox - not a buried contact page.",
+  },
+  {
+    slug: "hvac",
+    title: "HVAC and heating",
+    line: "Boiler, heat pump or air-con work listed plainly, with call-out and area covered so people know you take the job.",
+  },
+  {
+    slug: "dentists",
+    title: "Dentists",
+    line: "New-patient path, treatments and hours easy to find on a phone. Booking links only if you already have a system live.",
+  },
+  {
+    slug: "salons",
+    title: "Salons",
+    line: "Services, prices and hours up front, with a clear way to get in touch. No fake reviews or invented wait-lists.",
+  },
+] as const;
+
 export const DRAFT_SERVICES_CARDS = [
   {
     slug: "websites",
