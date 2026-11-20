@@ -11,6 +11,8 @@ Add screenshots and optional video loops for portfolio projects.
 | `anchor-restaurant.png` | The Anchor Restaurant |
 | `harbour-hair.png` | Harbour Hair Studio |
 | `rvs-coldbrew.png` | RVS Cold Brew |
+| `crosskennan.png` | Crosskennan Lane (TODO: capture from preview) |
+| `rondo.png` | Rondo coaching app (TODO: capture from pilot) |
 
 PNG, JPG, or WebP. Recommended size: **1200×750px** (16:10).
 

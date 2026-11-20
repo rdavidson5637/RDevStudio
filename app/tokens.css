@@ -108,7 +108,9 @@
   --duration-fast: 150ms;
   --duration-normal: 200ms;
   --duration-slow: 400ms;
-  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --duration-reveal: 720ms;
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-soft: cubic-bezier(0.33, 1, 0.68, 1);
 
   /* ── Studio palette (Grenadine, Wada 166 + 325). Existing paper tokens stay. ─ */
   --color-studio-bg: #112f2c; /* Deep Slate Green */
@@ -139,9 +141,10 @@
   --color-rvs-teal: #143944;
   --color-rvs-cream: #f4ead4;
 
-  --text-display-xl: clamp(2.75rem, 6vw + 1rem, 5.5rem);
+  /* Studio type scale (six): display-xl, display-lg, h2, h3, body (--text-base), label */
+  --text-display-xl: clamp(4.25rem, 18vw, 11rem);
   --text-display-lg: clamp(2.25rem, 4vw + 0.75rem, 3.75rem);
   --text-h2: clamp(1.75rem, 2vw + 1rem, 2.5rem);
   --text-h3: 1.25rem;
-  --text-label: 0.6875rem;
+  --text-label: 0.875rem;
 }

@@ -80,7 +80,7 @@ export default function ShelterLinkCaseStudyPage() {
 
         <div className="border-b border-studio-line py-12">
           <CaseShot
-            src="/images/work/shelterlink-admin-dashboard.png"
+            src="/images/work/shelterlink-admin-dashboard.webp"
             alt="ShelterLink admin dashboard with volunteer metrics and recent activity"
             caption="Admin dashboard"
             priority
@@ -140,7 +140,7 @@ export default function ShelterLinkCaseStudyPage() {
             />
             <ScreenshotSlot
               caption="Admin dashboard and export controls"
-              src="/images/work/shelterlink-admin-dashboard.png"
+              src="/images/work/shelterlink-admin-dashboard.webp"
               alt="ShelterLink admin dashboard with volunteer stats and application review"
             />
           </div>
@@ -167,11 +167,12 @@ export default function ShelterLinkCaseStudyPage() {
           <p className="max-w-prose type-body text-studio-text">
             ShelterLink started as my MSc dissertation at Queen&apos;s
             University Belfast. I graduated with Commendation. The platform is
-            ready for the sanctuary to use.
+            ready for live use. Assisi is not running it in day-to-day
+            operations yet.
           </p>
         </section>
 
-        <CaseFooter next={{ href: "/work/rvs-cold-brew", label: "RV's Cold Brew" }} />
+        <CaseFooter next={{ href: "/work/assisi", label: "Assisi site and brand" }} />
       </article>
     </div>
   );

@@ -54,8 +54,8 @@ export default function CharitiesServicesPage() {
       </Section>
 
       <Section
-        heading="Work built for Assisi Animal Sanctuary"
-        intro="My dog Rudi came from Assisi Animal Sanctuary, and my MSc dissertation at Queen's University Belfast started by asking what their staff actually needed."
+        heading="Work built for Northern Ireland charities"
+        intro="My dog Rudi came from Assisi Animal Sanctuary, and my MSc dissertation at Queen's University Belfast started by asking what their staff actually needed. Crosskennan Lane is another sanctuary site with a preview online."
         className="border-b border-studio-line"
       >
         <div className="mt-10 grid gap-8 md:grid-cols-2">
@@ -91,10 +91,32 @@ export default function CharitiesServicesPage() {
             </div>
             <div className="mt-6 border-t border-studio-line pt-4">
               <Link
-                href="/work"
+                href="/work/assisi"
                 className="inline-flex min-h-11 items-center text-sm font-bold text-studio-text underline decoration-studio-line-strong underline-offset-4 hover:text-studio-accent"
               >
-                See on the work page
+                Read the Assisi case study
+              </Link>
+            </div>
+          </article>
+
+          <article className="flex flex-col justify-between border border-studio-border bg-studio-surface p-6 md:p-8 md:col-span-2">
+            <div>
+              <p className="text-sm font-bold text-studio-muted">Preview online</p>
+              <h3 className="mt-2 font-studio-display text-3xl text-studio-text">
+                Crosskennan Lane Animal Sanctuary
+              </h3>
+              <p className="type-body mt-3 text-studio-muted">
+                A charity site for a sanctuary near Antrim: adoption listings, volunteer forms
+                (including under-18), donate and ways to help. Vercel preview online. Formspree IDs
+                and some animal profiles still being finished.
+              </p>
+            </div>
+            <div className="mt-6 border-t border-studio-line pt-4">
+              <Link
+                href="/work/crosskennan"
+                className="inline-flex min-h-11 items-center text-sm font-bold text-studio-text underline decoration-studio-line-strong underline-offset-4 hover:text-studio-accent"
+              >
+                Read the Crosskennan case study
               </Link>
             </div>
           </article>

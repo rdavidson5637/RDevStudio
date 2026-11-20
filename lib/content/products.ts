@@ -131,7 +131,7 @@ export const clientWork: ClientWork[] = [
   {
     slug: "assisi",
     name: "Assisi Animal Sanctuary",
-    href: "/work",
+    href: "/work/assisi",
     statusLabel: "Built - awaiting sign-off",
     summary:
       "A rebuilt site and brand for Assisi Animal Sanctuary in Belfast. Built and ready for their feedback.",
@@ -156,6 +156,26 @@ export const clientWork: ClientWork[] = [
     image: "/work/rvs-cold-brew-desktop.webp",
     mobileImage: "/work/rvs-cold-brew-mobile.webp",
     stack: ["Next.js", "Tailwind", "Vercel"],
+  },
+  {
+    slug: "crosskennan",
+    name: "Crosskennan Lane Animal Sanctuary",
+    href: "/work/crosskennan",
+    siteUrl: "https://crosskennan.vercel.app",
+    statusLabel: "Preview online",
+    summary:
+      "Charity site for a sanctuary near Antrim. Adoption, volunteering, donate and ways to help. Preview online; forms and listings still being finished.",
+    stack: ["Next.js", "Tailwind", "TypeScript"],
+  },
+  {
+    slug: "rondo",
+    name: "Rondo",
+    href: "/work/rondo",
+    siteUrl: "https://rondo-cyan.vercel.app",
+    statusLabel: "Live pilot",
+    summary:
+      "Free coaching app for grassroots football. Availability, training plans, match day and fees. Pilot with Grove United 3rds.",
+    stack: ["Next.js", "Tailwind", "Supabase"],
   },
 ];
 

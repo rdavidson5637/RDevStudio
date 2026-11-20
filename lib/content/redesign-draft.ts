@@ -45,6 +45,61 @@ export const DRAFT_PROOF_ITEMS = [
     status: "Built - awaiting their sign-off",
     href: "/work/assisi",
   },
+  {
+    name: "Crosskennan Lane Animal Sanctuary",
+    role: "Charity site: adoption, volunteering, donate and ways to help",
+    status: "Preview online - forms and listings still being finished",
+    href: "/work/crosskennan",
+  },
+  {
+    name: "Rondo",
+    role: "Grassroots football coaching app (NIFD pilot)",
+    status: "Live pilot - Grove United 3rds",
+    href: "/work/rondo",
+  },
+] as const;
+
+/** Slugs shown on the homepage showcase. Full list lives on /work. */
+export const DRAFT_FEATURED_CASE_SLUGS = [
+  "shelterlink",
+  "assisi",
+  "crosskennan",
+  "rondo",
+] as const;
+
+/** Ordered showcase set for /work (charity + Rondo). No MGSL case page exists. */
+export const DRAFT_SHOWCASE_CASE_SLUGS = [
+  "shelterlink",
+  "assisi",
+  "crosskennan",
+  "rondo",
+] as const;
+
+/**
+ * Local-services niches. Positioning only - no invented clients, reviews or results.
+ * Concept demos exist for trades and a salon; HVAC and dentists are niches I quote for, not live client case studies.
+ */
+export const DRAFT_LOCAL_NICHES = [
+  {
+    slug: "plumbers",
+    title: "Plumbers",
+    line: "Emergency call number first, service area clear, and a form that lands in your inbox - not a buried contact page.",
+  },
+  {
+    slug: "hvac",
+    title: "HVAC and heating",
+    line: "Boiler, heat pump or air-con work listed plainly, with call-out and area covered so people know you take the job.",
+  },
+  {
+    slug: "dentists",
+    title: "Dentists",
+    line: "New-patient path, treatments and hours easy to find on a phone. Booking links only if you already have a system live.",
+  },
+  {
+    slug: "salons",
+    title: "Salons",
+    line: "Services, prices and hours up front, with a clear way to get in touch. No fake reviews or invented wait-lists.",
+  },
 ] as const;
 
 export const DRAFT_SERVICES_CARDS = [
@@ -113,7 +168,7 @@ export const DRAFT_CASE_STUDIES = [
     category: "Client work - Charity",
     status: "Ready for live use",
     href: "/work/shelterlink",
-    image: "/images/work/shelterlink-admin-dashboard.png",
+    image: "/images/work/shelterlink-admin-dashboard.webp",
     imageAlt: "ShelterLink admin dashboard for Assisi Animal Sanctuary",
     challenge:
       "Assisi Animal Sanctuary runs on volunteers. Shift cover, training roles, and Sunday rotas lived in paper lists and phone calls, taking staff time away from the animals.",
@@ -134,6 +189,34 @@ export const DRAFT_CASE_STUDIES = [
       "A full website and brand rebuild designed for clarity on mobile and desktop.",
     result:
       "Built and awaiting their sign-off before public preview.",
+  },
+  {
+    slug: "crosskennan",
+    name: "Crosskennan Lane Animal Sanctuary",
+    category: "Client work - Charity",
+    status: "Preview online",
+    href: "/work/crosskennan",
+    siteUrl: "https://crosskennan.vercel.app",
+    challenge:
+      "A volunteer-run sanctuary near Antrim needed one clear place for adoption, volunteering, donate and ways to help, usable on a phone.",
+    solution:
+      "A Next.js charity site with adoption listings, dog/cat/equine rehoming forms, adult and under-18 volunteer paths, and support pages. Forms use Formspree when IDs are set, otherwise mailto.",
+    result:
+      "Vercel preview online. Formspree IDs unset. Listings and horse profiles still being finished. Not on the sanctuary production domain yet.",
+  },
+  {
+    slug: "rondo",
+    name: "Rondo",
+    category: "Studio product - Football",
+    status: "Live pilot",
+    href: "/work/rondo",
+    siteUrl: "https://rondo-cyan.vercel.app",
+    challenge:
+      "Grassroots coaches juggle availability, training plans, line-ups, match reports and fees across WhatsApp and spreadsheets.",
+    solution:
+      "A free phone-first coaching app: team link for players, session planner, line-up builder, live match tracker, fee ledger and a public drill library. Next.js and Supabase.",
+    result:
+      "Live pilot with Grove United 3rds as part of NIFD. Further clubs wait on review.",
   },
 ] as const;
 

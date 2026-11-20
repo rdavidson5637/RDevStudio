@@ -129,7 +129,7 @@ export default function RvsColdBrewCaseStudyPage() {
           </a>
         </section>
 
-        <CaseFooter next={{ href: "/work/shelterlink", label: "ShelterLink" }} />
+        <CaseFooter next={{ href: "/work/crosskennan", label: "Crosskennan" }} />
       </article>
     </div>
   );
