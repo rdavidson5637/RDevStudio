@@ -167,6 +167,15 @@ Editorial rhythm and quieter CTA clusters. Copy, TODOs, and Grenadine hex values
 - **Work / case:** Featured ShelterLink CTA stacks under the lede (type-led); case visual sits in a full-width surface band above page-bg reading column; case hero and sidebar drop redundant WhatsApp (closing keeps it); highlights use `mb-dash-list`.
 - **QA:** No overflow at 360/390; contact targets >= 44px. Shots in `docs/design-pro/mockb-pro/pass9-before/` and `pass9-after/`.
 
+## Pro pass 10 (20 Nov, refine / same PR #35)
+
+Work index hierarchy and quieter case nav hover. Copy, TODOs, and Grenadine hex values still untouched.
+
+- **Work index 02-05:** Type + case links sit above the preview; build notes and focus/stack share an asymmetric ruled row on wide cards (matches featured ShelterLink).
+- **Local time:** Status line uses `mb-meta` / type tokens instead of ad-hoc sizes.
+- **Case prev/next:** Hover changes project title colour only (group hover), captions stay quiet.
+- **QA:** No overflow at 360/390. Shots in `docs/design-pro/mockb-pro/pass10-before/` and `pass10-after/`.
+
 ## Open TODOs for Ryan
 
 - [ ] **Formspree:** Confirm `NEXT_PUBLIC_FORMSPREE_ID` is set in the `rdev-studio` Vercel project and submit one test quote on `/mock-b/contact` in the preview to verify inbox delivery.

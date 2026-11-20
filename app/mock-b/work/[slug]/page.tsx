@@ -473,32 +473,32 @@ export default async function MockBCaseStudyPage({
           >
             <Link
               href={`/mock-b/work/${previous.id}`}
-              className="flex min-h-[44px] flex-col justify-between py-6 transition-colors hover:text-[var(--mb-link)] sm:pr-8"
+              className="group flex min-h-[44px] flex-col justify-between py-6 sm:pr-8"
             >
               <span className="mb-kicker-muted inline-flex items-center gap-1.5">
                 <ArrowLeftIcon className="h-3.5 w-3.5 shrink-0" />
                 Previous project
               </span>
-              <span className="mb-h3 mt-2 text-[var(--mb-ink)]">
+              <span className="mb-h3 mt-2 text-[var(--mb-ink)] transition-colors group-hover:text-[var(--mb-link)]">
                 {previous.name}
               </span>
-              <span className="mb-caption mt-1 font-medium text-[var(--mb-muted)]">
+              <span className="mb-caption mt-1 font-medium">
                 {previous.type}
               </span>
             </Link>
 
             <Link
               href={`/mock-b/work/${next.id}`}
-              className="flex min-h-[44px] flex-col justify-between py-6 transition-colors hover:text-[var(--mb-link)] sm:items-end sm:pl-8 sm:text-right"
+              className="group flex min-h-[44px] flex-col justify-between py-6 sm:items-end sm:pl-8 sm:text-right"
             >
               <span className="mb-kicker-muted inline-flex items-center gap-1.5">
                 Next project
                 <ArrowRightIcon className="h-3.5 w-3.5 shrink-0" />
               </span>
-              <span className="mb-h3 mt-2 text-[var(--mb-ink)]">
+              <span className="mb-h3 mt-2 text-[var(--mb-ink)] transition-colors group-hover:text-[var(--mb-link)]">
                 {next.name}
               </span>
-              <span className="mb-caption mt-1 font-medium text-[var(--mb-muted)]">
+              <span className="mb-caption mt-1 font-medium">
                 {next.type}
               </span>
             </Link>

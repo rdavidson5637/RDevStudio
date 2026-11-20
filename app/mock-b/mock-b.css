@@ -673,7 +673,8 @@
   .mb-title-link,
   .mb-back-link,
   .mb-jump-link,
-  [data-mb-reveal] {
+  [data-mb-reveal],
+  .group .mb-h3 {
     transition: none !important;
   }
 

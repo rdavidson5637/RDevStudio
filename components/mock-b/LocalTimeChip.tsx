@@ -22,10 +22,10 @@ export function LocalTimeChip() {
   }, []);
 
   return (
-    <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm font-bold text-[var(--mb-muted)]">
-      <span className="inline-flex items-center gap-2 text-[var(--mb-ink)]">
+    <div className="mb-meta gap-x-4 gap-y-2 text-[length:var(--mb-text-sm)]">
+      <span className="inline-flex flex-wrap items-center gap-x-2 gap-y-1 font-bold text-[var(--mb-ink)]">
         <span>Carrickfergus, NI</span>
-        <span aria-hidden="true" className="text-[var(--mb-line-strong)]">
+        <span aria-hidden="true" className="mb-meta-sep">
           /
         </span>
         <span
