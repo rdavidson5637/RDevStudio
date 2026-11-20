@@ -194,7 +194,7 @@ export default function MockBWorkPage() {
             </div>
 
             <div className="flex flex-col gap-3 sm:flex-row lg:shrink-0">
-              <Link href="/mock-b#quote" className="mb-btn-primary">
+              <Link href="/mock-b/contact" className="mb-btn-primary">
                 Start a quote
                 <span aria-hidden="true">&rarr;</span>
               </Link>

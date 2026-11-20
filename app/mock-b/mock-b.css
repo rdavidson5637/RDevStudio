@@ -196,6 +196,16 @@
   animation: mb-dot-pulse 2.4s ease-in-out infinite;
 }
 
+@keyframes mb-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.mb-spinner {
+  animation: mb-spin 0.85s linear infinite;
+}
+
 /* Subtle paper-grid texture for hero coastline panel */
 .mb-paper-dots {
   background-image: radial-gradient(rgba(87, 77, 66, 0.14) 1px, transparent 1px);
@@ -210,7 +220,8 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .mb-pulse-ring {
+  .mb-pulse-ring,
+  .mb-spinner {
     animation: none;
   }
 

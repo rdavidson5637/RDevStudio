@@ -76,16 +76,10 @@ export default function MockBLayout({
 
           <nav aria-label="Studio navigation" className="hidden items-center gap-1 md:flex">
             <Link
-              href="/mock-b#work"
-              className="inline-flex min-h-[44px] items-center rounded-full px-3.5 text-sm font-semibold text-[var(--mb-ink-soft)] transition-colors hover:bg-[var(--mb-cream-deep)] hover:text-[var(--mb-ink)]"
-            >
-              Work
-            </Link>
-            <Link
               href="/mock-b/work"
               className="inline-flex min-h-[44px] items-center rounded-full px-3.5 text-sm font-semibold text-[var(--mb-ink-soft)] transition-colors hover:bg-[var(--mb-cream-deep)] hover:text-[var(--mb-ink)]"
             >
-              Showcase
+              Work
             </Link>
             <Link
               href="/mock-b#services"
@@ -98,6 +92,12 @@ export default function MockBLayout({
               className="inline-flex min-h-[44px] items-center rounded-full px-3.5 text-sm font-semibold text-[var(--mb-ink-soft)] transition-colors hover:bg-[var(--mb-cream-deep)] hover:text-[var(--mb-ink)]"
             >
               Studio
+            </Link>
+            <Link
+              href="/mock-b/contact"
+              className="inline-flex min-h-[44px] items-center rounded-full px-3.5 text-sm font-semibold text-[var(--mb-ink-soft)] transition-colors hover:bg-[var(--mb-cream-deep)] hover:text-[var(--mb-ink)]"
+            >
+              Contact
             </Link>
           </nav>
 
@@ -113,7 +113,7 @@ export default function MockBLayout({
               <span className="hidden sm:inline">WhatsApp</span>
             </a>
             <Link
-              href="/mock-b#quote"
+              href="/mock-b/contact"
               className="inline-flex min-h-[44px] items-center justify-center whitespace-nowrap rounded-full bg-[var(--mb-terracotta)] px-3.5 text-xs font-semibold text-[var(--mb-paper)] transition-colors hover:bg-[var(--mb-terracotta-hover)] sm:px-4 sm:text-sm"
             >
               Get a quote
@@ -127,16 +127,10 @@ export default function MockBLayout({
           className="flex items-center justify-center gap-1 border-t border-[var(--mb-line)] bg-[var(--mb-paper)]/85 px-3 py-1 md:hidden"
         >
           <Link
-            href="/mock-b#work"
-            className="inline-flex min-h-[44px] items-center rounded-full px-3 text-xs font-semibold text-[var(--mb-ink-soft)] hover:text-[var(--mb-ink)]"
-          >
-            Work
-          </Link>
-          <Link
             href="/mock-b/work"
             className="inline-flex min-h-[44px] items-center rounded-full px-3 text-xs font-semibold text-[var(--mb-ink-soft)] hover:text-[var(--mb-ink)]"
           >
-            Showcase
+            Work
           </Link>
           <Link
             href="/mock-b#services"
@@ -149,6 +143,12 @@ export default function MockBLayout({
             className="inline-flex min-h-[44px] items-center rounded-full px-3 text-xs font-semibold text-[var(--mb-ink-soft)] hover:text-[var(--mb-ink)]"
           >
             Studio
+          </Link>
+          <Link
+            href="/mock-b/contact"
+            className="inline-flex min-h-[44px] items-center rounded-full px-3 text-xs font-semibold text-[var(--mb-ink-soft)] hover:text-[var(--mb-ink)]"
+          >
+            Contact
           </Link>
         </nav>
       </header>
@@ -168,10 +168,10 @@ export default function MockBLayout({
 
           <div className="flex shrink-0 flex-wrap items-center gap-x-1 gap-y-1 text-sm font-semibold md:justify-end">
             <Link
-              href="/mock-b#quote"
+              href="/mock-b/contact"
               className="inline-flex min-h-[44px] items-center rounded-full px-3 text-[var(--mb-ink)] underline decoration-[var(--mb-line-strong)] underline-offset-4 hover:text-[var(--mb-terracotta)]"
             >
-              Quote form
+              Contact &amp; quote
             </Link>
             <a
               href={STUDIO_WHATSAPP_URL}

@@ -1,12 +1,13 @@
 "use client";
 
-import { useState, type FormEvent } from "react";
+import { useEffect, useRef, useState, type FormEvent } from "react";
 import Link from "next/link";
 import { CONTACT_EMAIL, FORMSPREE_FORM_ID } from "@/lib/constants";
 import { SITE_URL } from "@/lib/site";
 import { reportFormError } from "@/components/contact/report-form-error";
 import { useFormFailureReport } from "@/components/contact/useFormFailureReport";
 import { QUOTE_TOPICS, STUDIO_WHATSAPP_URL } from "@/components/mock-b/data";
+import { WhatsAppIcon } from "@/components/mock-b/CoastalDoodles";
 
 // TODO: Confirm NEXT_PUBLIC_FORMSPREE_ID is set in Vercel before using this form in production.
 
@@ -14,30 +15,106 @@ function isValidEmail(value: string) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
 }
 
-type FieldErrors = {
-  name?: string;
-  email?: string;
-  enquiryType?: string;
-  message?: string;
+type FieldName = "name" | "email" | "enquiryType" | "message";
+
+type FieldErrors = Partial<Record<FieldName, string>>;
+
+function validateSingleField(field: FieldName, value: string): string | undefined {
+  const trimmed = value.trim();
+  if (field === "name") {
+    return trimmed ? undefined : "Please add your name.";
+  }
+  if (field === "email") {
+    if (!trimmed) return "Please add your email address.";
+    return isValidEmail(trimmed) ? undefined : "That email address does not look right.";
+  }
+  if (field === "enquiryType") {
+    return value ? undefined : "Pick what we can help with.";
+  }
+  if (field === "message") {
+    return trimmed ? undefined : "Tell us a little about your project.";
+  }
+  return undefined;
+}
+
+type WarmQuoteFormProps = {
+  idPrefix?: string;
+  initialTopic?: string;
 };
 
-function WarmQuoteFormFields({ onReset }: { onReset: () => void }) {
+function WarmQuoteFormFields({
+  idPrefix = "mb",
+  initialTopic = "",
+  onReset,
+}: {
+  idPrefix: string;
+  initialTopic: string;
+  onReset: () => void;
+}) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [enquiryType, setEnquiryType] = useState("");
+  const [enquiryType, setEnquiryType] = useState(() =>
+    QUOTE_TOPICS.includes(initialTopic as (typeof QUOTE_TOPICS)[number]) ? initialTopic : "",
+  );
   const [message, setMessage] = useState("");
+  const [touched, setTouched] = useState<Partial<Record<FieldName, boolean>>>({});
   const [errors, setErrors] = useState<FieldErrors>({});
+  const [validationNotice, setValidationNotice] = useState("");
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
+
+  const nameRef = useRef<HTMLInputElement>(null);
+  const emailRef = useRef<HTMLInputElement>(null);
+  const enquiryTypeRef = useRef<HTMLSelectElement>(null);
+  const messageRef = useRef<HTMLTextAreaElement>(null);
+  const successRef = useRef<HTMLDivElement>(null);
 
   useFormFailureReport("contact", null);
 
-  function validate(): FieldErrors {
+  // Support optional ?topic=... pre-selection from /mock-b/services links while keeping routes static.
+  useEffect(() => {
+    if (initialTopic) return;
+    const params = new URLSearchParams(window.location.search);
+    const topicParam = params.get("topic");
+    if (topicParam && QUOTE_TOPICS.includes(topicParam as (typeof QUOTE_TOPICS)[number])) {
+      setEnquiryType(topicParam);
+    }
+  }, [initialTopic]);
+
+  useEffect(() => {
+    if (status === "success") {
+      successRef.current?.focus();
+    }
+  }, [status]);
+
+  function validateAll(): FieldErrors {
     const next: FieldErrors = {};
-    if (!name.trim()) next.name = "Please add your name.";
-    if (!isValidEmail(email.trim())) next.email = "That email address does not look right.";
-    if (!enquiryType) next.enquiryType = "Pick what we can help with.";
-    if (!message.trim()) next.message = "Tell us a little about your project.";
+    const nameErr = validateSingleField("name", name);
+    const emailErr = validateSingleField("email", email);
+    const topicErr = validateSingleField("enquiryType", enquiryType);
+    const msgErr = validateSingleField("message", message);
+    if (nameErr) next.name = nameErr;
+    if (emailErr) next.email = emailErr;
+    if (topicErr) next.enquiryType = topicErr;
+    if (msgErr) next.message = msgErr;
     return next;
+  }
+
+  function handleBlur(field: FieldName, value: string) {
+    setTouched((prev) => ({ ...prev, [field]: true }));
+    const err = validateSingleField(field, value);
+    setErrors((prev) => ({ ...prev, [field]: err }));
+  }
+
+  function focusFirstInvalid(nextErrors: FieldErrors) {
+    if (nextErrors.name) {
+      nameRef.current?.focus();
+    } else if (nextErrors.email) {
+      emailRef.current?.focus();
+    } else if (nextErrors.enquiryType) {
+      enquiryTypeRef.current?.focus();
+    } else if (nextErrors.message) {
+      messageRef.current?.focus();
+    }
   }
 
   async function onSubmit(event: FormEvent<HTMLFormElement>) {
@@ -48,12 +125,23 @@ function WarmQuoteFormFields({ onReset }: { onReset: () => void }) {
       return;
     }
 
-    const nextErrors = validate();
+    const nextErrors = validateAll();
+    setTouched({ name: true, email: true, enquiryType: true, message: true });
     setErrors(nextErrors);
-    if (Object.keys(nextErrors).length > 0) {
+
+    const errorCount = Object.keys(nextErrors).length;
+    if (errorCount > 0) {
       setStatus("idle");
+      setValidationNotice(
+        errorCount === 1
+          ? "Please check the highlighted field below before sending."
+          : `Please check the ${errorCount} highlighted fields below before sending.`,
+      );
+      focusFirstInvalid(nextErrors);
       return;
     }
+
+    setValidationNotice("");
 
     if (!FORMSPREE_FORM_ID) {
       setStatus("error");
@@ -95,119 +183,206 @@ function WarmQuoteFormFields({ onReset }: { onReset: () => void }) {
   if (status === "success") {
     return (
       <div
-        className="rounded-3xl border-2 border-[var(--mb-seaglass)] bg-[var(--mb-seaglass-soft)] p-6 text-left sm:p-8"
+        ref={successRef}
+        tabIndex={-1}
+        className="rounded-3xl border-2 border-[var(--mb-seaglass)] bg-[var(--mb-seaglass-soft)] p-6 text-left outline-none sm:p-8"
         role="status"
         aria-live="polite"
       >
-        <p className="mb-display text-2xl font-semibold text-[var(--mb-ink)]">
+        <p className="mb-sticker bg-[var(--mb-paper)] text-[var(--mb-seaglass-ink)] border-[var(--mb-seaglass)]/35">
+          Enquiry sent
+        </p>
+        <p className="mb-display mt-3 text-2xl font-semibold text-[var(--mb-ink)] sm:text-3xl">
           Thanks, we have your note.
         </p>
         <p className="mt-3 text-base leading-relaxed text-[var(--mb-ink-soft)]">
-          RDev Studio will reply by email with next steps and a clear quote. Want a faster back-and-forth?{" "}
+          RDev Studio will reply by email with clear next steps and a tailored quote. Want a quicker back-and-forth?
+        </p>
+        <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
           <a
             href={STUDIO_WHATSAPP_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="font-semibold text-[var(--mb-seaglass-ink)] underline underline-offset-4 hover:text-[var(--mb-ink)]"
+            className="mb-btn-whatsapp w-full sm:w-auto"
           >
-            Message us on WhatsApp
+            <WhatsAppIcon className="h-5 w-5 shrink-0" />
+            Message on WhatsApp
           </a>
-          .
-        </p>
-        <button
-          type="button"
-          onClick={onReset}
-          className="mb-btn-soft mt-6"
-        >
-          Send another enquiry
-        </button>
+          <button
+            type="button"
+            onClick={onReset}
+            className="mb-btn-soft w-full sm:w-auto"
+          >
+            Send another enquiry
+          </button>
+        </div>
       </div>
     );
   }
 
   const inputBase =
-    "mt-2 block w-full min-h-[46px] rounded-2xl border-[1.5px] border-[var(--mb-line-strong)] bg-[var(--mb-cream)] px-4 py-3 text-base text-[var(--mb-ink)] placeholder:text-[var(--mb-ink-faint)] transition-colors focus:border-[var(--mb-terracotta)] focus:bg-[var(--mb-paper)] focus:outline-none";
+    "mt-2 block w-full min-h-[46px] rounded-2xl border-[1.5px] bg-[var(--mb-cream)] px-4 py-3 text-base text-[var(--mb-ink)] placeholder:text-[var(--mb-ink-faint)] transition-colors focus:bg-[var(--mb-paper)] focus:outline-none disabled:cursor-not-allowed disabled:opacity-65";
+  const inputNormal =
+    "border-[var(--mb-line-strong)] focus:border-[var(--mb-terracotta)]";
+  const inputInvalid =
+    "border-[var(--mb-terracotta)] bg-[var(--mb-terracotta-soft)]/35 focus:border-[var(--mb-terracotta-hover)]";
+
+  const isSending = status === "sending";
+  const nameId = `${idPrefix}-name`;
+  const emailId = `${idPrefix}-email`;
+  const topicId = `${idPrefix}-enquiryType`;
+  const messageId = `${idPrefix}-message`;
+  const messageHintId = `${idPrefix}-message-hint`;
 
   return (
-    <form onSubmit={onSubmit} className="space-y-5" noValidate>
+    <form
+      onSubmit={onSubmit}
+      className="space-y-5"
+      noValidate
+      aria-busy={isSending || undefined}
+    >
       {/* Honeypot field */}
       <div className="absolute left-[-9999px] h-px w-px overflow-hidden" aria-hidden="true">
-        <label htmlFor="mb-_gotcha">Leave this blank</label>
-        <input id="mb-_gotcha" name="_gotcha" type="text" tabIndex={-1} autoComplete="off" />
+        <label htmlFor={`${idPrefix}-_gotcha`}>Leave this blank</label>
+        <input
+          id={`${idPrefix}-_gotcha`}
+          name="_gotcha"
+          type="text"
+          tabIndex={-1}
+          autoComplete="off"
+        />
       </div>
+
+      {/* Live validation summary when submit catches missing/invalid fields */}
+      {validationNotice ? (
+        <div
+          role="alert"
+          aria-live="polite"
+          className="rounded-2xl border border-[var(--mb-terracotta)]/45 bg-[var(--mb-terracotta-soft)] px-4 py-3 text-sm font-semibold text-[var(--mb-terracotta-ink)]"
+        >
+          {validationNotice}
+        </div>
+      ) : null}
 
       <div className="grid gap-5 sm:grid-cols-2">
         <div>
-          <label htmlFor="mb-name" className="block text-sm font-semibold text-[var(--mb-ink)]">
+          <label htmlFor={nameId} className="block text-sm font-semibold text-[var(--mb-ink)]">
             Your name
           </label>
           <input
+            ref={nameRef}
             type="text"
-            id="mb-name"
+            id={nameId}
             name="name"
             required
+            disabled={isSending}
             autoComplete="name"
             placeholder="Alex from Harbour Coffee"
             value={name}
             aria-invalid={errors.name ? true : undefined}
-            aria-describedby={errors.name ? "mb-name-error" : undefined}
+            aria-describedby={errors.name ? `${nameId}-error` : undefined}
+            onBlur={() => handleBlur("name", name)}
             onChange={(event) => {
-              setName(event.target.value);
-              if (errors.name) setErrors((prev) => ({ ...prev, name: undefined }));
+              const nextValue = event.target.value;
+              setName(nextValue);
+              if (touched.name || errors.name) {
+                setErrors((prev) => ({
+                  ...prev,
+                  name: validateSingleField("name", nextValue),
+                }));
+              }
             }}
-            className={inputBase}
+            className={`${inputBase} ${errors.name ? inputInvalid : inputNormal}`}
           />
           {errors.name ? (
-            <p id="mb-name-error" className="mt-1.5 text-sm font-semibold text-[var(--mb-terracotta-ink)]" aria-live="polite">
-              {errors.name}
+            <p
+              id={`${nameId}-error`}
+              className="mt-1.5 flex items-center gap-1.5 text-sm font-semibold text-[var(--mb-terracotta-ink)]"
+              aria-live="polite"
+            >
+              <span
+                aria-hidden="true"
+                className="inline-flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-[var(--mb-terracotta)] text-[11px] font-bold text-[var(--mb-paper)]"
+              >
+                !
+              </span>
+              <span>{errors.name}</span>
             </p>
           ) : null}
         </div>
 
         <div>
-          <label htmlFor="mb-email" className="block text-sm font-semibold text-[var(--mb-ink)]">
+          <label htmlFor={emailId} className="block text-sm font-semibold text-[var(--mb-ink)]">
             Email address
           </label>
           <input
+            ref={emailRef}
             type="email"
-            id="mb-email"
+            id={emailId}
             name="email"
             required
+            disabled={isSending}
             autoComplete="email"
             placeholder="you@example.co.uk"
             value={email}
             aria-invalid={errors.email ? true : undefined}
-            aria-describedby={errors.email ? "mb-email-error" : undefined}
+            aria-describedby={errors.email ? `${emailId}-error` : undefined}
+            onBlur={() => handleBlur("email", email)}
             onChange={(event) => {
-              setEmail(event.target.value);
-              if (errors.email) setErrors((prev) => ({ ...prev, email: undefined }));
+              const nextValue = event.target.value;
+              setEmail(nextValue);
+              if (touched.email || errors.email) {
+                setErrors((prev) => ({
+                  ...prev,
+                  email: validateSingleField("email", nextValue),
+                }));
+              }
             }}
-            className={inputBase}
+            className={`${inputBase} ${errors.email ? inputInvalid : inputNormal}`}
           />
           {errors.email ? (
-            <p id="mb-email-error" className="mt-1.5 text-sm font-semibold text-[var(--mb-terracotta-ink)]" aria-live="polite">
-              {errors.email}
+            <p
+              id={`${emailId}-error`}
+              className="mt-1.5 flex items-center gap-1.5 text-sm font-semibold text-[var(--mb-terracotta-ink)]"
+              aria-live="polite"
+            >
+              <span
+                aria-hidden="true"
+                className="inline-flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-[var(--mb-terracotta)] text-[11px] font-bold text-[var(--mb-paper)]"
+              >
+                !
+              </span>
+              <span>{errors.email}</span>
             </p>
           ) : null}
         </div>
       </div>
 
       <div>
-        <label htmlFor="mb-enquiryType" className="block text-sm font-semibold text-[var(--mb-ink)]">
+        <label htmlFor={topicId} className="block text-sm font-semibold text-[var(--mb-ink)]">
           What are we building together?
         </label>
         <select
-          id="mb-enquiryType"
+          ref={enquiryTypeRef}
+          id={topicId}
           name="enquiryType"
           required
+          disabled={isSending}
           value={enquiryType}
           aria-invalid={errors.enquiryType ? true : undefined}
-          aria-describedby={errors.enquiryType ? "mb-enquiryType-error" : undefined}
+          aria-describedby={errors.enquiryType ? `${topicId}-error` : undefined}
+          onBlur={() => handleBlur("enquiryType", enquiryType)}
           onChange={(event) => {
-            setEnquiryType(event.target.value);
-            if (errors.enquiryType) setErrors((prev) => ({ ...prev, enquiryType: undefined }));
+            const nextValue = event.target.value;
+            setEnquiryType(nextValue);
+            if (touched.enquiryType || errors.enquiryType) {
+              setErrors((prev) => ({
+                ...prev,
+                enquiryType: validateSingleField("enquiryType", nextValue),
+              }));
+            }
           }}
-          className={inputBase}
+          className={`${inputBase} ${errors.enquiryType ? inputInvalid : inputNormal}`}
         >
           <option value="" disabled>
             Choose a project type
@@ -219,34 +394,68 @@ function WarmQuoteFormFields({ onReset }: { onReset: () => void }) {
           ))}
         </select>
         {errors.enquiryType ? (
-          <p id="mb-enquiryType-error" className="mt-1.5 text-sm font-semibold text-[var(--mb-terracotta-ink)]" aria-live="polite">
-            {errors.enquiryType}
+          <p
+            id={`${topicId}-error`}
+            className="mt-1.5 flex items-center gap-1.5 text-sm font-semibold text-[var(--mb-terracotta-ink)]"
+            aria-live="polite"
+          >
+            <span
+              aria-hidden="true"
+              className="inline-flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-[var(--mb-terracotta)] text-[11px] font-bold text-[var(--mb-paper)]"
+            >
+              !
+            </span>
+            <span>{errors.enquiryType}</span>
           </p>
         ) : null}
       </div>
 
       <div>
-        <label htmlFor="mb-message" className="block text-sm font-semibold text-[var(--mb-ink)]">
+        <label htmlFor={messageId} className="block text-sm font-semibold text-[var(--mb-ink)]">
           Tell us about it
         </label>
+        <p id={messageHintId} className="mt-1 text-xs leading-relaxed text-[var(--mb-ink-soft)]">
+          A few plain-English lines is plenty: what you do, what you need, and whether you are a registered charity.
+        </p>
         <textarea
-          id="mb-message"
+          ref={messageRef}
+          id={messageId}
           name="message"
           required
+          disabled={isSending}
           rows={4}
           placeholder="What does your business or charity do, what do you need, and are you working to a date?"
           value={message}
           aria-invalid={errors.message ? true : undefined}
-          aria-describedby={errors.message ? "mb-message-error" : undefined}
+          aria-describedby={
+            errors.message ? `${messageHintId} ${messageId}-error` : messageHintId
+          }
+          onBlur={() => handleBlur("message", message)}
           onChange={(event) => {
-            setMessage(event.target.value);
-            if (errors.message) setErrors((prev) => ({ ...prev, message: undefined }));
+            const nextValue = event.target.value;
+            setMessage(nextValue);
+            if (touched.message || errors.message) {
+              setErrors((prev) => ({
+                ...prev,
+                message: validateSingleField("message", nextValue),
+              }));
+            }
           }}
-          className={`${inputBase} resize-y`}
+          className={`${inputBase} resize-y ${errors.message ? inputInvalid : inputNormal}`}
         />
         {errors.message ? (
-          <p id="mb-message-error" className="mt-1.5 text-sm font-semibold text-[var(--mb-terracotta-ink)]" aria-live="polite">
-            {errors.message}
+          <p
+            id={`${messageId}-error`}
+            className="mt-1.5 flex items-center gap-1.5 text-sm font-semibold text-[var(--mb-terracotta-ink)]"
+            aria-live="polite"
+          >
+            <span
+              aria-hidden="true"
+              className="inline-flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-[var(--mb-terracotta)] text-[11px] font-bold text-[var(--mb-paper)]"
+            >
+              !
+            </span>
+            <span>{errors.message}</span>
           </p>
         ) : null}
       </div>
@@ -255,39 +464,52 @@ function WarmQuoteFormFields({ onReset }: { onReset: () => void }) {
         <div
           role="alert"
           aria-live="polite"
-          className="rounded-2xl border border-[var(--mb-terracotta)]/40 bg-[var(--mb-terracotta-soft)] p-4 text-sm font-medium leading-relaxed text-[var(--mb-terracotta-ink)]"
+          className="rounded-2xl border-2 border-[var(--mb-terracotta)]/50 bg-[var(--mb-terracotta-soft)] p-4 text-sm leading-relaxed text-[var(--mb-terracotta-ink)]"
         >
-          That form could not send right now. Email{" "}
-          <a
-            href={`mailto:${CONTACT_EMAIL}`}
-            className="font-bold underline underline-offset-2"
-          >
-            {CONTACT_EMAIL}
-          </a>{" "}
-          or{" "}
-          <a
-            href={STUDIO_WHATSAPP_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="font-bold underline underline-offset-2"
-          >
-            message RDev Studio on WhatsApp
-          </a>
-          .
+          <p className="font-bold">The form could not send right now.</p>
+          <p className="mt-1 font-medium">
+            No need to start over — reach RDev Studio directly by email at{" "}
+            <a
+              href={`mailto:${CONTACT_EMAIL}`}
+              className="font-bold underline underline-offset-2"
+            >
+              {CONTACT_EMAIL}
+            </a>{" "}
+            or{" "}
+            <a
+              href={STUDIO_WHATSAPP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-bold underline underline-offset-2"
+            >
+              message us on WhatsApp
+            </a>
+            .
+          </p>
         </div>
       ) : null}
 
       <p className="sr-only" aria-live="polite">
-        {status === "sending" ? "Sending your enquiry..." : ""}
+        {isSending ? "Sending your quote request..." : ""}
       </p>
 
       <div className="flex flex-wrap items-center gap-4 pt-1">
         <button
           type="submit"
-          disabled={status === "sending"}
+          disabled={isSending}
           className="mb-btn-primary w-full sm:w-auto disabled:cursor-not-allowed disabled:opacity-65"
         >
-          {status === "sending" ? "Sending..." : "Send quote request"}
+          {isSending ? (
+            <>
+              <span
+                aria-hidden="true"
+                className="mb-spinner h-4 w-4 rounded-full border-2 border-[var(--mb-paper)]/40 border-t-[var(--mb-paper)]"
+              />
+              Sending...
+            </>
+          ) : (
+            "Send quote request"
+          )}
         </button>
 
         <Link
@@ -301,7 +523,14 @@ function WarmQuoteFormFields({ onReset }: { onReset: () => void }) {
   );
 }
 
-export function WarmQuoteForm() {
+export function WarmQuoteForm({ idPrefix = "mb", initialTopic = "" }: WarmQuoteFormProps) {
   const [formKey, setFormKey] = useState(0);
-  return <WarmQuoteFormFields key={formKey} onReset={() => setFormKey((k) => k + 1)} />;
+  return (
+    <WarmQuoteFormFields
+      key={formKey}
+      idPrefix={idPrefix}
+      initialTopic={initialTopic}
+      onReset={() => setFormKey((k) => k + 1)}
+    />
+  );
 }
