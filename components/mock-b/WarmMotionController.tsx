@@ -5,8 +5,9 @@ import { usePathname } from "next/navigation";
 
 /**
  * Lightweight coastal motion & reveal controller for Mock B (/mock-b/**).
- * - Single IntersectionObserver across [data-mb-reveal] and [data-mb-wave] elements.
+ * - Single IntersectionObserver + scroll-sweep across [data-mb-reveal] and [data-mb-wave] elements.
  * - Only animates elements below the initial viewport fold so LCP stays instant.
+ * - Immediately reveals anything scrolled past (e.g. anchor jumps like #quote or #rondo).
  * - Re-initialises cleanly on client-side route transitions via usePathname().
  * - Drives a subtle 3px coastal tide progress line along the sticky header.
  * - Completely disabled under prefers-reduced-motion: reduce.
@@ -19,15 +20,19 @@ export function WarmMotionController() {
     const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
     const bar = barRef.current;
 
-    const resetAllVisible = () => {
-      document.querySelectorAll<HTMLElement>("[data-mb-reveal]").forEach((el) => {
+    const revealElement = (el: HTMLElement) => {
+      if (el.hasAttribute("data-mb-reveal")) {
         el.classList.remove("mb-reveal-pending");
         el.classList.add("mb-reveal-in");
-      });
-      document.querySelectorAll<HTMLElement>("[data-mb-wave]").forEach((el) => {
+      }
+      if (el.hasAttribute("data-mb-wave")) {
         el.classList.remove("mb-wave-pending");
         el.classList.add("mb-wave-in");
-      });
+      }
+    };
+
+    const resetAllVisible = () => {
+      document.querySelectorAll<HTMLElement>("[data-mb-reveal], [data-mb-wave]").forEach(revealElement);
       if (bar) {
         bar.style.transform = "scaleX(0)";
       }
@@ -38,92 +43,94 @@ export function WarmMotionController() {
       return;
     }
 
-    // 1. Subtle coastal tide reading-progress ribbon
-    let rafId = 0;
-    const updateProgress = () => {
-      rafId = 0;
-      if (!bar) return;
-      const doc = document.documentElement;
-      const scrollable = doc.scrollHeight - window.innerHeight;
-      const ratio = scrollable > 24 ? Math.min(1, Math.max(0, window.scrollY / scrollable)) : 0;
-      bar.style.transform = `scaleX(${ratio.toFixed(4)})`;
-    };
-
-    const scheduleProgress = () => {
-      if (rafId) return;
-      rafId = window.requestAnimationFrame(updateProgress);
-    };
-
-    updateProgress();
-    window.addEventListener("scroll", scheduleProgress, { passive: true });
-    window.addEventListener("resize", scheduleProgress, { passive: true });
-
-    // 2. Single IntersectionObserver for below-the-fold reveals & hand-drawn waves
-    const revealEls = Array.from(document.querySelectorAll<HTMLElement>("[data-mb-reveal]"));
-    const waveEls = Array.from(document.querySelectorAll<HTMLElement>("[data-mb-wave]"));
+    // Collect targets and mark only below-the-fold items as pending
+    const targets = Array.from(
+      document.querySelectorAll<HTMLElement>("[data-mb-reveal], [data-mb-wave]"),
+    );
+    const pendingSet = new Set<HTMLElement>();
     const foldY = window.innerHeight * 0.94;
 
-    const pendingTargets: HTMLElement[] = [];
-
-    for (const el of revealEls) {
+    for (const el of targets) {
       const rect = el.getBoundingClientRect();
       if (rect.top > foldY) {
-        el.classList.remove("mb-reveal-in");
-        el.classList.add("mb-reveal-pending");
-        pendingTargets.push(el);
+        if (el.hasAttribute("data-mb-reveal")) {
+          el.classList.remove("mb-reveal-in");
+          el.classList.add("mb-reveal-pending");
+        }
+        if (el.hasAttribute("data-mb-wave")) {
+          el.classList.remove("mb-wave-in");
+          el.classList.add("mb-wave-pending");
+        }
+        pendingSet.add(el);
       } else {
-        el.classList.remove("mb-reveal-pending");
-        el.classList.add("mb-reveal-in");
-      }
-    }
-
-    for (const el of waveEls) {
-      const rect = el.getBoundingClientRect();
-      if (rect.top > foldY) {
-        el.classList.remove("mb-wave-in");
-        el.classList.add("mb-wave-pending");
-        pendingTargets.push(el);
-      } else {
-        el.classList.remove("mb-wave-pending");
-        el.classList.add("mb-wave-in");
+        revealElement(el);
       }
     }
 
     let observer: IntersectionObserver | null = null;
 
-    if ("IntersectionObserver" in window && pendingTargets.length > 0) {
+    const markRevealed = (el: HTMLElement) => {
+      revealElement(el);
+      pendingSet.delete(el);
+      observer?.unobserve(el);
+    };
+
+    const sweepVisibleAndPassed = () => {
+      if (pendingSet.size === 0) return;
+      const thresholdY = window.innerHeight * 0.96;
+      pendingSet.forEach((el) => {
+        if (el.getBoundingClientRect().top <= thresholdY) {
+          markRevealed(el);
+        }
+      });
+    };
+
+    if ("IntersectionObserver" in window && pendingSet.size > 0) {
       observer = new IntersectionObserver(
         (entries) => {
           for (const entry of entries) {
             if (!entry.isIntersecting) continue;
-            const target = entry.target as HTMLElement;
-            if (target.hasAttribute("data-mb-reveal")) {
-              target.classList.remove("mb-reveal-pending");
-              target.classList.add("mb-reveal-in");
-            }
-            if (target.hasAttribute("data-mb-wave")) {
-              target.classList.remove("mb-wave-pending");
-              target.classList.add("mb-wave-in");
-            }
-            observer?.unobserve(target);
+            markRevealed(entry.target as HTMLElement);
           }
         },
         {
-          threshold: 0.08,
-          rootMargin: "0px 0px -32px 0px",
+          threshold: 0.05,
+          rootMargin: "0px 0px -24px 0px",
         },
       );
 
-      for (const el of pendingTargets) {
-        observer.observe(el);
-      }
+      pendingSet.forEach((el) => observer?.observe(el));
     } else {
       resetAllVisible();
     }
 
+    // Coastal tide reading-progress ribbon + scroll sweep for fast scrolls / hash jumps
+    let rafId = 0;
+    const updateOnScroll = () => {
+      rafId = 0;
+      if (bar) {
+        const doc = document.documentElement;
+        const scrollable = doc.scrollHeight - window.innerHeight;
+        const ratio = scrollable > 24 ? Math.min(1, Math.max(0, window.scrollY / scrollable)) : 0;
+        bar.style.transform = `scaleX(${ratio.toFixed(4)})`;
+      }
+      sweepVisibleAndPassed();
+    };
+
+    const scheduleUpdate = () => {
+      if (rafId) return;
+      rafId = window.requestAnimationFrame(updateOnScroll);
+    };
+
+    updateOnScroll();
+    window.addEventListener("scroll", scheduleUpdate, { passive: true });
+    window.addEventListener("resize", scheduleUpdate, { passive: true });
+    window.addEventListener("hashchange", scheduleUpdate, { passive: true });
+
     const handleMotionChange = (event: MediaQueryListEvent) => {
       if (event.matches) {
         observer?.disconnect();
+        pendingSet.clear();
         resetAllVisible();
       }
     };
@@ -132,8 +139,9 @@ export function WarmMotionController() {
 
     return () => {
       if (rafId) window.cancelAnimationFrame(rafId);
-      window.removeEventListener("scroll", scheduleProgress);
-      window.removeEventListener("resize", scheduleProgress);
+      window.removeEventListener("scroll", scheduleUpdate);
+      window.removeEventListener("resize", scheduleUpdate);
+      window.removeEventListener("hashchange", scheduleUpdate);
       mediaQuery.removeEventListener("change", handleMotionChange);
       observer?.disconnect();
     };
