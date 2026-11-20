@@ -185,7 +185,7 @@ function WarmQuoteFormFields({
       <div
         ref={successRef}
         tabIndex={-1}
-        className="rounded-[var(--mb-radius)] border border-[var(--mb-border-accent)] bg-[var(--mb-accent-subtle)] p-6 text-left outline-none sm:p-7"
+        className="border-l-2 border-[var(--mb-accent)] bg-[var(--mb-accent-subtle)] p-6 text-left outline-none sm:p-7"
         role="status"
         aria-live="polite"
       >
@@ -209,7 +209,7 @@ function WarmQuoteFormFields({
           <button
             type="button"
             onClick={onReset}
-            className="mb-btn-secondary w-full sm:w-auto"
+            className="mb-text-link"
           >
             Send another enquiry
           </button>

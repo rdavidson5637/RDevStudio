@@ -330,6 +330,18 @@
   color: var(--mb-ochre-ink);
 }
 
+/* Form / quote surface: flat panel, no card border */
+.mb-panel {
+  background-color: var(--mb-surface);
+  padding: 1.25rem;
+}
+
+@media (min-width: 640px) {
+  .mb-panel {
+    padding: 2rem;
+  }
+}
+
 .mb-frame {
   overflow: hidden;
   border: 1px solid var(--mb-line-strong);

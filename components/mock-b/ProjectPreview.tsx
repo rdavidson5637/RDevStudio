@@ -74,18 +74,18 @@ export function ProjectPreview({
               <p className="mb-display text-sm leading-snug text-[var(--mb-ink)] sm:text-base">
                 Website &amp; brand rebuild
               </p>
-              <p className="text-[11px] leading-relaxed text-[var(--mb-muted)]">
+              <p className="mb-caption leading-relaxed">
                 Clear pathways for adopters, donors, and supporters on mobile and desktop.
               </p>
             </div>
-            <ul className="divide-y divide-[var(--mb-line)] border-y border-[var(--mb-line)] text-[11px] font-medium text-[var(--mb-ink)]">
+            <ul className="mb-caption divide-y divide-[var(--mb-line)] border-y border-[var(--mb-line)] font-medium text-[var(--mb-ink)]">
               <li className="py-2">Adopt</li>
               <li className="py-2">Donate</li>
               <li className="py-2">Volunteer</li>
             </ul>
           </div>
 
-          <div className="flex flex-wrap items-center justify-between gap-1 border-t border-[var(--mb-line)] pt-3 text-[10px] font-medium text-[var(--mb-muted)]">
+          <div className="mb-caption flex flex-wrap items-center justify-between gap-1 border-t border-[var(--mb-line)] pt-3 font-medium">
             <span>Public screens publish after sanctuary approval</span>
             <span className="font-semibold text-[var(--mb-link)]">Charity build</span>
           </div>
@@ -115,7 +115,7 @@ export function ProjectPreview({
             </div>
           </div>
 
-          <div className="flex items-center justify-between border-t border-[var(--mb-line)] pt-3 text-[10px] font-medium text-[var(--mb-muted)]">
+          <div className="mb-caption flex items-center justify-between border-t border-[var(--mb-line)] pt-3 font-medium">
             <span>Phone-first layout</span>
             <span className="font-semibold text-[var(--mb-link)]">Live on Vercel</span>
           </div>
@@ -146,7 +146,7 @@ export function ProjectPreview({
             </div>
           </div>
 
-          <div className="flex items-center justify-between border-t border-[var(--mb-line)] pt-3 text-[10px] font-medium text-[var(--mb-muted)]">
+          <div className="mb-caption flex items-center justify-between border-t border-[var(--mb-line)] pt-3 font-medium">
             <span>RDev Studio application build</span>
             <span className="font-semibold text-[var(--mb-ink)]">Link pending</span>
           </div>
@@ -182,7 +182,7 @@ export function ProjectPreview({
           </div>
         </div>
 
-        <div className="flex items-center justify-between border-t border-[var(--mb-line)] pt-3 text-[10px] font-medium text-[var(--mb-muted)]">
+        <div className="mb-caption flex items-center justify-between border-t border-[var(--mb-line)] pt-3 font-medium">
           <span>Custom web hub UI</span>
           <span className="font-semibold text-[var(--mb-link)]">Live on Vercel</span>
         </div>

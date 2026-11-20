@@ -71,13 +71,13 @@ export default function MockBLayout({
 
           <MockBDesktopNav />
 
-          <div className="flex shrink-0 items-center gap-1.5 sm:gap-2">
+          <div className="flex shrink-0 items-center gap-1 sm:gap-2">
             <a
               href={STUDIO_WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Message RDev Studio on WhatsApp"
-              className="inline-flex min-h-[44px] min-w-[44px] items-center justify-center rounded-[var(--mb-radius)] border border-[var(--mb-line-strong)] text-[var(--mb-ink)] transition-colors hover:border-[var(--mb-ink)] hover:bg-[var(--mb-raised)]"
+              className="inline-flex min-h-[44px] min-w-[44px] items-center justify-center text-[var(--mb-muted)] transition-colors hover:text-[var(--mb-ink)]"
             >
               <WhatsAppIcon className="h-4 w-4 shrink-0 text-[var(--mb-icon)]" />
             </a>
@@ -97,50 +97,46 @@ export default function MockBLayout({
       <main id="mock-b-main">{children}</main>
 
       <footer className="mb-on-light border-t border-[var(--mb-line)] bg-[var(--mb-light)]">
-        <div className="mb-shell flex max-w-6xl flex-col gap-6 py-10 md:flex-row md:items-center md:justify-between">
-          <div className="space-y-1.5">
-            <p className="mb-h3 text-[var(--mb-ink)]">
-              {SITE_NAME}
-            </p>
-            <p className="max-w-md text-sm leading-relaxed text-[var(--mb-muted)]">
-              Websites, web apps, and local web support from Carrickfergus, Northern Ireland.
-            </p>
+        <div className="mb-shell max-w-6xl space-y-8 py-10 sm:py-12">
+          <div className="grid gap-6 md:grid-cols-[minmax(0,1.2fr)_minmax(0,0.8fr)] md:items-end md:gap-12">
+            <div className="space-y-1.5">
+              <p className="mb-h3 text-[var(--mb-ink)]">
+                {SITE_NAME}
+              </p>
+              <p className="max-w-md text-sm leading-relaxed text-[var(--mb-muted)]">
+                Websites, web apps, and local web support from Carrickfergus, Northern Ireland.
+              </p>
+            </div>
+            <a
+              href={`mailto:${CONTACT_EMAIL}`}
+              className="inline-flex min-h-[44px] items-center text-sm font-semibold text-[var(--mb-ink)] underline decoration-[var(--mb-line-strong)] underline-offset-4 hover:text-[var(--mb-link)] md:justify-end"
+            >
+              {CONTACT_EMAIL}
+            </a>
           </div>
 
-          <div className="flex shrink-0 flex-wrap items-center gap-x-1 gap-y-1 text-sm font-bold md:justify-end">
-            <Link
-              href="/mock-b/contact"
-              className="inline-flex min-h-[44px] items-center px-2.5 text-[var(--mb-ink)] underline decoration-[var(--mb-line-strong)] underline-offset-4 hover:text-[var(--mb-link)]"
-            >
+          <nav
+            aria-label="Footer"
+            className="flex flex-wrap items-center gap-x-5 gap-y-0 border-t border-[var(--mb-line)] pt-1"
+          >
+            <Link href="/mock-b/contact" className="mb-jump-link">
               Contact &amp; quote
             </Link>
             <a
               href={STUDIO_WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex min-h-[44px] items-center px-2.5 text-[var(--mb-link)] underline decoration-[var(--mb-border-accent)] underline-offset-4 hover:text-[var(--mb-link-hover)]"
+              className="mb-jump-link"
             >
               WhatsApp
             </a>
-            <a
-              href={`mailto:${CONTACT_EMAIL}`}
-              className="inline-flex min-h-[44px] items-center px-2.5 text-[var(--mb-ink)] underline decoration-[var(--mb-line-strong)] underline-offset-4 hover:text-[var(--mb-link)]"
-            >
-              {CONTACT_EMAIL}
-            </a>
-            <Link
-              href="/mock-b/services"
-              className="inline-flex min-h-[44px] items-center px-2.5 text-[var(--mb-ink)] underline decoration-[var(--mb-line-strong)] underline-offset-4 hover:text-[var(--mb-link)]"
-            >
+            <Link href="/mock-b/services" className="mb-jump-link">
               Services
             </Link>
-            <Link
-              href="/mock-b/work"
-              className="inline-flex min-h-[44px] items-center px-2.5 text-[var(--mb-ink)] underline decoration-[var(--mb-line-strong)] underline-offset-4 hover:text-[var(--mb-link)]"
-            >
+            <Link href="/mock-b/work" className="mb-jump-link">
               All work
             </Link>
-          </div>
+          </nav>
         </div>
       </footer>
     </div>

@@ -524,8 +524,8 @@ export default async function MockBCaseStudyPage({
             </Link>
           </div>
 
-          <div className="mt-6 text-center">
-            <Link href="/mock-b/work" className="mb-btn-secondary">
+          <div className="mt-6 flex justify-center">
+            <Link href="/mock-b/work" className="mb-back-link">
               <ArrowLeftIcon className="h-4 w-4 shrink-0" />
               Back to all five projects
             </Link>

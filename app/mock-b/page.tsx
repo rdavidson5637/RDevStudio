@@ -404,7 +404,7 @@ export default function MockBHomePage() {
             </div>
           </div>
 
-          <div className="mb-on-surface border border-[var(--mb-line)] bg-[var(--mb-surface)] p-6 text-[var(--mb-ink)] sm:p-8">
+          <div className="mb-on-surface mb-panel text-[var(--mb-ink)]">
             <WarmQuoteForm />
           </div>
         </div>

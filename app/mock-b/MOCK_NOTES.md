@@ -124,6 +124,17 @@ Placeholder chrome and leftover outline CTAs. Copy, TODOs, and Grenadine hex val
 - **Case sidebar CTA:** Left-accent Naples panel (matches contact aside) instead of a bordered rounded box.
 - **QA:** Shots in `docs/design-pro/mockb-pro/pass5-before/` and `pass5-after/` (390 + 1280; Assisi case included for placeholder chrome).
 
+## Pro pass 6 (20 Nov, refine / same PR #35)
+
+Header, form surfaces, and type-token cleanup. Copy, TODOs, and Grenadine hex values still untouched.
+
+- **One header accent:** WhatsApp icon demoted from outline box to quiet icon; grenadine "Get a quote" stays the only header CTA.
+- **Footer:** Type + email row, then a ruled jump-link nav (no underline pill cluster).
+- **Form panels:** Shared `mb-panel` flat surface (no card border) on home quote and contact; success state uses left-accent panel and text-link reset.
+- **Case studies:** "Back to all five projects" demoted to `mb-back-link`.
+- **Captions:** Placeholder chrome uses `mb-caption` / `mb-kicker` instead of ad-hoc 10/11px sizes.
+- **QA:** Shots in `docs/design-pro/mockb-pro/pass6-before/` and `pass6-after/`.
+
 ## Open TODOs for Ryan
 
 - [ ] **Formspree:** Confirm `NEXT_PUBLIC_FORMSPREE_ID` is set in the `rdev-studio` Vercel project and submit one test quote on `/mock-b/contact` in the preview to verify inbox delivery.

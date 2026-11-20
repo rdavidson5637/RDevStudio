@@ -71,7 +71,7 @@ export default function MockBContactPage() {
           {/* Primary quote form panel */}
           <div
             data-mb-reveal="true"
-            className="mb-on-surface min-w-0 border border-[var(--mb-line)] bg-[var(--mb-surface)] p-5 sm:p-8"
+            className="mb-on-surface mb-panel min-w-0"
           >
             <div className="border-b border-[var(--mb-line)] pb-5">
               <p className="mb-kicker">Quote request</p>

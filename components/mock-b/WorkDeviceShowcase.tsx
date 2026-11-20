@@ -27,11 +27,11 @@ function PhoneFrame({
 }) {
   return (
     <div className="mx-auto flex w-full max-w-[230px] flex-col border border-[var(--mb-line-strong)] bg-[var(--mb-bg)] md:max-w-none">
-      <div className="border-b border-[var(--mb-line)] px-2.5 py-1.5 text-[10px] font-medium text-[var(--mb-muted)]">
+      <div className="mb-caption border-b border-[var(--mb-line)] px-2.5 py-1.5 font-medium">
         Phone
       </div>
       <div className="flex-1 overflow-hidden">{children}</div>
-      <p className="border-t border-[var(--mb-line)] px-2.5 py-2 text-center text-[11px] font-medium text-[var(--mb-muted)]">
+      <p className="mb-caption border-t border-[var(--mb-line)] px-2.5 py-2 text-center font-medium">
         {label}
       </p>
     </div>
@@ -105,7 +105,7 @@ export function WorkDeviceShowcase({ project }: { project: MockBProject }) {
 
             <div className="my-5 grid gap-6 sm:grid-cols-[minmax(0,1.25fr)_minmax(0,0.75fr)] sm:gap-10">
               <div className="min-w-0 space-y-2">
-                <p className="text-[11px] font-bold text-[var(--mb-link)]">
+                <p className="mb-kicker">
                   Public site rebuild
                 </p>
                 <p className="mb-display text-lg text-[var(--mb-ink)]">
@@ -139,11 +139,11 @@ export function WorkDeviceShowcase({ project }: { project: MockBProject }) {
             </div>
             <div className="my-3 space-y-3">
               <div className="border-b border-[var(--mb-line)] pb-2">
-                <p className="text-[10px] font-semibold text-[var(--mb-ink)]">Refreshed brand</p>
+                <p className="mb-caption font-semibold text-[var(--mb-ink)]">Refreshed brand</p>
                 <div className="mt-1.5 h-1.5 w-4/5 bg-[var(--mb-line-strong)]" aria-hidden="true" />
               </div>
               <div>
-                <p className="text-[10px] font-semibold text-[var(--mb-ink)]">Clear tap actions</p>
+                <p className="mb-caption font-semibold text-[var(--mb-ink)]">Clear tap actions</p>
                 <div className="mt-1.5 h-2 w-full bg-[var(--mb-accent)]" aria-hidden="true" />
               </div>
             </div>
