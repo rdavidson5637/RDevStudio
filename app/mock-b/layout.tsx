@@ -61,7 +61,7 @@ export default function MockBLayout({
             href="/mock-b"
             className="inline-flex min-h-[44px] min-w-0 shrink flex-col justify-center leading-tight text-[var(--mb-ink)] transition-colors hover:text-[var(--mb-link)]"
           >
-            <span className="mb-display text-lg tracking-tight sm:whitespace-nowrap sm:text-xl">
+            <span className="mb-wordmark sm:whitespace-nowrap">
               {SITE_NAME}
             </span>
             <span className="mb-caption whitespace-nowrap">
@@ -83,7 +83,7 @@ export default function MockBLayout({
             </a>
             <Link
               href="/mock-b/contact"
-              className="mb-btn-primary px-3 text-[length:var(--mb-text-caption)] sm:px-4 sm:text-sm"
+              className="mb-btn-primary px-3 sm:px-4"
             >
               Get a quote
             </Link>
@@ -100,7 +100,7 @@ export default function MockBLayout({
         <div className="mb-shell max-w-6xl space-y-8 py-10 sm:py-12">
           <div className="grid gap-6 md:grid-cols-[minmax(0,1.2fr)_minmax(0,0.8fr)] md:items-end md:gap-12">
             <div className="space-y-1.5">
-              <p className="mb-h3 text-[var(--mb-ink)]">
+              <p className="mb-wordmark text-[var(--mb-ink)]">
                 {SITE_NAME}
               </p>
               <p className="mb-prose max-w-md">

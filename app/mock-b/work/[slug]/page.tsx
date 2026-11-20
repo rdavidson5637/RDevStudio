@@ -94,7 +94,7 @@ export default async function MockBCaseStudyPage({
         >
           <Link
             href="/mock-b"
-            className="mb-back-link px-0"
+            className="mb-back-link"
           >
             Studio home
           </Link>
@@ -103,7 +103,7 @@ export default async function MockBCaseStudyPage({
           </span>
           <Link
             href="/mock-b/work"
-            className="mb-back-link px-0"
+            className="mb-back-link"
           >
             Work
           </Link>

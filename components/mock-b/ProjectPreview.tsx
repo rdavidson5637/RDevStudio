@@ -60,9 +60,7 @@ export function ProjectPreview({
       <PlainFrame label="rdevstudio.co.uk/work/assisi">
         <div className="flex min-h-[210px] flex-col justify-between bg-[var(--mb-bg)] p-4 sm:aspect-[16/10] sm:p-5">
           <div className="flex flex-wrap items-center justify-between gap-2 border-b border-[var(--mb-line)] pb-3">
-            <span className="mb-display text-sm text-[var(--mb-ink)]">
-              Assisi Animal Sanctuary
-            </span>
+            <span className="mb-preview-title">Assisi Animal Sanctuary</span>
             <span className="mb-caption font-medium">
               Preview held for sign-off
             </span>
@@ -71,9 +69,7 @@ export function ProjectPreview({
           <div className="grid gap-6 py-5 sm:grid-cols-[minmax(0,1.2fr)_minmax(0,0.8fr)] sm:gap-8">
             <div className="min-w-0 space-y-2">
               <span className="block h-1 w-10 bg-[var(--mb-accent)]" aria-hidden="true" />
-              <p className="mb-display text-sm leading-snug text-[var(--mb-ink)] sm:text-base">
-                Website &amp; brand rebuild
-              </p>
+              <p className="mb-preview-lede">Website &amp; brand rebuild</p>
               <p className="mb-caption leading-relaxed">
                 Clear pathways for adopters, donors, and supporters on mobile and desktop.
               </p>
@@ -99,9 +95,7 @@ export function ProjectPreview({
       <PlainFrame label="crosskennan.vercel.app">
         <div className="flex min-h-[210px] flex-col justify-between bg-[var(--mb-bg)] p-4 sm:aspect-[16/10] sm:p-5">
           <div className="flex items-center justify-between gap-2 border-b border-[var(--mb-line)] pb-3">
-            <span className="mb-display text-sm text-[var(--mb-ink)]">
-              Crosskennan
-            </span>
+            <span className="mb-preview-title">Crosskennan</span>
             <span className="mb-caption font-medium">Charity web preview</span>
           </div>
 
@@ -129,20 +123,19 @@ export function ProjectPreview({
       <PlainFrame label="rondo (studio preview)">
         <div className="flex min-h-[210px] flex-col justify-between bg-[var(--mb-bg)] p-4 sm:aspect-[16/10] sm:p-5">
           <div className="flex items-center justify-between gap-2 border-b border-[var(--mb-line)] pb-3">
-            <span className="mb-display text-sm text-[var(--mb-ink)]">
-              Rondo
-            </span>
+            <span className="mb-preview-title">Rondo</span>
             <span className="mb-caption font-medium">In-house web app</span>
           </div>
 
-          <div className="space-y-3 py-5" aria-hidden="true">
-            <div className="h-2 w-1/2 bg-[var(--mb-ink)]" />
-            <div className="h-1.5 w-4/5 bg-[var(--mb-line-strong)]" />
-            <div className="grid grid-cols-2 gap-x-6 gap-y-2 border-t border-[var(--mb-line)] pt-4">
-              <div className="h-8 border-b border-[var(--mb-line)]" />
-              <div className="h-8 border-b border-[var(--mb-line)]" />
-              <div className="h-8 border-b border-[var(--mb-line)]" />
-              <div className="h-8 border-b border-[var(--mb-accent)]" />
+          <div className="space-y-0 py-5" aria-hidden="true">
+            <div className="mb-3 h-2 w-1/2 bg-[var(--mb-ink)]" />
+            <div className="divide-y divide-[var(--mb-line)] border-y border-[var(--mb-line)]">
+              <div className="h-8" />
+              <div className="h-8" />
+              <div className="h-8" />
+              <div className="flex h-8 items-end">
+                <span className="block h-0.5 w-full bg-[var(--mb-accent)]" />
+              </div>
             </div>
           </div>
 
@@ -160,9 +153,7 @@ export function ProjectPreview({
     <PlainFrame label="mgsl-hq-black.vercel.app">
       <div className="flex min-h-[210px] flex-col justify-between bg-[var(--mb-bg)] p-4 sm:aspect-[16/10] sm:p-5">
         <div className="flex items-center justify-between gap-2 border-b border-[var(--mb-line)] pb-3">
-          <span className="mb-display text-sm text-[var(--mb-ink)]">
-            MGSL Hub
-          </span>
+          <span className="mb-preview-title">MGSL Hub</span>
           <span className="mb-caption font-medium">Web hub</span>
         </div>
 

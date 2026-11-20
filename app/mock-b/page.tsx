@@ -56,13 +56,13 @@ export default function MockBHomePage() {
         </div>
       </section>
 
-      {/* ── LATEST WORK (FULL-BLEED RULED PROJECT ROWS) ──────────────────── */}
+      {/* ── LATEST WORK (FEATURED SURFACE + RULED PAGE-BG ROWS) ─────────── */}
       <section
         id="work"
         aria-labelledby="work-heading"
-        className="border-t border-[var(--mb-line)] bg-[var(--mb-surface)]"
+        className="border-t border-[var(--mb-line)]"
       >
-        <div className="mb-shell mb-section-pad max-w-6xl scroll-mt-24 sm:px-6">
+        <div className="mb-shell mb-page-intro max-w-6xl scroll-mt-24 pb-0 sm:px-6 sm:pb-0">
           <div
             data-mb-reveal="true"
             className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between"
@@ -79,14 +79,20 @@ export default function MockBHomePage() {
               <ArrowRightIcon className="h-4 w-4 shrink-0" />
             </Link>
           </div>
+        </div>
 
-          <ol className="mt-10 divide-y divide-[var(--mb-line)] border-y border-[var(--mb-line)]">
+          <ol className="mt-8 border-t border-[var(--mb-line)] sm:mt-10">
             {MOCK_B_PROJECTS.map((project, index) => (
               <li
                 key={project.id}
                 data-mb-reveal="true"
-                className="py-10 sm:py-12"
+                className={
+                  index === 0
+                    ? "border-b border-[var(--mb-line)] bg-[var(--mb-surface)]"
+                    : "border-b border-[var(--mb-line)]"
+                }
               >
+                <div className="mb-shell max-w-6xl py-10 sm:px-6 sm:py-12">
                 <div
                   className={`grid gap-8 md:items-center md:gap-10 ${
                     index === 0
@@ -158,7 +164,7 @@ export default function MockBHomePage() {
                           href={project.href}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="mb-text-link"
+                          className="mb-text-link text-[var(--mb-muted)]"
                         >
                           {project.linkLabel}
                           <ExternalLinkIcon className="h-3.5 w-3.5 shrink-0" />
@@ -166,7 +172,7 @@ export default function MockBHomePage() {
                       ) : project.id === "assisi" ? (
                         <Link
                           href={project.href}
-                          className="mb-text-link"
+                          className="mb-text-link text-[var(--mb-muted)]"
                         >
                           {project.linkLabel}
                         </Link>
@@ -194,10 +200,10 @@ export default function MockBHomePage() {
                     />
                   </div>
                 </div>
+                </div>
               </li>
             ))}
           </ol>
-        </div>
       </section>
 
       {/* ── SERVICES & SKILLS (RULED EDITORIAL LIST + NUMBERED STEPS) ────── */}

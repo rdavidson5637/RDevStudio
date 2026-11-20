@@ -186,6 +186,17 @@ Editorial rows and flatter chrome. Copy, TODOs, and Grenadine hex values still u
 - **Quieter chrome:** Architecture callout uses `mb-step-title`; desktop nav drops link radius.
 - **QA:** No overflow at 360/390; contact interactive targets >= 44px. Shots in `docs/design-pro/mockb-pro/pass11-before/` and `pass11-after/`.
 
+## Pro pass 12 (20 Nov, refine / same PR #35)
+
+Home work rhythm, chrome tokens, quieter placeholders. Copy, TODOs, and Grenadine hex values still untouched.
+
+- **Home work:** Page-bg section with ShelterLink as the only full-bleed surface band; projects 02-05 stay on page bg (matches work index). External / secondary links muted under the case study text link.
+- **Type tokens:** `mb-wordmark`, `mb-preview-title`, `mb-preview-lede`, and `mb-nav-link` replace ad-hoc display + `text-sm` / `text-lg` sizes in header, footer, nav, and placeholder chrome.
+- **Placeholders:** Rondo wireframes use ruled rows instead of equal 2-up grids; ShelterLink extra screenshots use an asymmetric split.
+- **Contact form:** Name and email stack in one column for calmer field rhythm.
+- **Targets:** Breadcrumb back links get a 44px min width. No overflow at 360/390.
+- **QA:** Shots in `docs/design-pro/mockb-pro/pass12-before/` and `pass12-after/`.
+
 ## Open TODOs for Ryan
 
 - [ ] **Formspree:** Confirm `NEXT_PUBLIC_FORMSPREE_ID` is set in the `rdev-studio` Vercel project and submit one test quote on `/mock-b/contact` in the preview to verify inbox delivery.

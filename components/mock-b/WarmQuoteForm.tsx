@@ -262,7 +262,7 @@ function WarmQuoteFormFields({
         </div>
       ) : null}
 
-      <div className="grid gap-6 sm:grid-cols-2">
+      <div className="space-y-6">
         <div>
           <label htmlFor={nameId} className="mb-label">
             Your name
