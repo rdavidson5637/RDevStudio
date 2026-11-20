@@ -43,7 +43,10 @@ export function LocalTimeChip() {
         <span aria-hidden="true" className="text-[var(--mb-line-strong)]">
           /
         </span>
-        <span className="tabular-nums text-[var(--mb-ink-soft)]" suppressHydrationWarning>
+        <span
+          className="inline-block min-w-[9ch] tabular-nums text-[var(--mb-ink-soft)]"
+          suppressHydrationWarning
+        >
           {time} local
         </span>
       </span>

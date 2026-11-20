@@ -77,10 +77,10 @@ export function ProjectPreview({
   if (project.id === "assisi") {
     return (
       <BrowserChrome label="rdevstudio.co.uk/work/assisi" tone="terracotta">
-        <div className="flex aspect-[16/10] flex-col justify-between bg-[#fff9f2] p-5">
-          <div className="flex items-center justify-between">
+        <div className="flex min-h-[215px] flex-col justify-between bg-[#fff9f2] p-3.5 sm:aspect-[16/10] sm:p-5">
+          <div className="flex flex-wrap items-center justify-between gap-1.5">
             <span className="inline-flex items-center gap-2 text-xs font-bold text-[#211d18]">
-              <span className="inline-block h-3 w-3 rounded-full bg-[#b84a2e]" />
+              <span className="inline-block h-3 w-3 shrink-0 rounded-full bg-[#b84a2e]" />
               Assisi Animal Sanctuary
             </span>
             <span className="rounded-full border border-[#ecc6b7] bg-[#f9e4db] px-2.5 py-0.5 text-[10px] font-semibold text-[#822e19]">
@@ -88,17 +88,17 @@ export function ProjectPreview({
             </span>
           </div>
 
-          <div className="my-auto grid grid-cols-12 gap-3 py-3">
-            <div className="col-span-7 flex flex-col justify-center space-y-2.5 rounded-xl border border-[#dfd4c2] bg-[#fffdf9] p-3.5">
-              <span className="h-2 w-16 rounded-full bg-[#b84a2e]/35" />
-              <p className="mb-display text-base leading-snug text-[#211d18] sm:text-lg">
+          <div className="my-auto grid grid-cols-12 gap-2.5 py-2.5 sm:gap-3 sm:py-3">
+            <div className="col-span-7 flex flex-col justify-center space-y-2 rounded-xl border border-[#dfd4c2] bg-[#fffdf9] p-3 sm:p-3.5">
+              <span className="h-2 w-14 rounded-full bg-[#b84a2e]/35" />
+              <p className="mb-display text-sm leading-snug text-[#211d18] sm:text-lg">
                 Website &amp; brand rebuild
               </p>
               <p className="text-[11px] leading-relaxed text-[#574d42]">
                 Clear pathways for adopters, donors, and supporters on mobile and desktop.
               </p>
             </div>
-            <div className="col-span-5 flex flex-col justify-between rounded-xl border border-[#dfd4c2] bg-[#f2e9da] p-3">
+            <div className="col-span-5 flex flex-col justify-between rounded-xl border border-[#dfd4c2] bg-[#f2e9da] p-2.5 sm:p-3">
               <div className="space-y-1.5">
                 <span className="block text-[10px] font-bold uppercase tracking-wide text-[#574d42]">
                   Key routes
@@ -116,7 +116,7 @@ export function ProjectPreview({
             </div>
           </div>
 
-          <div className="flex items-center justify-between text-[10px] font-medium text-[#574d42]">
+          <div className="flex flex-wrap items-center justify-between gap-1 text-[10px] font-medium text-[#574d42]">
             <span>Public screens publish after sanctuary approval</span>
             <span className="font-semibold text-[#822e19]">Charity build</span>
           </div>

@@ -24,7 +24,7 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 
 export const metadata: Metadata = {
   title: {
-    default: `${SITE_NAME} | Websites & digital products from Carrickfergus`,
+    default: "Websites & digital products from Carrickfergus",
     template: `%s | ${SITE_NAME}`,
   },
   description:
@@ -56,19 +56,19 @@ export default function MockBLayout({
         <div className="mx-auto flex max-w-5xl items-center justify-between gap-3 px-4 py-3 sm:px-6">
           <Link
             href="/mock-b"
-            className="inline-flex min-h-[44px] items-center gap-2.5 rounded-full pr-2 text-[var(--mb-ink)] transition-opacity hover:opacity-85"
+            className="inline-flex min-h-[44px] shrink-0 items-center gap-2 rounded-full pr-1 text-[var(--mb-ink)] transition-opacity hover:opacity-85 sm:gap-2.5 sm:pr-2"
           >
             <span
-              className="flex h-9 w-9 items-center justify-center rounded-full border border-[var(--mb-line-strong)] bg-[var(--mb-butter)] text-[var(--mb-ink)]"
+              className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-[var(--mb-line-strong)] bg-[var(--mb-butter)] text-[var(--mb-ink)]"
               aria-hidden="true"
             >
               <CastleMark className="h-5 w-5" />
             </span>
             <span className="flex flex-col leading-tight">
-              <span className="mb-display text-lg font-semibold tracking-tight">
+              <span className="mb-display whitespace-nowrap text-base font-semibold tracking-tight sm:text-lg">
                 {SITE_NAME}
               </span>
-              <span className="text-[11px] font-medium text-[var(--mb-ink-soft)]">
+              <span className="whitespace-nowrap text-[11px] font-medium text-[var(--mb-ink-soft)]">
                 Carrickfergus, NI
               </span>
             </span>
@@ -101,7 +101,7 @@ export default function MockBLayout({
             </Link>
           </nav>
 
-          <div className="flex items-center gap-2">
+          <div className="flex shrink-0 items-center gap-2">
             <a
               href={STUDIO_WHATSAPP_URL}
               target="_blank"
@@ -114,7 +114,7 @@ export default function MockBLayout({
             </a>
             <Link
               href="/mock-b#quote"
-              className="inline-flex min-h-[44px] items-center justify-center rounded-full bg-[var(--mb-terracotta)] px-4 text-sm font-semibold text-[var(--mb-paper)] transition-colors hover:bg-[var(--mb-terracotta-hover)]"
+              className="inline-flex min-h-[44px] items-center justify-center whitespace-nowrap rounded-full bg-[var(--mb-terracotta)] px-3.5 text-xs font-semibold text-[var(--mb-paper)] transition-colors hover:bg-[var(--mb-terracotta-hover)] sm:px-4 sm:text-sm"
             >
               Get a quote
             </Link>
@@ -166,7 +166,7 @@ export default function MockBLayout({
             </p>
           </div>
 
-          <div className="flex flex-wrap items-center gap-3 text-sm font-semibold">
+          <div className="flex shrink-0 flex-wrap items-center gap-x-1 gap-y-1 text-sm font-semibold md:justify-end">
             <Link
               href="/mock-b#quote"
               className="inline-flex min-h-[44px] items-center rounded-full px-3 text-[var(--mb-ink)] underline decoration-[var(--mb-line-strong)] underline-offset-4 hover:text-[var(--mb-terracotta)]"

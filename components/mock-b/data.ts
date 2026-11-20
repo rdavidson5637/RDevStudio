@@ -73,8 +73,8 @@ export const MOCK_B_PROJECTS: readonly MockBProject[] = [
     extraScreenshots: [
       {
         src: "/images/work/shelterlink.png",
-        alt: "ShelterLink volunteer directory and profile detail view",
-        caption: "Volunteer directory and profile records",
+        alt: "ShelterLink landing page with volunteer sign-up call to action",
+        caption: "ShelterLink volunteer landing page",
         width: 1024,
         height: 546,
       },
@@ -134,7 +134,7 @@ export const MOCK_B_PROJECTS: readonly MockBProject[] = [
     statusLabel: "Studio build",
     // TODO: No live Rondo URL exists in this repo yet. Ryan to add the real Rondo URL and confirmed project summary.
     summary:
-      "An in-house web application built by RDev Studio. Live link and detailed write-up will be added once Ryan confirms what to publish.",
+      "An in-house web application built by RDev Studio. Live link and detailed write-up will be added once published by the studio.",
     details: [
       "Designed and engineered inside RDev Studio with a focus on fast, focused everyday use.",
       "No live public URL is stored in this repository yet (linked here on the studio showcase).",

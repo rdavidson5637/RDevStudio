@@ -414,7 +414,7 @@ export default function MockBHomePage() {
                     href={STUDIO_WHATSAPP_URL}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="mb-btn-whatsapp mt-4 w-full"
+                    className="mb-btn-whatsapp mt-4 w-full whitespace-nowrap text-sm sm:text-[0.9375rem]"
                   >
                     <WhatsAppIcon className="h-5 w-5 shrink-0" />
                     Message on WhatsApp
@@ -425,11 +425,10 @@ export default function MockBHomePage() {
                   Or email us directly at{" "}
                   <a
                     href={`mailto:${CONTACT_EMAIL}`}
-                    className="font-semibold text-[var(--mb-ink)] underline decoration-[var(--mb-line-strong)] underline-offset-4 hover:text-[var(--mb-terracotta)]"
+                    className="inline-flex min-h-[44px] items-center font-semibold text-[var(--mb-ink)] underline decoration-[var(--mb-line-strong)] underline-offset-4 hover:text-[var(--mb-terracotta)]"
                   >
                     {CONTACT_EMAIL}
                   </a>
-                  .
                 </p>
               </div>
             </div>

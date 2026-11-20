@@ -42,7 +42,7 @@ function PhoneFrame({
   children: React.ReactNode;
 }) {
   return (
-    <div className="flex flex-col overflow-hidden rounded-[22px] border-2 border-[var(--mb-ink)]/80 bg-[var(--mb-paper)] p-2 shadow-[0_4px_0_var(--mb-line)]">
+    <div className="mx-auto flex w-full max-w-[240px] flex-col overflow-hidden rounded-[22px] border-2 border-[var(--mb-ink)]/80 bg-[var(--mb-paper)] p-2 shadow-[0_4px_0_var(--mb-line)] md:max-w-none">
       <div className="mx-auto mb-2 h-1.5 w-10 rounded-full bg-[var(--mb-line-strong)]" aria-hidden="true" />
       <div className="flex-1 overflow-hidden rounded-[14px] border border-[var(--mb-line)] bg-[var(--mb-cream)]">
         {children}
