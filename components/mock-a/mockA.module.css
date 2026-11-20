@@ -1269,6 +1269,8 @@
 .inlineLink {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
+  min-width: 44px;
   min-height: 44px;
   color: var(--a-text);
   text-decoration: underline;
@@ -1687,6 +1689,285 @@
   }
 }
 
+/* ---------- Case study pages (/mock-a/work/[slug]) ---------- */
+
+.crumbs {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0 0.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  color: var(--a-muted);
+  font-size: 0.8125rem;
+}
+
+.crumbs li + li::before {
+  content: "/";
+  margin-right: 0.5rem;
+  color: var(--a-faint);
+}
+
+.crumbs a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
+  color: var(--a-text);
+  text-decoration: underline;
+  text-decoration-color: var(--a-line-strong);
+  text-underline-offset: 4px;
+}
+
+.crumbs a:hover {
+  text-decoration-color: var(--a-lime);
+}
+
+.caseName {
+  margin: 0.5rem 0 0;
+  font-weight: 600;
+  font-size: clamp(3.25rem, 15vw, 12rem);
+  line-height: 0.85;
+  letter-spacing: -0.06em;
+  overflow-wrap: anywhere;
+}
+
+.caseMeta {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem 1rem;
+  margin: 2.5rem 0 0;
+  padding: 1.25rem 0 0;
+  border-top: 1px solid var(--a-line);
+}
+
+.caseMeta dt {
+  color: var(--a-faint);
+  font-size: 0.8125rem;
+}
+
+.caseMeta dd {
+  margin: 0.25rem 0 0;
+  overflow-wrap: anywhere;
+}
+
+.caseMeta dd .inlineLink {
+  min-height: 44px;
+}
+
+@media (min-width: 900px) {
+  .caseMeta {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+.todoInline {
+  display: inline-block;
+  padding: 0.1rem 0.5rem;
+  border: 1px dashed var(--a-lime);
+  border-radius: 6px;
+  color: var(--a-lime);
+  font-family: var(--a-mono);
+  font-size: 0.8125rem;
+}
+
+.todoMark {
+  display: grid;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 1rem 1.125rem;
+  border: 2px dashed var(--a-lime);
+  border-radius: 12px;
+  background: rgb(212 255 58 / 0.06);
+  color: var(--a-text);
+}
+
+.todoTag {
+  justify-self: start;
+  padding: 0.2rem 0.55rem;
+  border-radius: 4px;
+  background: var(--a-lime);
+  color: var(--a-on-accent);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.caseArt {
+  padding-top: clamp(2rem, 5vw, 3.5rem);
+  padding-bottom: clamp(1rem, 3vw, 2rem);
+}
+
+.chapter {
+  display: grid;
+  gap: 0.75rem;
+  padding: clamp(2.5rem, 6vw, 4.5rem) 0;
+  border-bottom: 1px solid var(--a-line);
+}
+
+@media (min-width: 900px) {
+  .chapter {
+    grid-template-columns: 8rem minmax(0, 1fr);
+    gap: 2rem;
+  }
+}
+
+.chapterNum {
+  margin: 0;
+  color: var(--a-lime);
+  font-size: clamp(1rem, 2vw, 1.25rem);
+}
+
+.chapterTitle {
+  margin: 0;
+  font-weight: 600;
+  font-size: clamp(2rem, 6vw, 4rem);
+  line-height: 0.95;
+  letter-spacing: -0.045em;
+}
+
+.chapterBody {
+  display: grid;
+  gap: 1rem;
+  max-width: 44rem;
+  margin-top: 1.5rem;
+  color: var(--a-muted);
+  font-size: 1.0625rem;
+}
+
+.chapterBody p {
+  margin: 0;
+}
+
+.caseFacts {
+  display: grid;
+  gap: 0.5rem;
+  margin: 0.5rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+@media (min-width: 640px) {
+  .caseFacts {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.caseFacts li {
+  padding: 0.85rem 1rem;
+  border: 1px solid var(--a-line);
+  border-radius: 10px;
+  background: var(--a-panel);
+  color: var(--a-text);
+  font-size: 0.9375rem;
+}
+
+.stackList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.stackList li {
+  padding: 0.6rem 1rem;
+  border-radius: 999px;
+  background: var(--a-text);
+  color: var(--a-on-accent);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.caseGallery {
+  display: grid;
+  gap: 1.5rem;
+  padding: clamp(2.5rem, 6vw, 4.5rem) 0;
+  border-bottom: 1px solid var(--a-line);
+}
+
+@media (min-width: 900px) {
+  .caseGallery {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .caseGallery > :first-child {
+    grid-column: 1 / -1;
+  }
+}
+
+.caseGallery .screenBody img {
+  object-fit: cover;
+  object-position: top;
+}
+
+.caseCaption {
+  padding: 0.75rem 1rem;
+  border-top: 1px solid var(--a-line);
+  color: var(--a-muted);
+  font-size: 0.8125rem;
+}
+
+.missing {
+  margin: clamp(2.5rem, 6vw, 4rem) 0 0;
+  padding: clamp(1.25rem, 3vw, 2rem);
+  border: 2px dashed var(--a-lime);
+  border-radius: 16px;
+}
+
+.missing ul {
+  display: grid;
+  gap: 0.5rem;
+  margin: 0;
+  padding-left: 1.25rem;
+}
+
+.missing li::marker {
+  color: var(--a-lime);
+}
+
+.missingNote {
+  margin: 1.25rem 0 0;
+  color: var(--a-muted);
+  font-size: 0.9375rem;
+}
+
+.nextCase {
+  display: grid;
+  gap: 0.5rem;
+  margin-top: clamp(2.5rem, 6vw, 4rem);
+  padding: clamp(1.5rem, 4vw, 2.5rem) 0;
+  border-top: 1px solid var(--a-line);
+  border-bottom: 1px solid var(--a-line);
+  color: var(--a-text);
+  text-decoration: none;
+}
+
+.nextLabel {
+  color: var(--a-faint);
+  font-size: 0.8125rem;
+}
+
+.nextName {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-weight: 600;
+  font-size: clamp(2.25rem, 9vw, 6rem);
+  line-height: 0.95;
+  letter-spacing: -0.05em;
+  transition: color 0.25s, transform 0.4s var(--a-ease);
+}
+
+.nextCase:hover .nextName {
+  color: var(--a-lime);
+  transform: translateX(0.5rem);
+}
+
 /* ---------- Scroll reveals (only once JS has opted in) ---------- */
 
 .root[data-reveal-ready] [data-reveal] {
@@ -1840,6 +2121,7 @@
   }
 
   .btn:hover,
+  .nextCase:hover .nextName,
   .workLink:hover .workName {
     transform: none;
   }

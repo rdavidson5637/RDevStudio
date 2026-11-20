@@ -7,6 +7,7 @@ import {
   MOCK_A_PROJECTS,
   MOCK_A_QUOTE_HREF,
   MOCK_A_WHATSAPP_HREF,
+  mockACaseHref,
   type MockProject,
 } from "@/components/mock-a/data";
 import s from "@/components/mock-a/mockA.module.css";
@@ -81,12 +82,13 @@ function Panel({ project, index }: { project: MockProject; index: number }) {
               </span>
             </a>
           ) : null}
-          {project.caseStudy ? (
-            <Link href={project.caseStudy.href} className={`${s.btn} ${s.btnGhost}`}>
-              {project.caseStudy.label}
-              <span className="sr-only"> for {project.name} on the live site</span>
-            </Link>
-          ) : null}
+          <Link href={mockACaseHref(project.slug)} className={`${s.btn} ${s.btnGhost}`}>
+            Read the case study
+            <span className="sr-only"> for {project.name}</span>
+            <span className={s.btnArrow} aria-hidden="true">
+              &rarr;
+            </span>
+          </Link>
         </div>
 
         {project.todo ? (

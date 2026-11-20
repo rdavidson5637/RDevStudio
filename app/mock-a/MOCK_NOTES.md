@@ -2,7 +2,7 @@
 
 Agent-written (Claude Code, lane MOCK-A, 19-20 Nov 2026). Unverified until Ryan checks it. Draft PR #33, do not merge.
 
-Routes: `/mock-a` (home), `/mock-a/work` (project panels), `/mock-a/services` (four services, each ending with both CTAs) and `/mock-a/contact` (quote form and WhatsApp; `?type=Website` etc. preselects "What do you need?"). All are `noindex, nofollow`, not in the sitemap, not in the live nav.
+Routes: `/mock-a` (home), `/mock-a/work` (project panels), `/mock-a/services` (four services, each ending with both CTAs) `/mock-a/contact` (quote form and WhatsApp; `?type=Website` etc. preselects "What do you need?") and five case study pages at `/mock-a/work/[slug]` (`shelterlink`, `assisi`, `rondo`, `crosskennan`, `mgsl-hub`), linked from each work panel and the home work list. All are `noindex, nofollow`, not in the sitemap, not in the live nav.
 
 ## The idea
 - A sharp product studio, not a freelancer page. Near-black, one electric lime, one electric blue, oversized tight type.
@@ -38,10 +38,11 @@ Focus ring is lime on dark surfaces and ink on the cream work section and the bl
 4. The labelled SVG "screens" for projects without approved screenshots (Assisi until sign-off). Clearly marked as illustrations.
 5. The WhatsApp prefill (`WHATSAPP_URL` plus `?text=`) so the first message has context.
 6. The quote form's validation: checks a field when you leave it (never mid-typing), clears the error as soon as it is fixed, error text tied to each field with `aria-describedby` and announced through `aria-live`, a summary of what needs fixing on submit, and focus moved to the first bad field, the failure fallback or the success message.
-7. Service pages that link to the quote form with the service already chosen (`/mock-a/contact?type=Web%20app`).
+7. Case pages that show gaps openly: anything not in the repo renders as a dashed lime "TODO for Ryan" marker, and each page ends with a list of what is missing. Easy to fill in, and nothing gets invented.
+8. Service pages that link to the quote form with the service already chosen (`/mock-a/contact?type=Web%20app`).
 
 ## Open TODOs for Ryan
-- **Rondo**: no public link in the repo. It points at `/mock-a/work#rondo` for now. Needs the real URL, a one-line description and a year. The type "Studio product" is based only on Rondo being your own project.
+- **Rondo**: no public link in the repo. It points at `/mock-a/work/rondo` (its mock case page) for now. Needs the real URL, a one-line description and a year. The type "Studio product" is based only on Rondo being your own project.
 - **Crosskennan** (`crosskennan.vercel.app`) and **MGSL hub** (`mgsl-hq-black.vercel.app`): nothing in the repo describes them. They show name, link and a placeholder type ("Build", "Hub") only. Needs a one-liner, the right type and the year for each.
 - **Assisi**: uses an illustration until the sanctuary approves screenshots. The year is not in the repo.
 - **Formspree**: the quote form posts to `FORMSPREE_FORM_ID` (`NEXT_PUBLIC_FORMSPREE_ID`). Confirm that env var is set for Preview deployments, or the preview will show the email/WhatsApp fallback. The subject line says "(mock A)" so test sends are easy to spot. Not test-submitted by the agent, to avoid sending you an email.
@@ -50,6 +51,9 @@ Focus ring is lime on dark surfaces and ink on the cream work section and the bl
 - **Services page** (`/mock-a/services`): all copy is drawn from the existing site drafts (`lib/content/redesign-draft.ts`) and the brief, with no prices. Check the "Good for" lists, which are agent-written. The Google Business Profile section has no source copy in the repo, so confirm what that service covers.
 - **Registered charities**: the live site offers free packages for registered charities. Left out of the mock because the brief says no prices. Your call whether to mention it.
 - The care plan is mentioned under Websites (hosting, security updates, small edits), without its price. Confirm you still want it mentioned.
+- **Case pages** (`/mock-a/work/[slug]`): ShelterLink and Assisi use facts from the live case studies (`app/(site)/work/**`) and `lib/content/redesign-draft.ts`. Rondo, Crosskennan and MGSL hub are almost all TODO markers: the problem, what was built, stack, status, year and link. For every project the case page asks for a quote and any results. None are shown, because none are in the repo.
+- **ShelterLink case page**: the status mentions the MSc dissertation at Queen's University Belfast (Commendation), taken from the live case study. The brief says studio brand only, so decide whether that line stays.
+- **Assisi case page**: stack and year are TODOs.
 - The "Mock note" lines on the home work list, the work panels and the services page are for this review only. Remove them once the copy exists.
 
 ## Could not measure
@@ -58,6 +62,8 @@ Focus ring is lime on dark surfaces and ink on the cream work section and the bl
 - Layout shift was not measured with a tool. By construction, reveals only animate opacity and transform, the clock has a fixed-width slot, and images sit in fixed-aspect frames.
 - Dev-only console errors on every route: `icon.svg` and `favicon.ico` return 500 because `public/` and `app/` both define them. This existed before the mock and is not touched here.
 - Under `next start` locally, `/_vercel/insights/script.js` 404s (Vercel Analytics from the root layout only exists on Vercel). Not from the mock.
+
+- Case pages (refill 2): production build, Playwright at 360 and 390 on all five, with no horizontal scroll, no tap targets under 44px, one h1 and no skipped heading levels. Also a 1280 screenshot, a keyboard Tab walk on ShelterLink (every stop has a visible outline), and `noindex, nofollow` checked on the built HTML. An unknown slug returns 404 (`dynamicParams = false`).
 
 ## Fixed in the refill pass
 - The reveal observer lives in the layout, which persists across client-side navigation. Before this pass, moving from `/mock-a` to `/mock-a/work` with a nav link could leave lower sections invisible. It now re-scans on every route change and when new nodes arrive, and shows anything already scrolled past.

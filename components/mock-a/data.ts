@@ -40,7 +40,26 @@ export type MockProject = {
   caseStudy?: { href: string; label: string };
   art: MockArt;
   todo?: string;
+  /** Facts for /mock-a/work/[slug]. Empty or missing parts render a "TODO for Ryan" marker. */
+  story: MockStory;
 };
+
+export type MockStory = {
+  problem?: readonly string[];
+  built?: readonly string[];
+  /** Extra built notes, such as why the stack is plain. */
+  why?: { title: string; body: readonly string[] };
+  statusNote?: readonly string[];
+  gallery?: readonly { src: string; alt: string; caption: string }[];
+  /** Facts that are not in the repo yet. Each one shows as a TODO marker on the case page. */
+  missing: readonly string[];
+  related?: string;
+};
+
+/** Mock case study route for a project. */
+export function mockACaseHref(slug: string) {
+  return `${MOCK_A_BASE}/work/${slug}`;
+}
 
 export const MOCK_A_PROJECTS: readonly MockProject[] = [
   {
@@ -70,6 +89,39 @@ export const MOCK_A_PROJECTS: readonly MockProject[] = [
         alt: "ShelterLink volunteer browse shifts page showing available opportunities",
       },
     },
+    // Facts from app/(site)/work/shelterlink/page.tsx and lib/content/redesign-draft.ts.
+    story: {
+      problem: [
+        "Assisi Animal Sanctuary runs on volunteers. Who was in, who was trained for which jobs, and who was covering Sunday lived in paper rotas, phone calls and whoever happened to remember.",
+        "Staff spent time chasing people when that time should have gone to the animals. It worked for a short list. It stopped working once the list got long.",
+      ],
+      built: [
+        "Volunteers sign up, fill in a profile and pick shifts they can actually do. Staff assign roles, plan the week from an admin dashboard and export records to CSV when they need them elsewhere.",
+        "Authentication, rate limiting and a strict content security policy are built in, because a charity holding volunteer details cannot be casual about that.",
+      ],
+      why: {
+        title: "Why the stack is plain",
+        body: [
+          "The sanctuary has no developer on staff. The code has to make sense in a few years to whoever opens the folder next, so it is plain JavaScript with no framework and no build step.",
+          "PicoCSS keeps the front end small and readable. The design effort went on the rota, not on chrome.",
+        ],
+      },
+      statusNote: [
+        "Ready for the sanctuary to use.",
+        "Started as an MSc dissertation project at Queen's University Belfast, awarded with Commendation.",
+      ],
+      gallery: [
+        { src: "/images/work/shelterlink.png", alt: "ShelterLink volunteer list and profile detail screenshot", caption: "Volunteer list and profile" },
+        { src: "/images/work/shelterlink-browse-shifts.png", alt: "ShelterLink volunteer browse shifts page showing available opportunities", caption: "Browse shifts" },
+        { src: "/images/work/shelterlink-admin-dashboard.png", alt: "ShelterLink admin dashboard with volunteer stats and application review", caption: "Admin dashboard and exports" },
+      ],
+      missing: [
+        "A quote from the sanctuary, if they are happy to give one",
+        "The date it went into use at the sanctuary, once it has",
+        "Any results, such as volunteers signed up or hours saved. None are in the repo, so none are shown",
+      ],
+      related: "assisi",
+    },
   },
   {
     slug: "assisi",
@@ -86,6 +138,26 @@ export const MOCK_A_PROJECTS: readonly MockProject[] = [
     caseStudy: { href: "/work/assisi", label: "Read the case study" },
     art: { kind: "illustration", tone: "white", layout: "site" },
     todo: "Screenshots go up only after the sanctuary signs off. Illustration used until then.",
+    // Facts from app/(site)/work/assisi/page.tsx and lib/content/redesign-draft.ts.
+    story: {
+      problem: [
+        "A sanctuary needs a clear, calm public site where adopters, donors and supporters can find animals and ways to help without hunting through menus.",
+      ],
+      built: [
+        "A full rebuild of the public website for Assisi Animal Sanctuary.",
+        "A new brand to go with it.",
+        "Laid out so adopters, donors and supporters can find animals and ways to help.",
+        "Designed for phone and desktop from the start.",
+      ],
+      statusNote: ["Built, and waiting on the sanctuary's sign-off. Screenshots and a public link go up once they approve them."],
+      missing: [
+        "The stack used for the site",
+        "The year",
+        "Screenshots and a public link, after the sanctuary signs off",
+        "A quote from the sanctuary, if they are happy to give one",
+      ],
+      related: "shelterlink",
+    },
   },
   {
     slug: "rondo",
@@ -93,9 +165,19 @@ export const MOCK_A_PROJECTS: readonly MockProject[] = [
     type: "Studio product",
     facts: [],
     // TODO(Ryan): no public Rondo link exists in the repo. Add the real URL and a one-line description.
-    link: { href: `${MOCK_A_BASE}/work#rondo`, label: "Link to come", external: false },
+    link: { href: `${MOCK_A_BASE}/work/rondo`, label: "Link to come", external: false },
     art: { kind: "illustration", tone: "lime", layout: "app" },
     todo: "Needs a real link, a one-line description and a year from Ryan.",
+    story: {
+      missing: [
+        "What Rondo is and who it is for",
+        "The problem it solves",
+        "What has been built so far",
+        "The stack",
+        "Its status and a public link",
+        "The year",
+      ],
+    },
   },
   {
     slug: "crosskennan",
@@ -106,6 +188,16 @@ export const MOCK_A_PROJECTS: readonly MockProject[] = [
     art: { kind: "illustration", tone: "blue", layout: "site" },
     // TODO(Ryan): what Crosskennan is, who it is for, and the year. Nothing in the repo describes it.
     todo: "Needs a one-line description, type and year from Ryan.",
+    story: {
+      missing: [
+        "What Crosskennan is and who it was built for",
+        "The problem it solves",
+        "What was built",
+        "The stack",
+        "Its status, and whether the vercel.app address is the final link",
+        "The year",
+      ],
+    },
   },
   {
     slug: "mgsl-hub",
@@ -116,6 +208,16 @@ export const MOCK_A_PROJECTS: readonly MockProject[] = [
     art: { kind: "illustration", tone: "white", layout: "hub" },
     // TODO(Ryan): one-line description and year. Nothing in the repo describes it.
     todo: "Needs a one-line description and year from Ryan.",
+    story: {
+      missing: [
+        "What the MGSL hub is and who uses it",
+        "The problem it solves",
+        "What was built",
+        "The stack",
+        "Its status, and whether the vercel.app address is the final link",
+        "The year",
+      ],
+    },
   },
 ] as const;
 

@@ -159,7 +159,7 @@ export default function MockAHomePage() {
           <ol className={s.workList}>
             {MOCK_A_PROJECTS.map((project, i) => (
               <li key={project.slug} className={s.workItem} data-reveal>
-                <Link href={`${MOCK_A_BASE}/work#${project.slug}`} className={s.workLink}>
+                <Link href={`${MOCK_A_BASE}/work/${project.slug}`} className={s.workLink}>
                   <span className={`${s.workNum} ${s.mono}`} aria-hidden="true">
                     {String(i + 1).padStart(2, "0")}
                   </span>
