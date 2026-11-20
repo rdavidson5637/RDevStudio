@@ -243,6 +243,18 @@
   color: var(--mb-link);
 }
 
+.mb-num-lg {
+  font-size: var(--mb-text-xl);
+  line-height: var(--mb-leading-tight);
+}
+
+.mb-step-title {
+  font-size: var(--mb-text-base);
+  font-weight: 700;
+  line-height: var(--mb-leading-snug);
+  color: var(--mb-ink);
+}
+
 .mb-label {
   display: block;
   font-size: var(--mb-text-sm);

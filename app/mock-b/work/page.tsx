@@ -71,7 +71,7 @@ export default function MockBWorkPage() {
           data-mb-reveal="true"
           className="mb-shell mb-section-pad max-w-6xl scroll-mt-24 space-y-8 sm:px-6"
         >
-          <div className="grid gap-6 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,0.8fr)] lg:items-end lg:gap-12">
+          <div className="space-y-5">
             <div className="space-y-3">
               <div className="mb-meta">
                 <span className="tabular-nums font-semibold text-[var(--mb-tertiary)]">
@@ -104,10 +104,10 @@ export default function MockBWorkPage() {
               <p className="mb-body">{featuredProject.summary}</p>
             </div>
 
-            <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center lg:justify-end">
+            <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
               <Link
                 href={`/mock-b/work/${featuredProject.id}`}
-                className="mb-btn-primary"
+                className="mb-btn-primary w-full sm:w-auto"
               >
                 Read case study
                 <ArrowRightIcon className="h-4 w-4 shrink-0" />

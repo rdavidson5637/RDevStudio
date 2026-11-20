@@ -44,19 +44,10 @@ export default function MockBContactPage() {
             Every project at RDev Studio starts with a straightforward chat and a clear written quote. Fill in the quote form below or drop us a message on WhatsApp.
           </p>
 
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
+          <div className="mt-8">
             <a href="#quote-form" className="mb-btn-primary w-full sm:w-auto">
               Jump to quote form
               <span aria-hidden="true">&darr;</span>
-            </a>
-            <a
-              href={STUDIO_WHATSAPP_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mb-text-link"
-            >
-              <WhatsAppIcon className="h-4 w-4 shrink-0 text-[var(--mb-icon)]" />
-              Message on WhatsApp
             </a>
           </div>
         </div>

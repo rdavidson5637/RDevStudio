@@ -157,6 +157,16 @@ Type-token sweep, quieter form errors, cleaner hero. Copy, TODOs, and Grenadine 
 - **Rhythm:** Work featured band uses `mb-section-pad`; footer email standardised on `mb-text-link`.
 - **QA:** No overflow at 360/390; contact interactive targets >= 44px. Shots in `docs/design-pro/mockb-pro/pass8-before/` and `pass8-after/`.
 
+## Pro pass 9 (20 Nov, refine / same PR #35)
+
+Editorial rhythm and quieter CTA clusters. Copy, TODOs, and Grenadine hex values still untouched.
+
+- **Home:** Project rows alternate image/copy direction on desktop; process steps and About definition labels use `mb-num-lg` / `mb-step-title` / `mb-label`.
+- **Contact:** Hero keeps a single grenadine primary (Jump to form); WhatsApp stays in the sticky aside and header only.
+- **Services:** Per-section WhatsApp links removed (hero + closing keep WhatsApp); process steps share the new step tokens.
+- **Work / case:** Featured ShelterLink CTA stacks under the lede (type-led); case visual sits in a full-width surface band above page-bg reading column; case hero and sidebar drop redundant WhatsApp (closing keeps it); highlights use `mb-dash-list`.
+- **QA:** No overflow at 360/390; contact targets >= 44px. Shots in `docs/design-pro/mockb-pro/pass9-before/` and `pass9-after/`.
+
 ## Open TODOs for Ryan
 
 - [ ] **Formspree:** Confirm `NEXT_PUBLIC_FORMSPREE_ID` is set in the `rdev-studio` Vercel project and submit one test quote on `/mock-b/contact` in the preview to verify inbox delivery.

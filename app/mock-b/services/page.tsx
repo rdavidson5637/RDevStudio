@@ -159,7 +159,7 @@ export default function MockBServicesPage() {
                 </div>
               </div>
 
-              <div className="mt-8 flex flex-col gap-1 sm:flex-row sm:flex-wrap sm:items-center sm:gap-x-5">
+              <div className="mt-8">
                 <Link
                   href={`/mock-b/contact?topic=${encodeURIComponent(service.quoteTopic)}`}
                   className="mb-text-link w-fit"
@@ -167,15 +167,6 @@ export default function MockBServicesPage() {
                   Ask for a quote on {service.title.toLowerCase()}
                   <ArrowRightIcon className="h-4 w-4 shrink-0" />
                 </Link>
-                <a
-                  href={STUDIO_WHATSAPP_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mb-text-link"
-                >
-                  <WhatsAppIcon className="h-4 w-4 shrink-0 text-[var(--mb-icon)]" />
-                  Message on WhatsApp
-                </a>
               </div>
             </article>
           ))}
@@ -201,9 +192,9 @@ export default function MockBServicesPage() {
                 key={item.step}
                 className="grid gap-2 py-5 sm:grid-cols-[4.5rem_minmax(0,1fr)] sm:items-baseline sm:gap-6"
               >
-                <span className="mb-num text-xl">{item.step}</span>
+                <span className="mb-num mb-num-lg">{item.step}</span>
                 <div className="min-w-0 max-w-[var(--mb-measure)]">
-                  <h3 className="text-base font-semibold text-[var(--mb-ink)]">
+                  <h3 className="mb-step-title">
                     {item.title}
                   </h3>
                   <p className="mb-prose mt-1.5">

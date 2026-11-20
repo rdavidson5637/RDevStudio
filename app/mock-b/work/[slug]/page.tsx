@@ -161,16 +161,6 @@ export default async function MockBCaseStudyPage({
               </Link>
             )}
 
-            <a
-              href={STUDIO_WHATSAPP_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mb-text-link"
-            >
-              <WhatsAppIcon className="h-4 w-4 shrink-0 text-[var(--mb-icon)]" />
-              Message on WhatsApp
-            </a>
-
             {study.repoCaseStudyHref && study.repoCaseStudyLabel ? (
               <Link
                 href={study.repoCaseStudyHref}
@@ -233,24 +223,26 @@ export default async function MockBCaseStudyPage({
         </dl>
       </section>
 
-      {/* ── VISUAL SHOWCASE ──────────────────────────────────────────────── */}
+      {/* ── VISUAL SHOWCASE (FULL-WIDTH SURFACE BAND) ───────────────────── */}
       <section
         aria-labelledby="case-visual-heading"
-        className="mb-shell max-w-6xl pb-12 sm:px-6 sm:pb-14"
+        className="border-y border-[var(--mb-line)] bg-[var(--mb-surface)]"
       >
-        <div className="mb-5 grid gap-2 sm:grid-cols-[auto_minmax(0,1fr)] sm:items-baseline sm:gap-6">
-          <h2 id="case-visual-heading" className="mb-kicker-muted">
-            Visual preview
-          </h2>
-          <p className="mb-caption max-w-xl sm:justify-self-end sm:text-right">
-            {study.visualNote}
-          </p>
+        <div className="mb-shell mb-section-pad max-w-6xl sm:px-6">
+          <div className="mb-5 grid gap-2 sm:grid-cols-[auto_minmax(0,1fr)] sm:items-baseline sm:gap-6">
+            <h2 id="case-visual-heading" className="mb-kicker-muted">
+              Visual preview
+            </h2>
+            <p className="mb-caption max-w-xl sm:justify-self-end sm:text-right">
+              {study.visualNote}
+            </p>
+          </div>
+          <WorkDeviceShowcase project={project} />
         </div>
-        <WorkDeviceShowcase project={project} />
       </section>
 
       {/* ── MAIN CASE STUDY CONTENT + RULED SIDEBAR ──────────────────────── */}
-      <div className="border-t border-[var(--mb-line)] bg-[var(--mb-surface)]">
+      <div className="bg-[var(--mb-bg)]">
         <div className="mb-shell mb-section-pad grid max-w-6xl gap-12 px-4 sm:px-6 lg:grid-cols-[1.4fr_0.6fr] lg:items-start">
           <div className="space-y-12">
             {/* 1. The problem */}
@@ -311,15 +303,13 @@ export default async function MockBCaseStudyPage({
                   <h3 className="mb-kicker-muted">
                     Confirmed highlights
                   </h3>
-                  <ul className="mt-3 divide-y divide-[var(--mb-line)] border-y border-[var(--mb-line)]">
+                  <ul className="mb-dash-list mt-3 border-y border-[var(--mb-line)] py-4">
                     {study.builtHighlights.map((item) => (
-                      <li key={item} className="flex items-start gap-2.5 py-3">
-                        <span aria-hidden="true" data-mb-dash className="text-[var(--mb-link)]">
+                      <li key={item}>
+                        <span aria-hidden="true" data-mb-dash>
                           -
                         </span>
-                        <span className="text-sm leading-relaxed text-[var(--mb-ink)] sm:text-base">
-                          {item}
-                        </span>
+                        <span>{item}</span>
                       </li>
                     ))}
                   </ul>
@@ -460,20 +450,11 @@ export default async function MockBCaseStudyPage({
               <p className="mb-prose mt-2">
                 Tell RDev Studio what you need and we will reply in plain English with clear next steps.
               </p>
-              <div className="mt-4 flex flex-col gap-1">
+              <div className="mt-4">
                 <Link href={quoteHref} className="mb-text-link w-fit">
                   Request a quote
                   <ArrowRightIcon className="h-4 w-4 shrink-0" />
                 </Link>
-                <a
-                  href={STUDIO_WHATSAPP_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mb-text-link w-fit"
-                >
-                  <WhatsAppIcon className="h-4 w-4 shrink-0" />
-                  WhatsApp the studio
-                </a>
               </div>
             </section>
           </aside>

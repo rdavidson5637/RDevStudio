@@ -88,13 +88,19 @@ export default function MockBHomePage() {
                 className="py-10 sm:py-12"
               >
                 <div
-                  className={`grid gap-8 md:items-center ${
+                  className={`grid gap-8 md:items-center md:gap-10 ${
                     index === 0
-                      ? "md:grid-cols-[0.95fr_1.05fr] md:gap-10"
-                      : "md:grid-cols-[1.1fr_0.9fr] md:gap-10"
+                      ? "md:grid-cols-[0.95fr_1.05fr]"
+                      : index % 2 === 1
+                        ? "md:grid-cols-[0.95fr_1.05fr]"
+                        : "md:grid-cols-[1.1fr_0.9fr]"
                   }`}
                 >
-                  <div className="min-w-0 space-y-4">
+                  <div
+                    className={`min-w-0 space-y-4 ${
+                      index % 2 === 1 ? "md:order-2" : ""
+                    }`}
+                  >
                     <div className="mb-meta">
                       <span className="tabular-nums font-semibold text-[var(--mb-tertiary)]">
                         0{index + 1}
@@ -177,7 +183,11 @@ export default function MockBHomePage() {
                     </div>
                   </div>
 
-                  <div className="min-w-0">
+                  <div
+                    className={`min-w-0 ${
+                      index % 2 === 1 ? "md:order-1" : ""
+                    }`}
+                  >
                     <ProjectPreview
                       project={project}
                       size={index === 0 ? "featured" : "compact"}
@@ -273,9 +283,9 @@ export default function MockBHomePage() {
                   key={item.step}
                   className="grid gap-2 py-5 sm:grid-cols-[4.5rem_minmax(0,1fr)] sm:items-baseline sm:gap-6"
                 >
-                  <span className="mb-num text-xl">{item.step}</span>
+                  <span className="mb-num mb-num-lg">{item.step}</span>
                   <div className="min-w-0 max-w-[var(--mb-measure)]">
-                    <p className="text-base font-semibold text-[var(--mb-ink)]">
+                    <p className="mb-step-title">
                       {item.title}
                     </p>
                     <p className="mb-prose mt-1.5">
@@ -318,19 +328,19 @@ export default function MockBHomePage() {
             </h3>
             <dl className="mt-4 divide-y divide-[var(--mb-line)] border-y border-[var(--mb-line)]">
               <div className="py-4">
-                <dt className="text-sm font-semibold text-[var(--mb-ink)]">Direct studio contact</dt>
+                <dt className="mb-label">Direct studio contact</dt>
                 <dd className="mb-prose mt-1">
                   No account managers or hand-offs between departments.
                 </dd>
               </div>
               <div className="py-4">
-                <dt className="text-sm font-semibold text-[var(--mb-ink)]">Built for phones first</dt>
+                <dt className="mb-label">Built for phones first</dt>
                 <dd className="mb-prose mt-1">
                   Checked on real screens so buttons, menus, and forms feel effortless.
                 </dd>
               </div>
               <div className="py-4">
-                <dt className="text-sm font-semibold text-[var(--mb-ink)]">Charities &amp; local roots</dt>
+                <dt className="mb-label">Charities &amp; local roots</dt>
                 <dd className="mb-prose mt-1">
                   Registered charities and rescues can ask about free-of-charge support.
                 </dd>
