@@ -1,11 +1,12 @@
-import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/Button";
 import { Section } from "@/components/ui/Section";
+import { CaseStudyShowcaseCard } from "@/components/work/CaseStudyShowcaseCard";
 import {
   DRAFT_CASE_STUDIES,
   DRAFT_CONCEPT_STUDIES,
   DRAFT_CTAS,
+  DRAFT_SHOWCASE_CASE_SLUGS,
 } from "@/lib/content/redesign-draft";
 import { createPageMetadata } from "@/lib/metadata";
 
@@ -17,76 +18,17 @@ export const metadata = createPageMetadata({
   ogImage: "/work/opengraph-image",
 });
 
-type StudyItem = (typeof DRAFT_CASE_STUDIES)[number] | (typeof DRAFT_CONCEPT_STUDIES)[number];
-
-function CaseStudyCard({ study }: { study: StudyItem }) {
-  return (
-    <article className="grid gap-8 border border-studio-border bg-studio-surface p-6 md:p-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
-      {"image" in study && study.image ? (
-        <div className="relative aspect-[16/10] w-full overflow-hidden border border-studio-line bg-studio-bg">
-          <Image
-            src={study.image}
-            alt={study.imageAlt}
-            fill
-            sizes="(max-width: 1024px) 100vw, 42vw"
-            className="object-cover object-top"
-          />
-        </div>
-      ) : (
-        <div className="flex aspect-[16/10] w-full items-center justify-center border border-studio-line bg-studio-bg p-6 text-center">
-                <p className="text-sm font-bold text-studio-muted">Preview after sign-off</p>
-              </div>
-      )}
-
-      <div>
-        <div className="flex flex-wrap items-center justify-between gap-2 border-b border-studio-line pb-3 text-sm">
-          <span className="text-studio-muted">{study.category}</span>
-          <span className="font-bold text-studio-text">{study.status}</span>
-        </div>
-
-        <h3 className="mt-4 font-studio-display text-3xl text-studio-text">{study.name}</h3>
-
-        <dl className="mt-5 space-y-4 text-sm sm:text-base">
-          <div className="grid gap-1 sm:grid-cols-[7rem_1fr] sm:gap-4">
-            <dt className="font-bold text-studio-text">Challenge</dt>
-            <dd className="text-studio-muted">{study.challenge}</dd>
-          </div>
-          <div className="grid gap-1 sm:grid-cols-[7rem_1fr] sm:gap-4">
-            <dt className="font-bold text-studio-text">Solution</dt>
-            <dd className="text-studio-muted">{study.solution}</dd>
-          </div>
-          <div className="grid gap-1 sm:grid-cols-[7rem_1fr] sm:gap-4">
-            <dt className="font-bold text-studio-text">Status</dt>
-            <dd className="text-studio-muted">{study.result}</dd>
-          </div>
-        </dl>
-
-        <div className="mt-6 flex flex-wrap items-center gap-6 border-t border-studio-line pt-4">
-          <Link
-            href={study.href}
-            className="inline-flex min-h-11 items-center text-sm font-bold text-studio-text underline decoration-studio-line-strong underline-offset-4 transition-colors hover:text-studio-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-studio-text"
-          >
-            Read the case study
-          </Link>
-          {"siteUrl" in study && study.siteUrl ? (
-            <a
-              href={study.siteUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex min-h-11 items-center text-sm text-studio-muted underline decoration-studio-line underline-offset-4 transition-colors hover:text-studio-text focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-studio-text"
-            >
-              Open live preview
-            </a>
-          ) : null}
-        </div>
-      </div>
-    </article>
-  );
-}
-
 export default function WorkPage() {
+  const showcase = DRAFT_SHOWCASE_CASE_SLUGS.map((slug) =>
+    DRAFT_CASE_STUDIES.find((study) => study.slug === slug),
+  ).filter((study): study is (typeof DRAFT_CASE_STUDIES)[number] => study !== undefined);
+
+  const otherClientWork = DRAFT_CASE_STUDIES.filter(
+    (study) => !DRAFT_SHOWCASE_CASE_SLUGS.includes(study.slug as (typeof DRAFT_SHOWCASE_CASE_SLUGS)[number]),
+  );
+
   return (
-    <div className="bg-studio-bg text-studio-text">
+    <>
       <Section className="border-b border-studio-line">
         <h1 className="display-lg max-w-[16ch] text-balance text-studio-text">
           Work and case studies
@@ -106,16 +48,40 @@ export default function WorkPage() {
       </Section>
 
       <Section
-        heading="Client and charity work"
-        intro="Real organisations in Belfast and Northern Ireland, plus a live football coaching pilot."
+        heading="Showcase"
+        intro="ShelterLink, Assisi, Crosskennan and Rondo - the charity and coaching builds with the fullest write-ups."
         className="border-b border-studio-line"
       >
         <div className="mt-10 space-y-10">
-          {DRAFT_CASE_STUDIES.map((study) => (
-            <CaseStudyCard key={study.slug} study={study} />
+          {showcase.map((study, index) => (
+            <CaseStudyShowcaseCard
+              key={study.slug}
+              study={study}
+              index={index + 1}
+              reverse={index % 2 === 1}
+            />
           ))}
         </div>
       </Section>
+
+      {otherClientWork.length > 0 ? (
+        <Section
+          heading="Other client work"
+          intro="Live and nearly finished client sites outside the charity and coaching showcase."
+          className="border-b border-studio-line"
+        >
+          <div className="mt-10 space-y-10">
+            {otherClientWork.map((study, index) => (
+              <CaseStudyShowcaseCard
+                key={study.slug}
+                study={study}
+                index={showcase.length + index + 1}
+                reverse={index % 2 === 0}
+              />
+            ))}
+          </div>
+        </Section>
+      ) : null}
 
       <Section
         heading="Concept builds and prototypes"
@@ -123,8 +89,13 @@ export default function WorkPage() {
         className="border-b border-studio-line"
       >
         <div className="mt-10 space-y-10">
-          {DRAFT_CONCEPT_STUDIES.map((study) => (
-            <CaseStudyCard key={study.slug} study={study} />
+          {DRAFT_CONCEPT_STUDIES.map((study, index) => (
+            <CaseStudyShowcaseCard
+              key={study.slug}
+              study={study}
+              index={index + 1}
+              reverse={index % 2 === 1}
+            />
           ))}
         </div>
       </Section>
@@ -142,6 +113,6 @@ export default function WorkPage() {
           </Link>
         </div>
       </Section>
-    </div>
+    </>
   );
 }
