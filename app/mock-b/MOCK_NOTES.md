@@ -102,6 +102,7 @@ Tighter CTA hierarchy and mobile rhythm. Copy, TODOs, and Grenadine hex values s
 - **Form:** Inputs use raised fill against Slate 2 panels so fields read clearly; contact form uses `mb-section-pad` and a slightly wider form column.
 - **360 / 390:** Header and mobile nav tightened; jump-bar labels truncate on narrow viewports; case visual preview uses a ruled title/caption grid.
 - **QA:** Shots in `docs/design-pro/mockb-pro/pass3-before/` and `pass3-after/` (360, 390, 1280).
+- **Follow-up in same pass:** Services FAQ questions use bold body type (not display `mb-h3`); services closing band is type-led stacked instead of side-by-side so it does not mirror the work/case closing pattern.
 
 ## Open TODOs for Ryan
 

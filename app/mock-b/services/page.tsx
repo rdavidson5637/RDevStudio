@@ -236,10 +236,12 @@ export default function MockBServicesPage() {
             <div
               key={item.question}
               data-mb-reveal="true"
-              className="grid gap-3 py-6 md:grid-cols-[0.85fr_1.15fr] md:gap-10"
+              className="grid gap-3 py-6 md:grid-cols-[0.9fr_1.1fr] md:gap-12"
             >
-              <dt className="mb-h3 text-[var(--mb-ink)]">{item.question}</dt>
-              <dd className="text-sm leading-relaxed text-[var(--mb-muted)] sm:text-base">
+              <dt className="text-base font-bold leading-snug text-[var(--mb-ink)] sm:text-[var(--mb-text-md)]">
+                {item.question}
+              </dt>
+              <dd className="max-w-[var(--mb-measure)] text-sm leading-relaxed text-[var(--mb-muted)] sm:text-base">
                 {item.answer}
               </dd>
             </div>
@@ -254,9 +256,9 @@ export default function MockBServicesPage() {
       >
         <div
           data-mb-reveal="true"
-          className="mb-shell mb-section-pad flex max-w-6xl flex-col gap-6 px-4 sm:px-6 lg:flex-row lg:items-center lg:justify-between"
+          className="mb-shell mb-section-pad max-w-6xl px-4 sm:px-6"
         >
-          <div className="max-w-xl">
+          <div className="max-w-2xl border-t border-[var(--mb-line-strong)] pt-8">
             <p className="mb-kicker-muted">Not sure which fits?</p>
             <h2 id="services-close-heading" className="mb-h2 mt-2 text-[var(--mb-ink)]">
               Tell us what you are trying to sort out
@@ -264,22 +266,21 @@ export default function MockBServicesPage() {
             <p className="mt-3 text-base leading-relaxed text-[var(--mb-muted)]">
               Send a short note through the quote form or message RDev Studio on WhatsApp - we will point you toward the simplest option.
             </p>
-          </div>
-
-          <div className="flex flex-col gap-3 sm:flex-row sm:items-center lg:shrink-0">
-            <Link href="/mock-b/contact" className="mb-btn-primary">
-              Start a quote
-              <ArrowRightIcon className="h-4 w-4 shrink-0" />
-            </Link>
-            <a
-              href={STUDIO_WHATSAPP_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mb-text-link"
-            >
-              <WhatsAppIcon className="h-4 w-4 shrink-0" />
-              Message on WhatsApp
-            </a>
+            <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
+              <Link href="/mock-b/contact" className="mb-btn-primary w-full sm:w-auto">
+                Start a quote
+                <ArrowRightIcon className="h-4 w-4 shrink-0" />
+              </Link>
+              <a
+                href={STUDIO_WHATSAPP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mb-text-link"
+              >
+                <WhatsAppIcon className="h-4 w-4 shrink-0" />
+                Message on WhatsApp
+              </a>
+            </div>
           </div>
         </div>
       </section>
