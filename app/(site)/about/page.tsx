@@ -97,7 +97,8 @@ export default function AboutPage() {
             </p>
             <p className="type-body text-studio-muted">
               What I like building is straightforward: useful things for real people. A volunteer
-              platform for an animal sanctuary. Sites for local businesses. Football games that
+              platform for an animal sanctuary. Charity sites for Assisi and Crosskennan. A
+              coaching app for grassroots football. Sites for local businesses. Games that
               strangers on the internet play at work when they should be doing something else. If
               nobody uses it, I&apos;m not interested.
             </p>
