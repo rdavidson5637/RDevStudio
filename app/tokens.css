@@ -103,6 +103,10 @@
   --radius-full: 9999px;
   --radius-studio: 1rem;
   --container-studio: 75rem;
+  --measure-headline: 16ch;
+  --aspect-work-shot: 16 / 10;
+  --hero-min-height: min(92svh, 54rem);
+  --hero-min-height-lg: min(90svh, 58rem);
 
   /* ── Motion ──────────────────────────────────────────────── */
   --duration-fast: 150ms;
