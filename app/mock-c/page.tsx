@@ -4,14 +4,14 @@ import { LocalTime } from "./LocalTime";
 import { WHATSAPP_URL } from "@/lib/constants";
 
 const work = [
-  { name: "ShelterLink", type: "Volunteer platform", year: "—", role: "Product design · build", href: "https://shelterlink.online", external: true, note: "Volunteer rotas, roles and an admin dashboard for Assisi Animal Sanctuary." },
+  { name: "ShelterLink", type: "Volunteer platform", year: "-", role: "Product design · build", href: "/mock-c/work/shelterlink", external: false, note: "Volunteer rotas, roles and an admin dashboard for Assisi Animal Sanctuary." },
   // TODO Ryan: confirm Rondo description, year, role and its public link. No URL was present in this repository.
-  { name: "Rondo", type: "Details to confirm", year: "—", role: "Details to confirm", href: "#work", external: false, note: "Project details to confirm." },
+  { name: "Rondo", type: "Details to confirm", year: "-", role: "Details to confirm", href: "/mock-c/work/rondo", external: false, note: "Project details to confirm." },
   // TODO Ryan: confirm Crosskennan project description, year and role; those details are not in this repository.
-  { name: "Crosskennan", type: "Details to confirm", year: "—", role: "Details to confirm", href: "https://crosskennan.vercel.app", external: true, note: "Project details to confirm." },
-  { name: "Assisi", type: "Website · identity", year: "—", role: "Website and brand rebuild", href: "/work/assisi", external: false, note: "A rebuilt website and brand for Assisi Animal Sanctuary in Belfast; built and ready for their feedback." },
+  { name: "Crosskennan", type: "Details to confirm", year: "-", role: "Details to confirm", href: "/mock-c/work/crosskennan", external: false, note: "Project details to confirm." },
+  { name: "Assisi", type: "Website · identity", year: "-", role: "Website and brand rebuild", href: "/mock-c/work/assisi", external: false, note: "A rebuilt website and brand for Assisi Animal Sanctuary in Belfast; built and ready for their feedback." },
   // TODO Ryan: confirm MGSL hub description, year and role; those details are not in this repository.
-  { name: "MGSL hub", type: "Details to confirm", year: "—", role: "Details to confirm", href: "https://mgsl-hq-black.vercel.app", external: true, note: "Project details to confirm." },
+  { name: "MGSL hub", type: "Details to confirm", year: "-", role: "Details to confirm", href: "/mock-c/work/mgsl-hub", external: false, note: "Project details to confirm." },
 ];
 
 const services = [
@@ -36,7 +36,7 @@ export default function MockCHome() {
     </section>
 
     <section className="section wrap" id="services" aria-labelledby="services-title">
-      <div className="section-heading"><p className="eyebrow">What we do <span>01 — 04</span></p><h2 id="services-title">Good work, made<br />with intention.</h2></div>
+      <div className="section-heading"><p className="eyebrow">What we do <span>01 - 04</span></p><h2 id="services-title">Good work, made<br />with intention.</h2></div>
       <div className="service-list">{services.map(([n, title, desc]) => <article className="service-row" key={n}><span className="row-number">{n}</span><h3>{title}</h3><p>{desc}</p><span className="row-arrow" aria-hidden="true">↗</span></article>)}</div>
     </section>
 

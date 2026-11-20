@@ -190,3 +190,56 @@
   .mock-c .button, .mock-c .text-link { border: 1px solid #777; }
   .mock-c .mock-c-reveal-ready { opacity: 1; transform: none; }
 }
+
+/* Case studies (/mock-c/work/[slug]) */
+.mock-c .case-heading h1 { overflow-wrap: anywhere; }
+.mock-c .case-back { min-height: 44px; display: inline-flex; align-items: center; text-decoration: underline; text-underline-offset: 3px; }
+.mock-c .case-back:hover { color: var(--accent); }
+.mock-c .case-summary { font-size: 18px; color: var(--ink) !important; }
+.mock-c .case-meta { margin: 44px 0 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px; border-top: 1px solid var(--line); padding-top: 20px; }
+.mock-c .case-meta dt { color: #545750; font: 10px 'DM Mono', monospace; text-transform: uppercase; letter-spacing: .09em; }
+.mock-c .case-meta dd { margin: 8px 0 0; font-size: 14px; }
+.mock-c .case-link { margin: 26px 0 0; }
+.mock-c .case-link .text-link { text-decoration: underline; text-underline-offset: 4px; text-decoration-color: var(--line); }
+.mock-c .case-todo { display: inline; padding: 2px 6px; border: 1px dashed #8d5a3c; background: #f8ede4; color: #5a3522; font-size: .92em; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
+.mock-c .case-todo strong { font: 600 10px 'DM Mono', monospace; letter-spacing: .08em; text-transform: uppercase; }
+.mock-c .case-shots { padding-block: 64px; display: grid; grid-template-columns: 1fr 1fr; gap: 28px; border-bottom: 1px solid var(--line); }
+.mock-c .case-shot { margin: 0; }
+.mock-c .case-shot-lead { grid-column: 1 / -1; }
+.mock-c .case-frame { border: 1px solid #cecec6; background: #fff; box-shadow: 0 24px 50px -30px #20221f40; overflow: hidden; }
+.mock-c .case-frame-bar { height: 26px; display: flex; gap: 6px; align-items: center; padding-inline: 12px; border-bottom: 1px solid var(--line); background: #eeede8; }
+.mock-c .case-frame-bar i { width: 7px; height: 7px; border-radius: 50%; background: #cfcfc7; }
+.mock-c .case-frame img { display: block; width: 100%; height: auto; }
+.mock-c .case-shot figcaption { margin-top: 12px; color: var(--muted); font: 10px 'DM Mono', monospace; text-transform: uppercase; letter-spacing: .08em; }
+.mock-c .case-placeholder { grid-column: 1 / -1; min-height: 240px; display: flex; flex-direction: column; justify-content: center; gap: 16px; padding: 32px; border: 1px solid var(--line); background: repeating-linear-gradient(135deg, transparent 0 14px, #ebe9e2 14px 15px); }
+.mock-c .case-section { display: grid; grid-template-columns: 1fr 1.35fr; gap: 40px; padding-block: 56px; border-bottom: 1px solid var(--line); }
+.mock-c .case-section h2.eyebrow { font-weight: 400; letter-spacing: .09em; line-height: 1.55; }
+.mock-c .case-body { max-width: 600px; }
+.mock-c .case-body p { margin: 0 0 16px; font-size: 16px; }
+.mock-c .case-features { margin: 22px 0 0; padding: 0; list-style: none; display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid var(--line); }
+.mock-c .case-features li { padding: 12px 0; border-bottom: 1px solid var(--line); color: var(--muted); font-size: 13px; }
+.mock-c .case-features li::before { content: "+"; margin-right: 10px; color: var(--accent); }
+.mock-c .case-cta { padding-block: 96px 72px; }
+.mock-c .case-cta h2 { margin-bottom: 30px; font-size: clamp(2.8rem, 6vw, 5rem); }
+.mock-c .case-cta h2 em { color: var(--accent); }
+.mock-c .case-next { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding-block: 28px; border-top: 1px solid var(--line); }
+.mock-c .case-next a { min-height: 44px; display: inline-flex; align-items: center; gap: 10px; font-size: clamp(1.4rem, 3vw, 2rem); letter-spacing: -.03em; }
+.mock-c .case-next a:hover { color: var(--accent); }
+.mock-c .case-next a span { transition: transform .2s ease; }
+.mock-c .case-next a:hover span { transform: translateX(4px); }
+.mock-c .project-panel h2 a { display: inline-flex; min-height: 44px; align-items: baseline; gap: .2em; }
+.mock-c .project-panel h2 a span { transition: transform .2s ease; }
+.mock-c .project-panel h2 a:hover span { transform: translateX(6px); }
+@media (max-width: 760px) {
+  .mock-c .case-meta { grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 34px; }
+  .mock-c .case-summary { font-size: 16px; }
+  .mock-c .case-shots { grid-template-columns: 1fr; gap: 22px; padding-block: 40px; }
+  .mock-c .case-section { grid-template-columns: 1fr; gap: 14px; padding-block: 40px; }
+  .mock-c .case-features { grid-template-columns: 1fr; }
+  .mock-c .case-cta { padding-block: 66px 48px; }
+}
+@media print {
+  .mock-c .case-frame { box-shadow: none; }
+  .mock-c .case-todo { background: none; color: black; }
+}
+.mock-c a.wordmark { display: inline-block; padding-block: 8px; }

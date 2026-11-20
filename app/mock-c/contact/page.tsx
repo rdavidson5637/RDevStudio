@@ -2,7 +2,7 @@ import Link from "next/link";
 import { ContactForm } from "@/components/contact/ContactForm";
 import { WHATSAPP_URL } from "@/lib/constants";
 
-export const metadata = { title: "Start a project — RDev Studio", robots: { index: false, follow: false } };
+export const metadata = { title: "Start a project - RDev Studio", robots: { index: false, follow: false } };
 
 export default function MockCContact() {
   return <main className="wrap mock-subpage">

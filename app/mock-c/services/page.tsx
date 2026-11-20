@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { WHATSAPP_URL } from "@/lib/constants";
 
-export const metadata = { title: "Services — RDev Studio", robots: { index: false, follow: false } };
+export const metadata = { title: "Services - RDev Studio", robots: { index: false, follow: false } };
 const services = [
   ["01", "Websites", "Clear, phone-first websites that explain what you do and make it easy for people to get in touch."],
   ["02", "Web apps", "Purpose-built digital products for a particular need, from internal tools to public platforms."],
@@ -13,7 +13,7 @@ function Actions() { return <div className="service-actions"><Link className="bu
 
 export default function MockCServices() {
   return <main className="wrap mock-subpage"><header className="topbar"><Link className="wordmark" href="/mock-c">R<span>/</span>DEV <small>STUDIO</small></Link><nav aria-label="Main navigation"><Link href="/mock-c">Home</Link><Link href="/mock-c/work">Work</Link><Link href="/mock-c/contact">Contact</Link></nav></header>
-    <section className="subpage-heading"><p className="eyebrow">What we do · 01—04</p><h1>Digital work,<br /><em>made useful.</em></h1><p>RDev Studio designs and builds for small businesses and charities, with a focus on clear, useful experiences.</p><Actions /></section>
+    <section className="subpage-heading"><p className="eyebrow">What we do · 01-04</p><h1>Digital work,<br /><em>made useful.</em></h1><p>RDev Studio designs and builds for small businesses and charities, with a focus on clear, useful experiences.</p><Actions /></section>
     <div className="services-page-list">{services.map(([number, title, description]) => <article className="service-detail" key={number}><span className="row-number">{number}</span><div><h2>{title}</h2><p>{description}</p><Actions /></div></article>)}</div>
     <footer className="footer subpage-footer"><Link className="wordmark" href="/mock-c">R<span>/</span>DEV <small>STUDIO</small></Link><Link href="/mock-c/contact">Start a project ↗</Link></footer>
   </main>;

@@ -3,7 +3,7 @@ import "./mock-c.css";
 import { RevealObserver } from "./RevealObserver";
 
 export const metadata: Metadata = {
-  title: "RDev Studio — Independent digital studio",
+  title: "RDev Studio - Independent digital studio",
   description: "Websites and digital products for small businesses and charities.",
   robots: { index: false, follow: false },
 };
