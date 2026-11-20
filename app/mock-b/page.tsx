@@ -55,7 +55,7 @@ export default function MockBHomePage() {
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
               <a href="#quote" className="mb-btn-primary w-full sm:w-auto">
                 Start a quote
-                <span aria-hidden="true">&rarr;</span>
+                <span aria-hidden="true" className="mb-arrow-icon">&rarr;</span>
               </a>
 
               <a
@@ -105,9 +105,9 @@ export default function MockBHomePage() {
         aria-labelledby="work-heading"
         className="mx-auto max-w-5xl scroll-mt-28 px-4 py-14 sm:px-6 sm:py-20"
       >
-        <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+        <div data-mb-reveal="true" className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
           <div>
-            <p className="mb-sticker mb-sticker-tilt-left bg-[var(--mb-butter-soft)] text-[var(--mb-ink)]">
+            <p className="mb-sticker mb-sticker-tilt-left mb-sticker-wobble bg-[var(--mb-butter-soft)] text-[var(--mb-ink)]">
               Latest work
             </p>
             <h2
@@ -123,7 +123,7 @@ export default function MockBHomePage() {
             className="mb-btn-soft w-fit"
           >
             Open full showcase
-            <span aria-hidden="true">&rarr;</span>
+            <span aria-hidden="true" className="mb-arrow-icon">&rarr;</span>
           </Link>
         </div>
 
@@ -132,6 +132,7 @@ export default function MockBHomePage() {
           {MOCK_B_PROJECTS.map((project, index) => (
             <li
               key={project.id}
+              data-mb-reveal="true"
               className="mb-card mb-card-interactive overflow-hidden p-5 sm:p-6"
             >
               <div className="grid gap-6 md:grid-cols-[1.15fr_0.85fr] md:items-center">
@@ -187,7 +188,7 @@ export default function MockBHomePage() {
                     ) : (
                       <Link href={project.href} className="mb-btn-soft">
                         {project.linkLabel}
-                        <span aria-hidden="true">&rarr;</span>
+                        <span aria-hidden="true" className="mb-arrow-icon">&rarr;</span>
                       </Link>
                     )}
 
@@ -209,7 +210,7 @@ export default function MockBHomePage() {
                   </div>
                 </div>
 
-                <div>
+                <div className="mb-preview-lift">
                   <ProjectPreview project={project} size="compact" />
                 </div>
               </div>
@@ -228,9 +229,9 @@ export default function MockBHomePage() {
         aria-labelledby="services-heading"
         className="mx-auto max-w-5xl scroll-mt-28 px-4 py-14 sm:px-6 sm:py-20"
       >
-        <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+        <div data-mb-reveal="true" className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
           <div className="max-w-2xl">
-            <p className="mb-sticker mb-sticker-tilt-right bg-[var(--mb-seaglass-soft)] text-[var(--mb-seaglass-ink)] border-[var(--mb-seaglass)]/35">
+            <p className="mb-sticker mb-sticker-tilt-right mb-sticker-wobble bg-[var(--mb-seaglass-soft)] text-[var(--mb-seaglass-ink)] border-[var(--mb-seaglass)]/35">
               Skills &amp; services
             </p>
             <h2
@@ -246,20 +247,22 @@ export default function MockBHomePage() {
 
           <Link href="/mock-b/services" className="mb-btn-soft w-fit shrink-0">
             Full services guide
-            <span aria-hidden="true">&rarr;</span>
+            <span aria-hidden="true" className="mb-arrow-icon">&rarr;</span>
           </Link>
         </div>
 
         <div className="mt-9 grid gap-5 sm:grid-cols-2">
-          {MOCK_B_SERVICES.map((service) => (
+          {MOCK_B_SERVICES.map((service, index) => (
             <article
               key={service.id}
-              className="mb-card flex flex-col justify-between p-6"
+              data-mb-reveal="true"
+              data-mb-delay={index % 2 === 1 ? "1" : undefined}
+              className="mb-card mb-card-interactive flex flex-col justify-between p-6"
             >
               <div>
                 <div className="flex items-center justify-between gap-3">
                   <span
-                    className={`flex h-12 w-12 items-center justify-center rounded-2xl border border-[var(--mb-line)] ${SERVICE_TINT_CLASS[service.tint]}`}
+                    className={`mb-icon-badge flex h-12 w-12 items-center justify-center rounded-2xl border border-[var(--mb-line)] ${SERVICE_TINT_CLASS[service.tint]}`}
                   >
                     <ServiceIcon kind={service.icon} />
                   </span>
@@ -291,10 +294,10 @@ export default function MockBHomePage() {
               <div className="mt-6 pt-2">
                 <a
                   href="#quote"
-                  className="inline-flex min-h-[44px] items-center text-sm font-semibold text-[var(--mb-terracotta-ink)] underline decoration-[var(--mb-terracotta)]/45 underline-offset-4 hover:text-[var(--mb-terracotta)]"
+                  className="mb-arrow-link inline-flex min-h-[44px] items-center gap-1 text-sm font-semibold text-[var(--mb-terracotta-ink)] underline decoration-[var(--mb-terracotta)]/45 underline-offset-4 hover:text-[var(--mb-terracotta)]"
                 >
                   Ask for a quote on this
-                  <span aria-hidden="true">&nbsp;&rarr;</span>
+                  <span aria-hidden="true" className="mb-arrow-icon">&rarr;</span>
                 </a>
               </div>
             </article>
@@ -302,14 +305,19 @@ export default function MockBHomePage() {
         </div>
 
         {/* How we work strip */}
-        <div className="mt-10 rounded-[28px] border-[1.5px] border-[var(--mb-line)] bg-[var(--mb-cream-deep)] p-6 sm:p-8">
+        <div
+          data-mb-reveal="true"
+          className="mt-10 rounded-[28px] border-[1.5px] border-[var(--mb-line)] bg-[var(--mb-cream-deep)] p-6 sm:p-8"
+        >
           <h3 className="mb-display text-2xl font-semibold text-[var(--mb-ink)]">
             How a project runs
           </h3>
           <ol className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            {STUDIO_RHYTHM.map((item) => (
+            {STUDIO_RHYTHM.map((item, index) => (
               <li
                 key={item.step}
+                data-mb-reveal="true"
+                data-mb-delay={index > 0 ? String(index) : undefined}
                 className="rounded-2xl border border-[var(--mb-line)] bg-[var(--mb-paper)] p-4"
               >
                 <span className="mb-display text-lg font-semibold text-[var(--mb-terracotta)]">
@@ -337,9 +345,12 @@ export default function MockBHomePage() {
         aria-labelledby="about-heading"
         className="mx-auto max-w-5xl scroll-mt-28 px-4 py-14 sm:px-6 sm:py-20"
       >
-        <div className="mb-card grid gap-8 bg-[var(--mb-paper)] p-6 sm:p-9 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
+        <div
+          data-mb-reveal="true"
+          className="mb-card grid gap-8 bg-[var(--mb-paper)] p-6 sm:p-9 lg:grid-cols-[1.2fr_0.8fr] lg:items-center"
+        >
           <div>
-            <p className="mb-sticker mb-sticker-tilt-left bg-[var(--mb-terracotta-soft)] text-[var(--mb-terracotta-ink)] border-[var(--mb-terracotta)]/30">
+            <p className="mb-sticker mb-sticker-tilt-left mb-sticker-wobble bg-[var(--mb-terracotta-soft)] text-[var(--mb-terracotta-ink)] border-[var(--mb-terracotta)]/30">
               About RDev Studio
             </p>
             <h2
@@ -390,12 +401,15 @@ export default function MockBHomePage() {
         aria-labelledby="quote-heading"
         className="mx-auto max-w-5xl scroll-mt-24 px-4 pt-6 sm:px-6 sm:pt-10"
       >
-        <div className="overflow-hidden rounded-[32px] border-2 border-[var(--mb-line-strong)] bg-[var(--mb-paper)] shadow-[0_6px_0_var(--mb-line)]">
+        <div
+          data-mb-reveal="true"
+          className="overflow-hidden rounded-[32px] border-2 border-[var(--mb-line-strong)] bg-[var(--mb-paper)] shadow-[0_6px_0_var(--mb-line)]"
+        >
           <div className="grid lg:grid-cols-[0.82fr_1.18fr]">
             {/* Warm coastal contact column */}
             <div className="flex flex-col justify-between bg-[var(--mb-cream-deep)] p-6 sm:p-8 lg:border-r lg:border-[var(--mb-line)]">
               <div>
-                <p className="mb-sticker bg-[var(--mb-butter)] text-[var(--mb-ink)]">
+                <p className="mb-sticker mb-sticker-wobble bg-[var(--mb-butter)] text-[var(--mb-ink)]">
                   Start a project
                 </p>
                 <h2

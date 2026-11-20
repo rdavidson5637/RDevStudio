@@ -4,6 +4,8 @@ import { Fraunces, Plus_Jakarta_Sans } from "next/font/google";
 import { CONTACT_EMAIL, SITE_NAME } from "@/lib/constants";
 import { STUDIO_WHATSAPP_URL } from "@/components/mock-b/data";
 import { CastleMark, WhatsAppIcon } from "@/components/mock-b/CoastalDoodles";
+import { MockBDesktopNav, MockBMobileNav } from "@/components/mock-b/MockBNav";
+import { WarmMotionController } from "@/components/mock-b/WarmMotionController";
 import "./mock-b.css";
 
 const fraunces = Fraunces({
@@ -56,10 +58,10 @@ export default function MockBLayout({
         <div className="mx-auto flex max-w-5xl items-center justify-between gap-3 px-4 py-3 sm:px-6">
           <Link
             href="/mock-b"
-            className="inline-flex min-h-[44px] shrink-0 items-center gap-2 rounded-full pr-1 text-[var(--mb-ink)] transition-opacity hover:opacity-85 sm:gap-2.5 sm:pr-2"
+            className="mb-brand-link inline-flex min-h-[44px] shrink-0 items-center gap-2 rounded-full pr-1 text-[var(--mb-ink)] transition-opacity hover:opacity-90 sm:gap-2.5 sm:pr-2"
           >
             <span
-              className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-[var(--mb-line-strong)] bg-[var(--mb-butter)] text-[var(--mb-ink)]"
+              className="mb-castle-badge flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-[var(--mb-line-strong)] bg-[var(--mb-butter)] text-[var(--mb-ink)]"
               aria-hidden="true"
             >
               <CastleMark className="h-5 w-5" />
@@ -74,32 +76,7 @@ export default function MockBLayout({
             </span>
           </Link>
 
-          <nav aria-label="Studio navigation" className="hidden items-center gap-1 md:flex">
-            <Link
-              href="/mock-b/work"
-              className="inline-flex min-h-[44px] items-center rounded-full px-3.5 text-sm font-semibold text-[var(--mb-ink-soft)] transition-colors hover:bg-[var(--mb-cream-deep)] hover:text-[var(--mb-ink)]"
-            >
-              Work
-            </Link>
-            <Link
-              href="/mock-b/services"
-              className="inline-flex min-h-[44px] items-center rounded-full px-3.5 text-sm font-semibold text-[var(--mb-ink-soft)] transition-colors hover:bg-[var(--mb-cream-deep)] hover:text-[var(--mb-ink)]"
-            >
-              Services
-            </Link>
-            <Link
-              href="/mock-b#about"
-              className="inline-flex min-h-[44px] items-center rounded-full px-3.5 text-sm font-semibold text-[var(--mb-ink-soft)] transition-colors hover:bg-[var(--mb-cream-deep)] hover:text-[var(--mb-ink)]"
-            >
-              Studio
-            </Link>
-            <Link
-              href="/mock-b/contact"
-              className="inline-flex min-h-[44px] items-center rounded-full px-3.5 text-sm font-semibold text-[var(--mb-ink-soft)] transition-colors hover:bg-[var(--mb-cream-deep)] hover:text-[var(--mb-ink)]"
-            >
-              Contact
-            </Link>
-          </nav>
+          <MockBDesktopNav />
 
           <div className="flex shrink-0 items-center gap-2">
             <a
@@ -122,35 +99,8 @@ export default function MockBLayout({
         </div>
 
         {/* Compact mobile jump nav */}
-        <nav
-          aria-label="Mobile section navigation"
-          className="flex items-center justify-center gap-1 border-t border-[var(--mb-line)] bg-[var(--mb-paper)]/85 px-3 py-1 md:hidden"
-        >
-          <Link
-            href="/mock-b/work"
-            className="inline-flex min-h-[44px] items-center rounded-full px-3 text-xs font-semibold text-[var(--mb-ink-soft)] hover:text-[var(--mb-ink)]"
-          >
-            Work
-          </Link>
-          <Link
-            href="/mock-b/services"
-            className="inline-flex min-h-[44px] items-center rounded-full px-3 text-xs font-semibold text-[var(--mb-ink-soft)] hover:text-[var(--mb-ink)]"
-          >
-            Services
-          </Link>
-          <Link
-            href="/mock-b#about"
-            className="inline-flex min-h-[44px] items-center rounded-full px-3 text-xs font-semibold text-[var(--mb-ink-soft)] hover:text-[var(--mb-ink)]"
-          >
-            Studio
-          </Link>
-          <Link
-            href="/mock-b/contact"
-            className="inline-flex min-h-[44px] items-center rounded-full px-3 text-xs font-semibold text-[var(--mb-ink-soft)] hover:text-[var(--mb-ink)]"
-          >
-            Contact
-          </Link>
-        </nav>
+        <MockBMobileNav />
+        <WarmMotionController />
       </header>
 
       <main id="mock-b-main">{children}</main>

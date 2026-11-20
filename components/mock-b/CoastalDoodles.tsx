@@ -63,9 +63,11 @@ export function WavyUnderline({ className = "" }: { className?: string }) {
     >
       <path
         d="M3 9.5C28 3.5 52 12.5 78 7.5C104 2.5 130 12 158 7C182 2.8 200 9.5 217 6.5"
+        pathLength={100}
         stroke="currentColor"
         strokeWidth="3.2"
         strokeLinecap="round"
+        className="mb-underline-path"
       />
     </svg>
   );
@@ -73,20 +75,24 @@ export function WavyUnderline({ className = "" }: { className?: string }) {
 
 export function WaveRule() {
   return (
-    <svg
-      viewBox="0 0 600 18"
-      fill="none"
-      preserveAspectRatio="none"
-      aria-hidden="true"
-      className="mb-wave-divider"
-    >
-      <path
-        d="M0 9C25 3 50 15 75 9C100 3 125 15 150 9C175 3 200 15 225 9C250 3 275 15 300 9C325 3 350 15 375 9C400 3 425 15 450 9C475 3 500 15 525 9C550 3 575 15 600 9"
-        stroke="currentColor"
-        strokeWidth="1.4"
-        strokeLinecap="round"
-      />
-    </svg>
+    <div data-mb-wave="true">
+      <svg
+        viewBox="0 0 600 18"
+        fill="none"
+        preserveAspectRatio="none"
+        aria-hidden="true"
+        className="mb-wave-divider"
+      >
+        <path
+          d="M0 9C25 3 50 15 75 9C100 3 125 15 150 9C175 3 200 15 225 9C250 3 275 15 300 9C325 3 350 15 375 9C400 3 425 15 450 9C475 3 500 15 525 9C550 3 575 15 600 9"
+          pathLength={100}
+          stroke="currentColor"
+          strokeWidth="1.4"
+          strokeLinecap="round"
+          className="mb-wave-path"
+        />
+      </svg>
+    </div>
   );
 }
 
@@ -115,8 +121,10 @@ export function CarrickCoastIllustration() {
       >
         {/* Soft coastal sky wash */}
         <rect width="420" height="205" fill="#fbf5e8" />
-        <ellipse cx="330" cy="52" rx="34" ry="34" fill="#f3dca1" />
-        <circle cx="330" cy="52" r="22" fill="#e9bd62" fillOpacity="0.55" />
+        <g className="mb-coast-sun">
+          <ellipse cx="330" cy="52" rx="34" ry="34" fill="#f3dca1" />
+          <circle cx="330" cy="52" r="22" fill="#e9bd62" fillOpacity="0.55" />
+        </g>
 
         {/* Distant hills across the lough */}
         <path
@@ -131,6 +139,7 @@ export function CarrickCoastIllustration() {
           strokeWidth="1.8"
           strokeLinecap="round"
           strokeLinejoin="round"
+          className="mb-coast-gull"
         />
         <path
           d="M276 74c3-3.5 7.5-3.5 10.5 0 3-3.5 7.5-3.5 10.5 0"
@@ -138,6 +147,7 @@ export function CarrickCoastIllustration() {
           strokeWidth="1.5"
           strokeLinecap="round"
           strokeLinejoin="round"
+          className="mb-coast-gull-alt"
         />
 
         {/* Harbour wall & rock headland */}
@@ -192,24 +202,27 @@ export function CarrickCoastIllustration() {
           stroke="#211d18"
           strokeWidth="1.5"
           strokeLinejoin="round"
+          className="mb-coast-flag"
         />
 
         {/* Little boat on the lough */}
-        <path
-          d="M312 138H352L345 147H319L312 138Z"
-          fill="#b84a2e"
-          stroke="#211d18"
-          strokeWidth="1.6"
-          strokeLinejoin="round"
-        />
-        <path d="M332 138V114" stroke="#211d18" strokeWidth="1.6" strokeLinecap="round" />
-        <path
-          d="M332 115L347 134H332V115Z"
-          fill="#fffdf9"
-          stroke="#211d18"
-          strokeWidth="1.5"
-          strokeLinejoin="round"
-        />
+        <g className="mb-coast-boat">
+          <path
+            d="M312 138H352L345 147H319L312 138Z"
+            fill="#b84a2e"
+            stroke="#211d18"
+            strokeWidth="1.6"
+            strokeLinejoin="round"
+          />
+          <path d="M332 138V114" stroke="#211d18" strokeWidth="1.6" strokeLinecap="round" />
+          <path
+            d="M332 115L347 134H332V115Z"
+            fill="#fffdf9"
+            stroke="#211d18"
+            strokeWidth="1.5"
+            strokeLinejoin="round"
+          />
+        </g>
 
         {/* Belfast Lough sea & wave lines */}
         <rect y="148" width="420" height="57" fill="#1e6058" fillOpacity="0.16" />
@@ -218,6 +231,7 @@ export function CarrickCoastIllustration() {
           stroke="#1e6058"
           strokeWidth="2.2"
           strokeLinecap="round"
+          className="mb-coast-wave"
         />
         <path
           d="M16 172C36 166 56 178 76 172C96 166 116 178 136 172C156 166 176 178 196 172"
@@ -225,6 +239,7 @@ export function CarrickCoastIllustration() {
           strokeWidth="1.8"
           strokeLinecap="round"
           strokeOpacity="0.7"
+          className="mb-coast-wave-alt"
         />
         <path
           d="M238 176C258 170 278 182 298 176C318 170 338 182 358 176C374 171 388 177 402 175"
@@ -232,6 +247,7 @@ export function CarrickCoastIllustration() {
           strokeWidth="1.8"
           strokeLinecap="round"
           strokeOpacity="0.7"
+          className="mb-coast-wave"
         />
         <path
           d="M84 190C106 184 128 196 150 190C172 184 194 196 216 190C238 184 260 196 282 190"
@@ -239,6 +255,7 @@ export function CarrickCoastIllustration() {
           strokeWidth="1.5"
           strokeLinecap="round"
           strokeOpacity="0.45"
+          className="mb-coast-wave-alt"
         />
       </svg>
 

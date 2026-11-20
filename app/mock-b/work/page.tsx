@@ -33,7 +33,7 @@ export default function MockBWorkPage() {
         </Link>
 
         <div className="mt-5 max-w-2xl">
-          <p className="mb-sticker mb-sticker-tilt-left bg-[var(--mb-butter-soft)] text-[var(--mb-ink)]">
+          <p className="mb-sticker mb-sticker-tilt-left mb-sticker-wobble bg-[var(--mb-butter-soft)] text-[var(--mb-ink)]">
             Studio showcase
           </p>
           <h1 className="mb-display mt-3 text-4xl font-semibold tracking-tight text-[var(--mb-ink)] sm:text-5xl">
@@ -74,7 +74,8 @@ export default function MockBWorkPage() {
           <article
             key={project.id}
             id={project.id}
-            className="mb-card scroll-mt-28 p-5 sm:p-8"
+            data-mb-reveal="true"
+            className="mb-card mb-card-interactive scroll-mt-28 p-5 sm:p-8"
           >
             <div className="flex flex-col gap-4 border-b border-[var(--mb-line)] pb-6 sm:flex-row sm:items-start sm:justify-between">
               <div className="space-y-3">
@@ -117,7 +118,7 @@ export default function MockBWorkPage() {
                 ) : project.id === "assisi" ? (
                   <Link href={project.href} className="mb-btn-primary">
                     {project.linkLabel}
-                    <span aria-hidden="true">&rarr;</span>
+                    <span aria-hidden="true" className="mb-arrow-icon">&rarr;</span>
                   </Link>
                 ) : null}
 
@@ -129,7 +130,7 @@ export default function MockBWorkPage() {
               </div>
             </div>
 
-            <div className="mt-6">
+            <div className="mb-preview-lift mt-6">
               <WorkDeviceShowcase project={project} />
             </div>
 
@@ -176,10 +177,13 @@ export default function MockBWorkPage() {
         aria-labelledby="work-cta-heading"
         className="mx-auto max-w-5xl px-4 pt-4 sm:px-6"
       >
-        <div className="rounded-[32px] border-2 border-[var(--mb-line-strong)] bg-[var(--mb-cream-deep)] p-6 shadow-[0_5px_0_var(--mb-line)] sm:p-9">
+        <div
+          data-mb-reveal="true"
+          className="rounded-[32px] border-2 border-[var(--mb-line-strong)] bg-[var(--mb-cream-deep)] p-6 shadow-[0_5px_0_var(--mb-line)] sm:p-9"
+        >
           <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
             <div className="max-w-xl">
-              <p className="mb-sticker bg-[var(--mb-butter)] text-[var(--mb-ink)]">
+              <p className="mb-sticker mb-sticker-wobble bg-[var(--mb-butter)] text-[var(--mb-ink)]">
                 Have a project in mind?
               </p>
               <h2
@@ -196,7 +200,7 @@ export default function MockBWorkPage() {
             <div className="flex flex-col gap-3 sm:flex-row lg:shrink-0">
               <Link href="/mock-b/contact" className="mb-btn-primary">
                 Start a quote
-                <span aria-hidden="true">&rarr;</span>
+                <span aria-hidden="true" className="mb-arrow-icon">&rarr;</span>
               </Link>
               <a
                 href={STUDIO_WHATSAPP_URL}

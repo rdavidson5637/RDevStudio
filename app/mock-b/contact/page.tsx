@@ -87,9 +87,9 @@ export default function MockBContactPage() {
       >
         <div className="grid gap-7 lg:grid-cols-[1.22fr_0.78fr] lg:items-start">
           {/* Primary quote form card */}
-          <div className="mb-card p-6 sm:p-8">
+          <div data-mb-reveal="true" className="mb-card p-6 sm:p-8">
             <div className="border-b border-[var(--mb-line)] pb-5">
-              <p className="mb-sticker mb-sticker-tilt-left bg-[var(--mb-butter-soft)] text-[var(--mb-ink)]">
+              <p className="mb-sticker mb-sticker-tilt-left mb-sticker-wobble bg-[var(--mb-butter-soft)] text-[var(--mb-ink)]">
                 Quote request
               </p>
               <h2
@@ -110,8 +110,12 @@ export default function MockBContactPage() {
 
           {/* Direct channels + helpful checklist */}
           <aside aria-label="Direct contact options" className="space-y-5">
-            <div className="rounded-[28px] border-[1.5px] border-[var(--mb-seaglass)]/40 bg-[var(--mb-seaglass-soft)] p-6 shadow-[0_3px_0_rgba(30,96,88,0.16)]">
-              <p className="mb-sticker bg-[var(--mb-paper)] text-[var(--mb-seaglass-ink)] border-[var(--mb-seaglass)]/35">
+            <div
+              data-mb-reveal="true"
+              data-mb-delay="1"
+              className="rounded-[28px] border-[1.5px] border-[var(--mb-seaglass)]/40 bg-[var(--mb-seaglass-soft)] p-6 shadow-[0_3px_0_rgba(30,96,88,0.16)]"
+            >
+              <p className="mb-sticker mb-sticker-wobble bg-[var(--mb-paper)] text-[var(--mb-seaglass-ink)] border-[var(--mb-seaglass)]/35">
                 Quickest chat
               </p>
               <h2 className="mb-display mt-3 text-2xl font-semibold text-[var(--mb-ink)]">
@@ -131,10 +135,10 @@ export default function MockBContactPage() {
               </a>
             </div>
 
-            <div className="mb-card p-6">
+            <div data-mb-reveal="true" data-mb-delay="2" className="mb-card p-6">
               <div className="flex items-center gap-2.5">
                 <span
-                  className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-[var(--mb-line-strong)] bg-[var(--mb-butter-soft)] text-[var(--mb-ink)]"
+                  className="mb-icon-badge flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-[var(--mb-line-strong)] bg-[var(--mb-butter-soft)] text-[var(--mb-ink)]"
                   aria-hidden="true"
                 >
                   <CastleMark className="h-5 w-5" />
@@ -160,7 +164,11 @@ export default function MockBContactPage() {
               </a>
             </div>
 
-            <div className="rounded-[26px] border-[1.5px] border-[var(--mb-line)] bg-[var(--mb-cream-deep)] p-6">
+            <div
+              data-mb-reveal="true"
+              data-mb-delay="3"
+              className="rounded-[26px] border-[1.5px] border-[var(--mb-line)] bg-[var(--mb-cream-deep)] p-6"
+            >
               <h2 className="mb-display text-xl font-semibold text-[var(--mb-ink)]">
                 What helps us quote clearly
               </h2>
