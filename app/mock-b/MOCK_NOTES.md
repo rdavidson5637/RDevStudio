@@ -82,6 +82,17 @@ Premium studio finish on Ryan's chosen Mock B direction. Copy and TODOs untouche
 - **Motion / a11y:** Opacity-only reveals (220ms), off under `prefers-reduced-motion`; visible focus rings; 44px targets; AA Grenadine contrast rules kept.
 - **Checks:** `npm run lint`, `npx tsc --noEmit`, `npm test` (64/64), `npm run build` all pass. Screenshots at 390 and 1280 in `docs/design-pro/mockb-pro/`.
 
+## Pro pass 2 (20 Nov, refine / same PR #35)
+
+Tighter quality pass on the same Mock B routes. Copy, TODOs, and Grenadine hex values still untouched.
+
+- **Type consistency:** Section titles use `mb-h2` / `mb-h3` instead of ad-hoc `text-3xl sm:text-4xl`; ledes use `mb-lede` / `mb-body`; captions and form labels use `mb-caption` / `mb-label`.
+- **Banned AI tells removed:** Dropped single-word grenadine highlights in contact and services headlines (design brief bans accented single headline words).
+- **Contact:** Asymmetric form + aside (1.35/0.65), one grenadine primary in the hero (Jump to form); WhatsApp aside demoted to secondary-inverse; helpful notes as ruled rows.
+- **Work:** Featured ShelterLink on a surface band with asymmetric title/CTA row and full-width real screenshots; projects 02-05 on page bg for rhythm; shared `mb-meta` / `mb-jump-link` / `mb-back-link` utilities.
+- **Spacing:** `mb-page-intro` and `mb-section-pad` for consistent 8px-based section rhythm across routes.
+- **QA:** No horizontal overflow at 390; visible interactive targets >= 44px (skip link excluded). Shots in `docs/design-pro/mockb-pro/pass2-before/` and `pass2-after/`.
+
 ## Open TODOs for Ryan
 
 - [ ] **Formspree:** Confirm `NEXT_PUBLIC_FORMSPREE_ID` is set in the `rdev-studio` Vercel project and submit one test quote on `/mock-b/contact` in the preview to verify inbox delivery.

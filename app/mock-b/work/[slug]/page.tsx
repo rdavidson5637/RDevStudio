@@ -88,7 +88,7 @@ export default async function MockBCaseStudyPage({
   return (
     <div>
       {/* ── BREADCRUMB + CASE HEADER ─────────────────────────────────────── */}
-      <section className="mb-shell max-w-6xl pb-10 pt-8 sm:px-6 sm:pt-14">
+      <section className="mb-shell mb-page-intro max-w-6xl sm:px-6">
         <nav
           aria-label="Breadcrumb"
           className="flex flex-wrap items-center gap-1 text-sm font-medium text-[var(--mb-muted)]"
@@ -140,7 +140,7 @@ export default async function MockBCaseStudyPage({
             {project.name}
           </h1>
 
-          <p className="mt-4 text-base leading-relaxed text-[var(--mb-muted)] sm:text-lg">
+          <p className="mb-lede mt-4">
             {project.summary}
           </p>
 
@@ -274,7 +274,7 @@ export default async function MockBCaseStudyPage({
               </p>
               <h2
                 id="case-problem-heading"
-                className="mb-display mt-2 text-2xl text-[var(--mb-ink)] sm:text-3xl"
+                className="mb-h3 mt-2 text-[var(--mb-ink)]"
               >
                 The problem
               </h2>
@@ -305,7 +305,7 @@ export default async function MockBCaseStudyPage({
               </p>
               <h2
                 id="case-built-heading"
-                className="mb-display mt-2 text-2xl text-[var(--mb-ink)] sm:text-3xl"
+                className="mb-h3 mt-2 text-[var(--mb-ink)]"
               >
                 What was built
               </h2>
@@ -345,7 +345,7 @@ export default async function MockBCaseStudyPage({
 
               {study.architectureNote ? (
                 <div className="mb-on-light mt-7 rounded-r-[var(--mb-radius)] border-l-2 border-[var(--mb-accent)] bg-[var(--mb-light)] p-5">
-                  <h3 className="mb-display text-xl text-[var(--mb-ink)]">
+                  <h3 className="mb-h3 text-[var(--mb-ink)]">
                     {study.architectureNote.heading}
                   </h3>
                   <div className="mt-2.5 space-y-3 text-sm leading-relaxed text-[var(--mb-muted)] sm:text-base">
@@ -383,7 +383,7 @@ export default async function MockBCaseStudyPage({
               </p>
               <h2
                 id="case-todos-heading"
-                className="mb-display mt-2 text-2xl text-[var(--mb-ink)] sm:text-3xl"
+                className="mb-h3 mt-2 text-[var(--mb-ink)]"
               >
                 Where it stands &amp; TODOs for Ryan
               </h2>
@@ -420,7 +420,7 @@ export default async function MockBCaseStudyPage({
             >
               <h2
                 id="case-stack-heading"
-                className="mb-display text-xl text-[var(--mb-ink)]"
+                className="mb-h3 text-[var(--mb-ink)]"
               >
                 Stack &amp; focus
               </h2>
@@ -451,7 +451,7 @@ export default async function MockBCaseStudyPage({
             >
               <h2
                 id="case-status-heading"
-                className="mb-display text-xl text-[var(--mb-ink)]"
+                className="mb-h3 text-[var(--mb-ink)]"
               >
                 Project status
               </h2>
@@ -470,7 +470,7 @@ export default async function MockBCaseStudyPage({
             >
               <h2
                 id="case-sidebar-cta-heading"
-                className="mb-display text-xl text-[var(--mb-ink)]"
+                className="mb-h3 text-[var(--mb-ink)]"
               >
                 Planning something similar?
               </h2>
@@ -515,7 +515,7 @@ export default async function MockBCaseStudyPage({
                 <ArrowLeftIcon className="h-3.5 w-3.5 shrink-0" />
                 Previous project
               </span>
-              <span className="mb-display mt-2 text-2xl text-[var(--mb-ink)]">
+              <span className="mb-h3 mt-2 text-[var(--mb-ink)]">
                 {previous.name}
               </span>
               <span className="mt-1 text-xs font-medium text-[var(--mb-muted)]">
@@ -531,7 +531,7 @@ export default async function MockBCaseStudyPage({
                 Next project
                 <ArrowRightIcon className="h-3.5 w-3.5 shrink-0" />
               </span>
-              <span className="mb-display mt-2 text-2xl text-[var(--mb-ink)]">
+              <span className="mb-h3 mt-2 text-[var(--mb-ink)]">
                 {next.name}
               </span>
               <span className="mt-1 text-xs font-medium text-[var(--mb-muted)]">
@@ -556,16 +556,11 @@ export default async function MockBCaseStudyPage({
       >
         <div
           data-mb-reveal="true"
-          className="mb-shell flex max-w-6xl flex-col gap-6 px-4 py-16 sm:px-6 sm:py-20 lg:flex-row lg:items-center lg:justify-between"
+          className="mb-shell mb-section-pad flex max-w-6xl flex-col gap-6 px-4 sm:px-6 lg:flex-row lg:items-center lg:justify-between"
         >
           <div className="max-w-xl">
-            <p className="mb-kicker-muted">
-              Start a project
-            </p>
-            <h2
-              id="case-close-heading"
-              className="mb-display mt-2 text-3xl text-[var(--mb-ink)] sm:text-4xl"
-            >
+            <p className="mb-kicker-muted">Start a project</p>
+            <h2 id="case-close-heading" className="mb-h2 mt-2 text-[var(--mb-ink)]">
               Want a clear, phone-first build for your team?
             </h2>
             <p className="mt-3 text-base leading-relaxed text-[var(--mb-muted)]">

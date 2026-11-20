@@ -19,7 +19,7 @@ export default function MockBHomePage() {
   return (
     <div>
       {/* Hero: brand-led type composition, one primary CTA */}
-      <section className="mb-shell max-w-6xl pb-16 pt-10 sm:pb-24 sm:pt-16">
+      <section className="mb-shell mb-page-intro max-w-6xl sm:px-6">
         <LocalTimeChip />
 
         <div className="mt-10 grid gap-10 lg:grid-cols-[minmax(0,1.35fr)_minmax(0,0.65fr)] lg:items-end lg:gap-14">
@@ -56,7 +56,7 @@ export default function MockBHomePage() {
               href={STUDIO_WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="mb-text-link mt-4 text-[var(--mb-link)]"
+              className="mb-text-link mt-4"
             >
               <WhatsAppIcon className="h-4 w-4 shrink-0 text-[var(--mb-icon)]" />
               Message on WhatsApp
@@ -71,19 +71,14 @@ export default function MockBHomePage() {
         aria-labelledby="work-heading"
         className="border-t border-[var(--mb-line)] bg-[var(--mb-surface)]"
       >
-        <div className="mb-shell max-w-6xl scroll-mt-24 py-16 sm:px-6 sm:py-24">
+        <div className="mb-shell mb-section-pad max-w-6xl scroll-mt-24 sm:px-6">
           <div
             data-mb-reveal="true"
             className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between"
           >
             <div>
-              <p className="mb-kicker">
-                Latest work
-              </p>
-              <h2
-                id="work-heading"
-                className="mb-display mt-2 text-3xl tracking-tight text-[var(--mb-ink)] sm:text-4xl"
-              >
+              <p className="mb-kicker">Latest work</p>
+              <h2 id="work-heading" className="mb-h2 mt-2 text-[var(--mb-ink)]">
                 Five builds from the studio
               </h2>
             </div>
@@ -109,28 +104,28 @@ export default function MockBHomePage() {
                   }`}
                 >
                   <div className="min-w-0 space-y-4">
-                    <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs font-medium text-[var(--mb-muted)]">
+                    <div className="mb-meta">
                       <span className="tabular-nums font-semibold text-[var(--mb-tertiary)]">
                         0{index + 1}
                       </span>
-                      <span aria-hidden="true" className="text-[var(--mb-line-strong)]">
+                      <span aria-hidden="true" className="mb-meta-sep">
                         /
                       </span>
                       <span className="font-semibold text-[var(--mb-link)]">
                         {project.type}
                       </span>
-                      <span aria-hidden="true" className="text-[var(--mb-line-strong)]">
+                      <span aria-hidden="true" className="mb-meta-sep">
                         /
                       </span>
                       <span>{project.year}</span>
-                      <span aria-hidden="true" className="text-[var(--mb-line-strong)]">
+                      <span aria-hidden="true" className="mb-meta-sep">
                         /
                       </span>
                       <span>{project.statusLabel}</span>
                     </div>
 
                     <div>
-                      <h3 className="mb-display text-2xl text-[var(--mb-ink)] sm:text-3xl">
+                      <h3 className="mb-h3 text-[var(--mb-ink)]">
                         <Link
                           href={`/mock-b/work/${project.id}`}
                           className="inline-flex min-h-[44px] items-center underline-offset-4 hover:text-[var(--mb-link)] hover:underline"
@@ -143,9 +138,7 @@ export default function MockBHomePage() {
                       </p>
                     </div>
 
-                    <p className="text-xs font-medium text-[var(--mb-tertiary)]">
-                      {project.stack.join(" / ")}
-                    </p>
+                    <p className="mb-caption">{project.stack.join(" / ")}</p>
 
                     <div className="flex flex-wrap items-center gap-4 pt-1">
                       <Link
@@ -205,22 +198,17 @@ export default function MockBHomePage() {
         aria-labelledby="services-heading"
         className="mb-on-light border-t border-[var(--mb-line)] bg-[var(--mb-light)]"
       >
-        <div className="mb-shell max-w-6xl scroll-mt-24 py-16 sm:px-6 sm:py-24">
+        <div className="mb-shell mb-section-pad max-w-6xl scroll-mt-24 sm:px-6">
           <div
             data-mb-reveal="true"
             className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between"
           >
             <div className="max-w-2xl">
-              <p className="mb-kicker">
-                Skills &amp; services
-              </p>
-              <h2
-                id="services-heading"
-                className="mb-display mt-2 text-3xl tracking-tight text-[var(--mb-ink)] sm:text-4xl"
-              >
+              <p className="mb-kicker">Skills &amp; services</p>
+              <h2 id="services-heading" className="mb-h2 mt-2 text-[var(--mb-ink)]">
                 Practical web work, explained in plain English
               </h2>
-              <p className="mt-3 text-base leading-relaxed text-[var(--mb-muted)]">
+              <p className="mb-body mt-3">
                 Every job is quoted clearly after a quick conversation, so you only pay for what your business or charity actually needs.
               </p>
             </div>
@@ -248,7 +236,7 @@ export default function MockBHomePage() {
                     </span>
                   </div>
 
-                  <h3 className="mb-display mt-3 text-2xl text-[var(--mb-ink)]">
+                  <h3 className="mb-h3 mt-3 text-[var(--mb-ink)]">
                     {service.title}
                   </h3>
                   <p className="mt-2.5 text-sm leading-relaxed text-[var(--mb-muted)] sm:text-base">
@@ -288,16 +276,14 @@ export default function MockBHomePage() {
             data-mb-reveal="true"
             className="mt-16 border-t border-[var(--mb-line-strong)] pt-12"
           >
-            <h3 className="mb-display text-2xl text-[var(--mb-ink)]">
-              How a project runs
-            </h3>
+            <h3 className="mb-h3 text-[var(--mb-ink)]">How a project runs</h3>
             <ol className="mt-8 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
               {STUDIO_RHYTHM.map((item) => (
                 <li
                   key={item.step}
                   className="border-t border-[var(--mb-line-strong)] pt-4"
                 >
-                  <span className="mb-num text-2xl">
+                  <span className="mb-num text-xl">
                     {item.step}
                   </span>
                   <p className="mt-2 text-base font-semibold text-[var(--mb-ink)]">
@@ -321,22 +307,17 @@ export default function MockBHomePage() {
       >
         <div
           data-mb-reveal="true"
-          className="mb-shell grid max-w-6xl scroll-mt-24 gap-10 px-4 py-16 sm:px-6 sm:py-24 lg:grid-cols-[1.15fr_0.85fr] lg:items-start lg:gap-14"
+          className="mb-shell mb-section-pad grid max-w-6xl scroll-mt-24 gap-10 px-4 sm:px-6 lg:grid-cols-[1.15fr_0.85fr] lg:items-start lg:gap-14"
         >
           <div>
-            <p className="mb-kicker">
-              About RDev Studio
-            </p>
-            <h2
-              id="about-heading"
-              className="mb-display mt-2 text-3xl tracking-tight text-[var(--mb-ink)] sm:text-4xl"
-            >
+            <p className="mb-kicker">About RDev Studio</p>
+            <h2 id="about-heading" className="mb-h2 mt-2 text-[var(--mb-ink)]">
               Local to Carrickfergus, built for real-world use
             </h2>
-            <p className="mt-5 text-base leading-relaxed text-[var(--mb-muted)]">
+            <p className="mb-body mt-5">
               RDev Studio is an independent web design and development studio based in Carrickfergus, Northern Ireland. We work directly with small businesses, trades, community projects, and charities from first sketch to live launch.
             </p>
-            <p className="mt-4 text-base leading-relaxed text-[var(--mb-muted)]">
+            <p className="mb-body mt-4">
               We keep things clear and maintainable: phone-first layouts, plain-English copy, honest scope, and code that you own outright once it goes live.
             </p>
           </div>
@@ -377,20 +358,15 @@ export default function MockBHomePage() {
       >
         <div
           data-mb-reveal="true"
-          className="mb-shell grid max-w-6xl scroll-mt-24 gap-10 px-4 py-16 sm:px-6 sm:py-24 lg:grid-cols-[0.82fr_1.18fr] lg:items-start lg:gap-12"
+          className="mb-shell mb-section-pad grid max-w-6xl scroll-mt-24 gap-10 px-4 sm:px-6 lg:grid-cols-[0.82fr_1.18fr] lg:items-start lg:gap-12"
         >
           <div className="flex flex-col justify-between space-y-8">
             <div>
-              <p className="mb-kicker-muted">
-                Start a project
-              </p>
-              <h2
-                id="quote-heading"
-                className="mb-display mt-2 text-3xl leading-tight text-[var(--mb-ink)] sm:text-4xl"
-              >
+              <p className="mb-kicker-muted">Start a project</p>
+              <h2 id="quote-heading" className="mb-h2 mt-2 text-[var(--mb-ink)]">
                 Tell us what you are planning
               </h2>
-              <p className="mt-4 text-base leading-relaxed text-[var(--mb-muted)]">
+              <p className="mb-body mt-4">
                 Send a short note with the form or drop us a message on WhatsApp. We will come back with clear next steps and a tailored quote.
               </p>
             </div>
@@ -426,7 +402,7 @@ export default function MockBHomePage() {
             </div>
           </div>
 
-          <div className="mb-on-surface rounded-[var(--mb-radius)] border border-[var(--mb-line)] bg-[var(--mb-surface)] p-6 text-[var(--mb-ink)] sm:p-8">
+          <div className="mb-on-surface border border-[var(--mb-line)] bg-[var(--mb-surface)] p-6 text-[var(--mb-ink)] sm:p-8">
             <WarmQuoteForm />
           </div>
         </div>

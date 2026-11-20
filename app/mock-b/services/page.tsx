@@ -26,28 +26,22 @@ export default function MockBServicesPage() {
   return (
     <div>
       {/* ── INTRO ────────────────────────────────────────────────────────── */}
-      <section className="mb-shell max-w-6xl pb-10 pt-8 sm:px-6 sm:pt-14">
-        <Link
-          href="/mock-b"
-          className="inline-flex min-h-[44px] items-center gap-1.5 text-sm font-semibold text-[var(--mb-muted)] underline decoration-[var(--mb-line-strong)] underline-offset-4 hover:text-[var(--mb-link)]"
-        >
+      <section className="mb-shell mb-page-intro max-w-6xl sm:px-6">
+        <Link href="/mock-b" className="mb-back-link">
           <ArrowLeftIcon className="h-4 w-4 shrink-0" />
           Back to studio home
         </Link>
 
         <div className="mt-5 max-w-2xl">
-          <p className="mb-kicker">
-            Skills &amp; services
-          </p>
+          <p className="mb-kicker">Skills &amp; services</p>
           <h1 className="mb-h1 mt-2 text-[var(--mb-ink)]">
-            Plain-English{" "}
-            <span className="text-[var(--mb-link)]">web work</span> for NI businesses &amp; charities.
+            Plain-English web work for NI businesses &amp; charities.
           </h1>
-          <p className="mt-5 text-base leading-relaxed text-[var(--mb-muted)] sm:text-lg">
+          <p className="mb-lede mt-5">
             RDev Studio designs and builds websites, custom web apps, and clearer local listings from Carrickfergus. Every job is scoped and quoted individually after a short conversation - no one-size-fits-all templates and no guesswork.
           </p>
 
-          <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
             <Link href="/mock-b/contact" className="mb-btn-primary w-full sm:w-auto">
               Request a quote
               <ArrowRightIcon className="h-4 w-4 shrink-0" />
@@ -56,7 +50,7 @@ export default function MockBServicesPage() {
               href={STUDIO_WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="mb-text-link text-[var(--mb-link)]"
+              className="mb-text-link"
             >
               <WhatsAppIcon className="h-4 w-4 shrink-0 text-[var(--mb-icon)]" />
               Message on WhatsApp
@@ -70,11 +64,7 @@ export default function MockBServicesPage() {
           className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-1 border-y border-[var(--mb-line)] py-2"
         >
           {MOCK_B_SERVICE_GUIDES.map((service) => (
-            <a
-              key={service.id}
-              href={`#${service.id}`}
-              className="inline-flex min-h-[44px] items-center gap-2 text-sm font-medium text-[var(--mb-ink)] hover:text-[var(--mb-link)]"
-            >
+            <a key={service.id} href={`#${service.id}`} className="mb-jump-link">
               <span className="tabular-nums text-xs text-[var(--mb-tertiary)]">
                 {service.number}
               </span>
@@ -108,10 +98,10 @@ export default function MockBServicesPage() {
                     </span>
                   </div>
 
-                  <h2 className="mb-display mt-2 text-3xl text-[var(--mb-ink)] sm:text-4xl">
+                  <h2 className="mb-h2 mt-2 text-[var(--mb-ink)]">
                     {service.title}
                   </h2>
-                  <p className="mt-3 text-base leading-relaxed text-[var(--mb-muted)]">
+                  <p className="mb-body mt-3">
                     {service.lead}
                   </p>
                 </div>
@@ -200,15 +190,10 @@ export default function MockBServicesPage() {
       >
         <div
           data-mb-reveal="true"
-          className="mb-shell max-w-6xl py-16 sm:px-6 sm:py-20"
+          className="mb-shell mb-section-pad max-w-6xl sm:px-6"
         >
-          <p className="mb-kicker">
-            How we work
-          </p>
-          <h2
-            id="services-process-heading"
-            className="mb-display mt-2 text-3xl text-[var(--mb-ink)] sm:text-4xl"
-          >
+          <p className="mb-kicker">How we work</p>
+          <h2 id="services-process-heading" className="mb-h2 mt-2 text-[var(--mb-ink)]">
             Four calm steps from first message to launch
           </h2>
           <ol className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
@@ -217,7 +202,7 @@ export default function MockBServicesPage() {
                 key={item.step}
                 className="border-t border-[var(--mb-line-strong)] pt-4"
               >
-                <span className="mb-num text-2xl">
+                <span className="mb-num text-xl">
                   {item.step}
                 </span>
                 <h3 className="mt-2 text-base font-semibold text-[var(--mb-ink)]">
@@ -235,13 +220,10 @@ export default function MockBServicesPage() {
       {/* ── COMMON QUESTIONS (RULED LIST, NO BOXED CARDS) ────────────────── */}
       <section
         aria-labelledby="services-faq-heading"
-        className="mb-shell max-w-6xl py-16 sm:px-6 sm:py-20"
+        className="mb-shell mb-section-pad max-w-6xl sm:px-6"
       >
         <div data-mb-reveal="true" className="max-w-2xl">
-          <h2
-            id="services-faq-heading"
-            className="mb-display text-3xl text-[var(--mb-ink)]"
-          >
+          <h2 id="services-faq-heading" className="mb-h2 text-[var(--mb-ink)]">
             Common questions
           </h2>
           <p className="mt-2 text-base text-[var(--mb-muted)]">
@@ -256,9 +238,7 @@ export default function MockBServicesPage() {
               data-mb-reveal="true"
               className="grid gap-3 py-6 md:grid-cols-[0.85fr_1.15fr] md:gap-10"
             >
-              <dt className="mb-display text-xl text-[var(--mb-ink)]">
-                {item.question}
-              </dt>
+              <dt className="mb-h3 text-[var(--mb-ink)]">{item.question}</dt>
               <dd className="text-sm leading-relaxed text-[var(--mb-muted)] sm:text-base">
                 {item.answer}
               </dd>
@@ -274,16 +254,11 @@ export default function MockBServicesPage() {
       >
         <div
           data-mb-reveal="true"
-          className="mb-shell flex max-w-6xl flex-col gap-6 px-4 py-16 sm:px-6 sm:py-20 lg:flex-row lg:items-center lg:justify-between"
+          className="mb-shell mb-section-pad flex max-w-6xl flex-col gap-6 px-4 sm:px-6 lg:flex-row lg:items-center lg:justify-between"
         >
           <div className="max-w-xl">
-            <p className="mb-kicker-muted">
-              Not sure which fits?
-            </p>
-            <h2
-              id="services-close-heading"
-              className="mb-display mt-2 text-3xl text-[var(--mb-ink)] sm:text-4xl"
-            >
+            <p className="mb-kicker-muted">Not sure which fits?</p>
+            <h2 id="services-close-heading" className="mb-h2 mt-2 text-[var(--mb-ink)]">
               Tell us what you are trying to sort out
             </h2>
             <p className="mt-3 text-base leading-relaxed text-[var(--mb-muted)]">

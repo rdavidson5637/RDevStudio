@@ -99,7 +99,7 @@ export default function MockBLayout({
       <footer className="mb-on-light border-t border-[var(--mb-line)] bg-[var(--mb-light)]">
         <div className="mb-shell flex max-w-6xl flex-col gap-6 py-10 md:flex-row md:items-center md:justify-between">
           <div className="space-y-1.5">
-            <p className="mb-display text-xl text-[var(--mb-ink)]">
+            <p className="mb-h3 text-[var(--mb-ink)]">
               {SITE_NAME}
             </p>
             <p className="max-w-md text-sm leading-relaxed text-[var(--mb-muted)]">

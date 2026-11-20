@@ -189,13 +189,11 @@ function WarmQuoteFormFields({
         role="status"
         aria-live="polite"
       >
-        <p className="mb-kicker">
-          Enquiry sent
-        </p>
-        <p className="mb-display mt-2 text-2xl font-semibold text-[var(--mb-ink)] sm:text-3xl">
+        <p className="mb-kicker">Enquiry sent</p>
+        <p className="mb-h3 mt-2 text-[var(--mb-ink)]">
           Thanks, we have your note.
         </p>
-        <p className="mt-3 text-base leading-relaxed text-[var(--mb-muted)]">
+        <p className="mb-body mt-3">
           RDev Studio will reply by email with clear next steps and a tailored quote. Want a quicker back-and-forth?
         </p>
         <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
@@ -266,7 +264,7 @@ function WarmQuoteFormFields({
 
       <div className="grid gap-5 sm:grid-cols-2">
         <div>
-          <label htmlFor={nameId} className="block text-sm font-semibold text-[var(--mb-ink)]">
+          <label htmlFor={nameId} className="mb-label">
             Your name
           </label>
           <input
@@ -312,7 +310,7 @@ function WarmQuoteFormFields({
         </div>
 
         <div>
-          <label htmlFor={emailId} className="block text-sm font-semibold text-[var(--mb-ink)]">
+          <label htmlFor={emailId} className="mb-label">
             Email address
           </label>
           <input
@@ -359,7 +357,7 @@ function WarmQuoteFormFields({
       </div>
 
       <div>
-        <label htmlFor={topicId} className="block text-sm font-semibold text-[var(--mb-ink)]">
+        <label htmlFor={topicId} className="mb-label">
           What are we building together?
         </label>
         <select
@@ -411,10 +409,10 @@ function WarmQuoteFormFields({
       </div>
 
       <div>
-        <label htmlFor={messageId} className="block text-sm font-semibold text-[var(--mb-ink)]">
+        <label htmlFor={messageId} className="mb-label">
           Tell us about it
         </label>
-        <p id={messageHintId} className="mt-1 text-xs leading-relaxed text-[var(--mb-muted)]">
+        <p id={messageHintId} className="mb-caption mt-1">
           A few plain-English lines is plenty: what you do, what you need, and whether you are a registered charity.
         </p>
         <textarea

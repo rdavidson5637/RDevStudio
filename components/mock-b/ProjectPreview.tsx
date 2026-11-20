@@ -48,7 +48,7 @@ export function ProjectPreview({
             priority={size === "featured"}
           />
         </div>
-        <figcaption className="border-t border-[var(--mb-line)] bg-[var(--mb-raised)] px-3.5 py-2.5 text-xs text-[var(--mb-muted)]">
+        <figcaption className="mb-caption">
           {project.screenshot.alt}
         </figcaption>
       </figure>
