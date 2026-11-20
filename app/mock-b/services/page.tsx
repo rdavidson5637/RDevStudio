@@ -228,7 +228,7 @@ export default function MockBServicesPage() {
               data-mb-reveal="true"
               className="grid gap-3 py-6 md:grid-cols-[0.9fr_1.1fr] md:gap-12"
             >
-              <dt className="text-base font-bold leading-snug text-[var(--mb-ink)] sm:text-[var(--mb-text-md)]">
+              <dt className="mb-faq-q">
                 {item.question}
               </dt>
               <dd className="mb-prose">{item.answer}</dd>

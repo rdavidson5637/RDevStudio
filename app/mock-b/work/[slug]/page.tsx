@@ -53,7 +53,7 @@ function TodoMarkerCard({
   children: React.ReactNode;
 }) {
   return (
-    <div className="mb-todo-box p-4 sm:p-5">
+    <div className="mb-todo-box">
       <div className="mb-meta">
         <span className="font-semibold text-[var(--mb-ink)]">{label}</span>
         <span aria-hidden="true" className="mb-meta-sep">
@@ -176,19 +176,19 @@ export default async function MockBCaseStudyPage({
         <dl className="mt-10 divide-y divide-[var(--mb-line)] border-y border-[var(--mb-line)]">
           <div className="grid gap-1 py-4 sm:grid-cols-[7.5rem_minmax(0,1fr)] sm:items-baseline sm:gap-6">
             <dt className="mb-kicker-muted">Context</dt>
-            <dd className="text-sm font-semibold text-[var(--mb-ink)]">
+            <dd className="mb-fact-value">
               {study.clientOrContext}
             </dd>
           </div>
           <div className="grid gap-1 py-4 sm:grid-cols-[7.5rem_minmax(0,1fr)] sm:items-baseline sm:gap-6">
             <dt className="mb-kicker-muted">Status</dt>
-            <dd className="text-sm font-semibold text-[var(--mb-ink)]">
+            <dd className="mb-fact-value">
               {study.statusHeadline}
             </dd>
           </div>
           <div className="grid gap-1 py-4 sm:grid-cols-[7.5rem_minmax(0,1fr)] sm:items-baseline sm:gap-6">
             <dt className="mb-kicker-muted">Year / date</dt>
-            <dd className="text-sm font-semibold text-[var(--mb-ink)]">
+            <dd className="mb-fact-value">
               <span>{study.yearDisplay}</span>
               {study.yearIsTodo ? (
                 <span className="mb-caption ml-2 inline font-medium">
@@ -199,7 +199,7 @@ export default async function MockBCaseStudyPage({
           </div>
           <div className="grid gap-1 py-4 sm:grid-cols-[7.5rem_minmax(0,1fr)] sm:items-baseline sm:gap-6">
             <dt className="mb-kicker-muted">Link</dt>
-            <dd className="text-sm font-semibold text-[var(--mb-ink)]">
+            <dd className="mb-fact-value">
               {project.external ? (
                 <a
                   href={project.href}
@@ -324,7 +324,7 @@ export default async function MockBCaseStudyPage({
 
               {study.architectureNote ? (
                 <div className="mb-on-light mt-7 border-l-2 border-[var(--mb-accent)] bg-[var(--mb-light)] p-5">
-                  <h3 className="mb-h3 text-[var(--mb-ink)]">
+                  <h3 className="mb-step-title">
                     {study.architectureNote.heading}
                   </h3>
                   <div className="mt-2.5 space-y-3">
@@ -377,7 +377,7 @@ export default async function MockBCaseStudyPage({
                   </p>
                   <ul className="mt-3 divide-y divide-[var(--mb-line)] border-t border-[var(--mb-line)]">
                     {study.todosForRyan.map((todo) => (
-                      <li key={todo.field} className="py-2.5 text-sm leading-relaxed">
+                      <li key={todo.field} className="mb-ruled-note py-2.5">
                         <span className="font-semibold text-[var(--mb-ink)]">
                           {todo.field}:
                         </span>{" "}
@@ -430,7 +430,7 @@ export default async function MockBCaseStudyPage({
               >
                 Project status
               </h2>
-              <p className="mt-2.5 text-sm font-bold text-[var(--mb-link)]">
+              <p className="mb-status-line mt-2.5">
                 {study.statusHeadline}
               </p>
               <p className="mb-prose mt-2.5">{study.statusDetail}</p>

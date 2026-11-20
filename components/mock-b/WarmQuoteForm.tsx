@@ -256,7 +256,7 @@ function WarmQuoteFormFields({
         <div
           role="alert"
           aria-live="polite"
-          className="mb-alert rounded-[var(--mb-radius)] border border-[var(--mb-ochre-ink)] bg-[var(--mb-ochre)] px-4 py-3 text-sm font-semibold text-[var(--mb-ink)]"
+          className="mb-alert mb-fact-value"
         >
           {validationNotice}
         </div>
@@ -438,10 +438,10 @@ function WarmQuoteFormFields({
         <div
           role="alert"
           aria-live="polite"
-          className="mb-alert rounded-[var(--mb-radius)] border border-[var(--mb-ochre-ink)] bg-[var(--mb-ochre)] p-4 text-sm leading-relaxed text-[var(--mb-ink)]"
+          className="mb-alert"
         >
-          <p className="font-bold">The form could not send right now.</p>
-          <p className="mt-1 font-medium text-[var(--mb-muted)]">
+          <p className="mb-fact-value">The form could not send right now.</p>
+          <p className="mb-prose mt-1">
             No need to start over - reach RDev Studio directly by email at{" "}
             <a
               href={`mailto:${CONTACT_EMAIL}`}

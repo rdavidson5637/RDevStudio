@@ -27,7 +27,7 @@ export function MockBDesktopNav() {
             key={item.href}
             href={item.href}
             aria-current={active ? "page" : undefined}
-            className={`inline-flex min-h-[44px] items-center rounded-[var(--mb-radius-sm)] px-3 text-sm font-medium transition-colors ${
+            className={`inline-flex min-h-[44px] items-center px-3 text-sm font-medium transition-colors ${
               active
                 ? "font-bold text-[var(--mb-link)] underline decoration-[var(--mb-link)] decoration-2 underline-offset-8"
                 : "text-[var(--mb-muted)] hover:text-[var(--mb-ink)]"

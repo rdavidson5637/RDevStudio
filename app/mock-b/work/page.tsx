@@ -20,13 +20,6 @@ export const metadata: Metadata = {
   },
 };
 
-const GRID_SPAN_BY_INDEX = [
-  "lg:col-span-7",
-  "lg:col-span-5",
-  "lg:col-span-5",
-  "lg:col-span-7",
-] as const;
-
 export default function MockBWorkPage() {
   const [featuredProject, ...otherProjects] = MOCK_B_PROJECTS;
 
@@ -170,142 +163,138 @@ export default function MockBWorkPage() {
         </article>
       </section>
 
-      {/* ── MIXED-SIZE EDITORIAL GRID (PROJECTS 02-05) ───────────────────── */}
+      {/* ── PROJECTS 02-05 (FULL-BLEED RULED ROWS, NOT A CARD MOSAIC) ─────── */}
       <section className="border-t border-[var(--mb-line)] bg-[var(--mb-bg)]">
         <div className="mb-shell mb-section-pad max-w-6xl sm:px-6">
-          <div className="grid grid-cols-1 gap-x-10 gap-y-16 lg:grid-cols-12">
+          <ol className="divide-y divide-[var(--mb-line)] border-y border-[var(--mb-line)]">
             {otherProjects.map((project, idx) => {
               const number = idx + 2;
-              const isWide = GRID_SPAN_BY_INDEX[idx] === "lg:col-span-7";
+              const imageFirst = idx % 2 === 1;
               return (
-                <article
+                <li
                   key={project.id}
                   id={project.id}
                   data-mb-reveal="true"
-                  className={`scroll-mt-24 space-y-5 border-t border-[var(--mb-line-strong)] pt-6 ${GRID_SPAN_BY_INDEX[idx]}`}
+                  className="scroll-mt-24 py-10 sm:py-12"
                 >
-                  <div className="space-y-3">
-                    <div className="mb-meta">
-                      <span className="tabular-nums font-semibold text-[var(--mb-tertiary)]">
-                        Project 0{number}
-                      </span>
-                      <span aria-hidden="true" className="mb-meta-sep">
-                        /
-                      </span>
-                      <span className="font-semibold text-[var(--mb-link)]">
-                        {project.type}
-                      </span>
-                      <span aria-hidden="true" className="mb-meta-sep">
-                        /
-                      </span>
-                      <span>{project.year}</span>
-                      <span aria-hidden="true" className="mb-meta-sep">
-                        /
-                      </span>
-                      <span>{project.statusLabel}</span>
-                    </div>
-
-                    <h2 className="mb-h3 text-[var(--mb-ink)]">
-                      <Link
-                        href={`/mock-b/work/${project.id}`}
-                        className="mb-title-link"
-                      >
-                        {project.name}
-                      </Link>
-                    </h2>
-                    <p className="mb-prose">
-                      {project.summary}
-                    </p>
-
-                    <div className="flex flex-col gap-1 sm:flex-row sm:flex-wrap sm:items-center sm:gap-x-5">
-                      <Link
-                        href={`/mock-b/work/${project.id}`}
-                        className="mb-text-link w-fit"
-                      >
-                        Read case study
-                        <ArrowRightIcon className="h-4 w-4 shrink-0" />
-                      </Link>
-
-                      {project.external ? (
-                        <a
-                          href={project.href}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="mb-text-link"
-                        >
-                          {project.linkLabel}
-                          <ExternalLinkIcon className="h-3.5 w-3.5 shrink-0" />
-                        </a>
-                      ) : project.id === "assisi" ? (
-                        <Link
-                          href={project.href}
-                          className="mb-text-link"
-                        >
-                          {project.linkLabel}
-                        </Link>
-                      ) : null}
-                    </div>
-                  </div>
-
-                  <div>
-                    {isWide ? (
-                      <WorkDeviceShowcase project={project} />
-                    ) : (
-                      <ProjectPreview project={project} size="compact" />
-                    )}
-                  </div>
-
-                  <div
-                    className={`grid gap-6 border-t border-[var(--mb-line)] pt-4 ${
-                      isWide
-                        ? "md:grid-cols-[1.35fr_0.65fr] md:gap-8"
-                        : ""
-                    }`}
-                  >
-                    <div>
-                      <h3 className="mb-kicker-muted">
-                        Build notes
-                      </h3>
-                      <ul className="mb-dash-list mt-3">
-                        {project.details.map((detail) => (
-                          <li key={detail}>
-                            <span aria-hidden="true" data-mb-dash>
-                              -
-                            </span>
-                            <span>{detail}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-
+                  <article className="space-y-6">
                     <div
-                      className={
-                        isWide
-                          ? "border-t border-[var(--mb-line)] pt-4 md:border-l md:border-t-0 md:pl-8 md:pt-0"
-                          : ""
-                      }
+                      className={`grid gap-8 md:items-center md:gap-10 ${
+                        imageFirst
+                          ? "md:grid-cols-[1.05fr_0.95fr]"
+                          : "md:grid-cols-[0.95fr_1.05fr]"
+                      }`}
                     >
-                      <h3 className="mb-kicker-muted">
-                        Focus &amp; stack
-                      </h3>
-                      <p className="mb-stack mt-3">
-                        {project.stack.map((tag, i) => (
-                          <span key={tag}>
-                            {i > 0 ? (
-                              <span className="mb-stack-sep" aria-hidden="true">
-                                /
-                              </span>
-                            ) : null}
-                            {tag}
+                      <div
+                        className={`min-w-0 space-y-3 ${
+                          imageFirst ? "md:order-2" : ""
+                        }`}
+                      >
+                        <div className="mb-meta">
+                          <span className="tabular-nums font-semibold text-[var(--mb-tertiary)]">
+                            Project 0{number}
                           </span>
-                        ))}
-                      </p>
+                          <span aria-hidden="true" className="mb-meta-sep">
+                            /
+                          </span>
+                          <span className="font-semibold text-[var(--mb-link)]">
+                            {project.type}
+                          </span>
+                          <span aria-hidden="true" className="mb-meta-sep">
+                            /
+                          </span>
+                          <span>{project.year}</span>
+                          <span aria-hidden="true" className="mb-meta-sep">
+                            /
+                          </span>
+                          <span>{project.statusLabel}</span>
+                        </div>
+
+                        <h2 className="mb-h3 text-[var(--mb-ink)]">
+                          <Link
+                            href={`/mock-b/work/${project.id}`}
+                            className="mb-title-link"
+                          >
+                            {project.name}
+                          </Link>
+                        </h2>
+                        <p className="mb-prose">{project.summary}</p>
+
+                        <div className="flex flex-col gap-1 sm:flex-row sm:flex-wrap sm:items-center sm:gap-x-5">
+                          <Link
+                            href={`/mock-b/work/${project.id}`}
+                            className="mb-text-link w-fit"
+                          >
+                            Read case study
+                            <ArrowRightIcon className="h-4 w-4 shrink-0" />
+                          </Link>
+
+                          {project.external ? (
+                            <a
+                              href={project.href}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="mb-text-link"
+                            >
+                              {project.linkLabel}
+                              <ExternalLinkIcon className="h-3.5 w-3.5 shrink-0" />
+                            </a>
+                          ) : project.id === "assisi" ? (
+                            <Link href={project.href} className="mb-text-link">
+                              {project.linkLabel}
+                            </Link>
+                          ) : null}
+                        </div>
+                      </div>
+
+                      <div
+                        className={`min-w-0 ${
+                          imageFirst ? "md:order-1" : ""
+                        }`}
+                      >
+                        <ProjectPreview project={project} size="compact" />
+                      </div>
                     </div>
-                  </div>
-                </article>
+
+                    <div className="grid gap-6 border-t border-[var(--mb-line)] pt-5 md:grid-cols-[1.35fr_0.65fr] md:gap-8">
+                      <div>
+                        <h3 className="mb-kicker-muted">Build notes</h3>
+                        <ul className="mb-dash-list mt-3">
+                          {project.details.map((detail) => (
+                            <li key={detail}>
+                              <span aria-hidden="true" data-mb-dash>
+                                -
+                              </span>
+                              <span>{detail}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+
+                      <div className="border-t border-[var(--mb-line)] pt-4 md:border-l md:border-t-0 md:pl-8 md:pt-0">
+                        <h3 className="mb-kicker-muted">Focus &amp; stack</h3>
+                        <p className="mb-stack mt-3">
+                          {project.stack.map((tag, i) => (
+                            <span key={tag}>
+                              {i > 0 ? (
+                                <span
+                                  className="mb-stack-sep"
+                                  aria-hidden="true"
+                                >
+                                  /
+                                </span>
+                              ) : null}
+                              {tag}
+                            </span>
+                          ))}
+                        </p>
+                      </div>
+                    </div>
+                  </article>
+                </li>
               );
             })}
-          </div>
+          </ol>
         </div>
       </section>
 

@@ -255,11 +255,50 @@
   color: var(--mb-ink);
 }
 
+.mb-fact-value {
+  font-size: var(--mb-text-sm);
+  font-weight: 700;
+  line-height: var(--mb-leading-snug);
+  color: var(--mb-ink);
+}
+
+.mb-faq-q {
+  font-size: var(--mb-text-base);
+  font-weight: 700;
+  line-height: var(--mb-leading-snug);
+  color: var(--mb-ink);
+}
+
+@media (min-width: 640px) {
+  .mb-faq-q {
+    font-size: var(--mb-text-md);
+  }
+}
+
+.mb-status-line {
+  font-size: var(--mb-text-sm);
+  font-weight: 700;
+  line-height: var(--mb-leading-snug);
+  color: var(--mb-link);
+}
+
 .mb-label {
   display: block;
   font-size: var(--mb-text-sm);
   font-weight: 700;
   color: var(--mb-ink);
+}
+
+.mb-ruled-note {
+  font-size: var(--mb-text-sm);
+  line-height: var(--mb-leading-body);
+  color: var(--mb-ink);
+}
+
+@media (min-width: 640px) {
+  .mb-ruled-note {
+    font-size: var(--mb-text-base);
+  }
 }
 
 .mb-back-link {
@@ -443,13 +482,15 @@
   padding-block: var(--mb-section-y);
 }
 
-/* TODO / alert surfaces use ochre, with slate text */
+/* TODO / alert surfaces: ochre fill, left rule, square (no card chrome) */
 .mb-todo-box,
 .mb-alert {
   background-color: var(--mb-ochre);
   color: var(--mb-slate);
-  border: 1px dashed var(--mb-ochre-ink);
-  border-radius: var(--mb-radius);
+  border: none;
+  border-left: 2px solid var(--mb-ochre-ink);
+  border-radius: 0;
+  padding: 1rem 1.125rem;
   --mb-ink: var(--mb-slate);
   --mb-muted: var(--mb-ochre-ink);
   --mb-tertiary: var(--mb-ochre-ink);
@@ -459,8 +500,11 @@
   --mb-line-strong: var(--mb-slate-line-strong);
 }
 
-.mb-alert {
-  border-style: solid;
+@media (min-width: 640px) {
+  .mb-todo-box,
+  .mb-alert {
+    padding: 1.25rem 1.375rem;
+  }
 }
 
 /* Primary button: grenadine, slate text, 4px radius */

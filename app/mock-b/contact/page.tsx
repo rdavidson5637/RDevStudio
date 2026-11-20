@@ -132,7 +132,7 @@ export default function MockBContactPage() {
               </h2>
               <ul className="mt-4 divide-y divide-[var(--mb-line)] border-y border-[var(--mb-line)]">
                 {HELPFUL_NOTES.map((item) => (
-                  <li key={item} className="py-3 text-sm leading-relaxed text-[var(--mb-ink)] sm:text-base">
+                  <li key={item} className="mb-ruled-note py-3">
                     {item}
                   </li>
                 ))}

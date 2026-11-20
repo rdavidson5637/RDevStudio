@@ -176,6 +176,16 @@ Work index hierarchy and quieter case nav hover. Copy, TODOs, and Grenadine hex 
 - **Case prev/next:** Hover changes project title colour only (group hover), captions stay quiet.
 - **QA:** No overflow at 360/390. Shots in `docs/design-pro/mockb-pro/pass10-before/` and `pass10-after/`.
 
+## Pro pass 11 (20 Nov, refine / same PR #35)
+
+Editorial rows and flatter chrome. Copy, TODOs, and Grenadine hex values still untouched.
+
+- **Work index 02-05:** Replaced the 12-col mosaic with full-bleed ruled rows that alternate image/copy direction (ShelterLink stays the only featured surface band).
+- **Type tokens:** Shared `mb-fact-value`, `mb-faq-q`, `mb-status-line`, and `mb-ruled-note` for audience lists, case facts, FAQ questions, sidebar status, contact notes, and home quote chat copy.
+- **TODO / alerts:** Square left-ruled ochre panels (no dashed card border or radius); form validation/error states use the same `mb-alert` chrome.
+- **Quieter chrome:** Architecture callout uses `mb-step-title`; desktop nav drops link radius.
+- **QA:** No overflow at 360/390; contact interactive targets >= 44px. Shots in `docs/design-pro/mockb-pro/pass11-before/` and `pass11-after/`.
+
 ## Open TODOs for Ryan
 
 - [ ] **Formspree:** Confirm `NEXT_PUBLIC_FORMSPREE_ID` is set in the `rdev-studio` Vercel project and submit one test quote on `/mock-b/contact` in the preview to verify inbox delivery.

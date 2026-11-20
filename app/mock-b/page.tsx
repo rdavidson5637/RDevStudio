@@ -47,10 +47,10 @@ export default function MockBHomePage() {
 
           <div className="border-t border-[var(--mb-line-strong)] pt-6 lg:border-l lg:border-t-0 lg:pl-8 lg:pt-0">
             <p className="mb-kicker-muted">Who this is for</p>
-            <ul className="mt-4 divide-y divide-[var(--mb-line)] border-y border-[var(--mb-line)] text-sm font-bold text-[var(--mb-ink)]">
-              <li className="py-3">Small businesses</li>
-              <li className="py-3">Charities &amp; rescues</li>
-              <li className="py-3">Web apps &amp; Google Business Profile</li>
+            <ul className="mt-4 divide-y divide-[var(--mb-line)] border-y border-[var(--mb-line)]">
+              <li className="mb-fact-value py-3">Small businesses</li>
+              <li className="mb-fact-value py-3">Charities &amp; rescues</li>
+              <li className="mb-fact-value py-3">Web apps &amp; Google Business Profile</li>
             </ul>
           </div>
         </div>
@@ -373,10 +373,10 @@ export default function MockBHomePage() {
 
             <div className="space-y-5 border-t border-[var(--mb-line)] pt-6">
               <div>
-                <p className="text-sm font-semibold text-[var(--mb-ink)]">
+                <p className="mb-label">
                   Prefer a quick chat?
                 </p>
-                <p className="mt-1 text-sm text-[var(--mb-muted)]">
+                <p className="mb-prose mt-1">
                   WhatsApp is often the quickest way to share an idea or link.
                 </p>
                 <a
