@@ -17,8 +17,12 @@ function toArrayBuffer(buffer: Buffer) {
 }
 
 export async function studioOgImage(headline: string, kicker = "RDev Studio") {
-  const display = await readFile(join(process.cwd(), "lib/og/dm-serif-display-latin-400-normal.woff"));
-  const label = await readFile(join(process.cwd(), "lib/og/instrument-sans-latin-600-normal.woff"));
+  const display = await readFile(
+    join(process.cwd(), "lib/og/big-shoulders-display-latin-800-normal.woff"),
+  );
+  const label = await readFile(
+    join(process.cwd(), "lib/og/atkinson-hyperlegible-latin-700-normal.woff"),
+  );
 
   return new ImageResponse(
     (
@@ -34,15 +38,23 @@ export async function studioOgImage(headline: string, kicker = "RDev Studio") {
           padding: "72px",
         }}
       >
-        <div style={{ display: "flex", fontFamily: "Instrument Sans", fontWeight: 600, fontSize: 32, color: MUTED }}>
+        <div
+          style={{
+            display: "flex",
+            fontFamily: "Atkinson Hyperlegible",
+            fontWeight: 700,
+            fontSize: 32,
+            color: MUTED,
+          }}
+        >
           {kicker}
         </div>
         <div style={{ display: "flex", flexDirection: "column" }}>
           <div
             style={{
               display: "flex",
-              fontFamily: "DM Serif Display",
-              fontWeight: 400,
+              fontFamily: "Big Shoulders Display",
+              fontWeight: 800,
               fontSize: 92,
               lineHeight: 1.05,
               maxWidth: 1000,
@@ -52,10 +64,26 @@ export async function studioOgImage(headline: string, kicker = "RDev Studio") {
           </div>
           <div style={{ display: "flex", alignItems: "center", marginTop: 32 }}>
             <div style={{ width: 220, height: 2, backgroundColor: "rgba(251,230,160,0.5)" }} />
-            <div style={{ width: 16, height: 16, borderRadius: 16, backgroundColor: ACCENT, marginLeft: 16 }} />
+            <div
+              style={{
+                width: 16,
+                height: 16,
+                borderRadius: 16,
+                backgroundColor: ACCENT,
+                marginLeft: 16,
+              }}
+            />
           </div>
         </div>
-        <div style={{ display: "flex", fontFamily: "Instrument Sans", fontWeight: 600, fontSize: 28, color: MUTED }}>
+        <div
+          style={{
+            display: "flex",
+            fontFamily: "Atkinson Hyperlegible",
+            fontWeight: 700,
+            fontSize: 28,
+            color: MUTED,
+          }}
+        >
           {new URL(SITE_URL).host}
         </div>
       </div>
@@ -63,8 +91,8 @@ export async function studioOgImage(headline: string, kicker = "RDev Studio") {
     {
       ...ogSize,
       fonts: [
-        { name: "DM Serif Display", data: toArrayBuffer(display), style: "normal", weight: 400 },
-        { name: "Instrument Sans", data: toArrayBuffer(label), style: "normal", weight: 600 },
+        { name: "Big Shoulders Display", data: toArrayBuffer(display), style: "normal", weight: 800 },
+        { name: "Atkinson Hyperlegible", data: toArrayBuffer(label), style: "normal", weight: 700 },
       ],
     },
   );

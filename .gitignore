@@ -50,3 +50,6 @@ scripts/stout-finder/data/osm-pubs.json
 
 # Claude Code local settings
 .claude/settings.local.json
+
+# local design/taste working files
+.taste-skill/
