@@ -249,23 +249,18 @@ export default async function MockBCaseStudyPage({
         aria-labelledby="case-visual-heading"
         className="mb-shell max-w-6xl pb-14 sm:px-6"
       >
-        <div className="mb-3 flex flex-wrap items-baseline justify-between gap-2">
-          <h2
-            id="case-visual-heading"
-            className="mb-kicker-muted"
-          >
+        <div className="mb-4 flex flex-wrap items-baseline justify-between gap-3">
+          <h2 id="case-visual-heading" className="mb-kicker-muted">
             Visual preview
           </h2>
-          <p className="text-xs font-medium text-[var(--mb-muted)]">
-            {study.visualNote}
-          </p>
+          <p className="mb-caption max-w-xl sm:text-right">{study.visualNote}</p>
         </div>
         <WorkDeviceShowcase project={project} />
       </section>
 
       {/* ── MAIN CASE STUDY CONTENT + RULED SIDEBAR ──────────────────────── */}
       <div className="border-t border-[var(--mb-line)] bg-[var(--mb-surface)]">
-        <div className="mb-shell grid max-w-6xl gap-12 px-4 py-14 sm:px-6 sm:py-20 lg:grid-cols-[1.4fr_0.6fr] lg:items-start">
+        <div className="mb-shell mb-section-pad grid max-w-6xl gap-12 px-4 sm:px-6 lg:grid-cols-[1.4fr_0.6fr] lg:items-start">
           <div className="space-y-12">
             {/* 1. The problem */}
             <section aria-labelledby="case-problem-heading" data-mb-reveal="true">
