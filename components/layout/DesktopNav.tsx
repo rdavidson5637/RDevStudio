@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { SHELL_NAV_LINKS } from "@/lib/constants";
+import { HEADER_NAV_LINKS } from "@/lib/constants";
 import { Button } from "@/components/ui/Button";
 
 export function DesktopNav() {
@@ -10,7 +10,7 @@ export function DesktopNav() {
 
   return (
     <nav className="hidden items-center gap-4 md:flex lg:gap-7" aria-label="Main navigation">
-      {SHELL_NAV_LINKS.map((link) => {
+      {HEADER_NAV_LINKS.map((link) => {
         const active =
           link.href === "/services"
             ? pathname === "/services" || pathname.startsWith("/services/businesses")

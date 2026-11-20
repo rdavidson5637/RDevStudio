@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useEffect, useRef } from "react";
 import { createPortal } from "react-dom";
-import { SHELL_NAV_LINKS, WHATSAPP_URL } from "@/lib/constants";
+import { HEADER_NAV_LINKS, WHATSAPP_URL } from "@/lib/constants";
 import { Button } from "@/components/ui/Button";
 
 type MobileMenuProps = {
@@ -84,7 +84,7 @@ export function MobileMenu({ open, onClose, onDismiss, isActive }: MobileMenuPro
       </div>
 
       <nav className="flex flex-1 flex-col justify-center gap-5" aria-label="Mobile navigation">
-        {SHELL_NAV_LINKS.map((link, index) => {
+        {HEADER_NAV_LINKS.map((link, index) => {
           const active = isActive(link.href);
           return (
             <Link
