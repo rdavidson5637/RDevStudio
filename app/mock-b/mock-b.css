@@ -72,6 +72,13 @@
   transform: translateY(-2px);
 }
 
+/* Warm sketchbook callout for explicit "TODO for Ryan" markers */
+.mb-todo-box {
+  background-color: var(--mb-butter-soft);
+  border: 1.5px dashed var(--mb-terracotta);
+  box-shadow: 0 2px 0 rgba(184, 74, 46, 0.12);
+}
+
 /* Playful sticker badges */
 .mb-sticker {
   display: inline-flex;

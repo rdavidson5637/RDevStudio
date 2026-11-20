@@ -175,29 +175,32 @@ export default function MockBHomePage() {
                   </div>
 
                   <div className="flex flex-wrap items-center gap-3 pt-1">
+                    <Link
+                      href={`/mock-b/work/${project.id}`}
+                      className="mb-btn-soft"
+                    >
+                      Read case study
+                      <span aria-hidden="true" className="mb-arrow-icon">&rarr;</span>
+                    </Link>
+
                     {project.external ? (
                       <a
                         href={project.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="mb-btn-soft"
+                        className="inline-flex min-h-[44px] items-center gap-1 px-2 text-sm font-semibold text-[var(--mb-terracotta-ink)] underline decoration-[var(--mb-terracotta)]/40 underline-offset-4 hover:text-[var(--mb-terracotta)]"
                       >
                         {project.linkLabel}
                         <span aria-hidden="true">&#8599;</span>
                       </a>
-                    ) : (
-                      <Link href={project.href} className="mb-btn-soft">
+                    ) : project.id === "assisi" ? (
+                      <Link
+                        href={project.href}
+                        className="inline-flex min-h-[44px] items-center px-2 text-sm font-semibold text-[var(--mb-terracotta-ink)] underline decoration-[var(--mb-terracotta)]/40 underline-offset-4 hover:text-[var(--mb-terracotta)]"
+                      >
                         {project.linkLabel}
-                        <span aria-hidden="true" className="mb-arrow-icon">&rarr;</span>
                       </Link>
-                    )}
-
-                    <Link
-                      href={`/mock-b/work#${project.id}`}
-                      className="inline-flex min-h-[44px] items-center px-2 text-sm font-semibold text-[var(--mb-terracotta-ink)] underline decoration-[var(--mb-terracotta)]/40 underline-offset-4 hover:text-[var(--mb-terracotta)]"
-                    >
-                      Project notes
-                    </Link>
+                    ) : null}
 
                     {project.secondaryHref && project.secondaryLabel ? (
                       <Link

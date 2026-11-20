@@ -97,7 +97,12 @@ export default function MockBWorkPage() {
                 </div>
 
                 <h2 className="mb-display text-3xl font-semibold text-[var(--mb-ink)] sm:text-4xl">
-                  {project.name}
+                  <Link
+                    href={`/mock-b/work/${project.id}`}
+                    className="inline-flex min-h-[44px] items-center underline-offset-4 hover:text-[var(--mb-terracotta)] hover:underline"
+                  >
+                    {project.name}
+                  </Link>
                 </h2>
                 <p className="max-w-2xl text-base leading-relaxed text-[var(--mb-ink-soft)]">
                   {project.summary}
@@ -105,20 +110,27 @@ export default function MockBWorkPage() {
               </div>
 
               <div className="flex flex-wrap gap-2.5 sm:shrink-0 sm:pt-1">
+                <Link
+                  href={`/mock-b/work/${project.id}`}
+                  className="mb-btn-primary"
+                >
+                  Read case study
+                  <span aria-hidden="true" className="mb-arrow-icon">&rarr;</span>
+                </Link>
+
                 {project.external ? (
                   <a
                     href={project.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="mb-btn-primary"
+                    className="mb-btn-soft"
                   >
                     {project.linkLabel}
                     <span aria-hidden="true">&#8599;</span>
                   </a>
                 ) : project.id === "assisi" ? (
-                  <Link href={project.href} className="mb-btn-primary">
+                  <Link href={project.href} className="mb-btn-soft">
                     {project.linkLabel}
-                    <span aria-hidden="true" className="mb-arrow-icon">&rarr;</span>
                   </Link>
                 ) : null}
 
