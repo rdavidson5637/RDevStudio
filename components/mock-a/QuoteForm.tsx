@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, type FormEvent } from "react";
+import { useEffect, useRef, useState, type FocusEvent, type FormEvent } from "react";
 import Link from "next/link";
 import { FormSendFailure } from "@/components/contact/FormSendFailure";
 import { reportFormError } from "@/components/contact/report-form-error";
@@ -17,18 +17,83 @@ import s from "@/components/mock-a/mockA.module.css";
  * otherwise this form will always show the fallback on the preview URL.
  */
 
-type Errors = Partial<Record<"name" | "email" | "enquiryType" | "message", string>>;
+type Field = "name" | "email" | "enquiryType" | "message";
+type Errors = Partial<Record<Field, string>>;
+
+const FIELD_ORDER: readonly Field[] = ["name", "email", "enquiryType", "message"];
+const FIELD_LABELS: Record<Field, string> = {
+  name: "Name",
+  email: "Email",
+  enquiryType: "What do you need?",
+  message: "The project",
+};
 
 function isValidEmail(value: string) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
 }
 
-export function QuoteForm({ idPrefix = "q" }: { idPrefix?: string }) {
+/** One rule per field, shared by blur checks and the submit check. */
+function validateField(field: Field, raw: string): string | undefined {
+  const value = raw.trim();
+  switch (field) {
+    case "name":
+      return value ? undefined : "Add your name.";
+    case "email":
+      if (!value) return "Add an email so the studio can reply.";
+      return isValidEmail(value) ? undefined : "That email does not look right. Check for a missing @ or dot.";
+    case "enquiryType":
+      return value ? undefined : "Choose what this is about.";
+    case "message":
+      return value ? undefined : "Add a line or two about the project.";
+  }
+}
+
+function isField(name: string): name is Field {
+  return (FIELD_ORDER as readonly string[]).includes(name);
+}
+
+export function QuoteForm({
+  idPrefix = "q",
+  defaultEnquiry = "",
+  headingLevel = 3,
+}: {
+  idPrefix?: string;
+  /** Preselects "What do you need?" (must match one of MOCK_A_ENQUIRY_OPTIONS). */
+  defaultEnquiry?: string;
+  headingLevel?: 2 | 3;
+}) {
   const [errors, setErrors] = useState<Errors>({});
+  const [summary, setSummary] = useState("");
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
   const [formKey, setFormKey] = useState(0);
+  const successRef = useRef<HTMLHeadingElement>(null);
+  const alertRef = useRef<HTMLDivElement>(null);
 
   const id = (name: string) => `${idPrefix}-${name}`;
+  const SuccessHeading = headingLevel === 2 ? "h2" : "h3";
+
+  useEffect(() => {
+    if (status === "success") successRef.current?.focus();
+  }, [status]);
+
+  /** Check a field once the visitor leaves it, so errors never appear mid-typing. */
+  function onBlur(event: FocusEvent<HTMLFormElement>) {
+    const target = event.target as unknown as HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement;
+    if (!isField(target.name)) return;
+    // Do not shout at an empty field the visitor only tabbed through.
+    if (!target.value.trim() && !errors[target.name]) return;
+    const message = validateField(target.name, target.value);
+    setErrors((prev) => ({ ...prev, [target.name]: message }));
+  }
+
+  /** Clear a field's error as soon as it becomes valid. */
+  function onInput(event: FormEvent<HTMLFormElement>) {
+    const target = event.target as unknown as HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement;
+    if (!isField(target.name) || !errors[target.name]) return;
+    if (!validateField(target.name, target.value)) {
+      setErrors((prev) => ({ ...prev, [target.name]: undefined }));
+    }
+  }
 
   async function onSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -41,22 +106,30 @@ export function QuoteForm({ idPrefix = "q" }: { idPrefix?: string }) {
     }
 
     const next: Errors = {};
-    if (!value("name")) next.name = "Add your name.";
-    if (!isValidEmail(value("email"))) next.email = "That email does not look right.";
-    if (!value("enquiryType")) next.enquiryType = "Choose what this is about.";
-    if (!value("message")) next.message = "Add a line or two about the project.";
+    for (const field of FIELD_ORDER) {
+      const message = validateField(field, value(field));
+      if (message) next[field] = message;
+    }
     setErrors(next);
 
-    const firstError = Object.keys(next)[0];
-    if (firstError) {
+    const invalid = FIELD_ORDER.filter((field) => next[field]);
+    if (invalid.length > 0) {
       setStatus("idle");
-      document.getElementById(id(firstError))?.focus();
+      setSummary(
+        `${invalid.length === 1 ? "One field needs" : `${invalid.length} fields need`} fixing: ${invalid
+          .map((field) => FIELD_LABELS[field])
+          .join(", ")}.`,
+      );
+      document.getElementById(id(invalid[0]))?.focus();
       return;
     }
+    setSummary("");
 
     if (!FORMSPREE_FORM_ID) {
+      // Same graceful fallback as the live ContactForm: show email and WhatsApp instead.
       setStatus("error");
       reportFormError("contact", "formspree");
+      requestAnimationFrame(() => alertRef.current?.focus());
       return;
     }
 
@@ -78,25 +151,30 @@ export function QuoteForm({ idPrefix = "q" }: { idPrefix?: string }) {
       if (!response.ok) {
         setStatus("error");
         reportFormError("contact", "formspree");
+        requestAnimationFrame(() => alertRef.current?.focus());
         return;
       }
       setStatus("success");
     } catch {
       setStatus("error");
       reportFormError("contact", "formspree");
+      requestAnimationFrame(() => alertRef.current?.focus());
     }
   }
 
   if (status === "success") {
     return (
       <div className={s.success} role="status">
-        <h3>Sent. Thanks.</h3>
+        <SuccessHeading ref={successRef} tabIndex={-1}>
+          Sent. Thanks.
+        </SuccessHeading>
         <p className={s.small}>The studio will reply by email.</p>
         <button
           type="button"
           className={`${s.btn} ${s.btnGhost}`}
           onClick={() => {
             setErrors({});
+            setSummary("");
             setStatus("idle");
             setFormKey((k) => k + 1);
           }}
@@ -110,7 +188,17 @@ export function QuoteForm({ idPrefix = "q" }: { idPrefix?: string }) {
   const describe = (key: keyof Errors) => (errors[key] ? id(`${key}-error`) : undefined);
 
   return (
-    <form key={formKey} className={s.form} onSubmit={onSubmit} noValidate>
+    <form
+      key={formKey}
+      className={s.form}
+      onSubmit={onSubmit}
+      onBlur={onBlur}
+      onInput={onInput}
+      noValidate
+      aria-busy={status === "sending" || undefined}
+    >
+      <p className={`${s.small} ${s.formHint}`}>All fields are required unless marked optional.</p>
+
       <div className={s.honeypot} aria-hidden="true">
         <label htmlFor={id("gotcha")}>Leave this blank</label>
         <input id={id("gotcha")} name="_gotcha" type="text" tabIndex={-1} autoComplete="off" />
@@ -131,11 +219,9 @@ export function QuoteForm({ idPrefix = "q" }: { idPrefix?: string }) {
             aria-invalid={errors.name ? true : undefined}
             aria-describedby={describe("name")}
           />
-          {errors.name ? (
-            <p id={id("name-error")} className={s.error}>
-              {errors.name}
-            </p>
-          ) : null}
+          <p id={id("name-error")} className={s.error} aria-live="polite">
+            {errors.name ?? ""}
+          </p>
         </div>
 
         <div className={s.field}>
@@ -153,11 +239,9 @@ export function QuoteForm({ idPrefix = "q" }: { idPrefix?: string }) {
             aria-invalid={errors.email ? true : undefined}
             aria-describedby={describe("email")}
           />
-          {errors.email ? (
-            <p id={id("email-error")} className={s.error}>
-              {errors.email}
-            </p>
-          ) : null}
+          <p id={id("email-error")} className={s.error} aria-live="polite">
+            {errors.email ?? ""}
+          </p>
         </div>
       </div>
 
@@ -183,7 +267,7 @@ export function QuoteForm({ idPrefix = "q" }: { idPrefix?: string }) {
             id={id("enquiryType")}
             name="enquiryType"
             required
-            defaultValue=""
+            defaultValue={defaultEnquiry}
             className={s.select}
             aria-invalid={errors.enquiryType ? true : undefined}
             aria-describedby={describe("enquiryType")}
@@ -197,11 +281,9 @@ export function QuoteForm({ idPrefix = "q" }: { idPrefix?: string }) {
               </option>
             ))}
           </select>
-          {errors.enquiryType ? (
-            <p id={id("enquiryType-error")} className={s.error}>
-              {errors.enquiryType}
-            </p>
-          ) : null}
+          <p id={id("enquiryType-error")} className={s.error} aria-live="polite">
+            {errors.enquiryType ?? ""}
+          </p>
         </div>
       </div>
 
@@ -219,21 +301,25 @@ export function QuoteForm({ idPrefix = "q" }: { idPrefix?: string }) {
           aria-invalid={errors.message ? true : undefined}
           aria-describedby={describe("message")}
         />
-        {errors.message ? (
-          <p id={id("message-error")} className={s.error}>
-            {errors.message}
+        <p id={id("message-error")} className={s.error} aria-live="polite">
+            {errors.message ?? ""}
           </p>
-        ) : null}
       </div>
 
+      {summary ? (
+        <p className={s.errorSummary} role="alert">
+          {summary}
+        </p>
+      ) : null}
+
       {status === "error" ? (
-        <div className={s.alert} role="alert">
+        <div className={s.alert} role="alert" ref={alertRef} tabIndex={-1}>
           <FormSendFailure />
         </div>
       ) : null}
 
       <p className="sr-only" aria-live="polite">
-        {status === "sending" ? "Sending" : ""}
+        {status === "sending" ? "Sending your request." : ""}
       </p>
 
       <div className={s.formFoot}>

@@ -7,7 +7,6 @@ import { WhatsAppIcon } from "@/components/mock-a/Shell";
 import {
   MOCK_A_BASE,
   MOCK_A_PROJECTS,
-  MOCK_A_QUOTE_HREF,
   MOCK_A_SERVICES,
   MOCK_A_STEPS,
   MOCK_A_WHATSAPP_HREF,
@@ -83,7 +82,7 @@ export default function MockAHomePage() {
             charities.
           </p>
           <div className={s.ctaRow}>
-            <Link href={MOCK_A_QUOTE_HREF} className={`${s.btn} ${s.btnLime} ${s.btnLg}`}>
+            <Link href="#quote" className={`${s.btn} ${s.btnLime} ${s.btnLg}`}>
               Get a quote
               <span className={s.btnArrow} aria-hidden="true">
                 &rarr;
@@ -116,7 +115,7 @@ export default function MockAHomePage() {
             get a written quote back.
           </p>
         </div>
-        <ul className={s.services} data-reveal>
+        <ul className={s.services} data-reveal-stagger>
           {MOCK_A_SERVICES.map((service) => (
             <li key={service.title} className={s.service}>
               <span className={s.serviceBar} aria-hidden="true" />
@@ -128,6 +127,10 @@ export default function MockAHomePage() {
                   <li key={point}>{point}</li>
                 ))}
               </ul>
+              <Link href={`${MOCK_A_BASE}/services#${service.slug}`} className={s.serviceMore}>
+                More on {service.title.toLowerCase()}
+                <span aria-hidden="true"> &rarr;</span>
+              </Link>
             </li>
           ))}
         </ul>
@@ -216,7 +219,7 @@ export default function MockAHomePage() {
               <h3 className={`${s.eyebrow} ${s.mono}`} style={{ marginBottom: "1.25rem" }}>
                 How a project runs
               </h3>
-              <ol className={s.steps}>
+              <ol className={s.steps} data-reveal-stagger>
                 {MOCK_A_STEPS.map((step) => (
                   <li key={step.number} className={s.step}>
                     <span className={`${s.stepNum} ${s.mono}`} aria-hidden="true">

@@ -13,7 +13,13 @@ export const MOCK_A_WHATSAPP_HREF = `${WHATSAPP_URL}?text=${encodeURIComponent(
   "Hi RDev Studio, I have a project I want to talk about.",
 )}`;
 
-export const MOCK_A_QUOTE_HREF = `${MOCK_A_BASE}#quote`;
+/** The dedicated quote page. The home page also has the form in its #quote section. */
+export const MOCK_A_QUOTE_HREF = `${MOCK_A_BASE}/contact`;
+
+/** Link to the quote page with the "What do you need?" select already chosen. */
+export function mockAQuoteHrefFor(enquiryType: (typeof MOCK_A_ENQUIRY_OPTIONS)[number]) {
+  return `${MOCK_A_QUOTE_HREF}?type=${encodeURIComponent(enquiryType)}`;
+}
 
 export type MockArt =
   | { kind: "image"; src: string; alt: string; secondary?: { src: string; alt: string } }
@@ -113,32 +119,96 @@ export const MOCK_A_PROJECTS: readonly MockProject[] = [
   },
 ] as const;
 
-export const MOCK_A_SERVICES = [
+export type MockService = {
+  slug: string;
+  number: string;
+  title: string;
+  /** Value for the quote form's "What do you need?" select. */
+  enquiry: (typeof MOCK_A_ENQUIRY_OPTIONS)[number];
+  body: string;
+  points: readonly string[];
+  /** Longer copy for /mock-a/services. Facts only. */
+  detail: {
+    lede: string;
+    includes: readonly string[];
+    goodFor: readonly string[];
+    proof?: { label: string; href: string };
+    todo?: string;
+  };
+};
+
+export const MOCK_A_SERVICES: readonly MockService[] = [
   {
+    slug: "websites",
     number: "01",
     title: "Websites",
+    enquiry: "Website",
     body: "A site that says who you are, what you do, and how to get in touch. Built for a phone first and checked on a real handset before launch.",
     points: ["Contact form to your inbox", "Page titles and descriptions", "Hosting set up on Vercel"],
+    detail: {
+      lede: "Up to five pages, built for a phone first. Clear copy, a contact form that lands in your inbox, basic SEO and Vercel hosting.",
+      includes: [
+        "Up to five pages",
+        "Phone-first layout, checked on a real handset",
+        "Contact form to your inbox",
+        "Page titles and descriptions for search",
+        "Hosting set up on Vercel",
+        "Optional care plan after launch: hosting, security updates and small text or photo edits",
+      ],
+      goodFor: ["Local firms with no site, or one that is hard to use on a phone", "Rescues and charities", "Anyone who wants to own their domain and code"],
+      proof: { label: "Assisi site and brand", href: "/mock-a/work#assisi" },
+    },
   },
   {
+    slug: "web-apps",
     number: "02",
     title: "Web apps",
+    enquiry: "Web app",
     body: "Logins, rotas, dashboards and exports for the jobs a spreadsheet stopped handling. ShelterLink is one.",
     points: ["Accounts and roles", "Admin dashboards", "CSV exports"],
+    detail: {
+      lede: "Custom tools for the jobs a spreadsheet or group chat stopped handling. Built to fit how your team already works.",
+      includes: [
+        "Accounts, logins and roles",
+        "Scheduling and sign-ups",
+        "Admin dashboards",
+        "CSV exports",
+        "Auth and security middleware",
+      ],
+      goodFor: ["Volunteer-run groups juggling rotas", "Teams tracking work in shared spreadsheets", "Anything that needs different views for staff and the public"],
+      proof: { label: "ShelterLink", href: "/mock-a/work#shelterlink" },
+    },
   },
   {
+    slug: "google-business-profile",
     number: "03",
     title: "Google Business Profile",
+    enquiry: "Google Business Profile",
     body: "Help setting up or tidying the profile people see on Maps and in search before they ever reach your site.",
     points: ["Set-up or clean-up", "Hours, photos and links", "Matches your website"],
+    detail: {
+      lede: "The profile on Google Maps and search is often the first thing a customer sees. The studio helps set it up or tidy it so it matches your site.",
+      includes: ["New profile set-up, or clean-up of an existing one", "Hours, photos, categories and links filled in", "Name, address and details matched to your website"],
+      goodFor: ["Businesses that people search for by name or nearby", "Profiles with old hours, missing photos or the wrong link"],
+      todo: "Ryan to confirm exactly what the Google Business Profile service covers.",
+    },
   },
   {
+    slug: "charity-small-business",
     number: "04",
     title: "Charity and small-business builds",
+    enquiry: "Charity build",
     body: "Sites and tools for rescues, charities and local firms. Registered charity? Say so when you get in touch.",
     points: ["Assisi and ShelterLink", "Plain English copy", "You own the domain and code"],
+    detail: {
+      lede: "Sites and tools for rescues, charities and local firms, written in plain English and handed over so you own them.",
+      includes: ["A website, a web app, or both", "Plain English copy", "You own the domain, the content and the code", "Registered charity? Say so in the form"],
+      goodFor: ["Animal rescues and sanctuaries", "Small charities run by volunteers", "Local firms that want one person to deal with"],
+      proof: { label: "Assisi and ShelterLink", href: "/mock-a/work" },
+      todo: "Ryan to decide whether to mention the free package for registered charities. Left out because the brief says no prices.",
+    },
   },
-] as const;
+];
 
 export const MOCK_A_STEPS = [
   { number: "01", title: "Talk", body: "A short call, email or WhatsApp. What you need, who it is for, and what done looks like." },

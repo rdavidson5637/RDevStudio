@@ -2,13 +2,14 @@
 
 Agent-written (Claude Code, lane MOCK-A, 19-20 Nov 2026). Unverified until Ryan checks it. Draft PR #33, do not merge.
 
-Routes: `/mock-a` (home) and `/mock-a/work` (project panels). Both are `noindex, nofollow`, not in the sitemap, not in the live nav.
+Routes: `/mock-a` (home), `/mock-a/work` (project panels), `/mock-a/services` (four services, each ending with both CTAs) and `/mock-a/contact` (quote form and WhatsApp; `?type=Website` etc. preselects "What do you need?"). All are `noindex, nofollow`, not in the sitemap, not in the live nav.
 
 ## The idea
 - A sharp product studio, not a freelancer page. Near-black, one electric lime, one electric blue, oversized tight type.
 - Single long home page: statement headline, local time and "open to new projects" chips, a project-name marquee, four services, a "Latest work" list, a short studio block, then a big "Start a project." close.
 - The two actions are never more than a tap away: header (both on desktop), hero, a fixed bottom bar on phones, and the contact close.
-- Motion is kinetic but cheap: CSS marquee, CSS hover previews on the work list, one IntersectionObserver for scroll reveals. All of it stops under `prefers-reduced-motion`.
+- Motion is kinetic but cheap: CSS marquee, CSS hover previews on the work list, lifted and lime-shadowed screens on work panel hover, one IntersectionObserver for scroll reveals (lists stagger in), and a lime-to-blue scroll progress line under the header that uses CSS scroll-driven animation (no JS; it simply does not show in browsers without support). All of it stops under `prefers-reduced-motion`.
+- Client JS is small: the clock, the mobile menu, the reveal observer and the quote form.
 
 ## Palette (local to `components/mock-a/mockA.module.css`, not site tokens)
 | Role | Hex | Notes |
@@ -36,6 +37,8 @@ Focus ring is lime on dark surfaces and ink on the cream work section and the bl
 3. The local time and "open to new projects" chips. Small, honest signals that the studio is real and local.
 4. The labelled SVG "screens" for projects without approved screenshots (Assisi until sign-off). Clearly marked as illustrations.
 5. The WhatsApp prefill (`WHATSAPP_URL` plus `?text=`) so the first message has context.
+6. The quote form's validation: checks a field when you leave it (never mid-typing), clears the error as soon as it is fixed, error text tied to each field with `aria-describedby` and announced through `aria-live`, a summary of what needs fixing on submit, and focus moved to the first bad field, the failure fallback or the success message.
+7. Service pages that link to the quote form with the service already chosen (`/mock-a/contact?type=Web%20app`).
 
 ## Open TODOs for Ryan
 - **Rondo**: no public link in the repo. It points at `/mock-a/work#rondo` for now. Needs the real URL, a one-line description and a year. The type "Studio product" is based only on Rondo being your own project.
@@ -44,9 +47,17 @@ Focus ring is lime on dark surfaces and ink on the cream work section and the bl
 - **Formspree**: the quote form posts to `FORMSPREE_FORM_ID` (`NEXT_PUBLIC_FORMSPREE_ID`). Confirm that env var is set for Preview deployments, or the preview will show the email/WhatsApp fallback. The subject line says "(mock A)" so test sends are easy to spot. Not test-submitted by the agent, to avoid sending you an email.
 - **WhatsApp**: confirm `WHATSAPP_URL` in `lib/constants.ts` is the number you want on the new site, and that the prefill text reads right.
 - **Copy to check**: hero line ("Websites and web apps, designed and built in NI."), the four service blurbs (especially Google Business Profile, which has no existing service copy in the repo), "Open to new projects", and the studio line "The person you talk to is the person who builds it."
-- The "Mock note" lines on the home work list and the work panels are for this review only. Remove them once the copy exists.
+- **Services page** (`/mock-a/services`): all copy is drawn from the existing site drafts (`lib/content/redesign-draft.ts`) and the brief, with no prices. Check the "Good for" lists, which are agent-written. The Google Business Profile section has no source copy in the repo, so confirm what that service covers.
+- **Registered charities**: the live site offers free packages for registered charities. Left out of the mock because the brief says no prices. Your call whether to mention it.
+- The care plan is mentioned under Websites (hosting, security updates, small edits), without its price. Confirm you still want it mentioned.
+- The "Mock note" lines on the home work list, the work panels and the services page are for this review only. Remove them once the copy exists.
 
 ## Could not measure
-- Lighthouse, real-device and real screen-reader runs were not done. Checks done: Playwright at 360, 375, 390, 768 and 1280 for horizontal scroll and tap targets under 44px, heading order, keyboard focus, reduced motion, and form validation.
+- Lighthouse, real-device and real screen-reader runs were not done. Checks done (production build, `next start`): Playwright at 360, 390 and 768 on all four routes for horizontal scroll, tap targets under 44px, one h1 and no skipped heading levels; 1280 screenshots of services, contact and the work panel hover; a keyboard-only Tab walk through the home page (skip link first, every stop has a visible focus style); reduced motion (reveals and progress line off); reveals after client-side navigation between mock pages.
+- The quote form was checked only on the validation path (blur errors, the submit summary, focus moving to the first bad field). It was never submitted with valid data, so Formspree has not been called and you got no email. The success and send-failure states are code-reviewed, not seen in a browser.
 - Layout shift was not measured with a tool. By construction, reveals only animate opacity and transform, the clock has a fixed-width slot, and images sit in fixed-aspect frames.
 - Dev-only console errors on every route: `icon.svg` and `favicon.ico` return 500 because `public/` and `app/` both define them. This existed before the mock and is not touched here.
+- Under `next start` locally, `/_vercel/insights/script.js` 404s (Vercel Analytics from the root layout only exists on Vercel). Not from the mock.
+
+## Fixed in the refill pass
+- The reveal observer lives in the layout, which persists across client-side navigation. Before this pass, moving from `/mock-a` to `/mock-a/work` with a nav link could leave lower sections invisible. It now re-scans on every route change and when new nodes arrive, and shows anything already scrolled past.

@@ -642,6 +642,7 @@
 }
 
 .serviceTitle {
+  transition: color 0.25s;
   margin: 0;
   font-weight: 600;
   font-size: clamp(1.625rem, 3vw, 2.125rem);
@@ -681,8 +682,25 @@
   transition: width 0.5s var(--a-ease);
 }
 
-.service:hover .serviceBar {
+.service:hover .serviceBar,
+.service:focus-within .serviceBar {
   width: 100%;
+}
+
+.serviceMore {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  margin-top: 0.25rem;
+  color: var(--a-lime);
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.25em;
+}
+
+.serviceMore:hover {
+  text-decoration-thickness: 2px;
 }
 
 @media (min-width: 700px) {
@@ -1196,6 +1214,26 @@
   font-weight: 600;
 }
 
+/* Kept in the DOM as a live region; takes no space until it has text. */
+.error:empty {
+  position: absolute;
+}
+
+.formHint {
+  margin: 0;
+}
+
+.errorSummary {
+  margin: 0;
+  padding: 0.85rem 1rem;
+  border-left: 4px solid #ff8a7a;
+  border-radius: 4px;
+  background: rgb(255 138 122 / 0.08);
+  color: var(--a-text);
+  font-weight: 600;
+  font-size: 0.9375rem;
+}
+
 .honeypot {
   position: absolute;
   left: -9999px;
@@ -1260,6 +1298,7 @@
   justify-items: start;
 }
 
+.success h2,
 .success h3 {
   margin: 0;
   font-weight: 600;
@@ -1297,6 +1336,151 @@
   margin-top: 1.5rem;
   padding: 1.25rem 0 0;
   border-top: 1px solid var(--a-line);
+}
+
+/* ---------- Services page ---------- */
+
+.svc {
+  display: grid;
+  gap: clamp(1.5rem, 4vw, 3rem);
+  padding: clamp(3rem, 8vw, 6rem) 0;
+  border-bottom: 1px solid var(--a-line);
+  scroll-margin-top: 5rem;
+}
+
+.svcHead {
+  position: relative;
+}
+
+.svcNum {
+  display: block;
+  color: transparent;
+  -webkit-text-stroke: 1.5px var(--a-lime);
+  font-family: var(--a-sans);
+  font-weight: 700;
+  font-size: clamp(4rem, 14vw, 9rem);
+  line-height: 0.85;
+  letter-spacing: -0.06em;
+}
+
+.svcTitle {
+  margin: 0.75rem 0 0;
+  font-weight: 600;
+  font-size: clamp(2.25rem, 7vw, 5rem);
+  line-height: 0.95;
+  letter-spacing: -0.05em;
+  text-wrap: balance;
+}
+
+.svcLede {
+  margin: 1.25rem 0 0;
+  max-width: 36rem;
+  color: var(--a-muted);
+  font-size: 1.125rem;
+}
+
+.svcCols {
+  display: grid;
+  gap: 2rem;
+}
+
+.svcLabel {
+  margin: 0 0 0.75rem;
+  color: var(--a-lime);
+  font-weight: 400;
+  font-size: 0.8125rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.svcList {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--a-line);
+}
+
+.svcList li {
+  position: relative;
+  padding: 0.75rem 0 0.75rem 1.5rem;
+  border-bottom: 1px solid var(--a-line);
+}
+
+.svcList li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 1.3rem;
+  width: 0.6rem;
+  height: 2px;
+  background: var(--a-lime);
+}
+
+.svcProof {
+  margin: 1.25rem 0 0;
+  color: var(--a-muted);
+}
+
+.svcCtas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 2rem;
+}
+
+@media (min-width: 700px) {
+  .svcCols {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 1100px) {
+  .svc {
+    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+    align-items: start;
+  }
+
+  .svcHead {
+    position: sticky;
+    top: 6rem;
+  }
+}
+
+/* ---------- Contact page ---------- */
+
+.contactSection {
+  padding-top: clamp(2rem, 5vw, 3.5rem);
+}
+
+.contactSection .closeGrid {
+  margin-top: 0;
+}
+
+.contactAside {
+  display: grid;
+  gap: 0;
+}
+
+.contactNext {
+  margin-top: 2.5rem;
+}
+
+.contactNext .eyebrow {
+  margin: 0 0 1.25rem;
+}
+
+@media (min-width: 1000px) {
+  .contactAside .steps {
+    grid-template-columns: 1fr;
+  }
+
+  .contactAside .step {
+    padding: 1.1rem 1.25rem;
+  }
+
+  .contactAside .stepNum {
+    margin-bottom: 0.5rem;
+  }
 }
 
 /* ---------- Footer ---------- */
@@ -1517,6 +1701,89 @@
   transform: none;
 }
 
+.root[data-reveal-ready] [data-reveal-stagger] > * {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.6s var(--a-ease), transform 0.7s var(--a-ease), background-color 0.3s;
+  transition-delay: calc(var(--i, 0) * 80ms);
+}
+
+.root[data-reveal-ready] [data-reveal-stagger][data-shown] > * {
+  opacity: 1;
+  transform: none;
+}
+
+/* ---------- Scroll progress (CSS scroll-driven animation; no JS, skipped where unsupported) ---------- */
+
+.progress {
+  display: none;
+}
+
+@supports (animation-timeline: scroll()) {
+  .progress {
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -1px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--a-lime), var(--a-blue));
+    transform-origin: left;
+    transform: scaleX(0);
+    animation: mockAProgress linear both;
+    animation-timeline: scroll(root block);
+    pointer-events: none;
+  }
+}
+
+@keyframes mockAProgress {
+  to {
+    transform: scaleX(1);
+  }
+}
+
+/* ---------- Work page panel hovers (pointer devices only) ---------- */
+
+.panelArt .screen,
+.panelArt .secondaryScreen {
+  transition: transform 0.5s var(--a-ease), box-shadow 0.5s var(--a-ease), border-color 0.3s;
+}
+
+.panelName {
+  width: fit-content;
+  background-image: linear-gradient(var(--a-lime), var(--a-lime));
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  background-size: 0 0.08em;
+  padding-bottom: 0.08em;
+  transition: background-size 0.5s var(--a-ease);
+}
+
+@media (hover: hover) {
+  .panel:hover .panelName {
+    background-size: 100% 0.08em;
+  }
+
+  .panel:hover .panelArt .screen {
+    transform: translateY(-8px) rotate(-1.25deg);
+    border-color: var(--a-lime);
+    box-shadow: 0 40px 70px -25px rgb(0 0 0 / 0.8), 0 0 0 1px var(--a-lime), 12px 12px 0 0 var(--a-lime);
+  }
+
+  .panel:hover .panelArt .secondaryScreen {
+    transform: rotate(5deg) translate(4%, 4%);
+    border-color: var(--a-blue);
+  }
+
+  .service:hover .serviceTitle {
+    color: var(--a-lime);
+  }
+}
+
+.panel:focus-within .panelName {
+  background-size: 100% 0.08em;
+}
+
 /* ---------- Reduced motion ---------- */
 
 @media (prefers-reduced-motion: reduce) {
@@ -1557,8 +1824,18 @@
     display: none;
   }
 
-  .root[data-reveal-ready] [data-reveal] {
+  .root[data-reveal-ready] [data-reveal],
+  .root[data-reveal-ready] [data-reveal-stagger] > * {
     opacity: 1;
+    transform: none;
+  }
+
+  .progress {
+    display: none;
+  }
+
+  .panel:hover .panelArt .screen,
+  .panel:hover .panelArt .secondaryScreen {
     transform: none;
   }
 

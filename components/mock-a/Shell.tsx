@@ -6,7 +6,7 @@ import s from "@/components/mock-a/mockA.module.css";
 
 const NAV = [
   { href: `${MOCK_A_BASE}/work`, label: "Work" },
-  { href: `${MOCK_A_BASE}#services`, label: "Services" },
+  { href: `${MOCK_A_BASE}/services`, label: "Services" },
   { href: `${MOCK_A_BASE}#studio`, label: "Studio" },
   { href: MOCK_A_QUOTE_HREF, label: "Contact" },
 ] as const;
@@ -59,6 +59,7 @@ export function MockHeader() {
             <MobileMenu items={NAV} />
           </div>
         </div>
+        <div className={s.progress} aria-hidden="true" />
       </header>
     </>
   );
@@ -91,6 +92,12 @@ export function MockFooter() {
         <ul className={s.footerLinks}>
           <li>
             <Link href={`${MOCK_A_BASE}/work`}>Work</Link>
+          </li>
+          <li>
+            <Link href={`${MOCK_A_BASE}/services`}>Services</Link>
+          </li>
+          <li>
+            <Link href={MOCK_A_QUOTE_HREF}>Get a quote</Link>
           </li>
           <li>
             <a href={`mailto:${CONTACT_EMAIL}`}>Email</a>
