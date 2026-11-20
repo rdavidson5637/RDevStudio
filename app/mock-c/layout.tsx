@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./mock-c.css";
+import { RevealObserver } from "./RevealObserver";
 
 export const metadata: Metadata = {
   title: "RDev Studio — Independent digital studio",
@@ -8,5 +9,5 @@ export const metadata: Metadata = {
 };
 
 export default function MockCLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <div className="mock-c">{children}</div>;
+  return <div className="mock-c"><RevealObserver />{children}</div>;
 }

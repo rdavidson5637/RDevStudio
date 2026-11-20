@@ -25,7 +25,7 @@ export default function MockCHome() {
   return <main id="top">
     <header className="topbar wrap">
       <Link className="wordmark" href="/mock-c" aria-label="RDev Studio home">R<span>/</span>DEV <small>STUDIO</small></Link>
-      <nav aria-label="Main navigation"><a href="#work">Work</a><a href="#studio">Studio</a><a href="#contact">Contact <span aria-hidden="true">↗</span></a></nav>
+      <nav aria-label="Main navigation"><a href="#work">Work</a><Link href="/mock-c/services">Services</Link><a href="#studio">Studio</a><a href="#contact">Contact <span aria-hidden="true">↗</span></a></nav>
     </header>
 
     <section className="hero wrap" aria-labelledby="hero-title">
