@@ -185,17 +185,15 @@ function WarmQuoteFormFields({
       <div
         ref={successRef}
         tabIndex={-1}
-        className="rounded-[var(--radius-md)] border border-[var(--mb-border-accent)] bg-[var(--mb-accent-subtle)] p-6 text-left outline-none sm:p-7"
+        className="border-l-2 border-[var(--mb-accent)] bg-[var(--mb-accent-subtle)] p-6 text-left outline-none sm:p-7"
         role="status"
         aria-live="polite"
       >
-        <p className="text-xs font-semibold uppercase tracking-wider text-[var(--mb-link)]">
-          Enquiry sent
-        </p>
-        <p className="mb-display mt-2 text-2xl font-semibold text-[var(--mb-ink)] sm:text-3xl">
+        <p className="mb-kicker">Enquiry sent</p>
+        <p className="mb-h3 mt-2 text-[var(--mb-ink)]">
           Thanks, we have your note.
         </p>
-        <p className="mt-3 text-base leading-relaxed text-[var(--mb-muted)]">
+        <p className="mb-body mt-3">
           RDev Studio will reply by email with clear next steps and a tailored quote. Want a quicker back-and-forth?
         </p>
         <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
@@ -211,7 +209,7 @@ function WarmQuoteFormFields({
           <button
             type="button"
             onClick={onReset}
-            className="mb-btn-secondary w-full sm:w-auto"
+            className="mb-text-link"
           >
             Send another enquiry
           </button>
@@ -221,11 +219,11 @@ function WarmQuoteFormFields({
   }
 
   const inputBase =
-    "mb-input mt-1.5 block w-full min-h-[44px] rounded-[var(--radius-md)] border bg-[var(--mb-surface)] px-3.5 py-2.5 text-base text-[var(--mb-ink)] placeholder:text-[var(--mb-tertiary)] transition-colors disabled:cursor-not-allowed disabled:opacity-60";
+    "mb-input mt-1.5 block w-full min-h-[44px] rounded-[var(--mb-radius-sm)] border px-3.5 py-2.5 text-base text-[var(--mb-ink)] placeholder:text-[var(--mb-tertiary)] transition-colors disabled:cursor-not-allowed disabled:opacity-60";
   const inputNormal =
     "border-[var(--mb-line-strong)] focus:border-[var(--mb-accent)]";
   const inputInvalid =
-    "border-[var(--mb-ochre)] bg-[var(--mb-surface)] focus:border-[var(--mb-ochre)]";
+    "border-[var(--mb-ochre)] focus:border-[var(--mb-ochre)]";
 
   const isSending = status === "sending";
   const nameId = `${idPrefix}-name`;
@@ -237,7 +235,7 @@ function WarmQuoteFormFields({
   return (
     <form
       onSubmit={onSubmit}
-      className="space-y-5"
+      className="space-y-6"
       noValidate
       aria-busy={isSending || undefined}
     >
@@ -258,15 +256,15 @@ function WarmQuoteFormFields({
         <div
           role="alert"
           aria-live="polite"
-          className="mb-alert rounded-[var(--radius-md)] border border-[var(--mb-ochre-ink)] bg-[var(--mb-ochre)] px-4 py-3 text-sm font-semibold text-[var(--mb-ink)]"
+          className="mb-alert mb-fact-value"
         >
           {validationNotice}
         </div>
       ) : null}
 
-      <div className="grid gap-5 sm:grid-cols-2">
+      <div className="space-y-6">
         <div>
-          <label htmlFor={nameId} className="block text-sm font-semibold text-[var(--mb-ink)]">
+          <label htmlFor={nameId} className="mb-label">
             Your name
           </label>
           <input
@@ -297,22 +295,16 @@ function WarmQuoteFormFields({
           {errors.name ? (
             <p
               id={`${nameId}-error`}
-              className="mt-1.5 flex items-center gap-1.5 text-sm font-semibold text-[var(--mb-ink)]"
+              className="mb-field-error"
               aria-live="polite"
             >
-              <span
-                aria-hidden="true"
-                className="inline-flex h-4 w-4 shrink-0 items-center justify-center rounded-[var(--radius-sm)] bg-[var(--mb-ochre)] text-[11px] font-bold text-[var(--mb-on-accent)]"
-              >
-                !
-              </span>
-              <span>{errors.name}</span>
+              {errors.name}
             </p>
           ) : null}
         </div>
 
         <div>
-          <label htmlFor={emailId} className="block text-sm font-semibold text-[var(--mb-ink)]">
+          <label htmlFor={emailId} className="mb-label">
             Email address
           </label>
           <input
@@ -343,23 +335,17 @@ function WarmQuoteFormFields({
           {errors.email ? (
             <p
               id={`${emailId}-error`}
-              className="mt-1.5 flex items-center gap-1.5 text-sm font-semibold text-[var(--mb-ink)]"
+              className="mb-field-error"
               aria-live="polite"
             >
-              <span
-                aria-hidden="true"
-                className="inline-flex h-4 w-4 shrink-0 items-center justify-center rounded-[var(--radius-sm)] bg-[var(--mb-ochre)] text-[11px] font-bold text-[var(--mb-on-accent)]"
-              >
-                !
-              </span>
-              <span>{errors.email}</span>
+              {errors.email}
             </p>
           ) : null}
         </div>
       </div>
 
       <div>
-        <label htmlFor={topicId} className="block text-sm font-semibold text-[var(--mb-ink)]">
+        <label htmlFor={topicId} className="mb-label">
           What are we building together?
         </label>
         <select
@@ -396,25 +382,19 @@ function WarmQuoteFormFields({
         {errors.enquiryType ? (
           <p
             id={`${topicId}-error`}
-            className="mt-1.5 flex items-center gap-1.5 text-sm font-semibold text-[var(--mb-ink)]"
+            className="mb-field-error"
             aria-live="polite"
           >
-            <span
-              aria-hidden="true"
-              className="inline-flex h-4 w-4 shrink-0 items-center justify-center rounded-[var(--radius-sm)] bg-[var(--mb-ochre)] text-[11px] font-bold text-[var(--mb-on-accent)]"
-            >
-              !
-            </span>
-            <span>{errors.enquiryType}</span>
+            {errors.enquiryType}
           </p>
         ) : null}
       </div>
 
       <div>
-        <label htmlFor={messageId} className="block text-sm font-semibold text-[var(--mb-ink)]">
+        <label htmlFor={messageId} className="mb-label">
           Tell us about it
         </label>
-        <p id={messageHintId} className="mt-1 text-xs leading-relaxed text-[var(--mb-muted)]">
+        <p id={messageHintId} className="mb-caption mt-1">
           A few plain-English lines is plenty: what you do, what you need, and whether you are a registered charity.
         </p>
         <textarea
@@ -446,16 +426,10 @@ function WarmQuoteFormFields({
         {errors.message ? (
           <p
             id={`${messageId}-error`}
-            className="mt-1.5 flex items-center gap-1.5 text-sm font-semibold text-[var(--mb-ink)]"
+            className="mb-field-error"
             aria-live="polite"
           >
-            <span
-              aria-hidden="true"
-              className="inline-flex h-4 w-4 shrink-0 items-center justify-center rounded-[var(--radius-sm)] bg-[var(--mb-ochre)] text-[11px] font-bold text-[var(--mb-on-accent)]"
-            >
-              !
-            </span>
-            <span>{errors.message}</span>
+            {errors.message}
           </p>
         ) : null}
       </div>
@@ -464,14 +438,14 @@ function WarmQuoteFormFields({
         <div
           role="alert"
           aria-live="polite"
-          className="mb-alert rounded-[var(--radius-md)] border border-[var(--mb-ochre-ink)] bg-[var(--mb-ochre)] p-4 text-sm leading-relaxed text-[var(--mb-ink)]"
+          className="mb-alert"
         >
-          <p className="font-bold">The form could not send right now.</p>
-          <p className="mt-1 font-medium text-[var(--mb-muted)]">
-            No need to start over — reach RDev Studio directly by email at{" "}
+          <p className="mb-fact-value">The form could not send right now.</p>
+          <p className="mb-prose mt-1">
+            No need to start over - reach RDev Studio directly by email at{" "}
             <a
               href={`mailto:${CONTACT_EMAIL}`}
-              className="font-semibold text-[var(--mb-link)] underline underline-offset-2 hover:text-[var(--mb-link-hover)]"
+              className="mb-inline-link"
             >
               {CONTACT_EMAIL}
             </a>{" "}
@@ -480,7 +454,7 @@ function WarmQuoteFormFields({
               href={STUDIO_WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="font-semibold text-[var(--mb-link)] underline underline-offset-2 hover:text-[var(--mb-link-hover)]"
+              className="mb-inline-link"
             >
               message us on WhatsApp
             </a>
@@ -514,7 +488,7 @@ function WarmQuoteFormFields({
 
         <Link
           href="/privacy"
-          className="inline-flex min-h-[44px] items-center text-sm font-medium text-[var(--mb-muted)] underline decoration-[var(--mb-line-strong)] underline-offset-4 hover:text-[var(--mb-ink)]"
+          className="mb-text-link text-[var(--mb-muted)]"
         >
           How we handle your message
         </Link>

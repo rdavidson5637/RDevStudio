@@ -30,16 +30,16 @@ Ryan picked Mock B's direction but flagged that parts "scream AI" (doodles, unif
 
 All nine routes live exclusively under `app/mock-b/**` with scoped styles in `app/mock-b/mock-b.css`, `robots: { index: false, follow: false }`, and zero edits to live site files, `app/sitemap.ts`, or `package.json`:
 
-- `/mock-b` — Studio home page: open editorial hero with local Carrickfergus time + availability status, five real studio projects as full-bleed ruled rows, ruled services list + four-step process, studio-only about block, and dark-band quote form + WhatsApp close.
-- `/mock-b/work` — Mixed-size editorial five-project showcase with ruled jump links, ShelterLink's three real screenshots from `public/images/work/`, flat live-token desktop/mobile preview panels for Assisi, Crosskennan, Rondo, and MGSL Hub, and direct links to each `/mock-b/work/[slug]` case study (strictly facts-only).
-- `/mock-b/work/[slug]` (5 static SSG pages via `generateStaticParams` + `dynamicParams = false`) — Dedicated facts-only case study pages covering **The problem**, **What was built**, **Stack & focus**, **Project status**, explicit **"TODO for Ryan"** callouts wherever facts are not stored in this repo, prev/next project navigation, and closing Quote (`?topic=...`) + WhatsApp CTAs:
-  - `/mock-b/work/shelterlink` — ShelterLink (Assisi Animal Sanctuary volunteer web app)
-  - `/mock-b/work/assisi` — Assisi Animal Sanctuary (website & brand rebuild, awaiting sign-off)
-  - `/mock-b/work/crosskennan` — Crosskennan (`crosskennan.vercel.app` live preview + TODO markers)
-  - `/mock-b/work/rondo` — Rondo (in-house studio build, live URL & details TODO markers)
-  - `/mock-b/work/mgsl-hub` — MGSL Hub (`mgsl-hq-black.vercel.app` live preview + TODO markers)
-- `/mock-b/services` — Dedicated plain-English services guide covering Websites, Web apps & handy tools, Google Business Profile help, and Charity & small-business builds (zero prices, facts-only, each ending with Quote form `?topic=...` prefill + WhatsApp CTAs, plus process steps and studio FAQs).
-- `/mock-b/contact` — Dedicated quote & contact page with the `WarmQuoteForm` (using `FORMSPREE_FORM_ID` with graceful empty-ID email/WhatsApp fallback, blur/submit inline validation, `aria-describedby`, `aria-live`, focus-first-invalid, and sending/error/success states) paired with a WhatsApp callout, direct email, and helpful scope checklist.
+- `/mock-b` - Studio home page: open editorial hero with local Carrickfergus time + availability status, five real studio projects as full-bleed ruled rows, ruled services list + four-step process, studio-only about block, and dark-band quote form + WhatsApp close.
+- `/mock-b/work` - Mixed-size editorial five-project showcase with ruled jump links, ShelterLink's three real screenshots from `public/images/work/`, flat live-token desktop/mobile preview panels for Assisi, Crosskennan, Rondo, and MGSL Hub, and direct links to each `/mock-b/work/[slug]` case study (strictly facts-only).
+- `/mock-b/work/[slug]` (5 static SSG pages via `generateStaticParams` + `dynamicParams = false`) - Dedicated facts-only case study pages covering **The problem**, **What was built**, **Stack & focus**, **Project status**, explicit **"TODO for Ryan"** callouts wherever facts are not stored in this repo, prev/next project navigation, and closing Quote (`?topic=...`) + WhatsApp CTAs:
+  - `/mock-b/work/shelterlink` - ShelterLink (Assisi Animal Sanctuary volunteer web app)
+  - `/mock-b/work/assisi` - Assisi Animal Sanctuary (website & brand rebuild, awaiting sign-off)
+  - `/mock-b/work/crosskennan` - Crosskennan (`crosskennan.vercel.app` live preview + TODO markers)
+  - `/mock-b/work/rondo` - Rondo (in-house studio build, live URL & details TODO markers)
+  - `/mock-b/work/mgsl-hub` - MGSL Hub (`mgsl-hq-black.vercel.app` live preview + TODO markers)
+- `/mock-b/services` - Dedicated plain-English services guide covering Websites, Web apps & handy tools, Google Business Profile help, and Charity & small-business builds (zero prices, facts-only, each ending with Quote form `?topic=...` prefill + WhatsApp CTAs, plus process steps and studio FAQs).
+- `/mock-b/contact` - Dedicated quote & contact page with the `WarmQuoteForm` (using `FORMSPREE_FORM_ID` with graceful empty-ID email/WhatsApp fallback, blur/submit inline validation, `aria-describedby`, `aria-live`, focus-first-invalid, and sending/error/success states) paired with a WhatsApp callout, direct email, and helpful scope checklist.
 
 ## Palette (Ryan's Grenadine pack)
 
@@ -63,14 +63,139 @@ Declared once under `.mock-b-root` in `app/mock-b/mock-b.css`. No edits to `app/
 
 Semantic helpers (`--mb-bg`, `--mb-ink`, `--mb-muted`, `--mb-surface`, `--mb-light`, `--mb-accent`, `--mb-link`, `--mb-icon`, `--mb-on-accent`, `--mb-focus-ring`) switch inside `.mb-on-light`, `.mb-on-surface`, and `.mb-todo-box` / `.mb-alert` so text stays readable when a section changes background.
 
-**Contrast:** Naples, muted, and faint text all pass WCAG AA on slate / Slate 2 / Slate 3. Slate text on Naples, grenadine, and ochre passes AA (and is required on those fills). Grenadine text on Naples fails AA (2.08:1), so links and kickers on light sections use Deep Slate (with underline) instead of pink. Naples muted / faint also fail on Naples, so muted copy there uses ochre ink (7.88:1). Grenadine deep icons are 3.75:1 on slate and 3.08:1 on Naples — both meet the 3:1 UI-component bar, but are not used as body text.
+**Contrast:** Naples, muted, and faint text all pass WCAG AA on slate / Slate 2 / Slate 3. Slate text on Naples, grenadine, and ochre passes AA (and is required on those fills). Grenadine text on Naples fails AA (2.08:1), so links and kickers on light sections use Deep Slate (with underline) instead of pink. Naples muted / faint also fail on Naples, so muted copy there uses ochre ink (7.88:1). Grenadine deep icons are 3.75:1 on slate and 3.08:1 on Naples - both meet the 3:1 UI-component bar, but are not used as body text.
 
 ## Fonts
 
 Loaded via built-in `next/font/google` in `app/mock-b/layout.tsx` (zero new npm packages, self-hosted by Next.js at build time, `display: "swap"`):
 
-- **Display:** `Fraunces` (weights 500, 600, 700; fallback `Georgia, serif`).
-- **Body / UI:** `Plus Jakarta Sans` (weights 400, 500, 600, 700; fallback `system-ui, sans-serif`).
+- **Display:** `Big_Shoulders` weight 800 (Google's current family name for Big Shoulders Display; `adjustFontFallback: false`).
+- **Body / UI:** `Atkinson_Hyperlegible` weights 400 and 700.
+
+## Pro pass (20 Nov, D-RD lane / `lane/rd-mockb-pro`)
+
+Premium studio finish on Ryan's chosen Mock B direction. Copy and TODOs untouched. Hex values unchanged. Scope: `app/mock-b/**`, `components/mock-b/**`, plus `docs/design-pro/mockb-pro/{before,after}` screenshots.
+
+- **Type:** Big Shoulders 800 + Atkinson Hyperlegible 400/700; fixed scale tokens (`--mb-text-*`), tight display leading, body measure ~67ch, sentence-case kickers (no all-caps eyebrows).
+- **Layout:** Wider shell (`max-w-6xl`), asymmetric home hero (type + ruled "Who this is for" column), one primary CTA per hero, WhatsApp demoted to text/icon, numbered sections, hairline rules, 8px rhythm, 2-4px radii.
+- **Imagery:** Larger ShelterLink screenshots with 16:9 / 16:10 crops, frame chrome captions, no monospace URL bars, no status dots.
+- **Motion / a11y:** Opacity-only reveals (220ms), off under `prefers-reduced-motion`; visible focus rings; 44px targets; AA Grenadine contrast rules kept.
+- **Checks:** `npm run lint`, `npx tsc --noEmit`, `npm test` (64/64), `npm run build` all pass. Screenshots at 390 and 1280 in `docs/design-pro/mockb-pro/`.
+
+## Pro pass 2 (20 Nov, refine / same PR #35)
+
+Tighter quality pass on the same Mock B routes. Copy, TODOs, and Grenadine hex values still untouched.
+
+- **Type consistency:** Section titles use `mb-h2` / `mb-h3` instead of ad-hoc `text-3xl sm:text-4xl`; ledes use `mb-lede` / `mb-body`; captions and form labels use `mb-caption` / `mb-label`.
+- **Banned AI tells removed:** Dropped single-word grenadine highlights in contact and services headlines (design brief bans accented single headline words).
+- **Contact:** Asymmetric form + aside (1.35/0.65), one grenadine primary in the hero (Jump to form); WhatsApp aside demoted to secondary-inverse; helpful notes as ruled rows.
+- **Work:** Featured ShelterLink on a surface band with asymmetric title/CTA row and full-width real screenshots; projects 02-05 on page bg for rhythm; shared `mb-meta` / `mb-jump-link` / `mb-back-link` utilities.
+- **Spacing:** `mb-page-intro` and `mb-section-pad` for consistent 8px-based section rhythm across routes.
+- **QA:** No horizontal overflow at 390; visible interactive targets >= 44px (skip link excluded). Shots in `docs/design-pro/mockb-pro/pass2-before/` and `pass2-after/`.
+
+## Pro pass 3 (20 Nov, refine / same PR #35)
+
+Tighter CTA hierarchy and mobile rhythm. Copy, TODOs, and Grenadine hex values still untouched.
+
+- **One accent action per view:** Demoted WhatsApp / secondary live links from outline buttons to `mb-text-link` wherever a grenadine primary already sat (work featured + closing, services sections + closing, case-study hero / sidebar / closing).
+- **No pill clusters:** Project stack tags render as slash-separated `mb-stack` captions on home, work, and case studies.
+- **Form:** Inputs use raised fill against Slate 2 panels so fields read clearly; contact form uses `mb-section-pad` and a slightly wider form column.
+- **360 / 390:** Header and mobile nav tightened; jump-bar labels truncate on narrow viewports; case visual preview uses a ruled title/caption grid.
+- **QA:** Shots in `docs/design-pro/mockb-pro/pass3-before/` and `pass3-after/` (360, 390, 1280).
+- **Follow-up in same pass:** Services FAQ questions use bold body type (not display `mb-h3`); services closing band is type-led stacked instead of side-by-side so it does not mirror the work/case closing pattern.
+
+## Pro pass 4 (20 Nov, refine / same PR #35)
+
+Further editorial tighten. Copy, TODOs, and Grenadine hex values still untouched.
+
+- **Ruled lists over equal grids:** Home services become ruled editorial rows (title + bullets + text link); home and services process steps become numbered ruled rows instead of a 4-up equal card grid.
+- **Quieter secondary actions:** Section header outline buttons and project "Read case study" links demoted to `mb-text-link`; home quote WhatsApp and contact aside WhatsApp demoted from outline buttons to text links so one grenadine primary remains.
+- **No pill badges:** Case-study TODO / URL markers and placeholder preview labels use caption/meta text; facts strip is a ruled definition list (label / value rows) instead of a 4-up tile grid.
+- **Closing bands:** Work and case-study closes stack type-led (aligned with services) so CTAs sit under the copy, not in a side button column.
+- **QA:** No horizontal overflow at 360 or 390; visible interactive targets >= 44px (skip link and off-screen form honeypot excluded). Shots in `docs/design-pro/mockb-pro/pass4-before/` and `pass4-after/`.
+
+## Pro pass 5 (20 Nov, refine / same PR #35)
+
+Placeholder chrome and leftover outline CTAs. Copy, TODOs, and Grenadine hex values still untouched.
+
+- **Wireframes flattened:** Project and case-study placeholders for Assisi, Crosskennan, Rondo, and MGSL Hub drop nested bordered mini-cards; they use ruled type blocks and hairline bars instead.
+- **Phone frames:** Square ruled panels (no soft inset phone chrome).
+- **Services:** Example project links demoted from outline buttons to `mb-text-link`.
+- **Case sidebar CTA:** Left-accent Naples panel (matches contact aside) instead of a bordered rounded box.
+- **QA:** Shots in `docs/design-pro/mockb-pro/pass5-before/` and `pass5-after/` (390 + 1280; Assisi case included for placeholder chrome).
+
+## Pro pass 6 (20 Nov, refine / same PR #35)
+
+Header, form surfaces, and type-token cleanup. Copy, TODOs, and Grenadine hex values still untouched.
+
+- **One header accent:** WhatsApp icon demoted from outline box to quiet icon; grenadine "Get a quote" stays the only header CTA.
+- **Footer:** Type + email row, then a ruled jump-link nav (no underline pill cluster).
+- **Form panels:** Shared `mb-panel` flat surface (no card border) on home quote and contact; success state uses left-accent panel and text-link reset.
+- **Case studies:** "Back to all five projects" demoted to `mb-back-link`.
+- **Captions:** Placeholder chrome uses `mb-caption` / `mb-kicker` instead of ad-hoc 10/11px sizes.
+- **QA:** Shots in `docs/design-pro/mockb-pro/pass6-before/` and `pass6-after/`.
+
+## Pro pass 7 (20 Nov, refine / same PR #35)
+
+One accent per view, square frames, prose tokens. Copy, TODOs, and Grenadine hex values still untouched.
+
+- **CTA hierarchy:** Services section quote buttons demoted from grenadine primary to `mb-text-link` (hero + closing keep the primary). Case-study sidebar quote demoted the same way so hero/closing hold the accent.
+- **Frames:** `mb-frame` and phone chrome are square (radius 0); architecture callouts drop the right radius.
+- **Type:** Shared `mb-prose` for long-form body; jump numbers, prev/next, and device captions use `mb-caption` / `mb-meta` / `mb-kicker-muted`; home and work secondary links standardised on `mb-text-link`.
+- **Contact:** Sticky ruled aside on large screens; form intro and email use prose/text-link tokens.
+- **Case breadcrumb:** Quiet `mb-back-link` trail instead of underlined breadcrumb cluster.
+- **QA:** Shots in `docs/design-pro/mockb-pro/pass7-before/` and `pass7-after/`.
+
+## Pro pass 8 (20 Nov, refine / same PR #35)
+
+Type-token sweep, quieter form errors, cleaner hero. Copy, TODOs, and Grenadine hex values still untouched.
+
+- **Hero:** Removed redundant WhatsApp from the home "Who this is for" column (header already carries it) so the first viewport stays brand + one primary CTA group.
+- **Type tokens:** Ad-hoc muted paragraphs and closing band copy use `mb-prose` / `mb-body`; shared `mb-dash-list` for service and build-note rows; mid-sentence emails use `mb-inline-link`.
+- **Hover:** Project titles use `mb-title-link` (colour only, no underline + colour).
+- **Form:** Field errors are ochre type (`mb-field-error`) without badge chips; 8px field rhythm (`space-y-6`); inputs use 2px radius.
+- **Rhythm:** Work featured band uses `mb-section-pad`; footer email standardised on `mb-text-link`.
+- **QA:** No overflow at 360/390; contact interactive targets >= 44px. Shots in `docs/design-pro/mockb-pro/pass8-before/` and `pass8-after/`.
+
+## Pro pass 9 (20 Nov, refine / same PR #35)
+
+Editorial rhythm and quieter CTA clusters. Copy, TODOs, and Grenadine hex values still untouched.
+
+- **Home:** Project rows alternate image/copy direction on desktop; process steps and About definition labels use `mb-num-lg` / `mb-step-title` / `mb-label`.
+- **Contact:** Hero keeps a single grenadine primary (Jump to form); WhatsApp stays in the sticky aside and header only.
+- **Services:** Per-section WhatsApp links removed (hero + closing keep WhatsApp); process steps share the new step tokens.
+- **Work / case:** Featured ShelterLink CTA stacks under the lede (type-led); case visual sits in a full-width surface band above page-bg reading column; case hero and sidebar drop redundant WhatsApp (closing keeps it); highlights use `mb-dash-list`.
+- **QA:** No overflow at 360/390; contact targets >= 44px. Shots in `docs/design-pro/mockb-pro/pass9-before/` and `pass9-after/`.
+
+## Pro pass 10 (20 Nov, refine / same PR #35)
+
+Work index hierarchy and quieter case nav hover. Copy, TODOs, and Grenadine hex values still untouched.
+
+- **Work index 02-05:** Type + case links sit above the preview; build notes and focus/stack share an asymmetric ruled row on wide cards (matches featured ShelterLink).
+- **Local time:** Status line uses `mb-meta` / type tokens instead of ad-hoc sizes.
+- **Case prev/next:** Hover changes project title colour only (group hover), captions stay quiet.
+- **QA:** No overflow at 360/390. Shots in `docs/design-pro/mockb-pro/pass10-before/` and `pass10-after/`.
+
+## Pro pass 11 (20 Nov, refine / same PR #35)
+
+Editorial rows and flatter chrome. Copy, TODOs, and Grenadine hex values still untouched.
+
+- **Work index 02-05:** Replaced the 12-col mosaic with full-bleed ruled rows that alternate image/copy direction (ShelterLink stays the only featured surface band).
+- **Type tokens:** Shared `mb-fact-value`, `mb-faq-q`, `mb-status-line`, and `mb-ruled-note` for audience lists, case facts, FAQ questions, sidebar status, contact notes, and home quote chat copy.
+- **TODO / alerts:** Square left-ruled ochre panels (no dashed card border or radius); form validation/error states use the same `mb-alert` chrome.
+- **Quieter chrome:** Architecture callout uses `mb-step-title`; desktop nav drops link radius.
+- **QA:** No overflow at 360/390; contact interactive targets >= 44px. Shots in `docs/design-pro/mockb-pro/pass11-before/` and `pass11-after/`.
+
+## Pro pass 12 (20 Nov, refine / same PR #35)
+
+Home work rhythm, chrome tokens, quieter placeholders. Copy, TODOs, and Grenadine hex values still untouched.
+
+- **Home work:** Page-bg section with ShelterLink as the only full-bleed surface band; projects 02-05 stay on page bg (matches work index). External / secondary links muted under the case study text link.
+- **Type tokens:** `mb-wordmark`, `mb-preview-title`, `mb-preview-lede`, and `mb-nav-link` replace ad-hoc display + `text-sm` / `text-lg` sizes in header, footer, nav, and placeholder chrome.
+- **Placeholders:** Rondo wireframes use ruled rows instead of equal 2-up grids; ShelterLink extra screenshots use an asymmetric split.
+- **Contact form:** Name and email stack in one column for calmer field rhythm.
+- **Targets:** Breadcrumb back links get a 44px min width. No overflow at 360/390.
+- **QA:** Shots in `docs/design-pro/mockb-pro/pass12-before/` and `pass12-after/`.
 
 ## Open TODOs for Ryan
 

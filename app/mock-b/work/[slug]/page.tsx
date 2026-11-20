@@ -36,7 +36,7 @@ export async function generateMetadata({
   }
 
   return {
-    title: `${entry.project.name} — Case study`,
+    title: `${entry.project.name} - Case study`,
     description: `${entry.project.name} (${entry.project.type}): ${entry.project.summary}`,
     robots: {
       index: false,
@@ -53,16 +53,15 @@ function TodoMarkerCard({
   children: React.ReactNode;
 }) {
   return (
-    <div className="mb-todo-box p-4 sm:p-5">
-      <div className="flex flex-wrap items-center gap-2.5">
-        <span className="inline-flex items-center gap-1.5 rounded-[var(--radius-sm)] border border-[var(--mb-line-strong)] bg-[var(--mb-surface)] px-2.5 py-0.5 text-xs font-semibold text-[var(--mb-ink)]">
-          {label}
+    <div className="mb-todo-box">
+      <div className="mb-meta">
+        <span className="font-semibold text-[var(--mb-ink)]">{label}</span>
+        <span aria-hidden="true" className="mb-meta-sep">
+          /
         </span>
-        <span className="text-xs font-medium text-[var(--mb-muted)]">
-          Not stored in repo yet
-        </span>
+        <span className="text-[var(--mb-muted)]">Not stored in repo yet</span>
       </div>
-      <div className="mt-2.5 text-sm leading-relaxed text-[var(--mb-ink)]">
+      <div className="mb-prose mt-2.5 text-[var(--mb-ink)]">
         {children}
       </div>
     </div>
@@ -88,59 +87,59 @@ export default async function MockBCaseStudyPage({
   return (
     <div>
       {/* ── BREADCRUMB + CASE HEADER ─────────────────────────────────────── */}
-      <section className="mx-auto max-w-5xl px-4 pb-10 pt-8 sm:px-6 sm:pt-14">
+      <section className="mb-shell mb-page-intro max-w-6xl sm:px-6">
         <nav
           aria-label="Breadcrumb"
-          className="flex flex-wrap items-center gap-1 text-sm font-medium text-[var(--mb-muted)]"
+          className="mb-meta gap-x-2"
         >
           <Link
             href="/mock-b"
-            className="inline-flex min-h-[44px] items-center pr-2 underline decoration-[var(--mb-line-strong)] underline-offset-4 hover:text-[var(--mb-link)]"
+            className="mb-back-link"
           >
             Studio home
           </Link>
-          <span aria-hidden="true" className="text-[var(--mb-line-strong)]">
+          <span aria-hidden="true" className="mb-meta-sep">
             /
           </span>
           <Link
             href="/mock-b/work"
-            className="inline-flex min-h-[44px] items-center px-2 underline decoration-[var(--mb-line-strong)] underline-offset-4 hover:text-[var(--mb-link)]"
+            className="mb-back-link"
           >
             Work
           </Link>
-          <span aria-hidden="true" className="text-[var(--mb-line-strong)]">
+          <span aria-hidden="true" className="mb-meta-sep">
             /
           </span>
           <span
             aria-current="page"
-            className="inline-flex min-h-[44px] items-center px-2 font-semibold text-[var(--mb-ink)]"
+            className="inline-flex min-h-[44px] items-center font-semibold text-[var(--mb-ink)]"
           >
             {project.name}
           </span>
         </nav>
 
         <div className="mt-4 max-w-3xl">
-          <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs font-medium text-[var(--mb-muted)]">
-            <span className="font-semibold uppercase tracking-wider text-[var(--mb-tertiary)]">
+          <div className="mb-meta">
+            <span className="mb-kicker-muted">
               Case study {study.number} of 05
             </span>
-            <span aria-hidden="true" className="text-[var(--mb-line-strong)]">
+            <span aria-hidden="true" className="mb-meta-sep">
               /
             </span>
             <span className="font-semibold text-[var(--mb-link)]">
               {project.type}
             </span>
-            <span aria-hidden="true" className="text-[var(--mb-line-strong)]">
+            <span aria-hidden="true" className="mb-meta-sep">
               /
             </span>
             <span>{study.statusHeadline}</span>
           </div>
 
-          <h1 className="mb-display mt-3 text-[2.25rem] font-semibold leading-[1.08] tracking-tight text-[var(--mb-ink)] sm:text-5xl">
+          <h1 className="mb-h1 mt-3 text-[var(--mb-ink)]">
             {project.name}
           </h1>
 
-          <p className="mt-4 text-base leading-relaxed text-[var(--mb-muted)] sm:text-lg">
+          <p className="mb-lede mt-4">
             {project.summary}
           </p>
 
@@ -162,20 +161,10 @@ export default async function MockBCaseStudyPage({
               </Link>
             )}
 
-            <a
-              href={STUDIO_WHATSAPP_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mb-btn-secondary w-full sm:w-auto"
-            >
-              <WhatsAppIcon className="h-4 w-4 shrink-0 text-[var(--mb-icon)]" />
-              Message on WhatsApp
-            </a>
-
             {study.repoCaseStudyHref && study.repoCaseStudyLabel ? (
               <Link
                 href={study.repoCaseStudyHref}
-                className="inline-flex min-h-[44px] items-center justify-center px-2 text-sm font-medium text-[var(--mb-muted)] underline decoration-[var(--mb-line-strong)] underline-offset-4 hover:text-[var(--mb-ink)] sm:justify-start"
+                className="mb-text-link text-[var(--mb-muted)]"
               >
                 {study.repoCaseStudyLabel}
               </Link>
@@ -183,48 +172,40 @@ export default async function MockBCaseStudyPage({
           </div>
         </div>
 
-        {/* Ruled facts-at-a-glance strip */}
-        <dl className="mt-10 grid gap-6 border-y border-[var(--mb-line)] py-6 sm:grid-cols-2 lg:grid-cols-4">
-          <div>
-            <dt className="text-xs font-semibold uppercase tracking-wider text-[var(--mb-tertiary)]">
-              Context
-            </dt>
-            <dd className="mt-1.5 text-sm font-semibold text-[var(--mb-ink)]">
+        {/* Ruled facts-at-a-glance: editorial rows, not equal card tiles */}
+        <dl className="mt-10 divide-y divide-[var(--mb-line)] border-y border-[var(--mb-line)]">
+          <div className="grid gap-1 py-4 sm:grid-cols-[7.5rem_minmax(0,1fr)] sm:items-baseline sm:gap-6">
+            <dt className="mb-kicker-muted">Context</dt>
+            <dd className="mb-fact-value">
               {study.clientOrContext}
             </dd>
           </div>
-          <div>
-            <dt className="text-xs font-semibold uppercase tracking-wider text-[var(--mb-tertiary)]">
-              Status
-            </dt>
-            <dd className="mt-1.5 text-sm font-semibold text-[var(--mb-ink)]">
+          <div className="grid gap-1 py-4 sm:grid-cols-[7.5rem_minmax(0,1fr)] sm:items-baseline sm:gap-6">
+            <dt className="mb-kicker-muted">Status</dt>
+            <dd className="mb-fact-value">
               {study.statusHeadline}
             </dd>
           </div>
-          <div>
-            <dt className="text-xs font-semibold uppercase tracking-wider text-[var(--mb-tertiary)]">
-              Year / date
-            </dt>
-            <dd className="mt-1.5 flex flex-wrap items-center gap-2 text-sm font-semibold text-[var(--mb-ink)]">
+          <div className="grid gap-1 py-4 sm:grid-cols-[7.5rem_minmax(0,1fr)] sm:items-baseline sm:gap-6">
+            <dt className="mb-kicker-muted">Year / date</dt>
+            <dd className="mb-fact-value">
               <span>{study.yearDisplay}</span>
               {study.yearIsTodo ? (
-                <span className="rounded-[var(--radius-sm)] border border-[var(--mb-line-strong)] bg-[var(--mb-raised)] px-2 py-0.5 text-[11px] font-semibold text-[var(--mb-muted)]">
+                <span className="mb-caption ml-2 inline font-medium">
                   TODO for Ryan
                 </span>
               ) : null}
             </dd>
           </div>
-          <div>
-            <dt className="text-xs font-semibold uppercase tracking-wider text-[var(--mb-tertiary)]">
-              Link
-            </dt>
-            <dd className="mt-1 text-sm font-semibold text-[var(--mb-ink)]">
+          <div className="grid gap-1 py-4 sm:grid-cols-[7.5rem_minmax(0,1fr)] sm:items-baseline sm:gap-6">
+            <dt className="mb-kicker-muted">Link</dt>
+            <dd className="mb-fact-value">
               {project.external ? (
                 <a
                   href={project.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex min-h-[44px] items-center gap-1 break-all text-[var(--mb-link)] underline decoration-[var(--mb-border-accent)] underline-offset-4 hover:text-[var(--mb-link-hover)]"
+                  className="mb-text-link max-w-full break-all"
                 >
                   {project.href.replace(/^https?:\/\//, "")}
                   <ExternalLinkIcon className="h-3.5 w-3.5 shrink-0" />
@@ -232,11 +213,9 @@ export default async function MockBCaseStudyPage({
               ) : project.id === "assisi" ? (
                 <span className="inline-block pt-0.5">Held until sign-off</span>
               ) : (
-                <span className="inline-flex items-center gap-2 pt-0.5">
+                <span className="inline-flex flex-wrap items-baseline gap-x-2 gap-y-1 pt-0.5">
                   <span>In-site</span>
-                  <span className="rounded-[var(--radius-sm)] border border-[var(--mb-line-strong)] bg-[var(--mb-raised)] px-2 py-0.5 text-[11px] font-semibold text-[var(--mb-muted)]">
-                    URL TODO
-                  </span>
+                  <span className="mb-caption font-medium">URL TODO</span>
                 </span>
               )}
             </dd>
@@ -244,45 +223,46 @@ export default async function MockBCaseStudyPage({
         </dl>
       </section>
 
-      {/* ── VISUAL SHOWCASE ──────────────────────────────────────────────── */}
+      {/* ── VISUAL SHOWCASE (FULL-WIDTH SURFACE BAND) ───────────────────── */}
       <section
         aria-labelledby="case-visual-heading"
-        className="mx-auto max-w-5xl px-4 pb-14 sm:px-6"
+        className="border-y border-[var(--mb-line)] bg-[var(--mb-surface)]"
       >
-        <div className="mb-3 flex flex-wrap items-baseline justify-between gap-2">
-          <h2
-            id="case-visual-heading"
-            className="text-xs font-semibold uppercase tracking-widest text-[var(--mb-tertiary)]"
-          >
-            Visual preview
-          </h2>
-          <p className="text-xs font-medium text-[var(--mb-muted)]">
-            {study.visualNote}
-          </p>
+        <div className="mb-shell mb-section-pad max-w-6xl sm:px-6">
+          <div className="mb-5 grid gap-2 sm:grid-cols-[auto_minmax(0,1fr)] sm:items-baseline sm:gap-6">
+            <h2 id="case-visual-heading" className="mb-kicker-muted">
+              Visual preview
+            </h2>
+            <p className="mb-caption max-w-xl sm:justify-self-end sm:text-right">
+              {study.visualNote}
+            </p>
+          </div>
+          <WorkDeviceShowcase project={project} />
         </div>
-        <WorkDeviceShowcase project={project} />
       </section>
 
       {/* ── MAIN CASE STUDY CONTENT + RULED SIDEBAR ──────────────────────── */}
-      <div className="border-t border-[var(--mb-line)] bg-[var(--mb-surface)]">
-        <div className="mx-auto grid max-w-5xl gap-12 px-4 py-14 sm:px-6 sm:py-20 lg:grid-cols-[1.4fr_0.6fr] lg:items-start">
+      <div className="bg-[var(--mb-bg)]">
+        <div className="mb-shell mb-section-pad grid max-w-6xl gap-12 px-4 sm:px-6 lg:grid-cols-[1.4fr_0.6fr] lg:items-start">
           <div className="space-y-12">
             {/* 1. The problem */}
             <section aria-labelledby="case-problem-heading" data-mb-reveal="true">
-              <p className="text-xs font-semibold uppercase tracking-widest text-[var(--mb-link)]">
-                01 · Context
+              <p className="mb-kicker">
+                01 / Context
               </p>
               <h2
                 id="case-problem-heading"
-                className="mb-display mt-2 text-2xl font-semibold text-[var(--mb-ink)] sm:text-3xl"
+                className="mb-h3 mt-2 text-[var(--mb-ink)]"
               >
                 The problem
               </h2>
 
               {study.problemParagraphs.length > 0 ? (
-                <div className="mt-4 space-y-4 text-sm leading-relaxed text-[var(--mb-muted)] sm:text-base">
+                <div className="mt-4 space-y-4">
                   {study.problemParagraphs.map((paragraph) => (
-                    <p key={paragraph}>{paragraph}</p>
+                    <p key={paragraph} className="mb-prose">
+                      {paragraph}
+                    </p>
                   ))}
                 </div>
               ) : null}
@@ -300,35 +280,34 @@ export default async function MockBCaseStudyPage({
               data-mb-reveal="true"
               className="border-t border-[var(--mb-line)] pt-10"
             >
-              <p className="text-xs font-semibold uppercase tracking-widest text-[var(--mb-link)]">
-                02 · Delivery
+              <p className="mb-kicker">
+                02 / Delivery
               </p>
               <h2
                 id="case-built-heading"
-                className="mb-display mt-2 text-2xl font-semibold text-[var(--mb-ink)] sm:text-3xl"
+                className="mb-h3 mt-2 text-[var(--mb-ink)]"
               >
                 What was built
               </h2>
 
-              <div className="mt-4 space-y-4 text-sm leading-relaxed text-[var(--mb-muted)] sm:text-base">
+              <div className="mt-4 space-y-4">
                 {study.builtParagraphs.map((paragraph) => (
-                  <p key={paragraph}>{paragraph}</p>
+                  <p key={paragraph} className="mb-prose">
+                    {paragraph}
+                  </p>
                 ))}
               </div>
 
               {study.builtHighlights.length > 0 ? (
                 <div className="mt-7">
-                  <h3 className="text-xs font-semibold uppercase tracking-widest text-[var(--mb-tertiary)]">
+                  <h3 className="mb-kicker-muted">
                     Confirmed highlights
                   </h3>
-                  <ul className="mt-3 divide-y divide-[var(--mb-line)] border-y border-[var(--mb-line)] text-sm text-[var(--mb-ink)]">
+                  <ul className="mb-dash-list mt-3 border-y border-[var(--mb-line)] py-4">
                     {study.builtHighlights.map((item) => (
-                      <li key={item} className="flex items-start gap-2.5 py-3">
-                        <span
-                          aria-hidden="true"
-                          className="select-none text-[var(--mb-link)]"
-                        >
-                          &mdash;
+                      <li key={item}>
+                        <span aria-hidden="true" data-mb-dash>
+                          -
                         </span>
                         <span>{item}</span>
                       </li>
@@ -344,13 +323,15 @@ export default async function MockBCaseStudyPage({
               ) : null}
 
               {study.architectureNote ? (
-                <div className="mb-on-light mt-7 rounded-r-[var(--radius-md)] border-l-2 border-[var(--mb-accent)] bg-[var(--mb-light)] p-5">
-                  <h3 className="mb-display text-xl font-semibold text-[var(--mb-ink)]">
+                <div className="mb-on-light mt-7 border-l-2 border-[var(--mb-accent)] bg-[var(--mb-light)] p-5">
+                  <h3 className="mb-step-title">
                     {study.architectureNote.heading}
                   </h3>
-                  <div className="mt-2.5 space-y-3 text-sm leading-relaxed text-[var(--mb-muted)] sm:text-base">
+                  <div className="mt-2.5 space-y-3">
                     {study.architectureNote.paragraphs.map((paragraph) => (
-                      <p key={paragraph}>{paragraph}</p>
+                      <p key={paragraph} className="mb-prose">
+                        {paragraph}
+                      </p>
                     ))}
                   </div>
                 </div>
@@ -358,12 +339,12 @@ export default async function MockBCaseStudyPage({
 
               {study.relatedProject ? (
                 <div className="mt-7 flex flex-wrap items-center justify-between gap-3 border-y border-[var(--mb-line)] py-4">
-                  <p className="text-sm text-[var(--mb-muted)]">
+                  <p className="mb-prose">
                     {study.relatedProject.relation}
                   </p>
                   <Link
                     href={`/mock-b/work/${study.relatedProject.slug}`}
-                    className="inline-flex min-h-[44px] items-center gap-1.5 text-sm font-semibold text-[var(--mb-link)] underline decoration-[var(--mb-border-accent)] underline-offset-4 hover:text-[var(--mb-link-hover)]"
+                    className="mb-text-link"
                   >
                     Open {study.relatedProject.name}
                     <ArrowRightIcon className="h-4 w-4 shrink-0" />
@@ -378,27 +359,25 @@ export default async function MockBCaseStudyPage({
               data-mb-reveal="true"
               className="border-t border-[var(--mb-line)] pt-10"
             >
-              <p className="text-xs font-semibold uppercase tracking-widest text-[var(--mb-tertiary)]">
-                03 · Facts &amp; gaps
+              <p className="mb-kicker-muted">
+                03 / Facts &amp; gaps
               </p>
               <h2
                 id="case-todos-heading"
-                className="mb-display mt-2 text-2xl font-semibold text-[var(--mb-ink)] sm:text-3xl"
+                className="mb-h3 mt-2 text-[var(--mb-ink)]"
               >
                 Where it stands &amp; TODOs for Ryan
               </h2>
-              <p className="mt-3 text-sm leading-relaxed text-[var(--mb-muted)] sm:text-base">
-                {study.outcomeConfirmed}
-              </p>
+              <p className="mb-prose mt-3">{study.outcomeConfirmed}</p>
 
               <div className="mt-5">
-                <TodoMarkerCard label="TODO for Ryan · Missing facts">
+                <TodoMarkerCard label="TODO for Ryan / Missing facts">
                   <p className="font-semibold text-[var(--mb-ink)]">
                     Nothing below has been invented. Fill in only what is real and approved:
                   </p>
                   <ul className="mt-3 divide-y divide-[var(--mb-line)] border-t border-[var(--mb-line)]">
                     {study.todosForRyan.map((todo) => (
-                      <li key={todo.field} className="py-2.5 text-sm leading-relaxed">
+                      <li key={todo.field} className="mb-ruled-note py-2.5">
                         <span className="font-semibold text-[var(--mb-ink)]">
                           {todo.field}:
                         </span>{" "}
@@ -420,23 +399,19 @@ export default async function MockBCaseStudyPage({
             >
               <h2
                 id="case-stack-heading"
-                className="mb-display text-xl font-semibold text-[var(--mb-ink)]"
+                className="mb-h3 text-[var(--mb-ink)]"
               >
                 Stack &amp; focus
               </h2>
-              <div className="mt-3 flex flex-wrap gap-1.5">
-                {study.stackConfirmed.map((tag) => (
-                  <span
-                    key={tag}
-                    className="rounded-[var(--radius-sm)] border border-[var(--mb-line-strong)] bg-[var(--mb-bg)] px-2.5 py-1 text-xs font-medium text-[var(--mb-ink)]"
-                  >
+              <p className="mb-stack mt-3 text-[var(--mb-muted)]">
+                {study.stackConfirmed.map((tag, i) => (
+                  <span key={tag}>
+                    {i > 0 ? <span className="mb-stack-sep" aria-hidden="true">/</span> : null}
                     {tag}
                   </span>
                 ))}
-              </div>
-              <p className="mt-3.5 text-sm leading-relaxed text-[var(--mb-muted)]">
-                {study.stackNote}
               </p>
+              <p className="mb-prose mt-3.5">{study.stackNote}</p>
               {study.stackTodo ? (
                 <div className="mt-4">
                   <TodoMarkerCard>{study.stackTodo}</TodoMarkerCard>
@@ -451,50 +426,35 @@ export default async function MockBCaseStudyPage({
             >
               <h2
                 id="case-status-heading"
-                className="mb-display text-xl font-semibold text-[var(--mb-ink)]"
+                className="mb-h3 text-[var(--mb-ink)]"
               >
                 Project status
               </h2>
-              <p className="mt-2.5 inline-flex items-center gap-2 text-xs font-semibold text-[var(--mb-link)]">
-                <span
-                  aria-hidden="true"
-                  className="h-2 w-2 rounded-full bg-[var(--mb-accent)]"
-                />
+              <p className="mb-status-line mt-2.5">
                 {study.statusHeadline}
               </p>
-              <p className="mt-2.5 text-sm leading-relaxed text-[var(--mb-muted)]">
-                {study.statusDetail}
-              </p>
+              <p className="mb-prose mt-2.5">{study.statusDetail}</p>
             </section>
 
             <section
               aria-labelledby="case-sidebar-cta-heading"
               data-mb-reveal="true"
-              className="mb-on-light rounded-[var(--radius-md)] border border-[var(--mb-line)] bg-[var(--mb-light)] p-5"
+              className="mb-on-light border-l-2 border-[var(--mb-accent)] bg-[var(--mb-light)] p-5"
             >
               <h2
                 id="case-sidebar-cta-heading"
-                className="mb-display text-xl font-semibold text-[var(--mb-ink)]"
+                className="mb-h3 text-[var(--mb-ink)]"
               >
                 Planning something similar?
               </h2>
-              <p className="mt-2 text-sm leading-relaxed text-[var(--mb-muted)]">
+              <p className="mb-prose mt-2">
                 Tell RDev Studio what you need and we will reply in plain English with clear next steps.
               </p>
-              <div className="mt-4 flex flex-col gap-2.5">
-                <Link href={quoteHref} className="mb-btn-primary w-full">
+              <div className="mt-4">
+                <Link href={quoteHref} className="mb-text-link w-fit">
                   Request a quote
                   <ArrowRightIcon className="h-4 w-4 shrink-0" />
                 </Link>
-                <a
-                  href={STUDIO_WHATSAPP_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mb-btn-secondary w-full"
-                >
-                  <WhatsAppIcon className="h-4 w-4 shrink-0 text-[var(--mb-icon)]" />
-                  WhatsApp the studio
-                </a>
               </div>
             </section>
           </aside>
@@ -506,46 +466,46 @@ export default async function MockBCaseStudyPage({
         aria-label="More case studies"
         className="border-t border-[var(--mb-line)] bg-[var(--mb-bg)]"
       >
-        <div className="mx-auto max-w-5xl px-4 py-12 sm:px-6">
+        <div className="mb-shell max-w-6xl py-12 sm:px-6">
           <div
             data-mb-reveal="true"
             className="grid divide-y divide-[var(--mb-line)] border-y border-[var(--mb-line)] sm:grid-cols-2 sm:divide-x sm:divide-y-0"
           >
             <Link
               href={`/mock-b/work/${previous.id}`}
-              className="flex min-h-[44px] flex-col justify-between py-6 transition-colors hover:text-[var(--mb-link)] sm:pr-8"
+              className="group flex min-h-[44px] flex-col justify-between py-6 sm:pr-8"
             >
-              <span className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-[var(--mb-tertiary)]">
+              <span className="mb-kicker-muted inline-flex items-center gap-1.5">
                 <ArrowLeftIcon className="h-3.5 w-3.5 shrink-0" />
                 Previous project
               </span>
-              <span className="mb-display mt-2 text-2xl font-semibold text-[var(--mb-ink)]">
+              <span className="mb-h3 mt-2 text-[var(--mb-ink)] transition-colors group-hover:text-[var(--mb-link)]">
                 {previous.name}
               </span>
-              <span className="mt-1 text-xs font-medium text-[var(--mb-muted)]">
+              <span className="mb-caption mt-1 font-medium">
                 {previous.type}
               </span>
             </Link>
 
             <Link
               href={`/mock-b/work/${next.id}`}
-              className="flex min-h-[44px] flex-col justify-between py-6 transition-colors hover:text-[var(--mb-link)] sm:items-end sm:pl-8 sm:text-right"
+              className="group flex min-h-[44px] flex-col justify-between py-6 sm:items-end sm:pl-8 sm:text-right"
             >
-              <span className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-[var(--mb-tertiary)]">
+              <span className="mb-kicker-muted inline-flex items-center gap-1.5">
                 Next project
                 <ArrowRightIcon className="h-3.5 w-3.5 shrink-0" />
               </span>
-              <span className="mb-display mt-2 text-2xl font-semibold text-[var(--mb-ink)]">
+              <span className="mb-h3 mt-2 text-[var(--mb-ink)] transition-colors group-hover:text-[var(--mb-link)]">
                 {next.name}
               </span>
-              <span className="mt-1 text-xs font-medium text-[var(--mb-muted)]">
+              <span className="mb-caption mt-1 font-medium">
                 {next.type}
               </span>
             </Link>
           </div>
 
-          <div className="mt-6 text-center">
-            <Link href="/mock-b/work" className="mb-btn-secondary">
+          <div className="mt-6 flex justify-center">
+            <Link href="/mock-b/work" className="mb-back-link">
               <ArrowLeftIcon className="h-4 w-4 shrink-0" />
               Back to all five projects
             </Link>
@@ -560,37 +520,31 @@ export default async function MockBCaseStudyPage({
       >
         <div
           data-mb-reveal="true"
-          className="mx-auto flex max-w-5xl flex-col gap-6 px-4 py-16 sm:px-6 sm:py-20 lg:flex-row lg:items-center lg:justify-between"
+          className="mb-shell mb-section-pad max-w-6xl px-4 sm:px-6"
         >
-          <div className="max-w-xl">
-            <p className="text-xs font-semibold uppercase tracking-widest text-[var(--mb-muted)]">
-              Start a project
-            </p>
-            <h2
-              id="case-close-heading"
-              className="mb-display mt-2 text-3xl font-semibold text-[var(--mb-ink)] sm:text-4xl"
-            >
+          <div className="max-w-2xl border-t border-[var(--mb-line-strong)] pt-8">
+            <p className="mb-kicker-muted">Start a project</p>
+            <h2 id="case-close-heading" className="mb-h2 mt-2 text-[var(--mb-ink)]">
               Want a clear, phone-first build for your team?
             </h2>
-            <p className="mt-3 text-base leading-relaxed text-[var(--mb-muted)]">
+            <p className="mb-body mt-3">
               Send a short note through the quote form or message RDev Studio directly on WhatsApp.
             </p>
-          </div>
-
-          <div className="flex flex-col gap-3 sm:flex-row lg:shrink-0">
-            <Link href={quoteHref} className="mb-btn-primary">
-              Start a quote
-              <ArrowRightIcon className="h-4 w-4 shrink-0" />
-            </Link>
-            <a
-              href={STUDIO_WHATSAPP_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mb-btn-secondary-inverse"
-            >
-              <WhatsAppIcon className="h-4 w-4 shrink-0" />
-              Message on WhatsApp
-            </a>
+            <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
+              <Link href={quoteHref} className="mb-btn-primary w-full sm:w-auto">
+                Start a quote
+                <ArrowRightIcon className="h-4 w-4 shrink-0" />
+              </Link>
+              <a
+                href={STUDIO_WHATSAPP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mb-text-link"
+              >
+                <WhatsAppIcon className="h-4 w-4 shrink-0" />
+                Message on WhatsApp
+              </a>
+            </div>
           </div>
         </div>
       </section>

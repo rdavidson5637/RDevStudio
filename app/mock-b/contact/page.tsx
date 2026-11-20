@@ -26,11 +26,8 @@ const HELPFUL_NOTES = [
 export default function MockBContactPage() {
   return (
     <div className="pb-16 sm:pb-24">
-      <section className="mx-auto max-w-5xl px-4 pb-10 pt-8 sm:px-6 sm:pt-14">
-        <Link
-          href="/mock-b"
-          className="inline-flex min-h-[44px] items-center gap-1.5 text-sm font-semibold text-[var(--mb-muted)] underline decoration-[var(--mb-line-strong)] underline-offset-4 hover:text-[var(--mb-link)]"
-        >
+      <section className="mb-shell mb-page-intro max-w-6xl sm:px-6">
+        <Link href="/mock-b" className="mb-back-link">
           <ArrowLeftIcon className="h-4 w-4 shrink-0" />
           Back to studio home
         </Link>
@@ -40,27 +37,17 @@ export default function MockBContactPage() {
         </div>
 
         <div className="mt-6 max-w-2xl">
-          <h1 className="mb-display text-[2.25rem] font-semibold leading-[1.08] tracking-tight text-[var(--mb-ink)] sm:text-5xl">
-            Tell us what you are{" "}
-            <span className="text-[var(--mb-link)]">planning</span>.
+          <h1 className="mb-h1 text-[var(--mb-ink)]">
+            Tell us what you are planning.
           </h1>
-          <p className="mt-5 text-base leading-relaxed text-[var(--mb-muted)] sm:text-lg">
+          <p className="mb-lede mt-5">
             Every project at RDev Studio starts with a straightforward chat and a clear written quote. Fill in the quote form below or drop us a message on WhatsApp.
           </p>
 
-          <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
+          <div className="mt-8">
             <a href="#quote-form" className="mb-btn-primary w-full sm:w-auto">
               Jump to quote form
               <span aria-hidden="true">&darr;</span>
-            </a>
-            <a
-              href={STUDIO_WHATSAPP_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mb-btn-secondary w-full sm:w-auto"
-            >
-              <WhatsAppIcon className="h-4 w-4 shrink-0 text-[var(--mb-icon)]" />
-              Message on WhatsApp
             </a>
           </div>
         </div>
@@ -69,25 +56,20 @@ export default function MockBContactPage() {
       <section
         id="quote-form"
         aria-labelledby="contact-form-heading"
-        className="mx-auto max-w-5xl scroll-mt-24 border-t border-[var(--mb-line)] px-4 pt-10 sm:px-6 sm:pt-14"
+        className="mb-shell mb-section-pad max-w-6xl scroll-mt-24 border-t border-[var(--mb-line)] px-4 sm:px-6"
       >
-        <div className="grid gap-10 lg:grid-cols-[1.2fr_0.8fr] lg:items-start lg:gap-12">
+        <div className="grid gap-10 lg:grid-cols-[minmax(0,1.4fr)_minmax(0,0.6fr)] lg:items-start lg:gap-14">
           {/* Primary quote form panel */}
           <div
             data-mb-reveal="true"
-            className="mb-on-surface rounded-[var(--radius-md)] border border-[var(--mb-line)] bg-[var(--mb-surface)] p-6 sm:p-8"
+            className="mb-on-surface mb-panel min-w-0"
           >
             <div className="border-b border-[var(--mb-line)] pb-5">
-              <p className="text-xs font-semibold uppercase tracking-widest text-[var(--mb-link)]">
-                Quote request
-              </p>
-              <h2
-                id="contact-form-heading"
-                className="mb-display mt-2 text-2xl font-semibold text-[var(--mb-ink)] sm:text-3xl"
-              >
+              <p className="mb-kicker">Quote request</p>
+              <h2 id="contact-form-heading" className="mb-h2 mt-2 text-[var(--mb-ink)]">
                 Send a short note
               </h2>
-              <p className="mt-2 text-sm leading-relaxed text-[var(--mb-muted)] sm:text-base">
+              <p className="mb-prose mt-2">
                 Plain English is best. We will come back by email with clear next steps and a tailored quote before any work begins.
               </p>
             </div>
@@ -98,25 +80,26 @@ export default function MockBContactPage() {
           </div>
 
           {/* Direct channels + helpful checklist (ruled aside) */}
-          <aside aria-label="Direct contact options" className="space-y-8">
+          <aside
+            aria-label="Direct contact options"
+            className="space-y-8 lg:sticky lg:top-24 lg:pt-1"
+          >
             <div
               data-mb-reveal="true"
-              className="mb-on-light rounded-r-[var(--radius-md)] border-l-2 border-[var(--mb-accent)] bg-[var(--mb-light)] p-6"
+              className="mb-on-light border-l-2 border-[var(--mb-accent)] bg-[var(--mb-light)] p-6"
             >
-              <p className="text-xs font-semibold uppercase tracking-widest text-[var(--mb-link)]">
-                Quickest chat
-              </p>
-              <h2 className="mb-display mt-2 text-2xl font-semibold text-[var(--mb-ink)]">
+              <p className="mb-kicker-muted">Quickest chat</p>
+              <h2 className="mb-h3 mt-2 text-[var(--mb-ink)]">
                 Message on WhatsApp
               </h2>
-              <p className="mt-2.5 text-sm leading-relaxed text-[var(--mb-muted)]">
+              <p className="mb-prose mt-2.5">
                 Handy if you want to send a link, ask a quick question, or talk through a rough idea without writing a long email.
               </p>
               <a
                 href={STUDIO_WHATSAPP_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mb-btn-primary mt-5 w-full"
+                className="mb-text-link mt-4"
               >
                 <WhatsAppIcon className="h-4 w-4 shrink-0" />
                 Message on WhatsApp
@@ -127,18 +110,14 @@ export default function MockBContactPage() {
               data-mb-reveal="true"
               className="border-t border-[var(--mb-line-strong)] pt-6"
             >
-              <h2 className="mb-display text-xl font-semibold text-[var(--mb-ink)]">
-                Direct studio email
-              </h2>
-              <p className="mt-1 text-xs font-medium text-[var(--mb-tertiary)]">
-                Carrickfergus, Northern Ireland
-              </p>
-              <p className="mt-3 text-sm leading-relaxed text-[var(--mb-muted)]">
+              <h2 className="mb-h3 text-[var(--mb-ink)]">Direct studio email</h2>
+              <p className="mb-caption mt-1">Carrickfergus, Northern Ireland</p>
+              <p className="mb-prose mt-3">
                 Prefer to write from your own inbox? Send your note straight to RDev Studio:
               </p>
               <a
                 href={`mailto:${CONTACT_EMAIL}`}
-                className="mt-2 inline-flex min-h-[44px] items-center text-base font-semibold text-[var(--mb-link)] underline decoration-[var(--mb-border-accent)] underline-offset-4 hover:text-[var(--mb-link-hover)]"
+                className="mb-text-link mt-2"
               >
                 {CONTACT_EMAIL}
               </a>
@@ -148,19 +127,13 @@ export default function MockBContactPage() {
               data-mb-reveal="true"
               className="border-t border-[var(--mb-line-strong)] pt-6"
             >
-              <h2 className="mb-display text-xl font-semibold text-[var(--mb-ink)]">
+              <h2 className="mb-h3 text-[var(--mb-ink)]">
                 What helps us quote clearly
               </h2>
-              <ul className="mt-4 space-y-2.5 text-sm leading-relaxed text-[var(--mb-ink)]">
+              <ul className="mt-4 divide-y divide-[var(--mb-line)] border-y border-[var(--mb-line)]">
                 {HELPFUL_NOTES.map((item) => (
-                  <li key={item} className="flex items-start gap-2.5">
-                    <span
-                      aria-hidden="true"
-                      className="select-none text-[var(--mb-link)]"
-                    >
-                      &mdash;
-                    </span>
-                    <span>{item}</span>
+                  <li key={item} className="mb-ruled-note py-3">
+                    {item}
                   </li>
                 ))}
               </ul>
