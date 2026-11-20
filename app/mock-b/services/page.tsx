@@ -61,14 +61,14 @@ export default function MockBServicesPage() {
         {/* Ruled horizontal jump bar */}
         <nav
           aria-label="Jump to a service"
-          className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-1 border-y border-[var(--mb-line)] py-2"
+          className="mt-10 flex flex-wrap items-center gap-x-4 gap-y-0 border-y border-[var(--mb-line)] py-1 sm:gap-x-6"
         >
           {MOCK_B_SERVICE_GUIDES.map((service) => (
             <a key={service.id} href={`#${service.id}`} className="mb-jump-link">
               <span className="tabular-nums text-xs text-[var(--mb-tertiary)]">
                 {service.number}
               </span>
-              <span>{service.title}</span>
+              <span className="max-w-[14ch] truncate sm:max-w-none">{service.title}</span>
             </a>
           ))}
         </nav>
@@ -172,7 +172,7 @@ export default function MockBServicesPage() {
                   href={STUDIO_WHATSAPP_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mb-btn-secondary w-full sm:w-auto"
+                  className="mb-text-link"
                 >
                   <WhatsAppIcon className="h-4 w-4 shrink-0 text-[var(--mb-icon)]" />
                   Message on WhatsApp
@@ -266,7 +266,7 @@ export default function MockBServicesPage() {
             </p>
           </div>
 
-          <div className="flex flex-col gap-3 sm:flex-row lg:shrink-0">
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-center lg:shrink-0">
             <Link href="/mock-b/contact" className="mb-btn-primary">
               Start a quote
               <ArrowRightIcon className="h-4 w-4 shrink-0" />
@@ -275,7 +275,7 @@ export default function MockBServicesPage() {
               href={STUDIO_WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="mb-btn-secondary-inverse"
+              className="mb-text-link"
             >
               <WhatsAppIcon className="h-4 w-4 shrink-0" />
               Message on WhatsApp

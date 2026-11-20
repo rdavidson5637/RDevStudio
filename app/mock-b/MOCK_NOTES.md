@@ -93,6 +93,16 @@ Tighter quality pass on the same Mock B routes. Copy, TODOs, and Grenadine hex v
 - **Spacing:** `mb-page-intro` and `mb-section-pad` for consistent 8px-based section rhythm across routes.
 - **QA:** No horizontal overflow at 390; visible interactive targets >= 44px (skip link excluded). Shots in `docs/design-pro/mockb-pro/pass2-before/` and `pass2-after/`.
 
+## Pro pass 3 (20 Nov, refine / same PR #35)
+
+Tighter CTA hierarchy and mobile rhythm. Copy, TODOs, and Grenadine hex values still untouched.
+
+- **One accent action per view:** Demoted WhatsApp / secondary live links from outline buttons to `mb-text-link` wherever a grenadine primary already sat (work featured + closing, services sections + closing, case-study hero / sidebar / closing).
+- **No pill clusters:** Project stack tags render as slash-separated `mb-stack` captions on home, work, and case studies.
+- **Form:** Inputs use raised fill against Slate 2 panels so fields read clearly; contact form uses `mb-section-pad` and a slightly wider form column.
+- **360 / 390:** Header and mobile nav tightened; jump-bar labels truncate on narrow viewports; case visual preview uses a ruled title/caption grid.
+- **QA:** Shots in `docs/design-pro/mockb-pro/pass3-before/` and `pass3-after/` (360, 390, 1280).
+
 ## Open TODOs for Ryan
 
 - [ ] **Formspree:** Confirm `NEXT_PUBLIC_FORMSPREE_ID` is set in the `rdev-studio` Vercel project and submit one test quote on `/mock-b/contact` in the preview to verify inbox delivery.

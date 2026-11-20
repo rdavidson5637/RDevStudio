@@ -65,13 +65,13 @@ export default function MockBContactPage() {
       <section
         id="quote-form"
         aria-labelledby="contact-form-heading"
-        className="mb-shell max-w-6xl scroll-mt-24 border-t border-[var(--mb-line)] px-4 pb-16 pt-10 sm:px-6 sm:pb-24 sm:pt-14"
+        className="mb-shell mb-section-pad max-w-6xl scroll-mt-24 border-t border-[var(--mb-line)] px-4 sm:px-6"
       >
-        <div className="grid gap-10 lg:grid-cols-[minmax(0,1.35fr)_minmax(0,0.65fr)] lg:items-start lg:gap-14">
+        <div className="grid gap-10 lg:grid-cols-[minmax(0,1.4fr)_minmax(0,0.6fr)] lg:items-start lg:gap-14">
           {/* Primary quote form panel */}
           <div
             data-mb-reveal="true"
-            className="mb-on-surface border border-[var(--mb-line)] bg-[var(--mb-surface)] p-6 sm:p-8"
+            className="mb-on-surface min-w-0 border border-[var(--mb-line)] bg-[var(--mb-surface)] p-5 sm:p-8"
           >
             <div className="border-b border-[var(--mb-line)] pb-5">
               <p className="mb-kicker">Quote request</p>

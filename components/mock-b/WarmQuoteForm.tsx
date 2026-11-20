@@ -219,11 +219,11 @@ function WarmQuoteFormFields({
   }
 
   const inputBase =
-    "mb-input mt-1.5 block w-full min-h-[44px] rounded-[var(--mb-radius)] border bg-[var(--mb-surface)] px-3.5 py-2.5 text-base text-[var(--mb-ink)] placeholder:text-[var(--mb-tertiary)] transition-colors disabled:cursor-not-allowed disabled:opacity-60";
+    "mb-input mt-1.5 block w-full min-h-[44px] rounded-[var(--mb-radius)] border px-3.5 py-2.5 text-base text-[var(--mb-ink)] placeholder:text-[var(--mb-tertiary)] transition-colors disabled:cursor-not-allowed disabled:opacity-60";
   const inputNormal =
     "border-[var(--mb-line-strong)] focus:border-[var(--mb-accent)]";
   const inputInvalid =
-    "border-[var(--mb-ochre)] bg-[var(--mb-surface)] focus:border-[var(--mb-ochre)]";
+    "border-[var(--mb-ochre)] focus:border-[var(--mb-ochre)]";
 
   const isSending = status === "sending";
   const nameId = `${idPrefix}-name`;

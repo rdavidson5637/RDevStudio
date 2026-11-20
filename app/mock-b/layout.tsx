@@ -56,12 +56,12 @@ export default function MockBLayout({
       </a>
 
       <header className="sticky top-0 z-40 border-b border-[var(--mb-line)] bg-[var(--mb-bg)]">
-        <div className="mb-shell flex max-w-6xl items-center justify-between gap-3 py-3">
+        <div className="mb-shell flex max-w-6xl items-center justify-between gap-2 py-3 sm:gap-3">
           <Link
             href="/mock-b"
-            className="inline-flex min-h-[44px] shrink-0 flex-col justify-center leading-tight text-[var(--mb-ink)] transition-colors hover:text-[var(--mb-link)]"
+            className="inline-flex min-h-[44px] min-w-0 shrink flex-col justify-center leading-tight text-[var(--mb-ink)] transition-colors hover:text-[var(--mb-link)]"
           >
-            <span className="mb-display whitespace-nowrap text-lg tracking-tight sm:text-xl">
+            <span className="mb-display text-lg tracking-tight sm:whitespace-nowrap sm:text-xl">
               {SITE_NAME}
             </span>
             <span className="mb-caption whitespace-nowrap">
@@ -71,7 +71,7 @@ export default function MockBLayout({
 
           <MockBDesktopNav />
 
-          <div className="flex shrink-0 items-center gap-2">
+          <div className="flex shrink-0 items-center gap-1.5 sm:gap-2">
             <a
               href={STUDIO_WHATSAPP_URL}
               target="_blank"
@@ -83,7 +83,7 @@ export default function MockBLayout({
             </a>
             <Link
               href="/mock-b/contact"
-              className="mb-btn-primary px-3.5 text-xs sm:px-4 sm:text-sm"
+              className="mb-btn-primary px-3 text-xs sm:px-4 sm:text-sm"
             >
               Get a quote
             </Link>

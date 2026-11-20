@@ -51,14 +51,14 @@ export default function MockBWorkPage() {
 
         <nav
           aria-label="Jump to project"
-          className="mt-8 flex flex-wrap items-center gap-x-5 gap-y-1 border-y border-[var(--mb-line)] py-2"
+          className="mt-8 flex flex-wrap items-center gap-x-4 gap-y-0 border-y border-[var(--mb-line)] py-1 sm:gap-x-5"
         >
           {MOCK_B_PROJECTS.map((project, index) => (
             <a key={project.id} href={`#${project.id}`} className="mb-jump-link">
               <span className="tabular-nums text-xs text-[var(--mb-tertiary)]">
                 0{index + 1}
               </span>
-              <span>{project.name}</span>
+              <span className="max-w-[12ch] truncate sm:max-w-none">{project.name}</span>
             </a>
           ))}
         </nav>
@@ -104,7 +104,7 @@ export default function MockBWorkPage() {
               <p className="mb-body">{featuredProject.summary}</p>
             </div>
 
-            <div className="flex flex-wrap gap-2.5 lg:justify-end">
+            <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center lg:justify-end">
               <Link
                 href={`/mock-b/work/${featuredProject.id}`}
                 className="mb-btn-primary"
@@ -116,7 +116,7 @@ export default function MockBWorkPage() {
                 href={featuredProject.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mb-btn-secondary"
+                className="mb-text-link"
               >
                 {featuredProject.linkLabel}
                 <ExternalLinkIcon className="h-3.5 w-3.5 shrink-0" />
@@ -150,16 +150,14 @@ export default function MockBWorkPage() {
               <h3 className="mb-kicker-muted">
                 Focus &amp; stack
               </h3>
-              <div className="mt-3 flex flex-wrap gap-2">
-                {featuredProject.stack.map((tag) => (
-                  <span
-                    key={tag}
-                    className="rounded-[var(--mb-radius-sm)] border border-[var(--mb-line-strong)] bg-[var(--mb-surface)] px-2.5 py-1 text-xs font-medium text-[var(--mb-ink)]"
-                  >
+              <p className="mb-stack mt-3">
+                {featuredProject.stack.map((tag, i) => (
+                  <span key={tag}>
+                    {i > 0 ? <span className="mb-stack-sep" aria-hidden="true">/</span> : null}
                     {tag}
                   </span>
                 ))}
-              </div>
+              </p>
               {featuredProject.secondaryHref && featuredProject.secondaryLabel ? (
                 <div className="mt-4">
                   <Link
@@ -253,21 +251,19 @@ export default function MockBWorkPage() {
                   </div>
 
                   <div className="mt-6 space-y-4 border-t border-[var(--mb-line)] pt-4">
-                    <div className="flex flex-wrap gap-1.5">
-                      {project.stack.map((tag) => (
-                        <span
-                          key={tag}
-                          className="rounded-[var(--mb-radius-sm)] border border-[var(--mb-line)] bg-[var(--mb-bg)] px-2.5 py-0.5 text-xs font-medium text-[var(--mb-muted)]"
-                        >
+                    <p className="mb-stack">
+                      {project.stack.map((tag, i) => (
+                        <span key={tag}>
+                          {i > 0 ? <span className="mb-stack-sep" aria-hidden="true">/</span> : null}
                           {tag}
                         </span>
                       ))}
-                    </div>
+                    </p>
 
-                    <div className="flex flex-wrap items-center gap-3">
+                    <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
                       <Link
                         href={`/mock-b/work/${project.id}`}
-                        className="mb-btn-secondary"
+                        className="mb-btn-secondary w-fit"
                       >
                         Read case study
                         <ArrowRightIcon className="h-4 w-4 shrink-0" />
@@ -278,7 +274,7 @@ export default function MockBWorkPage() {
                           href={project.href}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-flex min-h-[44px] items-center gap-1.5 text-sm font-semibold text-[var(--mb-link)] underline decoration-[var(--mb-border-accent)] underline-offset-4 hover:text-[var(--mb-link-hover)]"
+                          className="mb-text-link"
                         >
                           {project.linkLabel}
                           <ExternalLinkIcon className="h-3.5 w-3.5 shrink-0" />
@@ -286,7 +282,7 @@ export default function MockBWorkPage() {
                       ) : project.id === "assisi" ? (
                         <Link
                           href={project.href}
-                          className="inline-flex min-h-[44px] items-center text-sm font-semibold text-[var(--mb-link)] underline decoration-[var(--mb-border-accent)] underline-offset-4 hover:text-[var(--mb-link-hover)]"
+                          className="mb-text-link"
                         >
                           {project.linkLabel}
                         </Link>
@@ -319,7 +315,7 @@ export default function MockBWorkPage() {
             </p>
           </div>
 
-          <div className="flex flex-col gap-3 sm:flex-row lg:shrink-0">
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-center lg:shrink-0">
             <Link href="/mock-b/contact" className="mb-btn-primary">
               Start a quote
               <ArrowRightIcon className="h-4 w-4 shrink-0" />
@@ -328,7 +324,7 @@ export default function MockBWorkPage() {
               href={STUDIO_WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="mb-btn-secondary-inverse"
+              className="mb-text-link"
             >
               <WhatsAppIcon className="h-4 w-4 shrink-0" />
               Message on WhatsApp

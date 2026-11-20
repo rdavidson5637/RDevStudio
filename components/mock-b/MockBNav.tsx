@@ -47,7 +47,7 @@ export function MockBMobileNav() {
   return (
     <nav
       aria-label="Mobile section navigation"
-      className="flex items-center justify-center gap-1 border-t border-[var(--mb-line)] bg-[var(--mb-bg)] px-3 py-0.5 md:hidden"
+      className="flex items-center justify-between gap-0.5 border-t border-[var(--mb-line)] bg-[var(--mb-bg)] px-1 py-0.5 sm:justify-center sm:gap-1 sm:px-3 md:hidden"
     >
       {NAV_ITEMS.map((item) => {
         const active = isRouteActive(pathname, item.href);
@@ -56,7 +56,7 @@ export function MockBMobileNav() {
             key={item.href}
             href={item.href}
             aria-current={active ? "page" : undefined}
-            className={`inline-flex min-h-[44px] items-center px-3 text-xs font-bold transition-colors ${
+            className={`inline-flex min-h-[44px] flex-1 items-center justify-center px-1.5 text-[11px] font-bold transition-colors sm:flex-none sm:px-3 sm:text-xs ${
               active
                 ? "text-[var(--mb-link)] underline decoration-[var(--mb-link)] decoration-2 underline-offset-8"
                 : "text-[var(--mb-muted)] hover:text-[var(--mb-ink)]"

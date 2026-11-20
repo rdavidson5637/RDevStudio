@@ -298,6 +298,38 @@
   color: var(--mb-line-strong);
 }
 
+/* Tech stack as a caption row (no pill clusters) */
+.mb-stack {
+  font-size: var(--mb-text-caption);
+  font-weight: 400;
+  line-height: 1.45;
+  color: var(--mb-tertiary);
+}
+
+.mb-stack-sep {
+  margin-inline: 0.35em;
+  color: var(--mb-line-strong);
+}
+
+/* Form fields: raised fill so inputs read against surface panels */
+.mock-b-root .mb-input {
+  background-color: var(--mb-raised);
+}
+
+.mb-on-light .mb-input {
+  background-color: var(--mb-surface);
+}
+
+/* Closing-band text link on Naples (slate ink) */
+.mb-on-light .mb-text-link {
+  color: var(--mb-slate);
+  text-decoration-color: var(--mb-slate-line-strong);
+}
+
+.mb-on-light .mb-text-link:hover {
+  color: var(--mb-ochre-ink);
+}
+
 .mb-frame {
   overflow: hidden;
   border: 1px solid var(--mb-line-strong);

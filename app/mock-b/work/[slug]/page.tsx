@@ -120,17 +120,17 @@ export default async function MockBCaseStudyPage({
         </nav>
 
         <div className="mt-4 max-w-3xl">
-          <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs font-medium text-[var(--mb-muted)]">
+          <div className="mb-meta">
             <span className="mb-kicker-muted">
               Case study {study.number} of 05
             </span>
-            <span aria-hidden="true" className="text-[var(--mb-line-strong)]">
+            <span aria-hidden="true" className="mb-meta-sep">
               /
             </span>
             <span className="font-semibold text-[var(--mb-link)]">
               {project.type}
             </span>
-            <span aria-hidden="true" className="text-[var(--mb-line-strong)]">
+            <span aria-hidden="true" className="mb-meta-sep">
               /
             </span>
             <span>{study.statusHeadline}</span>
@@ -166,7 +166,7 @@ export default async function MockBCaseStudyPage({
               href={STUDIO_WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="mb-btn-secondary w-full sm:w-auto"
+              className="mb-text-link"
             >
               <WhatsAppIcon className="h-4 w-4 shrink-0 text-[var(--mb-icon)]" />
               Message on WhatsApp
@@ -175,7 +175,7 @@ export default async function MockBCaseStudyPage({
             {study.repoCaseStudyHref && study.repoCaseStudyLabel ? (
               <Link
                 href={study.repoCaseStudyHref}
-                className="inline-flex min-h-[44px] items-center justify-center px-2 text-sm font-medium text-[var(--mb-muted)] underline decoration-[var(--mb-line-strong)] underline-offset-4 hover:text-[var(--mb-ink)] sm:justify-start"
+                className="mb-text-link text-[var(--mb-muted)]"
               >
                 {study.repoCaseStudyLabel}
               </Link>
@@ -224,7 +224,7 @@ export default async function MockBCaseStudyPage({
                   href={project.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex min-h-[44px] items-center gap-1 break-all text-[var(--mb-link)] underline decoration-[var(--mb-border-accent)] underline-offset-4 hover:text-[var(--mb-link-hover)]"
+                  className="inline-flex min-h-[44px] max-w-full items-center gap-1 break-all text-[var(--mb-link)] underline decoration-[var(--mb-border-accent)] underline-offset-4 hover:text-[var(--mb-link-hover)]"
                 >
                   {project.href.replace(/^https?:\/\//, "")}
                   <ExternalLinkIcon className="h-3.5 w-3.5 shrink-0" />
@@ -247,13 +247,15 @@ export default async function MockBCaseStudyPage({
       {/* ── VISUAL SHOWCASE ──────────────────────────────────────────────── */}
       <section
         aria-labelledby="case-visual-heading"
-        className="mb-shell max-w-6xl pb-14 sm:px-6"
+        className="mb-shell max-w-6xl pb-12 sm:px-6 sm:pb-14"
       >
-        <div className="mb-4 flex flex-wrap items-baseline justify-between gap-3">
+        <div className="mb-5 grid gap-2 sm:grid-cols-[auto_minmax(0,1fr)] sm:items-baseline sm:gap-6">
           <h2 id="case-visual-heading" className="mb-kicker-muted">
             Visual preview
           </h2>
-          <p className="mb-caption max-w-xl sm:text-right">{study.visualNote}</p>
+          <p className="mb-caption max-w-xl sm:justify-self-end sm:text-right">
+            {study.visualNote}
+          </p>
         </div>
         <WorkDeviceShowcase project={project} />
       </section>
@@ -419,16 +421,14 @@ export default async function MockBCaseStudyPage({
               >
                 Stack &amp; focus
               </h2>
-              <div className="mt-3 flex flex-wrap gap-1.5">
-                {study.stackConfirmed.map((tag) => (
-                  <span
-                    key={tag}
-                    className="rounded-[var(--mb-radius-sm)] border border-[var(--mb-line-strong)] bg-[var(--mb-bg)] px-2.5 py-1 text-xs font-medium text-[var(--mb-ink)]"
-                  >
+              <p className="mb-stack mt-3 text-[var(--mb-muted)]">
+                {study.stackConfirmed.map((tag, i) => (
+                  <span key={tag}>
+                    {i > 0 ? <span className="mb-stack-sep" aria-hidden="true">/</span> : null}
                     {tag}
                   </span>
                 ))}
-              </div>
+              </p>
               <p className="mt-3.5 text-sm leading-relaxed text-[var(--mb-muted)]">
                 {study.stackNote}
               </p>
@@ -472,7 +472,7 @@ export default async function MockBCaseStudyPage({
               <p className="mt-2 text-sm leading-relaxed text-[var(--mb-muted)]">
                 Tell RDev Studio what you need and we will reply in plain English with clear next steps.
               </p>
-              <div className="mt-4 flex flex-col gap-2.5">
+              <div className="mt-4 flex flex-col gap-3">
                 <Link href={quoteHref} className="mb-btn-primary w-full">
                   Request a quote
                   <ArrowRightIcon className="h-4 w-4 shrink-0" />
@@ -481,9 +481,9 @@ export default async function MockBCaseStudyPage({
                   href={STUDIO_WHATSAPP_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mb-btn-secondary w-full"
+                  className="mb-text-link w-fit"
                 >
-                  <WhatsAppIcon className="h-4 w-4 shrink-0 text-[var(--mb-icon)]" />
+                  <WhatsAppIcon className="h-4 w-4 shrink-0" />
                   WhatsApp the studio
                 </a>
               </div>
@@ -563,7 +563,7 @@ export default async function MockBCaseStudyPage({
             </p>
           </div>
 
-          <div className="flex flex-col gap-3 sm:flex-row lg:shrink-0">
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-center lg:shrink-0">
             <Link href={quoteHref} className="mb-btn-primary">
               Start a quote
               <ArrowRightIcon className="h-4 w-4 shrink-0" />
@@ -572,7 +572,7 @@ export default async function MockBCaseStudyPage({
               href={STUDIO_WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="mb-btn-secondary-inverse"
+              className="mb-text-link"
             >
               <WhatsAppIcon className="h-4 w-4 shrink-0" />
               Message on WhatsApp

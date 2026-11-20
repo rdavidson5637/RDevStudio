@@ -138,7 +138,14 @@ export default function MockBHomePage() {
                       </p>
                     </div>
 
-                    <p className="mb-caption">{project.stack.join(" / ")}</p>
+                    <p className="mb-stack">
+                      {project.stack.map((tag, i) => (
+                        <span key={tag}>
+                          {i > 0 ? <span className="mb-stack-sep" aria-hidden="true">/</span> : null}
+                          {tag}
+                        </span>
+                      ))}
+                    </p>
 
                     <div className="flex flex-wrap items-center gap-4 pt-1">
                       <Link
