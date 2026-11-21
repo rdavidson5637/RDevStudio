@@ -1,10 +1,6 @@
 import {
   CONTACT_EMAIL,
   GITHUB_URL,
-  PRICE_CARE_PLAN_GBP,
-  PRICE_CONTENT_GBP,
-  PRICE_SOCIAL_GBP,
-  PRICE_WEBSITE_GBP,
   SITE_NAME,
   SITE_URL,
   SOCIAL_LINKS,
@@ -13,6 +9,8 @@ import {
 const PERSON_ID = `${SITE_URL}/#person`;
 const WEBSITE_ID = `${SITE_URL}/#website`;
 const BUSINESS_ID = `${SITE_URL}/#business`;
+
+const STUDIO_OFFERS = ["Website build", "Care plan", "Social media", "Content"] as const;
 
 const ADDRESS = {
   "@type": "PostalAddress",
@@ -23,8 +21,8 @@ const ADDRESS = {
 
 /**
  * One JSON-LD graph: the person, the site, and the studio as a
- * ProfessionalService in Carrickfergus. Offer amounts come from the
- * price constants, so a price change cannot drift from the pages.
+ * ProfessionalService in Carrickfergus. Offers carry no prices, because
+ * the public pages do not show prices (every job gets a fixed quote).
  */
 export function buildStructuredDataGraph() {
   const sameAs = [GITHUB_URL, ...SOCIAL_LINKS.map((link) => link.href)];
@@ -71,47 +69,10 @@ export function buildStructuredDataGraph() {
         email: CONTACT_EMAIL,
         logo: `${SITE_URL}/icon.svg`,
         sameAs,
-        makesOffer: [
-          {
-            "@type": "Offer",
-            name: "Website build",
-            priceSpecification: {
-              "@type": "PriceSpecification",
-              minPrice: PRICE_WEBSITE_GBP,
-              priceCurrency: "GBP",
-            },
-          },
-          {
-            "@type": "Offer",
-            name: "Care plan",
-            priceSpecification: {
-              "@type": "UnitPriceSpecification",
-              price: PRICE_CARE_PLAN_GBP,
-              priceCurrency: "GBP",
-              unitCode: "MON",
-            },
-          },
-          {
-            "@type": "Offer",
-            name: "Social media",
-            priceSpecification: {
-              "@type": "UnitPriceSpecification",
-              minPrice: PRICE_SOCIAL_GBP,
-              priceCurrency: "GBP",
-              unitCode: "MON",
-            },
-          },
-          {
-            "@type": "Offer",
-            name: "Content",
-            priceSpecification: {
-              "@type": "PriceSpecification",
-              minPrice: PRICE_CONTENT_GBP,
-              priceCurrency: "GBP",
-              unitText: "project",
-            },
-          },
-        ],
+        makesOffer: STUDIO_OFFERS.map((name) => ({
+          "@type": "Offer",
+          itemOffered: { "@type": "Service", name },
+        })),
       },
     ],
   };

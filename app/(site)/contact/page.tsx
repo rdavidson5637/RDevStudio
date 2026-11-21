@@ -1,8 +1,8 @@
-import Link from "next/link";
-import { ContactForm } from "@/components/contact/ContactForm";
-import { Button } from "@/components/ui/Button";
-import { Container } from "@/components/ui/Container";
-import { CHARITY_NOTE, CONTACT_EMAIL, GITHUB_URL, WHATSAPP_URL } from "@/lib/constants";
+import { CONTACT_EMAIL } from "@/lib/constants";
+import { STUDIO_WHATSAPP_URL } from "@/components/studio/content";
+import { LocalTimeChip } from "@/components/studio/LocalTimeChip";
+import { WhatsAppIcon } from "@/components/studio/icons";
+import { QuoteForm } from "@/components/studio/QuoteForm";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata = createPageMetadata({
@@ -12,60 +12,99 @@ export const metadata = createPageMetadata({
   path: "/contact",
 });
 
-const LINKEDIN_URL = "https://www.linkedin.com/in/ryan-davidson-462bb221b";
+const HELPFUL_NOTES = [
+  "What your business, charity, or group does",
+  "Whether you need a website, social media, content, or something else",
+  "Any existing website link or a rough date you are working to",
+  "Whether you are a registered charity or an animal rescue",
+] as const;
 
 export default function ContactPage() {
   return (
-    <div className="bg-bg text-studio-text">
-      <Container className="py-20 md:py-28">
-        <h1 className="display-lg max-w-3xl text-balance">Start a project</h1>
-        <p className="type-body mt-5 max-w-xl text-studio-muted">
-          Need a site, help with posting, or something that does not fit a package. Form or email. I&apos;ll reply myself, ask a few questions about what you need, then send a fixed quote. I usually reply within one working day.
-        </p>
-        <p className="type-body mt-4 max-w-xl text-studio-muted">{CHARITY_NOTE}</p>
+    <div className="pb-16 sm:pb-24">
+      <section className="mb-shell mb-page-intro max-w-6xl sm:px-6">
+        <LocalTimeChip />
 
-        <div className="mt-12 grid gap-10 lg:grid-cols-[1.4fr_0.8fr] lg:items-start">
-          <div className="bg-studio-surface p-6 md:p-8">
-            <ContactForm />
-          </div>
-          <aside className="flex flex-col gap-6">
-            <a
-              href={`mailto:${CONTACT_EMAIL}`}
-              className="inline-flex min-h-11 items-center font-studio-display text-2xl text-studio-text underline-offset-4 hover:text-studio-accent hover:underline"
-            >
-              {CONTACT_EMAIL}
+        <div className="mt-6 max-w-2xl">
+          <h1 className="mb-h1 text-[var(--mb-ink)]">Start a project.</h1>
+          <p className="mb-lede mt-5">
+            Need a site, help with posting, or something that does not fit a package. Form, email or WhatsApp. I&apos;ll reply myself, ask a few questions about what you need, then send a fixed quote. I usually reply within one working day.
+          </p>
+
+          <div className="mt-8">
+            <a href="#quote-form" className="mb-btn-primary w-full sm:w-auto">
+              Jump to the form
+              <span aria-hidden="true">&darr;</span>
             </a>
-            <Button href={WHATSAPP_URL} variant="secondary">
-              Message me on WhatsApp
-            </Button>
-            <div className="flex flex-wrap gap-4">
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="quote-form"
+        aria-labelledby="contact-form-heading"
+        className="mb-shell mb-section-pad max-w-6xl scroll-mt-24 border-t border-[var(--mb-line)] px-4 sm:px-6"
+      >
+        <div className="grid gap-10 lg:grid-cols-[minmax(0,1.4fr)_minmax(0,0.6fr)] lg:items-start lg:gap-14">
+          <div data-mb-reveal="true" className="mb-on-surface mb-panel min-w-0">
+            <div className="border-b border-[var(--mb-line)] pb-5">
+              <p className="mb-kicker">Quote request</p>
+              <h2 id="contact-form-heading" className="mb-h2 mt-2 text-[var(--mb-ink)]">
+                Send a short note
+              </h2>
+              <p className="mb-prose mt-2">
+                Plain English is best. I will come back by email with next steps and a fixed quote before any work begins.
+              </p>
+            </div>
+
+            <div className="mt-6">
+              <QuoteForm idPrefix="contact" />
+            </div>
+          </div>
+
+          <aside aria-label="Direct contact options" className="space-y-8 lg:sticky lg:top-24 lg:pt-1">
+            <div
+              data-mb-reveal="true"
+              className="mb-on-light border-l-2 border-[var(--mb-accent)] bg-[var(--mb-light)] p-6"
+            >
+              <p className="mb-kicker-muted">Quickest chat</p>
+              <h2 className="mb-h3 mt-2 text-[var(--mb-ink)]">Message on WhatsApp</h2>
+              <p className="mb-prose mt-2.5">
+                Handy if you want to send a link, ask a quick question, or talk through a rough idea without writing a long email.
+              </p>
               <a
-                href="https://www.instagram.com/mgsldavi"
-                className="inline-flex min-h-11 items-center text-sm text-studio-muted hover:text-studio-accent"
+                href={STUDIO_WHATSAPP_URL}
                 target="_blank"
                 rel="noopener noreferrer"
+                className="mb-text-link mt-4"
               >
-                Instagram @mgsldavi
-              </a>
-              <a href={LINKEDIN_URL} className="inline-flex min-h-11 items-center text-sm text-studio-muted hover:text-studio-accent" target="_blank" rel="noopener noreferrer">
-                LinkedIn
-              </a>
-              <a href={GITHUB_URL} className="inline-flex min-h-11 items-center text-sm text-studio-muted hover:text-studio-accent" target="_blank" rel="noopener noreferrer">
-                GitHub
+                <WhatsAppIcon className="h-4 w-4 shrink-0" />
+                Message on WhatsApp
               </a>
             </div>
-            <p className="type-body text-studio-muted">Based in Carrickfergus. Working anywhere.</p>
-            <p className="type-body text-studio-muted">
-              <Link
-                href="/privacy"
-                className="text-studio-text underline decoration-studio-line-strong underline-offset-4 hover:text-studio-accent"
-              >
-                How I use what you send
-              </Link>
-            </p>
+
+            <div data-mb-reveal="true" className="border-t border-[var(--mb-line-strong)] pt-6">
+              <h2 className="mb-h3 text-[var(--mb-ink)]">Email me directly</h2>
+              <p className="mb-caption mt-1">Carrickfergus, Northern Ireland</p>
+              <p className="mb-prose mt-3">Prefer to write from your own inbox?</p>
+              <a href={`mailto:${CONTACT_EMAIL}`} className="mb-text-link mt-2">
+                {CONTACT_EMAIL}
+              </a>
+            </div>
+
+            <div data-mb-reveal="true" className="border-t border-[var(--mb-line-strong)] pt-6">
+              <h2 className="mb-h3 text-[var(--mb-ink)]">What helps me quote</h2>
+              <ul className="mt-4 divide-y divide-[var(--mb-line)] border-y border-[var(--mb-line)]">
+                {HELPFUL_NOTES.map((item) => (
+                  <li key={item} className="mb-ruled-note py-3">
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
           </aside>
         </div>
-      </Container>
+      </section>
     </div>
   );
 }

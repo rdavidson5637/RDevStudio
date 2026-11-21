@@ -1,216 +1,201 @@
 import Link from "next/link";
-import { Scoreboard } from "@/components/pricing/Scoreboard";
-import { Button } from "@/components/ui/Button";
-import { Section } from "@/components/ui/Section";
 import {
-  CONTENT_CREATION_FEATURES,
-  PRICE_CARE_PLAN_GBP,
-  PRICE_CONTENT_GBP,
-  PRICE_SOCIAL_GBP,
-  PRICE_WEBSITE_GBP,
-  PRICING_FEATURES,
-  PROCESS_STEPS,
-  SOCIAL_MEDIA_FEATURES,
-  WHATSAPP_URL,
-} from "@/lib/constants";
-import { DRAFT_CTAS, DRAFT_LOCAL_NICHES } from "@/lib/content/redesign-draft";
+  LOCAL_NICHES,
+  STUDIO_RHYTHM,
+  STUDIO_WHATSAPP_URL,
+  quoteHref,
+} from "@/components/studio/content";
+import { ArrowRightIcon, WhatsAppIcon } from "@/components/studio/icons";
+import { PackageList } from "@/components/studio/PackageList";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata = createPageMetadata({
   title: "Websites for NI plumbers, HVAC, dentists and salons",
   description:
-    "Fixed-price websites from £650 for Northern Ireland plumbers, HVAC firms, dentists, salons and other local services. Optional care plan, social and content packages. Based in Carrickfergus.",
+    "Fixed-quote websites for Northern Ireland plumbers, HVAC firms, dentists, salons and other local services. Optional care plan, social and content packages. Based in Carrickfergus.",
   path: "/services/businesses",
 });
 
+const TERMS = [
+  {
+    title: "50% upfront, 50% at launch.",
+    body: "You get a written scope and a fixed quote before paying a penny.",
+  },
+  {
+    title: "You own the lot.",
+    body: "Domain name, text, photos, and code belong to your business outright.",
+  },
+  {
+    title: "No compulsory monthly fee.",
+    body: "Small sites sit on Vercel's free tier. The care plan is completely optional.",
+  },
+  {
+    title: "One person accountable.",
+    body: "I design it, build it, and check it on a real phone before launch.",
+  },
+] as const;
+
 export default function LocalBusinessesServicesPage() {
   return (
-    <>
-      <Section className="border-b border-studio-line">
-        <p className="text-sm font-bold text-studio-muted">
-          <Link
-            href="/services"
-            className="underline decoration-studio-line underline-offset-4 hover:text-studio-text"
-          >
+    <div>
+      {/* Intro and terms */}
+      <section className="mb-shell mb-page-intro max-w-6xl sm:px-6">
+        <nav aria-label="Breadcrumb" className="mb-meta gap-x-2">
+          <Link href="/services" className="mb-back-link">
             Services
-          </Link>{" "}
-          / Local businesses
-        </p>
-        <h1 className="display-lg mt-4 max-w-[18ch] text-balance text-studio-text">
-          Websites for plumbers, HVAC, dentists and salons
-        </h1>
-        <p className="type-body mt-5 max-w-prose text-studio-muted">
-          Local-service businesses in Northern Ireland that need a phone-first site: who you are, what you do, where you cover, and how to get in touch. Straight prices agreed before work starts. Direct contact with me in Carrickfergus.
-        </p>
+          </Link>
+          <span aria-hidden="true" className="mb-meta-sep">
+            /
+          </span>
+          <span aria-current="page" className="inline-flex min-h-[44px] items-center font-semibold text-[var(--mb-ink)]">
+            Local businesses
+          </span>
+        </nav>
 
-        <div className="mt-10 grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
+        <div className="mt-10 grid gap-10 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:items-start lg:gap-14">
           <div>
-            <h2 className="font-studio-display text-3xl text-studio-text">
-              Plain terms, no lock-in
-            </h2>
-            <ul className="mt-4 border-t border-studio-line">
-              <li className="border-b border-studio-line py-3.5 text-studio-muted">
-                <strong className="text-studio-text">50% upfront, 50% at launch.</strong> You get a written scope and fixed price before paying a penny.
-              </li>
-              <li className="border-b border-studio-line py-3.5 text-studio-muted">
-                <strong className="text-studio-text">You own the lot.</strong> Domain name, text, photos, and code belong to your business outright.
-              </li>
-              <li className="border-b border-studio-line py-3.5 text-studio-muted">
-                <strong className="text-studio-text">No compulsory monthly fee.</strong> Small sites sit on Vercel&apos;s free tier. The £{PRICE_CARE_PLAN_GBP}/month care plan is completely optional.
-              </li>
-              <li className="border-b border-studio-line py-3.5 text-studio-muted">
-                <strong className="text-studio-text">One person accountable.</strong> I design it, build it, and check it on a real phone before launch.
-              </li>
-            </ul>
-            <div className="mt-8 flex flex-wrap items-center gap-6">
-              <Button href="/contact">{DRAFT_CTAS.primary}</Button>
+            <h1 className="mb-h1 max-w-[18ch] text-[var(--mb-ink)]">
+              Websites for plumbers, HVAC, dentists and salons
+            </h1>
+            <p className="mb-lede mt-5">
+              Local-service businesses in Northern Ireland that need a phone-first site: who you are, what you do, where you cover, and how to get in touch. A fixed quote agreed before work starts. Direct contact with me in Carrickfergus.
+            </p>
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
+              <Link href={quoteHref("New website")} className="mb-btn-primary w-full sm:w-auto">
+                Get a fixed quote
+                <ArrowRightIcon className="h-4 w-4 shrink-0" />
+              </Link>
               <a
-                href={WHATSAPP_URL}
+                href={STUDIO_WHATSAPP_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex min-h-11 items-center text-base text-studio-text underline decoration-studio-line-strong underline-offset-4 hover:text-studio-accent"
+                className="mb-text-link"
               >
-                {DRAFT_CTAS.lowCommitment}
+                <WhatsAppIcon className="h-4 w-4 shrink-0 text-[var(--mb-icon)]" />
+                Message me on WhatsApp
               </a>
             </div>
           </div>
 
-          <div>
-            <Scoreboard />
+          <div className="border-t border-[var(--mb-line-strong)] pt-6 lg:border-l lg:border-t-0 lg:pl-8 lg:pt-0">
+            <h2 className="mb-kicker-muted">Plain terms, no lock-in</h2>
+            <dl className="mt-4 divide-y divide-[var(--mb-line)] border-y border-[var(--mb-line)]">
+              {TERMS.map((term) => (
+                <div key={term.title} className="py-4">
+                  <dt className="mb-label">{term.title}</dt>
+                  <dd className="mb-prose mt-1">{term.body}</dd>
+                </div>
+              ))}
+            </dl>
           </div>
         </div>
-      </Section>
+      </section>
 
-      <Section
-        heading="Who this is for"
-        intro="Four niches I build for often. The same packages apply to other local services too. No invented client results on this page - only what the site needs to do."
-        className="border-b border-studio-line"
+      {/* Niches */}
+      <section
+        aria-labelledby="niches-heading"
+        className="border-t border-[var(--mb-line)] bg-[var(--mb-surface)]"
       >
-        <ul className="mt-10 border-t border-studio-line">
-          {DRAFT_LOCAL_NICHES.map((niche) => (
-            <li key={niche.slug} className="border-b border-studio-line">
-              <Link
-                href="/contact"
-                className="group flex min-h-11 items-baseline justify-between gap-6 py-5 transition-colors hover:text-studio-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-studio-text"
-              >
-                <span className="min-w-0">
-                  <span className="block font-studio-display text-2xl text-studio-text group-hover:text-studio-accent">
-                    {niche.title}
-                  </span>
-                  <span className="mt-1 block max-w-prose text-sm text-studio-muted sm:text-base">
-                    {niche.line}
-                  </span>
-                </span>
-                <span
-                  aria-hidden="true"
-                  className="shrink-0 text-studio-faint transition-colors group-hover:text-studio-accent"
+        <div className="mb-shell mb-section-pad max-w-6xl sm:px-6">
+          <div data-mb-reveal="true" className="max-w-2xl">
+            <p className="mb-kicker">Who this is for</p>
+            <h2 id="niches-heading" className="mb-h2 mt-2 text-[var(--mb-ink)]">
+              Four niches I build for often
+            </h2>
+            <p className="mb-body mt-3">
+              The same packages apply to other local services too. No invented client results on this page - only what the site needs to do.
+            </p>
+          </div>
+
+          <ul className="mt-10 divide-y divide-[var(--mb-line)] border-y border-[var(--mb-line)]">
+            {LOCAL_NICHES.map((niche) => (
+              <li key={niche.slug} data-mb-reveal="true">
+                <Link
+                  href={quoteHref("New website")}
+                  className="group flex min-h-[44px] items-baseline justify-between gap-6 py-5"
                 >
-                  &rarr;
-                </span>
+                  <span className="min-w-0">
+                    <span className="mb-h3 block text-[var(--mb-ink)] transition-colors group-hover:text-[var(--mb-link)]">
+                      {niche.title}
+                    </span>
+                    <span className="mb-prose mt-1 block">{niche.line}</span>
+                  </span>
+                  <ArrowRightIcon className="h-4 w-4 shrink-0 text-[var(--mb-tertiary)] transition-colors group-hover:text-[var(--mb-link)]" />
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      {/* Packages */}
+      <section aria-labelledby="packages-heading" className="border-t border-[var(--mb-line)]">
+        <div className="mb-shell mb-section-pad max-w-6xl sm:px-6">
+          <div data-mb-reveal="true" className="max-w-2xl">
+            <p className="mb-kicker">Packages</p>
+            <h2 id="packages-heading" className="mb-h2 mt-2 text-[var(--mb-ink)]">
+              Packages for small businesses
+            </h2>
+            <p className="mb-body mt-3">
+              Pick one or combine them. Everything is quoted in writing first.
+            </p>
+          </div>
+          <PackageList />
+        </div>
+      </section>
+
+      {/* Process */}
+      <section
+        aria-labelledby="build-heading"
+        className="mb-on-light border-y border-[var(--mb-line)] bg-[var(--mb-light)]"
+      >
+        <div data-mb-reveal="true" className="mb-shell mb-section-pad max-w-6xl sm:px-6">
+          <p className="mb-kicker">How a build runs</p>
+          <h2 id="build-heading" className="mb-h2 mt-2 text-[var(--mb-ink)]">
+            About a week, once your text and photos are in
+          </h2>
+          <ol className="mt-10 divide-y divide-[var(--mb-line)] border-y border-[var(--mb-line)]">
+            {STUDIO_RHYTHM.map((item) => (
+              <li
+                key={item.step}
+                className="grid gap-2 py-5 sm:grid-cols-[4.5rem_minmax(0,1fr)] sm:items-baseline sm:gap-6"
+              >
+                <span className="mb-num mb-num-lg">{item.step}</span>
+                <div className="min-w-0 max-w-[var(--mb-measure)]">
+                  <h3 className="mb-step-title">{item.title}</h3>
+                  <p className="mb-prose mt-1.5">{item.body}</p>
+                </div>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </section>
+
+      {/* Examples */}
+      <section aria-labelledby="examples-heading">
+        <div data-mb-reveal="true" className="mb-shell mb-section-pad max-w-6xl sm:px-6">
+          <div className="max-w-2xl border-t border-[var(--mb-line-strong)] pt-8">
+            <h2 id="examples-heading" className="mb-h2 text-[var(--mb-ink)]">
+              See examples of local business sites
+            </h2>
+            <p className="mb-body mt-3">
+              Live client work: RV&apos;s Cold Brew in Belfast. Concept demos only (not client results): Carrick Plumbing Co, The Anchor Restaurant, and Harbour Hair Studio.
+            </p>
+            <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:gap-6">
+              <Link href={quoteHref("New website")} className="mb-btn-primary w-full sm:w-auto">
+                Get a fixed quote
+                <ArrowRightIcon className="h-4 w-4 shrink-0" />
               </Link>
-            </li>
-          ))}
-        </ul>
-      </Section>
-
-      <Section
-        heading="Packages for small businesses"
-        intro="Pick one or combine them. Everything is quoted in writing first."
-        className="border-b border-studio-line"
-      >
-        <div className="mt-10 grid gap-8 lg:grid-cols-3">
-          <article className="border border-studio-border bg-studio-surface p-6">
-            <h3 className="font-studio-display text-2xl text-studio-text">
-              Standard website build
-            </h3>
-            <p className="mt-2 font-studio-display text-4xl text-studio-text">
-              from £{PRICE_WEBSITE_GBP}
-            </p>
-            <p className="mt-1 text-sm text-studio-muted">One-off build</p>
-            <ul className="mt-5 border-t border-studio-line text-sm">
-              {PRICING_FEATURES.map((item) => (
-                <li key={item} className="border-b border-studio-line py-2.5 text-studio-muted">
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </article>
-
-          <article className="border border-studio-border bg-studio-surface p-6">
-            <h3 className="font-studio-display text-2xl text-studio-text">
-              Social media management
-            </h3>
-            <p className="mt-2 font-studio-display text-4xl text-studio-text">
-              from £{PRICE_SOCIAL_GBP}/mo
-            </p>
-            <p className="mt-1 text-sm text-studio-muted">Monthly calendar and scheduling</p>
-            <ul className="mt-5 border-t border-studio-line text-sm">
-              {SOCIAL_MEDIA_FEATURES.map((item) => (
-                <li key={item} className="border-b border-studio-line py-2.5 text-studio-muted">
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </article>
-
-          <article className="border border-studio-border bg-studio-surface p-6">
-            <h3 className="font-studio-display text-2xl text-studio-text">
-              Content creation
-            </h3>
-            <p className="mt-2 font-studio-display text-4xl text-studio-text">
-              from £{PRICE_CONTENT_GBP}/project
-            </p>
-            <p className="mt-1 text-sm text-studio-muted">One-off batch, no retainer</p>
-            <ul className="mt-5 border-t border-studio-line text-sm">
-              {CONTENT_CREATION_FEATURES.map((item) => (
-                <li key={item} className="border-b border-studio-line py-2.5 text-studio-muted">
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </article>
+              <Link href="/work/rvs-cold-brew" className="mb-text-link">
+                RV&apos;s Cold Brew case study
+              </Link>
+              <Link href="/work/concept-builds" className="mb-text-link text-[var(--mb-muted)]">
+                Local business concept builds
+              </Link>
+            </div>
+          </div>
         </div>
-      </Section>
-
-      <Section
-        heading="How a build runs"
-        intro="Most five-page sites take about a week once your text and photos are in."
-        className="border-b border-studio-line"
-      >
-        <ol className="mt-8 border-t border-studio-line">
-          {PROCESS_STEPS.map((step) => (
-            <li
-              key={step.number}
-              className="grid gap-2 border-b border-studio-line py-5 sm:grid-cols-[4rem_11rem_1fr] sm:items-baseline sm:gap-6"
-            >
-              <span className="font-studio-display text-2xl text-studio-text">{step.number}</span>
-              <h3 className="font-studio-display text-2xl text-studio-text">{step.title}</h3>
-              <p className="type-body text-studio-muted">{step.description}</p>
-            </li>
-          ))}
-        </ol>
-      </Section>
-
-      <Section
-        heading="See examples of local business sites"
-        intro="Live client work: RV's Cold Brew in Belfast. Concept demos only (not client results): Carrick Plumbing Co, The Anchor Restaurant, and Harbour Hair Studio."
-      >
-        <div className="mt-8 flex flex-wrap items-center gap-6">
-          <Button href="/contact">{DRAFT_CTAS.primary}</Button>
-          <Link
-            href="/work/rvs-cold-brew"
-            className="inline-flex min-h-11 items-center text-base text-studio-text underline decoration-studio-line-strong underline-offset-4 hover:text-studio-accent"
-          >
-            RV&apos;s Cold Brew case study
-          </Link>
-          <Link
-            href="/work/concept-builds"
-            className="inline-flex min-h-11 items-center text-base text-studio-muted underline decoration-studio-line underline-offset-4 hover:text-studio-text"
-          >
-            Local business concept builds
-          </Link>
-        </div>
-      </Section>
-    </>
+      </section>
+    </div>
   );
 }

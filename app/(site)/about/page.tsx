@@ -1,6 +1,7 @@
 import Image from "next/image";
 import ryanPhoto from "@/public/images/ryan-davidson.jpg";
-import { Button } from "@/components/ui/Button";
+import Link from "next/link";
+import { ArrowRightIcon } from "@/components/studio/icons";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata = createPageMetadata({
@@ -39,55 +40,58 @@ const AWAY_FROM_THE_DESK = [
 
 export default function AboutPage() {
   return (
-    <div className="bg-studio-bg px-6 py-16 font-studio-sans text-studio-text md:px-8 md:py-24 lg:py-32">
-      <article className="mx-auto max-w-studio">
-        <header className="border-b border-studio-line pb-10">
-          <div className="grid gap-8 lg:grid-cols-[1fr_280px] lg:items-end">
-            <div>
-              <h1 className="display-lg text-studio-text">Ryan Davidson</h1>
-              <p className="type-body mt-4 max-w-prose text-studio-muted">
-                One-person studio in Carrickfergus. When you hire RDev Studio, you deal with me from the first message to the live site.
-              </p>
-              <div className="mt-8">
-                <Button href="/contact">Get a fixed quote</Button>
-              </div>
+    <div>
+      <section className="mb-shell mb-page-intro max-w-6xl sm:px-6">
+        <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_280px] lg:items-end lg:gap-14">
+          <div>
+            <p className="mb-kicker">About</p>
+            <h1 className="mb-h1 mt-2 text-[var(--mb-ink)]">Ryan Davidson</h1>
+            <p className="mb-lede mt-5">
+              One-person studio in Carrickfergus. When you hire RDev Studio, you deal with me from the first message to the live site.
+            </p>
+            <div className="mt-8">
+              <Link href="/contact" className="mb-btn-primary w-full sm:w-auto">
+                Get a fixed quote
+                <ArrowRightIcon className="h-4 w-4 shrink-0" />
+              </Link>
             </div>
-            <figure>
-              <div className="relative aspect-[3/4] w-full overflow-hidden bg-studio-surface">
-                <Image
-                  src={ryanPhoto}
-                  placeholder="blur"
-                  alt="Ryan Davidson in graduation gown outside Queen's University Belfast"
-                  fill
-                  priority
-                  sizes="(max-width: 1024px) 100vw, 280px"
-                  className="object-cover object-center"
-                />
-              </div>
-              <figcaption className="mt-3 text-sm text-studio-faint">
-                Queen&apos;s University Belfast, MSc
-              </figcaption>
-            </figure>
           </div>
-        </header>
+          <figure className="mb-frame">
+            <div className="relative aspect-[3/4] w-full overflow-hidden bg-[var(--mb-surface)]">
+              <Image
+                src={ryanPhoto}
+                placeholder="blur"
+                alt="Ryan Davidson in graduation gown outside Queen's University Belfast"
+                fill
+                priority
+                sizes="(max-width: 1024px) 100vw, 280px"
+                className="object-cover object-center"
+              />
+            </div>
+            <figcaption className="mb-caption">Queen&apos;s University Belfast, MSc</figcaption>
+          </figure>
+        </div>
 
-        <section className="border-b border-studio-line py-12" aria-label="Profile">
-          <dl className="border-t border-studio-line">
-            {PROFILE_STATS.map((stat) => (
-              <div
-                key={stat.label}
-                className="grid gap-1 border-b border-studio-line py-4 sm:grid-cols-[10rem_1fr] sm:gap-6"
-              >
-                <dt className="text-sm font-bold text-studio-text">{stat.label}</dt>
-                <dd className="type-body text-studio-muted">{stat.value}</dd>
-              </div>
-            ))}
-          </dl>
-        </section>
+        <dl className="mt-12 divide-y divide-[var(--mb-line)] border-y border-[var(--mb-line)]" aria-label="Profile">
+          {PROFILE_STATS.map((stat) => (
+            <div
+              key={stat.label}
+              className="grid gap-1 py-4 sm:grid-cols-[10rem_minmax(0,1fr)] sm:items-baseline sm:gap-6"
+            >
+              <dt className="mb-kicker-muted">{stat.label}</dt>
+              <dd className="mb-fact-value">{stat.value}</dd>
+            </div>
+          ))}
+        </dl>
+      </section>
 
-        <section className="border-b border-studio-line py-12" aria-label="Bio">
-          <div className="max-w-prose space-y-5">
-            <p className="type-body text-studio-muted">
+      <section
+        aria-label="Bio"
+        className="border-t border-[var(--mb-line)] bg-[var(--mb-surface)]"
+      >
+        <div data-mb-reveal="true" className="mb-shell mb-section-pad max-w-6xl sm:px-6">
+          <div className="max-w-[var(--mb-measure)] space-y-5">
+            <p className="mb-body">
               I didn&apos;t take the usual route in. Forensic science degree, then into the civil
               service in August 2025, handling casework and talking to claimants for most of the
               day. Real problems, real people, lots of process. You learn to read a file properly,
@@ -95,40 +99,60 @@ export default function AboutPage() {
               needing a straight answer. RDev Studio is what I do on the side: sites, tools, and the
               odd football game.
             </p>
-            <p className="type-body text-studio-muted">
+            <p className="mb-body">
               What I like building is straightforward: useful things for real people. A volunteer
               platform for an animal sanctuary. Charity sites for Assisi and Crosskennan. A
               coaching app for grassroots football. Sites for local businesses. Games that
               strangers on the internet play at work when they should be doing something else. If
               nobody uses it, I&apos;m not interested.
             </p>
-            <p className="type-body text-studio-muted">
+            <p className="mb-body">
               I do design and development both, from the first frame to the live site. One person is
               accountable for the whole thing. The day job turned out to be good training: I&apos;m
               hard to fluster and I write things down.
             </p>
           </div>
-        </section>
+        </div>
+      </section>
 
-        <section className="border-b border-studio-line py-12" aria-label="Away from the desk">
-          <h2 className="type-h2 text-studio-text">Away from the desk</h2>
-          <div className="mt-4 border-t border-studio-line">
+      <section aria-labelledby="away-heading" className="border-t border-[var(--mb-line)]">
+        <div data-mb-reveal="true" className="mb-shell mb-section-pad max-w-6xl sm:px-6">
+          <h2 id="away-heading" className="mb-h2 text-[var(--mb-ink)]">
+            Away from the desk
+          </h2>
+          <dl className="mt-8 divide-y divide-[var(--mb-line)] border-y border-[var(--mb-line)]">
             {AWAY_FROM_THE_DESK.map((item) => (
-              <article key={item.label} className="border-b border-studio-line py-4">
-                <h3 className="font-studio-display text-2xl text-studio-text">{item.label}</h3>
-                <p className="type-body mt-2 max-w-prose text-studio-muted">{item.line}</p>
-              </article>
+              <div
+                key={item.label}
+                className="grid gap-1 py-5 sm:grid-cols-[14rem_minmax(0,1fr)] sm:items-baseline sm:gap-6"
+              >
+                <dt className="mb-step-title">{item.label}</dt>
+                <dd className="mb-prose">{item.line}</dd>
+              </div>
             ))}
-          </div>
-        </section>
+          </dl>
+        </div>
+      </section>
 
-        <section className="py-12" aria-label="Get in touch">
-          <p className="type-body max-w-prose text-studio-muted">CV on request.</p>
-          <div className="mt-6">
-            <Button href="/contact">Get a fixed quote</Button>
+      <section
+        aria-labelledby="about-close-heading"
+        className="mb-on-light bg-[var(--mb-light)] text-[var(--mb-ink)]"
+      >
+        <div data-mb-reveal="true" className="mb-shell mb-section-pad max-w-6xl px-4 sm:px-6">
+          <div className="max-w-2xl border-t border-[var(--mb-line-strong)] pt-8">
+            <h2 id="about-close-heading" className="mb-h2 text-[var(--mb-ink)]">
+              Want something built?
+            </h2>
+            <p className="mb-body mt-3">CV on request.</p>
+            <div className="mt-6">
+              <Link href="/contact" className="mb-btn-primary w-full sm:w-auto">
+                Get a fixed quote
+                <ArrowRightIcon className="h-4 w-4 shrink-0" />
+              </Link>
+            </div>
           </div>
-        </section>
-      </article>
+        </div>
+      </section>
     </div>
   );
 }
