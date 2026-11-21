@@ -202,7 +202,7 @@ export const DRAFT_CASE_STUDIES = [
     solution:
       "A Next.js charity site with adoption listings, dog/cat/equine rehoming forms, adult and under-18 volunteer paths, and support pages. Forms use Formspree when IDs are set, otherwise mailto.",
     result:
-      "Vercel preview online. Formspree IDs unset. Listings and horse profiles still being finished. Not on the sanctuary production domain yet.",
+      "Preview online and in review with the sanctuary. Forms, listings and horse profiles are being finished before it moves to the sanctuary's own domain.",
   },
   {
     slug: "rondo",
