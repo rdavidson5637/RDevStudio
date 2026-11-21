@@ -20,105 +20,87 @@ export const metadata: Metadata = {
   },
 };
 
-const GRID_SPAN_BY_INDEX = [
-  "lg:col-span-7",
-  "lg:col-span-5",
-  "lg:col-span-5",
-  "lg:col-span-7",
-] as const;
-
 export default function MockBWorkPage() {
   const [featuredProject, ...otherProjects] = MOCK_B_PROJECTS;
 
   return (
     <div>
       {/* ── HEADER + JUMP BAR ────────────────────────────────────────────── */}
-      <section className="mx-auto max-w-5xl px-4 pb-10 pt-8 sm:px-6 sm:pt-14">
-        <Link
-          href="/mock-b"
-          className="inline-flex min-h-[44px] items-center gap-1.5 text-sm font-semibold text-[var(--mb-muted)] underline decoration-[var(--mb-line-strong)] underline-offset-4 hover:text-[var(--mb-link)]"
-        >
+      <section className="mb-shell mb-page-intro max-w-6xl sm:px-6">
+        <Link href="/mock-b" className="mb-back-link">
           <ArrowLeftIcon className="h-4 w-4 shrink-0" />
           Back to studio home
         </Link>
 
         <div className="mt-5 max-w-2xl">
-          <p className="text-xs font-semibold uppercase tracking-widest text-[var(--mb-link)]">
-            Studio showcase
-          </p>
-          <h1 className="mb-display mt-2 text-4xl font-semibold tracking-tight text-[var(--mb-ink)] sm:text-5xl">
+          <p className="mb-kicker">Studio showcase</p>
+          <h1 className="mb-h1 mt-2 text-[var(--mb-ink)]">
             Five builds from RDev Studio
           </h1>
-          <p className="mt-4 text-base leading-relaxed text-[var(--mb-muted)] sm:text-lg">
+          <p className="mb-lede mt-4">
             Charity sites, volunteer platforms, and custom web apps designed and built in Carrickfergus. Every note below sticks strictly to confirmed project facts.
           </p>
         </div>
 
         <nav
           aria-label="Jump to project"
-          className="mt-8 flex flex-wrap items-center gap-x-5 gap-y-1 border-y border-[var(--mb-line)] py-2"
+          className="mt-8 flex flex-wrap items-center gap-x-4 gap-y-0 border-y border-[var(--mb-line)] py-1 sm:gap-x-5"
         >
           {MOCK_B_PROJECTS.map((project, index) => (
-            <a
-              key={project.id}
-              href={`#${project.id}`}
-              className="inline-flex min-h-[44px] items-center gap-2 text-sm font-medium text-[var(--mb-ink)] hover:text-[var(--mb-link)]"
-            >
-              <span className="tabular-nums text-xs text-[var(--mb-tertiary)]">
+            <a key={project.id} href={`#${project.id}`} className="mb-jump-link">
+              <span className="mb-caption tabular-nums font-semibold text-[var(--mb-tertiary)]">
                 0{index + 1}
               </span>
-              <span>{project.name}</span>
+              <span className="max-w-[12ch] truncate sm:max-w-none">{project.name}</span>
             </a>
           ))}
         </nav>
       </section>
 
-      {/* ── FEATURED LEAD PROJECT (01 SHELTERLINK — FULL WIDTH) ──────────── */}
-      <section className="mx-auto max-w-5xl px-4 pb-16 pt-4 sm:px-6">
+      {/* ── FEATURED LEAD PROJECT (01 SHELTERLINK - FULL WIDTH) ──────────── */}
+      <section className="border-t border-[var(--mb-line)] bg-[var(--mb-surface)]">
         <article
           id={featuredProject.id}
           data-mb-reveal="true"
-          className="scroll-mt-24 space-y-8"
+          className="mb-shell mb-section-pad max-w-6xl scroll-mt-24 space-y-8 sm:px-6"
         >
-          <div className="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
-            <div className="max-w-2xl space-y-2.5">
-              <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs font-medium text-[var(--mb-muted)]">
+          <div className="space-y-5">
+            <div className="space-y-3">
+              <div className="mb-meta">
                 <span className="tabular-nums font-semibold text-[var(--mb-tertiary)]">
                   Project 01
                 </span>
-                <span aria-hidden="true" className="text-[var(--mb-line-strong)]">
+                <span aria-hidden="true" className="mb-meta-sep">
                   /
                 </span>
                 <span className="font-semibold text-[var(--mb-link)]">
                   {featuredProject.type}
                 </span>
-                <span aria-hidden="true" className="text-[var(--mb-line-strong)]">
+                <span aria-hidden="true" className="mb-meta-sep">
                   /
                 </span>
                 <span>{featuredProject.year}</span>
-                <span aria-hidden="true" className="text-[var(--mb-line-strong)]">
+                <span aria-hidden="true" className="mb-meta-sep">
                   /
                 </span>
                 <span>{featuredProject.statusLabel}</span>
               </div>
 
-              <h2 className="mb-display text-3xl font-semibold text-[var(--mb-ink)] sm:text-4xl">
+              <h2 className="mb-h2 text-[var(--mb-ink)]">
                 <Link
                   href={`/mock-b/work/${featuredProject.id}`}
-                  className="inline-flex min-h-[44px] items-center underline-offset-4 hover:text-[var(--mb-link)] hover:underline"
+                  className="mb-title-link"
                 >
                   {featuredProject.name}
                 </Link>
               </h2>
-              <p className="text-base leading-relaxed text-[var(--mb-muted)]">
-                {featuredProject.summary}
-              </p>
+              <p className="mb-body">{featuredProject.summary}</p>
             </div>
 
-            <div className="flex flex-wrap gap-2.5 sm:shrink-0">
+            <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
               <Link
                 href={`/mock-b/work/${featuredProject.id}`}
-                className="mb-btn-primary"
+                className="mb-btn-primary w-full sm:w-auto"
               >
                 Read case study
                 <ArrowRightIcon className="h-4 w-4 shrink-0" />
@@ -127,7 +109,7 @@ export default function MockBWorkPage() {
                 href={featuredProject.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mb-btn-secondary"
+                className="mb-text-link"
               >
                 {featuredProject.linkLabel}
                 <ExternalLinkIcon className="h-3.5 w-3.5 shrink-0" />
@@ -139,17 +121,14 @@ export default function MockBWorkPage() {
 
           <div className="grid gap-8 border-t border-[var(--mb-line)] pt-6 md:grid-cols-[1.35fr_0.65fr]">
             <div>
-              <h3 className="text-xs font-semibold uppercase tracking-widest text-[var(--mb-tertiary)]">
+              <h3 className="mb-kicker-muted">
                 Build notes
               </h3>
-              <ul className="mt-3 space-y-2.5 text-sm leading-relaxed text-[var(--mb-ink)] sm:text-base">
+              <ul className="mb-dash-list mt-3">
                 {featuredProject.details.map((detail) => (
-                  <li key={detail} className="flex items-start gap-2.5">
-                    <span
-                      aria-hidden="true"
-                      className="select-none text-[var(--mb-link)]"
-                    >
-                      &mdash;
+                  <li key={detail}>
+                    <span aria-hidden="true" data-mb-dash>
+                      -
                     </span>
                     <span>{detail}</span>
                   </li>
@@ -158,24 +137,22 @@ export default function MockBWorkPage() {
             </div>
 
             <div className="border-t border-[var(--mb-line)] pt-5 md:border-l md:border-t-0 md:pl-8 md:pt-0">
-              <h3 className="text-xs font-semibold uppercase tracking-widest text-[var(--mb-tertiary)]">
+              <h3 className="mb-kicker-muted">
                 Focus &amp; stack
               </h3>
-              <div className="mt-3 flex flex-wrap gap-2">
-                {featuredProject.stack.map((tag) => (
-                  <span
-                    key={tag}
-                    className="rounded-[var(--radius-sm)] border border-[var(--mb-line-strong)] bg-[var(--mb-surface)] px-2.5 py-1 text-xs font-medium text-[var(--mb-ink)]"
-                  >
+              <p className="mb-stack mt-3">
+                {featuredProject.stack.map((tag, i) => (
+                  <span key={tag}>
+                    {i > 0 ? <span className="mb-stack-sep" aria-hidden="true">/</span> : null}
                     {tag}
                   </span>
                 ))}
-              </div>
+              </p>
               {featuredProject.secondaryHref && featuredProject.secondaryLabel ? (
                 <div className="mt-4">
                   <Link
                     href={featuredProject.secondaryHref}
-                    className="inline-flex min-h-[44px] items-center text-sm font-medium text-[var(--mb-muted)] underline decoration-[var(--mb-line-strong)] underline-offset-4 hover:text-[var(--mb-ink)]"
+                    className="mb-text-link text-[var(--mb-muted)]"
                   >
                     {featuredProject.secondaryLabel}
                   </Link>
@@ -186,128 +163,138 @@ export default function MockBWorkPage() {
         </article>
       </section>
 
-      {/* ── MIXED-SIZE EDITORIAL GRID (PROJECTS 02–05) ───────────────────── */}
-      <section className="border-t border-[var(--mb-line)] bg-[var(--mb-surface)]">
-        <div className="mx-auto max-w-5xl px-4 py-16 sm:px-6 sm:py-20">
-          <div className="grid grid-cols-1 gap-x-10 gap-y-16 lg:grid-cols-12">
+      {/* ── PROJECTS 02-05 (FULL-BLEED RULED ROWS, NOT A CARD MOSAIC) ─────── */}
+      <section className="border-t border-[var(--mb-line)] bg-[var(--mb-bg)]">
+        <div className="mb-shell mb-section-pad max-w-6xl sm:px-6">
+          <ol className="divide-y divide-[var(--mb-line)] border-y border-[var(--mb-line)]">
             {otherProjects.map((project, idx) => {
               const number = idx + 2;
-              const isWide = GRID_SPAN_BY_INDEX[idx] === "lg:col-span-7";
+              const imageFirst = idx % 2 === 1;
               return (
-                <article
+                <li
                   key={project.id}
                   id={project.id}
                   data-mb-reveal="true"
-                  className={`flex scroll-mt-24 flex-col justify-between border-t border-[var(--mb-line-strong)] pt-6 ${GRID_SPAN_BY_INDEX[idx]}`}
+                  className="scroll-mt-24 py-10 sm:py-12"
                 >
-                  <div className="space-y-5">
-                    <div className="space-y-2">
-                      <div className="flex flex-wrap items-center gap-x-2.5 gap-y-1 text-xs font-medium text-[var(--mb-muted)]">
-                        <span className="tabular-nums font-semibold text-[var(--mb-tertiary)]">
-                          Project 0{number}
-                        </span>
-                        <span aria-hidden="true" className="text-[var(--mb-line-strong)]">
-                          /
-                        </span>
-                        <span className="font-semibold text-[var(--mb-link)]">
-                          {project.type}
-                        </span>
-                        <span aria-hidden="true" className="text-[var(--mb-line-strong)]">
-                          /
-                        </span>
-                        <span>{project.year}</span>
-                        <span aria-hidden="true" className="text-[var(--mb-line-strong)]">
-                          /
-                        </span>
-                        <span>{project.statusLabel}</span>
+                  <article className="space-y-6">
+                    <div
+                      className={`grid gap-8 md:items-center md:gap-10 ${
+                        imageFirst
+                          ? "md:grid-cols-[1.05fr_0.95fr]"
+                          : "md:grid-cols-[0.95fr_1.05fr]"
+                      }`}
+                    >
+                      <div
+                        className={`min-w-0 space-y-3 ${
+                          imageFirst ? "md:order-2" : ""
+                        }`}
+                      >
+                        <div className="mb-meta">
+                          <span className="tabular-nums font-semibold text-[var(--mb-tertiary)]">
+                            Project 0{number}
+                          </span>
+                          <span aria-hidden="true" className="mb-meta-sep">
+                            /
+                          </span>
+                          <span className="font-semibold text-[var(--mb-link)]">
+                            {project.type}
+                          </span>
+                          <span aria-hidden="true" className="mb-meta-sep">
+                            /
+                          </span>
+                          <span>{project.year}</span>
+                          <span aria-hidden="true" className="mb-meta-sep">
+                            /
+                          </span>
+                          <span>{project.statusLabel}</span>
+                        </div>
+
+                        <h2 className="mb-h3 text-[var(--mb-ink)]">
+                          <Link
+                            href={`/mock-b/work/${project.id}`}
+                            className="mb-title-link"
+                          >
+                            {project.name}
+                          </Link>
+                        </h2>
+                        <p className="mb-prose">{project.summary}</p>
+
+                        <div className="flex flex-col gap-1 sm:flex-row sm:flex-wrap sm:items-center sm:gap-x-5">
+                          <Link
+                            href={`/mock-b/work/${project.id}`}
+                            className="mb-text-link w-fit"
+                          >
+                            Read case study
+                            <ArrowRightIcon className="h-4 w-4 shrink-0" />
+                          </Link>
+
+                          {project.external ? (
+                            <a
+                              href={project.href}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="mb-text-link"
+                            >
+                              {project.linkLabel}
+                              <ExternalLinkIcon className="h-3.5 w-3.5 shrink-0" />
+                            </a>
+                          ) : project.id === "assisi" ? (
+                            <Link href={project.href} className="mb-text-link">
+                              {project.linkLabel}
+                            </Link>
+                          ) : null}
+                        </div>
                       </div>
 
-                      <h2 className="mb-display text-2xl font-semibold text-[var(--mb-ink)] sm:text-3xl">
-                        <Link
-                          href={`/mock-b/work/${project.id}`}
-                          className="inline-flex min-h-[44px] items-center underline-offset-4 hover:text-[var(--mb-link)] hover:underline"
-                        >
-                          {project.name}
-                        </Link>
-                      </h2>
-                      <p className="text-sm leading-relaxed text-[var(--mb-muted)] sm:text-base">
-                        {project.summary}
-                      </p>
-                    </div>
-
-                    <div>
-                      {isWide ? (
-                        <WorkDeviceShowcase project={project} />
-                      ) : (
-                        <ProjectPreview project={project} size="compact" />
-                      )}
-                    </div>
-
-                    <div className="space-y-3 border-t border-[var(--mb-line)] pt-4">
-                      <h3 className="text-xs font-semibold uppercase tracking-widest text-[var(--mb-tertiary)]">
-                        Build notes
-                      </h3>
-                      <ul className="space-y-2 text-sm leading-relaxed text-[var(--mb-ink)]">
-                        {project.details.map((detail) => (
-                          <li key={detail} className="flex items-start gap-2.5">
-                            <span
-                              aria-hidden="true"
-                              className="select-none text-[var(--mb-link)]"
-                            >
-                              &mdash;
-                            </span>
-                            <span>{detail}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-
-                  <div className="mt-6 space-y-4 border-t border-[var(--mb-line)] pt-4">
-                    <div className="flex flex-wrap gap-1.5">
-                      {project.stack.map((tag) => (
-                        <span
-                          key={tag}
-                          className="rounded-[var(--radius-sm)] border border-[var(--mb-line)] bg-[var(--mb-bg)] px-2.5 py-0.5 text-xs font-medium text-[var(--mb-muted)]"
-                        >
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-
-                    <div className="flex flex-wrap items-center gap-3">
-                      <Link
-                        href={`/mock-b/work/${project.id}`}
-                        className="mb-btn-secondary"
+                      <div
+                        className={`min-w-0 ${
+                          imageFirst ? "md:order-1" : ""
+                        }`}
                       >
-                        Read case study
-                        <ArrowRightIcon className="h-4 w-4 shrink-0" />
-                      </Link>
-
-                      {project.external ? (
-                        <a
-                          href={project.href}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex min-h-[44px] items-center gap-1.5 text-sm font-semibold text-[var(--mb-link)] underline decoration-[var(--mb-border-accent)] underline-offset-4 hover:text-[var(--mb-link-hover)]"
-                        >
-                          {project.linkLabel}
-                          <ExternalLinkIcon className="h-3.5 w-3.5 shrink-0" />
-                        </a>
-                      ) : project.id === "assisi" ? (
-                        <Link
-                          href={project.href}
-                          className="inline-flex min-h-[44px] items-center text-sm font-semibold text-[var(--mb-link)] underline decoration-[var(--mb-border-accent)] underline-offset-4 hover:text-[var(--mb-link-hover)]"
-                        >
-                          {project.linkLabel}
-                        </Link>
-                      ) : null}
+                        <ProjectPreview project={project} size="compact" />
+                      </div>
                     </div>
-                  </div>
-                </article>
+
+                    <div className="grid gap-6 border-t border-[var(--mb-line)] pt-5 md:grid-cols-[1.35fr_0.65fr] md:gap-8">
+                      <div>
+                        <h3 className="mb-kicker-muted">Build notes</h3>
+                        <ul className="mb-dash-list mt-3">
+                          {project.details.map((detail) => (
+                            <li key={detail}>
+                              <span aria-hidden="true" data-mb-dash>
+                                -
+                              </span>
+                              <span>{detail}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+
+                      <div className="border-t border-[var(--mb-line)] pt-4 md:border-l md:border-t-0 md:pl-8 md:pt-0">
+                        <h3 className="mb-kicker-muted">Focus &amp; stack</h3>
+                        <p className="mb-stack mt-3">
+                          {project.stack.map((tag, i) => (
+                            <span key={tag}>
+                              {i > 0 ? (
+                                <span
+                                  className="mb-stack-sep"
+                                  aria-hidden="true"
+                                >
+                                  /
+                                </span>
+                              ) : null}
+                              {tag}
+                            </span>
+                          ))}
+                        </p>
+                      </div>
+                    </div>
+                  </article>
+                </li>
               );
             })}
-          </div>
+          </ol>
         </div>
       </section>
 
@@ -318,37 +305,31 @@ export default function MockBWorkPage() {
       >
         <div
           data-mb-reveal="true"
-          className="mx-auto flex max-w-5xl flex-col gap-6 px-4 py-16 sm:px-6 sm:py-20 lg:flex-row lg:items-center lg:justify-between"
+          className="mb-shell mb-section-pad max-w-6xl px-4 sm:px-6"
         >
-          <div className="max-w-xl">
-            <p className="text-xs font-semibold uppercase tracking-widest text-[var(--mb-muted)]">
-              Have a project in mind?
-            </p>
-            <h2
-              id="work-cta-heading"
-              className="mb-display mt-2 text-3xl font-semibold text-[var(--mb-ink)] sm:text-4xl"
-            >
+          <div className="max-w-2xl border-t border-[var(--mb-line-strong)] pt-8">
+            <p className="mb-kicker-muted">Have a project in mind?</p>
+            <h2 id="work-cta-heading" className="mb-h2 mt-2 text-[var(--mb-ink)]">
               Let us build something clear and useful together
             </h2>
-            <p className="mt-3 text-base leading-relaxed text-[var(--mb-muted)]">
+            <p className="mb-body mt-3">
               Send a short note through the quote form or message RDev Studio on WhatsApp for a straightforward chat.
             </p>
-          </div>
-
-          <div className="flex flex-col gap-3 sm:flex-row lg:shrink-0">
-            <Link href="/mock-b/contact" className="mb-btn-primary">
-              Start a quote
-              <ArrowRightIcon className="h-4 w-4 shrink-0" />
-            </Link>
-            <a
-              href={STUDIO_WHATSAPP_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mb-btn-secondary-inverse"
-            >
-              <WhatsAppIcon className="h-4 w-4 shrink-0" />
-              Message on WhatsApp
-            </a>
+            <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
+              <Link href="/mock-b/contact" className="mb-btn-primary w-full sm:w-auto">
+                Start a quote
+                <ArrowRightIcon className="h-4 w-4 shrink-0" />
+              </Link>
+              <a
+                href={STUDIO_WHATSAPP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mb-text-link"
+              >
+                <WhatsAppIcon className="h-4 w-4 shrink-0" />
+                Message on WhatsApp
+              </a>
+            </div>
           </div>
         </div>
       </section>

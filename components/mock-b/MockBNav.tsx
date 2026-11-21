@@ -27,11 +27,7 @@ export function MockBDesktopNav() {
             key={item.href}
             href={item.href}
             aria-current={active ? "page" : undefined}
-            className={`inline-flex min-h-[44px] items-center rounded-[var(--radius-sm)] px-3 text-sm font-medium transition-colors ${
-              active
-                ? "font-semibold text-[var(--mb-link)] underline decoration-[var(--mb-link)] decoration-2 underline-offset-8"
-                : "text-[var(--mb-muted)] hover:text-[var(--mb-ink)]"
-            }`}
+            className="mb-nav-link"
           >
             {item.label}
           </Link>
@@ -47,7 +43,7 @@ export function MockBMobileNav() {
   return (
     <nav
       aria-label="Mobile section navigation"
-      className="flex items-center justify-center gap-1 border-t border-[var(--mb-line)] bg-[var(--mb-bg)] px-3 py-0.5 md:hidden"
+      className="flex items-center justify-between gap-0.5 border-t border-[var(--mb-line)] bg-[var(--mb-bg)] px-1 py-0.5 sm:justify-center sm:gap-1 sm:px-3 md:hidden"
     >
       {NAV_ITEMS.map((item) => {
         const active = isRouteActive(pathname, item.href);
@@ -56,11 +52,7 @@ export function MockBMobileNav() {
             key={item.href}
             href={item.href}
             aria-current={active ? "page" : undefined}
-            className={`inline-flex min-h-[44px] items-center px-3 text-xs font-semibold transition-colors ${
-              active
-                ? "text-[var(--mb-link)] underline decoration-[var(--mb-link)] decoration-2 underline-offset-8"
-                : "text-[var(--mb-muted)] hover:text-[var(--mb-ink)]"
-            }`}
+            className="mb-nav-link mb-nav-link-mobile"
           >
             {item.label}
           </Link>
