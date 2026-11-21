@@ -53,7 +53,7 @@ export function CaseStudyShowcaseCard({
         <div className="flex h-full w-full flex-col items-center justify-center gap-2 p-6 text-center">
           <p className="font-studio-display text-2xl text-studio-text">Preview after sign-off</p>
           <p className="max-w-[28ch] text-sm text-studio-muted">
-            Screenshots go up here when the client has approved them.
+            Screenshots will be shared once the client has signed off.
           </p>
         </div>
       )}
