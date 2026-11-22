@@ -26,7 +26,7 @@ export function InteractiveCategoryFilters({
             type="button"
             onClick={() => onChange(category.id)}
             aria-pressed={isActive}
-            className={`rounded-md border px-4 py-2 text-sm font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-base ${
+            className={`inline-flex min-h-11 items-center rounded-md border px-4 py-2 text-sm font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-base ${
               isActive
                 ? "border-accent bg-accent text-on-accent"
                 : "border-border-strong bg-raised text-primary hover:border-accent hover:text-accent"

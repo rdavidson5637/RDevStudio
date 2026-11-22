@@ -28,7 +28,7 @@ export function DraftSubNav() {
             key={item.href}
             href={item.href}
             aria-current={active ? "page" : undefined}
-            className={`shell-label shrink-0 whitespace-nowrap rounded-full border px-3 py-1.5 transition-colors ${
+            className={`shell-label inline-flex min-h-11 shrink-0 items-center whitespace-nowrap rounded-full border px-4 py-1.5 transition-colors ${
               active
                 ? "border-accent bg-accent text-on-accent"
                 : "border-border text-secondary hover:border-accent hover:text-accent"
