@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import { Footer } from "@/components/layout/Footer";
-import { Header } from "@/components/layout/Header";
-import { SkipToContent } from "@/components/layout/SkipToContent";
-import { Button } from "@/components/ui/Button";
+import Link from "next/link";
+import { ArrowRightIcon } from "@/components/studio/icons";
+import { SiteShell } from "@/components/studio/SiteChrome";
+import "./(site)/studio.css";
 
 export const metadata: Metadata = {
   title: "Page not found",
@@ -11,27 +11,26 @@ export const metadata: Metadata = {
 
 export default function NotFound() {
   return (
-    <div className="flex min-h-screen flex-col bg-studio-bg font-studio-sans text-studio-text">
-      <SkipToContent />
-      <Header />
-      <main id="main-content" className="flex flex-1 items-center">
-        <div className="mx-auto w-full max-w-studio px-6 py-16 md:px-8 md:py-24">
-          <h1 className="display-lg max-w-[14ch] text-balance">That page isn&apos;t here</h1>
-          <p className="type-body mt-5 max-w-prose text-studio-muted">
-            It may have moved, or the link was wrong.
-          </p>
-          <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3">
-            <Button href="/">Back to the homepage</Button>
-            <Button href="/work" variant="secondary">
+    <SiteShell>
+      <section className="mb-shell mb-page-intro max-w-6xl sm:px-6">
+        <div className="max-w-2xl pb-16">
+          <p className="mb-kicker">404</p>
+          <h1 className="mb-h1 mt-2 text-[var(--mb-ink)]">That page isn&apos;t here</h1>
+          <p className="mb-lede mt-5">It may have moved, or the link was wrong.</p>
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:gap-6">
+            <Link href="/" className="mb-btn-primary w-full sm:w-auto">
+              Back to the homepage
+              <ArrowRightIcon className="h-4 w-4 shrink-0" />
+            </Link>
+            <Link href="/work" className="mb-text-link">
               Work
-            </Button>
-            <Button href="/contact" variant="secondary">
+            </Link>
+            <Link href="/contact" className="mb-text-link">
               Contact
-            </Button>
+            </Link>
           </div>
         </div>
-      </main>
-      <Footer />
-    </div>
+      </section>
+    </SiteShell>
   );
 }

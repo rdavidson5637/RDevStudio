@@ -1,0 +1,844 @@
+/* Site stylesheet (Mock B, Grenadine). Applied to every (site) page via .mb-root in app/(site)/layout.tsx.
+   All brand hex/rgba values for the site chrome and studio pages are declared here. */
+
+.mb-root {
+  color-scheme: dark;
+
+  /* Four main colours */
+  --mb-slate: #112F2C;
+  --mb-naples: #FBE6A0;
+  --mb-grenadine: #F48067;
+  --mb-ochre: #E2B540;
+
+  /* Shades mixed from those four */
+  --mb-slate-2: #183E3A;
+  --mb-slate-3: #1E4A45;
+  --mb-naples-muted: #CFC7A3;
+  --mb-naples-faint: #B9B392;
+  --mb-grenadine-light: #F79A85;
+  --mb-grenadine-deep: #D75C42;
+  --mb-ochre-ink: #2C4A3A;
+
+  /* See-through lines: Naples at 18% / 35% on dark, slate at the same opacities on light */
+  --mb-naples-line: rgba(251, 230, 160, 0.18);
+  --mb-naples-line-strong: rgba(251, 230, 160, 0.35);
+  --mb-slate-line: rgba(17, 47, 44, 0.18);
+  --mb-slate-line-strong: rgba(17, 47, 44, 0.35);
+  --mb-line: var(--mb-naples-line);
+  --mb-line-strong: var(--mb-naples-line-strong);
+
+  /* Semantic tokens - dark-first defaults */
+  --mb-bg: var(--mb-slate);
+  --mb-ink: var(--mb-naples);
+  --mb-muted: var(--mb-naples-muted);
+  --mb-tertiary: var(--mb-naples-faint);
+  --mb-surface: var(--mb-slate-2);
+  --mb-raised: var(--mb-slate-3);
+  --mb-light: var(--mb-naples);
+  --mb-accent: var(--mb-grenadine);
+  --mb-accent-hover: var(--mb-grenadine-light);
+  --mb-on-accent: var(--mb-slate);
+  --mb-icon: var(--mb-grenadine-deep);
+  --mb-link: var(--mb-grenadine);
+  --mb-link-hover: var(--mb-grenadine-light);
+  --mb-accent-subtle: color-mix(in srgb, var(--mb-grenadine) 16%, var(--mb-slate-2));
+  --mb-accent-muted: color-mix(in srgb, var(--mb-grenadine) 28%, var(--mb-slate-2));
+  --mb-border-accent: color-mix(in srgb, var(--mb-grenadine) 45%, transparent);
+  --mb-focus-ring: color-mix(in srgb, var(--mb-grenadine) 45%, transparent);
+  --mb-selection-bg: color-mix(in srgb, var(--mb-grenadine) 40%, var(--mb-slate));
+
+  /* Type scale (1.25-ish fixed set). Six sizes in common use. */
+  --mb-text-caption: 0.75rem; /* 12 */
+  --mb-text-sm: 0.875rem; /* 14 */
+  --mb-text-base: 1rem; /* 16 */
+  --mb-text-md: 1.125rem; /* 18 */
+  --mb-text-lg: 1.375rem; /* 22 */
+  --mb-text-xl: 1.75rem; /* 28 */
+  --mb-text-2xl: 2.25rem; /* 36 */
+  --mb-text-3xl: 3rem; /* 48 */
+  --mb-text-4xl: 4rem; /* 64 */
+
+  --mb-leading-tight: 1.1;
+  --mb-leading-snug: 1.2;
+  --mb-leading-body: 1.6;
+  --mb-tracking-display: -0.02em;
+  --mb-measure: 42rem; /* ~67ch at 16px */
+
+  /* 8px rhythm + small radii (square to 4px) */
+  --mb-space-1: 0.25rem;
+  --mb-space-2: 0.5rem;
+  --mb-space-3: 0.75rem;
+  --mb-space-4: 1rem;
+  --mb-space-5: 1.5rem;
+  --mb-space-6: 2rem;
+  --mb-space-7: 3rem;
+  --mb-space-8: 4rem;
+  --mb-section-y: 4rem;
+  --mb-section-y-lg: 6rem;
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --mb-radius: 4px;
+  --mb-radius-sm: 2px;
+
+  background-color: var(--mb-bg);
+  color: var(--mb-ink);
+  font-family: var(--font-body), "Atkinson Hyperlegible", system-ui, sans-serif;
+  font-size: var(--mb-text-base);
+  line-height: var(--mb-leading-body);
+  min-height: 100vh;
+  position: relative;
+  overflow-x: clip;
+}
+
+/* Naples light sections: slate text, ochre-ink muted. Accent fills stay grenadine. */
+.mb-on-light {
+  color-scheme: light;
+  background-color: var(--mb-light);
+  color: var(--mb-slate);
+  --mb-ink: var(--mb-slate);
+  --mb-muted: var(--mb-ochre-ink);
+  --mb-tertiary: var(--mb-ochre-ink);
+  --mb-link: var(--mb-slate);
+  --mb-link-hover: var(--mb-ochre-ink);
+  --mb-line: var(--mb-slate-line);
+  --mb-line-strong: var(--mb-slate-line-strong);
+  --mb-accent-subtle: color-mix(in srgb, var(--mb-grenadine-deep) 12%, var(--mb-naples));
+  --mb-accent-muted: color-mix(in srgb, var(--mb-grenadine-deep) 20%, var(--mb-naples));
+  --mb-border-accent: color-mix(in srgb, var(--mb-slate) 28%, transparent);
+  --mb-focus-ring: color-mix(in srgb, var(--mb-slate) 30%, transparent);
+  --mb-selection-bg: color-mix(in srgb, var(--mb-ochre) 45%, var(--mb-naples));
+}
+
+/* Slate 2 panels/forms, including those sitting on a Naples band. */
+.mb-on-surface {
+  color-scheme: dark;
+  background-color: var(--mb-surface);
+  color: var(--mb-naples);
+  --mb-ink: var(--mb-naples);
+  --mb-muted: var(--mb-naples-muted);
+  --mb-tertiary: var(--mb-naples-faint);
+  --mb-link: var(--mb-grenadine);
+  --mb-link-hover: var(--mb-grenadine-light);
+  --mb-line: var(--mb-naples-line);
+  --mb-line-strong: var(--mb-naples-line-strong);
+  --mb-accent-subtle: color-mix(in srgb, var(--mb-grenadine) 16%, var(--mb-slate-2));
+  --mb-accent-muted: color-mix(in srgb, var(--mb-grenadine) 28%, var(--mb-slate-2));
+  --mb-border-accent: color-mix(in srgb, var(--mb-grenadine) 45%, transparent);
+  --mb-focus-ring: color-mix(in srgb, var(--mb-grenadine) 45%, transparent);
+  --mb-selection-bg: color-mix(in srgb, var(--mb-grenadine) 40%, var(--mb-slate));
+}
+
+.mb-root ::selection {
+  background-color: var(--mb-selection-bg);
+  color: var(--mb-ink);
+}
+
+.mb-root :focus-visible {
+  outline: 2px solid var(--mb-accent);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px var(--mb-focus-ring);
+  border-radius: var(--mb-radius-sm);
+}
+
+.mb-on-light :focus-visible {
+  outline-color: var(--mb-slate);
+}
+
+.mb-root select option {
+  background-color: var(--mb-surface);
+  color: var(--mb-naples);
+}
+
+.mb-root input,
+.mb-root select,
+.mb-root textarea {
+  background-color: var(--mb-surface);
+  color: var(--mb-naples);
+}
+
+.mb-root .mb-input:focus,
+.mb-root .mb-input:focus-visible {
+  outline: 2px solid var(--mb-accent);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px var(--mb-focus-ring);
+  border-color: var(--mb-accent);
+}
+
+/* Display: Big Shoulders for h1/h2/big numbers */
+.mb-display {
+  font-family: var(--font-display), "Big Shoulders", Impact, sans-serif;
+  font-weight: 800;
+  letter-spacing: var(--mb-tracking-display);
+  line-height: var(--mb-leading-tight);
+}
+
+/* Header wordmark (display, one size step below h3) */
+.mb-wordmark {
+  font-family: var(--font-display), "Big Shoulders", Impact, sans-serif;
+  font-weight: 800;
+  font-size: var(--mb-text-lg);
+  letter-spacing: var(--mb-tracking-display);
+  line-height: var(--mb-leading-tight);
+}
+
+@media (min-width: 640px) {
+  .mb-wordmark {
+    font-size: var(--mb-text-xl);
+  }
+}
+
+/* Placeholder / wireframe panel titles */
+.mb-preview-title {
+  font-family: var(--font-display), "Big Shoulders", Impact, sans-serif;
+  font-weight: 800;
+  font-size: var(--mb-text-sm);
+  letter-spacing: var(--mb-tracking-display);
+  line-height: var(--mb-leading-snug);
+  color: var(--mb-ink);
+}
+
+@media (min-width: 640px) {
+  .mb-preview-title {
+    font-size: var(--mb-text-base);
+  }
+}
+
+.mb-preview-lede {
+  font-family: var(--font-display), "Big Shoulders", Impact, sans-serif;
+  font-weight: 800;
+  font-size: var(--mb-text-base);
+  letter-spacing: var(--mb-tracking-display);
+  line-height: var(--mb-leading-snug);
+  color: var(--mb-ink);
+}
+
+@media (min-width: 640px) {
+  .mb-preview-lede {
+    font-size: var(--mb-text-lg);
+  }
+}
+
+/* Desktop / mobile nav links */
+.mb-nav-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding-inline: 0.75rem;
+  font-size: var(--mb-text-sm);
+  font-weight: 500;
+  color: var(--mb-muted);
+  transition: color 180ms ease;
+}
+
+.mb-nav-link:hover {
+  color: var(--mb-ink);
+}
+
+.mb-nav-link[aria-current="page"] {
+  font-weight: 700;
+  color: var(--mb-link);
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 8px;
+}
+
+.mb-nav-link-mobile {
+  flex: 1;
+  padding-inline: 0.375rem;
+  font-size: var(--mb-text-caption);
+  font-weight: 700;
+}
+
+@media (min-width: 640px) {
+  .mb-nav-link-mobile {
+    flex: none;
+    padding-inline: 0.75rem;
+    font-size: var(--mb-text-sm);
+  }
+}
+
+.mb-h1 {
+  font-family: var(--font-display), "Big Shoulders", Impact, sans-serif;
+  font-weight: 800;
+  font-size: var(--mb-text-2xl);
+  line-height: var(--mb-leading-tight);
+  letter-spacing: var(--mb-tracking-display);
+}
+
+.mb-h2 {
+  font-family: var(--font-display), "Big Shoulders", Impact, sans-serif;
+  font-weight: 800;
+  font-size: var(--mb-text-xl);
+  line-height: var(--mb-leading-snug);
+  letter-spacing: var(--mb-tracking-display);
+}
+
+.mb-h3 {
+  font-family: var(--font-display), "Big Shoulders", Impact, sans-serif;
+  font-weight: 800;
+  font-size: var(--mb-text-lg);
+  line-height: var(--mb-leading-snug);
+  letter-spacing: var(--mb-tracking-display);
+}
+
+.mb-lede {
+  max-width: var(--mb-measure);
+  font-size: var(--mb-text-md);
+  line-height: var(--mb-leading-body);
+  color: var(--mb-muted);
+}
+
+.mb-body {
+  max-width: var(--mb-measure);
+  font-size: var(--mb-text-base);
+  line-height: var(--mb-leading-body);
+  color: var(--mb-muted);
+}
+
+/* Sentence-case section labels (no all-caps eyebrows) */
+.mb-kicker {
+  font-size: var(--mb-text-sm);
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  color: var(--mb-link);
+  text-transform: none;
+}
+
+.mb-kicker-muted {
+  font-size: var(--mb-text-sm);
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  color: var(--mb-tertiary);
+  text-transform: none;
+}
+
+.mb-caption {
+  font-size: var(--mb-text-caption);
+  font-weight: 400;
+  line-height: 1.45;
+  color: var(--mb-tertiary);
+}
+
+.mb-num {
+  font-family: var(--font-display), "Big Shoulders", Impact, sans-serif;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: var(--mb-tracking-display);
+  color: var(--mb-link);
+}
+
+.mb-num-lg {
+  font-size: var(--mb-text-xl);
+  line-height: var(--mb-leading-tight);
+}
+
+.mb-step-title {
+  font-size: var(--mb-text-base);
+  font-weight: 700;
+  line-height: var(--mb-leading-snug);
+  color: var(--mb-ink);
+}
+
+.mb-fact-value {
+  font-size: var(--mb-text-sm);
+  font-weight: 700;
+  line-height: var(--mb-leading-snug);
+  color: var(--mb-ink);
+}
+
+.mb-faq-q {
+  font-size: var(--mb-text-base);
+  font-weight: 700;
+  line-height: var(--mb-leading-snug);
+  color: var(--mb-ink);
+}
+
+@media (min-width: 640px) {
+  .mb-faq-q {
+    font-size: var(--mb-text-md);
+  }
+}
+
+.mb-status-line {
+  font-size: var(--mb-text-sm);
+  font-weight: 700;
+  line-height: var(--mb-leading-snug);
+  color: var(--mb-link);
+}
+
+.mb-label {
+  display: block;
+  font-size: var(--mb-text-sm);
+  font-weight: 700;
+  color: var(--mb-ink);
+}
+
+.mb-ruled-note {
+  font-size: var(--mb-text-sm);
+  line-height: var(--mb-leading-body);
+  color: var(--mb-ink);
+}
+
+@media (min-width: 640px) {
+  .mb-ruled-note {
+    font-size: var(--mb-text-base);
+  }
+}
+
+.mb-back-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.375rem;
+  min-height: 44px;
+  min-width: 44px;
+  padding-inline: 0.25rem;
+  font-size: var(--mb-text-sm);
+  font-weight: 700;
+  color: var(--mb-muted);
+  text-decoration: underline;
+  text-decoration-color: var(--mb-line-strong);
+  text-underline-offset: 4px;
+  transition: color 180ms ease;
+}
+
+.mb-back-link:hover {
+  color: var(--mb-link);
+}
+
+.mb-jump-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-height: 44px;
+  min-width: 44px;
+  font-size: var(--mb-text-sm);
+  font-weight: 500;
+  color: var(--mb-ink);
+  transition: color 180ms ease;
+}
+
+.mb-jump-link:hover {
+  color: var(--mb-link);
+}
+
+.mb-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  column-gap: 0.75rem;
+  row-gap: 0.25rem;
+  font-size: var(--mb-text-caption);
+  font-weight: 500;
+  color: var(--mb-muted);
+}
+
+.mb-meta-sep {
+  color: var(--mb-line-strong);
+}
+
+/* Tech stack as a caption row (no pill clusters) */
+.mb-stack {
+  font-size: var(--mb-text-caption);
+  font-weight: 400;
+  line-height: 1.45;
+  color: var(--mb-tertiary);
+}
+
+.mb-stack-sep {
+  margin-inline: 0.35em;
+  color: var(--mb-line-strong);
+}
+
+/* Form fields: raised fill so inputs read against surface panels */
+.mb-root .mb-input {
+  background-color: var(--mb-raised);
+}
+
+.mb-on-light .mb-input {
+  background-color: var(--mb-surface);
+}
+
+/* Closing-band text link on Naples (slate ink) */
+.mb-on-light .mb-text-link {
+  color: var(--mb-slate);
+  text-decoration-color: var(--mb-slate-line-strong);
+}
+
+.mb-on-light .mb-text-link:hover {
+  color: var(--mb-ochre-ink);
+}
+
+/* Slate panels sitting inside a Naples band (home quote form): links go back to light-on-dark */
+.mb-on-light .mb-on-surface .mb-text-link,
+.mb-on-light .mb-on-surface .mb-inline-link {
+  color: var(--mb-naples);
+  text-decoration-color: var(--mb-naples-line-strong);
+}
+
+.mb-on-light .mb-on-surface .mb-text-link:hover,
+.mb-on-light .mb-on-surface .mb-inline-link:hover {
+  color: var(--mb-grenadine);
+}
+
+/* Form / quote surface: flat panel, no card border */
+.mb-panel {
+  background-color: var(--mb-surface);
+  padding: 1.25rem;
+}
+
+@media (min-width: 640px) {
+  .mb-panel {
+    padding: 2rem;
+  }
+}
+
+.mb-frame {
+  overflow: hidden;
+  border: 1px solid var(--mb-line-strong);
+  border-radius: 0;
+  background-color: var(--mb-surface);
+}
+
+/* Shared prose measure for body paragraphs in long-form sections */
+.mb-prose {
+  max-width: var(--mb-measure);
+  font-size: var(--mb-text-sm);
+  line-height: var(--mb-leading-body);
+  color: var(--mb-muted);
+}
+
+@media (min-width: 640px) {
+  .mb-prose {
+    font-size: var(--mb-text-base);
+  }
+}
+
+.mb-frame-chrome {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--mb-space-2);
+  border-bottom: 1px solid var(--mb-line);
+  background-color: var(--mb-raised);
+  padding: var(--mb-space-2) 0.875rem;
+  font-size: var(--mb-text-caption);
+  font-weight: 700;
+  color: var(--mb-muted);
+}
+
+/* Text inside typographic preview panels: caption size, no caption box */
+.mb-preview-note {
+  font-size: var(--mb-text-caption);
+  line-height: 1.5;
+  color: var(--mb-muted);
+}
+
+.mb-frame figcaption,
+.mb-frame .mb-caption {
+  border-top: 1px solid var(--mb-line);
+  background-color: var(--mb-raised);
+  padding: 0.625rem 0.875rem;
+  font-size: var(--mb-text-caption);
+  font-weight: 400;
+  line-height: 1.45;
+  color: var(--mb-muted);
+}
+
+.mb-shell {
+  margin-inline: auto;
+  max-width: 72rem;
+  padding-inline: 1rem;
+}
+
+.mb-page-intro {
+  padding-block: var(--mb-space-6) var(--mb-space-7);
+}
+
+@media (min-width: 640px) {
+  .mb-page-intro {
+    padding-block: var(--mb-space-7) var(--mb-space-8);
+  }
+}
+
+@media (min-width: 640px) {
+  .mb-shell {
+    padding-inline: 1.5rem;
+  }
+
+  .mb-h1 {
+    font-size: var(--mb-text-3xl);
+  }
+
+  .mb-h2 {
+    font-size: var(--mb-text-2xl);
+  }
+
+  .mb-section-pad {
+    padding-block: var(--mb-section-y-lg);
+  }
+}
+
+@media (min-width: 1024px) {
+  .mb-h1 {
+    font-size: var(--mb-text-4xl);
+  }
+}
+
+.mb-section-pad {
+  padding-block: var(--mb-section-y);
+}
+
+/* TODO / alert surfaces: ochre fill, left rule, square (no card chrome) */
+.mb-todo-box,
+.mb-alert {
+  background-color: var(--mb-ochre);
+  color: var(--mb-slate);
+  border: none;
+  border-left: 2px solid var(--mb-ochre-ink);
+  border-radius: 0;
+  padding: 1rem 1.125rem;
+  --mb-ink: var(--mb-slate);
+  --mb-muted: var(--mb-ochre-ink);
+  --mb-tertiary: var(--mb-ochre-ink);
+  --mb-link: var(--mb-slate);
+  --mb-link-hover: var(--mb-ochre-ink);
+  --mb-line: var(--mb-slate-line);
+  --mb-line-strong: var(--mb-slate-line-strong);
+}
+
+@media (min-width: 640px) {
+  .mb-todo-box,
+  .mb-alert {
+    padding: 1.25rem 1.375rem;
+  }
+}
+
+/* Primary button: grenadine, slate text, 4px radius */
+.mb-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 44px;
+  padding: 0.65rem 1.25rem;
+  border-radius: var(--mb-radius);
+  background-color: var(--mb-grenadine);
+  color: var(--mb-slate);
+  font-weight: 700;
+  font-size: var(--mb-text-sm);
+  line-height: 1.25;
+  border: 1px solid var(--mb-grenadine);
+  transition: background-color 180ms ease, border-color 180ms ease;
+}
+
+.mb-btn-primary:hover {
+  background-color: var(--mb-grenadine-light);
+  border-color: var(--mb-grenadine-light);
+  color: var(--mb-slate);
+}
+
+/* Secondary button: 1px outline */
+.mb-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 44px;
+  padding: 0.65rem 1.25rem;
+  border-radius: var(--mb-radius);
+  background-color: transparent;
+  color: var(--mb-ink);
+  font-weight: 700;
+  font-size: var(--mb-text-sm);
+  line-height: 1.25;
+  border: 1px solid var(--mb-line-strong);
+  transition: background-color 180ms ease, border-color 180ms ease;
+}
+
+.mb-btn-secondary:hover {
+  background-color: var(--mb-raised);
+  border-color: var(--mb-ink);
+}
+
+/* Secondary button on Naples closing bands */
+.mb-btn-secondary-inverse {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 44px;
+  padding: 0.65rem 1.25rem;
+  border-radius: var(--mb-radius);
+  background-color: transparent;
+  color: var(--mb-slate);
+  font-weight: 700;
+  font-size: var(--mb-text-sm);
+  line-height: 1.25;
+  border: 1px solid var(--mb-slate-line-strong);
+  transition: background-color 180ms ease, border-color 180ms ease, color 180ms ease;
+}
+
+.mb-btn-secondary-inverse:hover {
+  background-color: var(--mb-slate);
+  color: var(--mb-naples);
+  border-color: var(--mb-slate);
+}
+
+.mb-text-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  gap: 0.375rem;
+  font-size: var(--mb-text-sm);
+  font-weight: 700;
+  color: var(--mb-ink);
+  text-decoration: underline;
+  text-decoration-color: var(--mb-line-strong);
+  text-underline-offset: 4px;
+  transition: color 180ms ease;
+}
+
+.mb-text-link:hover {
+  color: var(--mb-link);
+}
+
+/* Mid-sentence links (email inside prose): underline always, hover colour only */
+.mb-inline-link {
+  font-weight: 700;
+  color: var(--mb-ink);
+  text-decoration: underline;
+  text-decoration-color: var(--mb-line-strong);
+  text-underline-offset: 4px;
+  transition: color 180ms ease;
+}
+
+.mb-inline-link:hover {
+  color: var(--mb-link);
+}
+
+.mb-on-light .mb-inline-link {
+  color: var(--mb-slate);
+  text-decoration-color: var(--mb-slate-line-strong);
+}
+
+.mb-on-light .mb-inline-link:hover {
+  color: var(--mb-ochre-ink);
+}
+
+/* Project / section titles: hover changes colour only */
+.mb-title-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: inherit;
+  transition: color 180ms ease;
+}
+
+.mb-title-link:hover {
+  color: var(--mb-link);
+}
+
+/* Form field errors: ochre type, no badge chip */
+.mb-field-error {
+  margin-top: 0.375rem;
+  font-size: var(--mb-text-sm);
+  font-weight: 700;
+  line-height: 1.45;
+  color: var(--mb-ochre);
+}
+
+/* Ruled dash lists (services, build notes) */
+.mb-dash-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.mb-dash-list > li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.625rem;
+  font-size: var(--mb-text-sm);
+  line-height: var(--mb-leading-body);
+  color: var(--mb-ink);
+}
+
+@media (min-width: 640px) {
+  .mb-dash-list > li {
+    font-size: var(--mb-text-base);
+  }
+}
+
+.mb-dash-list > li + li {
+  margin-top: 0.625rem;
+}
+
+.mb-dash-list > li > [data-mb-dash] {
+  flex-shrink: 0;
+  user-select: none;
+  color: var(--mb-link);
+}
+
+@keyframes mb-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.mb-spinner {
+  animation: mb-spin 0.85s linear infinite;
+  border-color: color-mix(in srgb, var(--mb-slate) 28%, transparent);
+  border-top-color: var(--mb-slate);
+}
+
+/* Restrained opacity reveal (below-the-fold via WarmMotionController) */
+[data-mb-reveal] {
+  transition: opacity 220ms ease;
+}
+
+[data-mb-reveal].mb-reveal-pending {
+  opacity: 0;
+}
+
+[data-mb-reveal].mb-reveal-in {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html:has(.mb-root) {
+    scroll-behavior: smooth;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mb-spinner {
+    animation: none !important;
+  }
+
+  .mb-btn-primary,
+  .mb-btn-secondary,
+  .mb-btn-secondary-inverse,
+  .mb-text-link,
+  .mb-inline-link,
+  .mb-title-link,
+  .mb-back-link,
+  .mb-jump-link,
+  .mb-nav-link,
+  [data-mb-reveal],
+  .group .mb-h3 {
+    transition: none !important;
+  }
+
+  [data-mb-reveal],
+  [data-mb-reveal].mb-reveal-pending {
+    opacity: 1 !important;
+  }
+}
+
+@media (min-width: 640px) {
+  .mb-root {
+    --mb-section-y: 5rem;
+  }
+}

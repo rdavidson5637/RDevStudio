@@ -1,13 +1,8 @@
 import Link from "next/link";
-import { Button } from "@/components/ui/Button";
-import { Section } from "@/components/ui/Section";
-import {
-  CONTENT_CREATION_FEATURES,
-  PRICING_FEATURES,
-  SOCIAL_MEDIA_FEATURES,
-  WHATSAPP_URL,
-} from "@/lib/constants";
-import { DRAFT_CTAS } from "@/lib/content/redesign-draft";
+import { CASE_STUDIES } from "@/components/studio/case-studies";
+import { STUDIO_WHATSAPP_URL, quoteHref } from "@/components/studio/content";
+import { ArrowRightIcon, WhatsAppIcon } from "@/components/studio/icons";
+import { PackageList } from "@/components/studio/PackageList";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata = createPageMetadata({
@@ -17,175 +12,149 @@ export const metadata = createPageMetadata({
   path: "/services/charities",
 });
 
+const CHARITY_SLUGS = ["shelterlink", "assisi", "crosskennan"] as const;
+
 export default function CharitiesServicesPage() {
+  const charityWork = CHARITY_SLUGS.map((slug) =>
+    CASE_STUDIES.find((study) => study.slug === slug),
+  ).filter((study): study is (typeof CASE_STUDIES)[number] => study !== undefined);
+
   return (
-    <div className="bg-studio-bg text-studio-text">
-      <Section className="border-b border-studio-line">
-        <p className="text-sm font-bold text-studio-muted">
-          <Link
-            href="/services"
-            className="underline decoration-studio-line underline-offset-4 hover:text-studio-text"
-          >
+    <div>
+      {/* Intro */}
+      <section className="mb-shell mb-page-intro max-w-6xl sm:px-6">
+        <nav aria-label="Breadcrumb" className="mb-meta gap-x-2">
+          <Link href="/services" className="mb-back-link">
             Services
-          </Link>{" "}
-          / Rescues and charities
-        </p>
-        <h1 className="display-lg mt-4 max-w-[16ch] text-balance text-studio-text">
-          Free packages for registered charities
-        </h1>
-        <p className="type-body mt-5 max-w-prose text-studio-muted">
-          Registered charities get the exact same website, social media, and content packages as paying clients at no fee. You own your domain, your content, and your code.
-        </p>
-        <p className="type-body mt-4 max-w-prose text-studio-muted">
-          Other animal rescues or community groups that are not yet registered: get in touch anyway and we will talk through what you need. No price is set in advance.
-        </p>
+          </Link>
+          <span aria-hidden="true" className="mb-meta-sep">
+            /
+          </span>
+          <span aria-current="page" className="inline-flex min-h-[44px] items-center font-semibold text-[var(--mb-ink)]">
+            Rescues and charities
+          </span>
+        </nav>
 
-        <div className="mt-8 flex flex-wrap items-center gap-6">
-          <Button href="/contact">{DRAFT_CTAS.charity}</Button>
-          <a
-            href={WHATSAPP_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex min-h-11 items-center text-base text-studio-text underline decoration-studio-line-strong underline-offset-4 hover:text-studio-accent"
-          >
-            {DRAFT_CTAS.lowCommitment}
-          </a>
+        <div className="mt-6 max-w-2xl">
+          <h1 className="mb-h1 max-w-[16ch] text-[var(--mb-ink)]">
+            Free packages for registered charities
+          </h1>
+          <p className="mb-lede mt-5">
+            Registered charities get the exact same website, social media, and content packages as paying clients at no fee. You own your domain, your content, and your code.
+          </p>
+          <p className="mb-body mt-4">
+            Other animal rescues or community groups that are not yet registered: get in touch anyway and we will talk through what you need.
+          </p>
+
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
+            <Link href={quoteHref("Charity or rescue")} className="mb-btn-primary w-full sm:w-auto">
+              Registered charity? Ask about free packages
+              <ArrowRightIcon className="h-4 w-4 shrink-0" />
+            </Link>
+            <a
+              href={STUDIO_WHATSAPP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mb-text-link"
+            >
+              <WhatsAppIcon className="h-4 w-4 shrink-0 text-[var(--mb-icon)]" />
+              Message me on WhatsApp
+            </a>
+          </div>
         </div>
-      </Section>
+      </section>
 
-      <Section
-        heading="Work built for Northern Ireland charities"
-        intro="My dog Rudi came from Assisi Animal Sanctuary, and my MSc dissertation at Queen's University Belfast started by asking what their staff actually needed. Crosskennan Lane is another sanctuary site with a preview online."
-        className="border-b border-studio-line"
+      {/* Charity work */}
+      <section
+        aria-labelledby="charity-work-heading"
+        className="border-t border-[var(--mb-line)] bg-[var(--mb-surface)]"
       >
-        <div className="mt-10 grid gap-8 md:grid-cols-2">
-          <article className="flex flex-col justify-between border border-studio-border bg-studio-surface p-6 md:p-8">
-            <div>
-              <p className="text-sm font-bold text-studio-muted">Ready for live use</p>
-              <h3 className="mt-2 font-studio-display text-3xl text-studio-text">
-                ShelterLink volunteer platform
-              </h3>
-              <p className="type-body mt-3 text-studio-muted">
-                Volunteer registration, shift scheduling, role allocation, CSV exports, and an admin dashboard built for Assisi Animal Sanctuary. Plain Node.js, Express, MySQL, and PicoCSS so there is nothing fragile to maintain.
-              </p>
-            </div>
-            <div className="mt-6 border-t border-studio-line pt-4">
-              <Link
-                href="/work/shelterlink"
-                className="inline-flex min-h-11 items-center text-sm font-bold text-studio-text underline decoration-studio-line-strong underline-offset-4 hover:text-studio-accent"
-              >
-                Read the ShelterLink case study
-              </Link>
-            </div>
-          </article>
+        <div className="mb-shell mb-section-pad max-w-6xl sm:px-6">
+          <div data-mb-reveal="true" className="max-w-2xl">
+            <p className="mb-kicker">Charity work</p>
+            <h2 id="charity-work-heading" className="mb-h2 mt-2 text-[var(--mb-ink)]">
+              Work built for Northern Ireland charities
+            </h2>
+            <p className="mb-body mt-3">
+              My dog Rudi came from Assisi Animal Sanctuary, and my MSc dissertation at Queen&apos;s University Belfast started by asking what their staff actually needed. Crosskennan Lane is another sanctuary site with a preview online.
+            </p>
+          </div>
 
-          <article className="flex flex-col justify-between border border-studio-border bg-studio-surface p-6 md:p-8">
-            <div>
-              <p className="text-sm font-bold text-studio-muted">Built - awaiting sign-off</p>
-              <h3 className="mt-2 font-studio-display text-3xl text-studio-text">
-                Assisi website and brand rebuild
-              </h3>
-              <p className="type-body mt-3 text-studio-muted">
-                A rebuilt website and visual identity for Assisi Animal Sanctuary in Belfast, designed so adopters, donors, and supporters can find what they need on a phone without hunting through menus. Built and awaiting their feedback.
-              </p>
-            </div>
-            <div className="mt-6 border-t border-studio-line pt-4">
-              <Link
-                href="/work/assisi"
-                className="inline-flex min-h-11 items-center text-sm font-bold text-studio-text underline decoration-studio-line-strong underline-offset-4 hover:text-studio-accent"
-              >
-                Read the Assisi case study
-              </Link>
-            </div>
-          </article>
-
-          <article className="flex flex-col justify-between border border-studio-border bg-studio-surface p-6 md:p-8 md:col-span-2">
-            <div>
-              <p className="text-sm font-bold text-studio-muted">Preview online</p>
-              <h3 className="mt-2 font-studio-display text-3xl text-studio-text">
-                Crosskennan Lane Animal Sanctuary
-              </h3>
-              <p className="type-body mt-3 text-studio-muted">
-                A charity site for a sanctuary near Antrim: adoption listings, volunteer forms
-                (including under-18), donate and ways to help. Vercel preview online. Formspree IDs
-                and some animal profiles still being finished.
-              </p>
-            </div>
-            <div className="mt-6 border-t border-studio-line pt-4">
-              <Link
-                href="/work/crosskennan"
-                className="inline-flex min-h-11 items-center text-sm font-bold text-studio-text underline decoration-studio-line-strong underline-offset-4 hover:text-studio-accent"
-              >
-                Read the Crosskennan case study
-              </Link>
-            </div>
-          </article>
+          <ol className="mt-10 divide-y divide-[var(--mb-line)] border-y border-[var(--mb-line)]">
+            {charityWork.map((study) => (
+              <li key={study.slug} data-mb-reveal="true" className="py-7">
+                <div className="grid gap-3 md:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] md:gap-10">
+                  <div className="min-w-0">
+                    <p className="mb-meta">
+                      <span className="font-semibold text-[var(--mb-link)]">{study.status}</span>
+                    </p>
+                    <h3 className="mb-h3 mt-2 text-[var(--mb-ink)]">
+                      <Link href={`/work/${study.slug}`} className="mb-title-link">
+                        {study.name}
+                      </Link>
+                    </h3>
+                  </div>
+                  <div className="min-w-0">
+                    <p className="mb-prose">{study.summary}</p>
+                    <Link href={`/work/${study.slug}`} className="mb-text-link mt-3">
+                      Read the case study
+                      <ArrowRightIcon className="h-4 w-4 shrink-0" />
+                    </Link>
+                  </div>
+                </div>
+              </li>
+            ))}
+          </ol>
         </div>
-      </Section>
+      </section>
 
-      <Section
-        heading="What a registered charity gets for £0"
-        intro="Same scope, same care, same ownership as a standard client job."
-        className="border-b border-studio-line"
+      {/* Packages */}
+      <section aria-labelledby="charity-packages-heading" className="border-t border-[var(--mb-line)]">
+        <div className="mb-shell mb-section-pad max-w-6xl sm:px-6">
+          <div data-mb-reveal="true" className="max-w-2xl">
+            <p className="mb-kicker">Packages</p>
+            <h2 id="charity-packages-heading" className="mb-h2 mt-2 text-[var(--mb-ink)]">
+              What a registered charity gets
+            </h2>
+            <p className="mb-body mt-3">
+              Same scope, same care, same ownership as a standard client job. No fee.
+            </p>
+          </div>
+          <PackageList tag="Free for registered charities" />
+        </div>
+      </section>
+
+      {/* Closing */}
+      <section
+        aria-labelledby="charity-close-heading"
+        className="mb-on-light bg-[var(--mb-light)] text-[var(--mb-ink)]"
       >
-        <div className="mt-10 grid gap-8 lg:grid-cols-3">
-          <article className="border border-studio-border bg-studio-surface p-6">
-            <h3 className="font-studio-display text-2xl text-studio-text">Website build</h3>
-            <p className="mt-2 font-studio-display text-4xl text-studio-text">£0</p>
-            <p className="mt-1 text-sm text-studio-muted">Registered charities (standard £650)</p>
-            <ul className="mt-5 border-t border-studio-line text-sm">
-              {PRICING_FEATURES.map((item) => (
-                <li key={item} className="border-b border-studio-line py-2.5 text-studio-muted">
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </article>
-
-          <article className="border border-studio-border bg-studio-surface p-6">
-            <h3 className="font-studio-display text-2xl text-studio-text">Social media</h3>
-            <p className="mt-2 font-studio-display text-4xl text-studio-text">£0</p>
-            <p className="mt-1 text-sm text-studio-muted">Registered charities (standard £150/mo)</p>
-            <ul className="mt-5 border-t border-studio-line text-sm">
-              {SOCIAL_MEDIA_FEATURES.map((item) => (
-                <li key={item} className="border-b border-studio-line py-2.5 text-studio-muted">
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </article>
-
-          <article className="border border-studio-border bg-studio-surface p-6">
-            <h3 className="font-studio-display text-2xl text-studio-text">Content batch</h3>
-            <p className="mt-2 font-studio-display text-4xl text-studio-text">£0</p>
-            <p className="mt-1 text-sm text-studio-muted">Registered charities (standard £200/project)</p>
-            <ul className="mt-5 border-t border-studio-line text-sm">
-              {CONTENT_CREATION_FEATURES.map((item) => (
-                <li key={item} className="border-b border-studio-line py-2.5 text-studio-muted">
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </article>
+        <div data-mb-reveal="true" className="mb-shell mb-section-pad max-w-6xl px-4 sm:px-6">
+          <div className="max-w-2xl border-t border-[var(--mb-line-strong)] pt-8">
+            <h2 id="charity-close-heading" className="mb-h2 text-[var(--mb-ink)]">
+              Tell me about your rescue or charity
+            </h2>
+            <p className="mb-body mt-3">
+              Mention your charity registration number (or tell me about your rescue if you are not registered) when you get in touch.
+            </p>
+            <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
+              <Link href={quoteHref("Charity or rescue")} className="mb-btn-primary w-full sm:w-auto">
+                Get in touch
+                <ArrowRightIcon className="h-4 w-4 shrink-0" />
+              </Link>
+              <a
+                href={STUDIO_WHATSAPP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mb-text-link"
+              >
+                <WhatsAppIcon className="h-4 w-4 shrink-0" />
+                Message me on WhatsApp
+              </a>
+            </div>
+          </div>
         </div>
-      </Section>
-
-      <Section
-        heading="Tell me about your rescue or charity"
-        intro="Mention your charity registration number (or tell me about your rescue if you are not registered) when you get in touch."
-      >
-        <div className="mt-8 flex flex-wrap items-center gap-6">
-          <Button href="/contact">Get in touch</Button>
-          <a
-            href={WHATSAPP_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex min-h-11 items-center text-base text-studio-text underline decoration-studio-line-strong underline-offset-4 hover:text-studio-accent"
-          >
-            {DRAFT_CTAS.lowCommitment}
-          </a>
-        </div>
-      </Section>
+      </section>
     </div>
   );
 }

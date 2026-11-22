@@ -1,24 +1,10 @@
 import { describe, expect, it } from "vitest";
-import {
-  PRICE_CARE_PLAN_GBP,
-  PRICE_CONTENT_GBP,
-  PRICE_SOCIAL_GBP,
-  PRICE_WEBSITE_GBP,
-} from "@/lib/constants";
 import { buildStructuredDataGraph } from "@/lib/structured-data";
 
 type Node = {
   "@type": string;
   "@id": string;
   [key: string]: unknown;
-};
-
-type PriceSpec = {
-  "@type": string;
-  price?: number;
-  minPrice?: number;
-  priceCurrency?: string;
-  unitCode?: string;
 };
 
 function nodesOf(graph: ReturnType<typeof buildStructuredDataGraph>): Node[] {
@@ -54,10 +40,6 @@ function referencedIds(value: unknown, acc: string[] = []): string[] {
   return acc;
 }
 
-function offerAmount(spec: PriceSpec): number | undefined {
-  return spec.price ?? spec.minPrice;
-}
-
 describe("structured data graph", () => {
   const graph = buildStructuredDataGraph();
   const nodes = nodesOf(graph);
@@ -87,37 +69,24 @@ describe("structured data graph", () => {
     }
   });
 
-  it("prices each offer from the public constants", () => {
+  it("lists each service offer without publishing a price", () => {
     const business = byType(nodes, "ProfessionalService");
     const offers = business.makesOffer as {
-      name: string;
-      priceSpecification: PriceSpec;
+      "@type": string;
+      itemOffered: { "@type": string; name: string };
+      priceSpecification?: unknown;
     }[];
 
-    const amount = (name: string) => {
-      const offer = offers.find((item) => item.name === name);
-      if (!offer) throw new Error(`missing offer ${name}`);
-      return offer;
-    };
-
-    const website = amount("Website build");
-    const care = amount("Care plan");
-    const social = amount("Social media");
-    const content = amount("Content");
-
-    expect(offerAmount(website.priceSpecification)).toBe(PRICE_WEBSITE_GBP);
-    expect(website.priceSpecification.priceCurrency).toBe("GBP");
-
-    expect(care.priceSpecification["@type"]).toBe("UnitPriceSpecification");
-    expect(care.priceSpecification.unitCode).toBe("MON");
-    expect(offerAmount(care.priceSpecification)).toBe(PRICE_CARE_PLAN_GBP);
-    expect(care.priceSpecification.priceCurrency).toBe("GBP");
-
-    expect(offerAmount(social.priceSpecification)).toBe(PRICE_SOCIAL_GBP);
-    expect(social.priceSpecification.priceCurrency).toBe("GBP");
-    expect(social.priceSpecification.unitCode).toBe("MON");
-
-    expect(offerAmount(content.priceSpecification)).toBe(PRICE_CONTENT_GBP);
-    expect(content.priceSpecification.priceCurrency).toBe("GBP");
+    expect(offers.map((offer) => offer.itemOffered.name)).toEqual([
+      "Website build",
+      "Care plan",
+      "Social media",
+      "Content",
+    ]);
+    for (const offer of offers) {
+      expect(offer["@type"]).toBe("Offer");
+      expect(offer.itemOffered["@type"]).toBe("Service");
+      expect(offer.priceSpecification).toBeUndefined();
+    }
   });
 });
