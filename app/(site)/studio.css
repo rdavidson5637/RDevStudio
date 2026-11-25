@@ -172,6 +172,28 @@
   line-height: var(--mb-leading-tight);
 }
 
+/* Homepage hero headline: the biggest type on the site, used once */
+.mb-hero-title {
+  font-family: var(--font-display), "Big Shoulders", Impact, sans-serif;
+  font-weight: 800;
+  font-size: clamp(2.75rem, 8vw, 5.75rem);
+  line-height: 0.95;
+  letter-spacing: var(--mb-tracking-display);
+  text-wrap: balance;
+}
+
+/* Stout Finder screenshot in the hero: square corners, one hairline, border state on hover */
+.mb-hero-shot {
+  border: 1px solid var(--mb-line-strong);
+  background-color: var(--mb-surface);
+  transition: border-color 180ms ease;
+}
+
+.mb-hero-shot:hover,
+.mb-hero-shot:focus-visible {
+  border-color: var(--mb-accent);
+}
+
 /* Header wordmark (display, one size step below h3) */
 .mb-wordmark {
   font-family: var(--font-display), "Big Shoulders", Impact, sans-serif;
@@ -325,7 +347,7 @@
   font-weight: 800;
   font-variant-numeric: tabular-nums;
   letter-spacing: var(--mb-tracking-display);
-  color: var(--mb-link);
+  color: var(--mb-ink);
 }
 
 .mb-num-lg {
@@ -596,7 +618,6 @@
   background-color: var(--mb-ochre);
   color: var(--mb-slate);
   border: none;
-  border-left: 2px solid var(--mb-ochre-ink);
   border-radius: 0;
   padding: 1rem 1.125rem;
   --mb-ink: var(--mb-slate);
@@ -793,19 +814,6 @@
   border-top-color: var(--mb-slate);
 }
 
-/* Restrained opacity reveal (below-the-fold via WarmMotionController) */
-[data-mb-reveal] {
-  transition: opacity 220ms ease;
-}
-
-[data-mb-reveal].mb-reveal-pending {
-  opacity: 0;
-}
-
-[data-mb-reveal].mb-reveal-in {
-  opacity: 1;
-}
-
 @media (prefers-reduced-motion: no-preference) {
   html:has(.mb-root) {
     scroll-behavior: smooth;
@@ -826,14 +834,8 @@
   .mb-back-link,
   .mb-jump-link,
   .mb-nav-link,
-  [data-mb-reveal],
   .group .mb-h3 {
     transition: none !important;
-  }
-
-  [data-mb-reveal],
-  [data-mb-reveal].mb-reveal-pending {
-    opacity: 1 !important;
   }
 }
 

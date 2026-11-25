@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRightIcon } from "@/components/studio/icons";
 import { SiteShell } from "@/components/studio/SiteChrome";
 import "./(site)/studio.css";
 
@@ -20,7 +19,6 @@ export default function NotFound() {
           <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:gap-6">
             <Link href="/" className="mb-btn-primary w-full sm:w-auto">
               Back to the homepage
-              <ArrowRightIcon className="h-4 w-4 shrink-0" />
             </Link>
             <Link href="/work" className="mb-text-link">
               Work

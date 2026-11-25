@@ -8,7 +8,6 @@ import {
 import { quoteHref, STUDIO_WHATSAPP_URL } from "@/components/studio/content";
 import {
   ArrowLeftIcon,
-  ArrowRightIcon,
   ExternalLinkIcon,
   WhatsAppIcon,
 } from "@/components/studio/icons";
@@ -101,7 +100,6 @@ function SectionBody({ section }: { section: CaseSection }) {
           ) : (
             <Link href={section.link.href} className="mb-text-link">
               {section.link.label}
-              <ArrowRightIcon className="h-4 w-4 shrink-0" />
             </Link>
           )}
         </div>
@@ -170,7 +168,6 @@ export function CaseStudyView({ slug }: { slug: string }) {
             ) : (
               <Link href={quote} className="mb-btn-primary w-full sm:w-auto">
                 Ask about a build like this
-                <ArrowRightIcon className="h-4 w-4 shrink-0" />
               </Link>
             )}
           </div>
@@ -245,7 +242,6 @@ export function CaseStudyView({ slug }: { slug: string }) {
                 <section
                   key={section.heading}
                   aria-labelledby={headingId}
-                  data-mb-reveal="true"
                   className={index > 0 ? "border-t border-[var(--mb-line)] pt-10" : undefined}
                 >
                   <p className="mb-kicker">
@@ -280,7 +276,6 @@ export function CaseStudyView({ slug }: { slug: string }) {
                 <p className="mb-prose">{study.related.relation}</p>
                 <Link href={`/work/${study.related.slug}`} className="mb-text-link">
                   Open {study.related.name}
-                  <ArrowRightIcon className="h-4 w-4 shrink-0" />
                 </Link>
               </div>
             ) : null}
@@ -290,7 +285,6 @@ export function CaseStudyView({ slug }: { slug: string }) {
           <aside className="space-y-8 lg:sticky lg:top-24">
             <section
               aria-labelledby="case-stack-heading"
-              data-mb-reveal="true"
               className="border-t border-[var(--mb-line-strong)] pt-5"
             >
               <h2 id="case-stack-heading" className="mb-h3 text-[var(--mb-ink)]">
@@ -312,7 +306,6 @@ export function CaseStudyView({ slug }: { slug: string }) {
 
             <section
               aria-labelledby="case-status-heading"
-              data-mb-reveal="true"
               className="border-t border-[var(--mb-line-strong)] pt-5"
             >
               <h2 id="case-status-heading" className="mb-h3 text-[var(--mb-ink)]">
@@ -324,7 +317,6 @@ export function CaseStudyView({ slug }: { slug: string }) {
 
             <section
               aria-labelledby="case-sidebar-cta-heading"
-              data-mb-reveal="true"
               className="mb-on-light border-l-2 border-[var(--mb-accent)] bg-[var(--mb-light)] p-5"
             >
               <h2 id="case-sidebar-cta-heading" className="mb-h3 text-[var(--mb-ink)]">
@@ -336,7 +328,6 @@ export function CaseStudyView({ slug }: { slug: string }) {
               <div className="mt-4">
                 <Link href={quote} className="mb-text-link w-fit">
                   Request a quote
-                  <ArrowRightIcon className="h-4 w-4 shrink-0" />
                 </Link>
               </div>
             </section>
@@ -351,7 +342,6 @@ export function CaseStudyView({ slug }: { slug: string }) {
       >
         <div className="mb-shell max-w-6xl py-12 sm:px-6">
           <div
-            data-mb-reveal="true"
             className="grid divide-y divide-[var(--mb-line)] border-y border-[var(--mb-line)] sm:grid-cols-2 sm:divide-x sm:divide-y-0"
           >
             <Link
@@ -374,7 +364,6 @@ export function CaseStudyView({ slug }: { slug: string }) {
             >
               <span className="mb-kicker-muted inline-flex items-center gap-1.5">
                 Next project
-                <ArrowRightIcon className="h-3.5 w-3.5 shrink-0" />
               </span>
               <span className="mb-h3 mt-2 text-[var(--mb-ink)] transition-colors group-hover:text-[var(--mb-link)]">
                 {next.name}
@@ -397,7 +386,7 @@ export function CaseStudyView({ slug }: { slug: string }) {
         aria-labelledby="case-close-heading"
         className="mb-on-light bg-[var(--mb-light)] text-[var(--mb-ink)]"
       >
-        <div data-mb-reveal="true" className="mb-shell mb-section-pad max-w-6xl px-4 sm:px-6">
+        <div className="mb-shell mb-section-pad max-w-6xl px-4 sm:px-6">
           <div className="max-w-2xl border-t border-[var(--mb-line-strong)] pt-8">
             <p className="mb-kicker-muted">Start a project</p>
             <h2 id="case-close-heading" className="mb-h2 mt-2 text-[var(--mb-ink)]">
@@ -410,7 +399,6 @@ export function CaseStudyView({ slug }: { slug: string }) {
             <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
               <Link href={quote} className="mb-btn-primary w-full sm:w-auto">
                 {study.closing?.cta ?? "Start a quote"}
-                <ArrowRightIcon className="h-4 w-4 shrink-0" />
               </Link>
               <a
                 href={STUDIO_WHATSAPP_URL}

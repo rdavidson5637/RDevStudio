@@ -5,7 +5,7 @@ import {
   STUDIO_WHATSAPP_URL,
   quoteHref,
 } from "@/components/studio/content";
-import { ArrowRightIcon, WhatsAppIcon } from "@/components/studio/icons";
+import { WhatsAppIcon } from "@/components/studio/icons";
 import { PackageList } from "@/components/studio/PackageList";
 import { createPageMetadata } from "@/lib/metadata";
 
@@ -63,7 +63,6 @@ export default function LocalBusinessesServicesPage() {
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
               <Link href={quoteHref("New website")} className="mb-btn-primary w-full sm:w-auto">
                 Get a fixed quote
-                <ArrowRightIcon className="h-4 w-4 shrink-0" />
               </Link>
               <a
                 href={STUDIO_WHATSAPP_URL}
@@ -97,7 +96,7 @@ export default function LocalBusinessesServicesPage() {
         className="border-t border-[var(--mb-line)] bg-[var(--mb-surface)]"
       >
         <div className="mb-shell mb-section-pad max-w-6xl sm:px-6">
-          <div data-mb-reveal="true" className="max-w-2xl">
+          <div className="max-w-2xl">
             <p className="mb-kicker">Who this is for</p>
             <h2 id="niches-heading" className="mb-h2 mt-2 text-[var(--mb-ink)]">
               Four niches I build for often
@@ -109,7 +108,7 @@ export default function LocalBusinessesServicesPage() {
 
           <ul className="mt-10 divide-y divide-[var(--mb-line)] border-y border-[var(--mb-line)]">
             {LOCAL_NICHES.map((niche) => (
-              <li key={niche.slug} data-mb-reveal="true">
+              <li key={niche.slug}>
                 <Link
                   href={quoteHref("New website")}
                   className="group flex min-h-[44px] items-baseline justify-between gap-6 py-5"
@@ -120,7 +119,6 @@ export default function LocalBusinessesServicesPage() {
                     </span>
                     <span className="mb-prose mt-1 block">{niche.line}</span>
                   </span>
-                  <ArrowRightIcon className="h-4 w-4 shrink-0 text-[var(--mb-tertiary)] transition-colors group-hover:text-[var(--mb-link)]" />
                 </Link>
               </li>
             ))}
@@ -131,7 +129,7 @@ export default function LocalBusinessesServicesPage() {
       {/* Packages */}
       <section aria-labelledby="packages-heading" className="border-t border-[var(--mb-line)]">
         <div className="mb-shell mb-section-pad max-w-6xl sm:px-6">
-          <div data-mb-reveal="true" className="max-w-2xl">
+          <div className="max-w-2xl">
             <p className="mb-kicker">Packages</p>
             <h2 id="packages-heading" className="mb-h2 mt-2 text-[var(--mb-ink)]">
               Packages for small businesses
@@ -149,7 +147,7 @@ export default function LocalBusinessesServicesPage() {
         aria-labelledby="build-heading"
         className="mb-on-light border-y border-[var(--mb-line)] bg-[var(--mb-light)]"
       >
-        <div data-mb-reveal="true" className="mb-shell mb-section-pad max-w-6xl sm:px-6">
+        <div className="mb-shell mb-section-pad max-w-6xl sm:px-6">
           <p className="mb-kicker">How a build runs</p>
           <h2 id="build-heading" className="mb-h2 mt-2 text-[var(--mb-ink)]">
             About a week, once your text and photos are in
@@ -173,7 +171,7 @@ export default function LocalBusinessesServicesPage() {
 
       {/* Examples */}
       <section aria-labelledby="examples-heading">
-        <div data-mb-reveal="true" className="mb-shell mb-section-pad max-w-6xl sm:px-6">
+        <div className="mb-shell mb-section-pad max-w-6xl sm:px-6">
           <div className="max-w-2xl border-t border-[var(--mb-line-strong)] pt-8">
             <h2 id="examples-heading" className="mb-h2 text-[var(--mb-ink)]">
               See examples of local business sites
@@ -184,7 +182,6 @@ export default function LocalBusinessesServicesPage() {
             <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:gap-6">
               <Link href={quoteHref("New website")} className="mb-btn-primary w-full sm:w-auto">
                 Get a fixed quote
-                <ArrowRightIcon className="h-4 w-4 shrink-0" />
               </Link>
               <Link href="/work/rvs-cold-brew" className="mb-text-link">
                 RV&apos;s Cold Brew case study

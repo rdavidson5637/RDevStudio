@@ -2,7 +2,6 @@ import Link from "next/link";
 import { CASE_STUDIES } from "@/components/studio/case-studies";
 import { STUDIO_WHATSAPP_URL } from "@/components/studio/content";
 import {
-  ArrowRightIcon,
   ExternalLinkIcon,
   WhatsAppIcon,
 } from "@/components/studio/icons";
@@ -58,7 +57,6 @@ export default function WorkPage() {
       <section className="border-t border-[var(--mb-line)] bg-[var(--mb-surface)]">
         <article
           id={featured.slug}
-          data-mb-reveal="true"
           className="mb-shell mb-section-pad max-w-6xl scroll-mt-24 space-y-8 sm:px-6"
         >
           <div className="space-y-5">
@@ -92,7 +90,6 @@ export default function WorkPage() {
             <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
               <Link href={`/work/${featured.slug}`} className="mb-btn-primary w-full sm:w-auto">
                 Read case study
-                <ArrowRightIcon className="h-4 w-4 shrink-0" />
               </Link>
               {featured.link?.external ? (
                 <a
@@ -133,7 +130,6 @@ export default function WorkPage() {
               <li
                 key={study.slug}
                 id={study.slug}
-                data-mb-reveal="true"
                 className="scroll-mt-24 py-10 sm:py-12"
               >
                 <article>
@@ -156,7 +152,7 @@ export default function WorkPage() {
         className="border-t border-[var(--mb-line)] bg-[var(--mb-surface)]"
       >
         <div className="mb-shell mb-section-pad max-w-6xl sm:px-6">
-          <div data-mb-reveal="true" className="max-w-2xl">
+          <div className="max-w-2xl">
             <p className="mb-kicker">Not client work</p>
             <h2 id="concept-heading" className="mb-h2 mt-2 text-[var(--mb-ink)]">
               Concept builds and prototypes
@@ -171,7 +167,6 @@ export default function WorkPage() {
               <li
                 key={study.slug}
                 id={study.slug}
-                data-mb-reveal="true"
                 className="scroll-mt-24 py-10 sm:py-12"
               >
                 <article>
@@ -190,7 +185,6 @@ export default function WorkPage() {
       {/* Lab pointer */}
       <section className="border-t border-[var(--mb-line)] bg-[var(--mb-bg)]">
         <div
-          data-mb-reveal="true"
           className="mb-shell mb-section-pad max-w-6xl sm:px-6"
         >
           <div className="grid gap-4 md:grid-cols-[minmax(0,1fr)_auto] md:items-end md:gap-10">
@@ -202,7 +196,6 @@ export default function WorkPage() {
             </div>
             <Link href="/lab" className="mb-text-link w-fit">
               Play something I built
-              <ArrowRightIcon className="h-4 w-4 shrink-0" />
             </Link>
           </div>
         </div>
@@ -213,7 +206,7 @@ export default function WorkPage() {
         aria-labelledby="work-cta-heading"
         className="mb-on-light bg-[var(--mb-light)] text-[var(--mb-ink)]"
       >
-        <div data-mb-reveal="true" className="mb-shell mb-section-pad max-w-6xl px-4 sm:px-6">
+        <div className="mb-shell mb-section-pad max-w-6xl px-4 sm:px-6">
           <div className="max-w-2xl border-t border-[var(--mb-line-strong)] pt-8">
             <p className="mb-kicker-muted">Have a project in mind?</p>
             <h2 id="work-cta-heading" className="mb-h2 mt-2 text-[var(--mb-ink)]">
@@ -225,7 +218,6 @@ export default function WorkPage() {
             <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
               <Link href="/contact" className="mb-btn-primary w-full sm:w-auto">
                 Start a quote
-                <ArrowRightIcon className="h-4 w-4 shrink-0" />
               </Link>
               <a
                 href={STUDIO_WHATSAPP_URL}

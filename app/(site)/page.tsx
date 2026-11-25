@@ -1,192 +1,260 @@
+import Image from "next/image";
 import Link from "next/link";
-import { CASE_STUDIES, HOME_CASE_SLUGS } from "@/components/studio/case-studies";
-import {
-  STUDIO_RHYTHM,
-  STUDIO_SERVICES,
-  STUDIO_WHATSAPP_URL,
-  quoteHref,
-} from "@/components/studio/content";
-import { ArrowRightIcon, WhatsAppIcon } from "@/components/studio/icons";
-import { LocalTimeChip } from "@/components/studio/LocalTimeChip";
-import { ProjectRow } from "@/components/studio/ProjectRow";
+import { CASE_STUDIES, type CaseStudy } from "@/components/studio/case-studies";
+import { STUDIO_RHYTHM, STUDIO_WHATSAPP_URL } from "@/components/studio/content";
+import { WhatsAppIcon } from "@/components/studio/icons";
+import { ProjectPreview } from "@/components/studio/ProjectVisual";
 import { QuoteForm } from "@/components/studio/QuoteForm";
 import { CONTACT_EMAIL } from "@/lib/constants";
+import { GAMES_CATALOG } from "@/lib/games-catalog";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata = createPageMetadata({
-  title: "Websites for NI businesses and rescues, built in Carrickfergus",
+  title: "Stout Finder, ShelterLink and Rondo, built in Carrickfergus",
   description:
-    "RDev Studio designs and builds websites for Northern Ireland small businesses and animal rescues. Fixed quotes, free packages for registered charities, based in Carrickfergus.",
+    "RDev Studio is Ryan Davidson in Carrickfergus. He built Stout Finder, ShelterLink for Assisi Animal Sanctuary and Rondo for grassroots football, and builds websites for NI businesses, charities and rescues. Free for registered charities.",
   path: "/",
 });
 
-const HOME_PROJECTS = HOME_CASE_SLUGS.map((slug) =>
-  CASE_STUDIES.find((study) => study.slug === slug),
-).filter((study): study is (typeof CASE_STUDIES)[number] => study !== undefined);
+const STOUT_FINDER_URL = "https://stoutfinder.com";
+
+/** Order Ryan asked for: own product in the hero, then these, then games. */
+const WORK_SLUGS = ["shelterlink", "rondo", "crosskennan", "rvs-cold-brew", "assisi"] as const;
+
+const WORK = WORK_SLUGS.map((slug) => CASE_STUDIES.find((study) => study.slug === slug)).filter(
+  (study): study is CaseStudy => study !== undefined,
+);
+
+const GAME_NAMES: Record<string, string> = {
+  "champions-draft": "Champions Draft",
+  "rugby-draft": "Rugby Draft",
+  "pub-quiz": "Pub Quiz",
+};
+
+const HANDOVER = [
+  { term: "The domain", detail: "It's yours, not mine." },
+  { term: "The content", detail: "Every word and photo on the site." },
+  { term: "The code", detail: "Handed over at launch along with the site." },
+  {
+    term: "After launch",
+    detail: "An optional care plan if you want me to keep it updated. Nothing more to pay if you don't.",
+  },
+] as const;
+
+function WorkRow({ study, flip }: { study: CaseStudy; flip: boolean }) {
+  const live = study.link?.external ? study.link : undefined;
+
+  return (
+    <article className="grid gap-8 md:grid-cols-12 md:items-center md:gap-10">
+      <div className={`min-w-0 md:col-span-7 ${flip ? "md:order-2" : ""}`}>
+        <ProjectPreview study={study} size="compact" />
+      </div>
+
+      <div className={`min-w-0 md:col-span-5 ${flip ? "md:order-1" : ""}`}>
+        <h3 className="mb-h3 text-[var(--mb-ink)]">
+          <Link href={`/work/${study.slug}`} className="mb-title-link">
+            {study.name}
+          </Link>
+        </h3>
+        <p className="mb-caption mt-1 text-[var(--mb-tertiary)]">
+          {study.context}. {study.status}.
+        </p>
+        <p className="mb-prose mt-4">{study.summary}</p>
+
+        <div className="mt-5 flex flex-wrap items-center gap-x-6 gap-y-2">
+          {live ? (
+            <a href={live.href} target="_blank" rel="noopener noreferrer" className="mb-text-link">
+              {live.label}
+              <span className="sr-only"> (opens in a new tab)</span>
+            </a>
+          ) : null}
+          <Link
+            href={`/work/${study.slug}`}
+            className="mb-text-link text-[var(--mb-muted)]"
+            aria-label={`How I built ${study.name}`}
+          >
+            How I built it
+          </Link>
+        </div>
+      </div>
+    </article>
+  );
+}
 
 export default function HomePage() {
   return (
     <div>
-      {/* Hero */}
-      <section className="mb-shell mb-page-intro max-w-6xl sm:px-6">
-        <LocalTimeChip />
+      {/* 1. Hero: the named work, then Stout Finder as the one big thing on the page */}
+      <section
+        aria-labelledby="hero-heading"
+        className="mb-shell mb-page-intro grid max-w-6xl gap-10 sm:px-6 lg:grid-cols-12 lg:gap-x-12 lg:gap-y-10"
+      >
+        <div className="lg:col-span-7 lg:row-start-1">
+          <h1 id="hero-heading" className="mb-hero-title max-w-[16ch] text-[var(--mb-ink)]">
+            Stout Finder, ShelterLink and Rondo were all built in Carrickfergus.
+          </h1>
+          <p className="mb-lede mt-6 max-w-[var(--mb-measure)]">
+            I&apos;m Ryan Davidson. I design and build websites and web apps for Northern Ireland
+            businesses, charities and rescues. Registered charities get theirs free.
+          </p>
+        </div>
 
-        <div className="mt-10 grid gap-10 lg:grid-cols-[minmax(0,1.35fr)_minmax(0,0.65fr)] lg:items-end lg:gap-14">
-          <div>
-            <h1 className="mb-h1 max-w-[20ch] text-[var(--mb-ink)]">
-              RDev Studio designs and builds websites and digital products.
-            </h1>
+        <a
+          href={STOUT_FINDER_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mb-hero-shot block w-full max-w-[420px] lg:col-span-5 lg:col-start-8 lg:row-span-2 lg:row-start-1 lg:justify-self-end"
+          aria-label="Open stoutfinder.com in a new tab"
+        >
+          <Image
+            src="/images/stout-finder/home-390.png"
+            alt="Stout Finder home page on a phone: who has Beamish on, with a stout picker and a map of pubs around Belfast."
+            width={390}
+            height={844}
+            sizes="(max-width: 1024px) 420px, 420px"
+            priority
+            className="block h-auto w-full"
+          />
+        </a>
 
-            <p className="mb-lede mt-6">
-              One person in Carrickfergus, Northern Ireland, building websites, social and content for small businesses and charities. You deal with me from first note to launch.
-            </p>
-
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
-              <a href="#quote" className="mb-btn-primary w-full sm:w-auto">
-                Start a quote
-                <ArrowRightIcon className="h-4 w-4 shrink-0" />
-              </a>
-
-              <Link href="/work" className="mb-text-link px-1">
-                See the work
-                <ArrowRightIcon className="h-4 w-4 shrink-0" />
-              </Link>
-            </div>
-          </div>
-
-          <div className="border-t border-[var(--mb-line-strong)] pt-6 lg:border-l lg:border-t-0 lg:pl-8 lg:pt-0">
-            <p className="mb-kicker-muted">Who this is for</p>
-            <ul className="mt-4 divide-y divide-[var(--mb-line)] border-y border-[var(--mb-line)]">
-              <li className="mb-fact-value py-3">Small businesses</li>
-              <li className="mb-fact-value py-3">Charities and rescues</li>
-              <li className="mb-fact-value py-3">Trades, cafes and salons</li>
-            </ul>
+        <div className="lg:col-span-7 lg:row-start-2 lg:self-end">
+          <p className="mb-h3 text-[var(--mb-ink)]">Stout Finder</p>
+          <p className="mb-prose mt-2 max-w-[var(--mb-measure)]">
+            My own site. It shows which stouts are on in which pub, from pints people log
+            themselves.
+          </p>
+          <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
+            <a
+              href={STOUT_FINDER_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mb-btn-secondary w-full sm:w-auto"
+            >
+              Open Stout Finder
+              <span className="sr-only"> (opens in a new tab)</span>
+            </a>
+            <a href="#quote" className="mb-btn-primary w-full sm:w-auto">
+              Ask me for a quote
+            </a>
           </div>
         </div>
       </section>
 
-      {/* Recent work */}
+      {/* 2. Client work: alternating rows, real screens where approved */}
       <section
         id="work"
         aria-labelledby="work-heading"
-        className="border-t border-[var(--mb-line)]"
+        className="mb-section-pad scroll-mt-24 border-t border-[var(--mb-line)]"
       >
-        <div className="mb-shell mb-page-intro max-w-6xl scroll-mt-24 pb-0 sm:px-6 sm:pb-0">
-          <div
-            data-mb-reveal="true"
-            className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between"
-          >
-            <div>
-              <p className="mb-kicker">Recent work</p>
-              <h2 id="work-heading" className="mb-h2 mt-2 text-[var(--mb-ink)]">
-                Client, charity and coaching builds
-              </h2>
-            </div>
+        <div className="mb-shell max-w-6xl sm:px-6">
+          <h2 id="work-heading" className="mb-h2 max-w-[22ch] text-[var(--mb-ink)]">
+            Built for Assisi, Crosskennan Lane and Grove United 3rds
+          </h2>
+          <p className="mb-body mt-4 max-w-[var(--mb-measure)]">
+            Sanctuaries, a football team and a cold brew counter in the Great Northern Mall. Each one
+            links to the real thing where it&apos;s public.
+          </p>
 
-            <Link href="/work" className="mb-text-link w-fit shrink-0">
-              All work, including concept builds
-              <ArrowRightIcon className="h-4 w-4 shrink-0" />
-            </Link>
-          </div>
-        </div>
-
-        <ol className="mt-8 border-t border-[var(--mb-line)] sm:mt-10">
-          {HOME_PROJECTS.map((study, index) => (
-            <li
-              key={study.slug}
-              data-mb-reveal="true"
-              className={
-                index === 0
-                  ? "border-b border-[var(--mb-line)] bg-[var(--mb-surface)]"
-                  : "border-b border-[var(--mb-line)]"
-              }
-            >
-              <div className="mb-shell max-w-6xl py-10 sm:px-6 sm:py-12">
-                <ProjectRow
-                  study={study}
-                  number={`0${index + 1}`}
-                  imageFirst={index % 2 === 1}
-                  featured={index === 0}
-                />
-              </div>
-            </li>
-          ))}
-        </ol>
-      </section>
-
-      {/* Services and process */}
-      <section
-        id="services"
-        aria-labelledby="services-heading"
-        className="mb-on-light border-t border-[var(--mb-line)] bg-[var(--mb-light)]"
-      >
-        <div className="mb-shell mb-section-pad max-w-6xl scroll-mt-24 sm:px-6">
-          <div
-            data-mb-reveal="true"
-            className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between"
-          >
-            <div className="max-w-2xl">
-              <p className="mb-kicker">Services</p>
-              <h2 id="services-heading" className="mb-h2 mt-2 text-[var(--mb-ink)]">
-                Websites, social and content, explained plainly
-              </h2>
-              <p className="mb-body mt-3">
-                Every job gets a fixed quote in writing after a quick chat, so you know where you stand before anything starts.
-              </p>
-            </div>
-
-            <Link href="/services" className="mb-text-link w-fit shrink-0">
-              Full services guide
-              <ArrowRightIcon className="h-4 w-4 shrink-0" />
-            </Link>
-          </div>
-
-          <ol className="mt-10 divide-y divide-[var(--mb-line)] border-y border-[var(--mb-line)]">
-            {STUDIO_SERVICES.map((service, index) => (
-              <li key={service.id} data-mb-reveal="true" className="py-6 sm:py-7">
-                <div className="grid gap-4 md:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)] md:items-start md:gap-10">
-                  <div className="min-w-0">
-                    <div className="mb-meta">
-                      <span className="tabular-nums font-semibold text-[var(--mb-link)]">
-                        0{index + 1}
-                      </span>
-                      <span aria-hidden="true" className="mb-meta-sep">
-                        /
-                      </span>
-                      <span className="text-[var(--mb-tertiary)]">{service.tag}</span>
-                    </div>
-                    <h3 className="mb-h3 mt-2 text-[var(--mb-ink)]">{service.title}</h3>
-                    <p className="mb-prose mt-2">{service.summary}</p>
-                    <Link href={quoteHref(service.quoteTopic)} className="mb-text-link mt-4">
-                      Ask for a quote on this
-                      <ArrowRightIcon className="h-4 w-4 shrink-0" />
-                    </Link>
-                  </div>
-
-                  <ul className="mb-dash-list border-t border-[var(--mb-line)] pt-4 md:border-l md:border-t-0 md:pl-8 md:pt-0">
-                    {service.bullets.map((bullet) => (
-                      <li key={bullet}>
-                        <span aria-hidden="true" data-mb-dash>
-                          -
-                        </span>
-                        <span>{bullet}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+          <ol className="mt-12 space-y-16 sm:space-y-20">
+            {WORK.map((study, index) => (
+              <li key={study.slug}>
+                <WorkRow study={study} flip={index % 2 === 1} />
               </li>
             ))}
+
+            {/* TODO(ryan): MGSL hub screenshots and a line on what the hub does */}
+            <li>
+              <article className="grid gap-8 md:grid-cols-12 md:items-center md:gap-10">
+                <div className="min-w-0 md:col-span-7">
+                  <div className="mb-todo-box flex aspect-[16/10] items-center justify-center p-6 text-center">
+                    PHOTO NEEDED: MGSL hub, a screen from inside after logging in
+                  </div>
+                </div>
+                <div className="min-w-0 md:col-span-5">
+                  <h3 className="mb-h3 text-[var(--mb-ink)]">MGSL hub</h3>
+                  <p className="mb-caption mt-1 text-[var(--mb-tertiary)]">
+                    MGSL, the music and video brand I run with friends. Password protected.
+                  </p>
+                  <p className="mb-prose mt-4">TODO: one line from Ryan on what the hub does.</p>
+                </div>
+              </article>
+            </li>
           </ol>
 
-          <div data-mb-reveal="true" className="mt-16 border-t border-[var(--mb-line-strong)] pt-12">
-            <h3 className="mb-h3 text-[var(--mb-ink)]">How a project runs</h3>
-            <ol className="mt-8 divide-y divide-[var(--mb-line)] border-y border-[var(--mb-line)]">
+          <Link href="/work" className="mb-text-link mt-14">
+            Every project, including concept builds for trades and a salon
+          </Link>
+        </div>
+      </section>
+
+      {/* 3. Games: a plain ruled list, small real screenshots */}
+      <section
+        id="games"
+        aria-labelledby="games-heading"
+        className="mb-page-intro scroll-mt-24 border-t border-[var(--mb-line)]"
+      >
+        <div className="mb-shell grid max-w-6xl gap-10 sm:px-6 lg:grid-cols-12">
+          <div className="lg:col-span-4">
+            <h2 id="games-heading" className="mb-h2 text-[var(--mb-ink)]">
+              Games I made that run in your browser
+            </h2>
+            <p className="mb-body mt-4">
+              Free to play, no sign-up. The Lab has the rest, including Longest Word and the Draft
+              Analyser.
+            </p>
+            <Link href="/lab" className="mb-text-link mt-5">
+              Everything in the Lab
+            </Link>
+          </div>
+
+          <ul className="divide-y divide-[var(--mb-line)] border-y border-[var(--mb-line)] lg:col-span-8">
+            {GAMES_CATALOG.map((game) => {
+              const name = GAME_NAMES[game.id] ?? game.title;
+              return (
+                <li key={game.id} className="grid grid-cols-[7rem_minmax(0,1fr)] items-center gap-5 py-5 sm:grid-cols-[10rem_minmax(0,1fr)_auto] sm:gap-6">
+                  <Image
+                    src={game.screenshotSrc}
+                    alt={`${name} screenshot`}
+                    width={1024}
+                    height={576}
+                    sizes="160px"
+                    className="aspect-[16/9] w-full border border-[var(--mb-line)] object-cover"
+                  />
+                  <div className="min-w-0">
+                    <h3 className="mb-step-title text-[var(--mb-ink)]">{name}</h3>
+                    <p className="mb-prose mt-1">{game.description}</p>
+                  </div>
+                  <Link
+                    href={game.href}
+                    className="mb-text-link col-span-2 sm:col-span-1 sm:justify-self-end"
+                  >
+                    Play {name}
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+      </section>
+
+      {/* 4. How a job runs (a real sequence) and what you own at the end */}
+      <section
+        id="process"
+        aria-labelledby="process-heading"
+        className="mb-section-pad scroll-mt-24 border-t border-[var(--mb-line)] bg-[var(--mb-surface)]"
+      >
+        <div className="mb-shell grid max-w-6xl gap-12 sm:px-6 lg:grid-cols-12 lg:gap-14">
+          <div className="lg:col-span-7">
+            <h2 id="process-heading" className="mb-h2 max-w-[20ch] text-[var(--mb-ink)]">
+              A fixed quote in writing, half up front, half at launch
+            </h2>
+            <ol className="mt-10 divide-y divide-[var(--mb-line)] border-y border-[var(--mb-line)]">
               {STUDIO_RHYTHM.map((item) => (
                 <li
                   key={item.step}
-                  className="grid gap-2 py-5 sm:grid-cols-[4.5rem_minmax(0,1fr)] sm:items-baseline sm:gap-6"
+                  className="grid gap-2 py-5 sm:grid-cols-[3.5rem_minmax(0,1fr)] sm:items-baseline sm:gap-6"
                 >
-                  <span className="mb-num mb-num-lg">{item.step}</span>
+                  <span className="mb-num">{Number(item.step)}</span>
                   <div className="min-w-0 max-w-[var(--mb-measure)]">
                     <p className="mb-step-title">{item.title}</p>
                     <p className="mb-prose mt-1.5">{item.body}</p>
@@ -195,112 +263,107 @@ export default function HomePage() {
               ))}
             </ol>
           </div>
-        </div>
-      </section>
 
-      {/* About */}
-      <section
-        id="about"
-        aria-labelledby="about-heading"
-        className="border-t border-[var(--mb-line)] bg-[var(--mb-bg)]"
-      >
-        <div
-          data-mb-reveal="true"
-          className="mb-shell mb-section-pad grid max-w-6xl scroll-mt-24 gap-10 px-4 sm:px-6 lg:grid-cols-[1.15fr_0.85fr] lg:items-start lg:gap-14"
-        >
-          <div>
-            <p className="mb-kicker">About</p>
-            <h2 id="about-heading" className="mb-h2 mt-2 text-[var(--mb-ink)]">
-              Local to Carrickfergus, built for real-world use
-            </h2>
-            <p className="mb-body mt-5">
-              I&apos;m Ryan Davidson. RDev Studio is me: one person designing and building for Northern Ireland small businesses, trades, community projects and charities, from first note to launch.
-            </p>
-            <p className="mb-body mt-4">
-              I keep things clear and maintainable: phone-first layouts, plain-English copy, honest scope, and code you own outright once it goes live.
-            </p>
-            <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-1">
-              <Link href="/about" className="mb-text-link">
-                More about me
-                <ArrowRightIcon className="h-4 w-4 shrink-0" />
-              </Link>
-              <Link href="/lab" className="mb-text-link text-[var(--mb-muted)]">
-                Games and free tools in the Lab
-              </Link>
-            </div>
-          </div>
-
-          <div className="border-t border-[var(--mb-line-strong)] pt-6 lg:border-t-0 lg:pt-0">
-            <h3 className="mb-kicker-muted">What you can expect</h3>
-            <dl className="mt-4 divide-y divide-[var(--mb-line)] border-y border-[var(--mb-line)]">
-              <div className="py-4">
-                <dt className="mb-label">Direct contact</dt>
-                <dd className="mb-prose mt-1">You deal with me, not an account manager.</dd>
-              </div>
-              <div className="py-4">
-                <dt className="mb-label">Built for phones first</dt>
-                <dd className="mb-prose mt-1">Checked on a real handset before launch.</dd>
-              </div>
-              <div className="py-4">
-                <dt className="mb-label">Charities and rescues</dt>
-                <dd className="mb-prose mt-1">
-                  Registered charities get their site free. Other rescues: get in touch.
-                </dd>
-              </div>
+          <div className="lg:col-span-5 lg:pt-2">
+            <h3 className="mb-h3 text-[var(--mb-ink)]">What you own at launch</h3>
+            <dl className="mt-6 space-y-5">
+              {HANDOVER.map((item) => (
+                <div key={item.term}>
+                  <dt className="mb-step-title">{item.term}</dt>
+                  <dd className="mb-prose mt-1">{item.detail}</dd>
+                </div>
+              ))}
             </dl>
+            <Link href="/services" className="mb-text-link mt-8">
+              What I build: websites, social and content
+            </Link>
           </div>
         </div>
       </section>
 
-      {/* Quote */}
+      {/* 5. Ryan and Rudi, then the quote form. Slate: the Naples footer is the page's one light block. */}
       <section
         id="quote"
         aria-labelledby="quote-heading"
-        className="mb-on-light bg-[var(--mb-light)] text-[var(--mb-ink)]"
+        className="mb-section-pad scroll-mt-24 border-t border-[var(--mb-line)] text-[var(--mb-ink)]"
       >
-        <div
-          data-mb-reveal="true"
-          className="mb-shell mb-section-pad grid max-w-6xl scroll-mt-24 gap-10 px-4 sm:px-6 lg:grid-cols-[0.82fr_1.18fr] lg:items-start lg:gap-12"
-        >
-          <div className="flex flex-col justify-between space-y-8">
-            <div>
-              <p className="mb-kicker-muted">Start a project</p>
-              <h2 id="quote-heading" className="mb-h2 mt-2 text-[var(--mb-ink)]">
-                Tell me what you are planning
-              </h2>
-              <p className="mb-body mt-4">
-                Send a short note with the form or message me on WhatsApp. I will come back with next steps and a fixed quote.
-              </p>
+        <div className="mb-shell max-w-6xl sm:px-6">
+          <div className="grid gap-10 lg:grid-cols-12 lg:items-start lg:gap-14">
+            <div className="grid grid-cols-2 gap-4 lg:col-span-5">
+              <figure>
+                <Image
+                  src="/images/ryan-davidson.jpg"
+                  alt="Ryan Davidson in his graduation gown outside the Lanyon Building at Queen's University Belfast."
+                  width={752}
+                  height={1024}
+                  sizes="(max-width: 1024px) 50vw, 240px"
+                  className="aspect-[4/5] w-full object-cover"
+                />
+                <figcaption className="mb-caption mt-2">
+                  Me at Queen&apos;s, MSc in Software Development with Commendation.
+                </figcaption>
+              </figure>
+              <figure>
+                <Image
+                  src="/images/rudi/rudi-scarf.jpg"
+                  alt="Rudi, a black and tan dog, wearing an Arsenal scarf at home."
+                  width={472}
+                  height={631}
+                  sizes="(max-width: 1024px) 50vw, 240px"
+                  className="aspect-[4/5] w-full object-cover"
+                />
+                <figcaption className="mb-caption mt-2">Rudi, in his Arsenal scarf.</figcaption>
+              </figure>
             </div>
 
-            <div className="space-y-5 border-t border-[var(--mb-line)] pt-6">
-              <div>
-                <p className="mb-label">Prefer a quick chat?</p>
-                <p className="mb-prose mt-1">
-                  WhatsApp is often the quickest way to share an idea or a link.
-                </p>
+            <div className="lg:col-span-7">
+              <h2 id="quote-heading" className="mb-h2 text-[var(--mb-ink)]">
+                Ryan and Rudi, Carrickfergus
+              </h2>
+              <p className="mb-body mt-5 max-w-[var(--mb-measure)]">
+                RDev Studio is me. I build for Northern Ireland small businesses, trades, community
+                projects and charities, and I check every site on a real phone before it goes live.
+                You talk to me the whole way through, by WhatsApp, email or a call.
+              </p>
+              <p className="mb-body mt-4 max-w-[var(--mb-measure)]">
+                Registered charities get their site free. Other rescues and community groups, get in
+                touch and we&apos;ll work something out.
+              </p>
+              <Link href="/about" className="mb-text-link mt-5">
+                More about me
+              </Link>
+            </div>
+          </div>
+
+          <div className="mt-16 grid gap-10 border-t border-[var(--mb-line)] pt-12 lg:grid-cols-12 lg:gap-14">
+            <div className="lg:col-span-5">
+              <h3 className="mb-h3 text-[var(--mb-ink)]">Tell me what you need</h3>
+              <p className="mb-body mt-4">
+                Send a short note and I&apos;ll come back with next steps and a fixed quote. WhatsApp
+                is quickest if you want to send a link or a photo.
+              </p>
+              <div className="mt-6 space-y-3">
                 <a
                   href={STUDIO_WHATSAPP_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mb-text-link mt-3"
+                  className="mb-text-link"
                 >
                   <WhatsAppIcon className="h-4 w-4 shrink-0" />
-                  Message on WhatsApp
+                  Message me on WhatsApp
                 </a>
+                <p className="mb-prose">
+                  Or email{" "}
+                  <a href={`mailto:${CONTACT_EMAIL}`} className="mb-inline-link">
+                    {CONTACT_EMAIL}
+                  </a>
+                </p>
               </div>
-
-              <p className="mb-prose">
-                Or email me at{" "}
-                <a href={`mailto:${CONTACT_EMAIL}`} className="mb-inline-link">
-                  {CONTACT_EMAIL}
-                </a>
-              </p>
             </div>
-          </div>
 
-          <div className="mb-on-surface mb-panel text-[var(--mb-ink)]">
-            <QuoteForm />
+            <div className="mb-on-surface mb-panel text-[var(--mb-ink)] lg:col-span-7">
+              <QuoteForm />
+            </div>
           </div>
         </div>
       </section>

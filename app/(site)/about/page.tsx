@@ -1,7 +1,6 @@
 import Image from "next/image";
 import ryanPhoto from "@/public/images/ryan-davidson.jpg";
 import Link from "next/link";
-import { ArrowRightIcon } from "@/components/studio/icons";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata = createPageMetadata({
@@ -52,7 +51,6 @@ export default function AboutPage() {
             <div className="mt-8">
               <Link href="/contact" className="mb-btn-primary w-full sm:w-auto">
                 Get a fixed quote
-                <ArrowRightIcon className="h-4 w-4 shrink-0" />
               </Link>
             </div>
           </div>
@@ -89,7 +87,7 @@ export default function AboutPage() {
         aria-label="Bio"
         className="border-t border-[var(--mb-line)] bg-[var(--mb-surface)]"
       >
-        <div data-mb-reveal="true" className="mb-shell mb-section-pad max-w-6xl sm:px-6">
+        <div className="mb-shell mb-section-pad max-w-6xl sm:px-6">
           <div className="max-w-[var(--mb-measure)] space-y-5">
             <p className="mb-body">
               I didn&apos;t take the usual route in. Forensic science degree, then into the civil
@@ -116,7 +114,7 @@ export default function AboutPage() {
       </section>
 
       <section aria-labelledby="away-heading" className="border-t border-[var(--mb-line)]">
-        <div data-mb-reveal="true" className="mb-shell mb-section-pad max-w-6xl sm:px-6">
+        <div className="mb-shell mb-section-pad max-w-6xl sm:px-6">
           <h2 id="away-heading" className="mb-h2 text-[var(--mb-ink)]">
             Away from the desk
           </h2>
@@ -138,7 +136,7 @@ export default function AboutPage() {
         aria-labelledby="about-close-heading"
         className="mb-on-light bg-[var(--mb-light)] text-[var(--mb-ink)]"
       >
-        <div data-mb-reveal="true" className="mb-shell mb-section-pad max-w-6xl px-4 sm:px-6">
+        <div className="mb-shell mb-section-pad max-w-6xl px-4 sm:px-6">
           <div className="max-w-2xl border-t border-[var(--mb-line-strong)] pt-8">
             <h2 id="about-close-heading" className="mb-h2 text-[var(--mb-ink)]">
               Want something built?
@@ -147,7 +145,6 @@ export default function AboutPage() {
             <div className="mt-6">
               <Link href="/contact" className="mb-btn-primary w-full sm:w-auto">
                 Get a fixed quote
-                <ArrowRightIcon className="h-4 w-4 shrink-0" />
               </Link>
             </div>
           </div>

@@ -21,25 +21,6 @@ export function WhatsAppIcon({ className = "h-4 w-4" }: { className?: string }) 
   );
 }
 
-export function ArrowRightIcon({ className = "h-4 w-4" }: { className?: string }) {
-  return (
-    <svg
-      viewBox="0 0 16 16"
-      fill="none"
-      aria-hidden="true"
-      className={className}
-    >
-      <path
-        d="M3.5 8h9m0 0L8.75 4.25M12.5 8l-3.75 3.75"
-        stroke="currentColor"
-        strokeWidth="1.6"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
-}
-
 export function ArrowLeftIcon({ className = "h-4 w-4" }: { className?: string }) {
   return (
     <svg

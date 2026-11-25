@@ -6,7 +6,7 @@ import {
   STUDIO_WHATSAPP_URL,
   quoteHref,
 } from "@/components/studio/content";
-import { ArrowRightIcon, WhatsAppIcon } from "@/components/studio/icons";
+import { WhatsAppIcon } from "@/components/studio/icons";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata = createPageMetadata({
@@ -33,7 +33,6 @@ export default function ServicesPage() {
           <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
             <Link href="/contact" className="mb-btn-primary w-full sm:w-auto">
               Request a quote
-              <ArrowRightIcon className="h-4 w-4 shrink-0" />
             </Link>
             <a
               href={STUDIO_WHATSAPP_URL}
@@ -55,7 +54,6 @@ export default function ServicesPage() {
             </p>
             <Link href="/services/businesses" className="mb-text-link mt-3">
               Local business packages
-              <ArrowRightIcon className="h-4 w-4 shrink-0" />
             </Link>
           </div>
           <div className="py-5 md:pl-8">
@@ -65,7 +63,6 @@ export default function ServicesPage() {
             </p>
             <Link href="/services/charities" className="mb-text-link mt-3">
               How charity sites work
-              <ArrowRightIcon className="h-4 w-4 shrink-0" />
             </Link>
           </div>
         </div>
@@ -92,7 +89,6 @@ export default function ServicesPage() {
             <article
               key={service.id}
               id={service.id}
-              data-mb-reveal="true"
               className="scroll-mt-24 py-12 sm:py-16"
             >
               <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
@@ -114,7 +110,6 @@ export default function ServicesPage() {
                 {service.exampleHref && service.exampleLabel ? (
                   <Link href={service.exampleHref} className="mb-text-link w-fit shrink-0">
                     {service.exampleLabel}
-                    <ArrowRightIcon className="h-4 w-4 shrink-0" />
                   </Link>
                 ) : null}
               </div>
@@ -174,7 +169,6 @@ export default function ServicesPage() {
               <div className="mt-8">
                 <Link href={quoteHref(service.quoteTopic)} className="mb-text-link w-fit">
                   Ask for a quote on {service.title.toLowerCase()}
-                  <ArrowRightIcon className="h-4 w-4 shrink-0" />
                 </Link>
               </div>
             </article>
@@ -187,7 +181,7 @@ export default function ServicesPage() {
         aria-labelledby="services-process-heading"
         className="mb-on-light border-y border-[var(--mb-line)] bg-[var(--mb-light)]"
       >
-        <div data-mb-reveal="true" className="mb-shell mb-section-pad max-w-6xl sm:px-6">
+        <div className="mb-shell mb-section-pad max-w-6xl sm:px-6">
           <p className="mb-kicker">How it works</p>
           <h2 id="services-process-heading" className="mb-h2 mt-2 text-[var(--mb-ink)]">
             Four steps from first message to launch
@@ -214,7 +208,7 @@ export default function ServicesPage() {
         aria-labelledby="services-faq-heading"
         className="mb-shell mb-section-pad max-w-6xl sm:px-6"
       >
-        <div data-mb-reveal="true" className="max-w-2xl">
+        <div className="max-w-2xl">
           <h2 id="services-faq-heading" className="mb-h2 text-[var(--mb-ink)]">
             Common questions
           </h2>
@@ -225,7 +219,6 @@ export default function ServicesPage() {
           {STUDIO_FAQ_ITEMS.map((item) => (
             <div
               key={item.question}
-              data-mb-reveal="true"
               className="grid gap-3 py-6 md:grid-cols-[0.9fr_1.1fr] md:gap-12"
             >
               <dt className="mb-faq-q">{item.question}</dt>
@@ -240,7 +233,7 @@ export default function ServicesPage() {
         aria-labelledby="services-close-heading"
         className="mb-on-light bg-[var(--mb-light)] text-[var(--mb-ink)]"
       >
-        <div data-mb-reveal="true" className="mb-shell mb-section-pad max-w-6xl px-4 sm:px-6">
+        <div className="mb-shell mb-section-pad max-w-6xl px-4 sm:px-6">
           <div className="max-w-2xl border-t border-[var(--mb-line-strong)] pt-8">
             <p className="mb-kicker-muted">Not sure which fits?</p>
             <h2 id="services-close-heading" className="mb-h2 mt-2 text-[var(--mb-ink)]">
@@ -252,7 +245,6 @@ export default function ServicesPage() {
             <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
               <Link href="/contact" className="mb-btn-primary w-full sm:w-auto">
                 Start a quote
-                <ArrowRightIcon className="h-4 w-4 shrink-0" />
               </Link>
               <a
                 href={STUDIO_WHATSAPP_URL}

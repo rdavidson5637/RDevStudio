@@ -17,13 +17,12 @@ function PanelBody({ panel, tall = false }: { panel: PreviewPanel; tall?: boolea
   return (
     <div
       className={`flex flex-col justify-between bg-[var(--mb-bg)] p-4 sm:p-5 ${
-        tall ? "min-h-[260px] sm:p-6" : "min-h-[210px] sm:aspect-[16/10]"
+        tall ? "min-h-[260px] sm:p-6" : ""
       }`}
     >
-      <div className="grid gap-6 py-2 sm:grid-cols-[minmax(0,1.2fr)_minmax(0,0.8fr)] sm:gap-8">
+      <div className="grid gap-6 pb-6 pt-2 sm:grid-cols-[minmax(0,1.2fr)_minmax(0,0.8fr)] sm:gap-8">
         <div className="min-w-0 space-y-2">
-          <span className="block h-1 w-10 bg-[var(--mb-accent)]" aria-hidden="true" />
-          <p className="mb-preview-lede">{panel.title}</p>
+                    <p className="mb-preview-lede">{panel.title}</p>
           <p className="mb-preview-note">{panel.lede}</p>
         </div>
         <ul className="mb-preview-note divide-y divide-[var(--mb-line)] border-y border-[var(--mb-line)] font-medium text-[var(--mb-ink)]">
