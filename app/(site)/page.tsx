@@ -85,69 +85,59 @@ export default function HomePage() {
   return (
     <div>
       {/* 1. Hero: the named work, then Stout Finder as the one big thing on the page */}
-      <section aria-labelledby="hero-heading" className="mb-shell mb-page-intro max-w-6xl sm:px-6">
-        <h1 id="hero-heading" className="mb-hero-title max-w-[16ch] text-[var(--mb-ink)]">
-          Stout Finder, ShelterLink and Rondo were all built in Carrickfergus.
-        </h1>
+      <section
+        aria-labelledby="hero-heading"
+        className="mb-shell mb-page-intro grid max-w-6xl gap-10 sm:px-6 lg:grid-cols-12 lg:gap-x-12 lg:gap-y-10"
+      >
+        <div className="lg:col-span-7 lg:row-start-1">
+          <h1 id="hero-heading" className="mb-hero-title max-w-[16ch] text-[var(--mb-ink)]">
+            Stout Finder, ShelterLink and Rondo were all built in Carrickfergus.
+          </h1>
+          <p className="mb-lede mt-6 max-w-[var(--mb-measure)]">
+            I&apos;m Ryan Davidson. I design and build websites and web apps for Northern Ireland
+            businesses, charities and rescues. Registered charities get theirs free.
+          </p>
+        </div>
 
-        <p className="mb-lede mt-6 max-w-[var(--mb-measure)]">
-          I&apos;m Ryan Davidson. I design and build websites and web apps for Northern Ireland
-          businesses, charities and rescues. Registered charities get theirs free.
-        </p>
+        <a
+          href={STOUT_FINDER_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mb-hero-shot block w-full max-w-[420px] lg:col-span-5 lg:col-start-8 lg:row-span-2 lg:row-start-1 lg:justify-self-end"
+          aria-label="Open stoutfinder.com in a new tab"
+        >
+          <Image
+            src="/images/stout-finder/home-390.png"
+            alt="Stout Finder home page on a phone: who has Beamish on, with a stout picker and a map of pubs around Belfast."
+            width={390}
+            height={844}
+            sizes="(max-width: 1024px) 420px, 420px"
+            priority
+            className="block h-auto w-full"
+          />
+        </a>
 
-        <figure className="mt-10 sm:mt-14">
-          <a
-            href={STOUT_FINDER_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mb-hero-shot block"
-            aria-label="Open stoutfinder.com in a new tab"
-          >
-            <Image
-              src="/images/stout-finder/home-390.png"
-              alt="Stout Finder on a phone: the home screen for finding which stouts are on near you."
-              width={390}
-              height={844}
-              sizes="100vw"
-              priority
-              className="block h-auto w-full sm:hidden"
-            />
-            <Image
-              src="/images/stout-finder/pub-1280.png"
-              alt="Stout Finder pub page for Ownie's in Carrickfergus, showing Beamish and Kilkenny on, with a map of the town below."
-              width={1280}
-              height={800}
-              sizes="(max-width: 640px) 1px, 1152px"
-              priority
-              className="hidden h-auto w-full sm:block"
-            />
-          </a>
-
-          <figcaption className="mt-6 grid gap-6 md:grid-cols-12 md:items-end md:gap-10">
-            <div className="md:col-span-7">
-              <p className="mb-h3 text-[var(--mb-ink)]">Stout Finder</p>
-              <p className="mb-prose mt-2">
-                My own site. It shows which stouts are on in which pub, from pints people log
-                themselves.
-                <span className="hidden sm:inline"> The pub above is Ownie&apos;s in Carrickfergus.</span>
-              </p>
-            </div>
-            <div className="flex flex-col gap-3 sm:flex-row sm:items-center md:col-span-5 md:justify-end">
-              <a
-                href={STOUT_FINDER_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mb-btn-secondary w-full sm:w-auto"
-              >
-                Open Stout Finder
-                <span className="sr-only"> (opens in a new tab)</span>
-              </a>
-              <a href="#quote" className="mb-btn-primary w-full sm:w-auto">
-                Ask me for a quote
-              </a>
-            </div>
-          </figcaption>
-        </figure>
+        <div className="lg:col-span-7 lg:row-start-2 lg:self-end">
+          <p className="mb-h3 text-[var(--mb-ink)]">Stout Finder</p>
+          <p className="mb-prose mt-2 max-w-[var(--mb-measure)]">
+            My own site. It shows which stouts are on in which pub, from pints people log
+            themselves.
+          </p>
+          <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
+            <a
+              href={STOUT_FINDER_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mb-btn-secondary w-full sm:w-auto"
+            >
+              Open Stout Finder
+              <span className="sr-only"> (opens in a new tab)</span>
+            </a>
+            <a href="#quote" className="mb-btn-primary w-full sm:w-auto">
+              Ask me for a quote
+            </a>
+          </div>
+        </div>
       </section>
 
       {/* 2. Client work: alternating rows, real screens where approved */}

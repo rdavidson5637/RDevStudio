@@ -176,7 +176,7 @@
 .mb-hero-title {
   font-family: var(--font-display), "Big Shoulders", Impact, sans-serif;
   font-weight: 800;
-  font-size: clamp(2.75rem, 8vw, 6.5rem);
+  font-size: clamp(2.75rem, 8vw, 5.75rem);
   line-height: 0.95;
   letter-spacing: var(--mb-tracking-display);
   text-wrap: balance;
