@@ -46,7 +46,7 @@ export default function ContactPage() {
         className="mb-shell mb-section-pad max-w-6xl scroll-mt-24 border-t border-[var(--mb-line)] px-4 sm:px-6"
       >
         <div className="grid gap-10 lg:grid-cols-[minmax(0,1.4fr)_minmax(0,0.6fr)] lg:items-start lg:gap-14">
-          <div data-mb-reveal="true" className="mb-on-surface mb-panel min-w-0">
+          <div className="mb-on-surface mb-panel min-w-0">
             <div className="border-b border-[var(--mb-line)] pb-5">
               <p className="mb-kicker">Quote request</p>
               <h2 id="contact-form-heading" className="mb-h2 mt-2 text-[var(--mb-ink)]">
@@ -64,7 +64,6 @@ export default function ContactPage() {
 
           <aside aria-label="Direct contact options" className="space-y-8 lg:sticky lg:top-24 lg:pt-1">
             <div
-              data-mb-reveal="true"
               className="mb-on-light border-l-2 border-[var(--mb-accent)] bg-[var(--mb-light)] p-6"
             >
               <p className="mb-kicker-muted">Quickest chat</p>
@@ -83,7 +82,7 @@ export default function ContactPage() {
               </a>
             </div>
 
-            <div data-mb-reveal="true" className="border-t border-[var(--mb-line-strong)] pt-6">
+            <div className="border-t border-[var(--mb-line-strong)] pt-6">
               <h2 className="mb-h3 text-[var(--mb-ink)]">Email me directly</h2>
               <p className="mb-caption mt-1">Carrickfergus, Northern Ireland</p>
               <p className="mb-prose mt-3">Prefer to write from your own inbox?</p>
@@ -92,7 +91,7 @@ export default function ContactPage() {
               </a>
             </div>
 
-            <div data-mb-reveal="true" className="border-t border-[var(--mb-line-strong)] pt-6">
+            <div className="border-t border-[var(--mb-line-strong)] pt-6">
               <h2 className="mb-h3 text-[var(--mb-ink)]">What helps me quote</h2>
               <ul className="mt-4 divide-y divide-[var(--mb-line)] border-y border-[var(--mb-line)]">
                 {HELPFUL_NOTES.map((item) => (

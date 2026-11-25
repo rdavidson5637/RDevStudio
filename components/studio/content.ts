@@ -230,7 +230,7 @@ export const STUDIO_RHYTHM = [
   {
     step: "02",
     title: "A clear quote",
-    body: "Scope, timeline and a fixed quote in writing. 50% upfront, 50% at launch. No surprises.",
+    body: "Scope, timeline and a fixed quote in writing. 50% upfront, 50% at launch.",
   },
   {
     step: "03",

@@ -30,7 +30,7 @@ export function PackageList({ tag }: { tag?: string }) {
   return (
     <ol className="mt-10 divide-y divide-[var(--mb-line)] border-y border-[var(--mb-line)]">
       {PACKAGES.map((pkg, index) => (
-        <li key={pkg.id} data-mb-reveal="true" className="py-7">
+        <li key={pkg.id} className="py-7">
           <div className="grid gap-4 md:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] md:gap-10">
             <div className="min-w-0">
               <div className="mb-meta">

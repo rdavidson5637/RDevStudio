@@ -1,6 +1,6 @@
 import Link from "next/link";
 import type { CaseStudy } from "@/components/studio/case-studies";
-import { ArrowRightIcon, ExternalLinkIcon } from "@/components/studio/icons";
+import { ExternalLinkIcon } from "@/components/studio/icons";
 import { ProjectPreview } from "@/components/studio/ProjectVisual";
 
 export function StackLine({ stack }: { stack: readonly string[] }) {
@@ -78,7 +78,6 @@ export function ProjectRow({
         <div className="flex flex-wrap items-center gap-x-5 gap-y-1 pt-1">
           <Link href={`/work/${study.slug}`} className="mb-text-link">
             Read case study
-            <ArrowRightIcon className="h-4 w-4 shrink-0" />
           </Link>
 
           {study.link?.external ? (

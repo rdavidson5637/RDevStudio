@@ -2,7 +2,6 @@ import Link from "next/link";
 import { STUDIO_WHATSAPP_URL } from "@/components/studio/content";
 import { WhatsAppIcon } from "@/components/studio/icons";
 import { SiteDesktopNav, SiteMobileNav } from "@/components/studio/SiteNav";
-import { WarmMotionController } from "@/components/studio/WarmMotionController";
 import {
   CONTACT_EMAIL,
   GITHUB_URL,
@@ -72,7 +71,6 @@ export function SiteShell({
         </div>
 
         <SiteMobileNav />
-        <WarmMotionController />
       </header>
 
       {/* tabIndex -1 lets the skip link move focus here, not just scroll. */}

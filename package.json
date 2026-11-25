@@ -14,7 +14,8 @@
     "capture:work": "tsx scripts/capture-work.ts",
     "test:smoke": "tsx scripts/smoke.ts",
     "screenshots": "tsx scripts/screenshots.ts",
-    "shots": "tsx scripts/route-shots.ts"
+    "shots": "tsx scripts/route-shots.ts",
+    "lint:design": "bash scripts/slop-check.sh"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.30.1",

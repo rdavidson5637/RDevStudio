@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { CASE_STUDIES } from "@/components/studio/case-studies";
 import { STUDIO_WHATSAPP_URL, quoteHref } from "@/components/studio/content";
-import { ArrowRightIcon, WhatsAppIcon } from "@/components/studio/icons";
+import { WhatsAppIcon } from "@/components/studio/icons";
 import { PackageList } from "@/components/studio/PackageList";
 import { createPageMetadata } from "@/lib/metadata";
 
@@ -49,7 +49,6 @@ export default function CharitiesServicesPage() {
           <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
             <Link href={quoteHref("Charity or rescue")} className="mb-btn-primary w-full sm:w-auto">
               Registered charity? Ask about free packages
-              <ArrowRightIcon className="h-4 w-4 shrink-0" />
             </Link>
             <a
               href={STUDIO_WHATSAPP_URL}
@@ -70,7 +69,7 @@ export default function CharitiesServicesPage() {
         className="border-t border-[var(--mb-line)] bg-[var(--mb-surface)]"
       >
         <div className="mb-shell mb-section-pad max-w-6xl sm:px-6">
-          <div data-mb-reveal="true" className="max-w-2xl">
+          <div className="max-w-2xl">
             <p className="mb-kicker">Charity work</p>
             <h2 id="charity-work-heading" className="mb-h2 mt-2 text-[var(--mb-ink)]">
               Work built for Northern Ireland charities
@@ -82,7 +81,7 @@ export default function CharitiesServicesPage() {
 
           <ol className="mt-10 divide-y divide-[var(--mb-line)] border-y border-[var(--mb-line)]">
             {charityWork.map((study) => (
-              <li key={study.slug} data-mb-reveal="true" className="py-7">
+              <li key={study.slug} className="py-7">
                 <div className="grid gap-3 md:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] md:gap-10">
                   <div className="min-w-0">
                     <p className="mb-meta">
@@ -98,7 +97,6 @@ export default function CharitiesServicesPage() {
                     <p className="mb-prose">{study.summary}</p>
                     <Link href={`/work/${study.slug}`} className="mb-text-link mt-3">
                       Read the case study
-                      <ArrowRightIcon className="h-4 w-4 shrink-0" />
                     </Link>
                   </div>
                 </div>
@@ -111,7 +109,7 @@ export default function CharitiesServicesPage() {
       {/* Packages */}
       <section aria-labelledby="charity-packages-heading" className="border-t border-[var(--mb-line)]">
         <div className="mb-shell mb-section-pad max-w-6xl sm:px-6">
-          <div data-mb-reveal="true" className="max-w-2xl">
+          <div className="max-w-2xl">
             <p className="mb-kicker">Packages</p>
             <h2 id="charity-packages-heading" className="mb-h2 mt-2 text-[var(--mb-ink)]">
               What a registered charity gets
@@ -129,7 +127,7 @@ export default function CharitiesServicesPage() {
         aria-labelledby="charity-close-heading"
         className="mb-on-light bg-[var(--mb-light)] text-[var(--mb-ink)]"
       >
-        <div data-mb-reveal="true" className="mb-shell mb-section-pad max-w-6xl px-4 sm:px-6">
+        <div className="mb-shell mb-section-pad max-w-6xl px-4 sm:px-6">
           <div className="max-w-2xl border-t border-[var(--mb-line-strong)] pt-8">
             <h2 id="charity-close-heading" className="mb-h2 text-[var(--mb-ink)]">
               Tell me about your rescue or charity
@@ -140,7 +138,6 @@ export default function CharitiesServicesPage() {
             <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
               <Link href={quoteHref("Charity or rescue")} className="mb-btn-primary w-full sm:w-auto">
                 Get in touch
-                <ArrowRightIcon className="h-4 w-4 shrink-0" />
               </Link>
               <a
                 href={STUDIO_WHATSAPP_URL}
